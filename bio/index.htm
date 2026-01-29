@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Randy Anthony | Operations, Reliability & Time-Critical Systems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap">
+
+  <style>
+    :root{
+      --bg: #f6f7fb;
+      --surface: #ffffff;
+      --text: #1f2937;
+      --muted: #4b5563;
+      --link: #1d4ed8;
+      --border: rgba(31,41,55,0.12);
+      --shadow: 0 10px 24px rgba(31,41,55,0.10);
+      --shadow-sm: 0 6px 16px rgba(31,41,55,0.08);
+      --accent: #1a237e;
+      --accent-2: #3949ab;
+      --ring: rgba(29,78,216,0.25);
+      --radius: 14px;
+      --radius-sm: 10px;
+      --max: 1080px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Roboto", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 15% 0%, rgba(57,73,171,0.10), transparent 55%),
+                  radial-gradient(900px 500px at 100% 10%, rgba(26,35,126,0.10), transparent 50%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+    a:focus-visible {
+      outline: none;
+      box-shadow: 0 0 0 4px var(--ring);
+      border-radius: 8px;
+    }
+
+    header {
+      padding: 36px 18px 18px;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+      color: #fff;
+      border-bottom: 1px solid rgba(255,255,255,0.18);
+    }
+    .header-inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+        text-align: center;     /* ← ADD THIS LINE */
+  align-items: center;    /* ← ADD THIS LINE */
+    }
+    header h1 {
+      margin: 0;
+      font-size: clamp(1.5rem, 2.3vw, 2.15rem);
+      letter-spacing: 0.2px;
+      line-height: 1.2;
+    }
+    .subtitle {
+      margin: 0;
+      color: rgba(255,255,255,0.86);
+      font-size: 1rem;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 10px 12px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav a{
+      display: inline-block;
+      padding: 8px 10px;
+      border-radius: 999px;
+      color: rgba(31,41,55,0.86);
+      font-weight: 600;
+      font-size: 0.92rem;
+      border: 1px solid transparent;
+    }
+    nav a:hover{
+      background: rgba(29,78,216,0.08);
+      text-decoration: none;
+      border-color: rgba(29,78,216,0.12);
+    }
+
+    .container{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 22px 14px 40px;
+    }
+
+    .section{
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      padding: 18px 18px 16px;
+      margin: 16px 0;
+    }
+
+    /* Anchor offset so sticky nav doesn't cover headings */
+    .anchor-target{
+      scroll-margin-top: 86px;
+    }
+
+    h2{
+      margin: 0 0 10px;
+      font-size: 1.22rem;
+      letter-spacing: 0.2px;
+    }
+    h3{
+      margin: 18px 0 8px;
+      font-size: 1.06rem;
+      letter-spacing: 0.15px;
+    }
+    p{
+      margin: 0 0 10px;
+      color: rgba(31,41,55,0.92);
+    }
+    .muted{
+      color: var(--muted);
+    }
+
+    .jump a{
+      display: inline-block;
+      margin-top: 6px;
+      font-weight: 700;
+    }
+
+    .headline{
+      margin: 10px 0;
+      padding: 10px 12px;
+      border-left: 4px solid rgba(29,78,216,0.55);
+      background: rgba(29,78,216,0.06);
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      color: rgba(31,41,55,0.90);
+    }
+
+    ul{
+      margin: 8px 0 8px 20px;
+      padding: 0;
+      color: rgba(31,41,55,0.92);
+    }
+    li{ margin: 6px 0; }
+
+    .contact{
+      background: linear-gradient(180deg, rgba(29,78,216,0.07), rgba(255,255,255,0.0));
+      border-left: 5px solid rgba(29,78,216,0.75);
+    }
+    .contact ul{
+      list-style: none;
+      margin: 10px 0 0;
+      padding: 0;
+    }
+    .contact li{
+      padding: 8px 0;
+      border-bottom: 1px dashed rgba(31,41,55,0.16);
+    }
+    .contact li:last-child{ border-bottom: none; }
+
+    /* Make long experience lists easier to read */
+    .section ul li strong{
+      color: rgba(31,41,55,0.96);
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 560px){
+      header { padding: 28px 14px 16px; }
+      .section{ padding: 16px 14px; }
+      nav a{ font-size: 0.90rem; padding: 8px 9px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>Randy Anthony: Operations, Reliability & Time-Critical Systems</h1>
+      <p class="subtitle">Live and automated workflows • Calm execution under pressure • Practical AI tool fluency</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="#current-role">Current Role</a>
+      <a href="#professional-summary">Operational Summary</a>
+      <a href="#highlights">Selected Highlights</a>
+      <a href="#credentials">Education &amp; Credentials</a>
+      <a href="#core-skills">Core Capabilities</a>
+      <a href="#experience">Operational Experience</a>
+      <a href="#bio">Bio</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="section anchor-target" id="current-role">
+      <h2>Current Role: Broadcast / Streaming Operations — TEGNA Streaming Center</h2>
+      <p>
+        Responsible for maintaining the consistent delivery of multiple programming feeds across broadcast stations,
+        digital platforms, and streaming services. Oversees automated playlists (Crispin Core &amp; Rapid PlayX) at
+        TEGNA's multi-station streaming center, ensuring smooth transitions, precise timing, and effective real-time troubleshooting.
+      </p>
+      <p class="jump"><a href="#experience">Jump to Operational Experience</a></p>
+    </div>
+
+    <div class="section anchor-target" id="professional-summary">
+      <h2>Operational Summary</h2>
+      <p>
+        I work with complex, time-critical systems where reliability, timing, and judgment matter. My background spans live
+        and automated environments in media and digital delivery, but my core discipline is operational: maintaining continuity,
+        anticipating failure points, and resolving issues before they become visible.
+      </p>
+      <p>
+        With decades of hands-on experience, I’ve supported workflows where mistakes are costly and execution must remain calm
+        and precise under pressure. I combine systems thinking with practical use of modern tools—including AI—to improve workflow
+        efficiency, documentation, troubleshooting, and decision support.
+      </p>
+      <p>
+        While content and storytelling have always mattered in my career, what defines my work today is reliability: clear thinking,
+        disciplined execution, and the ability to translate complex systems into manageable operations across evolving platforms and industries.
+      </p>
+      <p class="jump"><a href="#bio">Read the Full Bio</a></p>
+    </div>
+
+    <div class="section anchor-target" id="highlights">
+      <h2>Selected Highlights</h2>
+      <p class="headline">Studio Host/Producer: IMG College (Learfield) — High-profile college sports radio broadcasts</p>
+      <p class="headline">Newscast Director &amp; Master Control: WGHP-TV (Nexstar) — Directed nightly newscasts &amp; Master Control operations</p>
+      <p class="headline">Morning Drive Radio: WTHZ-FM — Increased ratings from 12th to 5th in 14 months with an innovative format</p>
+      <p class="headline">Commercial Traffic Director: Entercom (Audacy) — Traffic operations for a multi-station cluster</p>
+      <p class="headline">NASCAR Programming: Billboard-nominated producer &amp; Sirius Satellite Radio post-race show host</p>
+      <p class="jump"><a href="#experience">More experience details</a></p>
+    </div>
+
+    <div class="section anchor-target" id="credentials">
+      <h2>Education &amp; Credentials</h2>
+      <ul>
+        <li>Master of Entrepreneurship — WCU/Carland Academy (2011)</li>
+        <li>Bachelor of Science, Radio/Television — Western Carolina University (1983)</li>
+      </ul>
+      <p class="muted"><strong>Additional:</strong> Eagle Scout • Format Creator • Team Leader • International Division Builder</p>
+    </div>
+
+    <div class="section anchor-target" id="core-skills">
+      <h2>Core Capabilities</h2>
+      <ul>
+        <li>Operations &amp; Reliability in Time-Critical Systems</li>
+        <li>Automation Monitoring &amp; Workflow Management</li>
+        <li>Live &amp; Automated Content Delivery</li>
+        <li>Applied AI Tools for Workflow Optimization &amp; Decision Support</li>
+        <li>Digital Audio Editing &amp; Recording (Adobe Audition)</li>
+        <li>Broadcast &amp; Streaming Systems (Crispin, Florical, Rapid PlayX)</li>
+        <li>Quality Control, Troubleshooting &amp; Escalation Management</li>
+        <li>Commercial Copywriting &amp; Professional Voice Over</li>
+      </ul>
+    </div>
+
+    <div class="section contact anchor-target" id="contact">
+      <h2>Contact</h2>
+      <ul>
+        <li><strong>Phone:</strong> 704-779-4913</li>
+        <li><strong>Email:</strong> <a href="mailto:inbox@randyanthony.us">inbox@randyanthony.us</a></li>
+        <li><strong>YouTube:</strong> <a href="https://www.youtube.com/@mediaspeaks1" target="_blank" rel="noopener">Visit My Channel</a></li>
+        <li><strong>Listen Online:</strong> <a href="https://player.live365.com/a20149?l" target="_blank" rel="noopener">Live365 Stream</a></li>
+        <li><strong>Book:</strong> <a href="https://amzn.to/4jIov0I" target="_blank" rel="noopener">Buy The Book</a></li>
+        <li><strong>Other Business:</strong> <a href="https://pietytoken.io/Refer?ref=PVUNNFAT">Learn More</a></li>
+      </ul>
+    </div>
+
+    <div class="section anchor-target" id="experience">
+      <h2>Operational Experience</h2>
+
+      <h3>Broadcast/Streaming Hub Operations — TEGNA (2021–Current)</h3>
+      <ul>
+        <li><strong>Oversee On-Air Reliability:</strong> Ensure consistent, uninterrupted delivery of multiple feeds and playlists by actively monitoring operations and proactively addressing challenges in real time.</li>
+        <li><strong>Roll Live Breaks for Network Events:</strong> Manage live breaks for high-profile events (Super Bowl, World Series), ensuring precise timing and flawless execution under pressure.</li>
+        <li><strong>Optimize and Refine Playlists:</strong> Use Crispin Core and Rapid PlayX to edit, schedule, and fine-tune playlists for seamless delivery across formats and schedules.</li>
+        <li><strong>Coordinate Programming Transitions:</strong> Ensure smooth transitions between network and local programming, aligned with schedule integrity and audience expectations.</li>
+        <li><strong>Quality Assurance and Troubleshooting:</strong> Perform QC checks and respond to live issues with fast, effective resolution to minimize disruption.</li>
+      </ul>
+
+      <h3>Newscast Director &amp; Technical Operations — Nexstar WGHP-TV (2019–2021)</h3>
+      <ul>
+        <li><strong>Directed Hourlong Newscasts:</strong> Led production and execution with precise timing and coordinated teamwork to deliver consistent, high-quality broadcasts.</li>
+        <li><strong>Master Control Operations:</strong> Operated Brutus and Florical to manage commercial insertion and playlist scheduling while maintaining uninterrupted programming.</li>
+        <li><strong>Advanced Video Technologies:</strong> Supported live updates and breaking coverage through real-time coordination with field teams and control room staff.</li>
+      </ul>
+
+      <h3>Commercial Traffic Director — Entercom (now Audacy) (2013–2015)</h3>
+      <ul>
+        <li>WideOrbit expertise focused on maximizing revenue by strategically managing and optimizing commercial logs for a multi-station cluster.</li>
+      </ul>
+
+      <h3>Studio Host/Producer — IMG College (now Learfield) (2011–2019)</h3>
+      <ul>
+        <li>Studio host and producer on high-profile sports broadcasts for top universities.</li>
+        <li>Regular season plus Final Four, Frozen Four, and College World Series broadcasts.</li>
+      </ul>
+
+      <h3>Producer — Clear Channel Radio / Total Traffic Network (now iHeart Media) (2004–2012)</h3>
+      <ul>
+        <li>Researched traffic conditions and produced live traffic reports for major markets.</li>
+      </ul>
+
+      <h3>Morning Show Host — WTHZ-FM (2002–2004)</h3>
+      <ul>
+        <li>Increased ratings significantly with the “More Music Morning” format.</li>
+      </ul>
+
+      <h3>Director of Radio — TEAMTalk / RMG3 (2000–2002)</h3>
+      <ul>
+        <li>Created/hosted and produced SiriusXM’s NASCAR post-race show.</li>
+      </ul>
+
+      <h3>Senior Producer — NASCAR Country Radio Network (Morris International) (1996–1999)</h3>
+      <ul>
+        <li>Earned two consecutive Billboard nominations for Best Syndicated Radio Program.</li>
+      </ul>
+
+      <h3>Club Emcee / DJ (Local Nightlife) (1985–1996)</h3>
+      <ul>
+        <li>Entertainment Director — Players Nightlife (Adams Mark Hotel, Charlotte)</li>
+        <li>Club emcee, band introductions, and disc jockey</li>
+      </ul>
+      <ul>
+        <li>Studebakers Nightlife (Myrtle Beach, SC)</li>
+        <li>Disc jockey and club personality</li>
+      </ul>
+
+      <h3>Air Personality / Production Director / Program Director (Local Radio) (1979–1985)</h3>
+      <ul>
+        <li>WWCU-FM — Cullowhee, NC (Rock/Top 40)</li>
+        <li>WGSP-AM — Charlotte, NC (Oldies)</li>
+        <li>WAAK-AM — Dallas, NC (Adult Contemporary)</li>
+        <li>WHKY-FM — Hickory, NC (Top 40)</li>
+        <li>WJZR-FM “Z-100” — Kannapolis/Charlotte, NC (CHR)</li>
+        <li>WMYB-AM — Myrtle Beach, SC (Beach/Oldies)</li>
+        <li>WAZX-FM — Georgetown, SC (Top 40)</li>
+        <li>WNMB-FM — N. Myrtle Beach, SC (Beach/Oldies)</li>
+        <li>WWMG-FM “Magic 96” — Charlotte, NC (Oldies)</li>
+        <li>WEZC/WMXC-FM “EZ-104 and Mix104.7” — Charlotte, NC (EZ Listening / AC)</li>
+        <li>WCKZ-FM “Kiss 102” — Charlotte, NC (CHR)</li>
+        <li>WWSN/WLNK-FM “Sunny 107.9 and 1079 The Link” — Charlotte, NC (Adult Contemporary)</li>
+        <li>WAES/WRFX/WFNZ-AM “FOX Sports 610 and Sports Radio The Fan” — Charlotte, NC (Sports Talk)</li>
+      </ul>
+    </div>
+
+    <div class="section anchor-target" id="bio">
+      <h2>Bio</h2>
+      <p>
+        Randy Anthony works at the intersection of operations, reliability, and time-critical systems. His career spans decades in environments
+        where timing is unforgiving, automation is complex, and problems must be solved before they escalate.
+      </p>
+      <p>
+        While much of his background includes radio, television, and digital media delivery, his core expertise is operational: monitoring complex
+        workflows, coordinating human and automated systems, and maintaining execution under real-world pressure. He is known for calm judgment,
+        systems thinking, and the ability to keep critical processes running cleanly and predictably.
+      </p>
+      <p>
+        Randy combines hands-on experience with practical use of modern tools—including AI—to streamline workflows, improve documentation, support
+        troubleshooting, and assist decision-making. He uses AI as an operational assistant to reduce friction and cognitive load, while relying on
+        experience and judgment to guide outcomes.
+      </p>
+      <p>
+        He is also the author of <strong><a href="https://amzn.to/3FZTzuE" target="_blank" rel="noopener">FM – The Fading Modulation of Terrestrial Radio</a></strong>,
+        a reflective examination of the evolution of radio and media through the lens of long-term industry experience.
+      </p>
+      <p>
+        Outside of work, Randy enjoys live music, cooking at home, nostalgic cars, and spending time near the coast. He remains interested in roles and
+        projects where reliability, continuity, and clear thinking matter—across industries and evolving technologies.
+      </p>
+    </div>
+
+  </div>
+</body>
+</html
