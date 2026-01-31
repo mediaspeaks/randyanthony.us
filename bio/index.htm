@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Randy Anthony | Operations, Reliability & Time-Critical Systems</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap">
@@ -61,8 +62,8 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
-        text-align: center;     /* ← ADD THIS LINE */
-  align-items: center;    /* ← ADD THIS LINE */
+      text-align: center;
+      align-items: center;
     }
     header h1 {
       margin: 0;
@@ -74,6 +75,42 @@
       margin: 0;
       color: rgba(255,255,255,0.86);
       font-size: 1rem;
+    }
+
+    /* Resume button */
+    .header-cta {
+      margin-top: 14px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.18);
+      transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease, border-color 120ms ease;
+    }
+    .btn-primary {
+      background: rgba(255,255,255,0.10);
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+      backdrop-filter: blur(6px);
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.14);
+      border-color: rgba(255,255,255,0.28);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.26);
+      text-decoration: none;
+    }
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .btn { transition: none; }
     }
 
     nav {
@@ -196,65 +233,27 @@
       .section{ padding: 16px 14px; }
       nav a{ font-size: 0.90rem; padding: 8px 9px; }
     }
-.header-cta {
-  margin-top: 14px;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 10px 14px;
-  border-radius: 12px;
-  font-weight: 600;
-  text-decoration: none;
-  border: 1px solid rgba(255,255,255,0.18);
-  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease, border-color 120ms ease;
-}
-
-.btn-primary {
-  background: rgba(255,255,255,0.10);
-  color: #fff;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.22);
-  backdrop-filter: blur(6px);
-}
-
-.btn-primary:hover {
-  transform: translateY(-1px);
-  background: rgba(255,255,255,0.14);
-  border-color: rgba(255,255,255,0.28);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.26);
-}
-
-.btn-primary:active {
-  transform: translateY(0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .btn { transition: none; }
-}
-
   </style>
 </head>
 
 <body>
-<header>
-  <div class="header-inner">
-    <h1>Randy Anthony: Operations, Reliability & Time-Critical Systems</h1>
-    <p class="subtitle">Live and automated workflows • Calm execution under pressure • Practical AI tool fluency</p>
+  <header>
+    <div class="header-inner">
+      <h1>Randy Anthony: Operations, Reliability & Time-Critical Systems</h1>
+      <p class="subtitle">Live and automated workflows • Calm execution under pressure • Practical AI tool fluency</p>
 
-    <div class="header-cta">
-      <a class="btn btn-primary"
-         href="/bio/RandyAnthonyResume2a.pdf"
-         target="_blank"
-         rel="noopener"
-         aria-label="Download Randy Anthony resume (PDF)">
-        Download Résumé (PDF)
-      </a>
+      <div class="header-cta">
+        <!-- FIXED: relative link so it works on GitHub Pages + custom domain -->
+        <a class="btn btn-primary"
+           href="./RandyAnthonyResume2a.pdf"
+           target="_blank"
+           rel="noopener"
+           aria-label="Download Randy Anthony resume (PDF)">
+          Download Résumé (PDF)
+        </a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
   <nav>
     <div class="nav-inner">
@@ -289,7 +288,7 @@
         anticipating failure points, and resolving issues before they become visible.
       </p>
       <p>
-        I’ve supported time-critical workflows where mistakes are costly and execution must remain calm and precise under pressure. 
+        I’ve supported time-critical workflows where mistakes are costly and execution must remain calm and precise under pressure.
         I combine systems thinking with practical use of modern tools—including AI—to improve workflow efficiency, documentation, troubleshooting, and decision support.
       </p>
       <p>
@@ -340,7 +339,7 @@
         <li><strong>YouTube:</strong> <a href="https://www.youtube.com/@mediaspeaks1" target="_blank" rel="noopener">Visit My Channel</a></li>
         <li><strong>Listen Online:</strong> <a href="https://player.live365.com/a20149?l" target="_blank" rel="noopener">Live365 Stream</a></li>
         <li><strong>Book:</strong> <a href="https://amzn.to/4jIov0I" target="_blank" rel="noopener">Buy The Book</a></li>
-        <li><strong>Other Business:</strong> <a href="https://pietytoken.io/Refer?ref=PVUNNFAT">Learn More</a></li>
+        <li><strong>Other Business:</strong> <a href="https://pietytoken.io/Refer?ref=PVUNNFAT" target="_blank" rel="noopener">Learn More</a></li>
       </ul>
     </div>
 
@@ -450,4 +449,4 @@
 
   </div>
 </body>
-</html
+</html>
