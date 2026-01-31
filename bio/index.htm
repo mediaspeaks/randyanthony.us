@@ -196,16 +196,65 @@
       .section{ padding: 16px 14px; }
       nav a{ font-size: 0.90rem; padding: 8px 9px; }
     }
+.header-cta {
+  margin-top: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.18);
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease, border-color 120ms ease;
+}
+
+.btn-primary {
+  background: rgba(255,255,255,0.10);
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+  backdrop-filter: blur(6px);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.14);
+  border-color: rgba(255,255,255,0.28);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.26);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn { transition: none; }
+}
+
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="header-inner">
-      <h1>Randy Anthony: Operations, Reliability & Time-Critical Systems</h1>
-      <p class="subtitle">Live and automated workflows • Calm execution under pressure • Practical AI tool fluency</p>
+<header>
+  <div class="header-inner">
+    <h1>Randy Anthony: Operations, Reliability & Time-Critical Systems</h1>
+    <p class="subtitle">Live and automated workflows • Calm execution under pressure • Practical AI tool fluency</p>
+
+    <div class="header-cta">
+      <a class="btn btn-primary"
+         href="/bio/RandyAnthonyResume2a.pdf"
+         target="_blank"
+         rel="noopener"
+         aria-label="Download Randy Anthony resume (PDF)">
+        Download Résumé (PDF)
+      </a>
     </div>
-  </header>
+  </div>
+</header>
 
   <nav>
     <div class="nav-inner">
