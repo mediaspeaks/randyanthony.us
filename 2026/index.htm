@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -289,3 +290,159 @@
           <h3>What this is</h3>
           <p>A business investment opportunity anchored by token utility and an associated pay-chain strategy.</p>
         </div>
+        <div class="card pad mini">
+          <h3>What you’ll receive</h3>
+          <p>Investment brief, operating plan summary, timeline, and a clear Q&amp;A path via direct contact.</p>
+        </div>
+        <div class="card pad mini">
+          <h3>How to proceed</h3>
+          <p>Start with the free wallet, then use investor intake to structure the follow-up.</p>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-label="Contact + Intake">
+        <div class="card pad">
+          <h2 style="margin:0 0 8px;font-size:20px;letter-spacing:-.3px;">Direct Contact</h2>
+          <p class="lead" style="margin-bottom:6px;">Reach out for the investment brief and next-step conversation.</p>
+
+          <div class="field">
+            <div class="k">Name</div>
+            <div class="v">Randy Anthony</div>
+          </div>
+          <div class="field">
+            <div class="k">Email</div>
+            <div class="v">
+              <a href="mailto:inbox@randyanthony.us?subject=Piety%20Token%20%26%20Pay-chain%20%E2%80%94%20Investment%20Inquiry">inbox@randyanthony.us</a>
+            </div>
+          </div>
+          <div class="field">
+            <div class="k">Phone</div>
+            <div class="v"><a href="tel:+17047794913">704-779-4913</a></div>
+          </div>
+          <div class="field">
+            <div class="k">FAQ</div>
+            <div class="v"><a href="https://www.randyanthony.us/2026/faq/">www.randyanthony.us/2026/faq/</a></div>
+          </div>
+
+          <div class="note">
+            Start by getting the free wallet at <b>www.randyanthony.us</b>. For formal investor outreach, email is best.
+          </div>
+        </div>
+
+        <div class="card pad" id="intake" aria-label="Investor intake">
+          <h2 style="margin:0 0 8px;font-size:20px;letter-spacing:-.3px;">Investor Intake</h2>
+          <p class="lead" style="margin-bottom:8px;">
+            No database, no tracking: this intake uses your email client to send details directly to Randy.
+          </p>
+
+          <form id="intakeForm" autocomplete="on">
+            <label for="name">Your Name</label>
+            <input id="name" name="name" type="text" placeholder="Jane Investor" required />
+
+            <label for="org">Company / Fund (optional)</label>
+            <input id="org" name="org" type="text" placeholder="Firm name / family office / individual" />
+
+            <label for="email">Your Email</label>
+            <input id="email" name="email" type="email" placeholder="you@domain.com" required />
+
+            <label for="phone">Your Phone (optional)</label>
+            <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" />
+
+            <label for="interest">Interest Level</label>
+            <select id="interest" name="interest" required>
+              <option value="">Select one…</option>
+              <option>Exploring — early interest</option>
+              <option>Interested — want the brief</option>
+              <option>Serious — ready for a call</option>
+              <option>Partnering — strategic fit</option>
+            </select>
+
+            <label for="msg">Questions / What you want to see</label>
+            <textarea id="msg" name="msg" placeholder="Tell me what you want covered in the brief: market, model, token utility, pay-chain architecture, timeline, etc."></textarea>
+
+            <div class="form-actions">
+              <button class="btn primary" type="submit">Send Intake Email</button>
+              <a class="btn" href="https://www.randyanthony.us" target="_blank" rel="noopener">Start by Getting the Free Wallet</a>
+              <a class="btn ghost" href="https://www.randyanthony.us/2026/faq/" rel="noopener">Open FAQ</a>
+            </div>
+
+            <div id="status" class="status" aria-live="polite"></div>
+
+            <div class="note">
+              If your device blocks “mailto” automation, you can still email <b>inbox@randyanthony.us</b>.
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="card pad disclaimer" aria-label="Legal disclaimer">
+        <h2 style="margin:0 0 8px;font-size:18px;letter-spacing:-.3px;">Legal Disclaimer</h2>
+        <p class="lead" style="margin:0;color:var(--muted);font-size:13px;">
+          This page is for general informational purposes only. It does not constitute an offer to sell or a solicitation of an offer
+          to buy any security, token, or financial product, nor does it provide legal, tax, or investment advice. Digital assets involve
+          substantial risk, including the possibility of total loss. Do your own due diligence and consult qualified advisors.
+        </p>
+      </section>
+
+      <footer>
+        © <span id="year"></span> Randy Anthony · <a href="mailto:inbox@randyanthony.us">inbox@randyanthony.us</a> · <a href="tel:+17047794913">704-779-4913</a>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    (function(){
+      const toEmail = "inbox@randyanthony.us";
+      const statusEl = document.getElementById("status");
+      const form = document.getElementById("intakeForm");
+
+      function setStatus(text, kind){
+        if (!statusEl) return;
+        statusEl.textContent = text || "";
+        statusEl.className = "status" + (kind ? " " + kind : "");
+      }
+
+      function enc(s){ return encodeURIComponent(String(s || "")); }
+
+      if (form){
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          const name = document.getElementById("name")?.value?.trim();
+          const org = document.getElementById("org")?.value?.trim();
+          const email = document.getElementById("email")?.value?.trim();
+          const phone = document.getElementById("phone")?.value?.trim();
+          const interest = document.getElementById("interest")?.value?.trim();
+          const msg = document.getElementById("msg")?.value?.trim();
+
+          if (!name || !email || !interest){
+            setStatus("Please fill in: Name, Email, and Interest Level.", "warn");
+            return;
+          }
+
+          const subject = "Piety Token & Pay-chain — Investor Intake (" + interest + ")";
+          const body =
+            "Hi Randy,\n\n" +
+            "I’m submitting an investor intake for Piety Token & Pay-chain.\n\n" +
+            "Name: " + name + "\n" +
+            (org ? ("Company/Fund: " + org + "\n") : "") +
+            "Email: " + email + "\n" +
+            (phone ? ("Phone: " + phone + "\n") : "") +
+            "Interest Level: " + interest + "\n\n" +
+            (msg ? ("Questions / Notes:\n" + msg + "\n\n") : "") +
+            "Requested next step: Please send the investment brief and suggest times for a follow-up call.\n\n" +
+            "Thank you,\n" + name;
+
+          const mailto = "mailto:" + toEmail + "?subject=" + enc(subject) + "&body=" + enc(body);
+
+          window.location.href = mailto;
+          setStatus("Opening your email app… If nothing happens, email " + toEmail + ".", "ok");
+          setTimeout(()=>setStatus(""), 8000);
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
