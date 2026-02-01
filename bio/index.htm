@@ -39,10 +39,7 @@
       line-height: 1.6;
     }
 
-    a {
-      color: var(--link);
-      text-decoration: none;
-    }
+    a { color: var(--link); text-decoration: none; }
     a:hover { text-decoration: underline; }
     a:focus-visible {
       outline: none;
@@ -77,10 +74,14 @@
       font-size: 1rem;
     }
 
-    /* Resume button */
     .header-cta {
       margin-top: 14px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -106,9 +107,23 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.26);
       text-decoration: none;
     }
-    .btn-primary:active {
-      transform: translateY(0);
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-secondary{
+      background: rgba(255,255,255,0.06);
+      color: rgba(255,255,255,0.95);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+      backdrop-filter: blur(6px);
     }
+    .btn-secondary:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.10);
+      border-color: rgba(255,255,255,0.24);
+      box-shadow: 0 8px 22px rgba(0,0,0,0.22);
+      text-decoration: none;
+    }
+    .btn-secondary:active{ transform: translateY(0); }
+
     @media (prefers-reduced-motion: reduce) {
       .btn { transition: none; }
     }
@@ -161,10 +176,7 @@
       margin: 16px 0;
     }
 
-    /* Anchor offset so sticky nav doesn't cover headings */
-    .anchor-target{
-      scroll-margin-top: 86px;
-    }
+    .anchor-target{ scroll-margin-top: 86px; }
 
     h2{
       margin: 0 0 10px;
@@ -180,9 +192,7 @@
       margin: 0 0 10px;
       color: rgba(31,41,55,0.92);
     }
-    .muted{
-      color: var(--muted);
-    }
+    .muted{ color: var(--muted); }
 
     .jump a{
       display: inline-block;
@@ -222,12 +232,6 @@
     }
     .contact li:last-child{ border-bottom: none; }
 
-    /* Make long experience lists easier to read */
-    .section ul li strong{
-      color: rgba(31,41,55,0.96);
-    }
-
-    /* Responsive tweaks */
     @media (max-width: 560px){
       header { padding: 28px 14px 16px; }
       .section{ padding: 16px 14px; }
@@ -239,17 +243,23 @@
 <body>
   <header>
     <div class="header-inner">
-      <h1>Randy Anthony: Operations, Reliability & Time-Critical Systems</h1>
+      <h1>Randy Anthony: Operations, Reliability &amp; Time-Critical Systems</h1>
       <p class="subtitle">Live and automated workflows • Calm execution under pressure • Practical AI tool fluency</p>
 
       <div class="header-cta">
-        <!-- FIXED: relative link so it works on GitHub Pages + custom domain -->
         <a class="btn btn-primary"
+           href="./RandyAnthonyResume2a.pdf"
+           download
+           aria-label="Download Randy Anthony resume (PDF)">
+          Download Résumé (PDF)
+        </a>
+
+        <a class="btn btn-secondary"
            href="./RandyAnthonyResume2a.pdf"
            target="_blank"
            rel="noopener"
-           aria-label="Download Randy Anthony resume (PDF)">
-          Download Résumé (PDF)
+           aria-label="View Randy Anthony resume (PDF)">
+          View Résumé
         </a>
       </div>
     </div>
@@ -311,8 +321,8 @@
     <div class="section anchor-target" id="credentials">
       <h2>Education &amp; Credentials</h2>
       <ul>
-        <li>Master of Entrepreneurship — WCU/Carland Academy (2011)</li>
-        <li>Bachelor of Science, Radio/Television — Western Carolina University (1983)</li>
+        <li>Master of Entrepreneurship — WCU/Carland Academy</li>
+        <li>Bachelor of Science, Radio/Television — Western Carolina University</li>
       </ul>
       <p class="muted"><strong>Additional:</strong> Eagle Scout • Format Creator • Team Leader • International Division Builder</p>
     </div>
@@ -346,7 +356,7 @@
     <div class="section anchor-target" id="experience">
       <h2>Full Operational Experience</h2>
 
-      <h3>Broadcast/Streaming Hub Operations — TEGNA (2021–Current)</h3>
+      <h3>Broadcast/Streaming Hub Operations — TEGNA</h3>
       <ul>
         <li><strong>Oversee On-Air Reliability:</strong> Ensure consistent, uninterrupted delivery of multiple feeds and playlists by actively monitoring operations and proactively addressing challenges in real time.</li>
         <li><strong>Roll Live Breaks for Network Events:</strong> Manage live breaks for high-profile events (Super Bowl, World Series), ensuring precise timing and flawless execution under pressure.</li>
@@ -355,76 +365,49 @@
         <li><strong>Quality Assurance and Troubleshooting:</strong> Perform QC checks and respond to live issues with fast, effective resolution to minimize disruption.</li>
       </ul>
 
-      <h3>Newscast Director &amp; Technical Operations — Nexstar WGHP-TV (2019–2021)</h3>
+      <h3>Newscast Director &amp; Technical Operations — Nexstar WGHP-TV</h3>
       <ul>
         <li><strong>Directed Hourlong Newscasts:</strong> Led production and execution with precise timing and coordinated teamwork to deliver consistent, high-quality broadcasts.</li>
         <li><strong>Master Control Operations:</strong> Operated Brutus and Florical to manage commercial insertion and playlist scheduling while maintaining uninterrupted programming.</li>
         <li><strong>Advanced Video Technologies:</strong> Supported live updates and breaking coverage through real-time coordination with field teams and control room staff.</li>
       </ul>
 
-      <h3>Commercial Traffic Director — Entercom (now Audacy) (2013–2015)</h3>
+      <h3>Commercial Traffic Director — Entercom (now Audacy)</h3>
       <ul>
         <li>WideOrbit expertise focused on maximizing revenue by strategically managing and optimizing commercial logs for a multi-station cluster.</li>
       </ul>
 
-      <h3>Studio Host/Producer — IMG College (now Learfield) (2011–2019)</h3>
+      <h3>Studio Host/Producer — IMG College (now Learfield)</h3>
       <ul>
         <li>Studio host and producer on high-profile sports broadcasts for top universities.</li>
         <li>Regular season plus Final Four, Frozen Four, and College World Series broadcasts.</li>
       </ul>
 
-      <h3>Producer — Clear Channel Radio / Total Traffic Network (now iHeart Media) (2004–2012)</h3>
+      <h3>Producer — Clear Channel Radio / Total Traffic Network (now iHeart Media)</h3>
       <ul>
         <li>Researched traffic conditions and produced live traffic reports for major markets.</li>
       </ul>
 
-      <h3>Morning Show Host — WTHZ-FM (2002–2004)</h3>
+      <h3>Morning Show Host — WTHZ-FM</h3>
       <ul>
         <li>Increased ratings significantly with the “More Music Morning” format.</li>
       </ul>
 
-      <h3>Director of Radio — TEAMTalk / RMG3 (2000–2002)</h3>
+      <h3>Director of Radio — TEAMTalk / RMG3</h3>
       <ul>
         <li>Created/hosted and produced SiriusXM’s NASCAR post-race show.</li>
       </ul>
 
-      <h3>Senior Producer — NASCAR Country Radio Network (Morris International) (1996–1999)</h3>
+      <h3>Senior Producer — NASCAR Country Radio Network (Morris International)</h3>
       <ul>
         <li>Earned two consecutive Billboard nominations for Best Syndicated Radio Program.</li>
-      </ul>
-
-      <h3>Club Emcee / DJ (Local Nightlife) (1985–1996)</h3>
-      <ul>
-        <li>Entertainment Director — Players Nightlife (Adams Mark Hotel, Charlotte)</li>
-        <li>Club emcee, band introductions, and disc jockey</li>
-      </ul>
-      <ul>
-        <li>Studebakers Nightlife (Myrtle Beach, SC)</li>
-        <li>Disc jockey and club personality</li>
-      </ul>
-
-      <h3>Air Personality / Production Director / Program Director (Local Radio) (1979–1985)</h3>
-      <ul>
-        <li>WWCU-FM — Cullowhee, NC (Rock/Top 40)</li>
-        <li>WGSP-AM — Charlotte, NC (Oldies)</li>
-        <li>WAAK-AM — Dallas, NC (Adult Contemporary)</li>
-        <li>WHKY-FM — Hickory, NC (Top 40)</li>
-        <li>WJZR-FM “Z-100” — Kannapolis/Charlotte, NC (CHR)</li>
-        <li>WMYB-AM — Myrtle Beach, SC (Beach/Oldies)</li>
-        <li>WAZX-FM — Georgetown, SC (Top 40)</li>
-        <li>WNMB-FM — N. Myrtle Beach, SC (Beach/Oldies)</li>
-        <li>WWMG-FM “Magic 96” — Charlotte, NC (Oldies)</li>
-        <li>WEZC/WMXC-FM “EZ-104 and Mix104.7” — Charlotte, NC (EZ Listening / AC)</li>
-        <li>WCKZ-FM “Kiss 102” — Charlotte, NC (CHR)</li>
-        <li>WWSN/WLNK-FM “Sunny 107.9 and 1079 The Link” — Charlotte, NC (Adult Contemporary)</li>
-        <li>WAES/WRFX/WFNZ-AM “FOX Sports 610 and Sports Radio The Fan” — Charlotte, NC (Sports Talk)</li>
       </ul>
     </div>
 
     <div class="section anchor-target" id="bio">
       <h2>Bio</h2>
       <p>
-        Randy Anthony works at the intersection of operations, reliability, and time-critical systems. His career spans decades in environments
+        Randy Anthony works at the intersection of operations, reliability, and time-critical systems. His career spans environments
         where timing is unforgiving, automation is complex, and problems must be solved before they escalate.
       </p>
       <p>
@@ -434,8 +417,7 @@
       </p>
       <p>
         Randy combines hands-on experience with practical use of modern tools—including AI—to streamline workflows, improve documentation, support
-        troubleshooting, and assist decision-making. He uses AI as an operational assistant to reduce friction and cognitive load, while relying on
-        experience and judgment to guide outcomes.
+        troubleshooting, and assist decision-making.
       </p>
       <p>
         He is also the author of <strong><a href="https://amzn.to/3FZTzuE" target="_blank" rel="noopener">FM – The Fading Modulation of Terrestrial Radio</a></strong>,
@@ -444,6 +426,10 @@
       <p>
         Outside of work, Randy enjoys live music, cooking at home, nostalgic cars, and spending time near the coast. He remains interested in roles and
         projects where reliability, continuity, and clear thinking matter—across industries and evolving technologies.
+      </p>
+      <p>
+        Information about Randy's latest project can be found here:
+        <a href="https://www.randyanthony.us/2026">www.randyanthony.us/2026</a>
       </p>
     </div>
 
