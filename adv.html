@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
-  <meta name="theme-color" content="#0f1c2e" />
+  <meta name="theme-color" content="#0b1a33" />
 
   <title>Operational Reliability Advisory | Randy Anthony</title>
   <meta name="description" content="Founder-led advisory supporting broadcast and streaming teams in workflow integrity, redundancy planning, escalation structure, and operational continuity." />
@@ -20,44 +20,73 @@
   <meta property="og:image:height" content="630" />
 
   <link rel="canonical" href="https://randyanthony.us/" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
+  <!-- requested line -->
+  <link rel="icon" href="/favicon.png" />
 
   <style>
     :root{
-      /* Subtle refinement: deeper anchor + slightly warmer neutrals (still quiet authority) */
-      --bg: #0f1c2e;
-      --bg2:#0b1525;
-      --surface: rgba(255,255,255,0.06);
-      --surface2: rgba(255,255,255,0.10);
-      --text: rgba(255,255,255,0.92);
-      --muted: rgba(255,255,255,0.74);
-      --faint: rgba(255,255,255,0.60);
-      --border: rgba(255,255,255,0.13);
+      /* Light default + premium navy hero band */
+      --bg: #f6f7fb;
+      --bg2:#eef2f8;
 
-      /* Anchor accents (restrained) */
-      --accent: #9bb9ff;   /* muted steel-blue */
-      --accent2:#b8ffde;   /* subtle mint highlight */
+      --surface: rgba(15,28,46,0.035);
+      --surface2: rgba(15,28,46,0.06);
 
-      --shadow: 0 14px 36px rgba(0,0,0,0.38);
+      --text: rgba(10,15,25,0.92);
+      --muted: rgba(10,15,25,0.72);
+      --faint: rgba(10,15,25,0.60);
+
+      --border: rgba(15,28,46,0.12);
+
+      /* Restrained accents */
+      --accent:#1f3e8a;   /* navy */
+      --accent2:#0a7a57;  /* restrained green */
+
+      --shadow: 0 14px 36px rgba(0,0,0,0.12);
       --radius: 18px;
       --max: 1040px;
+
+      /* Hero band colors */
+      --heroBgA: #071a33;
+      --heroBgB: #0b1a33;
+      --heroText: rgba(255,255,255,0.94);
+      --heroMuted: rgba(255,255,255,0.74);
+      --heroFaint: rgba(255,255,255,0.60);
+      --heroBorder: rgba(255,255,255,0.14);
+      --heroSurface: rgba(255,255,255,0.06);
+      --heroSurface2: rgba(255,255,255,0.10);
+      --heroShadow: 0 18px 42px rgba(0,0,0,0.30);
     }
 
-    @media (prefers-color-scheme: light){
+    @media (prefers-color-scheme: dark){
+      /* Keep a usable dark mode while still defaulting to light for most users */
       :root{
-        /* Subtle refinement: off-white with a touch of warmth; stronger contrast */
-        --bg:#f6f7fb;
-        --bg2:#eef2f8;
-        --surface: rgba(15,28,46,0.035);
-        --surface2: rgba(15,28,46,0.06);
-        --text: rgba(10,15,25,0.92);
-        --muted: rgba(10,15,25,0.72);
-        --faint: rgba(10,15,25,0.60);
-        --border: rgba(15,28,46,0.12);
+        --bg: #0f1c2e;
+        --bg2:#0b1525;
 
-        --accent:#1f3e8a;   /* deep slate-blue */
-        --accent2:#0a7a57;  /* restrained green */
-        --shadow: 0 14px 36px rgba(0,0,0,0.12);
+        --surface: rgba(255,255,255,0.06);
+        --surface2: rgba(255,255,255,0.10);
+
+        --text: rgba(255,255,255,0.92);
+        --muted: rgba(255,255,255,0.74);
+        --faint: rgba(255,255,255,0.60);
+
+        --border: rgba(255,255,255,0.13);
+
+        --accent:#9bb9ff;
+        --accent2:#b8ffde;
+
+        --shadow: 0 14px 36px rgba(0,0,0,0.38);
+
+        --heroBgA: #071a33;
+        --heroBgB: #0b1a33;
+        --heroText: rgba(255,255,255,0.94);
+        --heroMuted: rgba(255,255,255,0.74);
+        --heroFaint: rgba(255,255,255,0.60);
+        --heroBorder: rgba(255,255,255,0.14);
+        --heroSurface: rgba(255,255,255,0.06);
+        --heroSurface2: rgba(255,255,255,0.10);
+        --heroShadow: 0 18px 42px rgba(0,0,0,0.42);
       }
     }
 
@@ -67,10 +96,9 @@
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      /* Subtle refinement: more intentional depth + slightly stronger top anchor */
       background:
-        radial-gradient(1200px 800px at 18% -12%, rgba(155,185,255,0.20), transparent 62%),
-        radial-gradient(1000px 700px at 92% 8%, rgba(184,255,222,0.12), transparent 58%),
+        radial-gradient(1200px 800px at 18% -12%, rgba(31,62,138,0.12), transparent 62%),
+        radial-gradient(1000px 700px at 92% 8%, rgba(10,122,87,0.07), transparent 58%),
         linear-gradient(180deg, var(--bg), var(--bg2));
       color:var(--text);
       line-height:1.55;
@@ -91,10 +119,16 @@
 
     .mark{
       width:36px; height:36px; border-radius:12px;
-      /* Subtle refinement: less candy gradient; more restrained */
-      background: linear-gradient(135deg, rgba(155,185,255,0.92), rgba(184,255,222,0.82));
+      background: linear-gradient(135deg, rgba(31,62,138,0.95), rgba(10,122,87,0.55));
       box-shadow: var(--shadow);
-      border:1px solid rgba(255,255,255,0.16);
+      border:1px solid rgba(15,28,46,0.14);
+    }
+
+    @media (prefers-color-scheme: dark){
+      .mark{
+        border:1px solid rgba(255,255,255,0.16);
+        background: linear-gradient(135deg, rgba(155,185,255,0.92), rgba(184,255,222,0.82));
+      }
     }
 
     .brand b{font-weight:720; font-size:14px; letter-spacing:0.6px}
@@ -109,10 +143,29 @@
 
     nav a:hover{background:var(--surface); color:var(--text)}
 
+    /* HERO BAND */
+    .heroBand{
+      border-radius: calc(var(--radius) + 2px);
+      background:
+        radial-gradient(1100px 700px at 18% -18%, rgba(255,255,255,0.16), transparent 62%),
+        radial-gradient(900px 600px at 92% 0%, rgba(155,185,255,0.14), transparent 58%),
+        linear-gradient(180deg, var(--heroBgB), var(--heroBgA));
+      box-shadow: var(--heroShadow);
+      border: 1px solid rgba(7,26,51,0.08);
+      overflow:hidden;
+      padding: 22px;
+    }
+
+    @media (prefers-color-scheme: dark){
+      .heroBand{
+        border: 1px solid rgba(255,255,255,0.10);
+      }
+    }
+
     .hero{
       display:grid; grid-template-columns: 1.25fr 0.75fr;
-      gap:22px; align-items:stretch;
-      padding:18px 0 6px;
+      gap:18px; align-items:stretch;
+      padding:0;
     }
 
     @media (max-width: 860px){
@@ -121,20 +174,27 @@
     }
 
     .card{
-      /* Subtle refinement: slightly richer card separation */
       background: linear-gradient(180deg, var(--surface2), transparent 140%);
       border:1px solid var(--border);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
 
+    /* In hero, cards should read on dark */
+    .hero .card{
+      background: linear-gradient(180deg, var(--heroSurface2), transparent 140%);
+      border-color: var(--heroBorder);
+      box-shadow: none;
+    }
+
     .heroMain{padding:28px 26px}
 
     h1{
-      margin:0 0 12px;
+      margin:0 0 10px;
       font-size: 38px;
       line-height:1.08;
       letter-spacing:-0.7px;
+      color: var(--heroText);
     }
 
     @media (max-width: 520px){
@@ -143,19 +203,18 @@
 
     .lede{
       margin:0 0 18px;
-      color:var(--muted);
+      color:var(--heroMuted);
       font-size:16px;
       max-width: 62ch;
     }
 
-    /* Subtle refinement: a calm, grounded visual cue under the hero title */
     .heroRule{
-      width:64px;
+      width:72px;
       height:2px;
       border-radius:999px;
-      background: linear-gradient(90deg, rgba(155,185,255,0.85), rgba(184,255,222,0.55));
+      background: linear-gradient(90deg, rgba(155,185,255,0.90), rgba(184,255,222,0.55));
       margin: 10px 0 16px;
-      opacity:0.9;
+      opacity:0.95;
     }
 
     .ctaRow{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:12px}
@@ -166,52 +225,75 @@
       text-decoration:none; font-weight:680; font-size:14px;
       border:1px solid var(--border);
       background: var(--surface2);
-      transition: transform .06s ease, background .15s ease, border-color .15s ease;
+      transition: transform .06s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
     }
 
     .btn:hover{background: var(--surface); transform: translateY(-1px)}
 
-    /* Subtle refinement: primary CTA feels more intentional without being loud */
+    /* Premium primary CTA in hero */
     .btnPrimary{
-      background: linear-gradient(135deg, rgba(155,185,255,0.22), rgba(15,28,46,0.0));
-      border-color: rgba(155,185,255,0.42);
+      background: rgba(255,255,255,0.10);
+      border-color: rgba(155,185,255,0.40);
+      color: var(--heroText);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.18);
     }
 
     .btnPrimary:hover{
-      border-color: rgba(155,185,255,0.58);
-      background: linear-gradient(135deg, rgba(155,185,255,0.26), rgba(184,255,222,0.08));
+      border-color: rgba(155,185,255,0.62);
+      background: rgba(255,255,255,0.14);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.22);
+    }
+
+    /* Secondary hero button */
+    .hero .btn{
+      border-color: var(--heroBorder);
+      background: rgba(255,255,255,0.06);
+      color: var(--heroText);
+    }
+
+    .hero .btn:hover{
+      background: rgba(255,255,255,0.10);
+      transform: translateY(-1px);
     }
 
     .metaLine{
-      margin-top:14px; color:var(--faint); font-size:12.5px;
+      margin-top:14px; color:var(--heroFaint); font-size:12.5px;
     }
 
     .heroSide{padding:22px 20px}
 
     .kicker{
-      font-size:12px; letter-spacing:0.8px; text-transform:uppercase; color:var(--faint);
+      font-size:12px; letter-spacing:0.8px; text-transform:uppercase; color:var(--heroFaint);
       margin:0 0 10px;
     }
 
-    .list{margin:0; padding-left:18px; color:var(--muted); font-size:14px}
+    .list{margin:0; padding-left:18px; color:var(--heroMuted); font-size:14px}
     .list li{margin:9px 0}
 
-    /* Subtle refinement: calm statement block to add “gravity” without hype */
+    .pillRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+
+    .pill{
+      font-size:12.5px; color:var(--heroMuted);
+      border:1px solid var(--heroBorder); background:transparent;
+      padding:8px 10px; border-radius:999px;
+    }
+
     .statement{
       margin: 18px 0 2px;
       padding: 14px 16px;
       border-radius: 16px;
-      border: 1px solid var(--border);
-      background: linear-gradient(180deg, rgba(155,185,255,0.10), rgba(255,255,255,0.00));
-      color: var(--muted);
+      border: 1px solid var(--heroBorder);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.00));
+      color: var(--heroMuted);
       font-size: 14px;
     }
 
     .statement b{
-      color: var(--text);
+      color: var(--heroText);
       font-weight: 680;
     }
 
+    /* Below hero: keep light, clean, premium */
     section{padding:22px 0 0}
 
     .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
@@ -220,14 +302,6 @@
     .service{padding:18px 18px}
     .service h3{margin:0 0 6px; font-size:16px}
     .service p{margin:0; color:var(--muted); font-size:14px}
-
-    .pillRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
-
-    .pill{
-      font-size:12.5px; color:var(--muted);
-      border:1px solid var(--border); background:transparent;
-      padding:8px 10px; border-radius:999px;
-    }
 
     .split{
       display:grid; grid-template-columns: 1fr 1fr;
@@ -295,46 +369,48 @@
       </nav>
     </header>
 
-    <main id="top" class="hero">
-      <div class="card heroMain">
-        <h1>Operational Reliability Advisory<br/>for Broadcast &amp; Streaming Systems</h1>
-        <div class="heroRule" aria-hidden="true"></div>
-        <p class="lede">
-          Founder-led support for time-critical workflows—automation integrity, redundancy planning, escalation structure,
-          and continuity. Practical recommendations, written clearly, prioritized for impact.
-        </p>
+    <div class="heroBand" aria-label="Hero section">
+      <main id="top" class="hero">
+        <div class="card heroMain">
+          <h1>Operational Reliability Advisory<br/>for Broadcast &amp; Streaming Systems</h1>
+          <div class="heroRule" aria-hidden="true"></div>
+          <p class="lede">
+            Founder-led support for time-critical workflows—automation integrity, redundancy planning, escalation structure,
+            and continuity. Practical recommendations, written clearly, prioritized for impact.
+          </p>
 
-        <div class="ctaRow">
-          <a class="btn btnPrimary" href="mailto:inbox@randyanthony.us?subject=Consultation%20request%20-%20Operational%20Reliability">Request a consultation</a>
-          <a class="btn" href="#services">View services</a>
+          <div class="ctaRow">
+            <a class="btn btnPrimary" href="mailto:inbox@randyanthony.us?subject=Consultation%20request%20-%20Operational%20Reliability">Request a consultation</a>
+            <a class="btn" href="#services">View services</a>
+          </div>
+
+          <div class="metaLine">
+            Quiet authority. Technical depth. Executive clarity.
+          </div>
+
+          <div class="statement" role="note" aria-label="Positioning statement">
+            <b>In environments where failure is visible, reliability is not optional.</b> The work is measured by what doesn’t happen—disruption avoided, recoveries simplified, and teams supported with clear systems.
+          </div>
         </div>
 
-        <div class="metaLine">
-          Quiet authority. Technical depth. Executive clarity.
-        </div>
-
-        <div class="statement" role="note" aria-label="Positioning statement">
-          <b>In environments where failure is visible, reliability is not optional.</b> The work is measured by what doesn’t happen—disruption avoided, recoveries simplified, and teams supported with clear systems.
-        </div>
-      </div>
-
-      <aside class="card heroSide" aria-label="Focus areas">
-        <p class="kicker">Focus areas</p>
-        <ul class="list">
-          <li>Automation and playout workflow integrity</li>
-          <li>Redundancy mapping and single-point-of-failure reduction</li>
-          <li>Escalation paths, shift handoffs, and continuity planning</li>
-          <li>Operational documentation (SOPs) that teams actually use</li>
-        </ul>
-        <div class="pillRow" aria-label="Keywords">
-          <span class="pill">broadcast ops</span>
-          <span class="pill">streaming ops</span>
-          <span class="pill">master control</span>
-          <span class="pill">runbooks</span>
-          <span class="pill">incident readiness</span>
-        </div>
-      </aside>
-    </main>
+        <aside class="card heroSide" aria-label="Focus areas">
+          <p class="kicker">Focus areas</p>
+          <ul class="list">
+            <li>Automation and playout workflow integrity</li>
+            <li>Redundancy mapping and single-point-of-failure reduction</li>
+            <li>Escalation paths, shift handoffs, and continuity planning</li>
+            <li>Operational documentation (SOPs) that teams actually use</li>
+          </ul>
+          <div class="pillRow" aria-label="Keywords">
+            <span class="pill">broadcast ops</span>
+            <span class="pill">streaming ops</span>
+            <span class="pill">master control</span>
+            <span class="pill">runbooks</span>
+            <span class="pill">incident readiness</span>
+          </div>
+        </aside>
+      </main>
+    </div>
 
     <section id="services" aria-label="Services">
       <div class="grid3">
@@ -414,10 +490,10 @@
           Include your system environment, automation stack, and what “failure” looks like in your world.
         </p>
         <div class="ctaRow" style="margin-top:14px">
-          <a class="btn btnPrimary" href="mailto:inbox@randyanthony.us?subject=Consultation%20request%20-%20Operational%20Reliability">Email to start</a>
-          <a class="btn" href="#top">Back to top</a>
+          <a class="btn" style="border-color: var(--border); background: var(--surface2);" href="mailto:inbox@randyanthony.us?subject=Consultation%20request%20-%20Operational%20Reliability">Email to start</a>
+          <a class="btn" style="border-color: var(--border); background: var(--surface2);" href="#top">Back to top</a>
         </div>
-        <p class="metaLine" style="margin-top:12px">
+        <p class="metaLine" style="margin-top:12px; color: var(--faint);">
           Note: This page is intentionally simple and fast. Case studies and references are shared privately when appropriate.
         </p>
       </div>
