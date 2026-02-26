@@ -9,15 +9,21 @@
 <body>
   <header class="header">
     <div class="wrap">
-      <div class="brand"><strong>RANDY ANTHONY</strong><small>Operational reliability advisory</small></div>
-      <nav class="nav"><a href="/">Home</a><a href="/series/">Series</a></nav>
+      <div class="brand">
+        <strong>RANDY ANTHONY</strong>
+        <small>Operational reliability advisory</small>
+      </div>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/series/">Series</a>
+      </nav>
     </div>
   </header>
 
   <main class="wrap">
     <section class="hero">
       <div class="kicker">Quarter 1 · Week 5</div>
-      <h1 class="post-title">What Time-Critical Operations Teach You About Interfaces</h1>
+      <h1 class="post-title">What Time-Critical Operations Teach Us About Interfaces</h1>
       <p class="meta">
         Topic word: Interfaces ·
         <a href="https://www.linkedin.com/posts/randy-anthony-07547410b_operations-reliability-systemsthinking-activity-7432441654013485057-CzQE?utm_source=share&utm_medium=member_desktop&rcm=ACoAABunslkBFatGOuGkV8R5dPmSEp8H4KCG7pQ" target="_blank" rel="noopener">View on LinkedIn</a>
@@ -25,13 +31,21 @@
     </section>
 
     <section class="card body">
-      <p>In 24/7 systems, the most fragile moment is not the incident.</p>
-      <p>It’s the transition.</p>
-      <p>Shift changes. Team boundaries. Tool boundaries. Vendor boundaries. Automation boundaries.</p>
-      <p>That’s where reliability is either preserved — or quietly lost.</p>
-      <p>Most breakdowns don’t happen because people don’t care. They happen because interfaces are informal.</p>
 
-      <p>An informal interface sounds harmless:</p>
+      <p>In 24/7 systems, the most fragile moment is not the incident itself; it’s the transition. This includes:</p>
+
+      <ul class="lines">
+        <li>Shift changes</li>
+        <li>Team boundaries</li>
+        <li>Tool boundaries</li>
+        <li>Vendor boundaries</li>
+        <li>Automation boundaries</li>
+      </ul>
+
+      <p>These transitions are where reliability is either preserved or quietly lost. Most breakdowns occur not because people don’t care, but because interfaces are informal.</p>
+
+      <p>An informal interface may seem harmless with phrases like:</p>
+
       <ul class="lines">
         <li>“Just let them know.”</li>
         <li>“They’ll figure it out.”</li>
@@ -39,7 +53,8 @@
         <li>“Nothing major changed.”</li>
       </ul>
 
-      <p>But informal means:</p>
+      <p>However, informal means:</p>
+
       <ul class="lines">
         <li>No defined ownership</li>
         <li>No explicit expectations</li>
@@ -48,29 +63,34 @@
         <li>No confirmation that the next team interpreted it correctly</li>
       </ul>
 
-      <p>When interfaces are informal, the system relies on memory. Memory degrades under pressure.</p>
-      <p>When interfaces are informal, context remains informal. Informal knowledge doesn’t scale.</p>
-      <p>When interfaces are informal, small misunderstandings compound. And compounding misunderstanding is operational risk.</p>
+      <p>When interfaces are informal, the system relies on memory, which degrades under pressure. Context remains informal, and informal knowledge doesn’t scale. Small misunderstandings can compound, leading to operational risk.</p>
 
-      <p>An interface is a contract between two parts of a system:</p>
+      <p>An interface is a contract between two parts of a system that defines:</p>
+
       <ul class="lines">
         <li>What must be true before work is handed off</li>
-        <li>What is known vs. assumed</li>
+        <li>What is known versus assumed</li>
         <li>What changed, and why</li>
         <li>What is verified, and what is pending</li>
         <li>Who owns the next decision, and by when</li>
       </ul>
 
-      <p>Strong systems treat interfaces like engineering.</p>
-      <p>Not long messages. Not excessive documentation. Just clear contracts.</p>
-      <p>No one should have to guess what you meant.</p>
-      <p>Reliability doesn’t come from heroics. It comes from interfaces that hold under pressure.</p>
+      <p>In live operations, a failure may appear as “the system glitched,” but the origin often lies at an interface that lacked a contract—such as a note that didn’t state impact, a handoff that didn’t specify ownership, a change that wasn’t recorded, or a dependency that was “probably fine.”</p>
+
+      <p>Strong systems treat interfaces like engineering—not long messages or excessive documentation, but clear contracts. Reliability does not stem from heroics; it comes from interfaces that hold under pressure.</p>
 
       <div class="hr"></div>
-      <p class="meta"><a href="/series/">Back to series index</a></p>
+      <p class="meta">
+        <a href="/series/">Back to series index</a>
+      </p>
+
     </section>
   </main>
 
-  <footer class="footer"><div class="wrap"><small>© Randy Anthony.</small></div></footer>
+  <footer class="footer">
+    <div class="wrap">
+      <small>© Randy Anthony. All rights reserved.</small>
+    </div>
+  </footer>
 </body>
 </html>
