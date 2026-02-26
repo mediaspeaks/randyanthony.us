@@ -1,1 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Week 4 — Dependencies | Randy Anthony</title>
+  <link rel="stylesheet" href="/series/series.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="wrap">
+      <div class="brand"><strong>RANDY ANTHONY</strong><small>Operational reliability advisory</small></div>
+      <nav class="nav"><a href="/">Home</a><a href="/series/">Series</a></nav>
+    </div>
+  </header>
 
+  <main class="wrap">
+    <section class="hero">
+      <div class="kicker">Quarter 1 · Week 4</div>
+      <h1 class="post-title">What Time-Critical Operations Teach You About Dependencies</h1>
+      <p class="meta">
+        Topic word: Dependencies ·
+        <a href="https://www.linkedin.com/posts/randy-anthony-07547410b_operations-reliability-systemsthinking-activity-7429954111384723457-dTlv?utm_source=share&utm_medium=member_desktop&rcm=ACoAABunslkBFatGOuGkV8R5dPmSEp8H4KCG7pQ" target="_blank" rel="noopener">View on LinkedIn</a>
+      </p>
+    </section>
+
+    <section class="card body">
+      <p>Most disruptions don’t begin where they appear.</p>
+      <p>In complex systems, the visible failure is usually the final link in a much longer chain — the point where accumulated drift finally becomes impossible to ignore.</p>
+      <p>In live broadcast environments, for example, a playout interruption may look like a technical malfunction.</p>
+
+      <ul class="lines">
+        <li>Metadata entered incorrectly hours earlier</li>
+        <li>An automation rule built on an outdated assumption</li>
+        <li>A handoff that lacked clarity between shifts</li>
+        <li>A timing dependency that was never fully verified</li>
+      </ul>
+
+      <p>The visible error isn’t the cause. It’s the outcome.</p>
+      <p>Every time-critical system operates on layers of dependency.</p>
+
+      <ul class="lines">
+        <li>Automation depends on clean inputs.</li>
+        <li>Clean inputs depend on defined ownership.</li>
+        <li>Ownership depends on clarity of process.</li>
+        <li>Process depends on discipline.</li>
+      </ul>
+
+      <p>When one layer drifts quietly, the system absorbs it — at first. Small inaccuracies get tolerated. Assumptions go unchallenged. Compensation becomes routine. Until capacity runs out.</p>
+      <p>Experienced operators understand this pattern. They don’t just respond to incidents. They trace dependencies.</p>
+      <p>Instead of asking: “What broke?” They ask: “What was this relying on?” “What assumptions were built into it?” “What upstream condition changed?”</p>
+      <p>Reliability isn’t about eliminating pressure. Pressure is constant.</p>
+      <p>Reliability is about making dependencies visible before pressure exposes them.</p>
+      <p>In high-stakes environments, speed doesn’t create stability. Clarity does.</p>
+      <p>And clarity begins with understanding what touches what — long before anything fails.</p>
+
+      <div class="hr"></div>
+      <p class="meta">Next: <a href="/series/week-05-interfaces.html">Week 5 — Interfaces</a></p>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="wrap"><small>© Randy Anthony.</small></div></footer>
+</body>
+</html>
