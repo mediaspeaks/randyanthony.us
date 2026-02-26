@@ -107,49 +107,98 @@ a:hover{text-decoration:underline}
 }
 .btn:hover{text-decoration:none;filter:brightness(1.05)}
 
-/* LegalShield Banner */
+/* Sponsored Banner: LegalShield + IDShield */
 
-.legalshield-banner {
+.legalshield-banner{
   margin: 32px 0;
-  background: #2f2f2f;
+  background: #3a3a3a;                /* visible gray bar */
+  border: 1px solid rgba(255,255,255,.14);
   border-radius: 12px;
   overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0,0,0,.28); /* ensures it stands out on any background */
 }
 
-.legalshield-link {
-  display: block;
-  text-decoration: none;
-  color: #ffffff;
-  padding: 18px 22px;
+.legalshield-link{
+  display:block;
+  padding: 16px 18px;
+  text-decoration:none;
+  color:#ffffff;
 }
 
-.legalshield-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.legalshield-left {
-  display: flex;
-  align-items: center;
+.legalshield-row{
+  display:flex;
+  align-items:center;
   gap: 12px;
-  font-size: 18px;
+  position: relative;
 }
 
-.shield-icon {
-  font-size: 20px;
+.legalshield-left{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  min-width: 280px;
 }
 
-.legal-text strong {
-  font-weight: 600;
+.sponsored-by{
+  font-size: 12px;
+  letter-spacing: .10em;
+  text-transform: uppercase;
+  opacity: .9;
+  white-space: nowrap;
 }
 
-.legalshield-right {
+.brand-lockup{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.shield-svg{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: rgba(255,255,255,.10);
+}
+
+.brand-names{
+  font-size: 16px;
+}
+
+.legalshield-center{
+  flex: 1;
+  display:flex;
+  justify-content:center;  /* center the CTA within the banner */
+}
+
+.legal-cta{
   font-size: 14px;
-  opacity: 0.85;
-  transition: opacity 0.2s ease;
+  font-weight: 700;
+  opacity: .95;
+  text-align:center;
 }
 
-.legalshield-link:hover .legalshield-right {
-  opacity: 1;
+.legalshield-right{
+  min-width: 22px;
+  display:flex;
+  justify-content:flex-end;
+  opacity: .9;
+}
+
+.arrow{
+  font-size: 18px;
+  line-height: 1;
+}
+
+.legalshield-link:hover{
+  filter: brightness(1.05);
+}
+
+@media (max-width: 760px){
+  .legalshield-left{ min-width: auto; }
+  .brand-names{ font-size: 15px; }
+  .legal-cta{ font-size: 13px; }
 }
