@@ -178,3 +178,33 @@ a:hover{text-decoration:underline}
   color: #ffffff;
   padding: 120px 20px;
 }
+/* Ops Architecture Hero Upgrade */
+
+.hero-ops {
+  text-align: center;
+  padding: 140px 20px 120px;
+}
+
+.hero-title {
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.hero-sub {
+  font-size: 18px;
+  max-width: 720px;
+  margin: 0 auto 28px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.hero-structure {
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.75;
+  line-height: 1.8;
+}
