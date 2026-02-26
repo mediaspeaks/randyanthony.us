@@ -168,3 +168,13 @@ a:hover{text-decoration:underline}
 .legalshield-link:hover {
   filter: brightness(1.05);
 }
+.hero-ops {
+  position: relative;
+  background: linear-gradient(
+      rgba(8, 22, 40, 0.85),
+      rgba(8, 22, 40, 0.85)
+    ),
+    url("/series/assets/ops-architecture-bg.jpg") center / cover no-repeat;
+  color: #ffffff;
+  padding: 120px 20px;
+}
