@@ -106,3 +106,50 @@ a:hover{text-decoration:underline}
   font-weight:700;
 }
 .btn:hover{text-decoration:none;filter:brightness(1.05)}
+
+/* LegalShield Banner */
+
+.legalshield-banner {
+  margin: 32px 0;
+  background: #2f2f2f;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.legalshield-link {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 18px 22px;
+}
+
+.legalshield-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.legalshield-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+}
+
+.shield-icon {
+  font-size: 20px;
+}
+
+.legal-text strong {
+  font-weight: 600;
+}
+
+.legalshield-right {
+  font-size: 14px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.legalshield-link:hover .legalshield-right {
+  opacity: 1;
+}
