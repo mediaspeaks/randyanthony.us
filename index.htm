@@ -144,17 +144,16 @@
     nav a:hover{background:var(--surface); color:var(--text)}
 
     /* HERO BAND */
-    .heroBand{
-      border-radius: calc(var(--radius) + 2px);
-      background:
-        radial-gradient(1100px 700px at 18% -18%, rgba(255,255,255,0.16), transparent 62%),
-        radial-gradient(900px 600px at 92% 0%, rgba(155,185,255,0.14), transparent 58%),
-        linear-gradient(180deg, var(--heroBgB), var(--heroBgA));
-      box-shadow: var(--heroShadow);
-      border: 1px solid rgba(7,26,51,0.08);
-      overflow:hidden;
-      padding: 22px;
-    }
+   .heroBand{
+  border-radius: calc(var(--radius) + 2px);
+  background:
+    linear-gradient(rgba(7,26,51,0.82), rgba(7,26,51,0.82)),
+    url("/series/assets/ops-architecture-bg.jpg") center / cover no-repeat;
+  box-shadow: var(--heroShadow);
+  border: 1px solid rgba(7,26,51,0.08);
+  overflow:hidden;
+  padding: 22px;
+}
 
     @media (prefers-color-scheme: dark){
       .heroBand{
