@@ -208,3 +208,9 @@ a:hover{text-decoration:underline}
   opacity: 0.75;
   line-height: 1.8;
 }
+.post-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
