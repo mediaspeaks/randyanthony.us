@@ -213,7 +213,7 @@ main{
 .bg-thumb{
   position:absolute;
   width:160px;
-  opacity:.06;
+  opacity:.04;
   border-radius:12px;
 }
 
