@@ -26,14 +26,17 @@ body{
 a{color:var(--accent2);text-decoration:none}
 a:hover{text-decoration:underline}
 
-.wrap {
-  position: relative;   /* ADD THIS */
-  z-index: 1;           /* ADD THIS */
-
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 20px;
+/* FIXED BACKGROUND ANCHOR */
+main{
+  position:relative;
 }
+
+.wrap{
+  max-width:1100px;
+  margin:0 auto;
+  padding:40px 20px;
+}
+
 .header{
   position:sticky;top:0;z-index:10;
   backdrop-filter: blur(10px);
@@ -67,12 +70,12 @@ a:hover{text-decoration:underline}
 
 .grid{
   display:grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
-  margin-bottom: 28px;
+  grid-template-columns:1fr;
+  gap:14px;
+  margin-bottom:28px;
 }
-@media (min-width: 900px){
-  .grid{grid-template-columns: 1.35fr .65fr;}
+@media (min-width:900px){
+  .grid{grid-template-columns:1.35fr .65fr;}
 }
 
 .card{
@@ -114,144 +117,121 @@ a:hover{text-decoration:underline}
 }
 .btn:hover{text-decoration:none;filter:brightness(1.05)}
 
-/* Sponsored Banner: LegalShield + IDShield */
-/* LegalShield Single-Line Banner */
+/* LegalShield Card */
+.legalshield-banner{
+  margin:32px 0;
+  background:#3a3a3a;
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:12px;
+  box-shadow:0 10px 24px rgba(0,0,0,.28);
+}
+.legalshield-link{
+  display:block;
+  padding:14px 20px;
+  text-decoration:none;
+  color:#ffffff;
+}
+.legalshield-row{
+  display:grid;
+  grid-template-columns:1fr auto 1fr;
+  align-items:center;
+}
+.legalshield-left{
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  opacity:.85;
+}
+.legalshield-center{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  justify-content:center;
+  font-size:16px;
+}
+.shield-svg{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:22px;
+  height:22px;
+}
+.brand-names strong{font-weight:600;}
+.legalshield-right{
+  text-align:right;
+  font-weight:600;
+  font-size:14px;
+  opacity:.9;
+}
+.legalshield-link:hover{filter:brightness(1.05)}
 
-.legalshield-banner {
-  margin: 32px 0;
-  background: #3a3a3a;
-  border: 1px solid rgba(255,255,255,.14);
-  border-radius: 12px;
-  box-shadow: 0 10px 24px rgba(0,0,0,.28);
+.hero-ops{
+  position:relative;
+  background: linear-gradient(rgba(8,22,40,.85),rgba(8,22,40,.85)),
+              url("/series/assets/ops-architecture-bg.jpg") center / cover no-repeat;
+  color:#ffffff;
+  padding:140px 20px 120px;
+  text-align:center;
+}
+.hero-title{
+  font-size:42px;
+  font-weight:700;
+  letter-spacing:-.02em;
+  margin-bottom:24px;
+  line-height:1.2;
+}
+.hero-sub{
+  font-size:18px;
+  max-width:720px;
+  margin:0 auto 28px;
+  opacity:.9;
+  line-height:1.6;
+}
+.hero-structure{
+  font-size:15px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  opacity:.75;
+  line-height:1.8;
 }
 
-.legalshield-link {
-  display: block;
-  padding: 14px 20px;
-  text-decoration: none;
-  color: #ffffff;
+.post-image{
+  width:100%;
+  height:auto;
+  border-radius:12px;
+  margin-bottom:24px;
 }
 
-.legalshield-row {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
+/* FIXED BACKGROUND THUMBNAILS */
+.series-background{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
 }
 
-.legalshield-left {
-  font-size: 12px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  opacity: .85;
+.bg-thumb{
+  position:absolute;
+  width:160px;
+  opacity:.06;
+  border-radius:12px;
 }
 
-.legalshield-center {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  justify-content: center;
-  font-size: 16px;
-}
+/* LEFT */
+.t1{top:140px;left:-40px;}
+.t2{top:360px;left:-60px;}
+.t3{top:620px;left:-50px;}
+.t4{top:880px;left:-40px;}
 
-.shield-svg {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 22px;
-  height: 22px;
-}
+/* RIGHT */
+.t5{top:120px;right:-50px;}
+.t6{top:360px;right:-40px;}
+.t7{top:600px;right:-60px;}
+.t8{top:840px;right:-50px;}
 
-.brand-names strong {
-  font-weight: 600;
-}
-
-.legalshield-right {
-  text-align: right;
-  font-weight: 600;
-  font-size: 14px;
-  opacity: .9;
-}
-
-.legalshield-link:hover {
-  filter: brightness(1.05);
-}
-.hero-ops {
-  position: relative;
-  background: linear-gradient(
-      rgba(8, 22, 40, 0.85),
-      rgba(8, 22, 40, 0.85)
-    ),
-    url("/series/assets/ops-architecture-bg.jpg") center / cover no-repeat;
-  color: #ffffff;
-  padding: 120px 20px;
-}
-/* Ops Architecture Hero Upgrade */
-
-.hero-ops {
-  text-align: center;
-  padding: 140px 20px 120px;
-}
-
-.hero-title {
-  font-size: 42px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 24px;
-  line-height: 1.2;
-}
-
-.hero-sub {
-  font-size: 18px;
-  max-width: 720px;
-  margin: 0 auto 28px;
-  opacity: 0.9;
-  line-height: 1.6;
-}
-
-.hero-structure {
-  font-size: 15px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  opacity: 0.75;
-  line-height: 1.8;
-}
-.post-image {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  margin-bottom: 24px;
-}
-/* Background thumbnail layer */
-.series-background {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
-
-.bg-thumb {
-  position: absolute;
-  width: 180px;
-  opacity: 0.08;
-  filter: blur(0.5px);
-  border-radius: 10px;
-}
-
-/* LEFT COLUMN */
-.t1 { top: 140px; left: -40px; }
-.t2 { top: 360px; left: -60px; }
-.t3 { top: 620px; left: -50px; }
-.t4 { top: 880px; left: -40px; }
-
-/* RIGHT COLUMN */
-.t5 { top: 120px; right: -50px; }
-.t6 { top: 360px; right: -40px; }
-.t7 { top: 600px; right: -60px; }
-.t8 { top: 840px; right: -50px; }
-
-/* LOWER AREA */
-.t9 { bottom: 400px; left: -40px; }
-.t10 { bottom: 260px; right: -50px; }
-.t11 { bottom: 160px; left: -60px; }
-.t12 { bottom: 80px; right: -40px; }
-.t13 { bottom: -20px; left: 20%; }
+/* LOWER */
+.t9{bottom:400px;left:-40px;}
+.t10{bottom:260px;right:-50px;}
+.t11{bottom:160px;left:-60px;}
+.t12{bottom:80px;right:-40px;}
+.t13{bottom:-20px;left:20%;}
