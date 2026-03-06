@@ -6,85 +6,122 @@
 
 <title>Visible Reliability Framework | Randy Anthony</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
-
 <style>
 
-html, body {
+:root{
+
+--bg:#f6f7fb;
+--bg2:#eef2f8;
+
+--surface:rgba(15,28,46,0.035);
+--surface2:rgba(15,28,46,0.06);
+
+--text:rgba(10,15,25,0.92);
+--muted:rgba(10,15,25,0.72);
+--faint:rgba(10,15,25,0.60);
+
+--border:rgba(15,28,46,0.12);
+
+--accent:#1f3e8a;
+--accent2:#0a7a57;
+
+--shadow:0 14px 36px rgba(0,0,0,0.12);
+--radius:18px;
+
+--max:1040px;
+}
+
+*{box-sizing:border-box}
+
+html,body{
 margin:0;
+height:100%;
 
-background: radial-gradient(1200px 600px at 15% 0%, rgba(57,73,171,0.10), transparent 55%),
-            radial-gradient(900px 500px at 100% 10%, rgba(26,35,126,0.10), transparent 50%),
-            #f6f7fb;
+font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
 
-font-family: "Roboto", system-ui, -apple-system, Segoe UI, Arial, sans-serif;
-color:#1f2937;
-line-height:1.6;
+background:
+radial-gradient(1200px 800px at 18% -12%, rgba(31,62,138,0.12), transparent 62%),
+radial-gradient(1000px 700px at 92% 8%, rgba(10,122,87,0.07), transparent 58%),
+linear-gradient(180deg,var(--bg),var(--bg2));
+
+color:var(--text);
+line-height:1.55;
+}
+
+.wrap{
+max-width:var(--max);
+margin:auto;
+padding:32px 18px 60px;
 }
 
 header{
-background:#1a237e;
-color:white;
-padding:36px 20px;
-text-align:center;
+margin-bottom:18px;
 }
 
 h1{
-margin:0;
-font-size:2rem;
+margin:0 0 8px;
+font-size:36px;
+letter-spacing:-0.5px;
 }
 
 .subtitle{
-opacity:.9;
-margin-top:6px;
-}
-
-.container{
-max-width:900px;
-margin:auto;
-padding:24px 16px 40px;
-}
-
-.section{
-background:white;
-border-radius:12px;
-padding:20px;
+color:var(--muted);
 margin-bottom:18px;
-box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+
+nav{
+margin:16px 0 24px;
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
+
+nav a{
+text-decoration:none;
+font-size:14px;
+padding:8px 10px;
+border-radius:12px;
+color:var(--muted);
+}
+
+nav a:hover{
+background:var(--surface);
+color:var(--text);
+}
+
+.card{
+background:linear-gradient(180deg,var(--surface2),transparent 140%);
+border:1px solid var(--border);
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+padding:22px;
+margin-bottom:18px;
 }
 
 h2{
 margin-top:0;
 }
 
+p{
+color:var(--muted);
+}
+
 .pillar{
-border-left:4px solid #3949ab;
-padding-left:12px;
+border-left:4px solid var(--accent);
+padding-left:14px;
 margin-bottom:14px;
 }
 
-nav{
-text-align:center;
-margin:18px 0;
-}
-
-nav a{
-margin:0 8px;
-font-weight:600;
-color:#1d4ed8;
-text-decoration:none;
-}
-
-nav a:hover{
-text-decoration:underline;
+ul{
+color:var(--muted);
 }
 
 </style>
 </head>
 
 <body>
+
+<div class="wrap">
 
 <header>
 
@@ -103,14 +140,12 @@ Operational reliability for broadcast and streaming systems
 <a href="/2026">Project</a>
 </nav>
 
-<div class="container">
-
-<div class="section">
+<div class="card">
 
 <h2>The Environment</h2>
 
 <p>
-Broadcast and streaming operations exist in environments where failure is visible and immediate.  
+Broadcast and streaming operations exist in environments where failure is visible and immediate.
 Unlike many technical systems where errors can be hidden or corrected later, broadcast failures appear instantly to the audience.
 </p>
 
@@ -120,7 +155,7 @@ Because of this visibility, reliability is not simply a technical problem. It be
 
 </div>
 
-<div class="section">
+<div class="card">
 
 <h2>The Reliability Model</h2>
 
@@ -155,7 +190,7 @@ Reliability must persist across time and teams, not just individual operators.
 
 </div>
 
-<div class="section">
+<div class="card">
 
 <h2>How the Site Connects</h2>
 
@@ -175,7 +210,7 @@ Together these sections document practical experience working in environments wh
 
 </div>
 
-<div class="section">
+<div class="card">
 
 <h2>Why It Matters</h2>
 
