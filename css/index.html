@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Randy Anthony | Operations, Reliability & Time-Critical Systems</title>
+
+<style>
+:root{
+--bg:#f6f7fb;
+--bg2:#eef2f8;
+
+--surface:rgba(15,28,46,0.035);
+--surface2:rgba(15,28,46,0.06);
+
+--text:rgba(10,15,25,0.92);
+--muted:rgba(10,15,25,0.72);
+--faint:rgba(10,15,25,0.60);
+
+--border:rgba(15,28,46,0.12);
+
+--accent:#1f3e8a;
+--accent2:#0a7a57;
+
+--shadow:0 14px 36px rgba(0,0,0,0.12);
+--radius:18px;
+--max:1040px;
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+background:linear-gradient(180deg,var(--bg),var(--bg2));
+color:var(--text);
+line-height:1.55;
+}
+
+.wrap{
+max-width:var(--max);
+margin:auto;
+padding:28px 18px 54px;
+}
+
+header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:16px;
+padding-bottom:18px;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:12px;
+text-decoration:none;
+color:inherit;
+}
+
+.mark{
+width:36px;
+height:36px;
+border-radius:12px;
+background:linear-gradient(135deg,#1f3e8a,#0a7a57);
+}
+
+nav{
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+}
+
+nav a{
+text-decoration:none;
+font-size:13px;
+color:var(--muted);
+padding:8px 10px;
+border-radius:10px;
+}
+
+nav a:hover{
+background:var(--surface);
+color:var(--text);
+}
+
+.card{
+background:linear-gradient(180deg,var(--surface2),transparent 140%);
+border:1px solid var(--border);
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+}
+
+.panel{
+padding:22px;
+}
+
+h1{
+margin:0 0 10px;
+font-size:32px;
+letter-spacing:-0.5px;
+}
+
+h2{
+margin:0 0 10px;
+font-size:20px;
+}
+
+p{
+margin:0 0 12px;
+color:var(--muted);
+}
+
+.grid{
+display:grid;
+gap:16px;
+}
+
+footer{
+margin-top:34px;
+padding-top:18px;
+border-top:1px solid var(--border);
+font-size:12.5px;
+color:var(--faint);
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+gap:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+<header>
+
+<a class="brand" href="/">
+<div class="mark"></div>
+<div>
+<b>RANDY ANTHONY</b><br>
+<span style="font-size:12px;color:var(--muted)">Operational reliability</span>
+</div>
+</a>
+
+<nav>
+<a href="/">Home</a>
+<a href="/series/">Operational Architecture</a>
+<a href="/2026/">Current Project</a>
+</nav>
+
+</header>
+
+
+<div class="card panel">
+
+<h1>Operations, Reliability & Time-Critical Systems</h1>
+
+<p>
+Randy Anthony works at the intersection of operational reliability and time-critical systems.
+His career spans environments where automation is complex, timing is unforgiving, and execution
+must remain calm and precise under pressure.
+</p>
+
+<p>
+While much of his background includes radio, television, and digital media delivery,
+his core expertise is operational: monitoring complex workflows, coordinating human
+and automated systems, and maintaining continuity across evolving platforms.
+</p>
+
+</div>
+
+
+<div class="grid" style="margin-top:16px">
+
+<div class="card panel">
+
+<h2>Current Role</h2>
+
+<p>
+Broadcast / Streaming Operations — TEGNA Streaming Center.
+Responsible for maintaining consistent delivery of multiple programming feeds
+across broadcast stations, digital platforms, and streaming services.
+</p>
+
+</div>
+
+
+<div class="card panel">
+
+<h2>Operational Focus</h2>
+
+<p>
+Specializing in automation monitoring, workflow integrity, real-time troubleshooting,
+and maintaining operational continuity in systems where failure is visible
+and recovery must happen immediately.
+</p>
+
+</div>
+
+
+<div class="card panel">
+
+<h2>Selected Experience</h2>
+
+<p>
+Newscast Director & Master Control — WGHP-TV (Nexstar)  
+Studio Host / Producer — IMG College (Learfield)  
+Commercial Traffic Director — Entercom (Audacy)  
+Morning Drive Host — WTHZ-FM  
+Senior Producer — NASCAR Country Radio Network
+</p>
+
+</div>
+
+
+<div class="card panel">
+
+<h2>Contact</h2>
+
+<p>
+Email: <a href="mailto:inbox@randyanthony.us">inbox@randyanthony.us</a><br>
+YouTube: <a href="https://youtube.com/@mediaspeaks1">MediaSpeaks</a><br>
+Live365 Stream: <a href="https://player.live365.com/a20149?l">Listen Online</a>
+</p>
+
+</div>
+
+</div>
+
+
+<footer>
+
+<div>© <span id="year"></span> Randy Anthony</div>
+
+<div>
+<a href="/series/">Operational Architecture</a>
+</div>
+
+</footer>
+
+</div>
+
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+
+</body>
+</html>
