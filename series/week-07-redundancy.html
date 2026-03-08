@@ -29,56 +29,135 @@
         <a href="/series/soon.html">View on LinkedIn</a>
       </p>
     </section>
-
-    <section class="card body">
+<section class="card body">
 
   <img src="/series/assets/week-07-redundancy.png"
-       alt="Week 7 — The Redundancy Illusion"
+       alt="Week 7 — Redundancy"
        class="post-image">
 
-      <p>Redundancy is often misunderstood.</p>
+  <p>Redundancy is one of the most misunderstood ideas in operational environments.</p>
 
-      <p>It is not duplication for comfort.<br>
-      It is protection for continuity.</p>
+  <p>It is often treated as duplication.</p>
 
-      <p>In time-critical systems, single points of failure are rarely obvious. They are usually hidden in convenience:</p>
+  <p>
+  Add another server.<br>
+  Add a backup feed.<br>
+  Mirror the system.<br>
+  Create a second control path.
+  </p>
 
-      <ul class="lines">
-        <li>One person who “knows how it works”</li>
-        <li>One undocumented automation rule</li>
-        <li>One file path no one questions</li>
-        <li>One assumption that “never changes”</li>
-      </ul>
+  <p>At first glance, this appears responsible. More components should mean more protection.</p>
 
-      <p>Redundancy does not mean excess.<br>
-      It means intentional overlap where failure would be visible.</p>
+  <p>But duplication alone does not create reliability.</p>
 
-      <p>In live operations, redundancy may take the form of:</p>
+  <p>True redundancy is not about quantity.<br>
+  It is about independence.</p>
 
-      <ul class="lines">
-        <li>Backup signal paths</li>
-        <li>Secondary monitoring</li>
-        <li>Defined escalation trees</li>
-        <li>Documented procedures that are actually usable</li>
-      </ul>
+  <p>
+  In time-critical systems, redundancy exists for a very specific purpose: to prevent a single disruption from becoming a visible failure.
+  </p>
 
-      <p>But structural redundancy also exists in people and knowledge.</p>
+  <p>
+  That requires understanding not only what can fail, but how failure moves through a system.
+  </p>
 
-      <p>If a process depends on memory, it is fragile.<br>
-      If a system depends on one operator, it is exposed.<br>
-      If recovery depends on improvisation, it is unstable.</p>
+  <p>
+  A second playout chain is not redundant if both chains depend on the same ingest pipeline.
+  </p>
 
-      <p>The purpose of redundancy is not to expect failure.</p>
+  <p>
+  A mirrored automation environment is not redundant if both instances rely on the same configuration assumptions.
+  </p>
 
-      <p>It is to make failure survivable.</p>
+  <p>
+  A backup procedure is not redundancy if the people responsible for activating it are unclear about when or how to do so.
+  </p>
 
-      <p>Reliable systems are not those that never experience disruption.<br>
-      They are those that absorb it without collapsing.</p>
+  <p>Redundancy only works when failure domains are genuinely separated.</p>
 
-      <div class="hr"></div>
-      <p class="meta">Next: <a href="/series/week-08-small-errors.html">Week 8 — Small Errors</a></p>
+  <p>
+  In broadcast and streaming operations, redundancy is typically layered across multiple parts of the environment:
+  </p>
 
-    </section>
+  <p>
+  Signal paths<br>
+  Network routes<br>
+  Storage systems<br>
+  Control systems<br>
+  Human oversight
+  </p>
+
+  <p>Each layer exists to absorb disruption before it reaches the audience.</p>
+
+  <p>But each layer also introduces complexity.</p>
+
+  <p>And complexity, when poorly understood, creates its own risk.</p>
+
+  <p>
+  Many systems appear redundant while quietly sharing hidden dependencies. When those dependencies fail, multiple safeguards collapse at the same moment.
+  </p>
+
+  <p>
+  This is the redundancy illusion: believing protection exists because duplicate components are present, even though those components rely on the same underlying structure.
+  </p>
+
+  <p>Effective redundancy requires discipline.</p>
+
+  <p>
+  Independent — so failures do not share a root cause<br>
+  Observable — so its health can be verified continuously<br>
+  Documented — so activation procedures are clear<br>
+  Tested — so recovery is practiced before it is required
+  </p>
+
+  <p>Testing matters more than presence.</p>
+
+  <p>
+  In many environments, backup mechanisms exist but are never exercised under realistic conditions. Failover paths are documented but not rehearsed. Recovery procedures are assumed rather than confirmed.
+  </p>
+
+  <p>The first true test then occurs during a live failure.</p>
+
+  <p>That is not redundancy.</p>
+
+  <p>That is optimism.</p>
+
+  <p>
+  Operational maturity means designing redundant systems with the same care given to primary systems.
+  </p>
+
+  <p>
+  Clear ownership must exist for initiating failover. Operators must understand the conditions that justify switching paths. Downstream dependencies must be mapped so that recovery does not introduce new disruption.
+  </p>
+
+  <p>Even well-designed redundancy must answer a simple question:</p>
+
+  <p><strong>What actually happens when the primary system stops working?</strong></p>
+
+  <p>If that answer is uncertain, redundancy has not yet been achieved.</p>
+
+  <p>Reliable systems do not eliminate failure.</p>
+
+  <p>They design for survivability when failure occurs.</p>
+
+  <p>
+  Because in time-critical operations, the presence of redundancy is not what protects stability.
+  </p>
+
+  <p><strong>Clarity of architecture does.</strong></p>
+
+  <p>
+  Redundancy is not excess.<br>
+  It is deliberate resilience engineered before pressure arrives.
+  </p>
+
+  <div class="hr"></div>
+
+  <p class="meta">
+    Next: <a href="/series/week-08-small-errors.html">Week 8 — Small Errors</a>
+  </p>
+
+</section>
   </main>
 
   <footer class="footer">
