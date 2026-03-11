@@ -1,230 +1,188 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Visible Reliability Framework | Randy Anthony</title>
-
-<style>
-
-:root{
-
---bg:#f6f7fb;
---bg2:#eef2f8;
-
---surface:rgba(15,28,46,0.035);
---surface2:rgba(15,28,46,0.06);
-
---text:rgba(10,15,25,0.92);
---muted:rgba(10,15,25,0.72);
---faint:rgba(10,15,25,0.60);
-
---border:rgba(15,28,46,0.12);
-
---accent:#1f3e8a;
---accent2:#0a7a57;
-
---shadow:0 14px 36px rgba(0,0,0,0.12);
---radius:18px;
-
---max:1040px;
-}
-
-*{box-sizing:border-box}
-
-html,body{
-margin:0;
-height:100%;
-
-font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-
-background:
-radial-gradient(1200px 800px at 18% -12%, rgba(31,62,138,0.12), transparent 62%),
-radial-gradient(1000px 700px at 92% 8%, rgba(10,122,87,0.07), transparent 58%),
-linear-gradient(180deg,var(--bg),var(--bg2));
-
-color:var(--text);
-line-height:1.55;
-}
-
-.wrap{
-max-width:var(--max);
-margin:auto;
-padding:32px 18px 60px;
-}
-
-header{
-margin-bottom:18px;
-}
-
-h1{
-margin:0 0 8px;
-font-size:36px;
-letter-spacing:-0.5px;
-}
-
-.subtitle{
-color:var(--muted);
-margin-bottom:18px;
-}
-
-nav{
-margin:16px 0 24px;
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-}
-
-nav a{
-text-decoration:none;
-font-size:14px;
-padding:8px 10px;
-border-radius:12px;
-color:var(--muted);
-}
-
-nav a:hover{
-background:var(--surface);
-color:var(--text);
-}
-
-.card{
-background:linear-gradient(180deg,var(--surface2),transparent 140%);
-border:1px solid var(--border);
-border-radius:var(--radius);
-box-shadow:var(--shadow);
-padding:22px;
-margin-bottom:18px;
-}
-
-h2{
-margin-top:0;
-}
-
-p{
-color:var(--muted);
-}
-
-.pillar{
-border-left:4px solid var(--accent);
-padding-left:14px;
-margin-bottom:14px;
-}
-
-ul{
-color:var(--muted);
-}
-
-</style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Operational Architecture Series | Randy Anthony</title>
+<link rel="stylesheet" href="/series/series.css" />
+<meta name="description" content="Operational Architecture Series exploring reliability in time-critical broadcast and streaming systems." />
 </head>
 
 <body>
 
-<div class="wrap">
+<header class="header">
+  <div class="wrap">
+    <div class="brand">
+      <strong>RANDY ANTHONY</strong>
+      <small>Operational reliability advisory</small>
+    </div>
 
-<header>
-
-<h1>The Visible Reliability Framework</h1>
-
-<p class="subtitle">
-Operational reliability for broadcast and streaming systems
-</p>
-
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/">Services</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<nav>
-<a href="/">Home</a>
-<a href="/bio">Bio</a>
-<a href="/series">Series</a>
-<a href="/2026">Project</a>
-</nav>
 
-<div class="card">
+<main class="wrap">
 
-<h2>The Environment</h2>
+<section class="hero hero-ops">
 
-<p>
-Broadcast and streaming operations exist in environments where failure is visible and immediate.
-Unlike many technical systems where errors can be hidden or corrected later, broadcast failures appear instantly to the audience.
+<h1 class="hero-title">
+Operational Architecture Series
+</h1>
+
+<p class="hero-sub">
+A multi-part exploration of reliability in time-critical systems.  
+These articles draw lessons from broadcast and streaming operations, 
+but the principles apply to any environment where systems must perform 
+under pressure.
 </p>
 
-<p>
-Because of this visibility, reliability is not simply a technical problem. It becomes an operational discipline involving automation systems, human judgment, workflow design, and clear escalation paths.
+<p class="hero-structure">
+Six-part framework • 78+ articles • quarterly releases
 </p>
 
-</div>
+</section>
 
-<div class="card">
 
-<h2>The Reliability Model</h2>
+<section class="grid">
 
-<p>
-Reliable systems are built through consistent operational practices. In time-critical environments, reliability depends on several core disciplines working together.
-</p>
+<!-- CURRENT SERIES -->
 
-<div class="pillar">
-<strong>Signal Continuity</strong><br>
-The programming signal must remain stable and uninterrupted across automated and live systems.
-</div>
+<section class="card">
 
-<div class="pillar">
-<strong>Automation Integrity</strong><br>
-Playout and automation systems must behave predictably, with clear monitoring and correction paths.
-</div>
-
-<div class="pillar">
-<strong>Escalation Discipline</strong><br>
-When problems occur, they must reach the right people quickly and clearly.
-</div>
-
-<div class="pillar">
-<strong>Runbook Clarity</strong><br>
-Operational documentation must be practical and usable during real incidents.
-</div>
-
-<div class="pillar">
-<strong>Shift Handoff Continuity</strong><br>
-Reliability must persist across time and teams, not just individual operators.
-</div>
-
-</div>
-
-<div class="card">
-
-<h2>How the Site Connects</h2>
+<h2>Part I — The Nature of Time-Critical Systems</h2>
 
 <p>
-Several sections of this site explore different aspects of operational reliability.
+The first series explores the operational foundations of reliability in systems that must perform continuously under pressure.
 </p>
 
-<ul>
-<li><strong>Series</strong> – Observations and essays about reliability in broadcast operations.</li>
-<li><strong>Bio</strong> – The operational experience behind the framework.</li>
-<li><strong>2026 Project</strong> – Current experiments with AI tools and workflow thinking.</li>
-</ul>
+<ol class="list">
 
-<p>
-Together these sections document practical experience working in environments where systems must function reliably in real time.
-</p>
+<li><a href="/series/week-01-reliability.html">Week 1 — Reliability</a></li>
+
+<li><a href="/series/week-02-invisible-work.html">Week 2 — Invisible Work</a></li>
+
+<li><a href="/series/week-03-composure.html">Week 3 — Composure</a></li>
+
+<li><a href="/series/week-04-dependencies.html">Week 4 — Dependencies</a></li>
+
+<li><a href="/series/week-05-interfaces.html">Week 5 — Interfaces</a></li>
+
+<li><a href="/series/week-06-missing-content.html">Week 6 — Missing Content</a></li>
+
+<li><a href="/series/week-07-redundancy.html">Week 7 — Redundancy</a></li>
+
+<li><a href="/series/week-08-small-errors.html">Week 8 — Small Errors</a></li>
+
+<li><a href="/series/week-09-fatigue.html">Week 9 — Fatigue</a></li>
+
+<li><a href="/series/week-10-automation.html">Week 10 — Automation</a></li>
+
+<li><a href="/series/week-11-accountability.html">Week 11 — Accountability</a></li>
+
+<li><a href="/series/week-12-prevention.html">Week 12 — Prevention</a></li>
+
+<li><a href="/series/week-13-architecture.html">Week 13 — Architecture</a></li>
+
+</ol>
+
+<div class="pills">
+
+<span class="pill">broadcast operations</span>
+<span class="pill">streaming operations</span>
+<span class="pill">master control</span>
+<span class="pill">24/7 systems</span>
+<span class="pill">reliability engineering</span>
+<span class="pill">process integrity</span>
+<span class="pill">risk reduction</span>
+<span class="pill">systems thinking</span>
 
 </div>
 
-<div class="card">
+</section>
 
-<h2>Why It Matters</h2>
+
+<!-- SERIES FRAMEWORK -->
+
+<aside class="card">
+
+<h2>Series Framework</h2>
 
 <p>
-In broadcast and streaming environments, reliability protects more than technical systems. It protects audience trust, revenue, brand reputation, and operational continuity.
+The Operational Architecture Series examines reliability through six operational layers.  
+Each quarterly release expands the framework and builds toward a complete reliability model for time-critical systems.
 </p>
 
-<p>
-The Visible Reliability Framework is simply a way of describing the operational practices required to keep these systems running cleanly and predictably.
-</p>
+<ol class="list">
+
+<li><strong>Part I — The Nature of Time-Critical Systems</strong></li>
+
+<li><strong>Part II — Operational Visibility</strong><br>
+Seeing failure before it happens</li>
+
+<li><strong>Part III — Automation & Human Oversight</strong><br>
+Working with playout systems</li>
+
+<li><strong>Part IV — Escalation & Recovery</strong><br>
+How teams respond when something breaks</li>
+
+<li><strong>Part V — Designing Operational Architecture</strong><br>
+Reducing single points of failure</li>
+
+<li><strong>Part VI — The Human Factor</strong><br>
+Calm decision-making under pressure</li>
+
+</ol>
+
+</aside>
+
+</section>
+
+
+<section class="legalshield-banner" aria-label="Sponsored by LegalShield and IDShield">
+
+<a href="/legal" class="legalshield-link">
+
+<div class="legalshield-row">
+
+<div class="legalshield-left">
+Sponsored by
+</div>
+
+<div class="legalshield-center">
+
+<span class="shield-svg" aria-hidden="true">
+<svg viewBox="0 0 24 24" width="18" height="18">
+<path fill="currentColor" d="M12 2.2c2.6 1.8 5.6 2.5 8.5 2.9v7.2c0 5.2-3.6 9.2-8.5 10.7C7.1 21.5 3.5 17.5 3.5 12.3V5.1c2.9-.4 5.9-1.1 8.5-2.9zm0 2.2c-2.2 1.3-4.7 1.9-6.9 2.2v5.7c0 4.3 2.9 7.6 6.9 8.9 4-1.3 6.9-4.6 6.9-8.9V6.6c-2.2-.3-4.7-.9-6.9-2.2z"/>
+</svg>
+</span>
+
+<span class="brand-names"><strong>LegalShield</strong> + <strong>IDShield</strong></span>
 
 </div>
 
+<div class="legalshield-right">
+Learn More →
 </div>
+
+</div>
+
+</a>
+
+</section>
+
+</main>
+
+
+<footer class="footer">
+<div class="wrap">
+<small>© Randy Anthony. All rights reserved.</small>
+</div>
+</footer>
 
 </body>
 </html>
