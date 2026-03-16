@@ -1,188 +1,197 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Operational Architecture Series | Randy Anthony</title>
-<link rel="stylesheet" href="/series/series.css" />
-<meta name="description" content="Operational Architecture Series exploring reliability in time-critical broadcast and streaming systems." />
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Visible Reliability Framework | Randy Anthony</title>
+
+<meta name="description" content="Operational reliability framework for broadcast and streaming systems developed from real-world time-critical operations experience.">
+
+<link rel="icon" href="/favicon.png">
+
+<link rel="stylesheet" href="/assets/css/site.css">
+
 </head>
+
 
 <body>
 
-<header class="header">
-  <div class="wrap">
-    <div class="brand">
-      <strong>RANDY ANTHONY</strong>
-      <small>Operational reliability advisory</small>
-    </div>
-
-    <nav class="nav">
-      <a href="/">Home</a>
-      <a href="/">Services</a>
-      <a href="/#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+<div id="site-header"></div>
 
 
-<main class="wrap">
+<main class="container">
 
-<section class="hero hero-ops">
+<section class="hero">
 
-<h1 class="hero-title">
-Operational Architecture Series
-</h1>
+<h1>The Visible Reliability Framework</h1>
 
-<p class="hero-sub">
-A multi-part exploration of reliability in time-critical systems.  
-These articles draw lessons from broadcast and streaming operations, 
-but the principles apply to any environment where systems must perform 
-under pressure.
-</p>
-
-<p class="hero-structure">
-Six-part framework • 78+ articles • quarterly releases
+<p class="subtitle">
+Operational reliability for broadcast and streaming systems
 </p>
 
 </section>
 
-
-<section class="grid">
-
-<!-- CURRENT SERIES -->
 
 <section class="card">
 
-<h2>Part I — The Nature of Time-Critical Systems</h2>
+<h2>The Environment</h2>
 
 <p>
-The first series explores the operational foundations of reliability in systems that must perform continuously under pressure.
+Broadcast and streaming operations exist in environments where failure is visible and immediate.
+Unlike many technical systems where errors can be hidden or corrected later, broadcast failures appear instantly to the audience.
 </p>
-
-<ol class="list">
-
-<li><a href="/series/week-01-reliability.html">Week 1 — Reliability</a></li>
-
-<li><a href="/series/week-02-invisible-work.html">Week 2 — Invisible Work</a></li>
-
-<li><a href="/series/week-03-composure.html">Week 3 — Composure</a></li>
-
-<li><a href="/series/week-04-dependencies.html">Week 4 — Dependencies</a></li>
-
-<li><a href="/series/week-05-interfaces.html">Week 5 — Interfaces</a></li>
-
-<li><a href="/series/week-06-missing-content.html">Week 6 — Missing Content</a></li>
-
-<li><a href="/series/week-07-redundancy.html">Week 7 — Redundancy</a></li>
-
-<li><a href="/series/week-08-small-errors.html">Week 8 — Small Errors</a></li>
-
-<li><a href="/series/week-09-fatigue.html">Week 9 — Fatigue</a></li>
-
-<li><a href="/series/week-10-automation.html">Week 10 — Automation</a></li>
-
-<li><a href="/series/week-11-accountability.html">Week 11 — Accountability</a></li>
-
-<li><a href="/series/week-12-prevention.html">Week 12 — Prevention</a></li>
-
-<li><a href="/series/week-13-architecture.html">Week 13 — Architecture</a></li>
-
-</ol>
-
-<div class="pills">
-
-<span class="pill">broadcast operations</span>
-<span class="pill">streaming operations</span>
-<span class="pill">master control</span>
-<span class="pill">24/7 systems</span>
-<span class="pill">reliability engineering</span>
-<span class="pill">process integrity</span>
-<span class="pill">risk reduction</span>
-<span class="pill">systems thinking</span>
-
-</div>
-
-</section>
-
-
-<!-- SERIES FRAMEWORK -->
-
-<aside class="card">
-
-<h2>Series Framework</h2>
 
 <p>
-The Operational Architecture Series examines reliability through six operational layers.  
-Each quarterly release expands the framework and builds toward a complete reliability model for time-critical systems.
+Because of this visibility, reliability is not simply a technical problem. It becomes an operational discipline involving automation systems, human judgment, workflow design, and clear escalation paths.
 </p>
 
-<ol class="list">
+</section>
 
-<li><strong>Part I — The Nature of Time-Critical Systems</strong></li>
 
-<li><strong>Part II — Operational Visibility</strong><br>
-Seeing failure before it happens</li>
+<section class="card">
 
-<li><strong>Part III — Automation & Human Oversight</strong><br>
-Working with playout systems</li>
+<h2>The Reliability Model</h2>
 
-<li><strong>Part IV — Escalation & Recovery</strong><br>
-How teams respond when something breaks</li>
+<p>
+Reliable systems are built through consistent operational practices. In time-critical environments, reliability depends on several core disciplines working together.
+</p>
 
-<li><strong>Part V — Designing Operational Architecture</strong><br>
-Reducing single points of failure</li>
 
-<li><strong>Part VI — The Human Factor</strong><br>
-Calm decision-making under pressure</li>
+<div class="pillar">
 
-</ol>
+<strong>Signal Continuity</strong>
 
-</aside>
+<p>
+The programming signal must remain stable and uninterrupted across automated and live systems.
+</p>
+
+</div>
+
+
+<div class="pillar">
+
+<strong>Automation Integrity</strong>
+
+<p>
+Playout and automation systems must behave predictably, with clear monitoring and correction paths.
+</p>
+
+</div>
+
+
+<div class="pillar">
+
+<strong>Escalation Discipline</strong>
+
+<p>
+When problems occur, they must reach the right people quickly and clearly.
+</p>
+
+</div>
+
+
+<div class="pillar">
+
+<strong>Runbook Clarity</strong>
+
+<p>
+Operational documentation must be practical and usable during real incidents.
+</p>
+
+</div>
+
+
+<div class="pillar">
+
+<strong>Shift Handoff Continuity</strong>
+
+<p>
+Reliability must persist across time and teams, not just individual operators.
+</p>
+
+</div>
 
 </section>
 
 
-<section class="legalshield-banner" aria-label="Sponsored by LegalShield and IDShield">
 
-<a href="/legal" class="legalshield-link">
+<section class="card">
 
-<div class="legalshield-row">
+<h2>How the Site Connects</h2>
 
-<div class="legalshield-left">
-Sponsored by
-</div>
+<p>
+Several sections of this site explore different aspects of operational reliability.
+</p>
 
-<div class="legalshield-center">
+<ul>
 
-<span class="shield-svg" aria-hidden="true">
-<svg viewBox="0 0 24 24" width="18" height="18">
-<path fill="currentColor" d="M12 2.2c2.6 1.8 5.6 2.5 8.5 2.9v7.2c0 5.2-3.6 9.2-8.5 10.7C7.1 21.5 3.5 17.5 3.5 12.3V5.1c2.9-.4 5.9-1.1 8.5-2.9zm0 2.2c-2.2 1.3-4.7 1.9-6.9 2.2v5.7c0 4.3 2.9 7.6 6.9 8.9 4-1.3 6.9-4.6 6.9-8.9V6.6c-2.2-.3-4.7-.9-6.9-2.2z"/>
-</svg>
-</span>
+<li><strong>Series</strong> — Observations and essays about reliability in broadcast operations.</li>
 
-<span class="brand-names"><strong>LegalShield</strong> + <strong>IDShield</strong></span>
+<li><strong>Bio</strong> — The operational experience behind the framework.</li>
 
-</div>
+<li><strong>2026 Project</strong> — Current experiments with AI tools and workflow thinking.</li>
 
-<div class="legalshield-right">
-Learn More →
-</div>
+</ul>
 
-</div>
-
-</a>
+<p>
+Together these sections document practical experience working in environments where systems must function reliably in real time.
+</p>
 
 </section>
+
+
+
+<section class="card">
+
+<h2>Why It Matters</h2>
+
+<p>
+In broadcast and streaming environments, reliability protects more than technical systems.
+It protects audience trust, revenue, brand reputation, and operational continuity.
+</p>
+
+<p>
+The Visible Reliability Framework is simply a way of describing the operational practices required to keep these systems running cleanly and predictably.
+</p>
+
+</section>
+
+
 
 </main>
 
 
 <footer class="footer">
-<div class="wrap">
-<small>© Randy Anthony. All rights reserved.</small>
+
+<div class="footer-inner">
+
+<p>
+© <span id="year"></span> Randy Anthony
+</p>
+
+<nav class="footer-links">
+
+<a href="/">Home</a>
+<a href="/series/">Series</a>
+<a href="/bio/">Bio</a>
+<a href="/framework/">Framework</a>
+
+</nav>
+
 </div>
+
 </footer>
+
+
+<script src="/assets/js/header-loader.js"></script>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 
 </body>
 </html>
