@@ -118,12 +118,13 @@
       display:flex; align-items:center; gap:12px; text-decoration:none;
     }
 
-    .mark{
-      width:36px; height:36px; border-radius:12px;
-      background: linear-gradient(135deg, rgba(31,62,138,0.95), rgba(10,122,87,0.55));
-      box-shadow: var(--shadow);
-      border:1px solid rgba(15,28,46,0.14);
-    }
+.mark{
+  width:36px;
+  height:36px;
+  border-radius:8px;
+  object-fit:contain;
+  box-shadow: var(--shadow);
+}
 
     @media (prefers-color-scheme: dark){
       .mark{
@@ -354,7 +355,7 @@
   <div class="wrap">
    <header>
   <a class="brand" href="#top" aria-label="Home">
-    <div class="mark" aria-hidden="true"></div>
+    <img src="/favicon.png" class="mark" alt="Logo">
     <div>
       <b>RANDY ANTHONY</b>
       <span>Operational reliability advisory</span>
