@@ -1,160 +1,166 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Reliability Series</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Series | Randy Anthony</title>
 
-  <!-- Favicon -->
   <link rel="icon" href="/favicon.png">
-
-  <!-- Base Styles (assumes existing variables are defined elsewhere) -->
-  <style>
-    body {
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      background:#0f1720;
-      color:#ffffff;
-    }
-
-    .container {
-      max-width:1100px;
-      margin:0 auto;
-      padding:40px 20px;
-    }
-
-    h1 {
-      font-size:34px;
-      margin-bottom:10px;
-    }
-
-    h2 {
-      margin-top:40px;
-      margin-bottom:16px;
-      font-size:22px;
-    }
-
-    p {
-      line-height:1.6;
-    }
-
-    .grid {
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap:20px;
-    }
-
-    .card {
-      background: linear-gradient(180deg, #1e2933, transparent);
-      border: 1px solid #2f3a44;
-      border-radius:14px;
-      padding:18px;
-    }
-
-    .btn {
-      display:inline-block;
-      padding:11px 14px;
-      border-radius:14px;
-      background:#1e2933;
-      text-decoration:none;
-      color:#ffffff;
-    }
-
-    .highlight {
-      margin-top:40px;
-      padding:24px;
-      border-radius:16px;
-      background:#1a222c;
-      border:1px solid #2f3a44;
-    }
-
-    a {
-      color:#9ecbff;
-      text-decoration:none;
-    }
-
-    a:hover {
-      text-decoration:underline;
-    }
-  </style>
+  <link rel="stylesheet" href="/series/series.css" />
+  <meta name="description" content="Time-Critical Operations series archive by Randy Anthony." />
 </head>
-
 <body>
-
-  <div class="container">
-
-    <h1>Reliability Series</h1>
-    <p>
-      A structured exploration of broadcast and streaming system reliability, evolving from foundational concepts into operational visibility and system-level design.
-    </p>
-
-    <!-- PART I -->
-    <section class="series-part">
-      <h2>Part I — Foundations (Weeks 1–13)</h2>
-
-      <div class="grid">
-
-        <!-- Example Card -->
-        <article class="card" style="background-color:#2f3a44; color:#ffffff;">
-          <h3>Week 1 — Foundations of Reliability</h3>
-          <p style="color:#cbd5e1;">Understanding reliability as a system-level discipline.</p>
-          <p style="margin-top:12px">
-            <a class="btn" href="/series/week-01-foundations.html">Open →</a>
-          </p>
-          <p style="margin-top:8px">
-            <a href="LINKEDIN_URL" target="_blank">View on LinkedIn</a>
-          </p>
-        </article>
-
-        <!-- Repeat for Weeks 2–13 -->
-
+  <header class="header">
+    <div class="wrap">
+      <div class="brand">
+        <strong>RANDY ANTHONY</strong>
+        <small>Operational reliability advisory</small>
       </div>
+      <nav class="nav">
+        <a href="/">Home</a>
+        <a href="/">Services</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+<div class="series-background">
+  <img src="/series/assets/week-01-reliability-is-intentional.png" class="bg-thumb t1">
+  <img src="/series/assets/week-02-invisible-work.png" class="bg-thumb t2">
+  <img src="/series/assets/week-03-composure.png" class="bg-thumb t3">
+  <img src="/series/assets/week-04-dependencies.png" class="bg-thumb t4">
+  <img src="/series/assets/week-05-interfaces.png" class="bg-thumb t5">
+  <img src="/series/assets/week-06-missing-content.png" class="bg-thumb t6">
+  <img src="/series/assets/week-07-redundancy.png" class="bg-thumb t7">
+  <img src="/series/assets/week-08-small-errors.png" class="bg-thumb t8">
+  <img src="/series/assets/week-09-fatigue.png" class="bg-thumb t9">
+  <img src="/series/assets/week-10-automation.png" class="bg-thumb t10">
+  <img src="/series/assets/week-11-accountability.png" class="bg-thumb t11">
+  <img src="/series/assets/week-12-prevention.png" class="bg-thumb t12">
+  <img src="/series/assets/week-13-architecture.png" class="bg-thumb t13">
+</div>
+    <section class="hero hero-ops">
+
+  <h1 class="hero-title">
+    Reliability is not improvised.<br>
+    It is engineered.<br>
+    Lessons from time-critical broadcast and streaming systems
+  </h1>
+
+
+</section>
+
+    <section class="grid">
+      <section class="card">
+        <h2>Part I — Foundations (Weeks 1–13)</h2>
+        <ol class="list">
+          <li><a href="/series/week-01-reliability.html">Week 1 — What Time-Critical Operations Teach You About Reliability</a></li>
+          <li><a href="/series/week-02-invisible-work.html">Week 2 — What Time-Critical Operations Teach You About Invisible Work</a></li>
+          <li><a href="/series/week-03-composure.html">Week 3 — What Time-Critical Operations Teach You About Composure</a></li>
+          <li><a href="/series/week-04-dependencies.html">Week 4 — What Time-Critical Operations Teach You About Dependencies</a></li>
+          <li><a href="/series/week-05-interfaces.html">Week 5 — What Time-Critical Operations Teach You About Interfaces</a></li>
+          <li><a href="/series/week-06-missing-content.html">Week 6 — What Time-Critical Operations Teach You About Missing Content </a></li>
+          <li><a href="/series/week-07-redundancy.html">Week 7 — What Time-Critical Operations Teach You About Redundancy </a></li>
+          <li><a href="/series/week-08-small-errors.html">Week 8 — What Time-Critical Operations Teach You About Small Errors </a></li>
+          <li><a href="/series/week-09-fatigue.html">Week 9 — What Time-Critical Operations Teach You About Fatigue </a></li>
+          <li><a href="/series/week-10-automation.html">Week 10 — What Time-Critical Operations Teach You About Automation </a></li>
+          <li><a href="/series/week-11-accountability.html">Week 11 — What Time-Critical Operations Teach You About Accountability </a></li>
+          <li><a href="/series/week-12-prevention.html">Week 12 — What Time-Critical Operations Teach You About Prevention </a></li>
+          <li><a href="/series/week-13-architecture.html">Week 13 — What Time-Critical Operations Teach You About Architecture</a></li>
+        </ol>
+<div class="pills">
+  <span class="pill">broadcast operations</span>
+  <span class="pill">streaming operations</span>
+  <span class="pill">master control</span>
+  <span class="pill">24/7 operations</span>
+  <span class="pill">reliability engineering</span>
+  <span class="pill">process improvement</span>
+  <span class="pill">risk management</span>
+  <span class="pill">systems thinking</span>
+</div>
+      </section>
+<section class="card">
+  <h2>Part II — Operational Visibility</h2>
+  <p>
+    Part II extends the series from foundational reliability into operational visibility,
+    monitoring strategy, and real-time system awareness.
+  </p>
+  <p style="margin-top:12px">
+    <a class="btn" href="/series/week-15-operational-visibility.html">Begin Part II →</a>
+  </p>
+</section>
+      <aside class="card">
+        <h2>Topic rotation</h2>
+<p>
+This Operational Architecture Series is an ongoing discussion built around a quarterly 13-week rotation. Each cycle revisits the same core principles and expands them through practical system design and operational experience.
+</p>
+
+<p>
+Reliability isn’t one single skill. It’s the result of clear handoffs, defined ownership, disciplined execution, and reducing hidden weak points across transitions.
+</p>
+
+<p>
+Operational reliability requires continuous learning—and more importantly, anticipating vulnerabilities before pressure exposes them. Stable systems don’t happen by accident. They are built intentionally and improved over time.
+</p>     
+      </aside>
+      <section class="card">
+  <h2>Part II — Operational Visibility (Weeks 15–27)</h2>
+
+  <ol class="list">
+    <li>
+      <a href="/series/week-15-operational-visibility.html">
+        Week 15 — Operational Visibility
+      </a>
+      — <a href="/series/soon.html">View on LinkedIn</a>
+    </li>
+
+    <li>Week 16 — (Upcoming)</li>
+    <li>Week 17 — (Upcoming)</li>
+    <li>Week 18 — (Upcoming)</li>
+    <li>Week 19 — (Upcoming)</li>
+    <li>Week 20 — (Upcoming)</li>
+    <li>Week 21 — (Upcoming)</li>
+    <li>Week 22 — (Upcoming)</li>
+    <li>Week 23 — (Upcoming)</li>
+    <li>Week 24 — (Upcoming)</li>
+    <li>Week 25 — (Upcoming)</li>
+    <li>Week 26 — (Upcoming)</li>
+    <li>Week 27 — (Upcoming)</li>
+  </ol>
+</section>
     </section>
 
-    <!-- TRANSITION -->
-    <section class="highlight">
-      <h2>Transition to Part II</h2>
-      <p>
-        Part II expands beyond foundational reliability into operational visibility, monitoring systems, and real-time system awareness.
-      </p>
-      <p style="margin-top:12px">
-        <a class="btn" href="/series/week-14-operational-visibility.html">Begin Part II →</a>
-      </p>
-    </section>
+<section class="legalshield-banner" aria-label="Sponsored by LegalShield and IDShield">
+  <a href="/legal" class="legalshield-link">
+    <div class="legalshield-row">
 
-    <!-- PART II -->
-    <section class="series-part">
-      <h2>Part II — Operational Visibility (Weeks 14–26)</h2>
-
-      <div class="grid">
-
-        <!-- Week 14 -->
-        <article class="card" style="background-color:#2f3a44; color:#ffffff;">
-          <h3>Week 14 — Operational Visibility</h3>
-          <p style="color:#cbd5e1;">Moving from reliability concepts into real-time system awareness.</p>
-          <p style="margin-top:12px">
-            <a class="btn" href="/series/week-14-operational-visibility.html">Open →</a>
-          </p>
-          <p style="margin-top:8px">
-            <a href="LINKEDIN_URL" target="_blank">View on LinkedIn</a>
-          </p>
-        </article>
-
-        <!-- Placeholder for future weeks -->
-        <article class="card" style="background-color:#2f3a44; color:#ffffff;">
-          <h3>Week 15 — (Upcoming)</h3>
-          <p style="color:#cbd5e1;">Next phase in operational monitoring and system feedback loops.</p>
-        </article>
-
-        <article class="card" style="background-color:#2f3a44; color:#ffffff;">
-          <h3>Week 16 — (Upcoming)</h3>
-          <p style="color:#cbd5e1;">Expanding system awareness and response design.</p>
-        </article>
-
+      <div class="legalshield-left">
+        Sponsored by
       </div>
-    </section>
 
-  </div>
+      <div class="legalshield-center">
+        <span class="shield-svg" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18">
+            <path fill="currentColor" d="M12 2.2c2.6 1.8 5.6 2.5 8.5 2.9v7.2c0 5.2-3.6 9.2-8.5 10.7C7.1 21.5 3.5 17.5 3.5 12.3V5.1c2.9-.4 5.9-1.1 8.5-2.9zm0 2.2c-2.2 1.3-4.7 1.9-6.9 2.2v5.7c0 4.3 2.9 7.6 6.9 8.9 4-1.3 6.9-4.6 6.9-8.9V6.6c-2.2-.3-4.7-.9-6.9-2.2z"/>
+          </svg>
+        </span>
+        <span class="brand-names"><strong>LegalShield</strong> + <strong>IDShield</strong></span>
+      </div>
 
+      <div class="legalshield-right">
+        Learn More →
+      </div>
+
+    </div>
+  </a>
+</section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <small>© Randy Anthony. All rights reserved.</small>
+    </div>
+  </footer>
 </body>
 </html>
