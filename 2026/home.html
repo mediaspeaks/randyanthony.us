@@ -9,28 +9,48 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(180deg, #0a1a26, #0b0f14);
+    background: radial-gradient(circle at 20% 20%, #0f2535, #0b0f14 60%);
     color: #e6e6e6;
+    overflow-x: hidden;
 }
 
-/* HERO */
+/* HERO — LAYERED */
 .hero {
-    background: url('bf94b7b5-9b2f-4788-999d-4ffa4d921061.png') center/cover no-repeat;
-    padding: 40px 20px 30px 20px;
+    position: relative;
+    padding: 50px 20px;
     display: flex;
-    align-items: center;
+    justify-content: center;
 }
 
-.hero-overlay {
-    background: rgba(0,0,0,0.55);
-    padding: 18px 20px;
-    max-width: 750px;
-    border-radius: 6px;
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('bf94b7b5-9b2f-4788-999d-4ffa4d921061.png') center/cover no-repeat;
+    opacity: 0.25;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(245,193,92,0.15), transparent 60%);
+}
+
+.hero-content {
+    position: relative;
+    max-width: 900px;
+    backdrop-filter: blur(8px);
+    background: rgba(10, 20, 30, 0.6);
+    border: 1px solid rgba(245,193,92,0.2);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 0 40px rgba(245,193,92,0.08);
 }
 
 .hero h1 {
-    font-size: 40px;
     margin: 0 0 8px 0;
+    font-size: 42px;
     color: #f5c15c;
 }
 
@@ -38,55 +58,72 @@ body {
     margin: 0;
     font-size: 18px;
     color: #d0d7de;
-    line-height: 1.4;
+}
+
+/* CTA */
+.cta {
+    margin-top: 25px;
+}
+
+.cta-main {
+    display: inline-block;
+    background: linear-gradient(90deg, #f5c15c, #ffd978);
+    color: #000;
+    padding: 14px 28px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.cta-sub {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #9fb3c8;
+    text-decoration: none;
 }
 
 /* SECTION */
 .section {
-    padding: 60px 20px;
     max-width: 1100px;
     margin: auto;
+    padding: 60px 20px;
 }
 
-.section h2 {
-    color: #f5c15c;
-    margin-bottom: 20px;
-}
-
-/* FLOW */
+/* FLOW — CONNECTED */
 .flow {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    margin-top: 40px;
     gap: 20px;
-    font-size: 18px;
-    margin-top: 30px;
     flex-wrap: wrap;
 }
 
-.flow span {
-    background: #141a22;
-    padding: 10px 18px;
-    border-radius: 6px;
-    border: 1px solid #1f3f5b;
-}
-
-.arrow {
-    color: #f5c15c;
-    font-weight: bold;
-}
-
-/* STRIP */
-.strip {
-    background: linear-gradient(90deg, #0a1a26, #0b0f14);
-    padding: 40px 20px;
+.flow-item {
+    flex: 1;
+    min-width: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(20,30,40,0.6);
+    border: 1px solid rgba(31,63,91,0.6);
     text-align: center;
-    font-size: 18px;
-    border-top: 1px solid #1f3f5b;
-    border-bottom: 1px solid #1f3f5b;
+    position: relative;
 }
 
-/* GRID */
+.flow-item::after {
+    content: "→";
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #f5c15c;
+}
+
+.flow-item:last-child::after {
+    display: none;
+}
+
+/* CARDS */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -94,47 +131,32 @@ body {
 }
 
 .card {
-    background: #121820;
+    background: rgba(15,25,35,0.8);
     padding: 22px;
-    border-radius: 8px;
-    border: 1px solid #1f3f5b;
+    border-radius: 10px;
+    border: 1px solid rgba(31,63,91,0.5);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card h3 {
-    margin-top: 0;
-    color: #ffffff;
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
-/* CTA */
-.cta {
+/* STRIP */
+.strip {
     text-align: center;
-    margin-top: 25px;
-}
-
-.cta-main {
-    display: inline-block;
-    text-decoration: none;
-    background: #f5c15c;
-    color: #000;
-    padding: 14px 28px;
-    border-radius: 5px;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-.cta-sub {
-    display: block;
-    margin-top: 12px;
-    font-size: 14px;
-    color: #9fb3c8;
-    text-decoration: none;
+    padding: 40px 20px;
+    font-size: 18px;
+    background: linear-gradient(90deg, #0a1a26, #0b0f14);
+    border-top: 1px solid #1f3f5b;
+    border-bottom: 1px solid #1f3f5b;
 }
 
 /* FOOTER */
 .footer {
     text-align: center;
     padding: 30px;
-    font-size: 14px;
     color: #777;
 }
 </style>
@@ -144,16 +166,15 @@ body {
 
 <!-- HERO -->
 <div class="hero">
-    <div class="hero-overlay">
+    <div class="hero-content">
         <h1>Piety Token & PayChain</h1>
         <p>
-            A utility-focused digital asset system designed to operate within real-world economic activity—
-            supporting payroll, payments, participation, and structured value movement.
+            A utility-focused digital asset system designed for real-world economic activity—
+            connecting payroll, payments, participation, and structured value movement.
         </p>
 
-        <!-- CTA MOVED UP -->
         <div class="cta">
-            <a href="/2026/home.html" class="cta-main">Continue to System Overview</a>
+            <a href="/2026/home.html" class="cta-main">Enter System Overview</a>
             <a href="/2026/faq/" class="cta-sub">View Detailed FAQ</a>
         </div>
     </div>
@@ -161,131 +182,65 @@ body {
 
 <!-- WHAT IT IS -->
 <div class="section">
-    <h2>What This Is</h2>
+    <h2 style="color:#f5c15c;">What This Is</h2>
 
-    <p style="font-style: italic; border-left: 4px solid #f5c15c; padding-left: 15px;">
+    <p style="border-left:4px solid #f5c15c; padding-left:15px;">
         It’s a utility-focused digital asset concept designed to function inside a real-world economic system—
-        supporting payroll flows, debit card usage, bill payments, vendor settlement, and related participation experiences.
+        supporting payroll flows, debit card usage, bill payments, vendor settlement, and participation experiences.
     </p>
 
-    <p>
-        This system is built around a simple but controlled model: value is introduced through real activity,
-        distributed through defined structures, and used within environments that reflect actual economic interaction.
-    </p>
-
+    <!-- FLOW -->
     <div class="flow">
-        <span>Earn</span>
-        <span class="arrow">→</span>
-        <span>Allocate</span>
-        <span class="arrow">→</span>
-        <span>Use</span>
+        <div class="flow-item">Earn</div>
+        <div class="flow-item">Allocate</div>
+        <div class="flow-item">Use</div>
     </div>
 </div>
 
-<!-- POSITIONING -->
+<!-- STRIP -->
 <div class="strip">
-    Built for structured economic use — not speculative trading environments.
-</div>
-
-<!-- WHY IT EXISTS -->
-<div class="section">
-    <h2>Why This Exists</h2>
-
-    <p>
-        Traditional digital assets often prioritize open-market behavior over controlled utility. This system takes a different approach—
-        focusing on how value is actually used in everyday economic systems.
-    </p>
-
-    <p>
-        The intent is to align digital value with real-world function: compensation, spending, obligations, and participation.
-        That alignment creates consistency, visibility, and accountability across how value moves.
-    </p>
+    Built for structured economic use — not speculative markets.
 </div>
 
 <!-- WHERE IT OPERATES -->
 <div class="section">
-    <h2>Where It Operates</h2>
+    <h2 style="color:#f5c15c;">Where It Operates</h2>
 
     <div class="grid">
-
         <div class="card">
             <h3>Payroll Systems</h3>
-            <p>
-                Integrates with structured compensation models, aligning distribution with real earnings.
-            </p>
+            <p>Aligns distribution with real earnings.</p>
         </div>
 
         <div class="card">
             <h3>Debit & Daily Use</h3>
-            <p>
-                Supports real-world transactions through controlled usage environments.
-            </p>
+            <p>Supports everyday transactions.</p>
         </div>
 
         <div class="card">
             <h3>Bill Payments</h3>
-            <p>
-                Extends into recurring obligations and scheduled financial activity.
-            </p>
+            <p>Handles recurring obligations.</p>
         </div>
 
         <div class="card">
             <h3>Vendor Settlement</h3>
-            <p>
-                Enables payments between participants and service providers within the system.
-            </p>
+            <p>Enables structured exchanges.</p>
         </div>
-
-    </div>
-</div>
-
-<!-- SYSTEM CHARACTER -->
-<div class="section">
-    <h2>System Characteristics</h2>
-
-    <div class="grid">
-
-        <div class="card">
-            <h3>Utility-Driven</h3>
-            <p>Designed for function, not speculation.</p>
-        </div>
-
-        <div class="card">
-            <h3>Structured Flow</h3>
-            <p>Value moves through defined, predictable pathways.</p>
-        </div>
-
-        <div class="card">
-            <h3>Traceable</h3>
-            <p>Movement of value remains visible and accountable.</p>
-        </div>
-
-        <div class="card">
-            <h3>Purpose-Built</h3>
-            <p>Focused on real economic environments and usage.</p>
-        </div>
-
     </div>
 </div>
 
 <!-- FINAL CTA -->
-<div class="section">
-    <h2>Next Step</h2>
+<div class="section" style="text-align:center;">
+    <h2 style="color:#f5c15c;">Next Step</h2>
 
-    <p>
-        Continue to the full system overview to see how these components connect and operate together.
-    </p>
+    <p>Continue to see how the system operates in full context.</p>
 
-    <div class="cta">
-        <a href="/2026/home.html" class="cta-main">Continue</a>
-        <a href="/2026/videos/" class="cta-sub">View Videos</a>
-        <a href="/2026/faq/" class="cta-sub">View FAQ</a>
-    </div>
+    <a href="/2026/home.html" class="cta-main">Continue</a>
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-    © 2026 Randy Anthony | randyanthony.us
+    © 2026 Randy Anthony
 </div>
 
 </body>
