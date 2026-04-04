@@ -245,6 +245,20 @@
       }
     }
 
+    /* --- TWO-COLUMN GRID FOR PRINCIPLES + OUTCOMES --- */
+    .dual-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 700px) {
+      .dual-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* --- HIGHLIGHT BLOCKS --- */
     .highlight {
       padding: 24px;
@@ -254,10 +268,18 @@
     }
 
     /* Mission box → RED */
-    .highlight.mission {
+    .highlight.mission,
+    .highlight.closing-red {
       background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%);
       border-left: 4px solid #ef4444;
       box-shadow: 0 0 14px rgba(239,68,68,0.4);
+    }
+
+    /* Centered Ongoing Development */
+    .centered {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
     }
 
     /* --- BUTTON --- */
@@ -349,29 +371,38 @@
       </div>
     </div>
 
-    <h2>Guiding Principles</h2>
-    <ul>
-      <li>Automation must reduce risk, not bury it</li>
-      <li>Visibility should increase, not abstract away</li>
-      <li>Operators retain ultimate control and accountability</li>
-      <li>Failures must be observable, not silent</li>
-    </ul>
+    <!-- TWO-COLUMN GRID FOR PRINCIPLES + OUTCOMES -->
+    <div class="dual-grid">
 
-    <h2>Expected Outcomes</h2>
-    <ul>
-      <li>Cleaner, more efficient workflows</li>
-      <li>Earlier detection of issues before escalation</li>
-      <li>Improved operator decision-making under pressure</li>
-      <li>A healthier balance between automation and human judgment</li>
-    </ul>
+      <div>
+        <h2>Guiding Principles</h2>
+        <ul>
+          <li>Automation must reduce risk, not bury it</li>
+          <li>Visibility should increase, not abstract away</li>
+          <li>Operators retain ultimate control and accountability</li>
+          <li>Failures must be observable, not silent</li>
+        </ul>
+      </div>
 
-    <h2>Ongoing Development</h2>
-    <p>
+      <div>
+        <h2>Expected Outcomes</h2>
+        <ul>
+          <li>Cleaner, more efficient workflows</li>
+          <li>Earlier detection of issues before escalation</li>
+          <li>Improved operator decision-making under pressure</li>
+          <li>A healthier balance between automation and human judgment</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <h2 class="centered">Ongoing Development</h2>
+    <p class="centered">
       This initiative evolves continuously.
       As new tools and capabilities emerge, each will be tested against real operational constraints — not theoretical ones.
     </p>
 
-    <div class="highlight">
+    <div class="highlight closing-red">
       The goal is not to chase novelty.
       The goal is to build systems that make operators faster, clearer, and more confident.
     </div>
