@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#0b1a33" />
+
+  <title>Operational Reliability Advisory | Randy Anthony</title>
+  <meta name="description" content="Founder-led advisory supporting broadcast and streaming teams in workflow integrity, redundancy planning, escalation structure, and operational continuity." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Operational Reliability Advisory | Randy Anthony" />
+  <meta property="og:description" content="Founder-led advisory for time-critical broadcast & streaming systems: workflow integrity, redundancy planning, escalation structure, and continuity." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://randyanthony.us/" />
+  <meta property="og:image" content="https://randyanthony.us/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <link rel="canonical" href="https://randyanthony.us/" />
+  <link rel="icon" href="/favicon.png" />
+
+  <style>
+    :root{
+      --bg: #f6f7fb;
+      --bg2:#eef2f8;
+
+      --surface: rgba(15,28,46,0.035);
+      --surface2: rgba(15,28,46,0.06);
+
+      --text: rgba(10,15,25,0.92);
+      --muted: rgba(10,15,25,0.72);
+      --faint: rgba(10,15,25,0.60);
+
+      --border: rgba(15,28,46,0.12);
+
+      --accent:#1f3e8a;
+      --accent2:#0a7a57;
+
+      --shadow: 0 14px 36px rgba(0,0,0,0.12);
+      --radius: 18px;
+      --max: 1040px;
+
+      --heroBgA: #071a33;
+      --heroBgB: #0b1a33;
+      --heroText: rgba(255,255,255,0.94);
+      --heroMuted: rgba(255,255,255,0.74);
+      --heroFaint: rgba(255,255,255,0.60);
+      --heroBorder: rgba(255,255,255,0.14);
+      --heroSurface: rgba(255,255,255,0.06);
+      --heroSurface2: rgba(255,255,255,0.10);
+      --heroShadow: 0 18px 42px rgba(0,0,0,0.30);
+    }
+
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg: #0f1c2e;
+        --bg2:#0b1525;
+
+        --surface: rgba(255,255,255,0.06);
+        --surface2: rgba(255,255,255,0.10);
+
+        --text: rgba(255,255,255,0.92);
+        --muted: rgba(255,255,255,0.74);
+        --faint: rgba(255,255,255,0.60);
+
+        --border: rgba(255,255,255,0.13);
+
+        --accent:#9bb9ff;
+        --accent2:#b8ffde;
+
+        --shadow: 0 14px 36px rgba(0,0,0,0.38);
+
+        --heroBgA: #071a33;
+        --heroBgB: #0b1a33;
+        --heroText: rgba(255,255,255,0.94);
+        --heroMuted: rgba(255,255,255,0.74);
+        --heroFaint: rgba(255,255,255,0.60);
+        --heroBorder: rgba(255,255,255,0.14);
+        --heroSurface: rgba(255,255,255,0.06);
+        --heroSurface2: rgba(255,255,255,0.10);
+        --heroShadow: 0 18px 42px rgba(0,0,0,0.42);
+      }
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(1200px 800px at 18% -12%, rgba(31,62,138,0.12), transparent 62%),
+        radial-gradient(1000px 700px at 92% 8%, rgba(10,122,87,0.07), transparent 58%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      color:var(--text);
+      line-height:1.55;
+      letter-spacing:0.1px;
+    }
+
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 54px}
+
+    header{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:6px 2px 18px;
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:12px; text-decoration:none;
+    }
+
+    .mark{
+      width:36px;
+      height:36px;
+      border-radius:8px;
+      object-fit:contain;
+      box-shadow: var(--shadow);
+    }
+
+    @media (prefers-color-scheme: dark){
+      .mark{
+        border:1px solid rgba(255,255,255,0.16);
+        background: linear-gradient(135deg, rgba(155,185,255,0.92), rgba(184,255,222,0.82));
+      }
+    }
+
+    .brand b{font-weight:720; font-size:14px; letter-spacing:0.6px}
+    .brand span{display:block; font-size:12px; color:var(--muted); margin-top:2px}
+
+    nav{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end}
+
+    nav a{
+      text-decoration:none; font-size:13px; color:var(--muted);
+      padding:8px 10px; border-radius:12px;
+    }
+
+    nav a:hover{background:var(--surface); color:var(--text)}
+
+
+    /* HERO BAND */
+    .heroBand{
+      border-radius: calc(var(--radius) + 2px);
+      background:
+        linear-gradient(rgba(7,26,51,0.82), rgba(7,26,51,0.82)),
+        url("/series/assets/ops-architecture-bg.jpg") center / cover no-repeat;
+      box-shadow: var(--heroShadow);
+      border: 1px solid rgba(7,26,51,0.08);
+      overflow:hidden;
+      padding: 22px;
+    }
+
+    @media (prefers-color-scheme: dark){
+      .heroBand{
+        border: 1px solid rgba(255,255,255,0.10);
+      }
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap:18px;
+      align-items:stretch;
+      padding:0;
+    }
+
+    @media (max-width: 860px){
+      .hero{grid-template-columns:1fr}
+      nav{justify-content:flex-start}
+    }
+
+    .card{
+      background: linear-gradient(180deg, var(--surface2), transparent 140%);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero .card{
+      background: linear-gradient(180deg, var(--heroSurface2), transparent 140%);
+      border-color: var(--heroBorder);
+      box-shadow: none;
+    }
+
+    .heroMain{padding:28px 26px}
+
+    h1{
+      margin:0 0 10px;
+      font-size: 38px;
+      line-height:1.08;
+      letter-spacing:-0.7px;
+      color: var(--heroText);
+    }
+
+    @media (max-width: 520px){
+      h1{font-size:32px}
+    }
+
+    .lede{
+      margin:0 0 18px;
+      color:var(--heroMuted);
+      font-size:16px;
+      max-width: 62ch;
+    }
+
+    .heroRule{
+      width:72px;
+      height:2px;
+      border-radius:999px;
+      background: linear-gradient(90deg, rgba(155,185,255,0.90), rgba(184,255,222,0.55));
+      margin: 10px 0 16px;
+      opacity:0.95;
+    }
+
+    .ctaRow{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:12px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:11px 14px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:680;
+      font-size:14px;
+      border:1px solid var(--border);
+      background: var(--surface2);
+      transition: transform .06s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
+    }
+
+    .btn:hover{
+      background: var(--surface);
+      transform: translateY(-1px);
+    }
+
+    .btnPrimary{
+      background: rgba(255,255,255,0.10);
+      border-color: rgba(155,185,255,0.40);
+      color: var(--heroText);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+    }
+
+    .btnPrimary:hover{
+      border-color: rgba(155,185,255,0.62);
+      background: rgba(255,255,255,0.14);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.22);
+    }
+
+    .metaLine{
+      margin-top:14px;
+      color:var(--heroFaint);
+      font-size:12.5px;
+    }
+
+    .heroSide{padding:22px 20px}
+
+    .kicker{
+      font-size:12px;
+      letter-spacing:0.8px;
+      text-transform:uppercase;
+      color:var(--heroFaint);
+      margin:0 0 10px;
+    }
+
+    .list{
+      margin:0;
+      padding-left:18px;
+      color:var(--heroMuted);
+      font-size:14px;
+    }
+
+    .list li{margin:9px 0}
+
+    .pillRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:12px;
+    }
+
+    .pill{
+      font-size:12.5px;
+      color:var(--heroMuted);
+      border:1px solid var(--heroBorder);
+      background:transparent;
+      padding:8px 10px;
+      border-radius:999px;
+    }
+
+    .statement{
+      margin: 18px 0 2px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--heroBorder);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.00));
+      color: var(--heroMuted);
+      font-size: 14px;
+    }
+
+    .statement b{
+      color: var(--heroText);
+      font-weight: 680;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header>
+      <a class="brand" href="/" aria-label="Home">
+        <img src="/favicon.png" class="mark" alt="Logo">
+        <div>
+          <b>RANDY ANTHONY</b>
+          <span>Operational Reliability Advisory</span>
+        </div>
+      </a>
+
+      <nav aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="#services">Services</a>
+        <a href="/series/">Operational Architecture</a>
+        <a href="#engagements">Engagements</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="heroBand" aria-label="Hero section">
+      <main id="top" class="hero">
+
+        <div class="card heroMain">
+          <h1>Operational Reliability Advisory<br/>for Broadcast &amp; Streaming Systems</h1>
+
+          <div class="heroRule" aria-hidden="true"></div>
+
+          <p class="lede">
+            Founder-led support for time-critical workflows—automation integrity, redundancy planning, escalation structure,
+            and continuity. Practical recommendations, written clearly, prioritized for impact.
+          </p>
+
+          <div class="ctaRow">
+            <a class="btn btnPrimary" href="mailto:inbox@randyanthony.us?subject=Consultation%20request%20-%20Operational%20Reliability">Request a consultation</a>
+            <a class="btn" href="#services">View services</a>
+          </div>
+
+          <div class="metaLine">
+            Quiet authority. Technical depth. Executive clarity.
+          </div>
+
+          <div class="statement" role="note">
+            <b>In environments where failure is visible, reliability is not optional.</b>
+            The work is measured by what doesn’t happen—disruption avoided, recoveries simplified, and teams supported with clear systems.
+          </div>
+        </div>
+
+        <aside class="card heroSide" aria-label="Focus areas">
+          <p class="kicker">Focus areas</p>
+          <ul class="list">
+            <li>Automation and playout workflow integrity</li>
+            <li>Redundancy mapping and single-point-of-failure reduction</li>
+            <li>Escalation paths, shift handoffs, and continuity planning</li>
+            <li>Operational documentation (SOPs) that teams actually use</li>
+          </ul>
+
+          <div class="pillRow">
+            <span class="pill">broadcast ops</span>
+            <span class="pill">streaming ops</span>
+            <span class="pill">master control</span>
+            <span class="pill">runbooks</span>
+            <span class="pill">incident readiness</span>
+          </div>
+        </aside>
+
+      </main>
+    </div>
+    <!-- SERVICES -->
+    <section id="services" aria-label="Services" style="padding-top:28px">
+      <div class="grid3">
+        <div class="card service">
+          <h3>Operational Workflow Review</h3>
+          <p>
+            Independent assessment of automation, playout workflows, dependencies, and escalation paths—focused on
+            preventing visible failure and reducing recovery time.
+          </p>
+        </div>
+
+        <div class="card service">
+          <h3>Documentation &amp; Continuity Planning</h3>
+          <p>
+            SOPs, handoff standards, and failure-response maps that reduce reliance on institutional memory and improve
+            consistency across shifts.
+          </p>
+        </div>
+
+        <div class="card service">
+          <h3>Advisory Support</h3>
+          <p>
+            Ongoing reliability perspective for organizations that want steady operational oversight without expanding
+            internal headcount.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENGAGEMENTS -->
+    <section id="engagements" aria-label="Engagements" style="padding-top:34px">
+      <div class="split">
+        <div class="card panel">
+          <h2>How engagements work</h2>
+          <p>
+            Most work begins with a brief discovery call. If there’s a fit, I scope a review and deliver a written
+            summary with prioritized recommendations and next steps.
+          </p>
+          <ol class="steps">
+            <li><strong>Discovery:</strong> goals, constraints, and operational context</li>
+            <li><strong>Review:</strong> workflow walk-through, dependency mapping, failure scenarios</li>
+            <li><strong>Deliverable:</strong> risk exposure summary + prioritized mitigation plan</li>
+          </ol>
+        </div>
+
+        <div class="card panel">
+          <h2>Who this is for</h2>
+          <p>
+            Teams where time and accuracy matter—live events, automated playout, multi-feed environments, and operations
+            that cannot afford preventable outages.
+          </p>
+          <ol class="steps">
+            <li>Broadcast operations &amp; master control environments</li>
+            <li>Streaming teams supporting live programming or sports</li>
+            <li>Organizations scaling distribution without mature runbooks</li>
+            <li>Teams exposed to single-point-of-failure staffing or systems</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK LINKS GRID (MERGED FROM OLD INDEX) -->
+    <section aria-label="Quick links" style="margin-top:42px">
+      <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:12px; margin-bottom:12px">
+        <h2 style="margin:0; font-size:18px">Navigate the site</h2>
+      </div>
+
+      <div class="grid3" role="list" style="gap:18px">
+
+        <!-- SPONSOR: Legal Shield -->
+        <article class="card" role="listitem" aria-labelledby="g1" style="background-color:#2f3a44; color:#ffffff;">
+          <h3 id="g1">SPONSORED BY: Legal Shield</h3>
+          <p style="color:#cbd5e1;">
+            Legal Shield &amp; ID Shield<br>
+            Protecting Families &amp; Businesses Nationwide.
+          </p>
+          <p style="margin-top:12px">
+            <a class="btn" href="/legal/" style="background:#ffffff; color:#000">Explore Plans →</a>
+          </p>
+        </article>
+
+        <!-- Operational Architecture Series -->
+        <article class="card" role="listitem" aria-labelledby="g2">
+          <h3 id="g2">Operational Architecture Series</h3>
+          <p>Ongoing 13-week series with quarterly focus: deep-dive essays on visibility, automation, escalation, and resilience.</p>
+          <p style="margin-top:12px"><a class="btn" href="/series/">Open →</a></p>
+        </article>
+
+        <!-- Bio & Consulting -->
+        <article class="card" role="listitem" aria-labelledby="g3">
+          <h3 id="g3">Bio &amp; Consulting</h3>
+          <p>More information and contact details — operational advisory offerings.</p>
+          <p style="margin-top:12px"><a class="btn" href="/bio/">View Bio →</a></p>
+        </article>
+
+        <!-- SPONSOR: Piety Paychain -->
+        <article class="card" role="listitem" aria-labelledby="g4" style="background-color:#2f3a44; color:#ffffff;">
+          <h3 id="g4">SPONSORED BY: The Piety Paychain</h3>
+          <p style="color:#cbd5e1;">
+            Helping to fund these pages.<br>
+            Learn more about the Piety Paychain.
+          </p>
+          <p style="margin-top:12px">
+            <a class="btn" href="/2026/" style="background:#ffffff; color:#000">Explore Paychain →</a>
+          </p>
+        </article>
+
+        <!-- Publications -->
+        <article class="card" role="listitem" aria-labelledby="g5">
+          <h3 id="g5">Publications</h3>
+          <p>
+            <em><strong>FM — The Fading Modulation Of Terrestrial Radio</strong></em><br>
+            How The Communication Act Of 1996 Silenced The Radio Stars.
+          </p>
+          <p style="margin-top:12px"><a class="btn" href="/book/">Get The Book →</a></p>
+        </article>
+
+        <!-- Radio -->
+        <article class="card" role="listitem" aria-labelledby="g6">
+          <h3 id="g6">Radio &amp; Audio</h3>
+          <p>Co-Founder of <strong>The Sound Of The Strand</strong><br>Carolina Beach Music Internet Radio Station.</p>
+          <p style="margin-top:12px"><a class="btn" href="/radio/">Listen Live →</a></p>
+        </article>
+
+      </div>
+    </section>
+    <!-- SERIES LIST -->
+    <section aria-label="Series list" style="margin-top:42px">
+      <h2 style="margin:0 0 12px; font-size:18px">Operational Architecture — Weekly Series</h2>
+
+      <div style="display:flex; flex-direction:column; gap:10px">
+        <div class="card" style="padding:14px">
+          <strong>Week 01 — Visibility</strong>
+          <p style="margin:6px 0 0; color:var(--muted)">Foundations of operational clarity and signal awareness.</p>
+        </div>
+
+        <div class="card" style="padding:14px">
+          <strong>Week 02 — Automation Integrity</strong>
+          <p style="margin:6px 0 0; color:var(--muted)">Ensuring predictable behavior under load and during transitions.</p>
+        </div>
+
+        <div class="card" style="padding:14px">
+          <strong>Week 03 — Escalation Design</strong>
+          <p style="margin:6px 0 0; color:var(--muted)">Reducing ambiguity and improving recovery speed.</p>
+        </div>
+
+        <div class="card" style="padding:14px">
+          <strong>Week 04 — Failure Surfaces</strong>
+          <p style="margin:6px 0 0; color:var(--muted)">Mapping where things break before they break.</p>
+        </div>
+
+        <!-- You can continue adding weeks here as your series grows -->
+      </div>
+    </section>
+
+    <!-- SPOTLIGHT / PROJECTS -->
+    <section aria-label="Spotlight" style="margin-top:42px">
+      <div style="display:flex; justify-content:space-between; gap:12px; align-items:center">
+        <h2 style="margin:0; font-size:18px">Spotlight &amp; Projects</h2>
+        <small style="color:var(--muted)">Selected work</small>
+      </div>
+
+      <div class="split" style="margin-top:16px">
+        <div class="card panel">
+          <h3 style="margin-top:0">Operational Reviews</h3>
+          <p style="color:var(--muted)">
+            Independent assessments of systems and policy with practical recommendations that teams can implement quickly.
+          </p>
+          <p style="margin-top:12px">
+            <a class="btn" href="mailto:inbox@randyanthony.us">Email To Engage →</a>
+          </p>
+        </div>
+
+        <div class="card panel">
+          <h3 style="margin-top:0">AI &amp; Workflow Experiments (2026)</h3>
+          <p style="color:var(--muted)">
+            Tooling experiments to reduce manual work and improve monitoring. Exploration of decision support and automation oversight.
+          </p>
+          <p style="margin-top:12px">
+            <a class="btn" href="/work.html">Under Construction →</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" aria-label="About" style="margin-top:42px">
+      <div class="card panel">
+        <h2>About</h2>
+        <p>
+          Led by Randy Anthony, a broadcast and streaming operations specialist with decades of hands-on experience in
+          time-critical environments. The focus is practical reliability—clear workflows, resilient systems, and calm
+          execution when conditions are not ideal.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-label="Contact" style="margin-top:42px">
+      <div class="card panel">
+        <h2>Contact</h2>
+        <p>
+          If you’re dealing with recurring workflow issues—or want to reduce risk before they become on-air failures—reach out.
+          Include your system environment, automation stack, and what “failure” looks like in your world.
+        </p>
+
+        <div class="ctaRow" style="margin-top:14px">
+          <a class="btn" style="border-color: var(--border); background: var(--surface2);" href="mailto:inbox@randyanthony.us?subject=Consultation%20request%20-%20Operational%20Reliability">Email to start</a>
+          <a class="btn" style="border-color: var(--border); background: var(--surface2);" href="#top">Back to top</a>
+        </div>
+
+        <p class="metaLine" style="margin-top:12px; color: var(--faint);">
+          Note: This page is intentionally simple and fast. Case studies and references are shared privately when appropriate.
+        </p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="margin-top:34px; padding-top:18px; border-top:1px solid var(--border); display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between; color:var(--faint); font-size:12.5px;">
+      <div>© <span id="year"></span> Randy Anthony. All rights reserved.</div>
+
+      <div class="smallLinks" style="display:flex; gap:10px; flex-wrap:wrap">
+        <a href="/series/">Operational Architecture</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </footer>
+
+  </div> <!-- wrap -->
+
+  <!-- STRUCTURED DATA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Time-Critical Advisory (Randy Anthony)",
+    "url": "https://randyanthony.us/",
+    "description": "Founder-led operational reliability advisory for broadcast and streaming systems: workflow integrity, redundancy planning, escalation structure, and operational continuity.",
+    "areaServed": "US",
+    "founder": {
+      "@type": "Person",
+      "name": "Randy Anthony"
+    }
+  }
+  </script>
+
+  <!-- YEAR SCRIPT -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
