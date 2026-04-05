@@ -1,0 +1,86 @@
+<!-- ===========================
+     ABOUT
+=========================== -->
+<section id="about" aria-label="About">
+  <div class="card panel">
+    <h2>About</h2>
+    <p>
+      Led by Randy Anthony, a broadcast and streaming operations specialist with decades of hands-on
+      experience in time-critical environments. The focus is practical reliability—clear workflows,
+      resilient systems, and calm execution when conditions are not ideal.
+    </p>
+  </div>
+</section>
+
+
+<!-- ===========================
+     CONTACT
+=========================== -->
+<section id="contact" aria-label="Contact">
+  <div class="card panel">
+    <h2>Contact</h2>
+    <p>
+      If you’re dealing with recurring workflow issues—or want to reduce risk before they become
+      on-air failures—reach out. Include your system environment, automation stack, and what
+      “failure” looks like in your world.
+    </p>
+
+    <div class="ctaRow" style="margin-top:14px">
+      <a class="btn"
+         style="border-color: var(--border); background: var(--surface2);"
+         href="mailto:inbox@randyanthony.us?subject=Consultation%20request%20-%20Operational%20Reliability">
+        Email to start
+      </a>
+
+      <a class="btn"
+         style="border-color: var(--border); background: var(--surface2);"
+         href="#top">
+        Back to top
+      </a>
+    </div>
+
+    <p class="metaLine" style="margin-top:12px; color: var(--faint);">
+      Note: This page is intentionally simple and fast. Case studies and references are shared
+      privately when appropriate.
+    </p>
+  </div>
+</section>
+
+
+<!-- ===========================
+     FOOTER
+=========================== -->
+<footer>
+  <div>© <span id="year"></span> Randy Anthony. All rights reserved.</div>
+
+  <div class="smallLinks">
+    <a href="/series/">Operational Architecture</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+</div> <!-- end .wrap -->
+
+
+<!-- ===========================
+     SCRIPTS
+=========================== -->
+
+<script>
+  // Mobile nav toggle
+  const toggle = document.getElementById('mobileToggle');
+  const mobileNav = document.getElementById('mobileNav');
+
+  toggle.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+    mobileNav.setAttribute('aria-hidden', !isOpen);
+  });
+
+  // Auto-update footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
