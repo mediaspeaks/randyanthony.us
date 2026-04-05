@@ -582,5 +582,16 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+<script>
+  const toggle = document.getElementById('mobileToggle');
+  const mobileNav = document.getElementById('mobileNav');
+
+  toggle.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+    mobileNav.setAttribute('aria-hidden', !isOpen);
+  });
+</script>
+
 </body>
 </html>
