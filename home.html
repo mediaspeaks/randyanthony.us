@@ -373,6 +373,38 @@
     border-bottom: none;
   }
 }
+/* FORCE HIDE HAMBURGER ON DESKTOP */
+.mobile-toggle {
+  display: none !important;
+}
+
+/* FORCE HIDE MOBILE NAV ON DESKTOP */
+#mobileNav {
+  display: none !important;
+}
+
+/* MOBILE BEHAVIOR */
+@media (max-width: 860px) {
+
+  /* Hide desktop nav on mobile */
+  nav.primary {
+    display: none !important;
+  }
+
+  /* Show hamburger on mobile */
+  .mobile-toggle {
+    display: block !important;
+  }
+
+  /* Mobile nav panel */
+  #mobileNav {
+    display: none;
+  }
+
+  #mobileNav.open {
+    display: flex;
+  }
+}
 
   </style>
 
