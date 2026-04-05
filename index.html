@@ -305,40 +305,48 @@
 
   <div class="site" role="document">
 
-    <!-- header -->
+<header>
+
   <a class="brand" href="/">
-  <img src="/favicon.png" alt="" style="width:44px;height:44px;border-radius:12px;">
-  <div class="titles">
-    <strong>RANDY ANTHONY</strong>
-    <span>Operational Reliability Advisory</span>
-  </div>
-</a>
-
-      <nav class="primary" role="navigation" aria-label="Main navigation">
-        <a href="/">Home</a>
-        <a href="/series/">Operational Architecture Series</a>
-        <a href="/bio/">Bio</a>
-        <a href="https://randyanthony.us/home.html">Offerings</a>
-        <a href="/book/">Book</a>
-        <a href="/radio/">Radio</a>
-
-      <div class="cta">
-        <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a consultation</a>
-        <a class="btn secondary" href="https://randyanthony.us/#about">About</a>
-        <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileNav" title="Toggle menu">☰</button>
-      </div>
-      </nav> 
-  </header>
-
-    <!-- mobile nav panel -->
-    <div id="mobileNav" class="mobile-nav" aria-hidden="true">
-      <a href="/">Home</a>
-      <a href="/series/">Operational Architecture</a>
-      <a href="/bio/">Bio</a>
-      <a href="/2026/">Project</a>
-      <a href="/book/">Book</a>
-      <a href="/radio/">Radio</a>
+    <img src="/favicon.png" alt="" style="width:44px;height:44px;border-radius:12px;">
+    <div class="titles">
+      <strong>RANDY ANTHONY</strong>
+      <span>Operational Reliability Advisory</span>
     </div>
+  </a>
+
+  <nav class="primary" role="navigation" aria-label="Main navigation">
+    <a href="/">Home</a>
+    <a href="/series/">Operational Architecture Series</a>
+    <a href="/bio/">Bio</a>
+    <a href="/home.html">Offerings</a>
+    <a href="/book/">Book</a>
+    <a href="/radio/">Radio</a>
+
+    <div class="cta">
+      <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a consultation</a>
+      <a class="btn secondary" href="#about">About</a>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Toggle -->
+  <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileNav">
+    ☰
+  </button>
+
+</header>
+
+<!-- Mobile Nav Panel -->
+<nav id="mobileNav" class="mobile-nav" aria-hidden="true">
+  <a href="/">Home</a>
+  <a href="/series/">Operational Architecture Series</a>
+  <a href="/bio/">Bio</a>
+  <a href="/home.html">Offerings</a>
+  <a href="/book/">Book</a>
+  <a href="/radio/">Radio</a>
+  <a href="#about">About</a>
+</nav>
+
 
     <!-- hero -->
     <section class="hero" role="region" aria-label="Intro">
