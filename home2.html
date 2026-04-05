@@ -1,3 +1,537 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#0b1a33" />
+
+  <title>Operational Reliability Advisory | Randy Anthony</title>
+  <meta name="description" content="Founder-led advisory supporting broadcast and streaming teams in workflow integrity, redundancy planning, escalation structure, and operational continuity." />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://randyanthony.us/" />
+  <link rel="icon" href="favicon.png" />
+
+  <style>
+    :root{
+      --bg: #f6f7fb;
+      --bg2:#eef2f8;
+      --surface: rgba(15,28,46,0.035);
+      --surface2: rgba(15,28,46,0.06);
+      --text: rgba(10,15,25,0.92);
+      --muted: rgba(10,15,25,0.72);
+      --faint: rgba(10,15,25,0.60);
+      --border: rgba(15,28,46,0.12);
+      --accent:#1f3e8a;
+      --accent2:#0a7a57;
+      --shadow: 0 14px 36px rgba(0,0,0,0.12);
+      --radius: 18px;
+      --max: 1040px;
+
+      --heroBgA: #071a33;
+      --heroBgB: #0b1a33;
+      --heroText: rgba(255,255,255,0.94);
+      --heroMuted: rgba(255,255,255,0.74);
+      --heroFaint: rgba(255,255,255,0.60);
+      --heroBorder: rgba(255,255,255,0.14);
+      --heroSurface: rgba(255,255,255,0.06);
+      --heroSurface2: rgba(255,255,255,0.10);
+      --heroShadow: 0 18px 42px rgba(0,0,0,0.30);
+    }
+
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg: #0f1c2e;
+        --bg2:#0b1525;
+        --surface: rgba(255,255,255,0.06);
+        --surface2: rgba(255,255,255,0.10);
+        --text: rgba(255,255,255,0.92);
+        --muted: rgba(255,255,255,0.74);
+        --faint: rgba(255,255,255,0.60);
+        --border: rgba(255,255,255,0.13);
+        --accent:#9bb9ff;
+        --accent2:#b8ffde;
+        --shadow: 0 14px 36px rgba(0,0,0,0.38);
+        --heroShadow: 0 18px 42px rgba(0,0,0,0.42);
+      }
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(1200px 800px at 18% -12%, rgba(31,62,138,0.12), transparent 62%),
+        radial-gradient(1000px 700px at 92% 8%, rgba(10,122,87,0.07), transparent 58%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      color:var(--text);
+      line-height:1.55;
+      letter-spacing:0.1px;
+    }
+
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 54px}
+
+    /* ===========================
+       HEADER BASE STYLES
+    ============================ */
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:6px 2px 18px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+    }
+
+    .brand img{
+      width:44px;
+      height:44px;
+      border-radius:12px;
+    }
+
+    .titles strong{
+      font-weight:720;
+      font-size:14px;
+      letter-spacing:0.6px;
+    }
+
+    .titles span{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+      margin-top:2px;
+    }
+
+    nav.primary{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    nav.primary a{
+      text-decoration:none;
+      font-size:13px;
+      color:var(--muted);
+      padding:8px 10px;
+      border-radius:12px;
+    }
+
+    nav.primary a:hover{
+      background:var(--surface);
+      color:var(--text);
+    }
+
+    .cta{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:11px 14px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:680;
+      font-size:14px;
+      border:1px solid var(--border);
+      background: var(--surface2);
+    }
+
+    .btn.secondary{
+      background:var(--surface);
+    }
+
+    /* ===========================
+       MOBILE NAV FIXES (CORRECT)
+    ============================ */
+
+    /* Hide hamburger on desktop */
+    .mobile-toggle {
+      display: none;
+    }
+
+    /* Hide mobile nav by default */
+    #mobileNav {
+      display: none;
+    }
+
+    @media (max-width: 860px){
+
+      /* Hide desktop nav on mobile */
+      nav.primary {
+        display: none !important;
+      }
+
+      /* Show hamburger on mobile */
+      .mobile-toggle {
+        display: block;
+        margin-left: auto;
+      }
+
+      /* Mobile nav panel */
+      #mobileNav {
+        display: none;
+        flex-direction: column;
+        background: var(--surface2);
+        padding: 18px;
+        border-radius: 16px;
+        margin-top: 10px;
+        box-shadow: var(--shadow);
+      }
+
+      #mobileNav.open {
+        display: flex;
+      }
+
+      #mobileNav a {
+        padding: 10px 0;
+        font-size: 15px;
+        color: var(--text);
+        border-bottom: 1px solid var(--border);
+      }
+
+      #mobileNav a:last-child {
+        border-bottom: none;
+      }
+    }
+
+    /* ===========================
+       HERO + PAGE CONTENT
+    ============================ */
+
+    .heroBand{
+      border-radius: calc(var(--radius) + 2px);
+      background:
+        linear-gradient(rgba(7,26,51,0.82), rgba(7,26,51,0.82)),
+        url("/series/assets/ops-architecture-bg.jpg") center/cover no-repeat;
+      box-shadow: var(--heroShadow);
+      border: 1px solid rgba(7,26,51,0.08);
+      overflow:hidden;
+      padding: 22px;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap:18px;
+      align-items:stretch;
+      padding:0;
+    }
+
+    @media (max-width: 860px){
+      .hero{grid-template-columns:1fr}
+    }
+
+    .card{
+      background: linear-gradient(180deg, var(--surface2), transparent 140%);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero .card{
+      background: linear-gradient(180deg, var(--heroSurface2), transparent 140%);
+      border-color: var(--heroBorder);
+      box-shadow: none;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size: 38px;
+      line-height:1.08;
+      letter-spacing:-0.7px;
+      color: var(--heroText);
+    }
+
+    @media (max-width: 520px){
+      h1{font-size:32px}
+    }
+
+    .lede{
+      margin:0 0 18px;
+      color:var(--heroMuted);
+      font-size:16px;
+      max-width: 62ch;
+    }
+
+    .heroRule{
+      width:72px;
+      height:2px;
+      border-radius:999px;
+      background: linear-gradient(90deg, rgba(155,185,255,0.90), rgba(184,255,222,0.55));
+      margin: 10px 0 16px;
+      opacity:0.95;
+    }
+
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; align-items:center; margin-top:12px}
+
+    .btnPrimary{
+      background: rgba(255,255,255,0.10);
+      border-color: rgba(155,185,255,0.40);
+      color: var(--heroText);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+    }
+
+    .metaLine{
+      margin-top:14px; color:var(--heroFaint); font-size:12.5px;
+    }
+
+    .heroSide{padding:22px 20px}
+
+    .kicker{
+      font-size:12px; letter-spacing:0.8px; text-transform:uppercase; color:var(--heroFaint);
+      margin:0 0 10px;
+    }
+
+    .list{margin:0; padding-left:18px; color:var(--heroMuted); font-size:14px}
+    .list li{margin:9px 0}
+
+    .pillRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+
+    .pill{
+      font-size:12.5px; color:var(--heroMuted);
+      border:1px solid var(--heroBorder); background:transparent;
+      padding:8px 10px; border-radius:999px;
+    }
+
+    .statement{
+      margin: 18px 0 2px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      border: 1px solid var(--heroBorder);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.00));
+      color: var(--heroMuted);
+      font-size: 14px;
+    }
+
+    .statement b{
+      color: var(--heroText);
+      font-weight: 680;
+    }
+
+    /* Below hero */
+    section{padding:22px 0 0}
+
+    .grid3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
+    @media (max-width: 900px){ .grid3{grid-template-columns:1fr} }
+
+    .service{padding:18px 18px}
+    .service h3{margin:0 0 6px; font-size:16px}
+    .service p{margin:0; color:var(--muted); font-size:14px}
+
+    .split{
+      display:grid; grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+    @media (max-width: 900px){ .split{grid-template-columns:1fr} }
+
+    .panel{padding:18px 18px}
+    .panel h2{margin:0 0 10px; font-size:18px}
+    .panel p{margin:0; color:var(--muted); font-size:14px}
+
+    .steps{margin:12px 0 0; padding-left:18px; color:var(--muted); font-size:14px}
+    .steps li{margin:10px 0}
+
+    footer{
+      margin-top:34px; padding-top:18px;
+      border-top:1px solid var(--border);
+      display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between;
+      color:var(--faint); font-size:12.5px;
+    }
+
+    .smallLinks{display:flex; gap:10px; flex-wrap:wrap}
+    .smallLinks a{color:var(--faint); text-decoration:none; padding:6px 8px; border-radius:10px}
+    .smallLinks a:hover{background:var(--surface); color:var(--muted)}
+
+    .sr-only{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+      clip:rect(0,0,0,0); white-space:nowrap; border:0;
+    }
+  </style>
+<header>
+
+  <a class="brand" href="/">
+    <img src="/favicon.png" alt="" style="width:44px;height:44px;border-radius:12px;">
+    <div class="titles">
+      <strong>RANDY ANTHONY</strong>
+      <span>Operational Reliability Advisory</span>
+    </div>
+  </a>
+
+  <nav class="primary" role="navigation" aria-label="Main navigation">
+    <a href="/">Home</a>
+    <a href="/series/">Operational Architecture Series</a>
+    <a href="/bio/">Bio</a>
+    <a href="/home.html">Offerings</a>
+    <a href="/book/">Book</a>
+    <a href="/radio/">Radio</a>
+
+    <div class="cta">
+      <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a consultation</a>
+      <a class="btn secondary" href="#about">About</a>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Toggle -->
+  <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileNav">
+    ☰
+  </button>
+
+</header>
+
+<!-- Mobile Nav Panel -->
+<nav id="mobileNav" class="mobile-nav" aria-hidden="true">
+  <a href="/">Home</a>
+  <a href="/series/">Operational Architecture Series</a>
+  <a href="/bio/">Bio</a>
+  <a href="/home.html">Offerings</a>
+  <a href="/book/">Book</a>
+  <a href="/radio/">Radio</a>
+  <a href="#about">About</a>
+</nav>
+<!-- ===========================
+     HERO SECTION
+=========================== -->
+<div class="heroBand" aria-label="Hero section">
+  <main id="top" class="hero">
+
+    <!-- Main Hero Card -->
+    <div class="card heroMain">
+      <h1>Operational Reliability Advisory<br/>for Broadcast &amp; Streaming Systems</h1>
+
+      <div class="heroRule" aria-hidden="true"></div>
+
+      <p class="lede">
+        Founder-led support for time-critical workflows—automation integrity, redundancy planning,
+        escalation structure, and continuity. Practical recommendations, written clearly,
+        prioritized for impact.
+      </p>
+
+      <div class="ctaRow">
+        <a class="btn btnPrimary"
+           href="mailto:inbox@randyanthony.us?subject=Consultation%20request%20-%20Operational%20Reliability">
+          Request a consultation
+        </a>
+        <a class="btn" href="#services">View services</a>
+      </div>
+
+      <div class="metaLine">
+        Quiet authority. Technical depth. Executive clarity.
+      </div>
+
+      <div class="statement" role="note" aria-label="Positioning statement">
+        <b>In environments where failure is visible, reliability is not optional.</b>
+        The work is measured by what doesn’t happen—disruption avoided, recoveries simplified,
+        and teams supported with clear systems.
+      </div>
+    </div>
+
+    <!-- Side Hero Card -->
+    <aside class="card heroSide" aria-label="Focus areas">
+      <p class="kicker">Focus areas</p>
+
+      <ul class="list">
+        <li>Automation and playout workflow integrity</li>
+        <li>Redundancy mapping and single-point-of-failure reduction</li>
+        <li>Escalation paths, shift handoffs, and continuity planning</li>
+        <li>Operational documentation (SOPs) that teams actually use</li>
+      </ul>
+
+      <div class="pillRow" aria-label="Keywords">
+        <span class="pill">broadcast ops</span>
+        <span class="pill">streaming ops</span>
+        <span class="pill">master control</span>
+        <span class="pill">runbooks</span>
+        <span class="pill">incident readiness</span>
+      </div>
+    </aside>
+
+  </main>
+</div>
+<!-- ===========================
+     SERVICES
+=========================== -->
+<section id="services" aria-label="Services">
+  <div class="grid3">
+
+    <div class="card service">
+      <h3>Operational Workflow Review</h3>
+      <p>
+        Independent assessment of automation, playout workflows, dependencies, and escalation paths—
+        focused on preventing visible failure and reducing recovery time.
+      </p>
+    </div>
+
+    <div class="card service">
+      <h3>Documentation &amp; Continuity Planning</h3>
+      <p>
+        SOPs, handoff standards, and failure-response maps that reduce reliance on institutional memory
+        and improve consistency across shifts.
+      </p>
+    </div>
+
+    <div class="card service">
+      <h3>Advisory Support</h3>
+      <p>
+        Ongoing reliability perspective for organizations that want steady operational oversight
+        without expanding internal headcount.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===========================
+     ENGAGEMENTS
+=========================== -->
+<section id="engagements" aria-label="Engagements">
+  <div class="split">
+
+    <div class="card panel">
+      <h2>How engagements work</h2>
+      <p>
+        Most work begins with a brief discovery call. If there’s a fit, I scope a review and deliver
+        a written summary with prioritized recommendations and next steps.
+      </p>
+      <ol class="steps">
+        <li><strong>Discovery:</strong> goals, constraints, and operational context</li>
+        <li><strong>Review:</strong> workflow walk-through, dependency mapping, failure scenarios</li>
+        <li><strong>Deliverable:</strong> risk exposure summary + prioritized mitigation plan</li>
+      </ol>
+    </div>
+
+    <div class="card panel">
+      <h2>Who this is for</h2>
+      <p>
+        Teams where time and accuracy matter—live events, automated playout, multi-feed environments,
+        and operations that cannot afford preventable outages.
+      </p>
+      <ol class="steps">
+        <li>Broadcast operations &amp; master control environments</li>
+        <li>Streaming teams supporting live programming or sports</li>
+        <li>Organizations scaling distribution without mature runbooks</li>
+        <li>Teams exposed to single-point-of-failure staffing or systems</li>
+      </ol>
+    </div>
+
+  </div>
+</section>
 <!-- ===========================
      ABOUT
 =========================== -->
