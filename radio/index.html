@@ -279,6 +279,35 @@ nav.primary a:hover {
 }
 
 /* --------------------------------------------------
+   SPONSOR CARDS (IDENTICAL TO INDEX PAGE)
+-------------------------------------------------- */
+.sponsors {
+  margin-top: 48px;
+}
+
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 18px;
+}
+
+.sponsor-card {
+  background: linear-gradient(180deg, #0f1c2e, #0b1525);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+.sponsor-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --------------------------------------------------
    CONTENT + FOOTER
 -------------------------------------------------- */
 .wrap{
@@ -376,7 +405,7 @@ footer{
       <p class="radio-hero-kicker">The Sound of the Strand • Since 2016</p>
       <h1 class="radio-hero-title">Racin’ Randy on The Sound of the Strand</h1>
       <p class="radio-hero-subtitle">
-        Carolina Beach Music, stories from the road, and a lifetime of radio — streaming wherever you are.
+        Carolina Beach Music, stories from the road, and a lifetime of radio and racing — streaming wherever you are.
       </p>
 
       <div class="radio-cta-row">
@@ -417,7 +446,7 @@ footer{
     In the 1990s, he returned to Charlotte to work at the legendary Magic 96 oldies station and served as Senior Producer for <i>NASCAR Country</i>, a weekly two‑hour internationally syndicated program. His long‑term knowledge of the sport helped him write and produce a show that earned two Billboard Magazine nominations for Best Syndicated Program.
   </p>
   <p>
-    Today, Randy works at the TEGNA Stream center handling automation reliability and operations for numerous TV platforms. He continues to do voice work for stations nationwide and serves as a NASCAR correspondent for the nationally syndicated <i>Sports Circus</i> program. His favorite beach music song: “If I Didn’t Have A Dime” by Bob Collins and The Fabulous Five.
+    Today, Randy works at WGHP‑TV in the Triad of North Carolina as a newscast director. He continues to do voice work for stations nationwide and serves as a NASCAR correspondent for the nationally syndicated <i>Sports Circus</i> program. His favorite beach music song: “If I Didn’t Have A Dime” by Bob Collins and The Fabulous Five.
   </p>
 </section>
 
@@ -429,6 +458,23 @@ footer{
   <p>
     From deep‑cut beach tracks to familiar favorites, the station keeps the tradition alive while embracing the reality that the audience is now everywhere — not just within reach of a tower.
   </p>
+</section>
+
+<!-- --------------------------------------------------
+     SPONSOR CARDS
+-------------------------------------------------- -->
+<section class="sponsors">
+  <div class="sponsor-grid">
+
+    <a class="sponsor-card" href="https://www.legalshield.com/" target="_blank" rel="noopener">
+      <img src="/assets/legalshield.png" alt="LegalShield">
+    </a>
+
+    <a class="sponsor-card" href="https://www.pietypaychain.com/" target="_blank" rel="noopener">
+      <img src="/assets/piety.png" alt="Piety Paychain">
+    </a>
+
+  </div>
 </section>
 
 <footer>
