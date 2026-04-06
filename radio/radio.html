@@ -5,30 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Radio — The Sound of the Strand</title>
 
+<link rel="icon" type="image/png" href="/favicon.png">
+
 <style>
-/* --------------------------------------------------
-   BRAND VARIABLES
--------------------------------------------------- */
 :root{
   --bg: #f6f7fb;
   --bg2:#eef2f8;
-
   --surface: rgba(15,28,46,0.035);
   --surface2: rgba(15,28,46,0.06);
-
   --text: rgba(10,15,25,0.92);
   --muted: rgba(10,15,25,0.72);
   --faint: rgba(10,15,25,0.60);
-
   --border: rgba(15,28,46,0.12);
-
   --accent:#1f3e8a;
   --accent2:#0a7a57;
-
   --shadow: 0 14px 36px rgba(0,0,0,0.12);
   --radius: 18px;
   --max: 1040px;
-
   --heroBgA: #071a33;
   --heroBgB: #0b1a33;
   --heroText: rgba(255,255,255,0.94);
@@ -44,21 +37,15 @@
   :root{
     --bg: #0f1c2e;
     --bg2:#0b1525;
-
     --surface: rgba(255,255,255,0.06);
     --surface2: rgba(255,255,255,0.10);
-
     --text: rgba(255,255,255,0.92);
     --muted: rgba(255,255,255,0.74);
     --faint: rgba(255,255,255,0.60);
-
     --border: rgba(255,255,255,0.13);
-
     --accent:#9bb9ff;
     --accent2:#b8ffde;
-
     --shadow: 0 14px 36px rgba(0,0,0,0.38);
-
     --heroBgA: #071a33;
     --heroBgB: #0b1a33;
     --heroText: rgba(255,255,255,0.94);
@@ -83,13 +70,12 @@ body{
   line-height:1.55;
 }
 
-/* --------------------------------------------------
-   CANONICAL HEADER
--------------------------------------------------- */
-header.site-header{
+/* UNIVERSAL HEADER */
+header{
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:16px;
   padding:14px 18px;
   max-width:var(--max);
   margin:0 auto;
@@ -100,22 +86,39 @@ header.site-header{
   align-items:center;
   gap:12px;
   text-decoration:none;
+  color:inherit;
+}
+
+.mark{
+  width:36px;
+  height:36px;
+  border-radius:8px;
+  object-fit:contain;
+  box-shadow: var(--shadow);
+}
+
+@media (prefers-color-scheme: dark){
+  .mark{
+    border:1px solid rgba(255,255,255,0.16);
+    background: linear-gradient(135deg, rgba(155,185,255,0.92), rgba(184,255,222,0.82));
+  }
 }
 
 .brand b{font-weight:720; font-size:14px; letter-spacing:0.6px}
-.brand span{font-size:12px; color:var(--muted)}
+.brand span{display:block; font-size:12px; color:var(--muted); margin-top:2px}
 
 nav.primary{
   display:flex;
   gap:14px;
+  flex-wrap:wrap;
 }
 
 nav.primary a{
   text-decoration:none;
   font-size:13px;
+  color:var(--muted);
   padding:8px 10px;
   border-radius:12px;
-  color:var(--muted);
 }
 
 nav.primary a:hover{
@@ -157,21 +160,17 @@ nav.primary a:hover{
   border-bottom:none;
 }
 
-/* MOBILE BREAKPOINT */
 @media (max-width: 640px){
   nav.primary{display:none !important;}
   .mobile-toggle{display:inline-block !important;}
-
-  header.site-header{
+  header{
     flex-direction:column !important;
     align-items:flex-start !important;
     gap:10px;
   }
 }
 
-/* --------------------------------------------------
-   RADIO HERO BAND
--------------------------------------------------- */
+/* RADIO HERO */
 .radio-hero{
   margin:22px auto 0;
   max-width:var(--max);
@@ -194,18 +193,18 @@ nav.primary a:hover{
   .radio-hero-inner{grid-template-columns:1fr}
 }
 
-.radio-hero-title{
-  font-size:30px;
-  margin:0 0 8px;
-  color:var(--heroText);
-}
-
 .radio-hero-kicker{
   font-size:12px;
   letter-spacing:0.8px;
   text-transform:uppercase;
   color:var(--heroFaint);
   margin:0 0 6px;
+}
+
+.radio-hero-title{
+  font-size:30px;
+  margin:0 0 8px;
+  color:var(--heroText);
 }
 
 .radio-hero-subtitle{
@@ -276,9 +275,7 @@ nav.primary a:hover{
   color:var(--heroMuted);
 }
 
-/* --------------------------------------------------
-   CONTENT SECTIONS
--------------------------------------------------- */
+/* CONTENT + PLAYER + FOOTER */
 .wrap{
   max-width:var(--max);
   margin:0 auto;
@@ -308,7 +305,6 @@ ul{
 
 li{margin:8px 0}
 
-/* LIVE365 PLAYER */
 .player-frame{
   width:100%;
   border-radius:16px;
@@ -324,9 +320,6 @@ li{margin:8px 0}
   border:0;
 }
 
-/* --------------------------------------------------
-   FOOTER
--------------------------------------------------- */
 footer{
   margin-top:34px;
   padding-top:18px;
@@ -342,13 +335,13 @@ footer{
 
 <body>
 
-<!-- --------------------------------------------------
-     CANONICAL HEADER
--------------------------------------------------- -->
-<header class="site-header">
+<header>
   <a href="/" class="brand">
-    <b>Randy Anthony</b>
-    <span>Advisor • Operator • Strategist</span>
+    <img src="/favicon.png" alt="Randy Anthony mark" class="mark">
+    <div>
+      <b>Randy Anthony</b>
+      <span>Advisor • Operator • Strategist</span>
+    </div>
   </a>
 
   <nav class="primary">
@@ -359,7 +352,7 @@ footer{
     <a href="/radio">Radio</a>
   </nav>
 
-  <button class="mobile-toggle" id="mobileToggle">☰</button>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">☰</button>
 </header>
 
 <nav id="mobileNav" aria-hidden="true">
@@ -370,9 +363,6 @@ footer{
   <a href="/radio">Radio</a>
 </nav>
 
-<!-- --------------------------------------------------
-     RADIO HERO
--------------------------------------------------- -->
 <section class="radio-hero">
   <div class="radio-hero-inner">
 
@@ -388,8 +378,7 @@ footer{
           href="https://player.live365.com/a20149?l" 
           class="btn btnPrimary"
           target="_blank"
-          rel="noopener"
-        >
+          rel="noopener">
           Listen Live on Live365
         </a>
         <a href="#player" class="btn secondary">
@@ -415,73 +404,69 @@ footer{
   </div>
 </section>
 
-<!-- --------------------------------------------------
-     MAIN CONTENT
--------------------------------------------------- -->
 <div class="wrap">
 
-<section id="player">
-  <h2>Listen from This Page</h2>
-  <p>
-    Prefer to stay on this site? Use the embedded Live365 player below to listen to The Sound of the Strand without leaving the page.
-  </p>
-  <div class="player-frame">
-    <iframe 
-      src="https://player.live365.com/a20149?l" 
-      allow="autoplay"
-      title="The Sound of the Strand Live365 Player">
-    </iframe>
-  </div>
-</section>
+  <section id="player">
+    <h2>Listen from This Page</h2>
+    <p>
+      Prefer to stay on this site? Use the embedded Live365 player below to listen to The Sound of the Strand without leaving the page.
+    </p>
+    <div class="player-frame">
+      <iframe 
+        src="https://player.live365.com/a20149?l&embed=1" 
+        allow="autoplay; encrypted-media"
+        title="The Sound of the Strand Live365 Player">
+      </iframe>
+    </div>
+  </section>
 
-<section>
-  <h2>Racin’ Randy — On Air</h2>
-  <p>
-    “Racin’ Randy” is from Charlotte, North Carolina, and grew up surrounded by music. His father loved country, gospel, and Elvis, while his older sibling and cousins were spinning The Beatles, Stones, Motown, and the electric sounds of the late 1960s. Beach music was in the air all over the Carolinas, and he heard it early and often.
-  </p>
-  <p>
-    As a North Carolina native, Randy also gravitated to NASCAR from an early age — and like a lot of teenagers, he spent time under the hood of his own cars. After high school, he headed to Western Carolina University to earn a degree in Radio and Television, then went to work at stations across North Carolina, Georgia, and South Carolina.
-  </p>
-  <p>
-    While in Myrtle Beach at WMYB and WAZX, Randy was hired as a DJ at the renowned Studebakers nightclub, where his deep knowledge of beach music quickly became obvious. What were now called “oldies” were the songs he grew up with — and that made him invaluable.
-  </p>
-  <p>
-    In the 1990s, he returned to Charlotte to work at the legendary Magic 96 oldies station and served as Senior Producer for <i>NASCAR Country</i>, a weekly two‑hour internationally syndicated program. His long‑term knowledge of the sport helped him write and produce a show that earned two Billboard Magazine nominations for Best Syndicated Program.
-  </p>
-  <p>
-    Today, Randy works at WGHP‑TV in the Triad of North Carolina as a newscast director. He continues to do voice work for stations nationwide and serves as a NASCAR correspondent for the nationally syndicated <i>Sports Circus</i> program. His favorite beach music song: “If I Didn’t Have A Dime” by Bob Collins and The Fabulous Five.
-  </p>
-</section>
+  <section>
+    <h2>Racin’ Randy — On Air</h2>
+    <p>
+      “Racin’ Randy” is from Charlotte, North Carolina, and grew up surrounded by music. His father loved country, gospel, and Elvis, while his older sibling and cousins were spinning The Beatles, Stones, Motown, and the electric sounds of the late 1960s. Beach music was in the air all over the Carolinas, and he heard it early and often.
+    </p>
+    <p>
+      As a North Carolina native, Randy also gravitated to NASCAR from an early age — and like a lot of teenagers, he spent time under the hood of his own cars. After high school, he headed to Western Carolina University to earn a degree in Radio and Television, then went to work at stations across North Carolina, Georgia, and South Carolina.
+    </p>
+    <p>
+      While in Myrtle Beach at WMYB and WAZX, Randy was hired as a DJ at the renowned Studebakers nightclub, where his deep knowledge of beach music quickly became obvious. What were now called “oldies” were the songs he grew up with — and that made him invaluable.
+    </p>
+    <p>
+      In the 1990s, he returned to Charlotte to work at the legendary Magic 96 oldies station and served as Senior Producer for <i>NASCAR Country</i>, a weekly two‑hour internationally syndicated program. His long‑term knowledge of the sport helped him write and produce a show that earned two Billboard Magazine nominations for Best Syndicated Program.
+    </p>
+    <p>
+      Today, Randy works at WGHP‑TV in the Triad of North Carolina as a newscast director. He continues to do voice work for stations nationwide and serves as a NASCAR correspondent for the nationally syndicated <i>Sports Circus</i> program. His favorite beach music song: “If I Didn’t Have A Dime” by Bob Collins and The Fabulous Five.
+    </p>
+  </section>
 
-<section>
-  <h2>The Sound of the Strand</h2>
-  <p>
-    The Sound of the Strand is a Carolina Beach Music internet radio station that’s been streaming since 2016 — built for people who know the difference between background noise and a real soundtrack. It’s the sound of the coast, the clubs, the cars, and the nights that ran later than they should have.
-  </p>
-  <p>
-    From deep‑cut beach tracks to familiar favorites, the station keeps the tradition alive while embracing the reality that the audience is now everywhere — not just within reach of a tower.
-  </p>
-</section>
+  <section>
+    <h2>The Sound of the Strand</h2>
+    <p>
+      The Sound of the Strand is a Carolina Beach Music internet radio station that’s been streaming since 2016 — built for people who know the difference between background noise and a real soundtrack. It’s the sound of the coast, the clubs, the cars, and the nights that ran later than they should have.
+    </p>
+    <p>
+      From deep‑cut beach tracks to familiar favorites, the station keeps the tradition alive while embracing the reality that the audience is now everywhere — not just within reach of a tower.
+    </p>
+  </section>
 
-<footer>
-  <span>© 2026 Randy Anthony</span>
-  <span>The Sound of the Strand • Carolina Beach Music</span>
-</footer>
+  <footer>
+    <span>© 2026 Randy Anthony</span>
+    <span>The Sound of the Strand • Carolina Beach Music</span>
+  </footer>
 
 </div>
 
-<!-- --------------------------------------------------
-     MOBILE NAV SCRIPT
--------------------------------------------------- -->
 <script>
 const btn = document.getElementById('mobileToggle');
 const panel = document.getElementById('mobileNav');
 
-btn && btn.addEventListener('click', () => {
-  const isOpen = panel.classList.toggle('show');
-  panel.setAttribute('aria-hidden', !isOpen);
-  btn.setAttribute('aria-expanded', isOpen);
-});
+if (btn && panel) {
+  btn.addEventListener('click', () => {
+    const isOpen = panel.classList.toggle('show');
+    panel.setAttribute('aria-hidden', !isOpen);
+    btn.setAttribute('aria-expanded', isOpen);
+  });
+}
 </script>
 
 </body>
