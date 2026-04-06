@@ -27,7 +27,7 @@
   --max: 1040px;
 
   --heroBgA: #071a33;
-  --heroBgB: #0b1a33;
+  --heroBgB: #071a33;
   --heroText: rgba(255,255,255,0.94);
   --heroMuted: rgba(255,255,255,0.74);
   --heroFaint: rgba(255,255,255,0.60);
@@ -171,30 +171,50 @@ nav.primary a:hover {
 }
 
 /* --------------------------------------------------
-   RADIO HERO
+   RADIO HERO (UPDATED)
 -------------------------------------------------- */
 .radio-hero{
   margin:22px auto 0;
   max-width:var(--max);
   border-radius: calc(var(--radius) + 2px);
   background:
-    linear-gradient(135deg, rgba(7,26,51,0.96), rgba(10,122,87,0.85));
+    linear-gradient(180deg, rgba(7,26,51,0.92), rgba(7,26,51,0.88)),
+    url("/series/assets/ops-architecture-bg.jpg") center/cover no-repeat;
   box-shadow: var(--heroShadow);
   border: 1px solid rgba(255,255,255,0.10);
-  padding: 28px 24px;
+  padding: 32px 26px;
 }
 
 .radio-hero-inner{
   display:grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap:24px;
+  grid-template-columns: 0.6fr 1.4fr;
+  gap:28px;
   align-items:center;
 }
 
 @media (max-width: 860px){
-  .radio-hero-inner{grid-template-columns:1fr}
+  .radio-hero-inner{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
 }
 
+/* Avatar */
+.radio-avatar img{
+  width:100%;
+  max-width:220px;
+  border-radius:50%;
+  border:3px solid rgba(255,255,255,0.25);
+  box-shadow:0 12px 28px rgba(0,0,0,0.35);
+}
+
+@media (max-width: 860px){
+  .radio-avatar img{
+    margin:0 auto;
+  }
+}
+
+/* Hero Text */
 .radio-hero-kicker{
   font-size:12px;
   letter-spacing:0.8px;
@@ -230,12 +250,6 @@ nav.primary a:hover {
 
 .btnPrimary:hover{
   background: rgba(255,255,255,0.14);
-}
-
-.secondary{
-  background:rgba(255,255,255,0.06);
-  border-color:var(--heroBorder);
-  color:var(--heroText);
 }
 
 .radio-meta{
@@ -347,11 +361,17 @@ footer{
 </nav>
 
 <!-- --------------------------------------------------
-     HERO
+     HERO WITH AVATAR
 -------------------------------------------------- -->
 <section class="radio-hero">
   <div class="radio-hero-inner">
 
+    <!-- Avatar Column -->
+    <div class="radio-avatar">
+      <img src="/assets/avatar.jpg" alt="Racin' Randy">
+    </div>
+
+    <!-- Text Column -->
     <div>
       <p class="radio-hero-kicker">The Sound of the Strand • Since 2016</p>
       <h1 class="radio-hero-title">Racin’ Randy on The Sound of the Strand</h1>
@@ -371,16 +391,6 @@ footer{
 
       <p class="radio-meta">
         Internet radio station • Carolina Beach Music • Streaming worldwide
-      </p>
-    </div>
-
-    <div class="radio-panel">
-      <h3>Now Streaming: The Sound of the Strand</h3>
-      <p>
-        A Carolina Beach Music internet radio station since 2016 — built on the sounds of the Carolinas, the sand, and the stories that came with them.
-      </p>
-      <p>
-        Hosted by “Racin’ Randy” from Charlotte, NC — blending beach music, racing roots, and decades behind the mic.
       </p>
     </div>
 
@@ -407,7 +417,7 @@ footer{
     In the 1990s, he returned to Charlotte to work at the legendary Magic 96 oldies station and served as Senior Producer for <i>NASCAR Country</i>, a weekly two‑hour internationally syndicated program. His long‑term knowledge of the sport helped him write and produce a show that earned two Billboard Magazine nominations for Best Syndicated Program.
   </p>
   <p>
-    Today, Randy works at the TEGNA Stream Center handling automation and reliability for numerous broadcast and streaming TV platforms . He continues to do voice work for stations nationwide and serves as a NASCAR correspondent for the nationally syndicated <i>Sports Circus</i> program. His favorite beach music song: “If I Didn’t Have A Dime” by Bob Collins and The Fabulous Five.
+    Today, Randy works at the TEGNA Stream center handling automation reliability and operations for numerous TV platforms. He continues to do voice work for stations nationwide and serves as a NASCAR correspondent for the nationally syndicated <i>Sports Circus</i> program. His favorite beach music song: “If I Didn’t Have A Dime” by Bob Collins and The Fabulous Five.
   </p>
 </section>
 
