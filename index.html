@@ -321,6 +321,27 @@ nav.primary {
 .wrap {
   max-width: 1200px !important;
 }
+/* FORCE MOBILE BEHAVIOR ON INDEX */
+@media (max-width: 640px){
+
+  /* Hide desktop nav */
+  nav.primary {
+    display: none !important;
+  }
+
+  /* Show hamburger */
+  .mobile-toggle {
+    display: inline-block !important;
+  }
+
+  /* Allow header to stack */
+  header.site-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    height: auto !important;
+    padding: 0 14px !important;
+  }
+}
 
 </style>
 </head>
