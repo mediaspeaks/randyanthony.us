@@ -537,6 +537,17 @@
       }, 80 + (i * 40));
     });
   });
+  <script>
+  const btn = document.getElementById('mobileToggle');
+  const panel = document.getElementById('mobileNav');
+
+  btn && btn.addEventListener('click', function(){
+    const isOpen = panel.classList.toggle('show');
+    panel.setAttribute('aria-hidden', !isOpen);
+    btn.setAttribute('aria-expanded', !!isOpen);
+  });
+</script>
+
 </script>
 
 </body>
