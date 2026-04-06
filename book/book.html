@@ -5,30 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FM — The Fading Modulation of Terrestrial Radio</title>
 
+<link rel="icon" type="image/png" href="/favicon.png">
+
 <style>
-/* --------------------------------------------------
-   BRAND VARIABLES
--------------------------------------------------- */
 :root{
   --bg: #f6f7fb;
   --bg2:#eef2f8;
-
   --surface: rgba(15,28,46,0.035);
   --surface2: rgba(15,28,46,0.06);
-
   --text: rgba(10,15,25,0.92);
   --muted: rgba(10,15,25,0.72);
   --faint: rgba(10,15,25,0.60);
-
   --border: rgba(15,28,46,0.12);
-
   --accent:#1f3e8a;
   --accent2:#0a7a57;
-
   --shadow: 0 14px 36px rgba(0,0,0,0.12);
   --radius: 18px;
   --max: 1040px;
-
   --heroBgA: #071a33;
   --heroBgB: #0b1a33;
   --heroText: rgba(255,255,255,0.94);
@@ -44,21 +37,15 @@
   :root{
     --bg: #0f1c2e;
     --bg2:#0b1525;
-
     --surface: rgba(255,255,255,0.06);
     --surface2: rgba(255,255,255,0.10);
-
     --text: rgba(255,255,255,0.92);
     --muted: rgba(255,255,255,0.74);
     --faint: rgba(255,255,255,0.60);
-
     --border: rgba(255,255,255,0.13);
-
     --accent:#9bb9ff;
     --accent2:#b8ffde;
-
     --shadow: 0 14px 36px rgba(0,0,0,0.38);
-
     --heroBgA: #071a33;
     --heroBgB: #0b1a33;
     --heroText: rgba(255,255,255,0.94);
@@ -83,13 +70,12 @@ body{
   line-height:1.55;
 }
 
-/* --------------------------------------------------
-   CANONICAL HEADER
--------------------------------------------------- */
-header.site-header{
+/* UNIVERSAL HEADER */
+header{
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:16px;
   padding:14px 18px;
   max-width:var(--max);
   margin:0 auto;
@@ -100,22 +86,39 @@ header.site-header{
   align-items:center;
   gap:12px;
   text-decoration:none;
+  color:inherit;
+}
+
+.mark{
+  width:36px;
+  height:36px;
+  border-radius:8px;
+  object-fit:contain;
+  box-shadow: var(--shadow);
+}
+
+@media (prefers-color-scheme: dark){
+  .mark{
+    border:1px solid rgba(255,255,255,0.16);
+    background: linear-gradient(135deg, rgba(155,185,255,0.92), rgba(184,255,222,0.82));
+  }
 }
 
 .brand b{font-weight:720; font-size:14px; letter-spacing:0.6px}
-.brand span{font-size:12px; color:var(--muted)}
+.brand span{display:block; font-size:12px; color:var(--muted); margin-top:2px}
 
 nav.primary{
   display:flex;
   gap:14px;
+  flex-wrap:wrap;
 }
 
 nav.primary a{
   text-decoration:none;
   font-size:13px;
+  color:var(--muted);
   padding:8px 10px;
   border-radius:12px;
-  color:var(--muted);
 }
 
 nav.primary a:hover{
@@ -157,21 +160,17 @@ nav.primary a:hover{
   border-bottom:none;
 }
 
-/* MOBILE BREAKPOINT */
 @media (max-width: 640px){
   nav.primary{display:none !important;}
   .mobile-toggle{display:inline-block !important;}
-
-  header.site-header{
+  header{
     flex-direction:column !important;
     align-items:flex-start !important;
     gap:10px;
   }
 }
 
-/* --------------------------------------------------
-   BOOK HERO BAND
--------------------------------------------------- */
+/* BOOK HERO */
 .book-hero{
   margin:22px auto 0;
   max-width:var(--max);
@@ -207,6 +206,7 @@ nav.primary a:hover{
 .book-cover-card img{
   width:100%;
   border-radius:12px;
+  display:block;
 }
 
 .book-hero-content h1{
@@ -264,9 +264,7 @@ nav.primary a:hover{
   color:var(--heroFaint);
 }
 
-/* --------------------------------------------------
-   CONTENT SECTIONS
--------------------------------------------------- */
+/* CONTENT + FOOTER */
 .wrap{
   max-width:var(--max);
   margin:0 auto;
@@ -296,9 +294,6 @@ ul{
 
 li{margin:8px 0}
 
-/* --------------------------------------------------
-   FOOTER
--------------------------------------------------- */
 footer{
   margin-top:34px;
   padding-top:18px;
@@ -314,13 +309,13 @@ footer{
 
 <body>
 
-<!-- --------------------------------------------------
-     CANONICAL HEADER
--------------------------------------------------- -->
-<header class="site-header">
+<header>
   <a href="/" class="brand">
-    <b>Randy Anthony</b>
-    <span>Advisor • Operator • Strategist</span>
+    <img src="/favicon.png" alt="Randy Anthony mark" class="mark">
+    <div>
+      <b>Randy Anthony</b>
+      <span>Advisor • Operator • Strategist</span>
+    </div>
   </a>
 
   <nav class="primary">
@@ -331,7 +326,7 @@ footer{
     <a href="/radio">Radio</a>
   </nav>
 
-  <button class="mobile-toggle" id="mobileToggle">☰</button>
+  <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">☰</button>
 </header>
 
 <nav id="mobileNav" aria-hidden="true">
@@ -342,17 +337,13 @@ footer{
   <a href="/radio">Radio</a>
 </nav>
 
-<!-- --------------------------------------------------
-     HERO BAND
--------------------------------------------------- -->
 <section class="book-hero">
   <div class="book-hero-inner">
 
     <div class="book-cover-card">
       <img 
-        src="https://m.media-amazon.com/images/I/41pYtL6vh-L._SY445_SX342_.jpg" 
-        alt="FM — The Fading Modulation of Terrestrial Radio book cover"
-      >
+        src="https://m.media-amazon.com/images/I/41pYtL6vh-L.jpg" 
+        alt="FM — The Fading Modulation of Terrestrial Radio book cover">
     </div>
 
     <div class="book-hero-content">
@@ -366,8 +357,7 @@ footer{
           href="https://www.amazon.com/FM-Modulation-Terrestrial-Communication-Silenced-ebook/dp/B0F2SCR4Z1?tag=mediaspeaks-20" 
           class="btn btnPrimary"
           target="_blank"
-          rel="noopener"
-        >
+          rel="noopener">
           Buy on Amazon
         </a>
 
@@ -377,93 +367,84 @@ footer{
       </div>
 
       <p class="book-meta">
-        Available in Kindle and paperback • Published 2025
+        Available in Kindle and paperback • Published 2023
       </p>
     </div>
 
   </div>
 </section>
 
-<!-- --------------------------------------------------
-     ABOUT THE BOOK
--------------------------------------------------- -->
 <div class="wrap">
-<section id="about-book">
-  <h2>About the Book</h2>
-  <p>
-    <b>FM — The Fading Modulation of Terrestrial Radio</b> examines the slow, preventable collapse of a medium that once defined American culture. Through the lens of operational systems, regulatory shifts, and the 1996 Telecommunications Act, the book traces how consolidation and cost‑cutting hollowed out an industry built on localism, creativity, and community.
-  </p>
-  <p>
-    This is not nostalgia. It’s a forensic analysis of what happens when a time‑critical, community‑anchored system is stripped of its operational backbone. The book explores the decisions, incentives, and structural failures that led to the silencing of thousands of stations — and the lessons modern operators can learn from radio’s decline.
-  </p> Radio's journey starts with pioneers like Marconi, Hertz and Armstrong and their inventions evolving into a dominant entertainment and information medium in the early 20th century. It adapted to television's rise by focusing on music and local connections. Can it adapt in a Digital, On-Demand age?
-</section>
+  <section id="about-book">
+    <h2>About the Book</h2>
+    <p>
+      <b>FM — The Fading Modulation of Terrestrial Radio</b> examines the slow, preventable collapse of a medium that once defined American culture. Through the lens of operational systems, regulatory shifts, and the 1996 Telecommunications Act, the book traces how consolidation and cost‑cutting hollowed out an industry built on localism, creativity, and community.
+    </p>
+    <p>
+      This is not nostalgia. It’s a forensic analysis of what happens when a time‑critical, community‑anchored system is stripped of its operational backbone. The book explores the decisions, incentives, and structural failures that led to the silencing of thousands of stations — and the lessons modern operators can learn from radio’s decline.
+    </p>
+  </section>
 
+  <section>
+    <h2>Who This Book Is For</h2>
+    <ul>
+      <li>Operators responsible for time‑critical systems</li>
+      <li>Founders navigating scale, consolidation, and operational debt</li>
+      <li>Media executives and strategists</li>
+      <li>Students of communications, media, and broadcast history</li>
+      <li>Anyone curious about how industries fail — and how they can be rebuilt</li>
+    </ul>
+  </section>
 
+  <section>
+    <h2>Key Insights</h2>
+    <ul>
+      <li>How deregulation reshaped incentives and accelerated consolidation</li>
+      <li>The operational debt that accumulates when systems outgrow their architecture</li>
+      <li>Why localism was radio’s greatest strength — and its first casualty</li>
+      <li>The hidden cost of replacing operators with automation</li>
+      <li>How to identify early warning signs of systemic failure</li>
+      <li>What modern industries can learn from radio’s collapse</li>
+    </ul>
+  </section>
 
-<!-- --------------------------------------------------
-     KEY INSIGHTS
--------------------------------------------------- -->
-<section>
-  <h2>Key Insights</h2>
-  <ul>
-    <li>How deregulation reshaped incentives and accelerated consolidation</li>
-    <li>The operational debt that accumulates when systems outgrow their architecture</li>
-    <li>Why localism was radio’s greatest strength — and its first casualty</li>
-    <li>The hidden cost of replacing operators with automation</li>
-    <li>How to identify early warning signs of systemic failure</li>
-    <li>What modern industries can learn from radio’s collapse</li>
-  </ul>
-</section>
+  <section>
+    <h2>About the Author</h2>
+    <p>
+      Randy Anthony is an advisor, founder‑level operator, strategist for time‑critical systems, and a veteran of radio, television, and digital media. With decades of experience across broadcast and on‑demand platforms, he brings a unique operational lens to the story of terrestrial radio’s decline — and the lessons it offers to modern operators.
+    </p>
+  </section>
 
-<!-- --------------------------------------------------
-     AUTHOR BLOCK
--------------------------------------------------- -->
-<section>
-  <h2>About the Author</h2>
-  <p>
-    Randy Anthony is an advisor, founder‑level operator, strategist for time‑critical systems, and a veteran of radio, television, and digital media. With decades of experience across broadcast and on‑demand platforms, he brings a unique operational lens to the story of terrestrial radio’s decline — and the lessons it offers to modern operators.
-  </p>
-</section>
+  <section>
+    <h2>Get the Book</h2>
+    <p>Available now on Amazon in Kindle and paperback formats.</p>
 
-<!-- --------------------------------------------------
-     CTA SECTION
--------------------------------------------------- -->
-<section>
-  <h2>Get the Book</h2>
-  <p>Available now on Amazon in Kindle and paperback formats.</p>
+    <a 
+      href="https://www.amazon.com/FM-Modulation-Terrestrial-Communication-Silenced-ebook/dp/B0F2SCR4Z1?tag=mediaspeaks-20" 
+      class="btn btnPrimary"
+      target="_blank"
+      rel="noopener">
+      Buy on Amazon
+    </a>
+  </section>
 
-  <a 
-    href="https://www.amazon.com/FM-Modulation-Terrestrial-Communication-Silenced-ebook/dp/B0F2SCR4Z1?tag=mediaspeaks-20" 
-    class="btn btnPrimary"
-    target="_blank"
-    rel="noopener"
-  >
-    Buy on Amazon
-  </a>
-</section>
-
-<!-- --------------------------------------------------
-     FOOTER
--------------------------------------------------- -->
-<footer>
-  <span>© 2026 Randy Anthony</span>
-  <span>Advisory • Operations • Strategy</span>
-</footer>
-
+  <footer>
+    <span>© 2026 Randy Anthony</span>
+    <span>Advisory • Operations • Strategy</span>
+  </footer>
 </div>
 
-<!-- --------------------------------------------------
-     MOBILE NAV SCRIPT
--------------------------------------------------- -->
 <script>
 const btn = document.getElementById('mobileToggle');
 const panel = document.getElementById('mobileNav');
 
-btn && btn.addEventListener('click', () => {
-  const isOpen = panel.classList.toggle('show');
-  panel.setAttribute('aria-hidden', !isOpen);
-  btn.setAttribute('aria-expanded', isOpen);
-});
+if (btn && panel) {
+  btn.addEventListener('click', () => {
+    const isOpen = panel.classList.toggle('show');
+    panel.setAttribute('aria-hidden', !isOpen);
+    btn.setAttribute('aria-expanded', isOpen);
+  });
+}
 </script>
 
 </body>
