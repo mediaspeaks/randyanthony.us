@@ -3,11 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Radio — The Sound of the Strand</title>
+<title>FM — The Fading Modulation of Terrestrial Radio</title>
 
 <link rel="icon" type="image/png" href="/favicon.png">
 
 <style>
+/* --------------------------------------------------
+   BRAND VARIABLES
+-------------------------------------------------- */
 :root{
   --bg: #f6f7fb;
   --bg2:#eef2f8;
@@ -22,6 +25,7 @@
   --shadow: 0 14px 36px rgba(0,0,0,0.12);
   --radius: 18px;
   --max: 1040px;
+
   --heroBgA: #071a33;
   --heroBgB: #0b1a33;
   --heroText: rgba(255,255,255,0.94);
@@ -46,32 +50,13 @@
     --accent:#9bb9ff;
     --accent2:#b8ffde;
     --shadow: 0 14px 36px rgba(0,0,0,0.38);
-    --heroBgA: #071a33;
-    --heroBgB: #0b1a33;
-    --heroText: rgba(255,255,255,0.94);
-    --heroMuted: rgba(255,255,255,0.74);
-    --heroFaint: rgba(255,255,255,0.60);
-    --heroBorder: rgba(255,255,255,0.14);
-    --heroSurface: rgba(255,255,255,0.06);
-    --heroSurface2: rgba(255,255,255,0.10);
-    --heroShadow: 0 18px 42px rgba(0,0,0,0.42);
   }
 }
 
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-  background:
-    radial-gradient(1200px 800px at 18% -12%, rgba(31,62,138,0.12), transparent 62%),
-    radial-gradient(1000px 700px at 92% 8%, rgba(10,122,87,0.07), transparent 58%),
-    linear-gradient(180deg, var(--bg), var(--bg2));
-  color:var(--text);
-  line-height:1.55;
-}
-
-/* UNIVERSAL HEADER */
-header{
+/* --------------------------------------------------
+   GLOBAL HEADER (EXACTLY AS PROVIDED)
+-------------------------------------------------- */
+header {
   display:flex;
   align-items:center;
   justify-content:space-between;
@@ -81,7 +66,7 @@ header{
   margin:0 auto;
 }
 
-.brand{
+.brand {
   display:flex;
   align-items:center;
   gap:12px;
@@ -89,31 +74,26 @@ header{
   color:inherit;
 }
 
-.mark{
-  width:36px;
-  height:36px;
-  border-radius:8px;
-  object-fit:contain;
-  box-shadow: var(--shadow);
+.titles strong {
+  font-weight:720;
+  font-size:14px;
+  letter-spacing:0.6px;
 }
 
-@media (prefers-color-scheme: dark){
-  .mark{
-    border:1px solid rgba(255,255,255,0.16);
-    background: linear-gradient(135deg, rgba(155,185,255,0.92), rgba(184,255,222,0.82));
-  }
+.titles span {
+  display:block;
+  font-size:12px;
+  color:var(--muted);
+  margin-top:2px;
 }
 
-.brand b{font-weight:720; font-size:14px; letter-spacing:0.6px}
-.brand span{display:block; font-size:12px; color:var(--muted); margin-top:2px}
-
-nav.primary{
+nav.primary {
   display:flex;
   gap:14px;
-  flex-wrap:wrap;
+  align-items:center;
 }
 
-nav.primary a{
+nav.primary a {
   text-decoration:none;
   font-size:13px;
   color:var(--muted);
@@ -121,13 +101,33 @@ nav.primary a{
   border-radius:12px;
 }
 
-nav.primary a:hover{
+nav.primary a:hover {
   background:var(--surface);
   color:var(--text);
 }
 
-/* MOBILE NAV */
-.mobile-toggle{
+.cta {
+  display:flex;
+  gap:10px;
+  margin-left:12px;
+}
+
+.btn {
+  padding:8px 14px;
+  border-radius:12px;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+  background:var(--surface2);
+  border:1px solid var(--border);
+}
+
+.btn.secondary {
+  background:transparent;
+}
+
+/* Mobile */
+.mobile-toggle {
   display:none;
   background:none;
   border:none;
@@ -135,7 +135,7 @@ nav.primary a:hover{
   cursor:pointer;
 }
 
-#mobileNav{
+#mobileNav {
   display:none;
   flex-direction:column;
   background:var(--surface2);
@@ -145,92 +145,90 @@ nav.primary a:hover{
   box-shadow:var(--shadow);
 }
 
-#mobileNav.show{
+#mobileNav.show {
   display:flex;
 }
 
-#mobileNav a{
+#mobileNav a {
   padding:10px 0;
   border-bottom:1px solid var(--border);
   text-decoration:none;
   color:var(--text);
 }
 
-#mobileNav a:last-child{
+#mobileNav a:last-child {
   border-bottom:none;
 }
 
-@media (max-width: 640px){
-  nav.primary{display:none !important;}
-  .mobile-toggle{display:inline-block !important;}
-  header{
+@media (max-width: 860px){
+  nav.primary {display:none !important;}
+  .mobile-toggle {display:inline-block !important;}
+  header {
     flex-direction:column !important;
     align-items:flex-start !important;
     gap:10px;
   }
 }
 
-/* RADIO HERO */
-.radio-hero{
+/* --------------------------------------------------
+   BOOK HERO
+-------------------------------------------------- */
+.book-hero{
   margin:22px auto 0;
   max-width:var(--max);
   border-radius: calc(var(--radius) + 2px);
   background:
-    linear-gradient(135deg, rgba(7,26,51,0.96), rgba(10,122,87,0.85));
+    linear-gradient(180deg, rgba(7,26,51,0.92), rgba(7,26,51,0.88)),
+    url("/series/assets/ops-architecture-bg.jpg") center/cover no-repeat;
   box-shadow: var(--heroShadow);
   border: 1px solid rgba(255,255,255,0.10);
-  padding: 28px 24px;
+  padding: 32px 26px;
 }
 
-.radio-hero-inner{
+.book-hero-inner{
   display:grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap:24px;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap:28px;
   align-items:center;
 }
 
 @media (max-width: 860px){
-  .radio-hero-inner{grid-template-columns:1fr}
+  .book-hero-inner{grid-template-columns:1fr}
 }
 
-.radio-hero-kicker{
-  font-size:12px;
-  letter-spacing:0.8px;
-  text-transform:uppercase;
-  color:var(--heroFaint);
-  margin:0 0 6px;
+.book-cover-card{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--heroBorder);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.32);
+  max-width: 340px;
 }
 
-.radio-hero-title{
-  font-size:30px;
-  margin:0 0 8px;
+.book-cover-card img{
+  width:100%;
+  border-radius:12px;
+  display:block;
+}
+
+.book-hero-content h1{
+  margin:0 0 12px;
+  font-size:34px;
   color:var(--heroText);
 }
 
-.radio-hero-subtitle{
-  margin:0 0 16px;
-  font-size:16px;
+.book-subtitle{
+  margin:0 0 18px;
+  font-size:17px;
   color:var(--heroMuted);
+  max-width:60ch;
 }
 
-.radio-cta-row{
+.book-cta-row{
   display:flex;
   gap:14px;
   flex-wrap:wrap;
-  margin-top:14px;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:11px 14px;
-  border-radius:14px;
-  text-decoration:none;
-  font-weight:680;
-  font-size:14px;
-  border:1px solid var(--border);
-  background:var(--surface2);
+  margin:18px 0 10px;
 }
 
 .btnPrimary{
@@ -249,33 +247,32 @@ nav.primary a:hover{
   color:var(--heroText);
 }
 
-.radio-meta{
-  margin-top:10px;
+.book-meta{
+  margin-top:12px;
   font-size:13px;
   color:var(--heroFaint);
 }
 
-.radio-panel{
-  background: rgba(255,255,255,0.06);
-  border-radius:16px;
-  border:1px solid var(--heroBorder);
-  padding:16px;
-  box-shadow:0 12px 28px rgba(0,0,0,0.32);
+/* --------------------------------------------------
+   GRID FIX (YOUR REQUEST #1)
+-------------------------------------------------- */
+.book-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-top: 34px;
 }
 
-.radio-panel h3{
-  margin:0 0 8px;
-  font-size:16px;
-  color:var(--heroText);
+@media (max-width: 860px) {
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-.radio-panel p{
-  margin:0 0 10px;
-  font-size:13px;
-  color:var(--heroMuted);
-}
-
-/* CONTENT + PLAYER + FOOTER */
+/* --------------------------------------------------
+   CONTENT + FOOTER
+-------------------------------------------------- */
 .wrap{
   max-width:var(--max);
   margin:0 auto;
@@ -305,19 +302,18 @@ ul{
 
 li{margin:8px 0}
 
-.player-frame{
-  width:100%;
-  border-radius:16px;
-  border:1px solid var(--border);
-  overflow:hidden;
-  box-shadow:var(--shadow);
-  min-height:140px;
+/* --------------------------------------------------
+   DARKER BOTTOM CTA (YOUR REQUEST #2)
+-------------------------------------------------- */
+.wrap .btnPrimary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
 }
 
-.player-frame iframe{
-  width:100%;
-  height:180px;
-  border:0;
+.wrap .btnPrimary:hover {
+  background: #162f6b;
+  border-color: #162f6b;
 }
 
 footer{
@@ -335,124 +331,156 @@ footer{
 
 <body>
 
+<!-- --------------------------------------------------
+     GLOBAL HEADER (EXACTLY AS PROVIDED)
+-------------------------------------------------- -->
 <header>
-  <a href="/" class="brand">
-    <img src="/favicon.png" alt="Randy Anthony mark" class="mark">
-    <div>
-      <b>Randy Anthony</b>
-      <span>Advisor • Operator • Strategist</span>
+
+  <a class="brand" href="/">
+    <img src="/favicon.png" alt="" style="width:44px;height:44px;border-radius:12px;">
+    <div class="titles">
+      <strong>RANDY ANTHONY</strong>
+      <span>Operational Reliability Advisory</span>
     </div>
   </a>
 
-  <nav class="primary">
+  <nav class="primary" role="navigation" aria-label="Main navigation">
     <a href="/">Home</a>
-    <a href="/bio">Bio</a>
-    <a href="/series">Series</a>
-    <a href="/book">Book</a>
-    <a href="/radio">Radio</a>
+    <a href="/series/">Operational Architecture Series</a>
+    <a href="/bio/">Bio</a>
+    <a href="/home.html">Offerings</a>
+    <a href="/book/">Book</a>
+    <a href="/radio/">Radio</a>
+
+    <div class="cta">
+      <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a consultation</a>
+      <a class="btn secondary" href="/home.html#about">About</a>
+    </div>
   </nav>
 
-  <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">☰</button>
+  <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileNav">
+    ☰
+  </button>
+
 </header>
 
-<nav id="mobileNav" aria-hidden="true">
+<nav id="mobileNav" class="mobile-nav" aria-hidden="true">
   <a href="/">Home</a>
-  <a href="/bio">Bio</a>
-  <a href="/series">Series</a>
-  <a href="/book">Book</a>
-  <a href="/radio">Radio</a>
+  <a href="/series/">Operational Architecture Series</a>
+  <a href="/bio/">Bio</a>
+  <a href="/home.html">Offerings</a>
+  <a href="/book/">Book</a>
+  <a href="/radio/">Radio</a>
+  <a href="/home.html#about">About</a>
 </nav>
 
-<section class="radio-hero">
-  <div class="radio-hero-inner">
+<!-- --------------------------------------------------
+     HERO
+-------------------------------------------------- -->
+<section class="book-hero">
+  <div class="book-hero-inner">
 
-    <div>
-      <p class="radio-hero-kicker">The Sound of the Strand • Since 2016</p>
-      <h1 class="radio-hero-title">Racin’ Randy on The Sound of the Strand</h1>
-      <p class="radio-hero-subtitle">
-        Carolina Beach Music, stories from the road, and a lifetime of radio and racing — streaming wherever you are.
+    <div class="book-cover-card">
+      <img src="/assets/cover.jpg" alt="FM — The Fading Modulation of Terrestrial Radio book cover">
+    </div>
+
+    <div class="book-hero-content">
+      <h1>FM — The Fading Modulation of Terrestrial Radio</h1>
+      <p class="book-subtitle">
+ How The Communication Act Of 1996 Silenced The Radio Stars<br>  How consolidation, deregulation, and operational decay changed a medium that once shaped culture.
       </p>
 
-      <div class="radio-cta-row">
+      <div class="book-cta-row">
         <a 
-          href="https://player.live365.com/a20149?l" 
+          href="https://www.amazon.com/FM-Modulation-Terrestrial-Communication-Silenced-ebook/dp/B0F2SCR4Z1?tag=mediaspeaks-20" 
           class="btn btnPrimary"
           target="_blank"
           rel="noopener">
-          Listen Live on Live365
+          Buy on Amazon
         </a>
-        <a href="#player" class="btn secondary">
-          Play from this page
+
+        <a href="#about-book" class="btn secondary">
+          What’s Inside
         </a>
       </div>
 
-      <p class="radio-meta">
-        Internet radio station • Carolina Beach Music • Streaming worldwide
-      </p>
-    </div>
-
-    <div class="radio-panel">
-      <h3>Now Streaming: The Sound of the Strand</h3>
-      <p>
-        A Carolina Beach Music internet radio station since 2016 — built on the sounds of the Carolinas, the sand, and the stories that came with them.
-      </p>
-      <p>
-        Hosted by “Racin’ Randy” from Charlotte, NC — blending beach music, racing roots, and decades behind the mic.
+      <p class="book-meta">
+        Available in Kindle and paperback • Published 2023
       </p>
     </div>
 
   </div>
 </section>
 
+<!-- --------------------------------------------------
+     CONTENT
+-------------------------------------------------- -->
 <div class="wrap">
 
-  <section id="player">
-    <h2>Listen from This Page</h2>
-    <p>
-      Prefer to stay on this site? Use the embedded Live365 player below to listen to The Sound of the Strand without leaving the page.
-    </p>
-    <div class="player-frame">
-      <iframe 
-        src="https://player.live365.com/a20149?l&embed=1" 
-        allow="autoplay; encrypted-media"
-        title="The Sound of the Strand Live365 Player">
-      </iframe>
-    </div>
+<section id="about-book">
+  <h2>About the Book</h2>
+  <p>
+    <b>FM — The Fading Modulation of Terrestrial Radio</b> examines the slow, preventable collapse of a medium that once defined American culture. Through the lens of operational systems, regulatory shifts, and the 1996 Telecommunications Act, the book traces how consolidation and cost‑cutting hollowed out an industry built on localism, creativity, and community.
+  </p>
+  <p>
+    This is not nostalgia. It’s a forensic analysis of what happens when a time‑critical, community‑anchored system is stripped of its operational backbone. The book explores the decisions, incentives, and structural failures that led to the silencing of thousands of stations — and the lessons modern operators can learn from radio’s decline.
+  </p> Radio's journey starts with pioneers like Marconi, Hertz and Armstrong and their inventions evolving into a dominant entertainment and information medium in the early 20th century. It adapted to television's rise by focusing on music and local connections. Can it adapt in a Digital, On-Demand age?
+</section>
+
+<!-- --------------------------------------------------
+     YOUR NEW 2‑COLUMN GRID
+-------------------------------------------------- -->
+<div class="book-grid">
+
+  <section>
+    <h2>Who This Book Is For</h2>
+    <ul>
+      <li>Radio Listeners</li>
+      
+      <li>Media executives and strategists</li>
+      <li>Students of communications, media, and broadcast history</li>
+      <li>Anyone curious about how industries evolve — and how they can be rebuilt</li>
+    </ul>
   </section>
 
   <section>
-    <h2>Racin’ Randy — On Air</h2>
-    <p>
-      “Racin’ Randy” is from Charlotte, North Carolina, and grew up surrounded by music. His father loved country, gospel, and Elvis, while his older sibling and cousins were spinning The Beatles, Stones, Motown, and the electric sounds of the late 1960s. Beach music was in the air all over the Carolinas, and he heard it early and often.
-    </p>
-    <p>
-      As a North Carolina native, Randy also gravitated to NASCAR from an early age — and like a lot of teenagers, he spent time under the hood of his own cars. After high school, he headed to Western Carolina University to earn a degree in Radio and Television, then went to work at stations across North Carolina, Georgia, and South Carolina.
-    </p>
-    <p>
-      While in Myrtle Beach at WMYB and WAZX, Randy was hired as a DJ at the renowned Studebakers nightclub, where his deep knowledge of beach music quickly became obvious. What were now called “oldies” were the songs he grew up with — and that made him invaluable.
-    </p>
-    <p>
-      In the 1990s, he returned to Charlotte to work at the legendary Magic 96 oldies station and served as Senior Producer for <i>NASCAR Country</i>, a weekly two‑hour internationally syndicated program. His long‑term knowledge of the sport helped him write and produce a show that earned two Billboard Magazine nominations for Best Syndicated Program.
-    </p>
-    <p>
-      Today, Randy works at WGHP‑TV in the Triad of North Carolina as a newscast director. He continues to do voice work for stations nationwide and serves as a NASCAR correspondent for the nationally syndicated <i>Sports Circus</i> program. His favorite beach music song: “If I Didn’t Have A Dime” by Bob Collins and The Fabulous Five.
-    </p>
+    <h2>Key Insights</h2>
+    <ul>
+      <li>How deregulation reshaped incentives and accelerated consolidation</li>
+    
+      <li>Why localism was radio’s greatest strength — and its first casualty</li>
+      <li>The hidden cost of replacing operators with automation</li>
+
+      <li>What modern industries can learn from radio’s evolution</li>
+    </ul>
   </section>
 
-  <section>
-    <h2>The Sound of the Strand</h2>
-    <p>
-      The Sound of the Strand is a Carolina Beach Music internet radio station that’s been streaming since 2016 — built for people who know the difference between background noise and a real soundtrack. It’s the sound of the coast, the clubs, the cars, and the nights that ran later than they should have.
-    </p>
-    <p>
-      From deep‑cut beach tracks to familiar favorites, the station keeps the tradition alive while embracing the reality that the audience is now everywhere — not just within reach of a tower.
-    </p>
-  </section>
+</div>
 
-  <footer>
-    <span>© 2026 Randy Anthony</span>
-    <span>The Sound of the Strand • Carolina Beach Music</span>
-  </footer>
+<section>
+  <h2>About the Author</h2>
+  <p>
+    Randy Anthony is an advisor, expert‑level operator, strategist for time‑critical systems, and a veteran of radio, television, and digital media. With decades of experience across AM/FM and TV broadcasts and on‑demand platforms, he brings a unique operational - from behind the microphone- lens to the story of terrestrial radio’s decline — and the lessons it offers to modern operators.
+  </p> The book celebrates radio's legacy and calls on readers to recognize its enduring value and shape its future with creativity and determination.
+</section>
+
+<section>
+  <h2>Get the Book</h2>
+  <p>Available now on Amazon in Kindle and paperback formats.</p>
+
+  <a 
+    href="https://www.amazon.com/FM-Modulation-Terrestrial-Communication-Silenced-ebook/dp/B0F2SCR4Z1?tag=mediaspeaks-20" 
+    class="btn btnPrimary"
+    target="_blank"
+    rel="noopener">
+    Buy on Amazon
+  </a>
+</section>
+
+<footer>
+  <span>© 2026 Randy Anthony</span>
+  <span>Advisory • Operations • Strategy</span>
+</footer>
 
 </div>
 
