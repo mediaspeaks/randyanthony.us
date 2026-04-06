@@ -254,6 +254,23 @@ nav.primary a:hover {
 }
 
 /* --------------------------------------------------
+   GRID FIX (YOUR REQUEST #1)
+-------------------------------------------------- */
+.book-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-top: 34px;
+}
+
+@media (max-width: 860px) {
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------
    CONTENT + FOOTER
 -------------------------------------------------- */
 .wrap{
@@ -284,6 +301,20 @@ ul{
 }
 
 li{margin:8px 0}
+
+/* --------------------------------------------------
+   DARKER BOTTOM CTA (YOUR REQUEST #2)
+-------------------------------------------------- */
+.wrap .btnPrimary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.wrap .btnPrimary:hover {
+  background: #162f6b;
+  border-color: #162f6b;
+}
 
 footer{
   margin-top:34px;
@@ -356,7 +387,7 @@ footer{
     <div class="book-hero-content">
       <h1>FM — The Fading Modulation of Terrestrial Radio</h1>
       <p class="book-subtitle">
-        How consolidation, deregulation, and operational decay silenced a medium that once shaped culture.
+ How The Communication Act Of 1996 Silenced The Radio Stars<br>  How consolidation, deregulation, and operational decay changed a medium that once shaped culture.
       </p>
 
       <div class="book-cta-row">
@@ -394,34 +425,43 @@ footer{
   <p>
     This is not nostalgia. It’s a forensic analysis of what happens when a time‑critical, community‑anchored system is stripped of its operational backbone. The book explores the decisions, incentives, and structural failures that led to the silencing of thousands of stations — and the lessons modern operators can learn from radio’s decline.
   </p> Radio's journey starts with pioneers like Marconi, Hertz and Armstrong and their inventions evolving into a dominant entertainment and information medium in the early 20th century. It adapted to television's rise by focusing on music and local connections. Can it adapt in a Digital, On-Demand age?
-   </section>
-
-<section>
-  <h2>Who This Book Is For</h2>
-  <ul>
-    <li>Radio Listeners</li>
-
-    <li>Media executives and strategists</li>
-    <li>Students of communications, media, and broadcast history</li>
-    <li>Anyone curious about how industries change — and how they can be rebuilt</li>
-  </ul>
 </section>
 
-<section>
-  <h2>Key Insights</h2>
-  <ul>
-    <li>How deregulation reshaped incentives and accelerated consolidation</li>
-    <li>Why localism was radio’s greatest strength — and its first casualty</li>
-    <li>The hidden cost of replacing operators with automation</li>
-        <li>What modern industries can learn from radio’s evolution</li>
-  </ul>
-</section>
+<!-- --------------------------------------------------
+     YOUR NEW 2‑COLUMN GRID
+-------------------------------------------------- -->
+<div class="book-grid">
+
+  <section>
+    <h2>Who This Book Is For</h2>
+    <ul>
+      <li>Radio Listeners</li>
+      
+      <li>Media executives and strategists</li>
+      <li>Students of communications, media, and broadcast history</li>
+      <li>Anyone curious about how industries evolve — and how they can be rebuilt</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Key Insights</h2>
+    <ul>
+      <li>How deregulation reshaped incentives and accelerated consolidation</li>
+    
+      <li>Why localism was radio’s greatest strength — and its first casualty</li>
+      <li>The hidden cost of replacing operators with automation</li>
+
+      <li>What modern industries can learn from radio’s evolution</li>
+    </ul>
+  </section>
+
+</div>
 
 <section>
   <h2>About the Author</h2>
   <p>
-    Randy Anthony is an advisor, founder‑level operator, strategist for time‑critical systems, and a veteran of radio, television, and digital media. With decades of experience across broadcast and on‑demand platforms, he brings a unique operational lens to the story of terrestrial radio’s decline — and the lessons it offers to modern operators.
-  </p>
+    Randy Anthony is an advisor, expert‑level operator, strategist for time‑critical systems, and a veteran of radio, television, and digital media. With decades of experience across AM/FM and TV broadcasts and on‑demand platforms, he brings a unique operational - from behind the microphone- lens to the story of terrestrial radio’s decline — and the lessons it offers to modern operators.
+  </p> The book celebrates radio's legacy and calls on readers to recognize its enduring value and shape its future with creativity and determination.
 </section>
 
 <section>
