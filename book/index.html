@@ -271,6 +271,23 @@ nav.primary a:hover {
 }
 
 /* --------------------------------------------------
+   NEW 3‑COLUMN SPONSOR ROW
+-------------------------------------------------- */
+.book-sponsor-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  margin-top: 48px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .book-sponsor-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------
    CONTENT + FOOTER
 -------------------------------------------------- */
 .wrap{
@@ -332,7 +349,7 @@ footer{
 <body>
 
 <!-- --------------------------------------------------
-     GLOBAL HEADER (EXACTLY AS PROVIDED)
+     GLOBAL HEADER
 -------------------------------------------------- -->
 <header>
 
@@ -387,7 +404,9 @@ footer{
     <div class="book-hero-content">
       <h1>FM — The Fading Modulation of Terrestrial Radio</h1>
       <p class="book-subtitle">
-  How The Communications Act Of 1996 Silenced The Radio Stars  <br><br>  Starting after the landmark 1992 Ruling, consolidation, deregulation, and operational decay changed a medium that once shaped culture. <br>The book explores the history, challenges, and future of terrestrial radio, highlighting its cultural significance and adaptability amidst technological changes.</p>    
+        How The Communications Act Of 1996 Silenced The Radio Stars<br><br>
+        Starting after the landmark 1992 Ruling, consolidation, deregulation, and operational decay changed a medium that once shaped culture. The book explores the history, challenges, and future of terrestrial radio, highlighting its cultural significance and adaptability amidst technological changes.
+      </p>
 
       <div class="book-cta-row">
         <a 
@@ -423,11 +442,12 @@ footer{
   </p>
   <p>
     This is not nostalgia. It’s a forensic analysis of what happens when a time‑critical, community‑anchored system is stripped of its operational backbone. The book explores the decisions, incentives, and structural failures that led to the silencing of thousands of stations — and the lessons modern operators can learn from radio’s decline.
-  </p> Radio's journey starts with pioneers like Marconi, Hertz and Armstrong and their inventions evolving into a dominant entertainment and information medium in the early 20th century. It adapted to television's rise by focusing on music and local connections. Can it adapt in a Digital, On-Demand age?
+  </p>
+  Radio's journey starts with pioneers like Marconi, Hertz and Armstrong and their inventions evolving into a dominant entertainment and information medium in the early 20th century. It adapted to television's rise by focusing on music and local connections. Can it adapt in a Digital, On-Demand age?
 </section>
 
 <!-- --------------------------------------------------
-     YOUR NEW 2‑COLUMN GRID
+     2‑COLUMN GRID
 -------------------------------------------------- -->
 <div class="book-grid">
 
@@ -435,7 +455,6 @@ footer{
     <h2>Who This Book Is For</h2>
     <ul>
       <li>Radio Listeners</li>
-      
       <li>Media executives and strategists</li>
       <li>Students of communications, media, and broadcast history</li>
       <li>Anyone curious about how industries evolve — and how they can be rebuilt</li>
@@ -446,10 +465,8 @@ footer{
     <h2>Key Insights</h2>
     <ul>
       <li>How deregulation reshaped incentives and accelerated consolidation</li>
-    
       <li>Why localism was radio’s greatest strength — and its first casualty</li>
       <li>The hidden cost of replacing operators with automation</li>
-
       <li>What modern industries can learn from radio’s evolution</li>
     </ul>
   </section>
@@ -459,22 +476,55 @@ footer{
 <section>
   <h2>About the Author</h2>
   <p>
-    Randy Anthony is an advisor, expert‑level operator, strategist for time‑critical systems, and a veteran of radio, television, and digital media. With decades of experience across AM/FM and TV broadcasts and on‑demand platforms, he brings a unique operational - from behind the microphone- lens to the story of terrestrial radio’s decline — and the lessons it offers to modern operators.
-  </p> The book celebrates radio's legacy and calls on readers to recognize its enduring value and shape its future with creativity and determination.
+    Randy Anthony is an advisor, expert‑level operator, strategist for time‑critical systems, and a veteran of radio, television, and digital media. With decades of experience across AM/FM and TV broadcasts and on‑demand platforms, he brings a unique operational — from behind the microphone — lens to the story of terrestrial radio’s decline — and the lessons it offers to modern operators.
+  </p>
+  The book celebrates radio's legacy and calls on readers to recognize its enduring value and shape its future with creativity and determination.
 </section>
 
-<section>
-  <h2>Get the Book</h2>
-  <p>Available now on Amazon in Kindle and paperback formats.</p>
+<!-- --------------------------------------------------
+     NEW 3‑COLUMN SPONSOR ROW (Get Book | Legal | Paychain)
+-------------------------------------------------- -->
+<div class="book-sponsor-row">
 
-  <a 
-    href="https://www.amazon.com/FM-Modulation-Terrestrial-Communication-Silenced-ebook/dp/B0F2SCR4Z1?tag=mediaspeaks-20" 
-    class="btn btnPrimary"
-    target="_blank"
-    rel="noopener">
-    Buy on Amazon
-  </a>
-</section>
+  <!-- Column 1 — Get the Book -->
+  <section>
+    <h2>Get the Book</h2>
+    <p>Available now on Amazon in Kindle and paperback formats.</p>
+
+    <a 
+      href="https://www.amazon.com/FM-Modulation-Terrestrial-Communication-Silenced-ebook/dp/B0F2SCR4Z1?tag=mediaspeaks-20" 
+      class="btn btnPrimary"
+      target="_blank"
+      rel="noopener">
+      Buy on Amazon
+    </a>
+  </section>
+
+  <!-- Column 2 — LegalShield -->
+  <article class="card" role="listitem" aria-labelledby="g1" style="background-color:#2f3a44; color:#ffffff;">
+    <h3 id="g1">SPONSORED BY: Legal Sheild</h3>
+    <p style="color:#cbd5e1;">
+      Legal Shield & ID Shield<br>
+      Protecting Families & Businesses Nationwide.
+    </p>
+    <p style="margin-top:12px">
+      <a class="btn" href="/legal/">Explore Plans→</a>
+    </p>
+  </article>
+
+  <!-- Column 3 — Piety Paychain -->
+  <article class="card" role="listitem" aria-labelledby="g4" style="background-color:#2f3a44; color:#ffffff;">
+    <h3 id="g4">SPONSORED BY: The Piety Paychain</h3>
+    <p style="color:#cbd5e1;">
+      Helping to fund these pages.<br>
+      Learn more about the Piety Paychain
+    </p>
+    <p style="margin-top:12px">
+      <a class="btn" href="/2026/">Explore Paychain→</a>
+    </p>
+  </article>
+
+</div>
 
 <footer>
   <span>© 2026 Randy Anthony</span>
