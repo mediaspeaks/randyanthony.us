@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FM — The Fading Modulation of Terrestrial Radio</title>
+<title>Radio — The Sound of the Strand</title>
 
 <link rel="icon" type="image/png" href="/favicon.png">
 
@@ -171,64 +171,55 @@ nav.primary a:hover {
 }
 
 /* --------------------------------------------------
-   BOOK HERO
+   RADIO HERO
 -------------------------------------------------- */
-.book-hero{
+.radio-hero{
   margin:22px auto 0;
   max-width:var(--max);
   border-radius: calc(var(--radius) + 2px);
   background:
-    linear-gradient(180deg, rgba(7,26,51,0.92), rgba(7,26,51,0.88)),
-    url("/series/assets/ops-architecture-bg.jpg") center/cover no-repeat;
+    linear-gradient(135deg, rgba(7,26,51,0.96), rgba(10,122,87,0.85));
   box-shadow: var(--heroShadow);
   border: 1px solid rgba(255,255,255,0.10);
-  padding: 32px 26px;
+  padding: 28px 24px;
 }
 
-.book-hero-inner{
+.radio-hero-inner{
   display:grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap:28px;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap:24px;
   align-items:center;
 }
 
 @media (max-width: 860px){
-  .book-hero-inner{grid-template-columns:1fr}
+  .radio-hero-inner{grid-template-columns:1fr}
 }
 
-.book-cover-card{
-  background: rgba(255,255,255,0.06);
-  border: 1px solid var(--heroBorder);
-  border-radius: 16px;
-  padding: 14px;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.32);
-  max-width: 340px;
+.radio-hero-kicker{
+  font-size:12px;
+  letter-spacing:0.8px;
+  text-transform:uppercase;
+  color:var(--heroFaint);
+  margin:0 0 6px;
 }
 
-.book-cover-card img{
-  width:100%;
-  border-radius:12px;
-  display:block;
-}
-
-.book-hero-content h1{
-  margin:0 0 12px;
-  font-size:34px;
+.radio-hero-title{
+  font-size:30px;
+  margin:0 0 8px;
   color:var(--heroText);
 }
 
-.book-subtitle{
-  margin:0 0 18px;
-  font-size:17px;
+.radio-hero-subtitle{
+  margin:0 0 16px;
+  font-size:16px;
   color:var(--heroMuted);
-  max-width:60ch;
 }
 
-.book-cta-row{
+.radio-cta-row{
   display:flex;
   gap:14px;
   flex-wrap:wrap;
-  margin:18px 0 10px;
+  margin-top:14px;
 }
 
 .btnPrimary{
@@ -247,27 +238,30 @@ nav.primary a:hover {
   color:var(--heroText);
 }
 
-.book-meta{
-  margin-top:12px;
+.radio-meta{
+  margin-top:10px;
   font-size:13px;
   color:var(--heroFaint);
 }
 
-/* --------------------------------------------------
-   GRID FIX (YOUR REQUEST #1)
--------------------------------------------------- */
-.book-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  align-items: start;
-  margin-top: 34px;
+.radio-panel{
+  background: rgba(255,255,255,0.06);
+  border-radius:16px;
+  border:1px solid var(--heroBorder);
+  padding:16px;
+  box-shadow:0 12px 28px rgba(0,0,0,0.32);
 }
 
-@media (max-width: 860px) {
-  .book-grid {
-    grid-template-columns: 1fr;
-  }
+.radio-panel h3{
+  margin:0 0 8px;
+  font-size:16px;
+  color:var(--heroText);
+}
+
+.radio-panel p{
+  margin:0 0 10px;
+  font-size:13px;
+  color:var(--heroMuted);
 }
 
 /* --------------------------------------------------
@@ -292,28 +286,6 @@ h2{
 p{
   margin:0 0 14px;
   color:var(--muted);
-}
-
-ul{
-  margin:0;
-  padding-left:20px;
-  color:var(--muted);
-}
-
-li{margin:8px 0}
-
-/* --------------------------------------------------
-   DARKER BOTTOM CTA (YOUR REQUEST #2)
--------------------------------------------------- */
-.wrap .btnPrimary {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: white;
-}
-
-.wrap .btnPrimary:hover {
-  background: #162f6b;
-  border-color: #162f6b;
 }
 
 footer{
@@ -377,35 +349,38 @@ footer{
 <!-- --------------------------------------------------
      HERO
 -------------------------------------------------- -->
-<section class="book-hero">
-  <div class="book-hero-inner">
+<section class="radio-hero">
+  <div class="radio-hero-inner">
 
-    <div class="book-cover-card">
-      <img src="/assets/cover.jpg" alt="FM — The Fading Modulation of Terrestrial Radio book cover">
-    </div>
-
-    <div class="book-hero-content">
-      <h1>FM — The Fading Modulation of Terrestrial Radio</h1>
-      <p class="book-subtitle">
- How The Communication Act Of 1996 Silenced The Radio Stars<br>  How consolidation, deregulation, and operational decay changed a medium that once shaped culture.
+    <div>
+      <p class="radio-hero-kicker">The Sound of the Strand • Since 2016</p>
+      <h1 class="radio-hero-title">Racin’ Randy on The Sound of the Strand</h1>
+      <p class="radio-hero-subtitle">
+        Carolina Beach Music, stories from the road, and a lifetime of radio and racing — streaming wherever you are.
       </p>
 
-      <div class="book-cta-row">
+      <div class="radio-cta-row">
         <a 
-          href="https://www.amazon.com/FM-Modulation-Terrestrial-Communication-Silenced-ebook/dp/B0F2SCR4Z1?tag=mediaspeaks-20" 
+          href="https://player.live365.com/a20149?l" 
           class="btn btnPrimary"
           target="_blank"
           rel="noopener">
-          Buy on Amazon
-        </a>
-
-        <a href="#about-book" class="btn secondary">
-          What’s Inside
+          Listen Live on Live365
         </a>
       </div>
 
-      <p class="book-meta">
-        Available in Kindle and paperback • Published 2023
+      <p class="radio-meta">
+        Internet radio station • Carolina Beach Music • Streaming worldwide
+      </p>
+    </div>
+
+    <div class="radio-panel">
+      <h3>Now Streaming: The Sound of the Strand</h3>
+      <p>
+        A Carolina Beach Music internet radio station since 2016 — built on the sounds of the Carolinas, the sand, and the stories that came with them.
+      </p>
+      <p>
+        Hosted by “Racin’ Randy” from Charlotte, NC — blending beach music, racing roots, and decades behind the mic.
       </p>
     </div>
 
@@ -417,69 +392,38 @@ footer{
 -------------------------------------------------- -->
 <div class="wrap">
 
-<section id="about-book">
-  <h2>About the Book</h2>
+<section>
+  <h2>Racin’ Randy — On Air</h2>
   <p>
-    <b>FM — The Fading Modulation of Terrestrial Radio</b> examines the slow, preventable collapse of a medium that once defined American culture. Through the lens of operational systems, regulatory shifts, and the 1996 Telecommunications Act, the book traces how consolidation and cost‑cutting hollowed out an industry built on localism, creativity, and community.
+    “Racin’ Randy” is from Charlotte, North Carolina, and grew up surrounded by music. His father loved country, gospel, and Elvis, while his older sibling and cousins were spinning The Beatles, Stones, Motown, and the electric sounds of the late 1960s. Beach music was in the air all over the Carolinas, and he heard it early and often.
   </p>
   <p>
-    This is not nostalgia. It’s a forensic analysis of what happens when a time‑critical, community‑anchored system is stripped of its operational backbone. The book explores the decisions, incentives, and structural failures that led to the silencing of thousands of stations — and the lessons modern operators can learn from radio’s decline.
-  </p> Radio's journey starts with pioneers like Marconi, Hertz and Armstrong and their inventions evolving into a dominant entertainment and information medium in the early 20th century. It adapted to television's rise by focusing on music and local connections. Can it adapt in a Digital, On-Demand age?
-</section>
-
-<!-- --------------------------------------------------
-     YOUR NEW 2‑COLUMN GRID
--------------------------------------------------- -->
-<div class="book-grid">
-
-  <section>
-    <h2>Who This Book Is For</h2>
-    <ul>
-      <li>Radio Listeners</li>
-      
-      <li>Media executives and strategists</li>
-      <li>Students of communications, media, and broadcast history</li>
-      <li>Anyone curious about how industries evolve — and how they can be rebuilt</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Key Insights</h2>
-    <ul>
-      <li>How deregulation reshaped incentives and accelerated consolidation</li>
-    
-      <li>Why localism was radio’s greatest strength — and its first casualty</li>
-      <li>The hidden cost of replacing operators with automation</li>
-
-      <li>What modern industries can learn from radio’s evolution</li>
-    </ul>
-  </section>
-
-</div>
-
-<section>
-  <h2>About the Author</h2>
+    As a North Carolina native, Randy also gravitated to NASCAR from an early age — and like a lot of teenagers, he spent time under the hood of his own cars. After high school, he headed to Western Carolina University to earn a degree in Radio and Television, then went to work at stations across North Carolina, Georgia, and South Carolina.
+  </p>
   <p>
-    Randy Anthony is an advisor, expert‑level operator, strategist for time‑critical systems, and a veteran of radio, television, and digital media. With decades of experience across AM/FM and TV broadcasts and on‑demand platforms, he brings a unique operational - from behind the microphone- lens to the story of terrestrial radio’s decline — and the lessons it offers to modern operators.
-  </p> The book celebrates radio's legacy and calls on readers to recognize its enduring value and shape its future with creativity and determination.
+    While in Myrtle Beach at WMYB and WAZX, Randy was hired as a DJ at the renowned Studebakers nightclub, where his deep knowledge of beach music quickly became obvious. What were now called “oldies” were the songs he grew up with — and that made him invaluable.
+  </p>
+  <p>
+    In the 1990s, he returned to Charlotte to work at the legendary Magic 96 oldies station and served as Senior Producer for <i>NASCAR Country</i>, a weekly two‑hour internationally syndicated program. His long‑term knowledge of the sport helped him write and produce a show that earned two Billboard Magazine nominations for Best Syndicated Program.
+  </p>
+  <p>
+    Today, Randy works at the TEGNA Stream Center handling automation and reliability for numerous broadcast and streaming TV platforms . He continues to do voice work for stations nationwide and serves as a NASCAR correspondent for the nationally syndicated <i>Sports Circus</i> program. His favorite beach music song: “If I Didn’t Have A Dime” by Bob Collins and The Fabulous Five.
+  </p>
 </section>
 
 <section>
-  <h2>Get the Book</h2>
-  <p>Available now on Amazon in Kindle and paperback formats.</p>
-
-  <a 
-    href="https://www.amazon.com/FM-Modulation-Terrestrial-Communication-Silenced-ebook/dp/B0F2SCR4Z1?tag=mediaspeaks-20" 
-    class="btn btnPrimary"
-    target="_blank"
-    rel="noopener">
-    Buy on Amazon
-  </a>
+  <h2>The Sound of the Strand</h2>
+  <p>
+    The Sound of the Strand is a Carolina Beach Music internet radio station that’s been streaming since 2016 — built for people who know the difference between background noise and a real soundtrack. It’s the sound of the coast, the clubs, the cars, and the nights that ran later than they should have.
+  </p>
+  <p>
+    From deep‑cut beach tracks to familiar favorites, the station keeps the tradition alive while embracing the reality that the audience is now everywhere — not just within reach of a tower.
+  </p>
 </section>
 
 <footer>
   <span>© 2026 Randy Anthony</span>
-  <span>Advisory • Operations • Strategy</span>
+  <span>The Sound of the Strand • Carolina Beach Music</span>
 </footer>
 
 </div>
