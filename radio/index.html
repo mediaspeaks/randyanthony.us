@@ -171,7 +171,7 @@ nav.primary a:hover {
 }
 
 /* --------------------------------------------------
-   RADIO HERO (UPDATED)
+   RADIO HERO WITH AVATAR
 -------------------------------------------------- */
 .radio-hero{
   margin:22px auto 0;
@@ -199,7 +199,6 @@ nav.primary a:hover {
   }
 }
 
-/* Avatar */
 .radio-avatar img{
   width:100%;
   max-width:220px;
@@ -208,13 +207,6 @@ nav.primary a:hover {
   box-shadow:0 12px 28px rgba(0,0,0,0.35);
 }
 
-@media (max-width: 860px){
-  .radio-avatar img{
-    margin:0 auto;
-  }
-}
-
-/* Hero Text */
 .radio-hero-kicker{
   font-size:12px;
   letter-spacing:0.8px;
@@ -258,57 +250,8 @@ nav.primary a:hover {
   color:var(--heroFaint);
 }
 
-.radio-panel{
-  background: rgba(255,255,255,0.06);
-  border-radius:16px;
-  border:1px solid var(--heroBorder);
-  padding:16px;
-  box-shadow:0 12px 28px rgba(0,0,0,0.32);
-}
-
-.radio-panel h3{
-  margin:0 0 8px;
-  font-size:16px;
-  color:var(--heroText);
-}
-
-.radio-panel p{
-  margin:0 0 10px;
-  font-size:13px;
-  color:var(--heroMuted);
-}
-
 /* --------------------------------------------------
-   SPONSOR CARDS (IDENTICAL TO INDEX PAGE)
--------------------------------------------------- */
-.sponsors {
-  margin-top: 48px;
-}
-
-.sponsor-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 18px;
-}
-
-.sponsor-card {
-  background: linear-gradient(180deg, #0f1c2e, #0b1525);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 16px;
-  padding: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
-}
-
-.sponsor-card img {
-  max-width: 100%;
-  height: auto;
-}
-
-/* --------------------------------------------------
-   CONTENT + FOOTER
+   CONTENT
 -------------------------------------------------- */
 .wrap{
   max-width:var(--max);
@@ -331,6 +274,29 @@ p{
   color:var(--muted);
 }
 
+/* --------------------------------------------------
+   EXACT SPONSOR CARDS (VERBATIM FROM INDEX)
+-------------------------------------------------- */
+.grid {
+  display: grid;
+  gap: 20px;
+  margin-top: 48px;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 16px;
+}
+
+.card .btn {
+  background: #ffffff22;
+  border: 1px solid #ffffff33;
+  color: #ffffff;
+}
+
+/* --------------------------------------------------
+   FOOTER
+-------------------------------------------------- */
 footer{
   margin-top:34px;
   padding-top:18px;
@@ -347,7 +313,7 @@ footer{
 <body>
 
 <!-- --------------------------------------------------
-     GLOBAL HEADER (EXACTLY AS PROVIDED)
+     GLOBAL HEADER
 -------------------------------------------------- -->
 <header>
 
@@ -395,12 +361,10 @@ footer{
 <section class="radio-hero">
   <div class="radio-hero-inner">
 
-    <!-- Avatar Column -->
     <div class="radio-avatar">
       <img src="/assets/avatar.jpg" alt="Racin' Randy">
     </div>
 
-    <!-- Text Column -->
     <div>
       <p class="radio-hero-kicker">The Sound of the Strand • Since 2016</p>
       <h1 class="radio-hero-title">Racin’ Randy on The Sound of the Strand</h1>
@@ -461,21 +425,33 @@ footer{
 </section>
 
 <!-- --------------------------------------------------
-     SPONSOR CARDS
+     EXACT SPONSOR CARDS (PLACED HERE)
 -------------------------------------------------- -->
-<section class="sponsors">
-  <div class="sponsor-grid">
+<div class="grid" role="list">
 
-    <a class="sponsor-card" href="https://www.legalshield.com/" target="_blank" rel="noopener">
-      <img src="/assets/legalshield.png" alt="LegalShield">
-    </a>
+  <article class="card" role="listitem" aria-labelledby="g1" style="background-color:#2f3a44; color:#ffffff;">
+    <h3 id="g1">SPONSORED BY: Legal Sheild</h3>
+    <p style="color:#cbd5e1;">
+      Legal Shield & ID Shield<br>
+      Protecting Families & Businesses Nationwide.
+    </p>
+    <p style="margin-top:12px">
+      <a class="btn" href="/legal/">Explore Plans→</a>
+    </p>
+  </article>
 
-    <a class="sponsor-card" href="https://www.pietypaychain.com/" target="_blank" rel="noopener">
-      <img src="/assets/piety.png" alt="Piety Paychain">
-    </a>
+  <article class="card" role="listitem" aria-labelledby="g4" style="background-color:#2f3a44; color:#ffffff;">
+    <h3 id="g4">SPONSORED BY: The Piety Paychain</h3>
+    <p style="color:#cbd5e1;">
+      Helping to fund these pages.<br>
+      Learn more about the Piety Paychain
+    </p>
+    <p style="margin-top:12px">
+      <a class="btn" href="/2026/">Explore Paychain→</a>
+    </p>
+  </article>
 
-  </div>
-</section>
+</div>
 
 <footer>
   <span>© 2026 Randy Anthony</span>
