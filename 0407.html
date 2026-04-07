@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Randy Anthony — Operational Reliability | Front Page</title>
+<meta name="description" content="Randy Anthony — Operational Reliability Advisory for broadcast & streaming. Connects: Series, Bio, Projects, Book, Radio." />
+<link rel="icon" href="/favicon.png" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===========================
+   ROOT + BASE
+=========================== */
+:root{
+  --bg-1: #f6f7fb;
+  --bg-2: #eef2f8;
+  --nav-h: 74px;
+
+  --heroA: #071a33;
+  --heroB: #0b1a33;
+  --accent: #1f3e8a;
+  --accent-2: #0a7a57;
+
+  --text: rgba(10,15,25,0.94);
+  --muted: rgba(10,15,25,0.6);
+  --card-surface: rgba(255,255,255,0.98);
+  --glass: rgba(255,255,255,0.06);
+
+  --radius-lg: 18px;
+  --radius-md: 12px;
+  --shadow-lg: 0 18px 40px rgba(2,8,23,0.18);
+  --shadow-sm: 0 8px 20px rgba(2,8,23,0.08);
+
+  --max: 1120px;
+  --speed: 320ms;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Roboto", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  background:
+    radial-gradient(1200px 900px at 16% -8%, rgba(31,62,138,0.12), transparent 62%),
+    radial-gradient(1000px 700px at 92% 8%, rgba(10,122,87,0.07), transparent 58%),
+    linear-gradient(180deg,var(--bg-1), var(--bg-2));
+  line-height:1.5;
+  letter-spacing:0.1px;
+}
+
+.site{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:18px;
+}
+
+/* ===========================
+   HEADER (Bio‑style unified)
+=========================== */
+header.site-header{
+  height:var(--nav-h);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  position:sticky;
+  top:0;
+  z-index:40;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.64));
+  border-bottom:1px solid rgba(15,28,46,0.06);
+  padding:0 22px;
+}
+
+.brand{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  text-decoration:none;
+  color:var(--text);
+}
+
+.brand .mark{
+  width:44px;
+  height:44px;
+  border-radius:12px;
+  background: linear-gradient(135deg, rgba(31,62,138,0.95), rgba(10,122,87,0.55));
+  box-shadow: var(--shadow-sm);
+  flex-shrink:0;
+}
+
+.brand .titles{ line-height:1 }
+.brand strong{display:block; font-size:15px; letter-spacing:0.6px}
+.brand span{display:block; font-size:12px; color:var(--muted); margin-top:2px}
+
+nav.primary{
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+nav.primary a{
+  display:inline-flex;
+  padding:8px 12px;
+  border-radius:12px;
+  text-decoration:none;
+  color:var(--muted);
+  font-weight:600;
+  font-size:13px;
+}
+nav.primary a:hover{background:rgba(15,28,46,0.04); color:var(--text)}
+
+.cta{
+  margin-left:8px;
+  display:inline-flex;
+  gap:8px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:9px 14px;
+  border-radius:12px;
+  cursor:pointer;
+  border:1px solid rgba(15,28,46,0.06);
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(255,255,255,0.94));
+  font-weight:700;
+  color: var(--text);
+  text-decoration:none;
+  transition: transform var(--speed) ease, box-shadow var(--speed) ease;
+}
+.btn.secondary{
+  background: transparent;
+  border:1px solid rgba(31,62,138,0.12);
+  color:var(--accent);
+}
+.btn:hover{transform:translateY(-3px); box-shadow: var(--shadow-sm)}
+
+.mobile-toggle{
+  display:none;
+  border:0;
+  background:transparent;
+  font-size:18px;
+}
+
+/* ===========================
+   MOBILE NAV PANEL
+=========================== */
+.mobile-nav{
+  display:none;
+  position:fixed;
+  inset: var(--nav-h) 12px auto 12px;
+  z-index:60;
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95));
+  border-radius:12px;
+  box-shadow: var(--shadow-lg);
+  padding:12px;
+  border:1px solid rgba(15,28,46,0.06);
+}
+.mobile-nav a{
+  display:block;
+  padding:10px 8px;
+  border-radius:8px;
+  color:var(--text);
+  font-weight:700;
+  text-decoration:none;
+}
+.mobile-nav a + a{ margin-top:6px }
+
+.mobile-nav.show{ display:block }
+
+/* ===========================
+   HERO (starts in Part 2)
+=========================== */
+</style>
+</head>
+
+<body>
+<div class="site" role="document">
+
+<!-- ===========================
+     HEADER
+=========================== -->
+<header class="site-header">
+
+  <a class="brand" href="/">
+    <img src="/favicon.png" alt="" class="mark">
+    <div class="titles">
+      <strong>RANDY ANTHONY</strong>
+      <span>Operational Reliability Advisory</span>
+    </div>
+  </a>
+
+  <nav class="primary" role="navigation" aria-label="Main navigation">
+    <a href="/">Home</a>
+    <a href="/series/">Operational Architecture Series</a>
+    <a href="/bio/">Bio</a>
+    <a href="/home.html">Offerings</a>
+    <a href="/book/">Book</a>
+    <a href="/radio/">Radio</a>
+
+    <div class="cta">
+      <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a consultation</a>
+      <a class="btn secondary" href="/home.html#about">About</a>
+    </div>
+  </nav>
+
+  <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileNav">
+    ☰
+  </button>
+
+</header>
+
+<!-- ===========================
+     MOBILE NAV
+=========================== -->
+<nav id="mobileNav" class="mobile-nav" aria-hidden="true">
+  <a href="/">Home</a>
+  <a href="/series/">Operational Architecture Series</a>
+  <a href="/bio/">Bio</a>
+  <a href="/home.html">Offerings</a>
+  <a href="/book/">Book</a>
+  <a href="/radio/">Radio</a>
+  <a href="/home.html#about">About</a>
+</nav>
+<!-- ===========================
+     HERO
+=========================== -->
+<section class="hero" role="region" aria-label="Intro">
+  <div class="hero-left">
+    <h1>Operational Reliability Advisory</h1>
+    <p class="lede">
+      Randy Anthony works at the intersection of operational reliability, communications, and media. He brings systems level accountability to processes and structure that cannot fail quietly: broadcast chains, digital distribution, and time‑critical workflows that must perform under pressure.
+    </p>
+
+    <div class="hero-ctas"> 
+      <a href="/series/" class="btn">Read: Operational Series Pages</a>
+      <a href="/home.html" class="btn">Services / Offerings</a>
+    </div>
+  </div>
+
+  <aside class="hero-right" aria-label="Focus areas">
+    <p style="margin:0 0 10px; color:rgba(255,255,255,0.94); font-weight:700">Focus areas</p>
+    <ul class="focus-list">
+      <li>Automation &amp; playout workflow integrity</li>
+      <li>Redundancy mapping &amp; single-point reduction</li>
+      <li>Escalation, handoffs &amp; SOPs that work</li>
+      <li>Operational visibility &amp; failure surface analysis</li>
+      <li>Timing precision, latency control &amp; synchronization</li>
+      <li>Exception handling &amp; recovery</li>
+      <li>Monitoring strategy, alert quality &amp; noise reduction</li>
+    </ul>
+  </aside>
+</section>
+
+<!-- ===========================
+     QUICK LINKS
+=========================== -->
+<section aria-label="Quick links" style="margin-top:26px">
+  <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:12px; margin-bottom:12px">
+    <h2 style="margin:0; font-size:18px">Navigate the site</h2>
+  </div>
+
+  <div class="grid" role="list">
+
+    <article class="card" role="listitem" aria-labelledby="g1" style="background-color:#2f3a44; color:#ffffff;">
+      <h3 id="g1">SPONSORED BY: Legal Shield</h3>
+      <p style="color:#cbd5e1;">
+        Legal Shield & ID Shield<br>
+        Protecting Families & Businesses Nationwide.
+      </p>
+      <p style="margin-top:12px"><a class="btn" href="/legal/">Explore Plans→</a></p>
+    </article>
+
+    <article class="card" role="listitem" aria-labelledby="g2">
+      <h3 id="g2">Operational Architecture Series</hh3>
+      <p>On-going 13-week series with changing quarterly focus: deep-dive essays on visibility, automation, escalation, and resilience.</p>
+      <p style="margin-top:12px"><a class="btn" href="/series/">Open →</a></p>
+    </article>
+
+    <article class="card" role="listitem" aria-labelledby="g3">
+      <h3 id="g3">Bio &amp; Consulting</h3>
+      <p>More Information and contact details — operational advisory offerings.</p>
+      <p style="margin-top:12px"><a class="btn" href="/home.html">Offerings→</a></p>
+    </article>
+
+    <article class="card" role="listitem" aria-labelledby="g4" style="background-color:#2f3a44; color:#ffffff;">
+      <h3 id="g4">SPONSORED BY: The Piety Paychain</h3>
+      <p style="color:#cbd5e1;">
+        Helping to fund these pages.<br>
+        Learn more about the Piety Paychain
+      </p>
+      <p style="margin-top:12px"><a class="btn" href="/2026/">Explore Paychain→</a></p>
+    </article>
+
+    <article class="card" role="listitem" aria-labelledby="g5">
+      <h3 id="g5">Publications</h3>
+      <p><em><strong>FM - The Fading Modulation Of Terrestrial Radio: How The Communication Act Of 1996 Silenced The Radio Stars</strong></em></p>
+      <p style="margin-top:12px"><a class="btn" href="/book/">Get The Book→</a></p>
+    </article>
+
+    <article class="card" role="listitem" aria-labelledby="g6">
+      <h3 id="g6">Radio &amp; Audio</h3>
+      <p>Co-Creator of <em><strong>"The Sound Of The Strand"</strong></em></p>
+      <p>Carolina Beach Music Internet Radio Station</p>
+      <p style="margin-top:12px"><a class="btn" href="/radio/">Listen Live→</a></p>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===========================
+     SPOTLIGHT
+=========================== -->
+<section aria-label="Spotlight" style="margin-top:28px">
+  <div style="display:flex; justify-content:space-between; gap:12px; align-items:center">
+    <h2 style="margin:0; font-size:18px">Spotlight & Projects</h2>
+    <small style="color:var(--muted)">Selected work</small>
+  </div>
+
+  <div class="spot">
+
+    <div class="panel">
+      <h3 style="margin-top:0">Operational Reviews</h3>
+      <p style="color:var(--muted)">Independent assessments of systems and policy with practical recommendations that teams can implement quickly.</p>
+      <p style="margin-top:12px"><a class="btn" href="mailto:inbox@randyanthony.us">Email To Engage →</a></p>
+    </div>
+
+    <div class="panel">
+      <h3 style="margin-top:0">AI & Workflow Experiments (2026)</h3>
+      <p style="color:var(--muted)">Tooling experiments to reduce manual work and improve monitoring. Exploration of decision support and automation oversight.</p>
+      <p style="margin-top:12px"><a class="btn" href="work.html">Under Construction→</a></p>
+    </div>
+
+  </div>
+</section>
+<!-- ===========================
+     FOOTER
+=========================== -->
+<footer class="site-foot">
+  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; font-size:12.5px; color:var(--muted);">
+    <div>
+      © <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.
+    </div>
+
+    <div class="smallLinks">
+      <a href="/" style="font-size:12.5px; color:var(--muted); text-decoration:none;">Home Page</a>
+    </div>
+  </div>
+</footer>
+
+</div> <!-- end .site -->
+
+<!-- ===========================
+     SCRIPTS
+=========================== -->
+<script>
+// Mobile nav toggle
+const mobileToggle = document.getElementById('mobileToggle');
+const mobileNav = document.getElementById('mobileNav');
+
+if (mobileToggle && mobileNav) {
+  mobileToggle.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('show');
+    mobileToggle.setAttribute('aria-expanded', isOpen);
+    mobileNav.setAttribute('aria-hidden', !isOpen);
+  });
+}
+
+// Set year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Entrance animation
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.card, .panel, .hero-left').forEach((el, i) => {
+    el.style.opacity = 0;
+    el.style.transform = 'translateY(10px)';
+    setTimeout(() => {
+      el.style.transition = 'opacity 420ms ease, transform 420ms ease';
+      el.style.opacity = 1;
+      el.style.transform = 'translateY(0)';
+    }, 80 + (i * 40));
+  });
+});
+</script>
+
+</body>
+</html>
