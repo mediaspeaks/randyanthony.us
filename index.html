@@ -483,15 +483,14 @@ footer .small{ color:var(--muted); font-size:13px }
 </div>
 <script>
   // mobile nav toggle
-  (function(){
-    const btn = document.getElementById('mobileToggle');
-    const panel = document.getElementById('mobileNav');
-    btn && btn.addEventListener('click', function(){
-      const isOpen = panel.classList.toggle('show');
-      panel.setAttribute('aria-hidden', !isOpen);
-      btn.setAttribute('aria-expanded', !!isOpen);
-    });
-  })();
+  const mobileToggle = document.getElementById('mobileToggle');
+  const mobileNav = document.getElementById('mobileNav');
+
+  mobileToggle.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('show');
+    mobileToggle.setAttribute('aria-expanded', isOpen);
+    mobileNav.setAttribute('aria-hidden', !isOpen);
+  });
 
   // set year
   document.getElementById('year').textContent = new Date().getFullYear();
