@@ -567,35 +567,31 @@
 
 
     <footer>
-      <div>© <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.</div>
-      <div class="smallLinks">
-        <a href="/">Home Page</a>
-      </div>
-    </footer>
+  <div>© <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.</div>
+  <div class="smallLinks">
+    <a href="/">Home Page</a>
+  </div>
+</footer>
 
-</div>
+</div> <!-- end .wrap -->
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<!-- Year -->
 <script>
-  const toggle = document.getElementById('mobileToggle');
-  const mobileNav = document.getElementById('mobileNav');
-
-  toggle.addEventListener('click', () => {
-    const isOpen = mobileNav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', isOpen);
-    mobileNav.setAttribute('aria-hidden', !isOpen);
-  });
+  document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+
+<!-- Mobile Nav (FINAL + CORRECT) -->
 <script>
   const btn = document.getElementById('mobileToggle');
   const panel = document.getElementById('mobileNav');
-  btn && btn.addEventListener('click', function(){
-    const isOpen = panel.classList.toggle('show');
-    panel.setAttribute('aria-hidden', !isOpen);
-    btn.setAttribute('aria-expanded', !!isOpen);
-  });
+
+  if (btn && panel) {
+    btn.addEventListener('click', () => {
+      const isOpen = panel.classList.toggle('show');
+      panel.setAttribute('aria-hidden', !isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  }
 </script>
 
 </body>
