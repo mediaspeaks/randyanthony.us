@@ -324,51 +324,47 @@
       position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
       clip:rect(0,0,0,0); white-space:nowrap; border:0;
     }
+/* CLEAN MOBILE NAV — unified with Bio/Book/Radio */
 
-    /* CLEAN MOBILE NAV — unified with Bio/Book/Radio */
-    #mobileNav {
-      display: none;
-    }
+.mobile-nav.show {
+  display: block;
+}
 
-    .mobile-nav.show {
-      display: block;
-    }
+@media (max-width: 860px) {
 
-    @media (max-width: 860px) {
-      nav.primary {
-        display: none;
-      }
+  .mobile-nav {
+    display: none;
+    flex-direction: column;
+    background: var(--surface2);
+    padding: 18px;
+    border-radius: 16px;
+    margin-top: 10px;
+    box-shadow: var(--shadow);
+  }
 
-      .mobile-toggle {
-        display: block;
-        margin-left: auto;
-      }
+  nav.primary {
+    display: none;
+  }
 
-      #mobileNav {
-        display: none;
-        flex-direction: column;
-        background: var(--surface2);
-        padding: 18px;
-        border-radius: 16px;
-        margin-top: 10px;
-        box-shadow: var(--shadow);
-      }
+  .mobile-toggle {
+    display: block;
+    margin-left: auto;
+  }
 
-      #mobileNav a {
-        padding: 10px 0;
-        font-size: 15px;
-        color: var(--text);
-        border-bottom: 1px solid var(--border);
-      }
+  .mobile-nav a {
+    padding: 10px 0;
+    font-size: 15px;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+  }
 
-      #mobileNav a:last-child {
-        border-bottom: none;
-      }
-    }
+  .mobile-nav a:last-child {
+    border-bottom: none;
+  }
+}
+
 
 </style>
-
-  </style>
 
   <!-- Structured data -->
   <script type="application/ld+json">
@@ -389,7 +385,8 @@
 
 <body>
   <div class="wrap">
-<header>
+<header class="site-header">
+
 
   <a class="brand" href="/">
     <img src="/favicon.png" alt="" style="width:44px;height:44px;border-radius:12px;">
@@ -568,35 +565,31 @@
 
 
     <footer>
-      <div>© <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.</div>
-      <div class="smallLinks">
-        <a href="/">Home Page</a>
-      </div>
-    </footer>
+  <div>© <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.</div>
+  <div class="smallLinks">
+    <a href="/">Home Page</a>
+  </div>
+</footer>
 
-</div>
+</div> <!-- end .wrap -->
 
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+<!-- Year -->
 <script>
-  const toggle = document.getElementById('mobileToggle');
-  const mobileNav = document.getElementById('mobileNav');
-
-  toggle.addEventListener('click', () => {
-    const isOpen = mobileNav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', isOpen);
-    mobileNav.setAttribute('aria-hidden', !isOpen);
-  });
+  document.getElementById('year').textContent = new Date().getFullYear();
 </script>
+
+<!-- Mobile Nav (FINAL + CORRECT) -->
 <script>
   const btn = document.getElementById('mobileToggle');
   const panel = document.getElementById('mobileNav');
-  btn && btn.addEventListener('click', function(){
-    const isOpen = panel.classList.toggle('show');
-    panel.setAttribute('aria-hidden', !isOpen);
-    btn.setAttribute('aria-expanded', !!isOpen);
-  });
+
+  if (btn && panel) {
+    btn.addEventListener('click', () => {
+      const isOpen = panel.classList.toggle('show');
+      panel.setAttribute('aria-hidden', !isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  }
 </script>
 
 </body>
