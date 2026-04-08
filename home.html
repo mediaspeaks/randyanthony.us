@@ -343,15 +343,15 @@
     margin-left: auto;
   }
 
-  .mobile-nav {
-    display: none;
-    flex-direction: column;
-    background: var(--surface2);
-    padding: 18px;
-    border-radius: 16px;
-    margin-top: 10px;
-    box-shadow: var(--shadow);
-  }
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: var(--surface2);   /* ← THIS is the fix */
+  padding: 18px;
+  border-radius: 16px;
+  margin-top: 10px;
+  box-shadow: var(--shadow);
+}
 
   .mobile-nav a {
     padding: 10px 0;
