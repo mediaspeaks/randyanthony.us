@@ -478,25 +478,36 @@ footer .small{ color:var(--muted); font-size:13px }
       <a href="/" style="font-size:12.5px; color:var(--muted); text-decoration:none;">Home Page</a>
     </div>
   </div>
+<footer>
+  <div>© <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.</div>
+  <div class="smallLinks">
+    <a href="/">Home Page</a>
+  </div>
 </footer>
 
+</div> <!-- end .site -->
 
-</div>
+<!-- Year -->
 <script>
-  // mobile nav toggle
-  const mobileToggle = document.getElementById('mobileToggle');
-  const mobileNav = document.getElementById('mobileNav');
-
-  mobileToggle.addEventListener('click', () => {
-    const isOpen = mobileNav.classList.toggle('show');
-    mobileToggle.setAttribute('aria-expanded', isOpen);
-    mobileNav.setAttribute('aria-hidden', !isOpen);
-  });
-
-  // set year
   document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
-  // entrance animation (subtle)
+<!-- Mobile Nav (FINAL + CORRECT) -->
+<script>
+  const btn = document.getElementById('mobileToggle');
+  const panel = document.getElementById('mobileNav');
+
+  if (btn && panel) {
+    btn.addEventListener('click', () => {
+      const isOpen = panel.classList.toggle('show');
+      panel.setAttribute('aria-hidden', !isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  }
+</script>
+
+<!-- Entrance animation -->
+<script>
   document.addEventListener('DOMContentLoaded', function(){
     document.querySelectorAll('.card, .panel, .series-item, .hero-left').forEach((el, i) => {
       el.style.opacity = 0;
@@ -508,24 +519,7 @@ footer .small{ color:var(--muted); font-size:13px }
       }, 80 + (i * 40));
     });
   });
-  <script>
-  const btn = document.getElementById('mobileToggle');
-  const panel = document.getElementById('mobileNav');
-
-  btn && btn.addEventListener('click', function(){
-    const isOpen = panel.classList.toggle('show');
-    panel.setAttribute('aria-hidden', !isOpen);
-    btn.setAttribute('aria-expanded', !!isOpen);
-  });
-</script>
-
 </script>
 
 </body>
-</html><!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Randy Anthony — Operational Reliability</title>
-<link rel="icon" href="/favicon.png">
+</html>
