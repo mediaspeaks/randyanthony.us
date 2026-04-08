@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#0b1a33" />
+
+  <title>Operational Architecture Series | Randy Anthony</title>
+  <meta name="description" content="A multi-phase exploration of how time-critical systems behave under pressure — and how reliability is engineered, not improvised." />
+
+  <link rel="icon" href="/favicon.png" />
+
+  <!-- GLOBAL SHARED STYLES -->
+  <link rel="stylesheet" href="/css/global.css" />
+
+  <!-- SERIES-SPECIFIC STYLES (UNCHANGED) -->
+  <link rel="stylesheet" href="/series/series.css" />
+</head>
+
+<body>
+<div class="wrap">
+
+<!-- ============================================
+     GLOBAL HEADER (MATCHES HOME/BOOK/RADIO)
+============================================ -->
+<header>
+
+  <a class="brand" href="/">
+    <img src="/favicon.png" alt="">
+    <div class="titles">
+      <strong>RANDY ANTHONY</strong>
+      <span>Operational Reliability Advisory</span>
+    </div>
+  </a>
+
+  <nav class="primary" role="navigation" aria-label="Main navigation">
+    <a href="/">Home</a>
+    <a href="/series/">Operational Architecture Series</a>
+    <a href="/bio/">Bio</a>
+    <a href="/home.html">Offerings</a>
+    <a href="/book/">Book</a>
+    <a href="/radio/">Radio</a>
+
+    <div class="cta">
+      <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a consultation</a>
+      <a class="btn secondary" href="/home.html#about">About</a>
+    </div>
+  </nav>
+
+  <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileNav">
+    ☰
+  </button>
+
+</header>
+
+<!-- ============================================
+     GLOBAL MOBILE NAV
+============================================ -->
+<nav id="mobileNav" class="mobile-nav" aria-hidden="true">
+  <a href="/">Home</a>
+  <a href="/series/">Operational Architecture Series</a>
+  <a href="/bio/">Bio</a>
+  <a href="/home.html">Offerings</a>
+  <a href="/book/">Book</a>
+  <a href="/radio/">Radio</a>
+  <a href="/home.html#about">About</a>
+</nav>
+
+
+<!-- ============================================
+     HERO (NEW DESIGN)
+============================================ -->
+<section class="hero hero-ops" style="text-align:center; padding:150px 20px 130px;">
+  <h1 class="hero-title" style="margin-bottom:18px;">
+    Operational Architecture Series
+  </h1>
+
+  <p class="hero-sub" style="max-width:720px; margin:0 auto 26px; opacity:.92;">
+    A multi-phase exploration of how time-critical systems behave under pressure — 
+    and how reliability is engineered, not improvised.
+  </p>
+
+  <div class="pillRow" style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-top:22px;">
+    <span class="pill">Foundations (Weeks 1–13)</span>
+    <span class="pill">Operational Visibility (Weeks 14–27)</span>
+    <span class="pill">Future Phases</span>
+  </div>
+</section>
+<!-- ============================================
+     THREE-COLUMN EXPLAINER (NEW)
+============================================ -->
+<section class="grid" style="margin-top:40px; margin-bottom:40px;">
+
+  <section class="card">
+    <h2>Systems Under Pressure</h2>
+    <p>
+      How broadcast and streaming systems behave when timing matters — and why small delays,
+      misalignments, or missing content can cascade into visible failure.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Operational Weak Points</h2>
+    <p>
+      Where failures originate long before they become visible: in handoffs, assumptions,
+      interfaces, and areas where visibility is incomplete or delayed.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Reliability as a Discipline</h2>
+    <p>
+      Stable systems aren’t accidental. They are engineered intentionally, tested under real
+      conditions, and improved through iteration and experience.
+    </p>
+  </section>
+
+</section>
+
+
+<!-- ============================================
+     PART I — FOUNDATIONS
+============================================ -->
+<section class="grid" style="margin-top:50px;">
+
+  <section class="card">
+    <div class="kicker" style="margin-bottom:6px; opacity:.75;">PART I</div>
+    <h2>Foundations (Weeks 1–13)</h2>
+
+    <p style="color:var(--muted); margin-bottom:16px;">
+      Thirteen weeks exploring the foundational behaviors of time-critical systems.
+    </p>
+
+    <!-- YOUR ORIGINAL PART I LIST (UNCHANGED) -->
+    <ol class="list">
+      <li><a href="/series/week-01-reliability.html">Week 1 — What Time-Critical Operations Teach You About Reliability</a></li>
+      <li><a href="/series/week-02-invisible-work.html">Week 2 — What Time-Critical Operations Teach You About Invisible Work</a></li>
+      <li><a href="/series/week-03-composure.html">Week 3 — What Time-Critical Operations Teach You About Composure</a></li>
+      <li><a href="/series/week-04-dependencies.html">Week 4 — What Time-Critical Operations Teach You About Dependencies</a></li>
+      <li><a href="/series/week-05-interfaces.html">Week 5 — What Time-Critical Operations Teach You About Interfaces</a></li>
+      <li><a href="/series/week-06-missing-content.html">Week 6 — What Time-Critical Operations Teach You About Missing Content</a></li>
+      <li><a href="/series/week-07-redundancy.html">Week 7 — What Time-Critical Operations Teach You About Redundancy</a></li>
+      <li><a href="/series/week-08-small-errors.html">Week 8 — What Time-Critical Operations Teach You About Small Errors</a></li>
+      <li><a href="/series/week-09-fatigue.html">Week 9 — What Time-Critical Operations Teach You About Fatigue</a></li>
+      <li><a href="/series/week-10-automation.html">Week 10 — What Time-Critical Operations Teach You About Automation</a></li>
+      <li><a href="/series/week-11-accountability.html">Week 11 — What Time-Critical Operations Teach You About Accountability</a></li>
+      <li><a href="/series/week-12-prevention.html">Week 12 — What Time-Critical Operations Teach You About Prevention</a></li>
+      <li><a href="/series/week-13-architecture.html">Week 13 — What Time-Critical Operations Teach You About Architecture</a></li>
+      <li><a href="/series/week-14-part-1-wrap-up.html">Week 14 — Part I - Systems Wrap-Up</a></li>
+    </ol>
+
+    <!-- YOUR ORIGINAL PILLS (UNCHANGED) -->
+    <div class="pills">
+      <span class="pill">broadcast operations</span>
+      <span class="pill">streaming operations</span>
+      <span class="pill">master control</span>
+      <span class="pill">24/7 operations</span>
+      <span class="pill">reliability engineering</span>
+      <span class="pill">process improvement</span>
+      <span class="pill">risk management</span>
+      <span class="pill">systems thinking</span>
+    </div>
+
+  </section>
+<!-- ============================================
+     PART II — OPERATIONAL VISIBILITY (NEW LAYOUT)
+============================================ -->
+<section class="grid" style="margin-top:60px;">
+
+  <section class="card">
+    <div class="kicker" style="margin-bottom:6px; opacity:.75;">PART II</div>
+    <h2>Operational Visibility (Weeks 14–27)</h2>
+
+    <p style="color:var(--muted); margin-bottom:16px;">
+      Visibility, signal flow, and decision‑making under real‑time constraints.
+    </p>
+
+    <!-- LEFT COLUMN: YOUR ORIGINAL INTRO TEXT -->
+    <div style="margin-top:18px; padding-top:12px; border-top:1px solid var(--border);">
+      <p style="color:#cbd5e1;">
+        Thirteen weeks ago, I started a series on time-critical operations.
+      </p>
+
+      <p style="color:#cbd5e1;">
+        The focus wasn’t on tools or trends.
+        It was on how systems behave when timing matters and failure isn’t theoretical.
+      </p>
+
+      <p style="color:#cbd5e1;">
+        A few patterns showed up consistently.
+      </p>
+
+      <p style="color:#cbd5e1;">
+        Reliability isn’t about a single system holding up.
+        Failures don’t begin at the point of impact.
+        Small issues don’t stay small.
+        They compound quickly.
+      </p>
+
+      <p style="color:#cbd5e1;">
+        Part I was about understanding that system.
+      </p>
+
+      <p style="color:#cbd5e1;">
+        The next phase will focus on how visibility is created, where it breaks down,
+        and how it shapes real-time decisions.
+      </p>
+
+      <p style="color:#cbd5e1;">
+        Same structure.
+        Same focus.
+        Deeper layer.
+      </p>
+
+      <p style="margin-top:12px">
+        <a class="btn" href="/series/index.html">Part 1 Index →</a>
+      </p>
+    </div>
+  </section>
+
+
+  <!-- RIGHT COLUMN: YOUR ORIGINAL WEEK LIST -->
+  <section class="card">
+    <h2>Upcoming Weeks</h2>
+
+    <ol class="list">
+      <li>Week 15 (Part II, Week 1) — Operational Visibility (All Upcoming)</li>
+      <li>Week 16 (Part II, Week 2) —</li>
+      <li>Week 17 (Part II, Week 3) —</li>
+      <li>Week 18 (Part II, Week 4) —</li>
+      <li>Week 19 (Part II, Week 5) —</li>
+      <li>Week 20 (Part II, Week 6) —</li>
+      <li>Week 21 (Part II, Week 7) —</li>
+      <li>Week 22 (Part II, Week 8) —</li>
+      <li>Week 23 (Part II, Week 9) —</li>
+      <li>Week 24 (Part II, Week 10) —</li>
+      <li>Week 25 (Part II, Week 11) —</li>
+      <li>Week 26 (Part II, Week 12) —</li>
+      <li>Week 27 (Part II, Week 13) —</li>
+    </ol>
+  </section>
+
+</section> <!-- end Part II grid -->
+
+
+<!-- ============================================
+     SERIES PHILOSOPHY (TOPIC ROTATION CARD)
+============================================ -->
+<section class="card" style="margin-top:50px;">
+  <div class="kicker" style="margin-bottom:6px; opacity:.75;">SERIES PHILOSOPHY</div>
+  <h2>Topic Rotation</h2>
+
+  <p>
+    This Operational Architecture Series is built as a continuous, quarterly 13-week rotation.
+    Each cycle returns to the same core principles, but from a different operational angle—
+    expanding them through practical system design, real-world constraints, and live execution.
+  </p>
+
+  <p>
+    The goal isn’t to introduce new ideas each cycle.
+    It’s to deepen understanding of how the same systems behave under different conditions.
+  </p>
+
+  <p>
+    Reliability isn’t a single skill or a single system holding up.
+    It’s the result of clear handoffs, defined ownership, disciplined execution,
+    and reducing hidden weak points across transitions and interfaces.
+  </p>
+
+  <p>
+    Most failures don’t originate where they become visible.
+    They develop earlier—in gaps between systems, in assumptions,
+    and in areas where visibility is incomplete or delayed.
+  </p>
+
+  <p>
+    Operational reliability requires continuous learning—and more importantly,
+    anticipating vulnerabilities before pressure exposes them.
+  </p>
+
+  <p>
+    Stable systems don’t happen by accident.
+    They are designed intentionally, tested under real conditions,
+    and improved over time through iteration and experience.
+  </p>
+
+  <p>
+    Each phase of this series builds on the last.
+    Not by changing direction—but by adding clarity, visibility,
+    and depth to the same operational foundation.
+  </p>
+</section>
+<!-- ============================================
+     SPONSOR GRID (GLOBAL STYLE)
+============================================ -->
+<section class="grid" style="margin-top:60px; margin-bottom:40px;">
+
+  <!-- SPONSOR CARD 1 -->
+  <article class="card" style="background-color:#2f3a44; color:#ffffff;">
+    <h3 style="margin-top:0;">SPONSORED BY: LegalShield + IDShield</h3>
+    <p style="color:#cbd5e1;">
+      Protecting families and businesses nationwide with legal and identity protection.
+    </p>
+    <p style="margin-top:12px;">
+      <a class="btn" href="/legal/" 
+         style="background:rgba(255,255,255,0.10); border-color:rgba(255,255,255,0.22); color:#fff;">
+        Explore Plans →
+      </a>
+    </p>
+  </article>
+
+  <!-- SPONSOR CARD 2 -->
+  <article class="card" style="background-color:#2f3a44; color:#ffffff;">
+    <h3 style="margin-top:0;">SPONSORED BY: The Piety Paychain</h3>
+    <p style="color:#cbd5e1;">
+      Supporting the ongoing development of these operational reliability resources.
+    </p>
+    <p style="margin-top:12px;">
+      <a class="btn" href="/2026/" 
+         style="background:rgba(255,255,255,0.10); border-color:rgba(255,255,255,0.22); color:#fff;">
+        Explore Paychain →
+      </a>
+    </p>
+  </article>
+
+</section>
+
+
+<!-- ============================================
+     GLOBAL FOOTER
+============================================ -->
+<footer>
+  <div>© <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.</div>
+  <div class="smallLinks">
+    <a href="/">Home Page</a>
+    <a href="/home.html">Offerings</a>
+    <a href="/book/">Book</a>
+    <a href="/radio/">Radio</a>
+  </div>
+</footer>
+
+</div> <!-- end .wrap -->
+
+
+<!-- ============================================
+     YEAR SCRIPT
+============================================ -->
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+
+<!-- ============================================
+     MOBILE NAV SCRIPT
+============================================ -->
+<script>
+  const btn = document.getElementById('mobileToggle');
+  const panel = document.getElementById('mobileNav');
+
+  if (btn && panel) {
+    btn.addEventListener('click', () => {
+      const isOpen = panel.classList.toggle('show');
+      panel.setAttribute('aria-hidden', !isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  }
+</script>
+
+</body>
+</html>
