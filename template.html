@@ -4,24 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- PAGE TITLE -->
 <title>{{PAGE_TITLE}} | Randy Anthony</title>
 
-<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="icon" href="/favicon.png">
 <link rel="stylesheet" href="/series/series.css">
-
-<meta name="description" content="{{PAGE_DESCRIPTION}}" />
+<meta name="description" content="{{PAGE_DESCRIPTION}}">
 </head>
 
 <body>
 
-<!-- --------------------------------------------------
-     GLOBAL HEADER (DO NOT CHANGE)
--------------------------------------------------- -->
 <header>
-
   <a class="brand" href="/">
-    <img src="/favicon.png" alt="" style="width:44px;height:44px;border-radius:12px;">
+    <img src="/favicon.png" style="width:44px;height:44px;border-radius:12px;">
     <div class="titles">
       <strong>RANDY ANTHONY</strong>
       <span>Operational Reliability Advisory</span>
@@ -37,13 +31,11 @@
     <a href="/radio/">Radio</a>
 
     <div class="cta">
-      <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a consultation</a>
-      <a class="btn secondary" href="/home.html#about">About</a>
+      <a class="btn" href="mailto:inbox@randyanthony.us">Engage →</a>
     </div>
   </nav>
 
   <button class="mobile-toggle" id="mobileToggle">☰</button>
-
 </header>
 
 <nav id="mobileNav">
@@ -53,94 +45,79 @@
   <a href="/home.html">Offerings</a>
   <a href="/book/">Book</a>
   <a href="/radio/">Radio</a>
-  <a href="/home.html#about">About</a>
 </nav>
 
-<!-- --------------------------------------------------
-     HERO SECTION (EDIT PER PAGE)
--------------------------------------------------- -->
+<!-- HERO (UNCHANGED SYSTEM) -->
 <section class="book-hero">
   <div class="book-hero-inner">
 
-    <!-- IMAGE -->
     <div class="book-cover-card">
-      <img src="{{HERO_IMAGE}}" alt="">
+      <img src="{{HERO_IMAGE}}">
     </div>
 
-    <!-- TEXT -->
     <div class="book-hero-content">
       <h1>{{H1_TITLE}}</h1>
 
       <p class="book-subtitle">
-        {{HERO_SUBTEXT}}
+        {{HERO_TEXT}}
       </p>
 
       <div class="book-cta-row">
-        <a href="{{PRIMARY_LINK}}" class="btn btnPrimary">
-          {{PRIMARY_CTA}}
-        </a>
-
-        <a href="{{SECONDARY_LINK}}" class="btn secondary">
-          {{SECONDARY_CTA}}
-        </a>
+        <a href="{{CTA_LINK}}" class="btn btnPrimary">{{CTA_TEXT}}</a>
+        <a href="{{CTA2_LINK}}" class="btn secondary">{{CTA2_TEXT}}</a>
       </div>
-
-      <p class="book-meta">
-        {{META_LINE}}
-      </p>
     </div>
 
   </div>
 </section>
 
-<!-- --------------------------------------------------
-     CONTENT AREA
--------------------------------------------------- -->
 <div class="wrap">
 
-<!-- MAIN CONTENT -->
-<section>
-  <h2>{{SECTION_1_TITLE}}</h2>
-  <p>{{SECTION_1_TEXT}}</p>
-</section>
-
-<!-- OPTIONAL GRID -->
+<!-- =========================================
+     PRIMARY GRID (THIS IS YOUR SYSTEM CORE)
+========================================= -->
 <div class="book-grid">
 
-  <section>
-    <h2>{{GRID_LEFT_TITLE}}</h2>
-    <ul>
-      <li>{{ITEM}}</li>
-    </ul>
+  <!-- CARD 1 -->
+  <section class="card">
+    <h2>{{BLOCK_1_TITLE}}</h2>
+    <p>{{BLOCK_1_TEXT}}</p>
   </section>
 
-  <section>
-    <h2>{{GRID_RIGHT_TITLE}}</h2>
-    <ul>
-      <li>{{ITEM}}</li>
-    </ul>
+  <!-- CARD 2 -->
+  <section class="card">
+    <h2>{{BLOCK_2_TITLE}}</h2>
+    <p>{{BLOCK_2_TEXT}}</p>
   </section>
 
 </div>
 
-<!-- ADDITIONAL SECTION -->
-<section>
-  <h2>{{SECTION_2_TITLE}}</h2>
-  <p>{{SECTION_2_TEXT}}</p>
-</section>
+<!-- =========================================
+     SECOND GRID ROW (OPTIONAL)
+========================================= -->
+<div class="book-grid">
 
-<!-- --------------------------------------------------
-     SPONSOR / CTA ROW (REUSABLE BLOCK)
--------------------------------------------------- -->
+  <section class="card">
+    <h2>{{BLOCK_3_TITLE}}</h2>
+    <p>{{BLOCK_3_TEXT}}</p>
+  </section>
+
+  <section class="card">
+    <h2>{{BLOCK_4_TITLE}}</h2>
+    <p>{{BLOCK_4_TEXT}}</p>
+  </section>
+
+</div>
+
+<!-- =========================================
+     SPONSOR GRID (ALREADY YOUR STYLE)
+========================================= -->
 <div class="book-sponsor-row">
 
   <section>
     <h2>{{CTA_TITLE}}</h2>
-    <p>{{CTA_TEXT}}</p>
-
-    <a href="{{CTA_LINK}}" class="btn btnPrimary">
-      {{CTA_BUTTON}}
-    </a>
+    <p>{{CTA_DESC}}</p>
+    <a href="{{CTA_LINK}}" class="btn btnPrimary">{{CTA_BUTTON}}</a>
   </section>
 
   <article class="card" style="background-color:#2f3a44; color:#ffffff;">
@@ -167,12 +144,8 @@
 
 </div>
 
-<!-- FOOTER -->
 <footer>
-  <div>© <span id="year"></span> Randy Anthony • All rights reserved.</div>
-  <div>
-    <a href="/">Home Page</a>
-  </div>
+  <div>© <span id="year"></span> Randy Anthony</div>
 </footer>
 
 </div>
@@ -181,13 +154,9 @@
 const btn = document.getElementById('mobileToggle');
 const panel = document.getElementById('mobileNav');
 
-if (btn && panel) {
-  btn.addEventListener('click', () => {
-    const isOpen = panel.classList.toggle('show');
-    panel.setAttribute('aria-hidden', !isOpen);
-    btn.setAttribute('aria-expanded', isOpen);
-  });
-}
+btn?.addEventListener('click', () => {
+  panel.classList.toggle('show');
+});
 
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
