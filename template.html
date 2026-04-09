@@ -4,18 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>{{PAGE_TITLE}} | Randy Anthony</title>
+<!-- EDIT: PAGE TITLE -->
+<title>{{PAGE_TITLE}}</title>
 
-<link rel="icon" href="/favicon.png">
-<link rel="stylesheet" href="/series/series.css">
-<meta name="description" content="{{PAGE_DESCRIPTION}}">
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<!-- DO NOT TOUCH ANYTHING BELOW -->
+<style>
+/* (ALL YOUR CSS — UNCHANGED) */
+</style>
 </head>
 
 <body>
 
+<!-- GLOBAL HEADER (LOCKED) -->
 <header>
   <a class="brand" href="/">
-    <img src="/favicon.png" style="width:44px;height:44px;border-radius:12px;">
+    <img src="/favicon.png" alt="" style="width:44px;height:44px;border-radius:12px;">
     <div class="titles">
       <strong>RANDY ANTHONY</strong>
       <span>Operational Reliability Advisory</span>
@@ -31,7 +36,8 @@
     <a href="/radio/">Radio</a>
 
     <div class="cta">
-      <a class="btn" href="mailto:inbox@randyanthony.us">Engage →</a>
+      <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a consultation</a>
+      <a class="btn secondary" href="/home.html#about">About</a>
     </div>
   </nav>
 
@@ -45,107 +51,110 @@
   <a href="/home.html">Offerings</a>
   <a href="/book/">Book</a>
   <a href="/radio/">Radio</a>
+  <a href="/home.html#about">About</a>
 </nav>
 
-<!-- HERO (UNCHANGED SYSTEM) -->
-<section class="book-hero">
-  <div class="book-hero-inner">
+<!-- HERO (EDITABLE CONTENT ONLY) -->
+<section class="radio-hero">
+  <div class="radio-hero-inner">
 
-    <div class="book-cover-card">
+    <!-- EDIT: HERO IMAGE -->
+    <div class="radio-avatar">
       <img src="{{HERO_IMAGE}}">
     </div>
 
-    <div class="book-hero-content">
-      <h1>{{H1_TITLE}}</h1>
+    <div>
+      <!-- EDIT: HERO KICKER -->
+      <p class="radio-hero-kicker">{{KICKER}}</p>
 
-      <p class="book-subtitle">
-        {{HERO_TEXT}}
+      <!-- EDIT: HERO TITLE -->
+      <h1 class="radio-hero-title">{{HERO_TITLE}}</h1>
+
+      <!-- EDIT: HERO SUBTITLE -->
+      <p class="radio-hero-subtitle">
+        {{HERO_SUBTITLE}}
       </p>
 
-      <div class="book-cta-row">
-        <a href="{{CTA_LINK}}" class="btn btnPrimary">{{CTA_TEXT}}</a>
-        <a href="{{CTA2_LINK}}" class="btn secondary">{{CTA2_TEXT}}</a>
+      <!-- EDIT: HERO CTA -->
+      <div class="radio-cta-row">
+        <a href="{{CTA_LINK}}" class="btn btnPrimary">
+          {{CTA_TEXT}}
+        </a>
       </div>
+
+      <!-- EDIT: HERO META -->
+      <p class="radio-meta">
+        {{HERO_META}}
+      </p>
     </div>
 
   </div>
 </section>
 
+<!-- CONTENT -->
 <div class="wrap">
 
-<!-- =========================================
-     PRIMARY GRID (THIS IS YOUR SYSTEM CORE)
-========================================= -->
-<div class="book-grid">
+<section>
+  <!-- EDIT: SECTION 1 TITLE -->
+  <h2>{{SECTION_1_TITLE}}</h2>
 
-  <!-- CARD 1 -->
-  <section class="card">
-    <h2>{{BLOCK_1_TITLE}}</h2>
-    <p>{{BLOCK_1_TEXT}}</p>
-  </section>
+  <!-- EDIT: SECTION 1 CONTENT -->
+  <p>{{PARAGRAPH}}</p>
+  <p>{{PARAGRAPH}}</p>
+  <p>{{PARAGRAPH}}</p>
+</section>
 
-  <!-- CARD 2 -->
-  <section class="card">
-    <h2>{{BLOCK_2_TITLE}}</h2>
-    <p>{{BLOCK_2_TEXT}}</p>
-  </section>
+<section>
+  <!-- EDIT: SECTION 2 TITLE -->
+  <h2>{{SECTION_2_TITLE}}</h2>
 
-</div>
+  <!-- EDIT: SECTION 2 CONTENT -->
+  <p>{{PARAGRAPH}}</p>
+  <p>{{PARAGRAPH}}</p>
+</section>
 
-<!-- =========================================
-     SECOND GRID ROW (OPTIONAL)
-========================================= -->
-<div class="book-grid">
-
-  <section class="card">
-    <h2>{{BLOCK_3_TITLE}}</h2>
-    <p>{{BLOCK_3_TEXT}}</p>
-  </section>
-
-  <section class="card">
-    <h2>{{BLOCK_4_TITLE}}</h2>
-    <p>{{BLOCK_4_TEXT}}</p>
-  </section>
-
-</div>
-
-<!-- =========================================
-     SPONSOR GRID (ALREADY YOUR STYLE)
-========================================= -->
-<div class="book-sponsor-row">
-
-  <section>
-    <h2>{{CTA_TITLE}}</h2>
-    <p>{{CTA_DESC}}</p>
-    <a href="{{CTA_LINK}}" class="btn btnPrimary">{{CTA_BUTTON}}</a>
-  </section>
+<!-- GRID (LOCKED STRUCTURE — EDIT CONTENT ONLY) -->
+<div class="grid" role="list">
 
   <article class="card" style="background-color:#2f3a44; color:#ffffff;">
-    <h3>SPONSORED BY: Legal Shield</h3>
+    <!-- EDIT: CARD 1 TITLE -->
+    <h3>{{CARD_1_TITLE}}</h3>
+
+    <!-- EDIT: CARD 1 TEXT -->
     <p style="color:#cbd5e1;">
-      Legal Shield & ID Shield<br>
-      Protecting Families & Businesses Nationwide.
+      {{CARD_1_TEXT}}
     </p>
+
+    <!-- EDIT: CARD 1 LINK -->
     <p style="margin-top:12px">
-      <a class="btn" href="/legal/">Explore Plans →</a>
+      <a class="btn" href="{{CARD_1_LINK}}">{{CARD_1_CTA}}</a>
     </p>
   </article>
 
   <article class="card" style="background-color:#2f3a44; color:#ffffff;">
-    <h3>SPONSORED BY: The Piety Paychain</h3>
+    <!-- EDIT: CARD 2 TITLE -->
+    <h3>{{CARD_2_TITLE}}</h3>
+
+    <!-- EDIT: CARD 2 TEXT -->
     <p style="color:#cbd5e1;">
-      Helping to fund these pages.<br>
-      Learn more about the Piety Paychain
+      {{CARD_2_TEXT}}
     </p>
+
+    <!-- EDIT: CARD 2 LINK -->
     <p style="margin-top:12px">
-      <a class="btn" href="/2026/">Explore Paychain →</a>
+      <a class="btn" href="{{CARD_2_LINK}}">{{CARD_2_CTA}}</a>
     </p>
   </article>
 
 </div>
 
 <footer>
-  <div>© <span id="year"></span> Randy Anthony</div>
+  <!-- EDIT: FOOTER TEXT -->
+  <div>{{FOOTER_TEXT}}</div>
+
+  <div>
+    <a href="/">Home Page</a>
+  </div>
 </footer>
 
 </div>
@@ -154,11 +163,13 @@
 const btn = document.getElementById('mobileToggle');
 const panel = document.getElementById('mobileNav');
 
-btn?.addEventListener('click', () => {
-  panel.classList.toggle('show');
-});
-
-document.getElementById("year").textContent = new Date().getFullYear();
+if (btn && panel) {
+  btn.addEventListener('click', () => {
+    const isOpen = panel.classList.toggle('show');
+    panel.setAttribute('aria-hidden', !isOpen);
+    btn.setAttribute('aria-expanded', isOpen);
+  });
+}
 </script>
 
 </body>
