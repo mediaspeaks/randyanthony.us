@@ -154,184 +154,42 @@ footer{ margin-top:34px; padding-top:18px; border-top:1px solid var(--border); d
 </nav>
 
 <!-- EDITABLE: Hero content block -->
-<!DOCTYPE html>
-
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Reliability Is Not Improvised | Randy Anthony</title>
-<link rel="icon" type="image/png" href="/favicon.png">
-
-<style>
-/* KEEP YOUR ORIGINAL CSS — unchanged */
-</style>
-
-</head>
-
-<body>
-
-<header>
-  <a class="brand" href="/">
-    <img src="/favicon.png" alt="" style="width:44px;height:44px;border-radius:12px;">
-    <div class="titles">
-      <strong>RANDY ANTHONY</strong>
-      <span>Operational Reliability Advisory</span>
-    </div>
-  </a>
-
-  <nav class="primary">
-    <a href="/">Home</a>
-    <a href="/series/">Operational Architecture Series</a>
-    <a href="/bio/">Bio</a>
-    <a href="/home.html">Offerings</a>
-    <a href="/book/">Book</a>
-    <a href="/radio/">Radio</a>
-  </nav>
-</header>
-
-<!-- HERO -->
-
-<section class="radio-hero" style="background:
-linear-gradient(180deg, rgba(7,26,51,0.92), rgba(7,26,51,0.90)),
-url('/images/control-room-blur.jpg') center/cover no-repeat;">
-
+<section class="radio-hero">
   <div class="radio-hero-inner">
+    <div class="radio-avatar">
+      <img src="{{HERO_AVATAR_IMAGE}}" alt="{{HERO_AVATAR_ALT}}">
+    </div>
 
-```
-<div class="radio-avatar">
-  <img src="/images/randy-headshot-pro.jpg" alt="Randy Anthony">
-</div>
+    <div>
+      <p class="radio-hero-kicker">{{HERO_KICKER}}</p>
+      <h1 class="radio-hero-title">{{HERO_TITLE}}</h1>
+      <p class="radio-hero-subtitle">{{HERO_SUBTITLE}}</p>
 
-<div>
-  <p class="radio-hero-kicker">REAL-TIME SYSTEMS DO NOT FAIL RANDOMLY</p>
+      <div class="radio-cta-row">
+        <a href="{{HERO_PRIMARY_CTA_URL}}" class="btn btnPrimary" target="_blank" rel="noopener">{{HERO_PRIMARY_CTA_TEXT}}</a>
+      </div>
 
-  <h1 class="radio-hero-title">Reliability Is Not Improvised</h1>
-
-  <p class="radio-hero-subtitle">
-    How Systems Drift, Recover, and Reveal the Truth of Real-Time Operations
-  </p>
-
-  <p style="color:rgba(255,255,255,0.85); margin-top:10px;">
-    Most failures are not events. They are sequences already in motion.
-  </p>
-
-  <div class="radio-cta-row">
-    <a href="#" class="btn btnPrimary">Get the Book</a>
-    <a href="/series/index.html" class="btn btnPrimary">Explore the Framework</a>
-  </div>
-
-  <p class="radio-meta">Operational systems. Real-time pressure. No margin for error.</p>
-</div>
-```
-
+      <p class="radio-meta">{{HERO_META}}</p>
+    </div>
   </div>
 </section>
 
 <div class="wrap">
+  <!-- EDITABLE: Main content sections -->
+  <section>
+    <h2>{{SECTION_ONE_HEADING}}</h2>
+    <p>{{SECTION_ONE_PARAGRAPH_1}}</p>
+    <p>{{SECTION_ONE_PARAGRAPH_2}}</p>
+    <p>{{SECTION_ONE_PARAGRAPH_3}}</p>
+    <p>{{SECTION_ONE_PARAGRAPH_4}}</p>
+    <p>{{SECTION_ONE_PARAGRAPH_5}}</p>
+  </section>
 
-<!-- SECTION 1 -->
-
-<section>
-  <h2>The System Didn’t Fail When It Broke</h2>
-
-  <p>In real-time, time-critical environments, failure is rarely a single event. It is the visible endpoint of a sequence already in motion.</p>
-
-  <p>Systems drift before they break. Signals misalign before they disappear. Dependencies begin interacting long before anyone notices.</p>
-
-  <p>What appears sudden is almost never sudden.</p>
-
-  <p><strong>Reliability Is Not Improvised</strong> introduces a framework for understanding how these sequences form, propagate, and surface under pressure.</p>
-
-  <p>This is not a book about preventing failure. It is about understanding how systems behave when they are already moving.</p>
-
-  <p>Because in high-reliability environments, the question is not whether something will go wrong.</p>
-
-  <p><strong>It is where the sequence will be stopped.</strong></p>
-</section>
-
-<!-- SECTION 2 -->
-
-<section>
-  <h2>The Reaction Cascade Effect</h2>
-
-  <p>The Reaction Cascade Effect (RCE) explains how small operational irregularities evolve into system-level disruption.</p>
-
-  <p>A timing offset becomes a missed signal. A missed signal becomes a delayed correction. A delayed correction becomes a cascade.</p>
-
-  <p>These are not isolated failures. They are chained interactions across dependencies.</p>
-
-  <p>Once you understand propagation, you stop managing isolated problems and start managing sequences.</p>
-
-  <p>That shift changes everything:</p>
-
-  <p>— how systems are designed<br>
-     — how they are monitored<br>
-     — how they are recovered</p>
-
-  <p><strong>And most importantly, how they are understood.</strong></p>
-</section>
-
-<!-- SECTION 3 -->
-
-<section>
-  <h2>What This Book Delivers</h2>
-
-  <p>This book provides a practical and conceptual framework for understanding how real-time systems behave under pressure.</p>
-
-  <p>It connects system design, operational discipline, and human decision-making into a single model of reliability.</p>
-
-  <p>You will learn how drift forms, how propagation accelerates, and how recovery introduces its own complexity.</p>
-
-  <p>The goal is not theoretical understanding.</p>
-
-  <p>The goal is operational clarity.</p>
-</section>
-
-<!-- SECTION 4 -->
-
-<section>
-  <h2>Who This Is For</h2>
-
-  <p>This work is for professionals operating in environments where systems must perform continuously and without interruption.</p>
-
-  <p>Broadcast and streaming operations. Engineering. Infrastructure. Control systems. Any domain where time-sensitive execution matters.</p>
-
-  <p>If your system cannot pause, this applies to you.</p>
-</section>
-
-<!-- SPONSORS (UNCHANGED STRUCTURE) -->
-
-<div class="grid" style="margin-top:64px;">
-  <article class="card" style="background-color:#2f3a44; color:#ffffff;">
-    <h3>SPONSORED BY: Legal Shield</h3>
-    <p style="color:#cbd5e1;">
-      Legal Shield & ID Shield<br>
-      Protecting Families & Businesses Nationwide.
-    </p>
-    <p><a class="btn" href="/legal/">Explore Plans →</a></p>
-  </article>
-
-  <article class="card" style="background-color:#2f3a44; color:#ffffff;">
-    <h3>SPONSORED BY: The Piety Paychain</h3>
-    <p style="color:#cbd5e1;">
-      Helping to fund these pages.<br>
-      Learn more about the Piety Paychain
-    </p>
-    <p><a class="btn" href="/2026/">Explore Paychain →</a></p>
-  </article>
-</div>
-
-<footer>
-  <div>© Randy Anthony — Operational Reliability Systems</div>
-  <div><a href="/">Home Page</a></div>
-</footer>
-
-</div>
-
-</body>
-</html>
+  <section>
+    <h2>{{SECTION_TWO_HEADING}}</h2>
+    <p>{{SECTION_TWO_PARAGRAPH_1}}</p>
+    <p>{{SECTION_TWO_PARAGRAPH_2}}</p>
+  </section>
 
   <!-- LOCKED: Keep sponsor names and links unchanged -->
   <div class="grid" role="list">
