@@ -154,42 +154,188 @@ footer{ margin-top:34px; padding-top:18px; border-top:1px solid var(--border); d
 </nav>
 
 <!-- EDITABLE: Hero content block -->
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reliability Is Not Improvised</title>
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<style>
+/* ==================================================
+   LOCKED TEMPLATE STYLES (UNCHANGED)
+================================================== */
+:root{
+  --bg: #f6f7fb;
+  --bg2:#eef2f8;
+  --surface: rgba(15,28,46,0.035);
+  --surface2: rgba(15,28,46,0.06);
+  --text: rgba(10,15,25,0.92);
+  --muted: rgba(10,15,25,0.72);
+  --faint: rgba(10,15,25,0.60);
+  --border: rgba(15,28,46,0.12);
+  --accent:#1f3e8a;
+  --accent2:#0a7a57;
+  --shadow: 0 14px 36px rgba(0,0,0,0.12);
+  --radius: 18px;
+  --max: 1040px;
+
+  --heroBgA: #071a33;
+  --heroBgB: #071a33;
+  --heroText: rgba(255,255,255,0.94);
+  --heroMuted: rgba(255,255,255,0.74);
+  --heroFaint: rgba(255,255,255,0.60);
+  --heroBorder: rgba(255,255,255,0.14);
+  --heroSurface: rgba(255,255,255,0.06);
+  --heroSurface2: rgba(255,255,255,0.10);
+  --heroShadow: 0 18px 42px rgba(0,0,0,0.30);
+}
+
+header { display:flex; align-items:center; justify-content:space-between; gap:16px; padding:14px 18px; max-width:var(--max); margin:0 auto; }
+.brand { display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit; }
+.titles strong { font-weight:720; font-size:14px; letter-spacing:0.6px; }
+.titles span { display:block; font-size:12px; color:var(--muted); margin-top:2px; }
+
+nav.primary { display:flex; gap:14px; align-items:center; }
+nav.primary a { text-decoration:none; font-size:13px; color:var(--muted); padding:8px 10px; border-radius:12px; }
+nav.primary a:hover { background:var(--surface); color:var(--text); }
+
+.radio-hero{
+  margin:22px auto 0;
+  max-width:var(--max);
+  border-radius: calc(var(--radius) + 2px);
+  background:
+    linear-gradient(180deg, rgba(7,26,51,0.92), rgba(7,26,51,0.90)),
+    url("/assets/RCECoverWrap.png") center/cover no-repeat;
+  box-shadow: var(--heroShadow);
+  border: 1px solid rgba(255,255,255,0.10);
+  padding: 32px 26px;
+}
+
+.radio-hero-inner{ display:grid; grid-template-columns: 0.6fr 1.4fr; gap:28px; align-items:center; }
+.radio-avatar img{ width:100%; max-width:220px; border-radius:50%; border:3px solid rgba(255,255,255,0.25); }
+
+.wrap{ max-width:var(--max); margin:0 auto; padding:28px 18px 54px; }
+section{ margin-top:34px; }
+h2{ margin:0 0 12px; font-size:24px; color:var(--text); }
+p{ margin:0 0 14px; color:var(--muted); }
+
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 48px; }
+
+footer{ margin-top:34px; padding-top:18px; border-top:1px solid var(--border); display:flex; justify-content:space-between; color:var(--faint); font-size:12.5px; }
+</style>
+
+</head>
+
+<body>
+
+<header>
+  <a class="brand" href="/">
+    <img src="/favicon.png" style="width:44px;height:44px;border-radius:12px;">
+    <div class="titles">
+      <strong>RANDY ANTHONY</strong>
+      <span>Operational Reliability Advisory</span>
+    </div>
+  </a>
+
+  <nav class="primary">
+    <a href="/">Home</a>
+    <a href="/series/">Operational Architecture Series</a>
+    <a href="/bio/">Bio</a>
+    <a href="/home.html">Offerings</a>
+    <a href="/book/">Book</a>
+    <a href="/radio/">Radio</a>
+  </nav>
+</header>
+
 <section class="radio-hero">
   <div class="radio-hero-inner">
-    <div class="radio-avatar">
-      <img src="{{HERO_AVATAR_IMAGE}}" alt="{{HERO_AVATAR_ALT}}">
-    </div>
 
-    <div>
-      <p class="radio-hero-kicker">{{HERO_KICKER}}</p>
-      <h1 class="radio-hero-title">{{HERO_TITLE}}</h1>
-      <p class="radio-hero-subtitle">{{HERO_SUBTITLE}}</p>
+```
+<div class="radio-avatar">
+  <img src="/assets/randy_author.png" alt="Randy Anthony headshot">
+</div>
 
-      <div class="radio-cta-row">
-        <a href="{{HERO_PRIMARY_CTA_URL}}" class="btn btnPrimary" target="_blank" rel="noopener">{{HERO_PRIMARY_CTA_TEXT}}</a>
-      </div>
+<div>
+  <p class="radio-hero-kicker">REAL-TIME SYSTEMS DO NOT FAIL RANDOMLY</p>
 
-      <p class="radio-meta">{{HERO_META}}</p>
-    </div>
+  <h1 class="radio-hero-title">Reliability Is Not Improvised</h1>
+
+  <p class="radio-hero-subtitle">
+    How Systems Drift, Recover, and Reveal the Truth of Real-Time Operations
+  </p>
+
+  <div class="radio-cta-row">
+    <a href="#" class="btn btnPrimary">Get the Book</a>
+    <a href="/series/" class="btn btnPrimary">Read the Series</a>
+  </div>
+
+  <p class="radio-meta">
+    Systems drift. Signals misalign. Cascades form before they are seen.
+  </p>
+</div>
+```
+
   </div>
 </section>
 
 <div class="wrap">
-  <!-- EDITABLE: Main content sections -->
-  <section>
-    <h2>{{SECTION_ONE_HEADING}}</h2>
-    <p>{{SECTION_ONE_PARAGRAPH_1}}</p>
-    <p>{{SECTION_ONE_PARAGRAPH_2}}</p>
-    <p>{{SECTION_ONE_PARAGRAPH_3}}</p>
-    <p>{{SECTION_ONE_PARAGRAPH_4}}</p>
-    <p>{{SECTION_ONE_PARAGRAPH_5}}</p>
-  </section>
 
-  <section>
-    <h2>{{SECTION_TWO_HEADING}}</h2>
-    <p>{{SECTION_TWO_PARAGRAPH_1}}</p>
-    <p>{{SECTION_TWO_PARAGRAPH_2}}</p>
-  </section>
+<section style="text-align:center;">
+  <img src="/assets/RCECoverWrap.png" style="max-width:420px;width:100%;">
+</section>
+
+<section>
+<h2>About the Book</h2>
+
+<p>Real-time systems do not break suddenly. They drift, interact, and propagate conditions that eventually become visible disruption.</p>
+
+<p>In high-reliability, time-critical environments, stability is not a permanent condition. It is a continuously maintained state shaped by system design, operational discipline, and human decision-making under pressure.</p>
+
+<p><strong>Reliability Is Not Improvised</strong> introduces a framework for understanding how small irregularities evolve into system-level consequences. Drawing from real-world broadcast and streaming operations, it explains how timing, dependencies, and system interaction determine whether disruption is contained or allowed to cascade.</p>
+
+<p>This is not a book about preventing failure. It is about understanding how systems behave when they are already moving.</p>
+
+<p>Once you understand propagation, you stop looking for isolated problems and start seeing the sequence.</p>
+</section>
+
+<section>
+<h2>The Reaction Cascade Effect</h2>
+
+<p>The Reaction Cascade Effect (RCE) describes how minor deviations move through interconnected systems and amplify through interaction.</p>
+
+<p>A small timing offset becomes a missed signal. A missed signal becomes a delayed correction. A delayed correction becomes a system-level disruption.</p>
+
+<p>By the time the problem is visible, the originating condition has already passed through multiple layers of dependency.</p>
+
+<p>What appears as a single issue is actually the final stage of a sequence.</p>
+
+<p><strong>You are not managing failures. You are managing propagation.</strong></p>
+</section>
+
+<section>
+<h2>Who This Is For</h2>
+
+<p>This book is for professionals working in environments where systems must operate continuously and without interruption.</p>
+
+<p>Broadcast and streaming operations. Engineering. Infrastructure. Any domain where timing, coordination, and system behavior matter.</p>
+
+<p>If your system cannot pause, this framework applies.</p>
+</section>
+
+<footer>
+  <div>© Randy Anthony</div>
+  <div><a href="/">Home</a></div>
+</footer>
+
+</div>
+
+</body>
+</html>
+
 
   <!-- LOCKED: Keep sponsor names and links unchanged -->
   <div class="grid" role="list">
