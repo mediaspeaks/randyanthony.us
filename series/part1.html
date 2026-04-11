@@ -118,36 +118,65 @@ Operational reliability requires continuous learning—and more importantly, ant
       </aside>
     </section>
 
-<section class="legalshield-banner" aria-label="Sponsored by LegalShield and IDShield">
-  <a href="/legal" class="legalshield-link">
-    <div class="legalshield-row">
+<!-- SPONSOR CARDS (Offerings page) -->
+<div class="grid3" style="grid-template-columns:1fr 1fr; margin-top:32px;">
 
-      <div class="legalshield-left">
-        Sponsored by
-      </div>
+  <article class="card service" style="background-color:#2f3a44; color:#ffffff;">
+    <h3>SPONSORED BY: Legal Shield</h3>
+    <p style="color:#cbd5e1;">
+      Legal Shield & ID Shield<br>
+      Protecting Families & Businesses Nationwide.
+    </p>
+    <p style="margin-top:12px">
+      <a class="btn" href="/legal/" style="background:rgba(255,255,255,0.10); border-color:rgba(255,255,255,0.22); color:#fff;">
+        Explore Plans →
+      </a>
+    </p>
+  </article>
 
-      <div class="legalshield-center">
-        <span class="shield-svg" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="18" height="18">
-            <path fill="currentColor" d="M12 2.2c2.6 1.8 5.6 2.5 8.5 2.9v7.2c0 5.2-3.6 9.2-8.5 10.7C7.1 21.5 3.5 17.5 3.5 12.3V5.1c2.9-.4 5.9-1.1 8.5-2.9zm0 2.2c-2.2 1.3-4.7 1.9-6.9 2.2v5.7c0 4.3 2.9 7.6 6.9 8.9 4-1.3 6.9-4.6 6.9-8.9V6.6c-2.2-.3-4.7-.9-6.9-2.2z"/>
-          </svg>
-        </span>
-        <span class="brand-names"><strong>LegalShield</strong> + <strong>IDShield</strong></span>
-      </div>
+  <article class="card service" style="background-color:#2f3a44; color:#ffffff;">
+    <h3>SPONSORED BY: The Piety Paychain</h3>
+    <p style="color:#cbd5e1;">
+      Helping to fund these pages.<br>
+      Learn more about the Piety Paychain
+    </p>
+    <p style="margin-top:12px">
+      <a class="btn" href="/2026/" style="background:rgba(255,255,255,0.10); border-color:rgba(255,255,255,0.22); color:#fff;">
+        Explore Paychain →
+      </a>
+    </p>
+  </article>
 
-      <div class="legalshield-right">
-        Learn More →
-      </div>
+</div>
 
-    </div>
-  </a>
-</section>
-  </main>
 
-  <footer class="footer">
-    <div class="wrap">
-      <small>© Randy Anthony. All rights reserved.</small>
-    </div>
-  </footer>
+    <footer>
+  <div>© <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.</div>
+  <div class="smallLinks">
+    <a href="/">Home Page</a>
+  </div>
+</footer>
+
+</div> <!-- end .wrap -->
+
+<!-- Year -->
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+<!-- Mobile Nav (FINAL + CORRECT) -->
+<script>
+  const btn = document.getElementById('mobileToggle');
+  const panel = document.getElementById('mobileNav');
+
+  if (btn && panel) {
+    btn.addEventListener('click', () => {
+      const isOpen = panel.classList.toggle('show');
+      panel.setAttribute('aria-hidden', !isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  }
+</script>
+
 </body>
 </html>
