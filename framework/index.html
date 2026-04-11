@@ -195,30 +195,19 @@
     /* -----------------------------------------------------------
        HERO RIGHT — BROADCAST PANEL
        ----------------------------------------------------------- */
-    .heroRight{
-      background: var(--panel);
-      border:1px solid var(--panelBorder);
-      border-radius: var(--radius);
-      padding:20px;
-      box-shadow: var(--shadow);
-    }
+.heroRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    .heroRight h3{
-      margin:0 0 10px;
-      font-size:14px;
-      text-transform:uppercase;
-      letter-spacing:0.8px;
-      color:var(--accentCyan);
-    }
-
-    .focusList{
-      margin:0;
-      padding-left:18px;
-      font-size:14px;
-      color:var(--muted);
-    }
-
-    .focusList li{margin:8px 0}
+.hero-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px; /* Matches the rounded corners of your cards */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Adds a subtle depth */
+  object-fit: cover;
+}
 
   </style>
 </head>
@@ -254,16 +243,10 @@
           </div>
         </div>
 
-        <aside class="heroRight">
-          <h3>Focus Areas</h3>
-          <ul class="focusList">
-            <li>Automation &amp; playout workflow integrity</li>
-            <li>Redundancy mapping &amp; SPOF reduction</li>
-            <li>Escalation paths &amp; shift handoffs</li>
-            <li>Operational documentation that works</li>
-            <li>Monitoring strategy &amp; alert quality</li>
-          </ul>
-        </aside>
+<aside class="heroRight">
+  <img src="yassets/randy_author.png" alt="Author Randy Anthony" class="hero-image">
+</aside>
+
 
       </div>
     </div>
