@@ -202,10 +202,11 @@
 }
 
 .hero-image {
-  width: 100%;
+  width: 80%; /* Reduced by 20% */
   height: auto;
-  border-radius: 16px; /* Matches the rounded corners of your cards */
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Adds a subtle depth */
+  display: block;
+  margin: 0 auto; /* Keeps the image centered */
+  border-radius: calc(var(--radius) - 4px);
   object-fit: cover;
 }
 
