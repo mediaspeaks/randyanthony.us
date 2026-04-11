@@ -3,287 +3,624 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="color-scheme" content="light dark" />
-  <meta name="theme-color" content="#0b1a33" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#0a0f1a" />
 
-  <title>Operational Architecture Series | Randy Anthony</title>
-  <meta name="description" content="Time-Critical Operations / Operational Architecture series archive by Randy Anthony." />
+  <title>Broadcast Ops | Operational Reliability | Randy Anthony</title>
+  <meta name="description" content="Cinematic broadcast-themed homepage for operational reliability advisory. Control-room inspired UI, multiviewer header, telemetry lines, and broadcast panels." />
 
   <link rel="icon" href="/favicon.png" />
 
-  <!-- GLOBAL SHARED STYLES -->
-  <link rel="stylesheet" href="/css/global.css" />
+  <style>
+    /* -----------------------------------------------------------
+       BROADCAST THEME — GLOBAL VARIABLES
+       ----------------------------------------------------------- */
+    :root{
+      --bg: #05070d;
+      --bg2: #0a0f1a;
 
-  <!-- SERIES-SPECIFIC STYLES (UNCHANGED) -->
-  <link rel="stylesheet" href="/series/series.css" />
+      --panel: rgba(255,255,255,0.04);
+      --panel2: rgba(255,255,255,0.06);
+      --panelBorder: rgba(255,255,255,0.12);
+
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.68);
+      --faint: rgba(255,255,255,0.50);
+
+      --accentBlue: #4da3ff;
+      --accentCyan: #4ff2ff;
+      --accentRed: #ff3b3b;
+      --accentGreen: #3bff9c;
+
+      --radius: 14px;
+      --radiusLg: 18px;
+
+      --shadow: 0 0 32px rgba(0,0,0,0.55);
+      --glowBlue: 0 0 22px rgba(77,163,255,0.55);
+      --glowCyan: 0 0 22px rgba(79,242,255,0.55);
+      --glowRed: 0 0 22px rgba(255,59,59,0.55);
+      --glowGreen: 0 0 22px rgba(59,255,156,0.55);
+
+      --max: 1280px;
+    }
+
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:
+        radial-gradient(1400px 900px at 18% -12%, rgba(77,163,255,0.12), transparent 62%),
+        radial-gradient(1200px 800px at 92% 8%, rgba(79,242,255,0.10), transparent 58%),
+        linear-gradient(180deg, var(--bg), var(--bg2));
+      color:var(--text);
+      line-height:1.55;
+      letter-spacing:0.2px;
+    }
+
+    a{color:inherit; text-decoration:none}
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:28px 20px 60px;
+    }
+
+    /* -----------------------------------------------------------
+       MULTIVIEWER HEADER
+       ----------------------------------------------------------- */
+    .mvHeader{
+      display:grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap:10px;
+      margin-bottom:32px;
+    }
+
+    .mvTile{
+      background: var(--panel);
+      border:1px solid var(--panelBorder);
+      border-radius: var(--radius);
+      height:72px;
+      position:relative;
+      overflow:hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .mvTile::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.06), transparent);
+      pointer-events:none;
+    }
+
+    .mvLabel{
+      position:absolute;
+      bottom:6px;
+      left:8px;
+      font-size:11px;
+      color:var(--muted);
+      letter-spacing:0.6px;
+      text-transform:uppercase;
+    }
+
+    .mvTally{
+      position:absolute;
+      top:6px;
+      right:6px;
+      padding:3px 6px;
+      font-size:10px;
+      border-radius:4px;
+      background: var(--accentRed);
+      color:#fff;
+      font-weight:700;
+      letter-spacing:0.5px;
+    }
+
+    /* -----------------------------------------------------------
+       HERO — BROADCAST CINEMATIC
+       ----------------------------------------------------------- */
+    .heroBand{
+      border-radius: var(--radiusLg);
+      background:
+        linear-gradient(rgba(5,7,13,0.82), rgba(5,7,13,0.82)),
+        url("/series/assets/ops-architecture-bg.jpg") center/cover no-repeat;
+      border:1px solid var(--panelBorder);
+      box-shadow: var(--shadow);
+      padding:32px;
+      margin-bottom:40px;
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.4fr 0.6fr;
+      gap:24px;
+      align-items:center;
+    }
+
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr}
+    }
+
+    .hero h1{
+      margin:0 0 14px;
+      font-size:40px;
+      line-height:1.05;
+      letter-spacing:-0.5px;
+      color:#fff;
+      text-shadow: var(--glowBlue);
+    }
+
+    .lede{
+      margin:0 0 20px;
+      color:var(--muted);
+      font-size:17px;
+      max-width:70ch;
+    }
+
+    .ctaRow{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:16px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 16px;
+      border-radius:12px;
+      font-weight:700;
+      font-size:14px;
+      border:1px solid var(--panelBorder);
+      background: var(--panel2);
+      transition:0.15s ease;
+    }
+
+    .btn:hover{
+      background: var(--panel);
+      transform: translateY(-2px);
+    }
+
+    .btnPrimary{
+      background: rgba(77,163,255,0.18);
+      border-color: rgba(77,163,255,0.45);
+      color:#fff;
+      box-shadow: var(--glowBlue);
+    }
+
+    .btnPrimary:hover{
+      background: rgba(77,163,255,0.28);
+    }
+
+    /* -----------------------------------------------------------
+       HERO RIGHT — BROADCAST PANEL
+       ----------------------------------------------------------- */
+    .heroRight{
+      background: var(--panel);
+      border:1px solid var(--panelBorder);
+      border-radius: var(--radius);
+      padding:20px;
+      box-shadow: var(--shadow);
+    }
+
+    .heroRight h3{
+      margin:0 0 10px;
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:0.8px;
+      color:var(--accentCyan);
+    }
+
+    .focusList{
+      margin:0;
+      padding-left:18px;
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    .focusList li{margin:8px 0}
+
+  </style>
 </head>
 
 <body>
-<div class="wrap">
+  <div class="wrap">
 
-<!-- ============================================
-     GLOBAL HEADER (MATCHES HOME/BOOK/RADIO)
-============================================ -->
-<header>
-
-  <a class="brand" href="/">
-    <img src="/favicon.png" alt="">
-    <div class="titles">
-      <strong>RANDY ANTHONY</strong>
-      <span>Operational Reliability Advisory</span>
+    <!-- MULTIVIEWER HEADER -->
+    <div class="mvHeader">
+      <div class="mvTile"><div class="mvTally">LIVE</div><div class="mvLabel">OPS FEED</div></div>
+      <div class="mvTile"><div class="mvLabel">TELEMETRY</div></div>
+      <div class="mvTile"><div class="mvLabel">SIGNAL A</div></div>
+      <div class="mvTile"><div class="mvLabel">SIGNAL B</div></div>
+      <div class="mvTile"><div class="mvLabel">EXPERIMENTAL</div></div>
+      <div class="mvTile"><div class="mvLabel">SYSTEM</div></div>
     </div>
-  </a>
 
-  <nav class="primary" role="navigation" aria-label="Main navigation">
-    <a href="/">Home</a>
-    <a href="/series/">Operational Architecture Series</a>
-    <a href="/bio/">Bio</a>
-    <a href="/home.html">Offerings</a>
-    <a href="/book/">Book</a>
-    <a href="/radio/">Radio</a>
+    <!-- HERO -->
+    <div class="heroBand">
+      <div class="hero">
 
-    <div class="cta">
-      <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a consultation</a>
-      <a class="btn secondary" href="/home.html#about">About</a>
-    </div>
-  </nav>
+        <div>
+          <h1>Operational Reliability for Broadcast &amp; Streaming</h1>
 
-  <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileNav">
-    ☰
-  </button>
+          <p class="lede">
+            Founder-led advisory for time-critical workflows — automation integrity, redundancy mapping, escalation design,
+            and resilient operational systems. Built for environments where failure is visible.
+          </p>
 
-</header>
+          <div class="ctaRow">
+            <a class="btnPrimary btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a consultation</a>
+            <a class="btn" href="#services">Explore services</a>
+          </div>
+        </div>
 
-<!-- ============================================
-     GLOBAL MOBILE NAV
-============================================ -->
-<nav id="mobileNav" class="mobile-nav" aria-hidden="true">
-  <a href="/">Home</a>
-  <a href="/series/">Operational Architecture Series</a>
-  <a href="/bio/">Bio</a>
-  <a href="/home.html">Offerings</a>
-  <a href="/book/">Book</a>
-  <a href="/radio/">Radio</a>
-  <a href="/home.html#about">About</a>
-</nav>
-<!-- ============================================
-     SERIES BACKGROUND THUMBNAILS (UNCHANGED)
-============================================ -->
-<main>
+        <aside class="heroRight">
+          <h3>Focus Areas</h3>
+          <ul class="focusList">
+            <li>Automation &amp; playout workflow integrity</li>
+            <li>Redundancy mapping &amp; SPOF reduction</li>
+            <li>Escalation paths &amp; shift handoffs</li>
+            <li>Operational documentation that works</li>
+            <li>Monitoring strategy &amp; alert quality</li>
+          </ul>
+        </aside>
 
-  <div class="series-background">
-    <img src="/series/assets/week-01-reliability-is-intentional.png" class="bg-thumb t1">
-    <img src="/series/assets/week-02-invisible-work.png" class="bg-thumb t2">
-    <img src="/series/assets/week-03-composure.png" class="bg-thumb t3">
-    <img src="/series/assets/week-04-dependencies.png" class="bg-thumb t4">
-    <img src="/series/assets/week-05-interfaces.png" class="bg-thumb t5">
-    <img src="/series/assets/week-06-missing-content.png" class="bg-thumb t6">
-    <img src="/series/assets/week-07-redundancy.png" class="bg-thumb t7">
-    <img src="/series/assets/week-08-small-errors.png" class="bg-thumb t8">
-    <img src="/series/assets/week-09-fatigue.png" class="bg-thumb t9">
-    <img src="/series/assets/week-10-automation.png" class="bg-thumb t10">
-    <img src="/series/assets/week-11-accountability.png" class="bg-thumb t11">
-    <img src="/series/assets/week-12-prevention.png" class="bg-thumb t12">
-    <img src="/series/assets/week-13-architecture.png" class="bg-thumb t13">
-  </div>
-
-
-<!-- ============================================
-     HERO OPS (UNCHANGED)
-============================================ -->
-<section class="hero hero-ops">
-  <h1 class="hero-title">
-    Reliability is not improvised.<br>
-    It is engineered.<br>
-    Lessons from time-critical broadcast and streaming systems
-  </h1>
-</section>
-
-
-<!-- ============================================
-     GRID LAYOUT (UNCHANGED)
-============================================ -->
-<section class="grid">
-
-  <!-- PART I CARD -->
-  <section class="card">
-    <h2>Part I — Foundations (Weeks 1–13)</h2>
-
-    <ol class="list">
-      <li><a href="/series/week-01-reliability.html">Week 1 — What Time-Critical Operations Teach You About Reliability</a></li>
-      <li><a href="/series/week-02-invisible-work.html">Week 2 — What Time-Critical Operations Teach You About Invisible Work</a></li>
-      <li><a href="/series/week-03-composure.html">Week 3 — What Time-Critical Operations Teach You About Composure</a></li>
-      <li><a href="/series/week-04-dependencies.html">Week 4 — What Time-Critical Operations Teach You About Dependencies</a></li>
-      <li><a href="/series/week-05-interfaces.html">Week 5 — What Time-Critical Operations Teach You About Interfaces</a></li>
-      <li><a href="/series/week-06-missing-content.html">Week 6 — What Time-Critical Operations Teach You About Missing Content</a></li>
-      <li><a href="/series/week-07-redundancy.html">Week 7 — What Time-Critical Operations Teach You About Redundancy</a></li>
-      <li><a href="/series/week-08-small-errors.html">Week 8 — What Time-Critical Operations Teach You About Small Errors</a></li>
-      <li><a href="/series/week-09-fatigue.html">Week 9 — What Time-Critical Operations Teach You About Fatigue</a></li>
-      <li><a href="/series/week-10-automation.html">Week 10 — What Time-Critical Operations Teach You About Automation</a></li>
-      <li><a href="/series/week-11-accountability.html">Week 11 — What Time-Critical Operations Teach You About Accountability</a></li>
-      <li><a href="/series/week-12-prevention.html">Week 12 — What Time-Critical Operations Teach You About Prevention</a></li>
-      <li><a href="/series/week-13-architecture.html">Week 13 — What Time-Critical Operations Teach You About Architecture</a></li>
-      <li><a href="/series/week-14-part-1-wrap-up.html">Week 14 — Part I - Systems Wrap-Up</a></li>
-    </ol>
-
-    <div class="pills">
-      <span class="pill">broadcast operations</span>
-      <span class="pill">streaming operations</span>
-      <span class="pill">master control</span>
-      <span class="pill">24/7 operations</span>
-      <span class="pill">reliability engineering</span>
-      <span class="pill">process improvement</span>
-      <span class="pill">risk management</span>
-      <span class="pill">systems thinking</span>
-    </div>
-  </section>
-
-
-  <!-- PART II INTRO CARD -->
-  <section class="card">
-    <h2>Part II — Operational Visibility</h2>
-
-    <div style="margin-top:18px; padding-top:12px; border-top:1px solid #2f3a44;">
-      <p style="color:#cbd5e1;">Thirteen weeks ago, I started a series on time-critical operations.</p>
-      <p style="color:#cbd5e1;">The focus wasn’t on tools or trends. It was on how systems behave when timing matters and failure isn’t theoretical.</p>
-      <p style="color:#cbd5e1;">A few patterns showed up consistently.</p>
-      <p style="color:#cbd5e1;">Reliability isn’t about a single system holding up. Failures don’t begin at the point of impact. Small issues don’t stay small. They compound quickly.</p>
-      <p style="color:#cbd5e1;">Part I was about understanding that system.</p>
-      <p style="color:#cbd5e1;">The next phase will focus on how visibility is created, where it breaks down, and how it shapes real-time decisions.</p>
-      <p style="color:#cbd5e1;">Same structure. Same focus. Deeper layer.</p>
-
-      <p style="margin-top:12px">
-        <a class="btn" href="/series/index.html">Part 1 Index→</a>
-      </p>
-    </div>
-  </section>
-  <!-- TOPIC ROTATION CARD -->
-  <aside class="card">
-    <h2>Topic rotation</h2>
-
-    <p>
-      This Operational Architecture Series is built as a continuous, quarterly 13-week rotation. Each cycle returns to the same core principles, but from a different operational angle—expanding them through practical system design, real-world constraints, and live execution.
-    </p>
-
-    <p>
-      The goal isn’t to introduce new ideas each cycle.
-      It’s to deepen understanding of how the same systems behave under different conditions.
-    </p>
-
-    <p>
-      Reliability isn’t a single skill or a single system holding up.
-      It’s the result of clear handoffs, defined ownership, disciplined execution, and reducing hidden weak points across transitions and interfaces.
-    </p>
-
-    <p>
-      Most failures don’t originate where they become visible.
-      They develop earlier—in gaps between systems, in assumptions, and in areas where visibility is incomplete or delayed.
-    </p>
-
-    <p>
-      Operational reliability requires continuous learning—and more importantly, anticipating vulnerabilities before pressure exposes them.
-    </p>
-
-    <p>
-      Stable systems don’t happen by accident.
-      They are designed intentionally, tested under real conditions, and improved over time through iteration and experience.
-    </p>
-
-    <p>
-      Each phase of this series builds on the last.
-      Not by changing direction—but by adding clarity, visibility, and depth to the same operational foundation.
-    </p>
-  </aside>
-
-
-  <!-- PART II WEEK LIST -->
-  <section class="card">
-    <h2>Part II — Operational Visibility</h2>
-
-    <ol class="list">
-      <li>Week 15 (Part II, Week 1) — Operational Visibility (All Upcoming)</li>
-      <li>Week 16 (Part II, Week 2) —</li>
-      <li>Week 17 (Part II, Week 3) —</li>
-      <li>Week 18 (Part II, Week 4) —</li>
-      <li>Week 19 (Part II, Week 5) —</li>
-      <li>Week 20 (Part II, Week 6) —</li>
-      <li>Week 21 (Part II, Week 7) —</li>
-      <li>Week 22 (Part II, Week 8) —</li>
-      <li>Week 23 (Part II, Week 9) —</li>
-      <li>Week 24 (Part II, Week 10) —</li>
-      <li>Week 25 (Part II, Week 11) —</li>
-      <li>Week 26 (Part II, Week 12) —</li>
-      <li>Week 27 (Part II, Week 13) —</li>
-    </ol>
-  </section>
-
-</section> <!-- end .grid -->
-
-
-<!-- LEGALSHIELD BANNER -->
-<section class="legalshield-banner" aria-label="Sponsored by LegalShield and IDShield">
-  <a href="/legal" class="legalshield-link">
-    <div class="legalshield-row">
-
-      <div class="legalshield-left">
-        Sponsored by
       </div>
-
-      <div class="legalshield-center">
-        <span class="shield-svg" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="18" height="18">
-            <path fill="currentColor" d="M12 2.2c2.6 1.8 5.6 2.5 8.5 2.9v7.2c0 5.2-3.6 9.2-8.5 10.7C7.1 21.5 3.5 17.5 3.5 12.3V5.1c2.9-.4 5.9-1.1 8.5-2.9zm0 2.2c-2.2 1.3-4.7 1.9-6.9 2.2v5.7c0 4.3 2.9 7.6 6.9 8.9 4-1.3 6.9-4.6 6.9-8.9V6.6c-2.2-.3-4.7-.9-6.9-2.2z"/>
-          </svg>
-        </span>
-        <span class="brand-names"><strong>LegalShield</strong> + <strong>IDShield</strong></span>
-      </div>
-
-      <div class="legalshield-right">
-        Learn More →
-      </div>
-
     </div>
-  </a>
-</section>
-<!-- ============================================
-     GLOBAL FOOTER (MATCHES HOME/BOOK/RADIO)
-============================================ -->
-<footer>
-  <div>© <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.</div>
-  <div class="smallLinks">
-    <a href="/">Home Page</a>
-    <a href="/home.html">Offerings</a>
-    <a href="/book/">Book</a>
-    <a href="/radio/">Radio</a>
-  </div>
-</footer>
+    <!-- SERVICES — BROADCAST GRID -->
+    <section id="services" style="margin-top:40px">
+      <h2 style="margin:0 0 16px; font-size:20px; color:var(--accentBlue); text-shadow:var(--glowBlue)">
+        Services
+      </h2>
 
-</div> <!-- end .wrap -->
+      <div class="grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px">
 
+        <div class="panelCard">
+          <h3>Operational Workflow Review</h3>
+          <p>
+            Independent assessment of automation, playout workflows, dependencies, and escalation paths—focused on
+            preventing visible failure and reducing recovery time.
+          </p>
+        </div>
 
-<!-- ============================================
-     YEAR SCRIPT
-============================================ -->
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+        <div class="panelCard">
+          <h3>Documentation &amp; Continuity</h3>
+          <p>
+            SOPs, handoff standards, and failure-response maps that reduce reliance on institutional memory and improve
+            consistency across shifts.
+          </p>
+        </div>
 
+        <div class="panelCard">
+          <h3>Advisory Support</h3>
+          <p>
+            Ongoing reliability perspective for organizations that want steady operational oversight without expanding
+            internal headcount.
+          </p>
+        </div>
 
-<!-- ============================================
-     MOBILE NAV SCRIPT (SHARED)
-============================================ -->
-<script>
-  const btn = document.getElementById('mobileToggle');
-  const panel = document.getElementById('mobileNav');
+      </div>
+    </section>
 
-  if (btn && panel) {
-    btn.addEventListener('click', () => {
-      const isOpen = panel.classList.toggle('show');
-      panel.setAttribute('aria-hidden', !isOpen);
-      btn.setAttribute('aria-expanded', isOpen);
-    });
+    <style>
+      .panelCard{
+        background: var(--panel);
+        border:1px solid var(--panelBorder);
+        border-radius: var(--radius);
+        padding:18px;
+        box-shadow: var(--shadow);
+        transition:0.15s ease;
+      }
+      .panelCard:hover{
+        background: var(--panel2);
+        transform: translateY(-3px);
+        box-shadow: var(--glowBlue);
+      }
+      .panelCard h3{
+        margin:0 0 8px;
+        font-size:16px;
+        color:var(--accentCyan);
+        text-shadow:var(--glowCyan);
+      }
+      .panelCard p{
+        margin:0;
+        color:var(--muted);
+        font-size:14px;
+      }
+    </style>
+
+    <!-- ENGAGEMENTS — BROADCAST PANELS -->
+    <section id="engagements" style="margin-top:50px">
+      <h2 style="margin:0 0 16px; font-size:20px; color:var(--accentBlue); text-shadow:var(--glowBlue)">
+        Engagements
+      </h2>
+
+      <div class="split" style="display:grid; grid-template-columns:1fr 1fr; gap:18px">
+
+        <div class="panelCard">
+          <h3>How engagements work</h3>
+          <p>
+            Most work begins with a brief discovery call. If there’s a fit, I scope a review and deliver a written
+            summary with prioritized recommendations and next steps.
+          </p>
+          <ol class="engList">
+            <li><strong>Discovery:</strong> goals, constraints, and operational context</li>
+            <li><strong>Review:</strong> workflow walk-through, dependency mapping, failure scenarios</li>
+            <li><strong>Deliverable:</strong> risk exposure summary + prioritized mitigation plan</li>
+          </ol>
+        </div>
+
+        <div class="panelCard">
+          <h3>Who this is for</h3>
+          <p>
+            Teams where time and accuracy matter—live events, automated playout, multi-feed environments, and operations
+            that cannot afford preventable outages.
+          </p>
+          <ol class="engList">
+            <li>Broadcast operations &amp; master control environments</li>
+            <li>Streaming teams supporting live programming or sports</li>
+            <li>Organizations scaling distribution without mature runbooks</li>
+            <li>Teams exposed to single-point-of-failure staffing or systems</li>
+          </ol>
+        </div>
+
+      </div>
+    </section>
+
+    <style>
+      .engList{
+        margin:12px 0 0;
+        padding-left:18px;
+        color:var(--muted);
+        font-size:14px;
+      }
+      .engList li{margin:8px 0}
+    </style>
+
+    <!-- QUICK LINKS GRID — BROADCAST STYLE -->
+    <section aria-label="Quick links" style="margin-top:60px">
+      <h2 style="margin:0 0 16px; font-size:20px; color:var(--accentBlue); text-shadow:var(--glowBlue)">
+        Navigate the site
+      </h2>
+
+      <div class="grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px">
+
+        <!-- SPONSOR: Legal Shield -->
+        <div class="quickCard quickRed">
+          <h3>SPONSORED: Legal Shield</h3>
+          <p>Legal Shield &amp; ID Shield — protecting families &amp; businesses nationwide.</p>
+          <a class="btn" href="/legal/">Explore Plans →</a>
+        </div>
+
+        <!-- Series -->
+        <div class="quickCard quickBlue">
+          <h3>Operational Architecture Series</h3>
+          <p>Deep-dive essays on visibility, automation, escalation, and resilience.</p>
+          <a class="btn" href="/series/">Open →</a>
+        </div>
+
+        <!-- Bio -->
+        <div class="quickCard quickCyan">
+          <h3>Bio &amp; Consulting</h3>
+          <p>More information and contact details — operational advisory offerings.</p>
+          <a class="btn" href="/bio/">View Bio →</a>
+        </div>
+
+        <!-- SPONSOR: Paychain -->
+        <div class="quickCard quickRed">
+          <h3>SPONSORED: Piety Paychain</h3>
+          <p>Helping to fund these pages. Learn more about the Paychain.</p>
+          <a class="btn" href="/2026/">Explore Paychain →</a>
+        </div>
+
+        <!-- Book -->
+        <div class="quickCard quickBlue">
+          <h3>Publications</h3>
+          <p><strong>FM — The Fading Modulation Of Terrestrial Radio</strong></p>
+          <a class="btn" href="/book/">Get The Book →</a>
+        </div>
+
+        <!-- Radio -->
+        <div class="quickCard quickGreen">
+          <h3>Radio &amp; Audio</h3>
+          <p>Co-Founder of <strong>The Sound Of The Strand</strong> — Carolina Beach Music Radio.</p>
+          <a class="btn" href="/radio/">Listen Live →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <style>
+      .quickCard{
+        background: var(--panel);
+        border:1px solid var(--panelBorder);
+        border-radius: var(--radius);
+        padding:18px;
+        box-shadow: var(--shadow);
+        transition:0.15s ease;
+      }
+      .quickCard:hover{
+        transform: translateY(-3px);
+      }
+      .quickCard h3{
+        margin:0 0 8px;
+        font-size:15px;
+        font-weight:700;
+      }
+      .quickCard p{
+        margin:0 0 12px;
+        color:var(--muted);
+        font-size:14px;
+      }
+
+      .quickRed{border-color:rgba(255,59,59,0.45); box-shadow:var(--glowRed)}
+      .quickBlue{border-color:rgba(77,163,255,0.45); box-shadow:var(--glowBlue)}
+      .quickCyan{border-color:rgba(79,242,255,0.45); box-shadow:var(--glowCyan)}
+      .quickGreen{border-color:rgba(59,255,156,0.45); box-shadow:var(--glowGreen)}
+    </style>
+    <!-- SERIES LIST — BROADCAST LOWER-THIRDS -->
+    <section id="series" style="margin-top:60px">
+      <h2 style="margin:0 0 16px; font-size:20px; color:var(--accentBlue); text-shadow:var(--glowBlue)">
+        Operational Architecture — Weekly Series
+      </h2>
+
+      <div style="display:flex; flex-direction:column; gap:14px">
+
+        <div class="ltCard">
+          <div class="ltBar"></div>
+          <strong>Week 01 — Visibility</strong>
+          <p>Foundations of operational clarity and signal awareness.</p>
+        </div>
+
+        <div class="ltCard">
+          <div class="ltBar"></div>
+          <strong>Week 02 — Automation Integrity</strong>
+          <p>Ensuring predictable behavior under load and during transitions.</p>
+        </div>
+
+        <div class="ltCard">
+          <div class="ltBar"></div>
+          <strong>Week 03 — Escalation Design</strong>
+          <p>Reducing ambiguity and improving recovery speed.</p>
+        </div>
+
+        <div class="ltCard">
+          <div class="ltBar"></div>
+          <strong>Week 04 — Failure Surfaces</strong>
+          <p>Mapping where things break before they break.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <style>
+      .ltCard{
+        background: var(--panel);
+        border:1px solid var(--panelBorder);
+        border-radius: var(--radius);
+        padding:16px;
+        box-shadow: var(--shadow);
+        position:relative;
+      }
+      .ltCard strong{
+        font-size:15px;
+        color:#fff;
+        text-shadow:var(--glowBlue);
+      }
+      .ltCard p{
+        margin:6px 0 0;
+        color:var(--muted);
+        font-size:14px;
+      }
+      .ltBar{
+        position:absolute;
+        top:0;
+        left:0;
+        height:4px;
+        width:100%;
+        background: linear-gradient(90deg, var(--accentBlue), var(--accentCyan));
+        border-radius:4px 4px 0 0;
+      }
+    </style>
+
+    <!-- SPOTLIGHT / PROJECTS — BROADCAST PANELS -->
+    <section id="spotlight" style="margin-top:60px">
+      <h2 style="margin:0 0 16px; font-size:20px; color:var(--accentBlue); text-shadow:var(--glowBlue)">
+        Spotlight &amp; Projects
+      </h2>
+
+      <div class="split" style="display:grid; grid-template-columns:1fr 1fr; gap:18px">
+
+        <div class="panelCard">
+          <h3>Operational Reviews</h3>
+          <p>
+            Independent assessments of systems and policy with practical recommendations that teams can implement quickly.
+          </p>
+          <a class="btn" href="mailto:inbox@randyanthony.us">Email To Engage →</a>
+        </div>
+
+        <div class="panelCard">
+          <h3>AI &amp; Workflow Experiments (2026)</h3>
+          <p>
+            Tooling experiments to reduce manual work and improve monitoring. Exploration of decision support and automation oversight.
+          </p>
+          <a class="btn" href="/work.html">Under Construction →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT — BROADCAST PANEL -->
+    <section id="about" style="margin-top:60px">
+      <h2 style="margin:0 0 16px; font-size:20px; color:var(--accentBlue); text-shadow:var(--glowBlue)">
+        About
+      </h2>
+
+      <div class="panelCard">
+        <p>
+          Led by Randy Anthony, a broadcast and streaming operations specialist with decades of hands-on experience in
+          time-critical environments. The focus is practical reliability—clear workflows, resilient systems, and calm
+          execution when conditions are not ideal.
+        </p>
+      </div>
+    </section>
+
+    <!-- CONTACT — BROADCAST PANEL -->
+    <section id="contact" style="margin-top:60px">
+      <h2 style="margin:0 0 16px; font-size:20px; color:var(--accentBlue); text-shadow:var(--glowBlue)">
+        Contact
+      </h2>
+
+      <div class="panelCard">
+        <p>
+          If you’re dealing with recurring workflow issues—or want to reduce risk before they become on-air failures—reach out.
+          Include your system environment, automation stack, and what “failure” looks like in your world.
+        </p>
+
+        <div class="ctaRow" style="margin-top:14px">
+          <a class="btnPrimary btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Email to start</a>
+          <a class="btn" href="#top">Back to top</a>
+        </div>
+
+        <p style="margin-top:12px; color:var(--faint); font-size:12.5px">
+          Note: This page is intentionally simple and fast. Case studies and references are shared privately when appropriate.
+        </p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="margin-top:60px; padding-top:18px; border-top:1px solid var(--panelBorder); display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between; color:var(--faint); font-size:12.5px;">
+      <div>© <span id="year"></span> Randy Anthony. All rights reserved.</div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <a href="#services">Services</a>
+        <a href="#spotlight">Spotlight</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </footer>
+
+  </div> <!-- wrap -->
+
+  <!-- STRUCTURED DATA -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Broadcast Reliability Advisory (Randy Anthony)",
+    "url": "https://randyanthony.us/broadcast.html",
+    "description": "Broadcast-themed operational reliability advisory for time-critical systems.",
+    "areaServed": "US",
+    "founder": {
+      "@type": "Person",
+      "name": "Randy Anthony"
+    }
   }
-</script>
+  </script>
+
+  <!-- YEAR SCRIPT -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
