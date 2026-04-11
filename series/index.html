@@ -17,21 +17,29 @@
   <!-- SERIES-SPECIFIC STYLES (UNCHANGED) -->
   <link rel="stylesheet" href="/series/series.css" />
 <style>
-  .hero.hero-ops {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-  }
+/* Reduce vertical height of the hero */
+.hero.hero-ops {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;     /* tighter spacing between image + text */
+  padding: 12px 0;  /* this is what reduces the vertical height */
+}
 
-  .book-cover-card img {
-    width: 180px;
-    height: auto;
-  }
+/* Reduce spacing inside the text block */
+.hero-title {
+  margin: 0 0 4px 0;
+}
 
-  .hero-text {
-    display: flex;
-    flex-direction: column;
-  }
+.hero-subtitle {
+  margin: 0;
+}
+
+/* Slightly smaller image to help reduce height */
+.book-cover-card img {
+  width: 150px;
+  height: auto;
+}
+
 </style>
 
 </head>
