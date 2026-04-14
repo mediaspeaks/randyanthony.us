@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Universal Header</title>
+<style>
+:root {
+  --header-height: 60px;
+  --padding-x: 16px;
+  --drawer-width: 85%;
+  --drawer-max: 320px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  padding-top: var(--header-height);
+}
+
+/* HEADER */
+.mobile-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--padding-x);
+  background: #ffffff;
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+}
+
+.menu-btn {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.menu-icon {
+  width: 24px;
+  height: 2px;
+  background: #000;
+  position: relative;
+}
+.menu-icon::before,
+.menu-icon::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: #000;
+  left: 0;
+}
+.menu-icon::before { top: -8px; }
+.menu-icon::after { top: 8px; }
+
+.logo {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* DRAWER */
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: var(--drawer-width);
+  max-width: var(--drawer-max);
+  background: #fff;
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
+  z-index: 1100;
+  padding-top: var(--header-height);
+}
+
+.drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-content {
+  padding: 16px 20px;
+}
+
+.nav-item {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  text-decoration: none;
+  color: #000;
+}
+
+.nav-item.active {
+  font-weight: bold;
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 1050;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+  .menu-btn { display: none; }
+  .drawer { display: none; }
+  .overlay { display: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="mobile-header">
+  <div class="menu-btn" id="menuBtn">
+    <div class="menu-icon"></div>
+  </div>
+  <div class="logo">Randy Anthony</div>
+  <div style="width:48px"></div>
+</header>
+
+<nav class="drawer" id="drawer">
+  <div class="drawer-content">
+    <a href="/" class="nav-item">Home</a>
+    <a href="/about" class="nav-item">About</a>
+    <a href="/rce" class="nav-item">RCE System</a>
+    <a href="/blog" class="nav-item">Insights</a>
+    <a href="/media" class="nav-item">Media</a>
+    <a href="/contact" class="nav-item">Contact</a>
+  </div>
+</nav>
+
+<div class="overlay" id="overlay"></div>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const drawer = document.getElementById('drawer');
+const overlay = document.getElementById('overlay');
+
+function openMenu() {
+  drawer.classList.add('open');
+  overlay.classList.add('show');
+}
+
+function closeMenu() {
+  drawer.classList.remove('open');
+  overlay.classList.remove('show');
+}
+
+menuBtn.addEventListener('click', openMenu);
+overlay.addEventListener('click', closeMenu);
+
+// Optional: close on link click
+Array.from(document.querySelectorAll('.nav-item')).forEach(item => {
+  item.addEventListener('click', closeMenu);
+});
+</script>
+
+</body>
+</html>
