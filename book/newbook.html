@@ -1,8 +1,513 @@
-<!-- --------------------------------------------------
-     2‑COLUMN SPONSOR GRID (EXACT CARDS)
--------------------------------------------------- -->
-<div class="grid" role="list">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reliability Is Not Improvised</title>
 
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<style>
+/* --------------------------------------------------
+   BRAND VARIABLES
+-------------------------------------------------- */
+:root{
+  --bg: #f6f7fb;
+  --bg2:#eef2f8;
+  --surface: rgba(15,28,46,0.035);
+  --surface2: rgba(15,28,46,0.06);
+  --text: rgba(10,15,25,0.92);
+  --muted: rgba(10,15,25,0.72);
+  --faint: rgba(10,15,25,0.60);
+  --border: rgba(15,28,46,0.12);
+  --accent:#1f3e8a;
+  --accent2:#0a7a57;
+  --shadow: 0 14px 36px rgba(0,0,0,0.12);
+  --radius: 18px;
+  --max: 1040px;
+
+  --heroBgA: #071a33;
+  --heroBgB: #0b1a33;
+  --heroText: rgba(255,255,255,0.94);
+  --heroMuted: rgba(255,255,255,0.74);
+  --heroFaint: rgba(255,255,255,0.60);
+  --heroBorder: rgba(255,255,255,0.14);
+  --heroSurface: rgba(255,255,255,0.06);
+  --heroSurface2: rgba(255,255,255,0.10);
+  --heroShadow: 0 18px 42px rgba(0,0,0,0.30);
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg: #0f1c2e;
+    --bg2:#0b1525;
+    --surface: rgba(255,255,255,0.06);
+    --surface2: rgba(255,255,255,0.10);
+    --text: rgba(255,255,255,0.92);
+    --muted: rgba(255,255,255,0.74);
+    --faint: rgba(255,255,255,0.60);
+    --border: rgba(255,255,255,0.13);
+    --accent:#9bb9ff;
+    --accent2:#b8ffde;
+    --shadow: 0 14px 36px rgba(0,0,0,0.38);
+  }
+}
+
+/* --------------------------------------------------
+   GLOBAL HEADER (EXACTLY AS PROVIDED)
+-------------------------------------------------- */
+header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:14px 18px;
+  max-width:var(--max);
+  margin:0 auto;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:inherit;
+}
+
+.titles strong {
+  font-weight:720;
+  font-size:14px;
+  letter-spacing:0.6px;
+}
+
+.titles span {
+  display:block;
+  font-size:12px;
+  color:var(--muted);
+  margin-top:2px;
+}
+
+nav.primary {
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+
+nav.primary a {
+  text-decoration:none;
+  font-size:13px;
+  color:var(--muted);
+  padding:8px 10px;
+  border-radius:12px;
+}
+
+nav.primary a:hover {
+  background:var(--surface);
+  color:var(--text);
+}
+
+.cta {
+  display:flex;
+  gap:10px;
+  margin-left:12px;
+}
+
+.btn {
+  padding:8px 14px;
+  border-radius:12px;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+  background:var(--surface2);
+  border:1px solid var(--border);
+}
+
+.btn.secondary {
+  background:transparent;
+}
+
+/* Mobile */
+.mobile-toggle {
+  display:none;
+  background:none;
+  border:none;
+  font-size:24px;
+  cursor:pointer;
+}
+
+#mobileNav {
+  display:none;
+  flex-direction:column;
+  background:var(--surface2);
+  padding:18px;
+  border-radius:16px;
+  margin:10px 18px;
+  box-shadow:var(--shadow);
+}
+
+#mobileNav.show {
+  display:flex;
+}
+
+#mobileNav a {
+  padding:10px 0;
+  border-bottom:1px solid var(--border);
+  text-decoration:none;
+  color:var(--text);
+}
+
+#mobileNav a:last-child {
+  border-bottom:none;
+}
+
+@media (max-width: 860px){
+  nav.primary {display:none !important;}
+  .mobile-toggle {display:inline-block !important;}
+  header {
+    flex-direction:column !important;
+    align-items:flex-start !important;
+    gap:10px;
+  }
+}
+
+/* --------------------------------------------------
+   BOOK HERO
+-------------------------------------------------- */
+.book-hero{
+  margin:22px auto 0;
+  max-width:var(--max);
+  border-radius: calc(var(--radius) + 2px);
+  background:
+    linear-gradient(180deg, rgba(7,26,51,0.92), rgba(7,26,51,0.88)),
+    url("/series/assets/ops-architecture-bg.jpg") center/cover no-repeat;
+  box-shadow: var(--heroShadow);
+  border: 1px solid rgba(255,255,255,0.10);
+  padding: 32px 26px;
+}
+
+.book-hero-inner{
+  display:grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap:28px;
+  align-items:center;
+}
+
+@media (max-width: 860px){
+  .book-hero-inner{grid-template-columns:1fr}
+}
+
+.book-cover-card{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--heroBorder);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.32);
+  max-width: 340px;
+}
+
+.book-cover-card img{
+  width:100%;
+  border-radius:12px;
+  display:block;
+}
+
+.book-hero-content h1{
+  margin:0 0 12px;
+  font-size:34px;
+  color:var(--heroText);
+}
+
+.book-subtitle{
+  margin:0 0 18px;
+  font-size:17px;
+  color:var(--heroMuted);
+  max-width:60ch;
+}
+
+.book-cta-row{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin:18px 0 10px;
+}
+
+.btnPrimary{
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(155,185,255,0.40);
+  color: var(--heroText);
+}
+
+.btnPrimary:hover{
+  background: rgba(255,255,255,0.14);
+}
+
+.secondary{
+  background:rgba(255,255,255,0.06);
+  border-color:var(--heroBorder);
+  color:var(--heroText);
+}
+
+.book-meta{
+  margin-top:12px;
+  font-size:13px;
+  color:var(--heroFaint);
+}
+
+/* --------------------------------------------------
+   GRID FIX (YOUR REQUEST #1)
+-------------------------------------------------- */
+.book-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-top: 34px;
+}
+
+@media (max-width: 860px) {
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------
+   NEW 3‑COLUMN SPONSOR ROW
+-------------------------------------------------- */
+.book-sponsor-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  margin-top: 48px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .book-sponsor-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------
+   CONTENT + FOOTER
+-------------------------------------------------- */
+.wrap{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:28px 18px 54px;
+}
+
+section{
+  margin-top:34px;
+}
+
+h2{
+  margin:0 0 12px;
+  font-size:24px;
+  color:var(--text);
+}
+
+p{
+  margin:0 0 14px;
+  color:var(--muted);
+}
+
+ul{
+  margin:0;
+  padding-left:20px;
+  color:var(--muted);
+}
+
+li{margin:8px 0}
+
+/* --------------------------------------------------
+   DARKER BOTTOM CTA (YOUR REQUEST #2)
+-------------------------------------------------- */
+.wrap .btnPrimary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.wrap .btnPrimary:hover {
+  background: #162f6b;
+  border-color: #162f6b;
+}
+
+footer{
+  margin-top:34px;
+  padding-top:18px;
+  border-top:1px solid var(--border);
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  color:var(--faint);
+  font-size:12.5px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- --------------------------------------------------
+     GLOBAL HEADER
+-------------------------------------------------- -->
+<header>
+
+  <a class="brand" href="/">
+    <img src="/favicon.png" alt="" style="width:44px;height:44px;border-radius:12px;">
+    <div class="titles">
+      <strong>RANDY ANTHONY</strong>
+      <span>Operational Reliability Advisory</span>
+    </div>
+  </a>
+
+  <nav class="primary" role="navigation" aria-label="Main navigation">
+    <a href="/">Home</a>
+    <a href="/series/">Operational Architecture Series</a>
+    <a href="/bio/">Bio</a>
+    <a href="/home.html">Offerings</a>
+    <a href="/book/">Book</a>
+    <a href="/radio/">Radio</a>
+
+    <div class="cta">
+      <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a consultation</a>
+      <a class="btn secondary" href="/home.html#about">About</a>
+    </div>
+  </nav>
+
+  <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileNav">
+    ☰
+  </button>
+
+</header>
+
+<nav id="mobileNav" class="mobile-nav" aria-hidden="true">
+  <a href="/">Home</a>
+  <a href="/series/">Operational Architecture Series</a>
+  <a href="/bio/">Bio</a>
+  <a href="/home.html">Offerings</a>
+  <a href="/book/">Book</a>
+  <a href="/radio/">Radio</a>
+  <a href="/home.html#about">About</a>
+</nav>
+
+<!-- --------------------------------------------------
+     HERO
+-------------------------------------------------- -->
+<section class="book-hero">
+  <div class="book-hero-inner">
+
+    <div class="book-cover-card">
+      <img src="/assets/RCECoverWrap.png" alt="Reliability Is Not Improvised book cover">
+    </div>
+
+    <div class="book-hero-content">
+      <h1>Reliability Is Not Improvised </h1>
+      <p class="book-subtitle">
+       How Systems Drift, Recover, and Behave Under Real-Time Pressure <br><br>
+       There is a moment in every real‑time environment when the system reveals itself. It may be a subtle timing shift, a hesitation in a signal, a pattern that feels slightly off. Most people never notice these moments. They see only the final outcome—the disruption, the failure, the visible break. But the operators who live inside these systems see something different. They see the sequence. They see the drift. They see the truth long before anyone else does. Randy Anthony is one of those operators.
+      </p>
+
+      <div class="book-cta-row">
+        <a 
+          href="https://www.amazon.com/FM-Modulation-Terrestrial-Communication-Silenced-ebook/dp/B0F2SCR4Z1?tag=mediaspeaks-20" 
+          class="btn btnPrimary"
+          target="_blank"
+          rel="noopener">
+          Buy on Amazon
+        </a>
+
+        <a href="#about-book" class="btn secondary">
+          What’s Inside
+        </a>
+      </div>
+
+      <p class="book-meta">
+        Available in Kindle and paperback • Published 2023
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- --------------------------------------------------
+     CONTENT
+-------------------------------------------------- -->
+<div class="wrap">
+
+<section id="about-book">
+  <h2>About the Book</h2>
+  <p>
+Real‑time systems do not fail suddenly. They fail quietly, gradually, and predictably—through sequences of small irregularities that accumulate until the truth can no longer be contained. In environments where timing, continuity, and precision matter, reliability is not a technical attribute. It is a discipline. It is the continuous negotiation between design, behavior, and human judgment.
+  </p>
+In Reliability Is Not Improvised, Randy Anthony reveals the hidden mechanics of failure in tightly coupled systems and introduces the Reaction Cascade Effect, a powerful framework that explains why small anomalies become large disruptions. Drawing from decades in broadcast operations—where the margin for error is measured in frames and the audience never waits—he exposes the physics of drift, the fragility of interfaces, the burden of automation, and the human factors that accelerate or suppress cascades.
+  </p>
+
+  </p>
+This is not a book about preventing failure. It is a book about understanding how failure behaves. It is about seeing the system as it truly is, not as we imagine it to be. It is about recognizing that reliability is earned, not installed, and that the cost of maintaining it never goes down.
+</section>
+
+<!-- --------------------------------------------------
+     2‑COLUMN GRID
+-------------------------------------------------- -->
+<div class="book-grid">
+
+  <section>
+    <h2>Who This Book Is For</h2>
+    <ul>
+      <li>Media Consumers</li>
+      <li>Media executives and strategists</li>
+      <li>Students of communications, media, and broadcast history</li>
+      <li>Anyone curious about how industries evolve — and how they can be rebuilt</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Key Insights</h2>
+    <ul>
+      <li>How small errors addup to a cascade </li>
+      <li>Why increasing alerts doesn't inprove reliability </li>
+      <li>The hidden cost of replacing operators with automation</li>
+      <li>What modern industries can learn from time-sensitive operations</li>
+    </ul>
+  </section>
+
+</div>
+
+<section>
+  <h2>About the Author</h2>
+  <p>
+  </p>
+Randy Anthony is an operator at heart. For decades he has worked inside real‑time environments where the system never stops, the audience never waits, and the truth is revealed in frames, not minutes. His career spans broadcast operations, digital media systems, live production, and the high‑pressure workflows that expose the gap between how systems are designed and how they actually behave. He has served as a director, producer, strategist, and advisor, helping organizations understand the physics of reliability and the human discipline required to maintain it.
+  </p>
+ <p>
+Randy’s work is grounded in the belief that reliability is not a technical attribute but a continuous practice. His writing blends operational clarity with systems thinking, offering a perspective shaped by years of watching complex environments drift, recover, and reveal their underlying structure. Reliability Is Not Improvised is his first major work on the subject, distilling a lifetime of experience into a framework for understanding how real‑time systems fail and what it takes to keep them stable.
+  </p>
+ <p>
+He lives in North Carolina, where he continues to work at the intersection of operations, strategy, and system behavior.
+  </p>
+</section>
+
+<!-- --------------------------------------------------
+     NEW 3‑COLUMN SPONSOR ROW (Get Book | Legal | Paychain)
+-------------------------------------------------- -->
+<div class="book-sponsor-row">
+
+  <!-- Column 1 — Get the Book -->
+  <section>
+    <h2>Get the Book</h2>
+    <p>Available now on Amazon in Kindle and paperback formats.</p>
+
+    <a 
+      href="https://www.amazon.com/FM-Modulation-Terrestrial-Communication-Silenced-ebook/dp/B0F2SCR4Z1?tag=mediaspeaks-20" 
+      class="btn btnPrimary"
+      target="_blank"
+      rel="noopener">
+      Buy on Amazon
+    </a>
+  </section>
+
+  <!-- Column 2 — LegalShield -->
   <article class="card" role="listitem" aria-labelledby="g1" style="background-color:#2f3a44; color:#ffffff;">
     <h3 id="g1">SPONSORED BY: Legal Sheild</h3>
     <p style="color:#cbd5e1;">
@@ -14,10 +519,44 @@
     </p>
   </article>
 
+  <!-- Column 3 — Piety Paychain -->
   <article class="card" role="listitem" aria-labelledby="g4" style="background-color:#2f3a44; color:#ffffff;">
     <h3 id="g4">SPONSORED BY: The Piety Paychain</h3>
     <p style="color:#cbd5e1;">
       Helping to fund these pages.<br>
+      Learn more about the Piety Paychain
+    </p>
+    <p style="margin-top:12px">
+      <a class="btn" href="/2026/">Explore Paychain→</a>
+    </p>
+  </article>
+
+</div>
+
+    <footer>
+      <div>© <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.</div>
+      <div class="smallLinks">
+        <a href="/">Home Page</a>
+      </div>
+    </footer>
+
+</div>
+
+<script>
+const btn = document.getElementById('mobileToggle');
+const panel = document.getElementById('mobileNav');
+
+if (btn && panel) {
+  btn.addEventListener('click', () => {
+    const isOpen = panel.classList.toggle('show');
+    panel.setAttribute('aria-hidden', !isOpen);
+    btn.setAttribute('aria-expanded', isOpen);
+  });
+}
+</script>
+
+</body>
+</html>
       Learn more about the Piety Paychain
     </p>
     <p style="margin-top:12px">
