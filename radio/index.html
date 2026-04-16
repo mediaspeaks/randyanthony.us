@@ -135,14 +135,27 @@ nav.primary a:hover {
   cursor:pointer;
 }
 
-#mobileNav {
+.mobile-nav{
   display:none;
-  flex-direction:column;
-  background:var(--surface2);
-  padding:18px;
-  border-radius:16px;
-  margin:10px 18px;
-  box-shadow:var(--shadow);
+  position:fixed !important;
+
+  top:60px !important;
+  left:0 !important;
+  right:0 !important;
+
+  margin:0 auto;
+  width:calc(100% - 24px);
+  max-width:500px;
+
+  z-index:3000 !important;
+
+  background:#ffffff !important;
+  border-radius:12px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+
+  padding:12px;
+
+  isolation:isolate; /* key: prevents blending */
 }
 
 #mobileNav.show {
