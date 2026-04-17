@@ -254,7 +254,11 @@ main{
 .split-post .post-text{
   width:100%;
 }
-
+.split{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 /* DESKTOP */
 @media (min-width: 800px){
 
