@@ -219,3 +219,9 @@ footer{
     display: block;
   }
 }
+/* Brand logo sizing (global fix) */
+.brand img{
+  width:44px;
+  height:44px;
+  border-radius:12px;
+}
