@@ -125,7 +125,9 @@ nav.primary{
   gap:14px;
   align-items:center;
 }
-
+nav.primary a{
+  white-space:nowrap;
+}
 /* ADD THIS RIGHT HERE */
 nav.primary a{
   text-decoration:none;
