@@ -169,11 +169,11 @@ main{
 /* HERO OPS */
 .hero-ops{
   position:relative;
-  background: linear-gradient(rgba(8,22,40,.85),rgba(8,22,40,.85)),
-              url("/series/assets/ops-architecture-bg.jpg") center / cover no-repeat;
-  color:#ffffff;
-  padding:60px 20px 50px;
-  text-align:center;
+  background: var(--surface);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:24px 20px;
+  text-align:left;
   max-width:var(--max);
   margin:0 auto;
 }
