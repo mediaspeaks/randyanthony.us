@@ -2,7 +2,9 @@
    SERIES DESIGN COMPONENTS ONLY
    (NO SYSTEM / NO LAYOUT CONFLICTS)
 ============================================ */
-
+body{
+  color: var(--text);
+}
 /* Base tweaks */
 main{
   position:relative;
