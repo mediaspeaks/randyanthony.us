@@ -42,12 +42,15 @@ main{
 
 /* GRID */
 .grid{
+  display:grid;
   grid-template-columns:1fr;
+  gap:14px;
+  margin-bottom:28px;
 }
 
 @media (min-width:900px){
   .grid{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1.35fr .65fr;
   }
 }
 
