@@ -237,3 +237,33 @@ main{
 .t11{bottom:160px;left:-60px;}
 .t12{bottom:80px;right:-40px;}
 .t13{bottom:-20px;left:20%;}
+
+.split-post{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:18px;
+  align-items:start;
+}
+
+.split-post .post-image{
+  width:100%;
+  max-width:420px;
+  margin:0 auto;
+}
+
+.split-post .post-text{
+  width:100%;
+}
+
+/* DESKTOP */
+@media (min-width: 800px){
+
+  .split-post{
+    grid-template-columns: 420px 1fr;
+    gap:24px;
+  }
+
+  .split-post .post-image{
+    margin:0;
+  }
+}
