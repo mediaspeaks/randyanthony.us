@@ -116,6 +116,20 @@ nav.primary{
   align-items:center;
 }
 
+/* ADD THIS RIGHT HERE */
+nav.primary a{
+  text-decoration:none;
+  font-size:13px;
+  color:var(--muted);
+  padding:8px 10px;
+  border-radius:12px;
+}
+
+nav.primary a:hover{
+  background: var(--surface);
+  color: var(--text);
+}
+
 /* Mobile toggle button */
 .mobile-toggle{
   display:none;
