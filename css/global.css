@@ -210,3 +210,12 @@ footer{
   background:var(--surface);
   color:var(--muted);
 }
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 640px){
+  .mobile-nav.show {
+    display: block;
+  }
+}
