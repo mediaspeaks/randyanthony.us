@@ -92,22 +92,40 @@ header.site-header{
   margin-bottom:8px;
 }
 
-/* ============================================
-   MOBILE SYSTEM
-============================================ */
-nav.primary{
+/* Brand layout */
+header.site-header .brand{
   display:flex;
+  align-items:center;
+  gap:12px;
 }
 
-/* MOBILE TOGGLE */
+.brand img{
+  width:44px;
+  height:44px;
+  border-radius:12px;
+}
+
+/* ============================================
+   NAV + MOBILE SYSTEM
+============================================ */
+
+/* Desktop nav */
+nav.primary{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+
+/* Mobile toggle button */
 .mobile-toggle{
   display:none;
   border:0;
   background:transparent;
   font-size:18px;
+  cursor:pointer;
 }
 
-/* MOBILE BREAKPOINT */
+/* Mobile breakpoint */
 @media (max-width: 640px){
 
   header.site-header{
@@ -129,7 +147,7 @@ nav.primary{
   }
 }
 
-/* MOBILE NAV PANEL */
+/* Mobile nav panel */
 .mobile-nav{
   display:none;
   position:fixed;
@@ -161,6 +179,7 @@ nav.primary{
 .mobile-nav.show{
   display:block;
 }
+
 /* ============================================
    BUTTONS
 ============================================ */
@@ -214,25 +233,4 @@ footer{
 .smallLinks a:hover{
   background:var(--surface);
   color:var(--muted);
-}
-.mobile-nav {
-  display: none;
-}
-
-@media (max-width: 640px){
-  .mobile-nav.show {
-    display: block;
-  }
-}
-/* Brand logo sizing (global fix) */
-.brand img{
-  width:44px;
-  height:44px;
-  border-radius:12px;
-}
-header.site-header .brand{
-  display:flex;
-  flex-direction:row;
-  align-items:center;
-  gap:12px;
 }
