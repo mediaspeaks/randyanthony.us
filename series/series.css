@@ -174,8 +174,6 @@ main{
   border-radius:18px;
   padding:24px 20px;
   text-align:left;
-  max-width:var(--max);
-  margin:0 auto;
 }
 
 .hero-title{
