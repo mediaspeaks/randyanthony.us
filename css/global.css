@@ -256,7 +256,13 @@ footer{
   color:var(--faint);
   font-size:12.5px;
 }
-
+footer .wrap{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+}
 .smallLinks{
   display:flex;
   gap:10px;
