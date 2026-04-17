@@ -104,7 +104,16 @@ header.site-header .brand{
   height:44px;
   border-radius:12px;
 }
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
 
+.brand strong,
+.brand span{
+  white-space:nowrap;
+}
 /* ============================================
    NAV + MOBILE SYSTEM
 ============================================ */
