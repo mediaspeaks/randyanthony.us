@@ -276,7 +276,10 @@ footer .wrap{
   padding:6px 8px;
   border-radius:10px;
 }
-
+.site-foot .smallLinks a{
+  color:var(--muted);
+  text-decoration:underline;
+}
 .smallLinks a:hover{
   background:var(--surface);
   color:var(--muted);
