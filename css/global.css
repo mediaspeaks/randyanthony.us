@@ -81,6 +81,7 @@ header.site-header{
   justify-content:space-between;
   gap:16px;
   padding:14px 18px;
+  height:60px;
   max-width:var(--max);
   margin:0 auto;
   position:sticky;
@@ -89,7 +90,7 @@ header.site-header{
   background: rgba(255,255,255,0.92);
   backdrop-filter: blur(6px);
   border-bottom:1px solid var(--border);
-  margin-bottom:8px;
+  margin-bottom:8px;  
 }
 
 /* Brand layout */
