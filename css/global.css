@@ -95,6 +95,11 @@ header.site-header{
 /* ============================================
    MOBILE SYSTEM
 ============================================ */
+nav.primary{
+  display:flex;
+}
+
+/* MOBILE TOGGLE */
 .mobile-toggle{
   display:none;
   border:0;
@@ -102,6 +107,7 @@ header.site-header{
   font-size:18px;
 }
 
+/* MOBILE BREAKPOINT */
 @media (max-width: 640px){
 
   header.site-header{
@@ -123,7 +129,7 @@ header.site-header{
   }
 }
 
-/* Overlay mobile nav */
+/* MOBILE NAV PANEL */
 .mobile-nav{
   display:none;
   position:fixed;
@@ -131,6 +137,17 @@ header.site-header{
   left:12px;
   right:12px;
   z-index:1500;
+
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95));
+  border-radius:12px;
+  box-shadow: var(--shadow);
+  padding:12px;
+  border:1px solid var(--border);
+}
+
+.mobile-nav.show{
+  display:block;
+}
 
   background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95));
   border-radius:12px;
