@@ -268,3 +268,15 @@ main{
     margin:0;
   }
 }
+.sponsor-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+  margin:28px 0;
+}
+
+@media (min-width:900px){
+  .sponsor-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
