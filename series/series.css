@@ -241,3 +241,8 @@ main{
   max-width: var(--max);
   margin: 0 auto;
 }
+
+.hero-ops img {
+  max-width: 100%;
+  height: auto;
+}
