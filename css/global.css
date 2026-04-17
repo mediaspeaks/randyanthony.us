@@ -145,9 +145,6 @@ nav.primary{
   border:1px solid var(--border);
 }
 
-
-
-
 .mobile-nav a{
   display:block;
   padding:10px 8px;
@@ -161,8 +158,9 @@ nav.primary{
   margin-top:6px;
 }
 
-
-
+.mobile-nav.show{
+  display:block;
+}
 /* ============================================
    BUTTONS
 ============================================ */
