@@ -59,7 +59,7 @@ main{
   border:1px solid var(--border);
   border-radius:18px;
   padding:18px;
-  background: rgba(17,28,51,.70);
+  background: var(--surface);
 }
 
 .card h2{margin:0 0 10px;font-size:1.15rem}
