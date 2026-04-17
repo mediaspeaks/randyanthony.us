@@ -199,9 +199,11 @@ main{
 /* POST IMAGE */
 .post-image{
   width:100%;
+  max-width:720px;
   height:auto;
   border-radius:12px;
-  margin-bottom:24px;
+  margin:0 auto 24px;
+  display:block;
 }
 
 /* BACKGROUND DECOR */
