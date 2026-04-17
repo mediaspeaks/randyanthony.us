@@ -170,7 +170,7 @@ main{
   background: linear-gradient(rgba(8,22,40,.85),rgba(8,22,40,.85)),
               url("/series/assets/ops-architecture-bg.jpg") center / cover no-repeat;
   color:#ffffff;
-  padding:140px 20px 120px;
+  padding:60px 20px 50px;
   text-align:center;
 }
 .hero-title{
