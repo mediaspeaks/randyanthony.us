@@ -235,3 +235,4 @@ main{
 .t11{bottom:160px;left:-60px;}
 .t12{bottom:80px;right:-40px;}
 .t13{bottom:-20px;left:20%;}
+.wrap { max-width: var(--max); padding: 22px 18px 40px; }
