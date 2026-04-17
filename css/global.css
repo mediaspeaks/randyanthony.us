@@ -115,6 +115,13 @@ header.site-header .brand{
 .brand span{
   white-space:nowrap;
 }
+.brand{
+  line-height:1;
+}
+
+.brand span{
+  display:inline;
+}
 /* ============================================
    NAV + MOBILE SYSTEM
 ============================================ */
