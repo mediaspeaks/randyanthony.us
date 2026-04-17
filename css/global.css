@@ -1,6 +1,6 @@
 /* ============================================
    GLOBAL VARIABLES
-   ============================================ */
+============================================ */
 :root{
   --bg: #f6f7fb;
   --bg2:#eef2f8;
@@ -44,8 +44,8 @@
 }
 
 /* ============================================
-   GLOBAL RESET + BODY
-   ============================================ */
+   RESET + BODY
+============================================ */
 *{box-sizing:border-box}
 html,body{height:100%}
 
@@ -62,12 +62,19 @@ body{
 }
 
 a{color:inherit}
-.wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 54px}
 
-/* =========================
-   GLOBAL HEADER SYSTEM
-========================= */
+/* ============================================
+   LAYOUT
+============================================ */
+.wrap{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:22px 18px 40px;
+}
 
+/* ============================================
+   HEADER SYSTEM
+============================================ */
 header.site-header{
   display:flex;
   align-items:center;
@@ -82,16 +89,12 @@ header.site-header{
   background: rgba(255,255,255,0.92);
   backdrop-filter: blur(6px);
   border-bottom:1px solid var(--border);
+  margin-bottom:8px;
 }
-.wrap{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:22px 18px 40px;
-}
-/* =========================
-   MOBILE SYSTEM
-========================= */
 
+/* ============================================
+   MOBILE SYSTEM
+============================================ */
 .mobile-toggle{
   display:none;
   border:0;
@@ -99,7 +102,6 @@ header.site-header{
   font-size:18px;
 }
 
-/* breakpoint */
 @media (max-width: 640px){
 
   header.site-header{
@@ -121,7 +123,7 @@ header.site-header{
   }
 }
 
-/* overlay menu */
+/* Overlay mobile nav */
 .mobile-nav{
   display:none;
   position:fixed;
@@ -155,38 +157,56 @@ header.site-header{
 }
 
 /* ============================================
-   GLOBAL BUTTONS
-   ============================================ */
-
+   BUTTONS
+============================================ */
 .btn{
-  display:inline-flex; align-items:center; justify-content:center;
-  padding:11px 14px; border-radius:14px;
-  text-decoration:none; font-weight:680; font-size:14px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:11px 14px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:680;
+  font-size:14px;
   border:1px solid var(--border);
   background: var(--surface2);
-  transition: transform .06s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease;
 }
 
-.btn:hover{background: var(--surface); transform: translateY(-1px)}
+.btn:hover{
+  background: var(--surface);
+  transform: translateY(-1px);
+}
 
 /* ============================================
-   GLOBAL FOOTER
-   ============================================ */
-
+   FOOTER
+============================================ */
 footer{
-  margin-top:34px; padding-top:18px;
+  margin-top:34px;
+  padding-top:18px;
   border-top:1px solid var(--border);
-  display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between;
-  color:var(--faint); font-size:12.5px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  color:var(--faint);
+  font-size:12.5px;
 }
 
-.smallLinks{display:flex; gap:10px; flex-wrap:wrap}
-.smallLinks a{color:var(--faint); text-decoration:none; padding:6px 8px; border-radius:10px}
-.smallLinks a:hover{background:var(--surface); color:var(--muted)}
+.smallLinks{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
 
-/* Force global layout consistency */
-.wrap{
-  max-width:var(--max) !important;
-  margin:0 auto;
-  padding:22px 18px 40px !important;
+.smallLinks a{
+  color:var(--faint);
+  text-decoration:none;
+  padding:6px 8px;
+  border-radius:10px;
+}
+
+.smallLinks a:hover{
+  background:var(--surface);
+  color:var(--muted);
 }
