@@ -133,6 +133,7 @@ nav.primary{
   display:flex;
   gap:14px;
   align-items:center;
+  flex-wrap:nowrap;
 }
 nav.primary a{
   white-space:nowrap;
