@@ -225,3 +225,9 @@ footer{
   height:44px;
   border-radius:12px;
 }
+header.site-header .brand{
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  gap:12px;
+}
