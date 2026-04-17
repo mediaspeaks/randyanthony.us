@@ -94,10 +94,11 @@ header.site-header{
 }
 
 /* Brand layout */
-header.site-header .brand{
+.brand{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:10px;
+  line-height:1;
 }
 
 .brand img{
