@@ -109,19 +109,9 @@ header.site-header{
     padding:0 14px;
   }
 
-  nav.primary {
-    display: none;
+  nav.primary{
+    display:none;
   }
-
-  .mobile-toggle{
-    display:flex;
-    width:48px;
-    height:48px;
-    align-items:center;
-    justify-content:center;
-    font-size:22px;
-  }
-}
 
   .mobile-toggle{
     display:flex;
