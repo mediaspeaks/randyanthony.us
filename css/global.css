@@ -151,7 +151,10 @@ nav.primary a:hover{
   background: var(--surface);
   color: var(--text);
 }
-
+nav.primary .btn{
+  padding:9px 12px;
+  font-size:13px;
+}
 /* Mobile toggle button */
 .mobile-toggle{
   display:none;
