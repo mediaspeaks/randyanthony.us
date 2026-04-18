@@ -283,3 +283,28 @@ main{
     grid-template-columns:1fr 1fr;
   }
 }
+.hero-ops{
+  display:grid;
+  grid-template-columns: 260px 1fr;
+  gap:24px;
+  align-items:center;
+}
+
+.hero-ops img{
+  width:100%;
+  max-width:240px;
+  border-radius:12px;
+  display:block;
+}
+
+/* mobile fallback */
+@media (max-width:700px){
+  .hero-ops{
+    grid-template-columns:1fr;
+  }
+
+  .hero-ops img{
+    max-width:320px;
+    margin:0 auto;
+  }
+}
