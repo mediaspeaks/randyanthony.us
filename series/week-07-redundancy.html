@@ -4,166 +4,268 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Week 7 — Redundancy | Randy Anthony</title>
-  <link rel="stylesheet" href="/series/series.css" />
+
+  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/series/series.css">
+
+  <meta name="description" content="Week 7 — Redundancy: True reliability in time-critical systems comes from independent failure paths, not simple duplication." />
 </head>
+
 <body>
-  <header class="header">
-    <div class="wrap">
-      <div class="brand">
-        <strong>RANDY ANTHONY</strong>
-        <small>Operational reliability advisory</small>
-      </div>
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a href="/series/">Series</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="wrap">
-    <section class="hero">
-      <div class="kicker">Quarter 1 · Week 7</div>
-      <h1 class="post-title">What Time-Critical Operations Teach Us About Redundancy</h1>
-      <p class="meta">
-        Topic word: Redundancy ·
-        <a href="https://www.linkedin.com/posts/randy-anthony-07547410b_what-time-critical-operations-teach-you-about-activity-7437497654647050240-xOBL?utm_source=share&utm_medium=member_desktop&rcm=ACoAABunslkBFatGOuGkV8R5dPmSEp8H4KCG7pQ">View on LinkedIn</a>
+<header class="site-header">
+
+  <a class="brand" href="/">
+    <img src="/favicon.png" alt="" style="width:44px;height:44px;border-radius:12px;">
+    <div class="titles">
+      <strong>RANDY ANTHONY</strong>
+      <span>Operational Reliability Advisory</span>
+    </div>
+  </a>
+
+  <nav class="primary" role="navigation" aria-label="Main navigation">
+    <a href="/">Home</a>
+    <a href="/series/">Operational Series</a>
+    <a href="/home.html">Offerings</a>
+    <a href="/bio/">Bio</a>
+    <a href="/book/">Book</a>
+    <a href="/radio/">Radio</a>
+
+    <div class="cta">
+      <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">
+        Request a consultation
+      </a>
+    </div>
+  </nav>
+
+  <button class="mobile-toggle" aria-expanded="false">☰</button>
+</header>
+
+<div class="mobile-nav" aria-hidden="true">
+  <a href="/">Home</a>
+  <a href="/series/">Operational Series</a>
+  <a href="/home.html">Offerings</a>
+  <a href="/bio/">Bio</a>
+  <a href="/book/">Book</a>
+  <a href="/radio/">Radio</a>
+</div>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="kicker">Quarter 1 · Week 7</div>
+
+    <h1 class="hero-title">
+      What Time-Critical Operations Teach Us About Redundancy
+    </h1>
+
+    <p class="meta">
+      Topic word: Redundancy ·
+      <a href="https://www.linkedin.com/posts/randy-anthony-07547410b_what-time-critical-operations-teach-you-about-activity-7437497654647050240-xOBL?utm_source=share&utm_medium=member_desktop&rcm=ACoAABunslkBFatGOuGkV8R5dPmSEp8H4KCG7pQ" target="_blank" rel="noopener">
+        View on LinkedIn
+      </a>
+    </p>
+  </section>
+
+  <section class="card body split-post">
+
+    <img src="/series/assets/week-07-redundancy.png"
+         alt="Week 7 — Redundancy"
+         class="post-image">
+
+    <div class="post-text">
+
+      <p>Redundancy is one of the most misunderstood ideas in operational environments.</p>
+
+      <p>It is often treated as duplication.</p>
+
+      <p>
+        Add another server.<br>
+        Add a backup feed.<br>
+        Mirror the system.<br>
+        Create a second control path.
       </p>
-    </section>
-<section class="card body">
 
-  <img src="/series/assets/week-07-redundancy.png"
-       alt="Week 7 — Redundancy"
-       class="post-image">
+      <p>At first glance, this appears responsible. More components should mean more protection.</p>
 
-  <p>Redundancy is one of the most misunderstood ideas in operational environments.</p>
+      <p>But duplication alone does not create reliability.</p>
 
-  <p>It is often treated as duplication.</p>
+      <p>
+        True redundancy is not about quantity.<br>
+        It is about independence.
+      </p>
 
-  <p>
-  Add another server.<br>
-  Add a backup feed.<br>
-  Mirror the system.<br>
-  Create a second control path.
-  </p>
+      <p>
+        In time-critical systems, redundancy exists for a very specific purpose: to prevent a single disruption from becoming a visible failure.
+      </p>
 
-  <p>At first glance, this appears responsible. More components should mean more protection.</p>
+      <p>
+        That requires understanding not only what can fail, but how failure moves through a system.
+      </p>
 
-  <p>But duplication alone does not create reliability.</p>
+      <p>
+        A second playout chain is not redundant if both chains depend on the same ingest pipeline.
+      </p>
 
-  <p>True redundancy is not about quantity.<br>
-  It is about independence.</p>
+      <p>
+        A mirrored automation environment is not redundant if both instances rely on the same configuration assumptions.
+      </p>
 
-  <p>
-  In time-critical systems, redundancy exists for a very specific purpose: to prevent a single disruption from becoming a visible failure.
-  </p>
+      <p>
+        A backup procedure is not redundancy if the people responsible for activating it are unclear about when or how to do so.
+      </p>
 
-  <p>
-  That requires understanding not only what can fail, but how failure moves through a system.
-  </p>
+      <p>Redundancy only works when failure domains are genuinely separated.</p>
 
-  <p>
-  A second playout chain is not redundant if both chains depend on the same ingest pipeline.
-  </p>
+      <p>
+        In broadcast and streaming operations, redundancy is typically layered across multiple parts of the environment:
+      </p>
 
-  <p>
-  A mirrored automation environment is not redundant if both instances rely on the same configuration assumptions.
-  </p>
+      <p>
+        Signal paths<br>
+        Network routes<br>
+        Storage systems<br>
+        Control systems<br>
+        Human oversight
+      </p>
 
-  <p>
-  A backup procedure is not redundancy if the people responsible for activating it are unclear about when or how to do so.
-  </p>
+      <p>Each layer exists to absorb disruption before it reaches the audience.</p>
 
-  <p>Redundancy only works when failure domains are genuinely separated.</p>
+      <p>But each layer also introduces complexity.</p>
 
-  <p>
-  In broadcast and streaming operations, redundancy is typically layered across multiple parts of the environment:
-  </p>
+      <p>And complexity, when poorly understood, creates its own risk.</p>
 
-  <p>
-  Signal paths<br>
-  Network routes<br>
-  Storage systems<br>
-  Control systems<br>
-  Human oversight
-  </p>
+      <p>
+        Many systems appear redundant while quietly sharing hidden dependencies. When those dependencies fail, multiple safeguards collapse at the same moment.
+      </p>
 
-  <p>Each layer exists to absorb disruption before it reaches the audience.</p>
+      <p>
+        This is the redundancy illusion: believing protection exists because duplicate components are present, even though those components rely on the same underlying structure.
+      </p>
 
-  <p>But each layer also introduces complexity.</p>
+      <p>Effective redundancy requires discipline.</p>
 
-  <p>And complexity, when poorly understood, creates its own risk.</p>
+      <p>
+        Independent — so failures do not share a root cause<br>
+        Observable — so its health can be verified continuously<br>
+        Documented — so activation procedures are clear<br>
+        Tested — so recovery is practiced before it is required
+      </p>
 
-  <p>
-  Many systems appear redundant while quietly sharing hidden dependencies. When those dependencies fail, multiple safeguards collapse at the same moment.
-  </p>
+      <p>Testing matters more than presence.</p>
 
-  <p>
-  This is the redundancy illusion: believing protection exists because duplicate components are present, even though those components rely on the same underlying structure.
-  </p>
+      <p>
+        In many environments, backup mechanisms exist but are never exercised under realistic conditions. Failover paths are documented but not rehearsed. Recovery procedures are assumed rather than confirmed.
+      </p>
 
-  <p>Effective redundancy requires discipline.</p>
+      <p>The first true test then occurs during a live failure.</p>
 
-  <p>
-  Independent — so failures do not share a root cause<br>
-  Observable — so its health can be verified continuously<br>
-  Documented — so activation procedures are clear<br>
-  Tested — so recovery is practiced before it is required
-  </p>
+      <p>That is not redundancy.</p>
 
-  <p>Testing matters more than presence.</p>
+      <p>That is optimism.</p>
 
-  <p>
-  In many environments, backup mechanisms exist but are never exercised under realistic conditions. Failover paths are documented but not rehearsed. Recovery procedures are assumed rather than confirmed.
-  </p>
+      <p>
+        Operational maturity means designing redundant systems with the same care given to primary systems.
+      </p>
 
-  <p>The first true test then occurs during a live failure.</p>
+      <p>
+        Clear ownership must exist for initiating failover. Operators must understand the conditions that justify switching paths. Downstream dependencies must be mapped so that recovery does not introduce new disruption.
+      </p>
 
-  <p>That is not redundancy.</p>
+      <p>Even well-designed redundancy must answer a simple question:</p>
 
-  <p>That is optimism.</p>
+      <p><strong>What actually happens when the primary system stops working?</strong></p>
 
-  <p>
-  Operational maturity means designing redundant systems with the same care given to primary systems.
-  </p>
+      <p>If that answer is uncertain, redundancy has not yet been achieved.</p>
 
-  <p>
-  Clear ownership must exist for initiating failover. Operators must understand the conditions that justify switching paths. Downstream dependencies must be mapped so that recovery does not introduce new disruption.
-  </p>
+      <p>Reliable systems do not eliminate failure.</p>
 
-  <p>Even well-designed redundancy must answer a simple question:</p>
+      <p>They design for survivability when failure occurs.</p>
 
-  <p><strong>What actually happens when the primary system stops working?</strong></p>
+      <p>
+        Because in time-critical operations, the presence of redundancy is not what protects stability.
+      </p>
 
-  <p>If that answer is uncertain, redundancy has not yet been achieved.</p>
+      <p><strong>Clarity of architecture does.</strong></p>
 
-  <p>Reliable systems do not eliminate failure.</p>
+      <p>
+        Redundancy is not excess.<br>
+        It is deliberate resilience engineered before pressure arrives.
+      </p>
 
-  <p>They design for survivability when failure occurs.</p>
-
-  <p>
-  Because in time-critical operations, the presence of redundancy is not what protects stability.
-  </p>
-
-  <p><strong>Clarity of architecture does.</strong></p>
-
-  <p>
-  Redundancy is not excess.<br>
-  It is deliberate resilience engineered before pressure arrives.
-  </p>
-
-  <div class="hr"></div>
-
-  <p class="meta">
-    Next: <a href="/series/week-08-small-errors.html">Week 8 — Small Errors</a>
-  </p>
-
-</section>
-  </main>
-
-  <footer class="footer">
-    <div class="wrap">
-      <small>© Randy Anthony. All rights reserved.</small>
     </div>
-  </footer>
+
+  </section>
+
+  <section class="split">
+
+    <div>
+      <a class="btn" href="/series/week-06-missing-content.html">
+        ← Week 6 — Missing Content
+      </a>
+    </div>
+
+    <div>
+      <a class="btn" href="/series/week-08-small-errors.html">
+        Next → Week 8 — Small Errors
+      </a>
+    </div>
+
+  </section>
+
+  <div class="sponsor-grid" role="list">
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: Legal Shield</h3>
+      <p style="color:#cbd5e1;">
+        Legal Shield & ID Shield<br>
+        Protecting Families & Businesses Nationwide.
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/legal/">Explore Plans →</a>
+      </p>
+    </article>
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: The Piety Paychain</h3>
+      <p style="color:#cbd5e1;">
+        Helping to fund these pages.<br>
+        Learn more about the Piety Paychain
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/2026/">Explore Paychain →</a>
+      </p>
+    </article>
+
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      © <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.
+    </div>
+
+    <div class="smallLinks">
+      <a href="/">Home Page</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const btn = document.querySelector('.mobile-toggle');
+  const panel = document.querySelector('.mobile-nav');
+
+  if (btn && panel) {
+    btn.addEventListener('click', () => {
+      const isOpen = panel.classList.toggle('show');
+      panel.setAttribute('aria-hidden', !isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  }
+</script>
+
 </body>
 </html>
