@@ -4,125 +4,248 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Week 13 — Architecture | Randy Anthony</title>
-  <link rel="stylesheet" href="/series/series.css" />
+
+  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/series/series.css">
+
+  <meta name="description" content="Week 13 — Architecture: Operational stability in time-critical systems is the result of intentional system design, not isolated performance." />
 </head>
+
 <body>
-  <header class="header">
-    <div class="wrap">
-      <div class="brand">
-        <strong>RANDY ANTHONY</strong>
-        <small>Operational reliability advisory</small>
-      </div>
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a href="/series/">Series</a>
-      </nav>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+
+  <a class="brand" href="/">
+    <img src="/favicon.png" alt="" style="width:44px;height:44px;border-radius:12px;">
+    <div class="titles">
+      <strong>RANDY ANTHONY</strong>
+      <span>Operational Reliability Advisory</span>
     </div>
-  </header>
+  </a>
 
-  <main class="wrap">
-    <section class="hero">
-      <div class="kicker">Quarter 1 · Week 13</div>
-      <h1 class="post-title">What Time-Critical Operations Teach You About Architecture</h1>
-      <p class="meta">
-        Topic word: Architecture ·
-        <a href="/series/soon.html" target="_blank" rel="noopener">View on LinkedIn</a>
-      </p>
-    </section>
+  <nav class="primary" role="navigation" aria-label="Main navigation">
+    <a href="/">Home</a>
+    <a href="/series/">Operational Series</a>
+    <a href="/home.html">Offerings</a>
+    <a href="/bio/">Bio</a>
+    <a href="/book/">Book</a>
+    <a href="/radio/">Radio</a>
 
- <section class="card body">
-
-  <img src="/series/assets/week-13-architecture.png"
-       alt="Week 13 — Architecture"
-       class="post-image">
-
-  <p><strong>What Time-Critical Operations Teach You About Architecture</strong></p>
-
-  <p>Operational stability is rarely accidental.</p>
-
-  <p>It is the result of architecture.</p>
-
-  <p>In time-critical environments, architecture determines how systems behave under pressure.</p>
-
-  <p>Well-designed systems contain disruption.</p>
-
-  <p>Poorly designed systems allow small issues to propagate.</p>
-
-  <p>In broadcast and streaming operations, architecture governs how components interact: ingest pipelines, automation platforms, routing infrastructure, monitoring systems, and distribution networks.</p>
-
-  <p>Each component may function perfectly in isolation.</p>
-
-  <p>Yet reliability depends on how they connect.</p>
-
-  <p>Architecture defines those connections.</p>
-
-  <p>
-  It determines where redundancy exists.<br>
-  Where dependencies concentrate.<br>
-  Where visibility is available.<br>
-  And where failure might spread.
-  </p>
-
-  <p>Many operational problems trace back to architectural assumptions that were never revisited.</p>
-
-  <p>Systems evolve.</p>
-
-  <p>Workflows change.</p>
-
-  <p>New tools are introduced.</p>
-
-  <p>But the underlying architecture remains unchanged.</p>
-
-  <p>Over time, these adjustments create hidden complexity.</p>
-
-  <p>Operators learn to navigate that complexity through experience and workarounds.</p>
-
-  <p>But workarounds are not architecture.</p>
-
-  <p>Reliable systems periodically step back and evaluate their structure.</p>
-
-  <p>
-  They map dependencies.<br>
-  They identify single points of failure.<br>
-  They examine whether monitoring reflects current operational reality.
-  </p>
-
-  <p>Architecture also determines how easily systems can recover from disruption.</p>
-
-  <p>If failover paths are clearly defined, recovery becomes controlled.</p>
-
-  <p>If dependencies are poorly understood, recovery becomes improvisation.</p>
-
-  <p>In time-critical operations, improvisation is rarely sustainable.</p>
-
-  <p>Architecture provides the structure that allows teams to respond calmly when something unexpected occurs.</p>
-
-  <p>Instead of inventing solutions in the moment, operators follow paths that were designed in advance.</p>
-
-  <p>Reliable operations therefore treat architecture as an ongoing discipline.</p>
-
-  <p>Systems are reviewed.</p>
-
-  <p>Dependencies are re-evaluated.</p>
-
-  <p>Operational experience informs structural improvements.</p>
-
-  <p>Because reliability does not emerge from individual effort alone.</p>
-
-  <p>It emerges from systems designed to support it.</p>
-
-  <p>Architecture is where that design begins.</p>
-   <div class="hr"></div>
-      <p class="meta">
-        Next: <a href="/series/">Back to Series</a>
-      </p>
-</section>
-  </main>
-
-  <footer class="footer">
-    <div class="wrap">
-      <small>© Randy Anthony. All rights reserved.</small>
+    <div class="cta">
+      <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">
+        Request a consultation
+      </a>
     </div>
-  </footer>
+  </nav>
+
+  <button class="mobile-toggle" aria-expanded="false">☰</button>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" aria-hidden="true">
+  <a href="/">Home</a>
+  <a href="/series/">Operational Series</a>
+  <a href="/home.html">Offerings</a>
+  <a href="/bio/">Bio</a>
+  <a href="/book/">Book</a>
+  <a href="/radio/">Radio</a>
+</div>
+
+<!-- ================= MAIN ================= -->
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="kicker">Quarter 1 · Week 13</div>
+
+    <h1 class="hero-title">
+      What Time-Critical Operations Teach You About Architecture
+    </h1>
+
+    <p class="meta">
+      Topic word: Architecture ·
+      <a href="/series/soon.html" target="_blank" rel="noopener">
+        View on LinkedIn
+      </a>
+    </p>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="card body split-post">
+
+    <img src="/series/assets/week-13-architecture.png"
+         alt="Week 13 — Architecture"
+         class="post-image">
+
+    <div class="post-text">
+
+      <p><strong>What Time-Critical Operations Teach You About Architecture</strong></p>
+
+      <p>Operational stability is rarely accidental.</p>
+
+      <p>It is the result of architecture.</p>
+
+      <p>In time-critical environments, architecture determines how systems behave under pressure.</p>
+
+      <p>Well-designed systems contain disruption.</p>
+
+      <p>Poorly designed systems allow small issues to propagate.</p>
+
+      <p>
+        In broadcast and streaming operations, architecture governs how components interact: ingest pipelines, automation platforms, routing infrastructure, monitoring systems, and distribution networks.
+      </p>
+
+      <p>Each component may function perfectly in isolation.</p>
+
+      <p>Yet reliability depends on how they connect.</p>
+
+      <p>Architecture defines those connections.</p>
+
+      <p>
+        It determines where redundancy exists.<br>
+        Where dependencies concentrate.<br>
+        Where visibility is available.<br>
+        And where failure might spread.
+      </p>
+
+      <p>Many operational problems trace back to architectural assumptions that were never revisited.</p>
+
+      <p>Systems evolve.</p>
+
+      <p>Workflows change.</p>
+
+      <p>New tools are introduced.</p>
+
+      <p>But the underlying architecture remains unchanged.</p>
+
+      <p>Over time, these adjustments create hidden complexity.</p>
+
+      <p>Operators learn to navigate that complexity through experience and workarounds.</p>
+
+      <p>But workarounds are not architecture.</p>
+
+      <p>Reliable systems periodically step back and evaluate their structure.</p>
+
+      <p>
+        They map dependencies.<br>
+        They identify single points of failure.<br>
+        They examine whether monitoring reflects current operational reality.
+      </p>
+
+      <p>Architecture also determines how easily systems can recover from disruption.</p>
+
+      <p>If failover paths are clearly defined, recovery becomes controlled.</p>
+
+      <p>If dependencies are poorly understood, recovery becomes improvisation.</p>
+
+      <p>In time-critical operations, improvisation is rarely sustainable.</p>
+
+      <p>
+        Architecture provides the structure that allows teams to respond calmly when something unexpected occurs.
+      </p>
+
+      <p>
+        Instead of inventing solutions in the moment, operators follow paths that were designed in advance.
+      </p>
+
+      <p>Reliable operations therefore treat architecture as an ongoing discipline.</p>
+
+      <p>Systems are reviewed.</p>
+
+      <p>Dependencies are re-evaluated.</p>
+
+      <p>Operational experience informs structural improvements.</p>
+
+      <p>
+        Because reliability does not emerge from individual effort alone.
+      </p>
+
+      <p>
+        It emerges from systems designed to support it.
+      </p>
+
+      <p>
+        Architecture is where that design begins.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- NAVIGATION -->
+  <section class="split">
+
+    <div>
+      <a class="btn" href="/series/week-12-structure.html">
+        ← Week 12 — Structure
+      </a>
+    </div>
+
+    <div>
+      <a class="btn" href="/series/week-14-part-1-wrap-up.html">
+        Next → Week 14 — Part I Wrap-Up
+      </a>
+    </div>
+
+  </section>
+
+  <!-- SPONSORS -->
+  <div class="sponsor-grid" role="list">
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: Legal Shield</h3>
+      <p style="color:#cbd5e1;">
+        Legal Shield & ID Shield<br>
+        Protecting Families & Businesses Nationwide.
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/legal/">Explore Plans →</a>
+      </p>
+    </article>
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: The Piety Paychain</h3>
+      <p style="color:#cbd5e1;">
+        Helping to fund these pages.<br>
+        Learn more about the Piety Paychain
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/2026/">Explore Paychain →</a>
+      </p>
+    </article>
+
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      © <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.
+    </div>
+
+    <div class="smallLinks">
+      <a href="/">Home Page</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE NAV SCRIPT -->
+<script>
+  const btn = document.querySelector('.mobile-toggle');
+  const panel = document.querySelector('.mobile-nav');
+
+  if (btn && panel) {
+    btn.addEventListener('click', () => {
+      const isOpen = panel.classList.toggle('show');
+      panel.setAttribute('aria-hidden', !isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  }
+</script>
+
 </body>
 </html>
