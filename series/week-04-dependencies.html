@@ -4,93 +4,250 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Week 4 — Dependencies | Randy Anthony</title>
-  <link rel="stylesheet" href="/series/series.css" />
+
+  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/series/series.css">
+
+  <meta name="description" content="Week 4 — Dependencies: In complex systems, failures originate upstream. Understanding dependencies is key to preventing cascading disruption." />
 </head>
+
 <body>
-  <header class="header">
-    <div class="wrap">
-      <div class="brand">
-        <strong>RANDY ANTHONY</strong>
-        <small>Operational reliability advisory</small>
-      </div>
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a href="/series/">Series</a>
-      </nav>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+
+  <a class="brand" href="/">
+    <img src="/favicon.png" alt="" style="width:44px;height:44px;border-radius:12px;">
+    <div class="titles">
+      <strong>RANDY ANTHONY</strong>
+      <span>Operational Reliability Advisory</span>
     </div>
-  </header>
+  </a>
 
-  <main class="wrap">
-    <section class="hero">
-      <div class="kicker">Quarter 1 · Week 4</div>
-      <h1 class="post-title">What Time-Critical Operations Teach You About Dependencies</h1>
-      <p class="meta">
-        Topic word: Dependencies ·
-        <a href="https://www.linkedin.com/posts/randy-anthony-07547410b_operations-reliability-systemsthinking-activity-7429954111384723457-dTlv?utm_source=share&utm_medium=member_desktop&rcm=ACoAABunslkBFatGOuGkV8R5dPmSEp8H4KCG7pQ" target="_blank" rel="noopener">View on LinkedIn</a>
-      </p>
-    </section>
+  <nav class="primary" role="navigation" aria-label="Main navigation">
+    <a href="/">Home</a>
+    <a href="/series/">Operational Series</a>
+    <a href="/home.html">Offerings</a>
+    <a href="/bio/">Bio</a>
+    <a href="/book/">Book</a>
+    <a href="/radio/">Radio</a>
 
-    <section class="card body">
-<img src="/series/assets/week-04-dependencies.png"
-     alt="Week 4 — Dependencies"
-     class="post-image">
-      <p>Most disruptions don’t begin where they appear.</p>
+    <div class="cta">
+      <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">
+        Request a consultation
+      </a>
+    </div>
+  </nav>
 
-      <p>In complex systems, the visible failure is usually the final link in a much longer chain — the point where accumulated drift finally becomes impossible to ignore.
-      In live broadcast environments, for example, a playout interruption may look like a technical malfunction.</p>
+  <button class="mobile-toggle" aria-expanded="false">☰</button>
+</header>
 
-      <p>But often the origin sits upstream:<br>
-      Metadata entered incorrectly hours earlier<br>
-      An automation rule built on an outdated assumption<br>
-      A handoff that lacked clarity between shifts<br>
-      A timing dependency that was never fully verified<br>
-      The visible error isn’t the cause.<br>
-      It’s the outcome.</p>
+<!-- MOBILE NAV -->
+<div class="mobile-nav" aria-hidden="true">
+  <a href="/">Home</a>
+  <a href="/series/">Operational Series</a>
+  <a href="/home.html">Offerings</a>
+  <a href="/bio/">Bio</a>
+  <a href="/book/">Book</a>
+  <a href="/radio/">Radio</a>
+</div>
 
-      <p>Every time-critical system operates on layers of dependency.</p>
+<!-- ================= MAIN ================= -->
+<main class="wrap">
 
-      <p>Automation depends on clean inputs.<br>
-      Clean inputs depend on defined ownership.<br>
-      Ownership depends on clarity of process.<br>
-      Process depends on discipline.</p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="kicker">Quarter 1 · Week 4</div>
 
-      <p>When one layer drifts quietly, the system absorbs it — at first.<br>
-      Small inaccuracies get tolerated.<br>
-      Assumptions go unchallenged.<br>
-      Compensation becomes routine.<br>
-      Until capacity runs out.</p>
+    <h1 class="hero-title">
+      What Time-Critical Operations Teach You About Dependencies
+    </h1>
 
-      <p>Experienced operators understand this pattern. They don’t just respond to incidents. They trace dependencies.</p>
+    <p class="meta">
+      Topic word: Dependencies ·
+      <a href="https://www.linkedin.com/posts/randy-anthony-07547410b_operations-reliability-systemsthinking-activity-7429954111384723457-dTlv?utm_source=share&utm_medium=member_desktop&rcm=ACoAABunslkBFatGOuGkV8R5dPmSEp8H4KCG7pQ" target="_blank" rel="noopener">
+        View on LinkedIn
+      </a>
+    </p>
+  </section>
 
-      <p>Instead of asking:<br>
-      “What broke?”<br>
-      They ask:<br><br>
-      “What was this relying on?”<br>
-      “What assumptions were built into it?”<br>
-      “What upstream condition changed?”<br>
-      That shift in questioning changes how stability is built.</p>
+  <!-- CONTENT -->
+  <section class="card body split-post">
 
-      <p>Because reliability isn’t about eliminating pressure.<br>
-      Pressure is constant.</p>
+    <img src="/series/assets/week-04-dependencies.png"
+         alt="Week 4 — Dependencies"
+         class="post-image">
 
-      <p>Reliability is about making dependencies visible before pressure exposes them.<br>
-      In high-stakes environments, speed doesn’t create stability.<br>
-      Clarity does.</p>
+    <div class="post-text">
 
-      <p>And clarity begins with understanding what touches what — long before anything fails.</p>
-
-      <div class="hr"></div>
-      <p class="meta">
-        Next: <a href="/series/week-05-interfaces.html">Week 5 — Interfaces</a>
+      <p>
+        Most disruptions don’t begin where they appear.
       </p>
 
-    </section>
-  </main>
+      <p>
+        In complex systems, the visible failure is usually the final link in a much longer chain — the point where accumulated drift finally becomes impossible to ignore.
+      </p>
 
-  <footer class="footer">
-    <div class="wrap">
-      <small>© Randy Anthony. All rights reserved.</small>
+      <p>
+        In live broadcast environments, for example, a playout interruption may look like a technical malfunction.
+      </p>
+
+      <p>
+        But often the origin sits upstream:
+      </p>
+
+      <p>
+        Metadata entered incorrectly hours earlier<br>
+        An automation rule built on an outdated assumption<br>
+        A handoff that lacked clarity between shifts<br>
+        A timing dependency that was never fully verified
+      </p>
+
+      <p>
+        The visible error isn’t the cause.<br>
+        It’s the outcome.
+      </p>
+
+      <p>
+        Every time-critical system operates on layers of dependency.
+      </p>
+
+      <p>
+        Automation depends on clean inputs.<br>
+        Clean inputs depend on defined ownership.<br>
+        Ownership depends on clarity of process.<br>
+        Process depends on discipline.
+      </p>
+
+      <p>
+        When one layer drifts quietly, the system absorbs it — at first.
+      </p>
+
+      <p>
+        Small inaccuracies get tolerated.<br>
+        Assumptions go unchallenged.<br>
+        Compensation becomes routine.
+      </p>
+
+      <p>
+        Until capacity runs out.
+      </p>
+
+      <p>
+        Experienced operators understand this pattern. They don’t just respond to incidents. They trace dependencies.
+      </p>
+
+      <p>
+        Instead of asking:
+      </p>
+
+      <p>
+        “What broke?”<br><br>
+        They ask:<br><br>
+        “What was this relying on?”<br>
+        “What assumptions were built into it?”<br>
+        “What upstream condition changed?”
+      </p>
+
+      <p>
+        That shift in questioning changes how stability is built.
+      </p>
+
+      <p>
+        Because reliability isn’t about eliminating pressure.<br>
+        Pressure is constant.
+      </p>
+
+      <p>
+        Reliability is about making dependencies visible before pressure exposes them.
+      </p>
+
+      <p>
+        In high-stakes environments, speed doesn’t create stability.<br>
+        Clarity does.
+      </p>
+
+      <p>
+        And clarity begins with understanding what touches what — long before anything fails.
+      </p>
+
     </div>
-  </footer>
+
+  </section>
+
+  <!-- NAVIGATION -->
+  <section class="split">
+
+    <div>
+      <a class="btn" href="/series/week-03-composure.html">
+        ← Week 3 — Composure
+      </a>
+    </div>
+
+    <div>
+      <a class="btn" href="/series/week-05-interfaces.html">
+        Next → Week 5 — Interfaces
+      </a>
+    </div>
+
+  </section>
+
+  <!-- SPONSORS -->
+  <div class="sponsor-grid" role="list">
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: Legal Shield</h3>
+      <p style="color:#cbd5e1;">
+        Legal Shield & ID Shield<br>
+        Protecting Families & Businesses Nationwide.
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/legal/">Explore Plans →</a>
+      </p>
+    </article>
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: The Piety Paychain</h3>
+      <p style="color:#cbd5e1;">
+        Helping to fund these pages.<br>
+        Learn more about the Piety Paychain
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/2026/">Explore Paychain →</a>
+      </p>
+    </article>
+
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      © <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.
+    </div>
+
+    <div class="smallLinks">
+      <a href="/">Home Page</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE NAV SCRIPT -->
+<script>
+  const btn = document.querySelector('.mobile-toggle');
+  const panel = document.querySelector('.mobile-nav');
+
+  if (btn && panel) {
+    btn.addEventListener('click', () => {
+      const isOpen = panel.classList.toggle('show');
+      panel.setAttribute('aria-hidden', !isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  }
+</script>
+
 </body>
 </html>
