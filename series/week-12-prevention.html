@@ -4,130 +4,250 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Week 12 — Prevention | Randy Anthony</title>
-  <link rel="stylesheet" href="/series/series.css" />
+
+  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/series/series.css">
+
+  <meta name="description" content="Week 12 — Prevention: In time-critical systems, reliability is built upstream by eliminating failure conditions before they emerge." />
 </head>
+
 <body>
-  <header class="header">
-    <div class="wrap">
-      <div class="brand">
-        <strong>RANDY ANTHONY</strong>
-        <small>Operational reliability advisory</small>
-      </div>
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a href="/series/">Series</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="wrap">
-    <section class="hero">
-      <div class="kicker">Quarter 1 · Week 12</div>
-      <h1 class="post-title">What Time-Critical Operations Teach You About Prevention</h1>
-      <p class="meta">
-        Topic word: Prevention ·
-        <a href="/series/soon.html" target="_blank" rel="noopener">View on LinkedIn</a>
+<header class="site-header">
+  <a class="brand" href="/">
+    <img src="/favicon.png" alt="" style="width:44px;height:44px;border-radius:12px;">
+    <div class="titles">
+      <strong>RANDY ANTHONY</strong>
+      <span>Operational Reliability Advisory</span>
+    </div>
+  </a>
+
+  <nav class="primary">
+    <a href="/">Home</a>
+    <a href="/series/">Operational Series</a>
+    <a href="/home.html">Offerings</a>
+    <a href="/bio/">Bio</a>
+    <a href="/book/">Book</a>
+    <a href="/radio/">Radio</a>
+
+    <div class="cta">
+      <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">
+        Request a consultation
+      </a>
+    </div>
+  </nav>
+
+  <button class="mobile-toggle">☰</button>
+</header>
+
+<div class="mobile-nav">
+  <a href="/">Home</a>
+  <a href="/series/">Operational Series</a>
+  <a href="/home.html">Offerings</a>
+  <a href="/bio/">Bio</a>
+  <a href="/book/">Book</a>
+  <a href="/radio/">Radio</a>
+</div>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="kicker">Quarter 1 · Week 12</div>
+
+    <h1 class="hero-title">
+      What Time-Critical Operations Teach You About Prevention
+    </h1>
+
+    <p class="meta">
+      Topic word: Prevention ·
+      <a href="/series/soon.html" target="_blank" rel="noopener">
+        View on LinkedIn
+      </a>
+    </p>
+  </section>
+
+  <section class="card body split-post">
+
+    <img src="/series/assets/week-12-prevention.png"
+         alt="Week 12 — Prevention"
+         class="post-image">
+
+    <div class="post-text">
+
+      <p><strong>What Time-Critical Operations Teach You About Prevention</strong></p>
+
+      <p>In many operational environments, attention focuses on response.</p>
+
+      <p>How quickly can a team react when something fails?</p>
+
+      <p>How efficiently can a system recover?</p>
+
+      <p>Response matters.</p>
+
+      <p>But reliability is built long before recovery becomes necessary.</p>
+
+      <p>Reliable systems prioritize prevention.</p>
+
+      <p>Prevention begins with anticipating where failure might emerge.</p>
+
+      <p>
+        In broadcast and streaming operations, these vulnerabilities often exist at transition points: schedule changes, asset ingest, signal routing adjustments, or last-minute editorial modifications.
       </p>
-    </section>
-<section class="card body">
 
-  <img src="/series/assets/week-12-prevention.png"
-       alt="Week 12 — Prevention"
-       class="post-image">
+      <p>Each transition introduces uncertainty.</p>
 
-  <p><strong>What Time-Critical Operations Teach You About Prevention</strong></p>
+      <p>
+        Reliable teams design processes that reduce that uncertainty before pressure appears.
+      </p>
 
-  <p>In many operational environments, attention focuses on response.</p>
+      <p>
+        They verify inputs early.<br>
+        They confirm dependencies.<br>
+        They document procedures clearly enough that operators can follow them under stress.
+      </p>
 
-  <p>How quickly can a team react when something fails?</p>
+      <p>Prevention also depends on visibility.</p>
 
-  <p>How efficiently can a system recover?</p>
+      <p>
+        Systems must provide enough information for operators to recognize anomalies early.
+      </p>
 
-  <p>Response matters.</p>
+      <p>
+        A subtle timing discrepancy.<br>
+        An unexpected delay.<br>
+        A repeated manual intervention.
+      </p>
 
-  <p>But reliability is built long before recovery becomes necessary.</p>
+      <p>
+        These signals indicate that the system may be drifting away from its intended design.
+      </p>
 
-  <p>Reliable systems prioritize prevention.</p>
+      <p>
+        Addressing them early prevents larger disruption later.
+      </p>
 
-  <p>Prevention begins with anticipating where failure might emerge.</p>
+      <p>Prevention is often less visible than recovery.</p>
 
-  <p>In broadcast and streaming operations, these vulnerabilities often exist at transition points: schedule changes, asset ingest, signal routing adjustments, or last-minute editorial modifications.</p>
+      <p>When it works, nothing dramatic occurs.</p>
 
-  <p>Each transition introduces uncertainty.</p>
+      <p>
+        Schedules run normally.<br>
+        Systems behave predictably.<br>
+        Operators rarely intervene.
+      </p>
 
-  <p>Reliable teams design processes that reduce that uncertainty before pressure appears.</p>
+      <p>
+        Yet that calm stability reflects disciplined preparation.
+      </p>
 
-  <p>
-  They verify inputs early.<br>
-  They confirm dependencies.<br>
-  They document procedures clearly enough that operators can follow them under stress.
-  </p>
+      <p>
+        Highly reliable environments constantly refine their processes.
+      </p>
 
-  <p>Prevention also depends on visibility.</p>
+      <p>Procedures evolve as systems change.</p>
 
-  <p>Systems must provide enough information for operators to recognize anomalies early.</p>
+      <p>
+        Documentation reflects current practice rather than historical assumptions.
+      </p>
 
-  <p>
-  A subtle timing discrepancy.<br>
-  An unexpected delay.<br>
-  A repeated manual intervention.
-  </p>
+      <p>
+        Operational teams review small issues before they accumulate.
+      </p>
 
-  <p>These signals indicate that the system may be drifting away from its intended design.</p>
+      <p>
+        Over time, this discipline reduces the number of visible failures.
+      </p>
 
-  <p>Addressing them early prevents larger disruption later.</p>
+      <p>Because prevention shifts reliability upstream.</p>
 
-  <p>Prevention is often less visible than recovery.</p>
+      <p>
+        Instead of reacting to disruption, teams eliminate the conditions that produce it.
+      </p>
 
-  <p>When it works, nothing dramatic occurs.</p>
+      <p>In time-critical operations, this distinction matters.</p>
 
-  <p>
-  Schedules run normally.<br>
-  Systems behave predictably.<br>
-  Operators rarely intervene.
-  </p>
+      <p>Recovery demonstrates skill.</p>
 
-  <p>Yet that calm stability reflects disciplined preparation.</p>
+      <p>Prevention demonstrates maturity.</p>
 
-  <p>Highly reliable environments constantly refine their processes.</p>
+      <p>Reliable systems prioritize both.</p>
 
-  <p>Procedures evolve as systems change.</p>
+      <p>
+        But they understand that the most stable environments are not defined by how quickly they recover.
+      </p>
 
-  <p>Documentation reflects current practice rather than historical assumptions.</p>
+      <p>
+        They are defined by how rarely they need to.
+      </p>
 
-  <p>Operational teams review small issues before they accumulate.</p>
-
-  <p>Over time, this discipline reduces the number of visible failures.</p>
-
-  <p>Because prevention shifts reliability upstream.</p>
-
-  <p>Instead of reacting to disruption, teams eliminate the conditions that produce it.</p>
-
-  <p>In time-critical operations, this distinction matters.</p>
-
-  <p>Recovery demonstrates skill.</p>
-
-  <p>Prevention demonstrates maturity.</p>
-
-  <p>Reliable systems prioritize both.</p>
-
-  <p>But they understand that the most stable environments are not defined by how quickly they recover.</p>
-
-  <p>They are defined by how rarely they need to.</p>
-
-  <div class="hr"></div>
-
-  <p class="meta">
-    Next: <a href="/series/week-13-architecture.html">Week 13 — Architecture</a>
-  </p>
-
-</section>
-  </main>
-
-  <footer class="footer">
-    <div class="wrap">
-      <small>© Randy Anthony. All rights reserved.</small>
     </div>
-  </footer>
+
+  </section>
+
+  <section class="split">
+
+    <div>
+      <a class="btn" href="/series/week-11-accountability.html">
+        ← Week 11 — Accountability
+      </a>
+    </div>
+
+    <div>
+      <a class="btn" href="/series/week-13-architecture.html">
+        Next → Week 13 — Architecture
+      </a>
+    </div>
+
+  </section>
+
+  <div class="sponsor-grid">
+
+    <article class="card" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: Legal Shield</h3>
+      <p style="color:#cbd5e1;">
+        Legal Shield & ID Shield<br>
+        Protecting Families & Businesses Nationwide.
+      </p>
+      <a class="btn" href="/legal/">Explore Plans →</a>
+    </article>
+
+    <article class="card" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: The Piety Paychain</h3>
+      <p style="color:#cbd5e1;">
+        Helping to fund these pages.<br>
+        Learn more about the Piety Paychain
+      </p>
+      <a class="btn" href="/2026/">Explore Paychain →</a>
+    </article>
+
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      © <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.
+    </div>
+    <div class="smallLinks">
+      <a href="/">Home Page</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const btn = document.querySelector('.mobile-toggle');
+  const panel = document.querySelector('.mobile-nav');
+
+  if (btn && panel) {
+    btn.addEventListener('click', () => {
+      const isOpen = panel.classList.toggle('show');
+      panel.setAttribute('aria-hidden', !isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  }
+</script>
+
 </body>
 </html>
