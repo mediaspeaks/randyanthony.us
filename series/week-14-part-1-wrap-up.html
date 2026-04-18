@@ -158,13 +158,15 @@
     </div>
   </div>
 </footer> 
-  <script>
-  const toggle = document.querySelector('.mobile-toggle');
-  const nav = document.querySelector('.mobile-nav');
+<script>
+  const btn = document.querySelector('.mobile-toggle');
+  const panel = document.querySelector('.mobile-nav');
 
-  if (toggle && nav) {
-    toggle.addEventListener('click', () => {
-      nav.classList.toggle('show');
+  if (btn && panel) {
+    btn.addEventListener('click', () => {
+      const isOpen = panel.classList.toggle('show');
+      panel.setAttribute('aria-hidden', !isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
     });
   }
 </script>
