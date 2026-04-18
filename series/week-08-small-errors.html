@@ -4,115 +4,230 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Week 8 — Small Errors | Randy Anthony</title>
-  <link rel="stylesheet" href="/series/series.css" />
+
+  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/series/series.css">
+
+  <meta name="description" content="Week 8 — Small Errors: In time-critical systems, failure often begins with minor deviations that accumulate into operational drift." />
 </head>
+
 <body>
-  <header class="header">
-    <div class="wrap">
-      <div class="brand">
-        <strong>RANDY ANTHONY</strong>
-        <small>Operational reliability advisory</small>
-      </div>
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a href="/series/">Series</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="wrap">
-    <section class="hero">
-      <div class="kicker">Quarter 1 · Week 8</div>
-      <h1 class="post-title">What Time-Critical Operations Teach Us About Small Errors</h1>
-      <p class="meta">
-        Topic word: Small Errors ·
-        <a href="https://www.linkedin.com/posts/randy-anthony-07547410b_what-time-critical-operations-teach-you-about-activity-7440038072592822272-oqjh?utm_source=share&utm_medium=member_desktop&rcm=ACoAABunslkBFatGOuGkV8R5dPmSEp8H4KCG7pQ">View on LinkedIn</a>
+<header class="site-header">
+
+  <a class="brand" href="/">
+    <img src="/favicon.png" alt="" style="width:44px;height:44px;border-radius:12px;">
+    <div class="titles">
+      <strong>RANDY ANTHONY</strong>
+      <span>Operational Reliability Advisory</span>
+    </div>
+  </a>
+
+  <nav class="primary" role="navigation" aria-label="Main navigation">
+    <a href="/">Home</a>
+    <a href="/series/">Operational Series</a>
+    <a href="/home.html">Offerings</a>
+    <a href="/bio/">Bio</a>
+    <a href="/book/">Book</a>
+    <a href="/radio/">Radio</a>
+
+    <div class="cta">
+      <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">
+        Request a consultation
+      </a>
+    </div>
+  </nav>
+
+  <button class="mobile-toggle" aria-expanded="false">☰</button>
+</header>
+
+<div class="mobile-nav" aria-hidden="true">
+  <a href="/">Home</a>
+  <a href="/series/">Operational Series</a>
+  <a href="/home.html">Offerings</a>
+  <a href="/bio/">Bio</a>
+  <a href="/book/">Book</a>
+  <a href="/radio/">Radio</a>
+</div>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="kicker">Quarter 1 · Week 8</div>
+
+    <h1 class="hero-title">
+      What Time-Critical Operations Teach Us About Small Errors
+    </h1>
+
+    <p class="meta">
+      Topic word: Small Errors ·
+      <a href="https://www.linkedin.com/posts/randy-anthony-07547410b_what-time-critical-operations-teach-you-about-activity-7440038072592822272-oqjh?utm_source=share&utm_medium=member_desktop&rcm=ACoAABunslkBFatGOuGkV8R5dPmSEp8H4KCG7pQ" target="_blank" rel="noopener">
+        View on LinkedIn
+      </a>
+    </p>
+  </section>
+
+  <section class="card body split-post">
+
+    <img src="/series/assets/week-08-small-errors.png"
+         alt="Week 8 — Small Errors"
+         class="post-image">
+
+    <div class="post-text">
+
+      <p>Most operational failures do not begin with dramatic breakdowns.</p>
+
+      <p>They begin with small errors.</p>
+
+      <p>
+        A timing offset.<br>
+        A misnamed asset.<br>
+        A configuration detail that was assumed rather than verified.
       </p>
-    </section>
 
-    <section class="card body">
+      <p>
+        Individually, these issues rarely appear serious. Systems often continue functioning despite them. Teams adjust, compensate, and move forward.
+      </p>
 
-  <img src="/series/assets/week-08-small-errors.png"
-       alt="Week 8 — Small Errors"
-       class="post-image">
+      <p>But in complex environments, small errors accumulate.</p>
 
-  <p>Most operational failures do not begin with dramatic breakdowns.</p>
+      <p>And accumulation changes system behavior.</p>
 
-  <p>They begin with small errors.</p>
+      <p>
+        In broadcast and streaming operations, the early signs of trouble are often subtle. A manual correction becomes routine. A workaround becomes normalized. A slight delay becomes accepted as “how the system works.”
+      </p>
 
-  <p>
-  A timing offset.<br>
-  A misnamed asset.<br>
-  A configuration detail that was assumed rather than verified.
-  </p>
+      <p>Over time, these adjustments create operational drift.</p>
 
-  <p>Individually, these issues rarely appear serious. Systems often continue functioning despite them. Teams adjust, compensate, and move forward.</p>
+      <p>Nothing appears broken.</p>
 
-  <p>But in complex environments, small errors accumulate.</p>
+      <p>Yet the system is slowly moving away from its intended design.</p>
 
-  <p>And accumulation changes system behavior.</p>
+      <p>
+        Reliable operations pay attention to these small signals long before they produce visible disruption.
+      </p>
 
-  <p>In broadcast and streaming operations, the early signs of trouble are often subtle. A manual correction becomes routine. A workaround becomes normalized. A slight delay becomes accepted as “how the system works.”</p>
+      <p>Small errors reveal weak points in process discipline.</p>
 
-  <p>Over time, these adjustments create operational drift.</p>
+      <p>
+        They show where documentation is unclear.<br>
+        Where assumptions replaced verification.<br>
+        Where responsibility for a step quietly shifted.
+      </p>
 
-  <p>Nothing appears broken.</p>
+      <p>Left unaddressed, those weak points multiply.</p>
 
-  <p>Yet the system is slowly moving away from its intended design.</p>
+      <p>
+        And when pressure increases — during a live event, a system change, or a high-stakes transition — the accumulated drift becomes visible.
+      </p>
 
-  <p>Reliable operations pay attention to these small signals long before they produce visible disruption.</p>
+      <p>Not because the moment created the problem.</p>
 
-  <p>Small errors reveal weak points in process discipline.</p>
+      <p>Because the moment revealed it.</p>
 
-  <p>
-  They show where documentation is unclear.<br>
-  Where assumptions replaced verification.<br>
-  Where responsibility for a step quietly shifted.
-  </p>
+      <p>Reliable systems treat small errors as signals.</p>
 
-  <p>Left unaddressed, those weak points multiply.</p>
+      <p>
+        A repeated timing discrepancy triggers review.<br>
+        A recurring manual correction triggers redesign.<br>
+        A persistent workaround triggers documentation updates.
+      </p>
 
-  <p>And when pressure increases — during a live event, a system change, or a high-stakes transition — the accumulated drift becomes visible.</p>
+      <p>
+        Operational reliability depends on reducing the gap between the system that was designed and the system that actually exists.
+      </p>
 
-  <p>Not because the moment created the problem.</p>
+      <p>Small errors expose that gap.</p>
 
-  <p>Because the moment revealed it.</p>
+      <p>Reliability rarely fails all at once.</p>
 
-  <p>Reliable systems treat small errors as signals.</p>
+      <p>It erodes gradually.</p>
 
-  <p>
-  A repeated timing discrepancy triggers review.<br>
-  A recurring manual correction triggers redesign.<br>
-  A persistent workaround triggers documentation updates.
-  </p>
+      <p>
+        That is why the most stable environments correct minor deviations early, before pressure exposes them.
+      </p>
 
-  <p>Operational reliability depends on reducing the gap between the system that was designed and the system that actually exists.</p>
+      <p>
+        Because the most dangerous failures rarely begin with major disruption.
+      </p>
 
-  <p>Small errors expose that gap.</p>
+      <p>
+        They begin with small errors that were ignored for too long.
+      </p>
 
-  <p>Reliability rarely fails all at once.</p>
-
-  <p>It erodes gradually.</p>
-
-  <p>That is why the most stable environments correct minor deviations early, before pressure exposes them.</p>
-
-  <p>Because the most dangerous failures rarely begin with major disruption.</p>
-
-  <p>They begin with small errors that were ignored for too long.</p>
-
-  <div class="hr"></div>
-
-  <p class="meta">
-    Next: <a href="/series/week-09-fatigue.html">Week 9 — Fatigue</a>
-  </p>
-
-</section>
-  </main>
-
-  <footer class="footer">
-    <div class="wrap">
-      <small>© Randy Anthony. All rights reserved.</small>
     </div>
-  </footer>
+
+  </section>
+
+  <section class="split">
+
+    <div>
+      <a class="btn" href="/series/week-07-redundancy.html">
+        ← Week 7 — Redundancy
+      </a>
+    </div>
+
+    <div>
+      <a class="btn" href="/series/week-09-fatigue.html">
+        Next → Week 9 — Fatigue
+      </a>
+    </div>
+
+  </section>
+
+  <div class="sponsor-grid" role="list">
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: Legal Shield</h3>
+      <p style="color:#cbd5e1;">
+        Legal Shield & ID Shield<br>
+        Protecting Families & Businesses Nationwide.
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/legal/">Explore Plans →</a>
+      </p>
+    </article>
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: The Piety Paychain</h3>
+      <p style="color:#cbd5e1;">
+        Helping to fund these pages.<br>
+        Learn more about the Piety Paychain
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/2026/">Explore Paychain →</a>
+      </p>
+    </article>
+
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      © <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.
+    </div>
+
+    <div class="smallLinks">
+      <a href="/">Home Page</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const btn = document.querySelector('.mobile-toggle');
+  const panel = document.querySelector('.mobile-nav');
+
+  if (btn && panel) {
+    btn.addEventListener('click', () => {
+      const isOpen = panel.classList.toggle('show');
+      panel.setAttribute('aria-hidden', !isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  }
+</script>
+
 </body>
 </html>
