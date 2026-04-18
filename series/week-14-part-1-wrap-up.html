@@ -157,6 +157,16 @@
       <a href="/">Home Page</a>
     </div>
   </div>
-</footer>
+</footer> 
+  <script>
+  const toggle = document.querySelector('.mobile-toggle');
+  const nav = document.querySelector('.mobile-nav');
+
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('show');
+    });
+  }
+</script>
 </body>
 </html>
