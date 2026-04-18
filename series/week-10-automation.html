@@ -4,136 +4,260 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Week 10 — Automation | Randy Anthony</title>
-  <link rel="stylesheet" href="/series/series.css" />
+
+  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/series/series.css">
+
+  <meta name="description" content="Week 10 — Automation: In time-critical systems, automation protects consistency but must be designed with transparency, control, and validation." />
 </head>
+
 <body>
-  <header class="header">
-    <div class="wrap">
-      <div class="brand">
-        <strong>RANDY ANTHONY</strong>
-        <small>Operational reliability advisory</small>
-      </div>
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a href="/series/">Series</a>
-      </nav>
-    </div>
-  </header>
 
-  <main class="wrap">
-    <section class="hero">
-      <div class="kicker">Quarter 1 · Week 10</div>
-      <h1 class="post-title">What Time-Critical Operations Teach Us About Automation</h1>
-      <p class="meta">
-        Topic word: Automation ·
-        <a href="https://www.linkedin.com/posts/randy-anthony-07547410b_what-time-critical-operations-teach-you-about-activity-7445098145165807616-zUfu?utm_source=share&utm_medium=member_desktop&rcm=ACoAABunslkBFatGOuGkV8R5dPmSEp8H4KCG7pQ">View on LinkedIn</a>
+<header class="site-header">
+  <a class="brand" href="/">
+    <img src="/favicon.png" alt="" style="width:44px;height:44px;border-radius:12px;">
+    <div class="titles">
+      <strong>RANDY ANTHONY</strong>
+      <span>Operational Reliability Advisory</span>
+    </div>
+  </a>
+
+  <nav class="primary">
+    <a href="/">Home</a>
+    <a href="/series/">Operational Series</a>
+    <a href="/home.html">Offerings</a>
+    <a href="/bio/">Bio</a>
+    <a href="/book/">Book</a>
+    <a href="/radio/">Radio</a>
+
+    <div class="cta">
+      <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">
+        Request a consultation
+      </a>
+    </div>
+  </nav>
+
+  <button class="mobile-toggle">☰</button>
+</header>
+
+<div class="mobile-nav">
+  <a href="/">Home</a>
+  <a href="/series/">Operational Series</a>
+  <a href="/home.html">Offerings</a>
+  <a href="/bio/">Bio</a>
+  <a href="/book/">Book</a>
+  <a href="/radio/">Radio</a>
+</div>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="kicker">Quarter 1 · Week 10</div>
+
+    <h1 class="hero-title">
+      What Time-Critical Operations Teach Us About Automation
+    </h1>
+
+    <p class="meta">
+      Topic word: Automation ·
+      <a href="https://www.linkedin.com/posts/randy-anthony-07547410b_what-time-critical-operations-teach-you-about-activity-7445098145165807616-zUfu?utm_source=share&utm_medium=member_desktop&rcm=ACoAABunslkBFatGOuGkV8R5dPmSEp8H4KCG7pQ" target="_blank" rel="noopener">
+        View on LinkedIn
+      </a>
+    </p>
+  </section>
+
+  <section class="card body split-post">
+
+    <img src="/series/assets/week-10-automation.png"
+         alt="Week 10 — Automation"
+         class="post-image">
+
+    <div class="post-text">
+
+      <p><strong>What Time-Critical Operations Teach You About Automation</strong></p>
+
+      <p>Automation is often introduced with a simple promise: efficiency.</p>
+
+      <p>
+        Systems run faster.<br>
+        Processes require fewer manual steps.<br>
+        Operations scale more easily.
       </p>
-    </section>
-<section class="card body">
 
-  <img src="/series/assets/week-10-automation.png"
-       alt="Week 10 — Automation"
-       class="post-image">
+      <p>In time-critical environments, however, automation serves a more important purpose.</p>
 
-  <p><strong>What Time-Critical Operations Teach You About Automation</strong></p>
+      <p>It protects consistency.</p>
 
-  <p>Automation is often introduced with a simple promise: efficiency.</p>
+      <p>
+        Human performance naturally varies. Attention shifts, fatigue accumulates, and routine tasks invite shortcuts.
+      </p>
 
-  <p>
-  Systems run faster.<br>
-  Processes require fewer manual steps.<br>
-  Operations scale more easily.
-  </p>
+      <p>
+        Automation eliminates that variability for tasks that must occur exactly the same way every time.
+      </p>
 
-  <p>In time-critical environments, however, automation serves a more important purpose.</p>
+      <p>
+        In broadcast and streaming operations, automation governs timing, transitions, content insertion, and signal routing.
+      </p>
 
-  <p>It protects consistency.</p>
+      <p>
+        Without it, the cognitive load placed on operators would quickly become unsustainable.
+      </p>
 
-  <p>Human performance naturally varies. Attention shifts, fatigue accumulates, and routine tasks invite shortcuts.</p>
+      <p>But automation introduces its own risks.</p>
 
-  <p>Automation eliminates that variability for tasks that must occur exactly the same way every time.</p>
+      <p>Automated systems behave exactly as designed.</p>
 
-  <p>In broadcast and streaming operations, automation governs timing, transitions, content insertion, and signal routing.</p>
+      <p>If the design is flawed, the system will repeat that flaw perfectly.</p>
 
-  <p>Without it, the cognitive load placed on operators would quickly become unsustainable.</p>
+      <p>In other words, automation scales both precision and mistakes.</p>
 
-  <p>But automation introduces its own risks.</p>
+      <p>
+        That is why mature operational environments treat automation not as a replacement for human oversight but as a partnership with it.
+      </p>
 
-  <p>Automated systems behave exactly as designed.</p>
+      <p>
+        Automation handles repetition.<br>
+        Humans handle judgment.
+      </p>
 
-  <p>If the design is flawed, the system will repeat that flaw perfectly.</p>
+      <p>
+        Operators observe patterns that automation cannot interpret.
+      </p>
 
-  <p>In other words, automation scales both precision and mistakes.</p>
+      <p>
+        They recognize context changes, upstream disruptions, and unusual behavior that falls outside expected parameters.
+      </p>
 
-  <p>That is why mature operational environments treat automation not as a replacement for human oversight but as a partnership with it.</p>
+      <p>The most reliable systems make this partnership explicit.</p>
 
-  <p>
-  Automation handles repetition.<br>
-  Humans handle judgment.
-  </p>
+      <p>Automation is transparent.</p>
 
-  <p>Operators observe patterns that automation cannot interpret.</p>
+      <p>
+        Operators understand what the system is doing, when it will act, and how to intervene if necessary.
+      </p>
 
-  <p>They recognize context changes, upstream disruptions, and unusual behavior that falls outside expected parameters.</p>
+      <p>When automation becomes opaque, trust erodes.</p>
 
-  <p>The most reliable systems make this partnership explicit.</p>
+      <p>
+        Operators begin to treat it as a black box rather than a controlled tool.
+      </p>
 
-  <p>Automation is transparent.</p>
+      <p>
+        And when unexpected behavior occurs, recovery becomes slower because the system’s internal logic is unclear.
+      </p>
 
-  <p>Operators understand what the system is doing, when it will act, and how to intervene if necessary.</p>
+      <p>Reliable automation therefore requires three principles.</p>
 
-  <p>When automation becomes opaque, trust erodes.</p>
+      <p>
+        Clarity.<br>
+        Automation must be documented and observable so operators understand how it behaves.
+      </p>
 
-  <p>Operators begin to treat it as a black box rather than a controlled tool.</p>
+      <p>
+        Control.<br>
+        Operators must retain the ability to intervene safely when conditions change.
+      </p>
 
-  <p>And when unexpected behavior occurs, recovery becomes slower because the system’s internal logic is unclear.</p>
+      <p>
+        Validation.<br>
+        Automated processes must be tested under real conditions so assumptions are confirmed before they are relied upon.
+      </p>
 
-  <p>Reliable automation therefore requires three principles.</p>
+      <p>
+        Automation is most valuable when it reduces cognitive burden while preserving operational awareness.
+      </p>
 
-  <p>
-  Clarity.<br>
-  Automation must be documented and observable so operators understand how it behaves.
-  </p>
+      <p>The goal is not to remove humans from the system.</p>
 
-  <p>
-  Control.<br>
-  Operators must retain the ability to intervene safely when conditions change.
-  </p>
+      <p>
+        The goal is to free humans to focus on the decisions that automation cannot make.
+      </p>
 
-  <p>
-  Validation.<br>
-  Automated processes must be tested under real conditions so assumptions are confirmed before they are relied upon.
-  </p>
+      <p>
+        When implemented carefully, automation becomes an amplifier of reliability.
+      </p>
 
-  <p>Automation is most valuable when it reduces cognitive burden while preserving operational awareness.</p>
+      <p>
+        When implemented carelessly, it becomes a multiplier of error.
+      </p>
 
-  <p>The goal is not to remove humans from the system.</p>
+      <p>The difference lies in design.</p>
 
-  <p>The goal is to free humans to focus on the decisions that automation cannot make.</p>
+      <p>
+        Reliable systems treat automation as part of the operational architecture.
+      </p>
 
-  <p>When implemented carefully, automation becomes an amplifier of reliability.</p>
+      <p>Not simply as a convenience.</p>
 
-  <p>When implemented carelessly, it becomes a multiplier of error.</p>
-
-  <p>The difference lies in design.</p>
-
-  <p>Reliable systems treat automation as part of the operational architecture.</p>
-
-  <p>Not simply as a convenience.</p>
-
-  <div class="hr"></div>
-
-  <p class="meta">
-    Next: <a href="/series/week-11-accountability.html">Week 11 — Accountability</a>
-  </p>
-
-</section>
-  </main>
-
-  <footer class="footer">
-    <div class="wrap">
-      <small>© Randy Anthony. All rights reserved.</small>
     </div>
-  </footer>
+
+  </section>
+
+  <section class="split">
+
+    <div>
+      <a class="btn" href="/series/week-09-fatigue.html">
+        ← Week 9 — Fatigue
+      </a>
+    </div>
+
+    <div>
+      <a class="btn" href="/series/week-11-accountability.html">
+        Next → Week 11 — Accountability
+      </a>
+    </div>
+
+  </section>
+
+  <div class="sponsor-grid">
+
+    <article class="card" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: Legal Shield</h3>
+      <p style="color:#cbd5e1;">
+        Legal Shield & ID Shield<br>
+        Protecting Families & Businesses Nationwide.
+      </p>
+      <a class="btn" href="/legal/">Explore Plans →</a>
+    </article>
+
+    <article class="card" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: The Piety Paychain</h3>
+      <p style="color:#cbd5e1;">
+        Helping to fund these pages.<br>
+        Learn more about the Piety Paychain
+      </p>
+      <a class="btn" href="/2026/">Explore Paychain →</a>
+    </article>
+
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      © <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.
+    </div>
+    <div class="smallLinks">
+      <a href="/">Home Page</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const btn = document.querySelector('.mobile-toggle');
+  const panel = document.querySelector('.mobile-nav');
+
+  if (btn && panel) {
+    btn.addEventListener('click', () => {
+      const isOpen = panel.classList.toggle('show');
+      panel.setAttribute('aria-hidden', !isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  }
+</script>
+
 </body>
 </html>
