@@ -4,45 +4,100 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Week 6 — Missing Content | Randy Anthony</title>
-  <link rel="stylesheet" href="/series/series.css" />
+
+  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/series/series.css">
+
+  <meta name="description" content="Week 6 — Missing Content: In time-critical systems, failure often comes from missing context rather than broken systems or bad execution." />
 </head>
+
 <body>
-  <header class="header">
-    <div class="wrap">
-      <div class="brand">
-        <strong>RANDY ANTHONY</strong>
-        <small>Operational reliability advisory</small>
-      </div>
-      <nav class="nav">
-        <a href="/">Home</a>
-        <a href="/series/">Series</a>
-      </nav>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+
+  <a class="brand" href="/">
+    <img src="/favicon.png" alt="" style="width:44px;height:44px;border-radius:12px;">
+    <div class="titles">
+      <strong>RANDY ANTHONY</strong>
+      <span>Operational Reliability Advisory</span>
     </div>
-  </header>
+  </a>
 
-  <main class="wrap">
-    <section class="hero">
-      <div class="kicker">Quarter 1 · Week 6</div>
-      <h1 class="post-title">What Time-Critical Operations Teach You About Missing Content</h1>
-      <p class="meta">
-        Topic word: Missing Content ·
-        <a href="https://www.linkedin.com/posts/randy-anthony-07547410b_operations-reliability-systemsthinking-activity-7434968433072652288-6NmU?utm_source=share&utm_medium=member_desktop&rcm=ACoAABunslkBFatGOuGkV8R5dPmSEp8H4KCG7pQ" target="_blank" rel="noopener">View on LinkedIn</a>
+  <nav class="primary" role="navigation" aria-label="Main navigation">
+    <a href="/">Home</a>
+    <a href="/series/">Operational Series</a>
+    <a href="/home.html">Offerings</a>
+    <a href="/bio/">Bio</a>
+    <a href="/book/">Book</a>
+    <a href="/radio/">Radio</a>
+
+    <div class="cta">
+      <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">
+        Request a consultation
+      </a>
+    </div>
+  </nav>
+
+  <button class="mobile-toggle" aria-expanded="false">☰</button>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" aria-hidden="true">
+  <a href="/">Home</a>
+  <a href="/series/">Operational Series</a>
+  <a href="/home.html">Offerings</a>
+  <a href="/bio/">Bio</a>
+  <a href="/book/">Book</a>
+  <a href="/radio/">Radio</a>
+</div>
+
+<!-- ================= MAIN ================= -->
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="kicker">Quarter 1 · Week 6</div>
+
+    <h1 class="hero-title">
+      What Time-Critical Operations Teach You About Missing Content
+    </h1>
+
+    <p class="meta">
+      Topic word: Missing Content ·
+      <a href="https://www.linkedin.com/posts/randy-anthony-07547410b_operations-reliability-systemsthinking-activity-7434968433072652288-6NmU?utm_source=share&utm_medium=member_desktop&rcm=ACoAABunslkBFatGOuGkV8R5dPmSEp8H4KCG7pQ" target="_blank" rel="noopener">
+        View on LinkedIn
+      </a>
+    </p>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="card body split-post">
+
+    <img src="/series/assets/week-06-missing-content.png"
+         alt="Week 6 — Missing Content"
+         class="post-image">
+
+    <div class="post-text">
+
+      <p>
+        In complex systems, failure is rarely caused by incompetence.
       </p>
-    </section>
 
-    <section class="card body">
-  <img src="/series/assets/week-06-missing-content.png"
-       alt="Week 6 — Missing Content"
-       class="post-image">
-      <p>In complex systems, failure is rarely caused by incompetence.</p>
+      <p>
+        It’s caused by missing content.
+      </p>
 
-      <p>It’s caused by missing content.</p>
+      <p>
+        The data may be correct.<br>
+        The tool may be functioning.<br>
+        The workflow may appear intact.
+      </p>
 
-      <p>The data may be correct.<br>
-      The tool may be functioning.<br>
-      The workflow may appear intact.</p>
-
-      <p>But something critical isn’t known.</p>
+      <p>
+        But something critical isn’t known.
+      </p>
 
       <p>
         In live broadcast and streaming environments, a segment can be technically ready—formatted correctly, timed correctly—yet still fail on air because one piece of context wasn’t transferred:
@@ -55,17 +110,25 @@
         A timing assumption that no longer applies
       </p>
 
-      <p>Nothing was “broken.”</p>
+      <p>
+        Nothing was “broken.”
+      </p>
 
-      <p>But something was missing.</p>
+      <p>
+        But something was missing.
+      </p>
 
       <p>
         Missing context is dangerous because it hides inside competence. People believe they’re operating on complete information—when they are not.
       </p>
 
-      <p>And confidence without context is instability disguised as control.</p>
+      <p>
+        And confidence without context is instability disguised as control.
+      </p>
 
-      <p>In time-critical operations, context must travel with the work.</p>
+      <p>
+        In time-critical operations, context must travel with the work.
+      </p>
 
       <p>
         What changed<br>
@@ -75,16 +138,24 @@
         What is verified versus presumed
       </p>
 
-      <p>When context moves cleanly, stability strengthens.<br>
-      When context is assumed instead of transferred, systems drift.</p>
+      <p>
+        When context moves cleanly, stability strengthens.<br>
+        When context is assumed instead of transferred, systems drift.
+      </p>
 
-      <p>Drift under pressure compounds.</p>
+      <p>
+        Drift under pressure compounds.
+      </p>
 
-      <p>Reliability is not just about accurate execution.<br>
-      It is about shared understanding at speed.</p>
+      <p>
+        Reliability is not just about accurate execution.<br>
+        It is about shared understanding at speed.
+      </p>
 
-      <p>Strong systems do not rely on memory.<br>
-      They institutionalize context transfer.</p>
+      <p>
+        Strong systems do not rely on memory.<br>
+        They institutionalize context transfer.
+      </p>
 
       <p>
         Because in high-stakes environments,<br>
@@ -92,18 +163,82 @@
         and missing context becomes visible failure.
       </p>
 
-      <div class="hr"></div>
-      <p class="meta">
-        Next: <a href="/series/week-07-redundancy.html">Week 7 — Redundancy</a>
-      </p>
-
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="wrap">
-      <small>© Randy Anthony. All rights reserved.</small>
     </div>
-  </footer>
+
+  </section>
+
+  <!-- NAVIGATION -->
+  <section class="split">
+
+    <div>
+      <a class="btn" href="/series/week-05-interfaces.html">
+        ← Week 5 — Interfaces
+      </a>
+    </div>
+
+    <div>
+      <a class="btn" href="/series/week-07-redundancy.html">
+        Next → Week 7 — Redundancy
+      </a>
+    </div>
+
+  </section>
+
+  <!-- SPONSORS -->
+  <div class="sponsor-grid" role="list">
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: Legal Shield</h3>
+      <p style="color:#cbd5e1;">
+        Legal Shield & ID Shield<br>
+        Protecting Families & Businesses Nationwide.
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/legal/">Explore Plans →</a>
+      </p>
+    </article>
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: The Piety Paychain</h3>
+      <p style="color:#cbd5e1;">
+        Helping to fund these pages.<br>
+        Learn more about the Piety Paychain
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/2026/">Explore Paychain →</a>
+      </p>
+    </article>
+
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      © <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.
+    </div>
+
+    <div class="smallLinks">
+      <a href="/">Home Page</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE NAV SCRIPT -->
+<script>
+  const btn = document.querySelector('.mobile-toggle');
+  const panel = document.querySelector('.mobile-nav');
+
+  if (btn && panel) {
+    btn.addEventListener('click', () => {
+      const isOpen = panel.classList.toggle('show');
+      panel.setAttribute('aria-hidden', !isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  }
+</script>
+
 </body>
 </html>
