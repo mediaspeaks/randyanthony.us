@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- CORE PAGES -->
+  <url><loc>https://randyanthony.us/</loc></url>
+  <url><loc>https://randyanthony.us/bio</loc></url>
+  <url><loc>https://randyanthony.us/book</loc></url>
+  <url><loc>https://randyanthony.us/radio</loc></url>
+
+  <!-- SERIES -->
+  <url><loc>https://randyanthony.us/series/</loc></url>
+  <url><loc>https://randyanthony.us/series/part2.html</loc></url>
+
+  <!-- PART I -->
+  <url><loc>https://randyanthony.us/series/week-01-reliability.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week-02-invisible-work.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week-03-composure.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week-04-dependencies.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week-05-interfaces.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week-06-missing-content.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week-07-redundancy.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week-08-small-errors.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week-09-fatigue.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week-10-automation.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week-11-accountability.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week-12-prevention.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week-13-architecture.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week-14-part-1-wrap-up.html</loc></url>
+
+</urlset>
