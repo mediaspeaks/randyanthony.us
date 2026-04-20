@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bio | Randy Anthony — Operational Reliability</title>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="/favicon.png">
+
+<style>
+:root{
+  --bg:#05070a;
+  --bg-soft:#0b0f16;
+  --border:rgba(255,255,255,.06);
+  --text:#f5f7fb;
+  --muted:#a3afc4;
+  --accent:#4cc2ff;
+  --radius:18px;
+  --max:1100px;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+  background:radial-gradient(circle at top left,#151b2b,#05070a);
+  color:var(--text);
+}
+
+.wrap{
+  max-width:var(--max);
+  margin:auto;
+  padding:22px;
+}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.brand img{
+  width:40px;
+  border-radius:10px;
+}
+
+.brand strong{
+  font-size:14px;
+  letter-spacing:.12em;
+}
+
+nav a{
+  margin-left:14px;
+  font-size:13px;
+  color:var(--muted);
+  text-decoration:none;
+}
+
+nav a:hover{color:var(--text)}
+
+.btn{
+  margin-left:14px;
+  padding:7px 14px;
+  border-radius:999px;
+  border:1px solid var(--border);
+  background:rgba(76,194,255,.15);
+  color:var(--text);
+  font-size:12px;
+  text-decoration:none;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  gap:16px;
+}
+
+@media(min-width:900px){
+  .grid{
+    grid-template-columns:1.3fr 1fr;
+  }
+}
+
+/* CARDS */
+.card{
+  background:var(--bg-soft);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:18px;
+}
+
+.card h2{
+  margin:0 0 8px;
+  font-size:15px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.card p{
+  margin:0 0 10px;
+  font-size:14px;
+  color:var(--muted);
+}
+
+ul{
+  margin:0;
+  padding-left:18px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* HERO */
+.hero p{
+  font-size:15px;
+  color:var(--text);
+}
+
+/* FOOTER */
+footer{
+  margin-top:28px;
+  font-size:12px;
+  color:var(--muted);
+  text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+<header>
+  <div class="brand">
+    <img src="/favicon.png" alt="">
+    <strong>RANDY ANTHONY</strong>
+  </div>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/series/">Series</a>
+    <a href="/home.html">Offerings</a>
+    <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a consultation</a>
+  </nav>
+</header>
+
+<main class="grid">
+
+<!-- HERO -->
+<div class="card hero">
+  <p>
+    Operational reliability advisor working inside time-critical broadcast and streaming systems where failure is visible and recovery must be immediate.
+  </p>
+  <p>
+    Systems rarely fail all at once—signals are missed, dependencies drift, and small issues compound before they are fully visible.
+  </p>
+  <p>
+    My work focuses on identifying those patterns early and stabilizing operations before they escalate.
+  </p>
+</div>
+
+<!-- ROLE -->
+<div class="card">
+  <h2>Current Role</h2>
+  <p>
+    Advisor to organizations operating in time-critical environments, focused on identifying where systems break down under pressure and improving reliability before failure becomes visible.
+  </p>
+</div>
+
+<!-- SUMMARY -->
+<div class="card">
+  <h2>Operational Summary</h2>
+  <p>
+    Experience designing, stabilizing, and optimizing broadcast and digital systems across live and on-demand environments.
+  </p>
+  <p>
+    Known for identifying failure patterns before they fully surface and improving response clarity under pressure.
+  </p>
+</div>
+
+<!-- HIGHLIGHTS -->
+<div class="card">
+  <h2>Selected Highlights</h2>
+  <ul>
+    <li>Oversight of up to 19 simultaneous network feeds in live broadcast environments</li>
+    <li>Workflow design across broadcast and streaming systems</li>
+    <li>Failure-mode mitigation for time-critical operations</li>
+  </ul>
+</div>
+
+<!-- CAPABILITIES -->
+<div class="card">
+  <h2>Core Capabilities</h2>
+  <ul>
+    <li>Operational workflow design</li>
+    <li>Broadcast automation and signal flow analysis</li>
+    <li>Failure-mode identification and mitigation</li>
+    <li>Real-time operational decision support</li>
+  </ul>
+</div>
+
+<!-- BACKGROUND -->
+<div class="card">
+  <h2>Background</h2>
+  <p>
+    Beginning in radio and television, Randy developed a working understanding of how systems behave when failure is public and time is constrained.
+  </p>
+  <p>
+    His work expanded into digital media, operational strategy, and communications—helping organizations align technical systems with real-world execution.
+  </p>
+</div>
+
+<!-- EDUCATION -->
+<div class="card">
+  <h2>Education</h2>
+  <ul>
+    <li>Master of Entrepreneurship — Western Carolina University</li>
+    <li>B.S. Radio / Television — Western Carolina University</li>
+  </ul>
+</div>
+
+<!-- CONTACT -->
+<div class="card">
+  <h2>Contact</h2>
+  <p>
+    If you're dealing with recurring workflow issues or system instability, reach out with a short description of where breakdowns are occurring or likely to occur under pressure.
+  </p>
+  <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a consultation</a>
+</div>
+
+</main>
+
+<footer>
+  © <span id="year"></span> Randy Anthony — Operational Reliability Advisory
+</footer>
+
+</div>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
