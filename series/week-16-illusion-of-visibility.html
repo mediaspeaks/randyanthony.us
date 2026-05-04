@@ -1,1 +1,189 @@
 
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Week 16 (Part II, Week 2) — The Illusion of Visibility | Randy Anthony</title>
+
+  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/series/series.css">
+
+  <meta name="description" content="What Time-Critical Operations Teach You About the Illusion of Visibility" />
+</head>
+
+<body>
+
+<header class="site-header">
+
+  <a class="brand" href="/">
+    <img src="/favicon.png" style="width:44px;height:44px;border-radius:12px;">
+    <div class="titles">
+      <strong>RANDY ANTHONY</strong>
+      <span>Operational Reliability Advisory</span>
+    </div>
+  </a>
+
+  <nav class="primary">
+    <a href="/">Home</a>
+    <a href="/series/">Operational Series</a>
+    <a href="/home.html">Offerings</a>
+    <a href="/bio/">Bio</a>
+    <a href="/book/">Book</a>
+    <a href="/radio/">Radio</a>
+
+    <div class="cta">
+      <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">
+        Request a consultation
+      </a>
+    </div>
+  </nav>
+
+  <button class="mobile-toggle">☰</button>
+</header>
+
+<div class="mobile-nav">
+  <a href="/">Home</a>
+  <a href="/series/">Operational Series</a>
+  <a href="/home.html">Offerings</a>
+  <a href="/bio/">Bio</a>
+  <a href="/book/">Book</a>
+  <a href="/radio/">Radio</a>
+</div>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1 class="hero-title">
+      What Time-Critical Operations Teach You About the Illusion of Visibility
+    </h1>
+
+    <p class="meta">
+      Week 16 (Part II, Week 2) ·
+      <a href="/series/soon.html">View on LinkedIn</a>
+    </p>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="card body split-post">
+
+    <img src="/series/assets/week-16-illusion-of-visibility.png"
+         alt="Illusion of visibility in time-critical systems showing misleading system state and hidden drift"
+         class="post-image">
+
+    <div class="post-text">
+
+<p>In time-critical systems, visibility isn’t always lost. Sometimes, it’s present—but misleading.</p>
+
+<p>Information is available. Dashboards are active. Signals are coming through. From the outside, everything appears visible.</p>
+
+<p>But visibility isn’t just about access to information. It’s about whether that information reflects the true state of the system.</p>
+
+<p>In many operational environments, systems are monitored continuously. Metrics update. Alerts trigger. Interfaces show activity. And yet, decisions are still made with incomplete understanding.</p>
+
+<p>Because what’s being seen isn’t the whole picture.</p>
+
+<p>The system can appear stable while conditions are shifting underneath. Data can be accurate—but disconnected from what actually matters. Signals can be present—but interpreted without context.</p>
+
+<p>This creates a form of false confidence. Operators believe they have visibility, but what they actually have is a partial view that looks complete.</p>
+
+<p>At that point, decisions don’t stop. They continue—based on what appears to be clear.</p>
+
+<p>And that’s where problems begin to move. Not because visibility is gone, but because it’s misleading.</p>
+
+<p>A response is made. The system changes. But the impact of that change isn’t fully visible. So the next decision is made with the same incomplete picture.</p>
+
+<p>And then another.</p>
+
+<p>The system doesn’t break. It drifts.</p>
+
+<p>This is where cascades often start. Not in darkness, but in environments where everything looks visible enough to act.</p>
+
+<p>Because once decisions are based on a misread system, each step adds complexity that isn’t fully understood.</p>
+
+<p>Clarity turns into assumption. Assumption turns into reaction.</p>
+
+<p>And by the time the system becomes visibly unstable, the underlying conditions have already shifted beyond easy recovery.</p>
+
+<p>Visibility wasn’t absent. It just wasn’t accurate.</p>
+
+    </div>
+
+  </section>
+
+  <!-- NAV -->
+  <section class="split">
+
+    <div>
+      <a class="btn" href="/series/week-15-visibility-in-time-critical-systems.html">
+        ← Previous: Visibility in Time-Critical Systems
+      </a>
+    </div>
+
+    <div>
+      <a class="btn" href="/series/soon.html">
+        Next: Monitoring vs Understanding →
+      </a>
+    </div>
+
+  </section>
+
+  <!-- SPONSORS -->
+  <div class="sponsor-grid">
+
+    <article class="card" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: Legal Shield</h3>
+      <p style="color:#cbd5e1;">
+        Legal Shield & ID Shield<br>
+        Protecting Families & Businesses Nationwide.
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/legal/">Explore Plans →</a>
+      </p>
+    </article>
+
+    <article class="card" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: The Piety Paychain</h3>
+      <p style="color:#cbd5e1;">
+        Helping to fund these pages.<br>
+        Learn more about the Piety Paychain
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/2026/">Explore Paychain →</a>
+      </p>
+    </article>
+
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      © <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.
+    </div>
+
+    <div class="smallLinks">
+      <a href="/">Home Page</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const btn = document.querySelector('.mobile-toggle');
+  const panel = document.querySelector('.mobile-nav');
+
+  if (btn && panel) {
+    btn.addEventListener('click', () => {
+      const isOpen = panel.classList.toggle('show');
+      panel.setAttribute('aria-hidden', !isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  }
+</script>
+
+</body>
+</html>
