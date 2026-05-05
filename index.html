@@ -376,7 +376,11 @@ header.site-header{
 }
 @media (max-width: 640px){
 
-  /* Push sponsor cards to bottom on mobile */
+  .grid{
+    display: flex;
+    flex-direction: column;
+  }
+
   .grid article[style*="#2f3a44"]{
     order: 10;
   }
