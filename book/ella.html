@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Ella Umber & Her Umber-Ella</title>
+
+<link rel="icon" type="image/png" href="/favicon.png" />
+
+<style>
+:root{
+  --bg:#fff7ef;
+  --text:#2b2140;
+  --accent:#ff7a00;
+  --accentHover:#e56700;
+  --shadow:0 18px 40px rgba(0,0,0,0.18);
+  --radius:24px;
+  --max:1100px;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at top left, #fff2d9 0%, transparent 35%),
+    radial-gradient(circle at top right, #dff6ff 0%, transparent 30%),
+    var(--bg);
+  color:var(--text);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:28px;
+}
+
+/* --------------------------------------------------
+   MAIN CARD
+-------------------------------------------------- */
+.book-wrap{
+  width:100%;
+  max-width:var(--max);
+  text-align:center;
+}
+
+.book-card{
+  background:rgba(255,255,255,0.78);
+  backdrop-filter:blur(12px);
+  border-radius:var(--radius);
+  padding:28px;
+  box-shadow:var(--shadow);
+}
+
+/* --------------------------------------------------
+   COVER IMAGE
+-------------------------------------------------- */
+.cover-wrap{
+  overflow:hidden;
+  border-radius:22px;
+  box-shadow:0 18px 36px rgba(0,0,0,0.18);
+}
+
+.cover-wrap img{
+  width:100%;
+  display:block;
+  border-radius:22px;
+  animation:floatBook 6s ease-in-out infinite;
+}
+
+@keyframes floatBook{
+  0%{
+    transform:translateY(0px) scale(1);
+  }
+
+  50%{
+    transform:translateY(-8px) scale(1.01);
+  }
+
+  100%{
+    transform:translateY(0px) scale(1);
+  }
+}
+
+/* --------------------------------------------------
+   TEXT
+-------------------------------------------------- */
+h1{
+  margin:26px 0 12px;
+  font-size:clamp(2rem,5vw,4rem);
+  line-height:1;
+  color:#5a2484;
+}
+
+p{
+  margin:0 auto 24px;
+  max-width:720px;
+  font-size:1.1rem;
+  line-height:1.6;
+  color:#5a5470;
+}
+
+/* --------------------------------------------------
+   BUTTON
+-------------------------------------------------- */
+.buy-btn{
+  display:inline-block;
+  padding:16px 28px;
+  border-radius:18px;
+  background:var(--accent);
+  color:#ffffff;
+  text-decoration:none;
+  font-weight:700;
+  font-size:1rem;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+  box-shadow:0 10px 24px rgba(255,122,0,0.30);
+}
+
+.buy-btn:hover{
+  background:var(--accentHover);
+  transform:translateY(-2px);
+}
+
+/* --------------------------------------------------
+   FOOTER
+-------------------------------------------------- */
+.footer{
+  margin-top:18px;
+  font-size:13px;
+  color:#7c7694;
+}
+
+@media (max-width:700px){
+
+  body{
+    padding:16px;
+  }
+
+  .book-card{
+    padding:18px;
+  }
+
+  h1{
+    margin-top:18px;
+  }
+
+  p{
+    font-size:1rem;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="book-wrap">
+
+  <div class="book-card">
+
+    <div class="cover-wrap">
+      <img src="/assets/ella-cover.png" alt="Ella Umber & Her Umber-Ella book cover">
+    </div>
+
+    <h1>Ella Umber & Her Umber-Ella</h1>
+
+    <p>
+      A colorful children’s story filled with imagination, adventure,
+      friendship, and rainy-day fun. Because apparently even umbrellas
+      need branding now.
+    </p>
+
+    <a
+      class="buy-btn"
+      href="https://www.amazon.com/Ella-Umber-Her-Umber-Ella-Prepared-ebook/dp/B0GZ8X397K/ref=sr_1_1?dib=eyJ2IjoiMSJ9.WlLzEHXTuiJKRMNoGYH1r-aLixU43KyYFfjNT2-YJwxg_bE-35ex3Xckk4xKwtAhXtQFUeKM3mwRwF1pIk78Qw.YScPYchOtQGMeUo2BE1v3bpLkKAD4xXcRYY7Sq_c1Sw&dib_tag=se&keywords=ella+umber&qid=1778078588&sr=8-1"
+      target="_blank"
+      rel="noopener"
+    >
+      Buy on Amazon →
+    </a>
+
+    <div class="footer">
+      © Ella Umber • Children’s Book
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
