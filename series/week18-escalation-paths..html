@@ -1,1 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Escalation Paths | Operational Architecture Series | Randy Anthony</title>
 
+  <link rel="icon" href="/favicon.png">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/series/series.css">
+
+  <meta name="description" content="What Time-Critical Operations Teach You About Escalation Paths. Part II of Randy Anthony’s Operational Architecture series exploring escalation design, operational instability, and system reliability." />
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+
+  <a class="brand" href="/">
+    <img src="/favicon.png" alt="" style="width:44px;height:44px;border-radius:12px;">
+    <div class="titles">
+      <strong>RANDY ANTHONY</strong>
+      <span>Operational Reliability Advisory</span>
+    </div>
+  </a>
+
+  <nav class="primary" role="navigation" aria-label="Main navigation">
+    <a href="/">Home</a>
+    <a href="/series/">Operational Series</a>
+    <a href="/home.html">Offerings</a>
+    <a href="/bio/">Bio</a>
+    <a href="/book/">Book</a>
+    <a href="/radio/">Radio</a>
+
+    <div class="cta">
+      <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">
+        Request a consultation
+      </a>
+    </div>
+  </nav>
+
+  <button class="mobile-toggle" aria-expanded="false">☰</button>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" aria-hidden="true">
+  <a href="/">Home</a>
+  <a href="/series/">Operational Series</a>
+  <a href="/home.html">Offerings</a>
+  <a href="/bio/">Bio</a>
+  <a href="/book/">Book</a>
+  <a href="/radio/">Radio</a>
+</div>
+
+<!-- ================= MAIN ================= -->
+<main class="wrap">
+
+  <section class="hero">
+
+    <div class="kicker">Operational Architecture Series • Part II • Week 18</div>
+
+    <h1 class="hero-title">
+      What Time-Critical Operations Teach You About Escalation Paths
+    </h1>
+
+    <p class="meta">
+      Escalation should reduce instability, not multiply it.
+    </p>
+
+    <img
+      src="/series/assets/week18-escalation-paths.png"
+      alt="Escalation Paths operational systems graphic"
+      style="width:100%;max-width:1000px;border-radius:20px;margin:32px auto;display:block;"
+    />
+
+  </section>
+
+  <section class="content-section">
+
+    <p>
+      Most operational teams think of escalation as a communication process. In practice, it is something much more consequential. Escalation is part of the operating architecture itself, and when it functions poorly, it can amplify instability just as effectively as the original technical fault.
+    </p>
+
+    <p>
+      A bad escalation path can be more dangerous than the original issue.
+    </p>
+
+    <p>
+      A problem appears. Someone responds. The initial intervention does not resolve it. Now the system reaches a decision point.
+    </p>
+
+    <p>
+      Escalate. Wait. Try something else. Call another team. Hope the symptoms stabilize.
+    </p>
+
+    <p>
+      In time-critical environments, those decisions matter quickly.
+    </p>
+
+    <p>
+      Escalation is supposed to reduce uncertainty. It should bring greater visibility, stronger expertise, clearer authority, and faster resolution.
+    </p>
+
+    <p>
+      But poorly designed escalation paths often do the opposite.
+    </p>
+
+    <p>
+      They introduce delay.
+    </p>
+
+    <p>
+      They route problems to the wrong people.
+    </p>
+
+    <p>
+      They create duplicated effort.
+    </p>
+
+    <p>
+      They produce conflicting interventions.
+    </p>
+
+    <p>
+      They widen uncertainty instead of reducing it.
+    </p>
+
+    <p>
+      At that point, escalation stops being part of the recovery process. It becomes part of the failure itself.
+    </p>
+
+    <p>
+      This becomes especially dangerous in complex operational environments where the visible problem is not always the originating problem.
+    </p>
+
+    <p>
+      A delayed escalation compresses recovery time.
+    </p>
+
+    <p>
+      A misrouted escalation wastes critical minutes.
+    </p>
+
+    <p>
+      An overloaded escalation introduces too many voices and too many competing actions.
+    </p>
+
+    <p>
+      An authority gap creates motion without actual decision-making.
+    </p>
+
+    <p>
+      As those conditions stack, the system becomes harder to stabilize.
+    </p>
+
+    <p>
+      This is one of the ways reaction cascades accelerate.
+    </p>
+
+    <p>
+      Not because the original fault was catastrophic.
+    </p>
+
+    <p>
+      But because the response architecture multiplied the instability.
+    </p>
+
+    <p>
+      In time-critical systems, escalation should never be treated as administrative procedure.
+    </p>
+
+    <p>
+      It is operational design.
+    </p>
+
+    <p>
+      Because when escalation increases uncertainty instead of reducing it, the response chain has become part of the failure.
+    </p>
+
+  </section>
+
+  <!-- ================= NAVIGATION ================= -->
+  <section class="btnrow" style="margin-top:48px;justify-content:center;gap:16px;">
+
+    <a class="btn" href="/series/part2/week17-hidden-dependencies.html">
+      ← Previous Week
+    </a>
+
+    <a class="btn" href="/series/part2.html">
+      Part II Index
+    </a>
+
+    <a class="btn" href="/series/part2/week19-compressed-decision-windows.html">
+      Next Week →
+    </a>
+
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      © <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.
+    </div>
+
+    <div class="smallLinks">
+      <a href="/">Home Page</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= MOBILE NAV SCRIPT ================= -->
+<script>
+  const btn = document.querySelector('.mobile-toggle');
+  const panel = document.querySelector('.mobile-nav');
+
+  if (btn && panel) {
+    btn.addEventListener('click', () => {
+      const isOpen = panel.classList.toggle('show');
+      panel.setAttribute('aria-hidden', !isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
