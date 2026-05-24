@@ -3,29 +3,29 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Hidden Dependencies | Operational Architecture Series | Randy Anthony</title>
+
+  <title>Week 17 (Part II, Week 3) — Hidden Dependencies | Randy Anthony</title>
 
   <link rel="icon" href="/favicon.png">
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/series/series.css">
 
-  <meta name="description" content="What Time-Critical Operations Teach You About Hidden Dependencies. Part II of Randy Anthony’s Operational Architecture series exploring visibility, system dependencies, and operational reliability." />
+  <meta name="description" content="What Time-Critical Operations Teach You About Hidden Dependencies" />
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
 <header class="site-header">
 
   <a class="brand" href="/">
-    <img src="/favicon.png" alt="" style="width:44px;height:44px;border-radius:12px;">
+    <img src="/favicon.png" style="width:44px;height:44px;border-radius:12px;">
     <div class="titles">
       <strong>RANDY ANTHONY</strong>
       <span>Operational Reliability Advisory</span>
     </div>
   </a>
 
-  <nav class="primary" role="navigation" aria-label="Main navigation">
+  <nav class="primary">
     <a href="/">Home</a>
     <a href="/series/">Operational Series</a>
     <a href="/home.html">Offerings</a>
@@ -40,11 +40,10 @@
     </div>
   </nav>
 
-  <button class="mobile-toggle" aria-expanded="false">☰</button>
+  <button class="mobile-toggle">☰</button>
 </header>
 
-<!-- MOBILE NAV -->
-<div class="mobile-nav" aria-hidden="true">
+<div class="mobile-nav">
   <a href="/">Home</a>
   <a href="/series/">Operational Series</a>
   <a href="/home.html">Offerings</a>
@@ -53,113 +52,110 @@
   <a href="/radio/">Radio</a>
 </div>
 
-<!-- ================= MAIN ================= -->
 <main class="wrap">
 
+  <!-- HERO -->
   <section class="hero">
-
-    <div class="kicker">Operational Architecture Series • Part II • Week 17</div>
-
     <h1 class="hero-title">
       What Time-Critical Operations Teach You About Hidden Dependencies
     </h1>
 
     <p class="meta">
-      Systems rarely fail only where operators are looking.
+      Week 17 (Part II, Week 3) ·
+      <a href="/series/soon.html">View on LinkedIn</a>
     </p>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="card body split-post">
 
     <img
       src="/series/assets/week17-hidden-dependencies.png"
-      alt="Hidden Dependencies operational systems graphic"
-      style="width:100%;max-width:1000px;border-radius:20px;margin:32px auto;display:block;"
-    />
+      alt="Hidden dependencies in time-critical operational systems"
+      class="post-image">
+
+    <div class="post-text">
+
+      <p>Some of the most dangerous failures begin in places operators cannot directly see. Not because those systems are unimportant, but because they are assumed to be stable.</p>
+
+      <p>In time-critical environments, visible systems receive most of the operational attention. Operators monitor signal paths, automation states, timing indicators, system health, alerts, outputs, and immediate points of execution. That visibility creates confidence, and often, that confidence is justified. But not always.</p>
+
+      <p>Complex systems are rarely defined only by what operators directly control. They are also shaped by dependencies that exist outside the immediate operational surface. Shared infrastructure, third-party services, timing references, network routing, cloud resources, upstream providers, automation layers, authentication systems, external integrations, and invisible assumptions all influence operational behavior whether operators can see them or not.</p>
+
+      <p>These dependencies often remain unnoticed precisely because they appear stable. Until they are not.</p>
+
+      <p>When hidden dependencies begin to fail, the visible system may continue appearing healthy long enough to create dangerous misinterpretation. Outputs may still appear normal. Monitoring may still report green. Automation may still appear active. Nothing obvious may suggest instability, yet the conditions for failure are already forming.</p>
+
+      <p>This is what makes hidden dependencies operationally dangerous. They create the illusion that a system is self-contained when it is anything but.</p>
+
+      <p>By the time symptoms finally emerge, the originating issue may already be far removed from the operator’s direct control. That is why some failures feel sudden.</p>
+
+      <p>But most are not.</p>
+
+      <p>They are delayed visibility.</p>
+
+      <p>The failure existed before the evidence became visible. The system was already changing. The operator simply had no direct line of sight into where the instability began.</p>
+
+      <p>In tightly coupled operational environments, this matters enormously. Recovery becomes more difficult when the visible problem is not the originating problem. Teams begin responding to symptoms. Interventions target downstream effects. Additional changes are introduced under pressure. The system becomes harder to stabilize because the actual source remains unresolved.</p>
+
+      <p>This is one of the ways reaction cascades begin. Not through obvious failure, but through invisible dependency disruption that alters system behavior before operators understand what has changed.</p>
+
+      <p>Operational visibility is not just about what can be seen. It is also about understanding what exists beyond the visible layer.</p>
+
+      <p>Because in time-critical systems, what appears stable is not always independent.</p>
+
+      <p>And systems rarely fail only where people are looking.</p>
+
+    </div>
 
   </section>
 
-  <section class="content-section">
+  <!-- NAV -->
+  <section class="split">
 
-    <p>
-      Some of the most dangerous failures begin in places operators cannot directly see. Not because those systems are unimportant, but because they are assumed to be stable.
-    </p>
+    <div>
+      <a class="btn" href="/series/week-16-illusion-of-visibility.html">
+        ← Previous: The Illusion of Visibility
+      </a>
+    </div>
 
-    <p>
-      In time-critical environments, visible systems receive most of the operational attention. Operators monitor signal paths, automation states, timing indicators, system health, alerts, outputs, and immediate points of execution. That visibility creates confidence, and often, that confidence is justified. But not always.
-    </p>
-
-    <p>
-      Complex systems are rarely defined only by what operators directly control. They are also shaped by dependencies that exist outside the immediate operational surface. Shared infrastructure, third-party services, timing references, network routing, cloud resources, upstream providers, automation layers, authentication systems, external integrations, and invisible assumptions all influence operational behavior whether operators can see them or not.
-    </p>
-
-    <p>
-      These dependencies often remain unnoticed precisely because they appear stable. Until they are not.
-    </p>
-
-    <p>
-      When hidden dependencies begin to fail, the visible system may continue appearing healthy long enough to create dangerous misinterpretation. Outputs may still appear normal. Monitoring may still report green. Automation may still appear active. Nothing obvious may suggest instability, yet the conditions for failure are already forming.
-    </p>
-
-    <p>
-      This is what makes hidden dependencies operationally dangerous. They create the illusion that a system is self-contained when it is anything but.
-    </p>
-
-    <p>
-      By the time symptoms finally emerge, the originating issue may already be far removed from the operator’s direct control. That is why some failures feel sudden.
-    </p>
-
-    <p>
-      But most are not.
-    </p>
-
-    <p>
-      They are delayed visibility.
-    </p>
-
-    <p>
-      The failure existed before the evidence became visible. The system was already changing. The operator simply had no direct line of sight into where the instability began.
-    </p>
-
-    <p>
-      In tightly coupled operational environments, this matters enormously. Recovery becomes more difficult when the visible problem is not the originating problem. Teams begin responding to symptoms. Interventions target downstream effects. Additional changes are introduced under pressure. The system becomes harder to stabilize because the actual source remains unresolved.
-    </p>
-
-    <p>
-      This is one of the ways reaction cascades begin. Not through obvious failure, but through invisible dependency disruption that alters system behavior before operators understand what has changed.
-    </p>
-
-    <p>
-      Operational visibility is not just about what can be seen. It is also about understanding what exists beyond the visible layer.
-    </p>
-
-    <p>
-      Because in time-critical systems, what appears stable is not always independent.
-    </p>
-
-    <p>
-      And systems rarely fail only where people are looking.
-    </p>
+    <div>
+      <a class="btn" href="/series/week18-escalation-paths.html">
+        Next: Escalation Paths →
+      </a>
+    </div>
 
   </section>
 
-  <!-- ================= NAVIGATION ================= -->
-  <section class="btnrow" style="margin-top:48px;justify-content:center;gap:16px;">
+  <!-- SPONSORS -->
+  <div class="sponsor-grid">
 
-    <a class="btn" href="/series/week-16-illusion-of-visibility.html">
-      ← Previous Illusion of Visibility
-    </a>
+    <article class="card" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: Legal Shield</h3>
+      <p style="color:#cbd5e1;">
+        Legal Shield & ID Shield<br>
+        Protecting Families & Businesses Nationwide.
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/legal/">Explore Plans →</a>
+      </p>
+    </article>
 
-    <a class="btn" href="/series/part2.html">
-      Part II Index
-    </a>
+    <article class="card" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: The Piety Paychain</h3>
+      <p style="color:#cbd5e1;">
+        Helping to fund these pages.<br>
+        Learn more about the Piety Paychain
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/2026/">Explore Paychain →</a>
+      </p>
+    </article>
 
-    <a class="btn" href="/series/week18-escalation-paths.html>
-     Next Escalation Paths →
-    </a>
-
-  </section>
+  </div>
 
 </main>
 
-<!-- ================= FOOTER ================= -->
 <footer class="site-foot">
   <div class="wrap">
     <div>
@@ -172,7 +168,6 @@
   </div>
 </footer>
 
-<!-- ================= MOBILE NAV SCRIPT ================= -->
 <script>
   const btn = document.querySelector('.mobile-toggle');
   const panel = document.querySelector('.mobile-nav');
