@@ -1,21 +1,20 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Coming Soon | Randy Anthony</title>
+
+  <title>Week 19 (Part II, Week 5) — Compressed Decision Windows | Randy Anthony</title>
 
   <link rel="icon" href="/favicon.png">
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/series/series.css">
 
-  <meta name="description" content="This LinkedIn post will be published shortly. Follow Randy Anthony for updates on operational reliability and system design." />
+  <meta name="description" content="What Time-Critical Operations Teach You About Compressed Decision Windows" />
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
 <header class="site-header">
 
   <a class="brand" href="/">
@@ -41,55 +40,166 @@
     </div>
   </nav>
 
-  <button class="mobile-toggle" aria-expanded="false">☰</button>
+  <button class="mobile-toggle" aria-expanded="false" aria-controls="mobileNav">
+    ☰
+  </button>
+
 </header>
 
-<!-- MOBILE NAV -->
-<div class="mobile-nav" aria-hidden="true">
+<nav id="mobileNav" class="mobile-nav" aria-hidden="true">
   <a href="/">Home</a>
   <a href="/series/">Operational Series</a>
   <a href="/home.html">Offerings</a>
   <a href="/bio/">Bio</a>
   <a href="/book/">Book</a>
   <a href="/radio/">Radio</a>
-</div>
+</nav>
 
-<!-- ================= MAIN ================= -->
 <main class="wrap">
 
+  <!-- HERO -->
   <section class="hero">
 
-    <div class="kicker">LinkedIn</div>
-
     <h1 class="hero-title">
-      Post Publishing Shortly
+      What Time-Critical Operations Teach You About Compressed Decision Windows
     </h1>
 
     <p class="meta">
-      This LinkedIn post is scheduled and will be available soon.
+      Week 19 (Part II, Week 5) ·
+      <a href="/series/soon.html">View on LinkedIn</a>
     </p>
 
-    <p>
-      The full written version is already available as part of the Operational Architecture series.
-    </p>
+  </section>
 
-    <div class="btnrow">
+  <!-- CONTENT -->
+  <section class="card body split-post">
 
-      <a class="btn" href="/series/">
-        Return to Series
-      </a>
+    <img
+      src="/series/assets/19.png"
+      alt="Compressed Decision Windows operational systems graphic"
+      class="post-image"
+    />
 
-      <a class="btn" href="https://www.linkedin.com/in/randy-anthony-07547410b-" target="_blank" rel="noopener">
-        View LinkedIn Profile
-      </a>
+    <div class="post-text">
+
+      <p>Most people assume that operational failures are caused by bad decisions. In many cases, the problem is more subtle. The decision itself may be reasonable. What changes the outcome is the amount of time available to make it.</p>
+
+      <p>Time is an operational resource.</p>
+
+      <p>Like bandwidth, staffing, visibility, and system capacity, it can be consumed, restricted, or lost.</p>
+
+      <p>When enough time exists, teams can gather information, evaluate options, coordinate responses, and execute corrective actions with confidence.</p>
+
+      <p>When time begins to disappear, the decision environment changes.</p>
+
+      <p>The window narrows.</p>
+
+      <p>Available choices begin to shrink.</p>
+
+      <p>Uncertainty starts to increase.</p>
+
+      <p>The consequences of delay become larger.</p>
+
+      <p>What was once a manageable situation can quickly become a race against the clock.</p>
+
+      <p>This is what creates a compressed decision window.</p>
+
+      <p>A compressed decision window occurs when the amount of time available to make an effective decision decreases faster than the team can process the situation.</p>
+
+      <p>The issue is not necessarily complexity.</p>
+
+      <p>The issue is speed.</p>
+
+      <p>Information continues arriving.</p>
+
+      <p>Conditions continue changing.</p>
+
+      <p>Stakeholders continue asking questions.</p>
+
+      <p>The operational clock continues moving.</p>
+
+      <p>Every minute spent evaluating options is a minute that may no longer be available later.</p>
+
+      <p>In highly time-sensitive environments, compressed decision windows often emerge long before a visible crisis develops.</p>
+
+      <p>A delayed escalation.</p>
+
+      <p>A missed warning indicator.</p>
+
+      <p>An unresolved dependency.</p>
+
+      <p>A small technical issue that remains unaddressed.</p>
+
+      <p>Each one quietly consumes time.</p>
+
+      <p>By the time the problem becomes obvious, many of the safest response options have already disappeared.</p>
+
+      <p>The remaining choices may still work, but they usually involve greater risk, greater disruption, or greater operational cost.</p>
+
+      <p>This is why experienced operators focus on preserving decision space whenever possible.</p>
+
+      <p>The earlier a problem is identified, the larger the decision window remains.</p>
+
+      <p>The larger the decision window, the more options remain available.</p>
+
+      <p>The more options available, the easier it becomes to stabilize the system without introducing additional instability.</p>
+
+      <p>In time-critical operations, success is often determined before the final decision is ever made.</p>
+
+      <p>It is determined by whether enough decision time still exists when the decision becomes necessary.</p>
+
+      <p>Because once decision windows become compressed, even good decisions may arrive too late to matter.</p>
 
     </div>
 
   </section>
 
+  <!-- NAVIGATION -->
+  <section class="split">
+
+    <div>
+      <a class="btn" href="/series/week18-escalation-paths.html">
+        ← Previous: Escalation Paths
+      </a>
+    </div>
+
+    <div>
+      <a class="btn" href="/series/week20-operational-drift.html">
+        Next: Operational Drift →
+      </a>
+    </div>
+
+  </section>
+
+  <!-- SPONSORS -->
+  <div class="sponsor-grid">
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: Legal Shield</h3>
+      <p style="color:#cbd5e1;">
+        Legal Shield & ID Shield<br>
+        Protecting Families & Businesses Nationwide.
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/legal/">Explore Plans →</a>
+      </p>
+    </article>
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: The Piety Paychain</h3>
+      <p style="color:#cbd5e1;">
+        Helping to fund these pages.<br>
+        Learn more about the Piety Paychain
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/2026/">Explore Paychain →</a>
+      </p>
+    </article>
+
+  </div>
+
 </main>
 
-<!-- ================= FOOTER ================= -->
 <footer class="site-foot">
   <div class="wrap">
     <div>
@@ -102,10 +212,9 @@
   </div>
 </footer>
 
-<!-- ================= MOBILE NAV SCRIPT ================= -->
 <script>
   const btn = document.querySelector('.mobile-toggle');
-  const panel = document.querySelector('.mobile-nav');
+  const panel = document.getElementById('mobileNav');
 
   if (btn && panel) {
     btn.addEventListener('click', () => {
@@ -114,6 +223,8 @@
       btn.setAttribute('aria-expanded', isOpen);
     });
   }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
 </body>
