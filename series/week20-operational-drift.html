@@ -1,21 +1,20 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Coming Soon | Randy Anthony</title>
+
+  <title>Week 20 (Part II, Week 6) — Operational Drift | Randy Anthony</title>
 
   <link rel="icon" href="/favicon.png">
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/series/series.css">
 
-  <meta name="description" content="This LinkedIn post will be published shortly. Follow Randy Anthony for updates on operational reliability and system design." />
+  <meta name="description" content="What Time-Critical Operations Teach You About Operational Drift" />
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
 <header class="site-header">
 
   <a class="brand" href="/">
@@ -41,80 +40,160 @@
     </div>
   </nav>
 
-  <button class="mobile-toggle" aria-expanded="false">☰</button>
+  <button class="mobile-toggle" aria-expanded="false" aria-controls="mobileNav">
+    ☰
+  </button>
+
 </header>
 
-<!-- MOBILE NAV -->
-<div class="mobile-nav" aria-hidden="true">
+<nav id="mobileNav" class="mobile-nav" aria-hidden="true">
   <a href="/">Home</a>
   <a href="/series/">Operational Series</a>
   <a href="/home.html">Offerings</a>
   <a href="/bio/">Bio</a>
   <a href="/book/">Book</a>
   <a href="/radio/">Radio</a>
-</div>
+</nav>
 
-<!-- ================= MAIN ================= -->
 <main class="wrap">
 
   <section class="hero">
 
-    <div class="kicker">LinkedIn</div>
-
     <h1 class="hero-title">
-      Post Publishing Shortly
+      What Time-Critical Operations Teach You About Operational Drift
     </h1>
 
     <p class="meta">
-      This LinkedIn post is scheduled and will be available soon.
+      Week 20 (Part II, Week 6) ·
+      <a href="/series/soon.html">View on LinkedIn</a>
     </p>
 
-    <p>
-      The full written version is already available as part of the Operational Architecture series.
-    </p>
+  </section>
 
-    <div class="btnrow">
+  <section class="card body split-post">
 
-      <a class="btn" href="/series/">
-        Return to Series
-      </a>
+    <img
+      src="/series/assets/20.png"
+      alt="Operational Drift operational systems graphic"
+      class="post-image"
+    />
 
-      <a class="btn" href="https://www.linkedin.com/in/randy-anthony-07547410b-" target="_blank" rel="noopener">
-        View LinkedIn Profile
-      </a>
+    <div class="post-text">
+
+      <p>Most people imagine operational failures as sudden events.</p>
+
+      <p>A system works.</p>
+
+      <p>Something breaks.</p>
+
+      <p>The failure occurs.</p>
+
+      <p>Reality is often far less dramatic.</p>
+
+      <p>Many systems do not fail suddenly.</p>
+
+      <p>They drift.</p>
+
+      <p>Operational drift occurs when a system gradually moves away from its original design, expectations, or operating assumptions without anyone fully recognizing the change while it is happening.</p>
+
+      <p>The movement is often small.</p>
+
+      <p>A workaround is introduced.</p>
+
+      <p>A process is modified.</p>
+
+      <p>A responsibility shifts.</p>
+
+      <p>A dependency changes.</p>
+
+      <p>Documentation falls behind reality.</p>
+
+      <p>An exception becomes routine.</p>
+
+      <p>None of these actions appear dangerous by themselves.</p>
+
+      <p>In fact, many of them are reasonable responses to real-world conditions.</p>
+
+      <p>The problem is not the individual adjustment.</p>
+
+      <p>The problem is accumulation.</p>
+
+      <p>Over time, small changes begin to interact with one another.</p>
+
+      <p>The system that exists today may look similar to the system that existed months or years ago.</p>
+
+      <p>But beneath the surface, important assumptions have changed.</p>
+
+      <p>Procedures may no longer match actual practice.</p>
+
+      <p>Documentation may no longer reflect operational reality.</p>
+
+      <p>Dependencies may have evolved without corresponding updates elsewhere.</p>
+
+      <p>The system continues functioning.</p>
+
+      <p>That continued success creates confidence.</p>
+
+      <p>And confidence often delays investigation.</p>
+
+      <p>This is one reason operational drift can remain invisible for long periods of time.</p>
+
+      <p>The system still appears stable.</p>
+
+      <p>Outputs still appear normal.</p>
+
+      <p>Incidents may remain infrequent.</p>
+
+      <p>Nothing obvious suggests that reliability is gradually eroding.</p>
+
+      <p>Yet the distance between designed state and actual state continues to grow.</p>
+
+      <p>When a disruption eventually occurs, teams often focus on the triggering event.</p>
+
+      <p>The outage.</p>
+
+      <p>The failure.</p>
+
+      <p>The missed action.</p>
+
+      <p>The visible symptom.</p>
+
+      <p>What they sometimes miss is that the conditions supporting the failure may have been developing for much longer.</p>
+
+      <p>The final incident simply revealed the accumulated drift.</p>
+
+      <p>This is why experienced operators pay attention to small deviations.</p>
+
+      <p>Not because every deviation creates risk.</p>
+
+      <p>But because repeated deviations can slowly reshape the operating environment.</p>
+
+      <p>And once drift becomes embedded in normal behavior, it becomes much harder to recognize.</p>
+
+      <p>Operational reliability is not only about responding to failures.</p>
+
+      <p>It is also about noticing movement before failure occurs.</p>
+
+      <p>Because systems do not always fail through disruption.</p>
+
+      <p>Sometimes they fail through gradual separation from the conditions that once made them reliable.</p>
 
     </div>
 
   </section>
 
-</main>
+  <section class="split">
 
-<!-- ================= FOOTER ================= -->
-<footer class="site-foot">
-  <div class="wrap">
     <div>
-      © <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.
+      <a class="btn" href="/series/week19-compressed-decision-windows.html">
+        ← Previous: Compressed Decision Windows
+      </a>
     </div>
 
-    <div class="smallLinks">
-      <a href="/">Home Page</a>
+    <div>
+      <a class="btn" href="/series/week21-false-recovery.html">
+        Next: False Recovery →
+      </a>
     </div>
-  </div>
-</footer>
 
-<!-- ================= MOBILE NAV SCRIPT ================= -->
-<script>
-  const btn = document.querySelector('.mobile-toggle');
-  const panel = document.querySelector('.mobile-nav');
-
-  if (btn && panel) {
-    btn.addEventListener('click', () => {
-      const isOpen = panel.classList.toggle('show');
-      panel.setAttribute('aria-hidden', !isOpen);
-      btn.setAttribute('aria-expanded', isOpen);
-    });
-  }
-</script>
-
-</body>
-</html>
+  </section>
