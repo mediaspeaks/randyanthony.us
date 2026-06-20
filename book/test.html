@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Books | Randy Anthony">
+<meta property="og:description" content="Forty years studying complex systems. Two books. One philosophy.">
+<meta property="og:url" content="https://randyanthony.us/book/">
+<meta property="og:image" content="https://randyanthony.us/book/assets/week27-hero.png">
+
+<title>Books | Randy Anthony</title>
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<style>
+
+:root{
+
+--bg:#f5f7fb;
+--surface:#ffffff;
+--text:#172232;
+--muted:#5d6978;
+--accent:#193d7c;
+--accent2:#0d6a53;
+--border:#dde4ee;
+
+--hero:#081d36;
+
+--radius:18px;
+
+--shadow:
+0 16px 40px rgba(0,0,0,.10);
+
+--max:1100px;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:
+Segoe UI,
+Helvetica,
+Arial,
+sans-serif;
+
+background:var(--bg);
+
+color:var(--text);
+
+line-height:1.65;
+
+}
+
+img{
+
+display:block;
+
+max-width:100%;
+
+height:auto;
+
+}
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+.wrap{
+
+max-width:var(--max);
+
+margin:auto;
+
+padding:0 22px;
+
+}
+
+/* =======================================
+HEADER
+(KEEPING YOUR EXISTING TEMPLATE)
+======================================= */
+
+header.site-header{
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:16px 22px;
+
+max-width:var(--max);
+
+margin:auto;
+
+}
+
+.brand{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+}
+
+.brand img{
+
+width:46px;
+
+height:46px;
+
+border-radius:10px;
+
+}
+
+.titles strong{
+
+display:block;
+
+font-size:14px;
+
+letter-spacing:.7px;
+
+}
+
+.titles span{
+
+font-size:12px;
+
+color:var(--muted);
+
+}
+
+nav.primary{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+}
+
+nav.primary a{
+
+padding:8px 12px;
+
+border-radius:10px;
+
+font-size:14px;
+
+transition:.25s;
+
+}
+
+nav.primary a:hover{
+
+background:#eef3fb;
+
+}
+
+.btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:11px 18px;
+
+border-radius:12px;
+
+font-weight:600;
+
+background:var(--accent);
+
+color:white;
+
+transition:.25s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-2px);
+
+}
+
+/* =======================================
+HERO
+======================================= */
+
+.hero{
+
+margin:30px auto;
+
+max-width:var(--max);
+
+background:
+
+linear-gradient(
+135deg,
+rgba(6,22,44,.96),
+rgba(16,48,92,.90)
+),
+
+url("/book/assets/week27-hero.png")
+center/cover;
+
+border-radius:24px;
+
+overflow:hidden;
+
+box-shadow:var(--shadow);
+
+}
+
+.hero-inner{
+
+display:grid;
+
+grid-template-columns:
+
+1.05fr
+
+1fr;
+
+gap:50px;
+
+padding:70px;
+
+align-items:center;
+
+}
+
+.hero-image{
+
+border-radius:16px;
+
+box-shadow:
+
+0 18px 36px rgba(0,0,0,.35);
+
+}
+
+.hero h1{
+
+font-size:58px;
+
+font-weight:700;
+
+color:white;
+
+margin-bottom:20px;
+
+}
+
+.hero .lead{
+
+font-size:23px;
+
+line-height:1.7;
+
+color:
+
+rgba(255,255,255,.88);
+
+margin-bottom:34px;
+
+max-width:560px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:18px;
+
+flex-wrap:wrap;
+
+}
+
+.hero-buttons .secondary{
+
+background:
+
+rgba(255,255,255,.10);
+
+border:
+
+1px solid
+
+rgba(255,255,255,.22);
+
+}
+
+/* =======================================
+INTRO
+======================================= */
+
+.intro{
+
+padding:70px 0;
+
+}
+
+.intro h2{
+
+font-size:38px;
+
+margin-bottom:20px;
+
+text-align:center;
+
+}
+
+.intro p{
+
+font-size:20px;
+
+color:var(--muted);
+
+max-width:820px;
+
+margin:auto;
+
+text-align:center;
+
+}
+
+/* =======================================
+BOOK FEATURE
+======================================= */
+
+.book-feature{
+
+display:grid;
+
+grid-template-columns:
+
+390px
+
+1fr;
+
+gap:70px;
+
+align-items:center;
+
+padding:70px 0;
+
+}
+
+.book-feature.reverse{
+
+grid-template-columns:
+
+1fr
+
+390px;
+
+}
+
+.book-cover{
+
+border-radius:18px;
+
+box-shadow:var(--shadow);
+
+}
+
+.book-copy h2{
+
+font-size:40px;
+
+margin-bottom:22px;
+
+}
+
+.book-copy p{
+
+font-size:19px;
+
+margin-bottom:22px;
+
+color:var(--muted);
+
+}
+
+.book-copy .btn{
+
+margin-top:10px;
+
+}
+
+@media(max-width:900px){
+
+.hero-inner{
+
+grid-template-columns:1fr;
+
+padding:40px;
+
+}
+
+.book-feature,
+
+.book-feature.reverse{
+
+grid-template-columns:1fr;
+
+}
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- ==========================================================
+     HEADER
+     (Keep your existing navigation exactly as it is)
+========================================================== -->
+
+<header class="site-header">
+
+    <a class="brand" href="/">
+        <img src="/favicon.png" alt="Randy Anthony">
+        <div class="titles">
+            <strong>RANDY ANTHONY</strong>
+            <span>Operational Reliability Advisory</span>
+        </div>
+    </a>
+
+    <nav class="primary">
+
+        <a href="/">Home</a>
+        <a href="/series/">Operational Series</a>
+        <a href="/home.html">Offerings</a>
+        <a href="/book/">Books</a>
+        <a href="/radio/">Radio</a>
+
+        <a class="btn" href="mailto:inbox@randyanthony.us">
+            Request a Consultation
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- ==========================================================
+     HERO
+========================================================== -->
+
+<section class="hero">
+
+    <div class="hero-inner">
+
+        <div>
+
+            <img
+                class="hero-image"
+                src="/book/assets/week27-hero.png"
+                alt="Operational Reliability Publications">
+
+        </div>
+
+        <div>
+
+            <h1>Books</h1>
+
+            <p class="lead">
+
+                Forty years studying complex systems.
+
+                <br><br>
+
+                Two books.
+
+                <br>
+
+                Two perspectives.
+
+                <br>
+
+                One lifetime of operational experience.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a class="btn" href="#reliability">
+
+                    Explore the Books
+
+                </a>
+
+                <a class="btn secondary"
+                   href="/series/">
+
+                    Operational Visibility Series
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     INTRO
+========================================================== -->
+
+<section class="intro wrap">
+
+    <h2>
+
+        A Career Focused on Complex Systems
+
+    </h2>
+
+    <p>
+
+        Throughout four decades in radio,
+        television,
+        automation,
+        operational monitoring,
+        engineering support,
+        and time-critical decision making,
+        one idea has remained remarkably consistent.
+
+        <br><br>
+
+        Complex systems succeed only when people can
+        understand them,
+        observe them,
+        and respond before small failures become major ones.
+
+        <br><br>
+
+        These books explore that philosophy from two
+        different perspectives.
+
+    </p>
+
+</section>
+
+
+<!-- ==========================================================
+     RELIABILITY
+========================================================== -->
+
+<section
+class="book-feature wrap"
+id="reliability">
+
+    <div>
+
+        <img
+        class="book-cover"
+        src="/assets/reliability-cover.jpg"
+        alt="Reliability Is Not Improvised">
+
+    </div>
+
+    <div class="book-copy">
+
+        <h2>
+
+            Reliability Is Not Improvised
+
+        </h2>
+
+        <p>
+
+            Reliable organizations rarely become reliable by
+            accident.
+
+            They are intentionally designed,
+            intentionally observed,
+            intentionally maintained,
+            and intentionally improved.
+
+        </p>
+
+        <p>
+
+            Drawing on decades inside live television,
+            broadcast automation,
+            operational monitoring,
+            control rooms,
+            and high-pressure environments,
+            this book introduces a practical framework for
+            operational reliability that applies far beyond
+            broadcasting.
+
+        </p>
+
+        <p>
+
+            Rather than focusing on technology alone,
+            it explores visibility,
+            decision quality,
+            dependencies,
+            operational drift,
+            escalation,
+            resilience,
+            and the human factors that determine whether
+            complex systems continue functioning under stress.
+
+        </p>
+
+        <a class="btn"
+           href="/book/newbook.html">
+
+            Learn More →
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     FEATURE ARTWORK
+========================================================== -->
+
+<section class="wrap">
+
+    <img
+        src="/book/assets/week26.png"
+        alt="Decision Load Under Pressure"
+        style="border-radius:22px;
+               box-shadow:var(--shadow);">
+
+</section><!-- ==========================================================
+     TRANSITION
+========================================================== -->
+
+<section
+style="
+padding:90px 20px;
+margin:90px 0;
+background:#0d1f38;
+color:white;
+text-align:center;
+">
+
+    <div class="wrap">
+
+        <h2
+        style="
+        color:white;
+        font-size:42px;
+        margin-bottom:25px;
+        ">
+
+            From Operational Frameworks...
+
+            <br>
+
+            to Industry Evolution
+
+        </h2>
+
+        <p
+        style="
+        max-width:760px;
+        margin:auto;
+        color:rgba(255,255,255,.82);
+        font-size:20px;
+        ">
+
+            The same operational thinking that explains why
+            complex organizations succeed can also explain why
+            entire industries decline.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================================
+     FM BOOK
+========================================================== -->
+
+<section
+class="book-feature reverse wrap"
+id="fm-book">
+
+    <div class="book-copy">
+
+        <h2>
+
+            FM:
+            The Fading Modulation
+            of Terrestrial Radio
+
+        </h2>
+
+        <p>
+
+            Radio once connected communities,
+            introduced new artists,
+            informed local audiences,
+            and reflected regional culture.
+
+            It wasn't simply entertainment.
+
+            It was infrastructure.
+
+        </p>
+
+        <p>
+
+            Through deregulation,
+            consolidation,
+            automation,
+            changing economics,
+            and evolving technology,
+            that infrastructure gradually changed into
+            something very different.
+
+        </p>
+
+        <p>
+
+            This book examines how those changes occurred,
+            why they mattered,
+            and what every modern industry can learn from
+            radio's transformation.
+
+        </p>
+
+        <p>
+
+            While written for radio professionals and
+            enthusiasts,
+            the lessons extend far beyond broadcasting.
+
+            Every complex system eventually faces the same
+            pressures:
+
+            efficiency,
+
+            automation,
+
+            consolidation,
+
+            and the challenge of remaining valuable while
+            technology continues to evolve.
+
+        </p>
+
+        <a
+        class="btn"
+        href="/book/">
+
+            Learn More →
+
+        </a>
+
+    </div>
+
+
+    <div>
+
+        <img
+        class="book-cover"
+        src="/assets/cover2.jpg"
+        alt="FM Book Cover">
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     FM FEATURE IMAGE
+========================================================== -->
+
+<section class="wrap">
+
+    <img
+    src="/book/assets/fm-banner.jpg"
+    alt="Broadcast Radio"
+
+    style="
+    border-radius:22px;
+    box-shadow:var(--shadow);
+    ">
+
+</section>
+
+
+
+<!-- ==========================================================
+     OPERATIONAL VISIBILITY
+========================================================== -->
+
+<section
+class="wrap"
+style="padding:90px 0;">
+
+    <h2
+    style="
+    font-size:42px;
+    text-align:center;
+    margin-bottom:30px;
+    ">
+
+        The Operational Visibility Series
+
+    </h2>
+
+    <p
+    style="
+    max-width:860px;
+    margin:auto;
+    text-align:center;
+    font-size:20px;
+    color:var(--muted);
+    ">
+
+        Twenty-seven consecutive weeks exploring
+        operational visibility,
+        dependencies,
+        escalation,
+        operational drift,
+        recovery,
+        resilience,
+        human decision making,
+        leadership,
+        monitoring,
+        and reliability.
+
+    </p>
+
+    <p
+    style="
+    max-width:860px;
+    margin:35px auto;
+    text-align:center;
+    font-size:19px;
+    color:var(--muted);
+    ">
+
+        What began as a LinkedIn writing project evolved
+        into a comprehensive body of work documenting the
+        principles behind highly reliable organizations.
+
+        Each article builds upon the previous,
+        forming a practical guide for leaders,
+        engineers,
+        operators,
+        and anyone responsible for keeping complex systems
+        functioning under pressure.
+
+    </p>
+
+    <div
+    style="
+    display:flex;
+    justify-content:center;
+    margin-top:45px;
+    ">
+
+        <a
+        class="btn"
+        href="/series/">
+
+            Explore the Complete Series →
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     OPTIONAL HERO GRAPHIC
+========================================================== -->
+
+<section class="wrap">
+
+    <img
+    src="/book/assets/visibility-hero.png"
+    alt="Operational Visibility"
+
+    style="
+    border-radius:22px;
+    box-shadow:var(--shadow);
+    ">
+
+</section>
+
+
+
+<!-- ==========================================================
+     CLOSING MESSAGE
+========================================================== -->
+
+<section
+style="
+padding:100px 20px;
+margin-top:80px;
+background:#eef2f8;
+">
+
+<div class="wrap">
+
+<h2
+style="
+text-align:center;
+font-size:44px;
+margin-bottom:35px;
+">
+
+One Career.
+
+<br>
+
+One Philosophy.
+
+<br>
+
+Two Books.
+
+</h2>
+
+<p
+style="
+max-width:820px;
+margin:auto;
+text-align:center;
+font-size:22px;
+color:var(--muted);
+line-height:1.8;
+">
+
+Whether examining operational reliability
+or the evolution of terrestrial radio,
+the same question remains.
+
+</p>
+
+<p
+style="
+max-width:820px;
+margin:45px auto 0;
+text-align:center;
+font-size:28px;
+font-weight:600;
+line-height:1.6;
+">
+
+How do complex systems remain effective
+
+while everything around them continues to change?
+
+</p>
+
+</div>
+
+</section>
