@@ -1,21 +1,20 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Coming Soon | Randy Anthony</title>
+
+  <title>Week 24 (Part II, Week 10) — Interface Fragility | Randy Anthony</title>
 
   <link rel="icon" href="/favicon.png">
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/series/series.css">
 
-  <meta name="description" content="This LinkedIn post will be published shortly. Follow Randy Anthony for updates on operational reliability and system design." />
+  <meta name="description" content="What Time-Critical Operations Teach You About Interface Fragility" />
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
 <header class="site-header">
 
   <a class="brand" href="/">
@@ -41,55 +40,190 @@
     </div>
   </nav>
 
-  <button class="mobile-toggle" aria-expanded="false">☰</button>
+  <button class="mobile-toggle" aria-expanded="false" aria-controls="mobileNav">
+    ☰
+  </button>
+
 </header>
 
-<!-- MOBILE NAV -->
-<div class="mobile-nav" aria-hidden="true">
+<nav id="mobileNav" class="mobile-nav" aria-hidden="true">
   <a href="/">Home</a>
   <a href="/series/">Operational Series</a>
   <a href="/home.html">Offerings</a>
   <a href="/bio/">Bio</a>
   <a href="/book/">Book</a>
   <a href="/radio/">Radio</a>
-</div>
+</nav>
 
-<!-- ================= MAIN ================= -->
 <main class="wrap">
 
+  <!-- HERO -->
   <section class="hero">
 
-    <div class="kicker">LinkedIn</div>
-
     <h1 class="hero-title">
-      Post Publishing Shortly
+      What Time-Critical Operations Teach You About Interface Fragility
     </h1>
 
     <p class="meta">
-      This LinkedIn post is scheduled and will be available soon.
+      Week 24 (Part II, Week 10) ·
+      <a href="/series/soon.html">View on LinkedIn</a>
     </p>
 
-    <p>
-      The full written version is already available as part of the Operational Architecture series.
-    </p>
+  </section>
 
-    <div class="btnrow">
+  <!-- CONTENT -->
+  <section class="card body split-post">
 
-      <a class="btn" href="/series/">
-        Return to Series
-      </a>
+    <img
+      src="/series/assets/24.png"
+      alt="Interface Fragility operational systems graphic"
+      class="post-image"
+    />
 
-      <a class="btn" href="https://www.linkedin.com/in/randy-anthony-07547410b-" target="_blank" rel="noopener">
-        View LinkedIn Profile
-      </a>
+    <div class="post-text">
+
+      <p>Systems rarely operate in isolation.</p>
+
+      <p>They exchange information.</p>
+
+      <p>They hand off responsibility.</p>
+
+      <p>They share resources.</p>
+
+      <p>They depend on one another.</p>
+
+      <p>Every one of those interactions creates an interface.</p>
+
+      <p>Interfaces exist between people.</p>
+
+      <p>Between teams.</p>
+
+      <p>Between applications.</p>
+
+      <p>Between hardware and software.</p>
+
+      <p>Between organizations.</p>
+
+      <p>Most operational failures are not caused by individual components suddenly becoming unreliable.</p>
+
+      <p>They occur where reliable components interact.</p>
+
+      <p>This is interface fragility.</p>
+
+      <p>Interface fragility describes the increased risk that exists wherever information, responsibility, or control moves from one part of a system to another.</p>
+
+      <p>Each handoff creates an opportunity for misunderstanding.</p>
+
+      <p>Assumptions replace verification.</p>
+
+      <p>Expectations become unclear.</p>
+
+      <p>Information arrives incomplete.</p>
+
+      <p>Timing begins to matter.</p>
+
+      <p>The individual systems may continue functioning exactly as designed.</p>
+
+      <p>The interface between them does not.</p>
+
+      <p>One team assumes another has acknowledged the issue.</p>
+
+      <p>A monitoring platform forwards an alert that never reaches the correct destination.</p>
+
+      <p>A process depends on information that is delayed by only a few minutes.</p>
+
+      <p>Each event appears minor by itself.</p>
+
+      <p>Together, they create operational failure.</p>
+
+      <p>This is why experienced operators pay close attention to transitions.</p>
+
+      <p>The transition between shifts.</p>
+
+      <p>The transition between automated and manual control.</p>
+
+      <p>The transition between vendors.</p>
+
+      <p>The transition between applications.</p>
+
+      <p>The transition between one operational team and another.</p>
+
+      <p>These moments often determine whether a small issue remains manageable or develops into something much larger.</p>
+
+      <p>Strong interfaces are built on clarity.</p>
+
+      <p>Clear ownership.</p>
+
+      <p>Clear communication.</p>
+
+      <p>Clear expectations.</p>
+
+      <p>Clear confirmation that information has been received and understood.</p>
+
+      <p>Reliable systems are not simply collections of reliable components.</p>
+
+      <p>They are collections of reliable relationships between those components.</p>
+
+      <p>When those relationships weaken, operational performance begins to decline.</p>
+
+      <p>The failure may not originate within any single system.</p>
+
+      <p>It may exist only where those systems meet.</p>
+
+      <p>Because reliability is not determined solely by how well individual parts perform.</p>
+
+      <p>It is also determined by how well they work together.</p>
 
     </div>
 
   </section>
 
+  <!-- NAVIGATION -->
+  <section class="split">
+
+    <div>
+      <a class="btn" href="/series/week23-signal-prioritization.html">
+        ← Previous: Signal Prioritization
+      </a>
+    </div>
+
+    <div>
+      <a class="btn" href="/series/week25-recovery-architecture.html">
+        Next: Recovery Architecture →
+      </a>
+    </div>
+
+  </section>
+
+  <!-- SPONSORS -->
+  <div class="sponsor-grid">
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: Legal Shield</h3>
+      <p style="color:#cbd5e1;">
+        Legal Shield & ID Shield<br>
+        Protecting Families & Businesses Nationwide.
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/legal/">Explore Plans →</a>
+      </p>
+    </article>
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: The Piety Paychain</h3>
+      <p style="color:#cbd5e1;">
+        Helping to fund these pages.<br>
+        Learn more about the Piety Paychain
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/2026/">Explore Paychain →</a>
+      </p>
+    </article>
+
+  </div>
+
 </main>
 
-<!-- ================= FOOTER ================= -->
 <footer class="site-foot">
   <div class="wrap">
     <div>
@@ -102,10 +236,9 @@
   </div>
 </footer>
 
-<!-- ================= MOBILE NAV SCRIPT ================= -->
 <script>
   const btn = document.querySelector('.mobile-toggle');
-  const panel = document.querySelector('.mobile-nav');
+  const panel = document.getElementById('mobileNav');
 
   if (btn && panel) {
     btn.addEventListener('click', () => {
@@ -114,6 +247,8 @@
       btn.setAttribute('aria-expanded', isOpen);
     });
   }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
 </body>
