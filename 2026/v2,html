@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Piety PayChain | Transforming Payroll Into Long-Term Value Creation</title>
+
+<meta name="description"
+content="The Piety PayChain is an Asset Fusion Payroll System transforming payroll from a recurring business expense into an engine for long-term value creation.">
+
+<meta name="theme-color" content="#06080d">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/framework.css">
+<link rel="stylesheet" href="assets/css/hero.css">
+<link rel="stylesheet" href="assets/css/animations.css">
+
+</head>
+
+<body>
+
+<div class="background-grid"></div>
+<div class="background-glow"></div>
+
+<header class="site-header">
+
+<div class="container">
+
+<nav class="navbar">
+
+<div class="brand">
+
+<div class="brand-mark">
+
+<svg width="44" height="44" viewBox="0 0 100 100">
+
+<defs>
+
+<linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+
+<stop offset="0%" stop-color="#F8E08B"/>
+
+<stop offset="100%" stop-color="#C89B2F"/>
+
+</linearGradient>
+
+</defs>
+
+<path
+fill="url(#gold)"
+d="M50 4
+L84 20
+L84 52
+C84 72 69 89 50 96
+C31 89 16 72 16 52
+L16 20
+Z"/>
+
+<circle
+cx="50"
+cy="44"
+r="12"
+fill="#08111E"/>
+
+</svg>
+
+</div>
+
+<div class="brand-text">
+
+<span class="brand-title">
+
+The Piety PayChain
+
+</span>
+
+<span class="brand-subtitle">
+
+Asset Fusion Payroll System
+
+</span>
+
+</div>
+
+</div>
+
+<ul class="nav-links">
+
+<li><a href="#vision">Vision</a></li>
+
+<li><a href="#ecosystem">Ecosystem</a></li>
+
+<li><a href="#technology">Technology</a></li>
+
+<li><a href="#video">Overview</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+<a class="primary-button"
+href="https://pietytoken.io"
+target="_blank">
+
+Get Wallet
+
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div class="hero-copy">
+
+<div class="eyebrow">
+
+THE FUTURE OF PAYROLL
+
+</div>
+
+<h1>
+
+Payroll
+Was Never
+Designed
+To Build Wealth.
+
+</h1>
+
+<p class="hero-text">
+
+The Piety PayChain transforms payroll from a recurring business expense into a long-term value creation platform.
+
+Built around the Piety Token ecosystem, it combines digital assets, private ledger technology and real-world business participation into a unified financial model designed for businesses, employees and merchants.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#video"
+class="primary-button">
+
+Watch Overview
+
+</a>
+
+<a href="#ecosystem"
+class="secondary-button">
+
+Explore The Ecosystem
+
+</a>
+
+</div>
+
+<div class="hero-stats">
+
+<div class="stat">
+
+<div class="stat-number">
+
+Payroll
+
+</div>
+
+<div class="stat-label">
+
+Foundation
+
+</div>
+
+</div>
+
+<div class="stat">
+
+<div class="stat-number">
+
+Private
+
+</div>
+
+<div class="stat-label">
+
+Ledger
+
+</div>
+
+</div>
+
+<div class="stat">
+
+<div class="stat-number">
+
+Digital
+
+</div>
+
+<div class="stat-label">
+
+Assets
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-graphic">
+
+<svg
+viewBox="0 0 900 900"
+class="ecosystem-svg">
+
+<defs>
+
+<linearGradient
+id="goldGradient"
+x1="0%"
+y1="0%"
+x2="100%"
+y2="100%">
+
+<stop offset="0%"
+stop-color="#F5DE8A"/>
+
+<stop offset="100%"
+stop-color="#C99B30"/>
+
+</linearGradient>
+
+</defs>
+
+<circle
+cx="450"
+cy="450"
+r="120"
+class="engine-core"/>
+
+<text
+x="450"
+y="440"
+text-anchor="middle"
+class="engine-title">
+
+ASSET
+
+</text>
+
+<text
+x="450"
+y="480"
+text-anchor="middle"
+class="engine-title">
+
+FUSION
+
+</text>
+
+<circle cx="450" cy="140" r="55" class="node"/>
+<circle cx="720" cy="280" r="55" class="node"/>
+<circle cx="720" cy="620" r="55" class="node"/>
+<circle cx="450" cy="760" r="55" class="node"/>
+<circle cx="180" cy="620" r="55" class="node"/>
+<circle cx="180" cy="280" r="55" class="node"/>
+
+<line x1="450" y1="200" x2="450" y2="330" class="connector"/>
+<line x1="640" y1="315" x2="540" y2="380" class="connector"/>
+<line x1="640" y1="585" x2="540" y2="520" class="connector"/>
+<line x1="450" y1="700" x2="450" y2="570" class="connector"/>
+<line x1="260" y1="585" x2="360" y2="520" class="connector"/>
+<line x1="260" y1="315" x2="360" y2="380" class="connector"/>
+
+<text x="450" y="145" class="node-text">Payroll</text>
+<text x="720" y="285" class="node-text">Digital Assets</text>
+<text x="720" y="625" class="node-text">Merchants</text>
+<text x="450" y="765" class="node-text">Growth</text>
+<text x="180" y="625" class="node-text">Employees</text>
+<text x="180" y="285" class="node-text">Private Ledger</text>
+
+</svg>
+
+</div>
+
+</div>
+
+</section>
+
+<script src="assets/js/app.js"></script>
+
+</body>
+
+</html>
