@@ -1,21 +1,20 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Coming Soon | Randy Anthony</title>
+
+  <title>Week 23 (Part II, Week 9) — Signal Prioritization | Randy Anthony</title>
 
   <link rel="icon" href="/favicon.png">
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/series/series.css">
 
-  <meta name="description" content="This LinkedIn post will be published shortly. Follow Randy Anthony for updates on operational reliability and system design." />
+  <meta name="description" content="What Time-Critical Operations Teach You About Signal Prioritization" />
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
 <header class="site-header">
 
   <a class="brand" href="/">
@@ -41,55 +40,196 @@
     </div>
   </nav>
 
-  <button class="mobile-toggle" aria-expanded="false">☰</button>
+  <button class="mobile-toggle" aria-expanded="false" aria-controls="mobileNav">
+    ☰
+  </button>
+
 </header>
 
-<!-- MOBILE NAV -->
-<div class="mobile-nav" aria-hidden="true">
+<nav id="mobileNav" class="mobile-nav" aria-hidden="true">
   <a href="/">Home</a>
   <a href="/series/">Operational Series</a>
   <a href="/home.html">Offerings</a>
   <a href="/bio/">Bio</a>
   <a href="/book/">Book</a>
   <a href="/radio/">Radio</a>
-</div>
+</nav>
 
-<!-- ================= MAIN ================= -->
 <main class="wrap">
 
+  <!-- HERO -->
   <section class="hero">
 
-    <div class="kicker">LinkedIn</div>
-
     <h1 class="hero-title">
-      Post Publishing Shortly
+      What Time-Critical Operations Teach You About Signal Prioritization
     </h1>
 
     <p class="meta">
-      This LinkedIn post is scheduled and will be available soon.
+      Week 23 (Part II, Week 9) ·
+      <a href="/series/soon.html">View on LinkedIn</a>
     </p>
 
-    <p>
-      The full written version is already available as part of the Operational Architecture series.
-    </p>
+  </section>
 
-    <div class="btnrow">
+  <!-- CONTENT -->
+  <section class="card body split-post">
 
-      <a class="btn" href="/series/">
-        Return to Series
-      </a>
+    <img
+      src="/series/assets/23.png"
+      alt="Signal Prioritization operational systems graphic"
+      class="post-image"
+    />
 
-      <a class="btn" href="https://www.linkedin.com/in/randy-anthony-07547410b-" target="_blank" rel="noopener">
-        View LinkedIn Profile
-      </a>
+    <div class="post-text">
+
+      <p>Every operational system produces signals.</p>
+
+      <p>Some are important.</p>
+
+      <p>Many are not.</p>
+
+      <p>Alerts.</p>
+
+      <p>Notifications.</p>
+
+      <p>Metrics.</p>
+
+      <p>Warnings.</p>
+
+      <p>Status updates.</p>
+
+      <p>Logs.</p>
+
+      <p>Dashboards.</p>
+
+      <p>Each one competes for attention.</p>
+
+      <p>The challenge is that not every signal deserves the same response.</p>
+
+      <p>Signal prioritization is the ability to distinguish information that requires immediate action from information that simply exists.</p>
+
+      <p>This sounds straightforward.</p>
+
+      <p>In practice, it rarely is.</p>
+
+      <p>Modern operational environments generate enormous amounts of data.</p>
+
+      <p>Monitoring platforms become more sophisticated.</p>
+
+      <p>Dashboards become more detailed.</p>
+
+      <p>Automation creates additional notifications.</p>
+
+      <p>Visibility continues to increase.</p>
+
+      <p>Attention does not.</p>
+
+      <p>Operators still have a finite amount of time and cognitive capacity.</p>
+
+      <p>When everything appears important, nothing truly stands out.</p>
+
+      <p>Critical warnings become buried beneath routine activity.</p>
+
+      <p>Meaningful trends become lost inside constant noise.</p>
+
+      <p>The problem is not a lack of information.</p>
+
+      <p>The problem is identifying which information matters most.</p>
+
+      <p>Experienced operators rarely react to every signal.</p>
+
+      <p>Instead, they evaluate context.</p>
+
+      <p>They recognize patterns.</p>
+
+      <p>They understand relationships between systems.</p>
+
+      <p>They know which indicators typically lead to larger problems.</p>
+
+      <p>They also recognize which alerts have little operational significance.</p>
+
+      <p>This judgment is developed through experience, observation, and understanding of the environment.</p>
+
+      <p>It cannot be replaced by simply adding more dashboards.</p>
+
+      <p>One unnecessary alert may seem harmless.</p>
+
+      <p>Hundreds of unnecessary alerts create fatigue.</p>
+
+      <p>Eventually, teams begin filtering information automatically.</p>
+
+      <p>Important signals become easier to overlook.</p>
+
+      <p>Response times increase.</p>
+
+      <p>Confidence decreases.</p>
+
+      <p>Operational risk grows.</p>
+
+      <p>The most effective operational environments are not the ones that generate the most information.</p>
+
+      <p>They are the ones that present the right information at the right time.</p>
+
+      <p>Visibility becomes useful only when it improves decision making.</p>
+
+      <p>Signal prioritization transforms information into understanding.</p>
+
+      <p>It allows operators to focus attention where it creates the greatest operational value.</p>
+
+      <p>Because reliable operations are not determined by how much you can see.</p>
+
+      <p>They are determined by knowing what deserves your attention first.</p>
 
     </div>
 
   </section>
 
+  <!-- NAVIGATION -->
+  <section class="split">
+
+    <div>
+      <a class="btn" href="/series/week22-control-surface-vs-system-state.html">
+        ← Previous: Control Surface vs System State
+      </a>
+    </div>
+
+    <div>
+      <a class="btn" href="/series/week24-interface-fragility.html">
+        Next: Interface Fragility →
+      </a>
+    </div>
+
+  </section>
+
+  <!-- SPONSORS -->
+  <div class="sponsor-grid">
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: Legal Shield</h3>
+      <p style="color:#cbd5e1;">
+        Legal Shield & ID Shield<br>
+        Protecting Families & Businesses Nationwide.
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/legal/">Explore Plans →</a>
+      </p>
+    </article>
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: The Piety Paychain</h3>
+      <p style="color:#cbd5e1;">
+        Helping to fund these pages.<br>
+        Learn more about the Piety Paychain
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/2026/">Explore Paychain →</a>
+      </p>
+    </article>
+
+  </div>
+
 </main>
 
-<!-- ================= FOOTER ================= -->
 <footer class="site-foot">
   <div class="wrap">
     <div>
@@ -102,10 +242,9 @@
   </div>
 </footer>
 
-<!-- ================= MOBILE NAV SCRIPT ================= -->
 <script>
   const btn = document.querySelector('.mobile-toggle');
-  const panel = document.querySelector('.mobile-nav');
+  const panel = document.getElementById('mobileNav');
 
   if (btn && panel) {
     btn.addEventListener('click', () => {
@@ -114,6 +253,8 @@
       btn.setAttribute('aria-expanded', isOpen);
     });
   }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
 </body>
