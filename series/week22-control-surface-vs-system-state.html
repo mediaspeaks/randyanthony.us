@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Coming Soon | Randy Anthony</title>
+
+  <title>Week 22 (Part II, Week 8) — Control Surface vs System State | Randy Anthony</title>
 
   <link rel="icon" href="/favicon.png">
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/series/series.css">
 
-  <meta name="description" content="This LinkedIn post will be published shortly. Follow Randy Anthony for updates on operational reliability and system design." />
+  <meta name="description" content="What Time-Critical Operations Teach You About Control Surface vs System State" />
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
 <header class="site-header">
 
   <a class="brand" href="/">
@@ -40,55 +40,178 @@
     </div>
   </nav>
 
-  <button class="mobile-toggle" aria-expanded="false">☰</button>
+  <button class="mobile-toggle" aria-expanded="false" aria-controls="mobileNav">
+    ☰
+  </button>
+
 </header>
 
-<!-- MOBILE NAV -->
-<div class="mobile-nav" aria-hidden="true">
+<nav id="mobileNav" class="mobile-nav" aria-hidden="true">
   <a href="/">Home</a>
   <a href="/series/">Operational Series</a>
   <a href="/home.html">Offerings</a>
   <a href="/bio/">Bio</a>
   <a href="/book/">Book</a>
   <a href="/radio/">Radio</a>
-</div>
+</nav>
 
-<!-- ================= MAIN ================= -->
 <main class="wrap">
 
+  <!-- HERO -->
   <section class="hero">
 
-    <div class="kicker">LinkedIn</div>
-
     <h1 class="hero-title">
-      Post Publishing Shortly
+      What Time-Critical Operations Teach You About Control Surface vs System State
     </h1>
 
     <p class="meta">
-      This LinkedIn post is scheduled and will be available soon.
+      Week 22 (Part II, Week 8) ·
+      <a href="/series/soon.html">View on LinkedIn</a>
     </p>
 
-    <p>
-      The full written version is already available as part of the Operational Architecture series.
-    </p>
+  </section>
 
-    <div class="btnrow">
+  <!-- CONTENT -->
+  <section class="card body split-post">
 
-      <a class="btn" href="/series/">
-        Return to Series
-      </a>
+    <img
+      src="/series/assets/22.png"
+      alt="Control Surface vs System State operational systems graphic"
+      class="post-image"
+    />
 
-      <a class="btn" href="https://www.linkedin.com/in/randy-anthony-07547410b-" target="_blank" rel="noopener">
-        View LinkedIn Profile
-      </a>
+    <div class="post-text">
+
+      <p>Every operational environment has a control surface.</p>
+
+      <p>Dashboards.</p>
+
+      <p>Monitoring screens.</p>
+
+      <p>Status pages.</p>
+
+      <p>Alert consoles.</p>
+
+      <p>Management tools.</p>
+
+      <p>Each one provides a view of what the system is doing.</p>
+
+      <p>These tools are essential.</p>
+
+      <p>They help teams detect problems, monitor performance, and make decisions.</p>
+
+      <p>The challenge is that the control surface is not the system.</p>
+
+      <p>It is a representation of the system.</p>
+
+      <p>It shows what the tools can observe, not necessarily everything that is happening.</p>
+
+      <p>The actual system state exists beyond the dashboard.</p>
+
+      <p>It includes components, dependencies, interactions, and conditions that may not be visible in real time.</p>
+
+      <p>When the control surface and the system state are aligned, operations become more predictable.</p>
+
+      <p>When they begin to diverge, risk increases.</p>
+
+      <p>A dashboard can report healthy services while a critical dependency is quietly failing.</p>
+
+      <p>Performance graphs can appear stable while latency steadily increases elsewhere.</p>
+
+      <p>An alert may never trigger because the condition being monitored is not the condition that is actually changing.</p>
+
+      <p>The control surface still looks normal.</p>
+
+      <p>The system does not.</p>
+
+      <p>This is one reason operational surprises occur.</p>
+
+      <p>Teams naturally trust the information in front of them.</p>
+
+      <p>They assume the data is current.</p>
+
+      <p>They assume the indicators are complete.</p>
+
+      <p>They assume the absence of alarms means the absence of problems.</p>
+
+      <p>Those assumptions are understandable.</p>
+
+      <p>They are not always correct.</p>
+
+      <p>Experienced operators learn to distinguish between what the tools report and what the system may actually be experiencing.</p>
+
+      <p>They validate.</p>
+
+      <p>They correlate.</p>
+
+      <p>They investigate.</p>
+
+      <p>They question unexpected behavior, even when the dashboards appear healthy.</p>
+
+      <p>They understand that monitoring provides visibility, not certainty.</p>
+
+      <p>The best operational decisions come from combining system information with operational judgment.</p>
+
+      <p>Control surfaces help you navigate.</p>
+
+      <p>System state tells you where you really are.</p>
+
+      <p>The most reliable teams understand both.</p>
+
+      <p>Because effective operations are not built on what the dashboard says.</p>
+
+      <p>They are built on understanding what the system is actually doing.</p>
 
     </div>
 
   </section>
 
+  <!-- NAVIGATION -->
+  <section class="split">
+
+    <div>
+      <a class="btn" href="/series/week21-false-recovery.html">
+        ← Previous: False Recovery
+      </a>
+    </div>
+
+    <div>
+      <a class="btn" href="/series/week23-signal-prioritization.html">
+        Next: Signal Prioritization →
+      </a>
+    </div>
+
+  </section>
+
+  <!-- SPONSORS -->
+  <div class="sponsor-grid">
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: Legal Shield</h3>
+      <p style="color:#cbd5e1;">
+        Legal Shield & ID Shield<br>
+        Protecting Families & Businesses Nationwide.
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/legal/">Explore Plans →</a>
+      </p>
+    </article>
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: The Piety Paychain</h3>
+      <p style="color:#cbd5e1;">
+        Helping to fund these pages.<br>
+        Learn more about the Piety Paychain
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/2026/">Explore Paychain →</a>
+      </p>
+    </article>
+
+  </div>
+
 </main>
 
-<!-- ================= FOOTER ================= -->
 <footer class="site-foot">
   <div class="wrap">
     <div>
@@ -101,10 +224,9 @@
   </div>
 </footer>
 
-<!-- ================= MOBILE NAV SCRIPT ================= -->
 <script>
   const btn = document.querySelector('.mobile-toggle');
-  const panel = document.querySelector('.mobile-nav');
+  const panel = document.getElementById('mobileNav');
 
   if (btn && panel) {
     btn.addEventListener('click', () => {
@@ -113,6 +235,8 @@
       btn.setAttribute('aria-expanded', isOpen);
     });
   }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
 </body>
