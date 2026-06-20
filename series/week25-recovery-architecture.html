@@ -1,21 +1,20 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Coming Soon | Randy Anthony</title>
+
+  <title>Week 25 (Part II, Week 11) — Recovery Architecture | Randy Anthony</title>
 
   <link rel="icon" href="/favicon.png">
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/series/series.css">
 
-  <meta name="description" content="This LinkedIn post will be published shortly. Follow Randy Anthony for updates on operational reliability and system design." />
+  <meta name="description" content="What Time-Critical Operations Teach You About Recovery Architecture" />
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
 <header class="site-header">
 
   <a class="brand" href="/">
@@ -41,55 +40,180 @@
     </div>
   </nav>
 
-  <button class="mobile-toggle" aria-expanded="false">☰</button>
+  <button class="mobile-toggle" aria-expanded="false" aria-controls="mobileNav">
+    ☰
+  </button>
+
 </header>
 
-<!-- MOBILE NAV -->
-<div class="mobile-nav" aria-hidden="true">
+<nav id="mobileNav" class="mobile-nav" aria-hidden="true">
   <a href="/">Home</a>
   <a href="/series/">Operational Series</a>
   <a href="/home.html">Offerings</a>
   <a href="/bio/">Bio</a>
   <a href="/book/">Book</a>
   <a href="/radio/">Radio</a>
-</div>
+</nav>
 
-<!-- ================= MAIN ================= -->
 <main class="wrap">
 
+  <!-- HERO -->
   <section class="hero">
 
-    <div class="kicker">LinkedIn</div>
-
     <h1 class="hero-title">
-      Post Publishing Shortly
+      What Time-Critical Operations Teach You About Recovery Architecture
     </h1>
 
     <p class="meta">
-      This LinkedIn post is scheduled and will be available soon.
+      Week 25 (Part II, Week 11) ·
+      <a href="/series/soon.html">View on LinkedIn</a>
     </p>
 
-    <p>
-      The full written version is already available as part of the Operational Architecture series.
-    </p>
+  </section>
 
-    <div class="btnrow">
+  <!-- CONTENT -->
+  <section class="card body split-post">
 
-      <a class="btn" href="/series/">
-        Return to Series
-      </a>
+    <img
+      src="/series/assets/25.png"
+      alt="Recovery Architecture operational systems graphic"
+      class="post-image"
+    />
 
-      <a class="btn" href="https://www.linkedin.com/in/randy-anthony-07547410b-" target="_blank" rel="noopener">
-        View LinkedIn Profile
-      </a>
+    <div class="post-text">
+
+      <p>Every system will eventually experience failure.</p>
+
+      <p>Hardware wears out.</p>
+
+      <p>Software contains defects.</p>
+
+      <p>Networks become unavailable.</p>
+
+      <p>People make mistakes.</p>
+
+      <p>No operational environment is immune.</p>
+
+      <p>The question is not whether disruption will occur.</p>
+
+      <p>The question is what happens next.</p>
+
+      <p>Many organizations invest heavily in preventing failure.</p>
+
+      <p>Far fewer invest the same effort in preparing for recovery.</p>
+
+      <p>Recovery architecture is the deliberate design of systems, processes, and operational practices that allow services to be restored quickly, safely, and predictably after disruption occurs.</p>
+
+      <p>Recovery does not begin during an incident.</p>
+
+      <p>It begins long before one ever happens.</p>
+
+      <p>Clear procedures.</p>
+
+      <p>Documented responsibilities.</p>
+
+      <p>Validated backups.</p>
+
+      <p>Redundant systems.</p>
+
+      <p>Practiced response plans.</p>
+
+      <p>Defined communication paths.</p>
+
+      <p>Each one becomes part of the recovery architecture.</p>
+
+      <p>When these elements already exist, teams spend less time deciding what to do.</p>
+
+      <p>They spend more time executing.</p>
+
+      <p>Without preparation, every incident becomes a unique problem.</p>
+
+      <p>Teams search for documentation.</p>
+
+      <p>Ownership becomes uncertain.</p>
+
+      <p>Critical decisions are made under unnecessary pressure.</p>
+
+      <p>Recovery slows.</p>
+
+      <p>Risk increases.</p>
+
+      <p>Well-designed recovery architecture reduces uncertainty before uncertainty arrives.</p>
+
+      <p>It creates consistency during situations that are anything but consistent.</p>
+
+      <p>It allows experienced operators to focus their attention on the problem itself instead of debating the recovery process.</p>
+
+      <p>Perhaps the most valuable characteristic of recovery architecture is confidence.</p>
+
+      <p>Not confidence that failures will never occur.</p>
+
+      <p>Confidence that the organization can respond effectively when they do.</p>
+
+      <p>That confidence is earned through preparation.</p>
+
+      <p>It is strengthened through testing.</p>
+
+      <p>It is reinforced through continuous improvement after every incident.</p>
+
+      <p>Reliable operations are not built solely by preventing disruption.</p>
+
+      <p>They are built by ensuring that disruption does not become catastrophe.</p>
+
+      <p>Because operational excellence is measured not only by how well systems perform under normal conditions.</p>
+
+      <p>It is also measured by how well they recover when normal conditions no longer exist.</p>
 
     </div>
 
   </section>
 
+  <!-- NAVIGATION -->
+  <section class="split">
+
+    <div>
+      <a class="btn" href="/series/week24-interface-fragility.html">
+        ← Previous: Interface Fragility
+      </a>
+    </div>
+
+    <div>
+      <a class="btn" href="/series/week26-decision-load-under-pressure.html">
+        Next: Decision Load Under Pressure →
+      </a>
+    </div>
+
+  </section>
+
+  <!-- SPONSORS -->
+  <div class="sponsor-grid">
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: Legal Shield</h3>
+      <p style="color:#cbd5e1;">
+        Legal Shield & ID Shield<br>
+        Protecting Families & Businesses Nationwide.
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/legal/">Explore Plans →</a>
+      </p>
+    </article>
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: The Piety Paychain</h3>
+      <p style="color:#cbd5e1;">
+        Helping to fund these pages.<br>
+        Learn more about the Piety Paychain
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/2026/">Explore Paychain →</a>
+      </p>
+    </article>
+
+  </div>
+
 </main>
 
-<!-- ================= FOOTER ================= -->
 <footer class="site-foot">
   <div class="wrap">
     <div>
@@ -102,10 +226,9 @@
   </div>
 </footer>
 
-<!-- ================= MOBILE NAV SCRIPT ================= -->
 <script>
   const btn = document.querySelector('.mobile-toggle');
-  const panel = document.querySelector('.mobile-nav');
+  const panel = document.getElementById('mobileNav');
 
   if (btn && panel) {
     btn.addEventListener('click', () => {
@@ -114,6 +237,8 @@
       btn.setAttribute('aria-expanded', isOpen);
     });
   }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
 </body>
