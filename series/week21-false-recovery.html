@@ -1,21 +1,21 @@
-
+```html
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Coming Soon | Randy Anthony</title>
+
+  <title>Week 21 (Part II, Week 7) — False Recovery | Randy Anthony</title>
 
   <link rel="icon" href="/favicon.png">
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/series/series.css">
 
-  <meta name="description" content="This LinkedIn post will be published shortly. Follow Randy Anthony for updates on operational reliability and system design." />
+  <meta name="description" content="What Time-Critical Operations Teach You About False Recovery" />
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
 <header class="site-header">
 
   <a class="brand" href="/">
@@ -41,55 +41,196 @@
     </div>
   </nav>
 
-  <button class="mobile-toggle" aria-expanded="false">☰</button>
+  <button class="mobile-toggle" aria-expanded="false" aria-controls="mobileNav">
+    ☰
+  </button>
+
 </header>
 
-<!-- MOBILE NAV -->
-<div class="mobile-nav" aria-hidden="true">
+<nav id="mobileNav" class="mobile-nav" aria-hidden="true">
   <a href="/">Home</a>
   <a href="/series/">Operational Series</a>
   <a href="/home.html">Offerings</a>
   <a href="/bio/">Bio</a>
   <a href="/book/">Book</a>
   <a href="/radio/">Radio</a>
-</div>
+</nav>
 
-<!-- ================= MAIN ================= -->
 <main class="wrap">
 
+  <!-- HERO -->
   <section class="hero">
 
-    <div class="kicker">LinkedIn</div>
-
     <h1 class="hero-title">
-      Post Publishing Shortly
+      What Time-Critical Operations Teach You About False Recovery
     </h1>
 
     <p class="meta">
-      This LinkedIn post is scheduled and will be available soon.
+      Week 21 (Part II, Week 7) ·
+      <a href="/series/soon.html">View on LinkedIn</a>
     </p>
 
-    <p>
-      The full written version is already available as part of the Operational Architecture series.
-    </p>
+  </section>
 
-    <div class="btnrow">
+  <!-- CONTENT -->
+  <section class="card body split-post">
 
-      <a class="btn" href="/series/">
-        Return to Series
-      </a>
+    <img
+      src="/series/assets/21.png"
+      alt="False Recovery operational systems graphic"
+      class="post-image"
+    />
 
-      <a class="btn" href="https://www.linkedin.com/in/randy-anthony-07547410b-" target="_blank" rel="noopener">
-        View LinkedIn Profile
-      </a>
+    <div class="post-text">
+
+      <p>Most people recognize failure when it occurs.</p>
+
+      <p>Systems stop functioning.</p>
+
+      <p>Services become unavailable.</p>
+
+      <p>Errors appear.</p>
+
+      <p>Users begin reporting problems.</p>
+
+      <p>The disruption is visible.</p>
+
+      <p>Recovery, however, is often harder to recognize accurately.</p>
+
+      <p>This is because the return of normal operations does not always mean the underlying problem has been resolved.</p>
+
+      <p>A system can appear healthy while important risks remain unchanged.</p>
+
+      <p>This creates what operators often experience as false recovery.</p>
+
+      <p>False recovery occurs when visible symptoms disappear, leading teams to believe a system has returned to a stable condition even though the factors that caused the disruption remain present.</p>
+
+      <p>The system responds.</p>
+
+      <p>Services return.</p>
+
+      <p>Alarms clear.</p>
+
+      <p>Performance improves.</p>
+
+      <p>Operational pressure begins to decrease.</p>
+
+      <p>From the outside, everything appears normal again.</p>
+
+      <p>The incident seems over.</p>
+
+      <p>In many cases, this is exactly when the greatest danger begins.</p>
+
+      <p>The restoration of service can create confidence.</p>
+
+      <p>That confidence can reduce urgency.</p>
+
+      <p>Investigation slows.</p>
+
+      <p>Validation becomes less rigorous.</p>
+
+      <p>Attention shifts to other priorities.</p>
+
+      <p>Meanwhile, unresolved conditions continue to exist beneath the surface.</p>
+
+      <p>A temporary workaround may have restored functionality.</p>
+
+      <p>A failed component may still be operating at reduced capacity.</p>
+
+      <p>A dependency may remain unstable.</p>
+
+      <p>A process weakness may remain unaddressed.</p>
+
+      <p>The visible problem disappears.</p>
+
+      <p>The underlying exposure does not.</p>
+
+      <p>This is one reason repeat incidents are often surprising to the people experiencing them.</p>
+
+      <p>The first disruption receives attention.</p>
+
+      <p>The second disruption creates confusion.</p>
+
+      <p>Teams frequently ask why the issue returned.</p>
+
+      <p>In reality, the issue may never have left.</p>
+
+      <p>Only the symptoms disappeared.</p>
+
+      <p>Experienced operators understand that recovery and restoration are not always the same thing.</p>
+
+      <p>Restoration means functionality has returned.</p>
+
+      <p>Recovery means the system has returned to a condition where the original failure is unlikely to occur again for the same reason.</p>
+
+      <p>Those are not identical outcomes.</p>
+
+      <p>The difference becomes especially important in time-critical environments.</p>
+
+      <p>Pressure naturally encourages teams to restore service as quickly as possible.</p>
+
+      <p>That objective is important.</p>
+
+      <p>But restoring service is only part of the work.</p>
+
+      <p>Reliability depends on understanding whether the conditions that created the incident have actually been removed.</p>
+
+      <p>Because systems do not become reliable when alarms stop.</p>
+
+      <p>They become reliable when the causes behind those alarms have been addressed.</p>
+
+      <p>And until that happens, recovery may be more apparent than real.</p>
 
     </div>
 
   </section>
 
+  <!-- NAVIGATION -->
+  <section class="split">
+
+    <div>
+      <a class="btn" href="/series/week20-operational-drift.html">
+        ← Previous: Operational Drift
+      </a>
+    </div>
+
+    <div>
+      <a class="btn" href="/series/week22-control-surface-vs-system-state.html">
+        Next: Control Surface vs System State →
+      </a>
+    </div>
+
+  </section>
+
+  <!-- SPONSORS -->
+  <div class="sponsor-grid">
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: Legal Shield</h3>
+      <p style="color:#cbd5e1;">
+        Legal Shield & ID Shield<br>
+        Protecting Families & Businesses Nationwide.
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/legal/">Explore Plans →</a>
+      </p>
+    </article>
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: The Piety Paychain</h3>
+      <p style="color:#cbd5e1;">
+        Helping to fund these pages.<br>
+        Learn more about the Piety Paychain
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/2026/">Explore Paychain →</a>
+      </p>
+    </article>
+
+  </div>
+
 </main>
 
-<!-- ================= FOOTER ================= -->
 <footer class="site-foot">
   <div class="wrap">
     <div>
@@ -102,10 +243,9 @@
   </div>
 </footer>
 
-<!-- ================= MOBILE NAV SCRIPT ================= -->
 <script>
   const btn = document.querySelector('.mobile-toggle');
-  const panel = document.querySelector('.mobile-nav');
+  const panel = document.getElementById('mobileNav');
 
   if (btn && panel) {
     btn.addEventListener('click', () => {
@@ -114,7 +254,10 @@
       btn.setAttribute('aria-expanded', isOpen);
     });
   }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
 </body>
 </html>
+```
