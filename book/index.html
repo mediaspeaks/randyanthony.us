@@ -315,76 +315,44 @@ display:none;
 }
 
 /* ==========================================================
-   HERO
+   HERO BANNER
 ========================================================== */
 
-.hero{
+.hero-banner{
 
-margin:38px auto 70px;
+max-width:1400px;
 
-max-width:var(--max);
+margin:38px auto 28px;
+
+padding:0 24px;
+
+}
+
+.hero-banner img{
+
+display:block;
+
+width:100%;
+
+height:auto;
 
 border-radius:24px;
-
-overflow:hidden;
-
-background:
-
-linear-gradient(
-
-135deg,
-
-rgba(10,27,55,.95),
-
-rgba(22,61,122,.88)
-
-),
-
-url("/series/assets/ops-architecture-bg.jpg")
-
-center center / cover;
 
 box-shadow:var(--shadow);
 
 }
 
-.hero-inner{
+.hero-buttons-center{
 
-display:grid;
+display:flex;
 
-grid-template-columns:1.1fr 1fr;
+justify-content:center;
 
-gap:60px;
+gap:18px;
 
-align-items:center;
+margin:0 auto 60px;
 
-padding:70px;
-
-}
-
-.hero-copy h1{
-
-font-size:clamp(2.8rem,5vw,4rem);
-
-line-height:1.05;
-
-color:white;
-
-margin-bottom:24px;
-
-}
-
-.hero-copy p{
-
-font-size:21px;
-
-color:rgba(255,255,255,.88);
-
-line-height:1.8;
-
-margin-bottom:34px;
-
-max-width:560px;
+flex-wrap:wrap;
 
 }
 
