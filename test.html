@@ -1,180 +1,807 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Universal Header</title>
-<style>
-:root {
-  --header-height: 60px;
-  --padding-x: 16px;
-  --drawer-width: 85%;
-  --drawer-max: 320px;
-}
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  padding-top: var(--header-height);
-}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-/* HEADER */
-.mobile-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: var(--header-height);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 var(--padding-x);
-  background: #ffffff;
-  border-bottom: 1px solid #eee;
-  z-index: 1000;
-}
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b1a33">
 
-.menu-btn {
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
+<title>Operational Architecture Series | Randy Anthony</title>
 
-.menu-icon {
-  width: 24px;
-  height: 2px;
-  background: #000;
-  position: relative;
-}
-.menu-icon::before,
-.menu-icon::after {
-  content: '';
-  position: absolute;
-  width: 24px;
-  height: 2px;
-  background: #000;
-  left: 0;
-}
-.menu-icon::before { top: -8px; }
-.menu-icon::after { top: 8px; }
+<meta name="description"
+      content="The complete Operational Architecture Series by Randy Anthony. A 27-part exploration of reliability, operational visibility, systems thinking, and decision-making in time-critical environments.">
 
-.logo {
-  font-size: 18px;
-  font-weight: 600;
-}
+<meta property="og:type" content="website">
+<meta property="og:title"
+      content="Operational Architecture Series | Randy Anthony">
 
-/* DRAWER */
-.drawer {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: var(--drawer-width);
-  max-width: var(--drawer-max);
-  background: #fff;
-  transform: translateX(-100%);
-  transition: transform 0.25s ease;
-  z-index: 1100;
-  padding-top: var(--header-height);
-}
+<meta property="og:description"
+      content="Explore the complete Operational Architecture Series including Part I: Foundations and Part II: Operational Visibility.">
 
-.drawer.open {
-  transform: translateX(0);
-}
+<meta property="og:url"
+      content="https://randyanthony.us/series/">
 
-.drawer-content {
-  padding: 16px 20px;
-}
+<meta property="og:image"
+      content="https://randyanthony.us/assets/RCECoverWrap.png">
 
-.nav-item {
-  min-height: 48px;
-  display: flex;
-  align-items: center;
-  font-size: 18px;
-  text-decoration: none;
-  color: #000;
-}
+<meta property="og:image:width"
+      content="1200">
 
-.nav-item.active {
-  font-weight: bold;
-}
+<meta property="og:image:height"
+      content="630">
 
-/* OVERLAY */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.4);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
-  z-index: 1050;
-}
+<link rel="canonical"
+      href="https://randyanthony.us/series/">
 
-.overlay.show {
-  opacity: 1;
-  pointer-events: all;
-}
+<link rel="icon"
+      type="image/png"
+      href="/favicon.png">
 
-/* DESKTOP */
-@media (min-width: 768px) {
-  .menu-btn { display: none; }
-  .drawer { display: none; }
-  .overlay { display: none; }
-}
-</style>
+<link rel="stylesheet"
+      href="/css/global.css">
+
+<link rel="stylesheet"
+      href="/series/series.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
+
 </head>
+
 <body>
 
-<header class="mobile-header">
-  <div class="menu-btn" id="menuBtn">
-    <div class="menu-icon"></div>
-  </div>
-  <div class="logo">Randy Anthony</div>
-  <div style="width:48px"></div>
+<div class="site">
+
+<!-- ==========================================================
+     GLOBAL HEADER
+     (MATCHES randyanthony.us HOME PAGE)
+========================================================== -->
+
+<header class="site-header">
+
+    <a class="brand" href="/">
+
+        <img src="/favicon.png"
+             alt=""
+             style="width:44px;height:44px;border-radius:12px;">
+
+        <div class="titles">
+
+            <strong>RANDY ANTHONY</strong>
+
+            <span>Operational Reliability Advisory</span>
+
+        </div>
+
+    </a>
+
+    <nav class="primary"
+         role="navigation"
+         aria-label="Main navigation">
+
+        <a href="/">Home</a>
+
+        <a href="/series/">Operational Series</a>
+
+        <a href="/home.html">Offerings</a>
+
+        <a href="/book/">Book</a>
+
+        <a href="/radio/">Radio</a>
+
+        <div class="cta">
+
+            <a class="btn"
+               href="mailto:inbox@randyanthony.us?subject=Consultation%20request">
+
+                Request a consultation
+
+            </a>
+
+        </div>
+
+    </nav>
+
+    <button class="mobile-toggle"
+            id="mobileToggle"
+            aria-expanded="false"
+            aria-controls="mobileNav">
+
+        ☰
+
+    </button>
+
 </header>
 
-<nav class="drawer" id="drawer">
-  <div class="drawer-content">
-    <a href="/" class="nav-item">Home</a>
-    <a href="/about" class="nav-item">About</a>
-    <a href="/rce" class="nav-item">RCE System</a>
-    <a href="/blog" class="nav-item">Insights</a>
-    <a href="/media" class="nav-item">Media</a>
-    <a href="/contact" class="nav-item">Contact</a>
-  </div>
+<!-- ==========================================================
+     MOBILE NAVIGATION
+========================================================== -->
+
+<nav id="mobileNav"
+     class="mobile-nav"
+     aria-hidden="true">
+
+    <a href="/">Home</a>
+
+    <a href="/series/">Operational Series</a>
+
+    <a href="/home.html">Offerings</a>
+
+    <a href="/book/">Book</a>
+
+    <a href="/radio/">Radio</a>
+
 </nav>
 
-<div class="overlay" id="overlay"></div>
+<!-- ==========================================================
+     MAIN CONTENT STARTS HERE
+========================================================== -->
+
+<main>
+
+<!-- HERO STARTS NEXT -->
+<!-- ==========================================================
+     HERO
+========================================================== -->
+
+<section class="hero">
+
+    <div class="hero-inner">
+
+        <!-- LEFT SIDE -->
+
+        <div class="hero-copy">
+
+            <div class="kicker">
+
+                Operational Architecture Series
+
+            </div>
+
+            <h1>
+
+                Operational Architecture
+
+            </h1>
+
+            <p>
+
+                A complete 27-part exploration of operational reliability,
+                systems thinking, real-time decision-making, and operational
+                visibility across complex, time-critical environments.
+
+            </p>
+
+            <p>
+
+                Beginning with the foundations of operational architecture and
+                culminating in the introduction of the
+                <strong><em>Reaction Cascade Effect</em></strong>,
+                this series examines how systems drift, recover, adapt, and
+                maintain resilience under pressure.
+
+            </p>
+
+            <p>
+
+                Drawing upon more than four decades of operational experience,
+                each article builds upon the last to create a comprehensive
+                reference for leaders, engineers, operators, and anyone
+                responsible for keeping mission-critical systems functioning
+                when timing matters most.
+
+            </p>
+
+            <div class="hero-buttons">
+
+                <a class="btn"
+                   href="/series/week-01-reliability.html">
+
+                    Begin Part I
+
+                </a>
+
+                <a class="btn secondary"
+                   href="/series/week-15-visibility.html">
+
+                    Begin Part II
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+
+        <div class="hero-image">
+
+            <img src="/assets/RCECoverWrap.png"
+                 alt="Operational Architecture Series">
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ==========================================================
+     ABOUT THE SERIES
+========================================================== -->
+
+<section class="series-intro">
+
+    <article class="intro-card">
+
+        <h2>
+
+            About the Series
+
+        </h2>
+
+        <p>
+
+            The <strong>Operational Architecture Series</strong> was written
+            to examine how complex operational systems behave when timing,
+            coordination, and reliability matter most. While examples are
+            drawn from broadcast and streaming operations, the principles
+            extend to any environment where systems, people, technology, and
+            decisions must work together under real-time pressure.
+
+        </p>
+
+        <p>
+
+            Part I establishes the operational foundation by exploring the
+            disciplines that create dependable systems—from reliability,
+            interfaces, redundancy, automation, and accountability to the
+            hidden work that keeps organizations functioning every day.
+
+        </p>
+
+        <p>
+
+            Part II builds upon those foundations by introducing the
+            <strong><em>Reaction Cascade Effect</em></strong>, examining how
+            visibility shapes operational awareness, influences decisions,
+            and determines whether small disruptions remain isolated or
+            develop into larger cascading failures.
+
+        </p>
+
+        <p>
+
+            Together, these twenty-seven articles form a single body of work
+            intended for operational leaders, engineers, managers, business
+            continuity professionals, and anyone responsible for designing,
+            operating, or improving mission-critical systems.
+
+        </p>
+
+    </article>
+
+</section>
+<!-- ==========================================================
+     PART I / PART II
+========================================================== -->
+
+<section class="series-layout">
+
+    <!-- ======================================================
+         PART I
+    ======================================================= -->
+
+    <article class="series-panel">
+
+        <img src="/series/assets/13.png"
+             alt="Operational Architecture Part I">
+
+        <h2>
+
+            Part I — Foundations
+
+        </h2>
+
+        <p>
+
+            The first fourteen articles establish the principles that support
+            reliable operational systems. Topics include reliability,
+            invisible work, dependencies, interfaces, redundancy,
+            automation, accountability, prevention, and the architectural
+            thinking required to build resilient organizations.
+
+        </p>
+
+        <p>
+
+            Part I provides the operational framework upon which the remainder
+            of the series is built.
+
+        </p>
+
+        <ul>
+
+            <li>14 Articles</li>
+
+            <li>Foundational Operational Principles</li>
+
+            <li>System Design & Reliability</li>
+
+            <li>Architecture Under Pressure</li>
+
+        </ul>
+
+        <div class="series-buttons">
+
+            <a class="btn"
+               href="/series/week-01-reliability.html">
+
+                Begin Part I
+
+            </a>
+
+        </div>
+
+    </article>
+
+    <!-- ======================================================
+         PART II
+    ======================================================= -->
+
+    <article class="series-panel">
+
+        <img src="/assets/RCECoverWrap.png"
+             alt="Operational Architecture Part II">
+
+        <h2>
+
+            Part II — Operational Visibility
+
+        </h2>
+
+        <p>
+
+            Building upon the operational foundations established in Part I,
+            this second volume explores how visibility affects decision-making
+            in real-time environments while introducing the
+            <strong><em>Reaction Cascade Effect</em></strong> as a framework
+            for understanding how operational failures expand across systems.
+
+        </p>
+
+        <p>
+
+            Part II examines visibility, monitoring, escalation,
+            prioritization, recovery, and the operational awareness required
+            to maintain control when systems begin to drift.
+
+        </p>
+
+        <ul>
+
+            <li>13 Articles</li>
+
+            <li>Operational Visibility</li>
+
+            <li>Reaction Cascade Effect</li>
+
+            <li>Decision Architecture</li>
+
+        </ul>
+
+        <div class="series-buttons">
+
+            <a class="btn"
+               href="/series/week-15-visibility.html">
+
+                Begin Part II
+
+            </a>
+
+        </div>
+
+    </article>
+
+</section>
+<!-- ==========================================================
+     PUBLISHED BOOKS
+========================================================== -->
+
+<section class="books-layout">
+
+    <!-- ======================================================
+         RELIABILITY IS NOT IMPROVISED
+    ======================================================= -->
+
+    <article class="book-panel">
+
+        <img src="/assets/RCECoverWrap.png"
+             alt="Reliability Is Not Improvised">
+
+        <h2>
+
+            Reliability Is Not Improvised
+
+        </h2>
+
+        <p>
+
+            <strong>
+
+                How Systems Drift, Recover, and Behave Under Real-Time Pressure
+
+            </strong>
+
+        </p>
+
+        <p>
+
+            Expanding upon the concepts introduced throughout the Operational
+            Architecture Series, this book presents the complete
+            <strong><em>Reaction Cascade Effect</em></strong> framework while
+            examining how reliability is created, protected, and sustained
+            within complex operational systems.
+
+        </p>
+
+        <p>
+
+            Designed for operational leaders, engineers, managers, and
+            decision-makers responsible for mission-critical environments.
+
+        </p>
+
+        <div class="book-buttons">
+
+            <a class="btn"
+               target="_blank"
+               href="https://www.amazon.com/dp/B0GXLJQJZ5">
+
+                Buy on Amazon
+
+            </a>
+
+            <a class="btn secondary"
+               href="/book/newbook.html">
+
+                Learn More
+
+            </a>
+
+        </div>
+
+    </article>
+
+    <!-- ======================================================
+         FM
+    ======================================================= -->
+
+    <article class="book-panel">
+
+        <img src="/assets/cover2.jpg"
+             alt="FM The Fading Modulation of Terrestrial Radio">
+
+        <h2>
+
+            FM: The Fading Modulation of Terrestrial Radio
+
+        </h2>
+
+        <p>
+
+            <strong>
+
+                How the Telecommunications Act of 1996 Changed Radio,
+                Consolidated Stations, and Transformed the Listening Experience
+
+            </strong>
+
+        </p>
+
+        <p>
+
+            A detailed examination of one of America's most influential
+            communications industries, documenting how legislation,
+            consolidation, automation, and changing business priorities
+            reshaped terrestrial radio.
+
+        </p>
+
+        <p>
+
+            An operational perspective on an industry that once defined local
+            broadcasting and community service.
+
+        </p>
+
+        <div class="book-buttons">
+
+            <a class="btn"
+               target="_blank"
+               href="https://www.amazon.com/Modulation-Terrestrial-Telecommunications-Consolidated-Transformed-ebook/dp/B0GZJ1NJLV">
+
+                Buy on Amazon
+
+            </a>
+
+            <a class="btn secondary"
+               href="/book/fm.html">
+
+                Learn More
+
+            </a>
+
+        </div>
+
+    </article>
+
+</section>
+<!-- ==========================================================
+     ABOUT RANDY
+========================================================== -->
+
+<section class="author-section">
+
+    <article class="author-card">
+
+        <img src="/assets/randy-anthony.jpg"
+             alt="Randy Anthony">
+
+        <div class="author-content">
+
+            <h2>
+
+                About Randy Anthony
+
+            </h2>
+
+            <p>
+
+                Randy Anthony is the creator of the
+                <strong>Operational Architecture Series</strong>,
+                author of
+                <strong><em>Reliability Is Not Improvised</em></strong>
+                and
+                <strong><em>FM: The Fading Modulation of Terrestrial Radio</em></strong>,
+                and founder of Operational Reliability Advisory.
+
+            </p>
+
+            <p>
+
+                His work draws upon more than four decades of experience in
+                broadcast operations, live production, master control,
+                workflow design, automation, and operational leadership.
+
+            </p>
+
+            <p>
+
+                Through publications, advisory services, and original research,
+                he focuses on operational resilience, visibility, systems
+                thinking, and helping organizations understand how complex
+                systems behave under real-time pressure.
+
+            </p>
+
+            <div class="author-buttons">
+
+                <a class="btn"
+                   href="/about.html">
+
+                    Meet Randy
+
+                </a>
+
+                <a class="btn secondary"
+                   href="/home.html">
+
+                    Advisory Services
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </article>
+
+</section>
+
+<!-- ==========================================================
+     SPONSORS
+========================================================== -->
+
+<section class="sponsor-grid">
+
+    <article class="card"
+             style="background:#2f3a44;color:#ffffff;">
+
+        <h3>
+
+            SPONSORED BY: LegalShield
+
+        </h3>
+
+        <p style="color:#cbd5e1;">
+
+            LegalShield &amp; IDShield<br>
+
+            Protecting Families, Professionals,
+            and Businesses Nationwide.
+
+        </p>
+
+        <a class="btn"
+           href="/legal/">
+
+            Explore Plans →
+
+        </a>
+
+    </article>
+
+    <article class="card"
+             style="background:#2f3a44;color:#ffffff;">
+
+        <h3>
+
+            SPONSORED BY: The Piety PayChain
+
+        </h3>
+
+        <p style="color:#cbd5e1;">
+
+            Helping fund the Operational Architecture
+            Series and future publications.
+
+        </p>
+
+        <a class="btn"
+           href="/2026/">
+
+            Explore PayChain →
+
+        </a>
+
+    </article>
+
+</section>
+
+</main>
+<!-- ==========================================================
+     FOOTER
+========================================================== -->
+
+<footer class="site-foot">
+
+    <div style="display:flex;
+                justify-content:space-between;
+                align-items:center;
+                flex-wrap:wrap;
+                font-size:12.5px;
+                color:var(--muted);">
+
+        <div>
+
+            © <span id="year"></span>
+
+            Randy Anthony •
+
+            Advisory •
+
+            Operations •
+
+            Strategy •
+
+            All Rights Reserved
+
+        </div>
+
+        <div class="smallLinks">
+
+            <a href="/"
+               style="font-size:12.5px;
+                      color:var(--muted);
+                      text-decoration:none;">
+
+                Home Page
+
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+</div>
+<!-- END .site -->
+
+<!-- ==========================================================
+     YEAR
+========================================================== -->
 
 <script>
-const menuBtn = document.getElementById('menuBtn');
-const drawer = document.getElementById('drawer');
-const overlay = document.getElementById('overlay');
 
-function openMenu() {
-  drawer.classList.add('open');
-  overlay.classList.add('show');
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+</script>
+
+<!-- ==========================================================
+     MOBILE NAVIGATION
+========================================================== -->
+
+<script>
+
+const btn =
+document.getElementById("mobileToggle");
+
+const panel =
+document.getElementById("mobileNav");
+
+if(btn && panel){
+
+    btn.addEventListener("click",function(){
+
+        const isOpen =
+        panel.classList.toggle("show");
+
+        panel.setAttribute(
+            "aria-hidden",
+            !isOpen
+        );
+
+        btn.setAttribute(
+            "aria-expanded",
+            isOpen
+        );
+
+    });
+
 }
 
-function closeMenu() {
-  drawer.classList.remove('open');
-  overlay.classList.remove('show');
-}
+</script>
 
-menuBtn.addEventListener('click', openMenu);
-overlay.addEventListener('click', closeMenu);
+<!-- ==========================================================
+     ENTRANCE ANIMATION
+========================================================== -->
 
-// Optional: close on link click
-Array.from(document.querySelectorAll('.nav-item')).forEach(item => {
-  item.addEventListener('click', closeMenu);
-});
+<script>
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        document
+        .querySelectorAll(
+            ".hero,.intro-card,.series-panel,.book-panel,.author-card,.card"
+        )
+        .forEach(function(el,index){
+
+            el.style.opacity="0";
+            el.style.transform="translateY(12px)";
+
+            setTimeout(function(){
+
+                el.style.transition=
+                "opacity .45s ease, transform .45s ease";
+
+                el.style.opacity="1";
+                el.style.transform="translateY(0)";
+
+            },80+(index*50));
+
+        });
+
+    }
+);
+
 </script>
 
 </body>
+
 </html>
