@@ -12,7 +12,7 @@
 <title>Operational Architecture Series | Randy Anthony</title>
 
 <meta name="description"
-      content="The complete Operational Architecture Series by Randy Anthony. A 27-part exploration of reliability, operational visibility, systems thinking, and decision-making in time-critical environments.">
+      content="The complete Operational Architecture Series by Randy Anthony. Twenty-seven articles exploring operational reliability, visibility, systems thinking, and real-time decision-making.">
 
 <meta property="og:type" content="website">
 
@@ -20,7 +20,7 @@
       content="Operational Architecture Series | Randy Anthony">
 
 <meta property="og:description"
-      content="Explore the complete Operational Architecture Series including Part I: Foundations and Part II: Operational Visibility.">
+      content="Read the complete Operational Architecture Series including Part I: Foundations and Part II: Operational Visibility.">
 
 <meta property="og:url"
       content="https://randyanthony.us/series/">
@@ -52,10 +52,6 @@
 
 <div class="site">
 
-<!-- ==========================================================
-     GLOBAL HEADER
-========================================================== -->
-
 <header class="site-header">
 
     <a class="brand" href="/">
@@ -74,9 +70,7 @@
 
     </a>
 
-    <nav class="primary"
-         role="navigation"
-         aria-label="Main Navigation">
+    <nav class="primary">
 
         <a href="/">Home</a>
 
@@ -112,10 +106,6 @@
 
 </header>
 
-<!-- ==========================================================
-     MOBILE NAVIGATION
-========================================================== -->
-
 <nav id="mobileNav"
      class="mobile-nav"
      aria-hidden="true">
@@ -137,11 +127,11 @@
      HERO
 ========================================================== -->
 
-<section class="hero hero-ops">
+<section class="hero hero-series">
 
     <!-- LEFT -->
 
-    <div class="book-cover-card">
+    <div class="hero-cover">
 
         <img src="/assets/RCECoverWrap.png"
              alt="Operational Architecture Series">
@@ -150,7 +140,7 @@
 
     <!-- RIGHT -->
 
-    <div class="hero-text">
+    <div class="hero-copy">
 
         <div class="kicker">
 
@@ -158,41 +148,42 @@
 
         </div>
 
-        <h1 class="hero-title">
+        <h1>
 
             Operational Architecture
 
         </h1>
 
-        <p class="hero-subtitle">
+        <p class="hero-lead">
 
-            A complete twenty-seven-part exploration of operational reliability,
-            system behavior, operational visibility, and real-time decision
-            making across complex, time-critical environments.
-
-        </p>
-
-        <p>
-
-            Beginning with the foundational principles of reliable operations
-            and culminating with the introduction of the
-            <strong><em>Reaction Cascade Effect</em></strong>,
-            this series examines how systems drift, recover, adapt, and
-            maintain resilience under pressure.
+            Twenty-seven articles exploring operational reliability,
+            system behavior, operational visibility, and the
+            <em>Reaction Cascade Effect</em> across complex,
+            time-critical environments.
 
         </p>
 
         <p>
 
-            While the examples originate from broadcast and streaming
-            operations, the principles apply equally to manufacturing,
-            transportation, healthcare, public safety, utilities, finance,
-            and any organization where operational continuity matters.
+            Part I establishes the operational foundations that create
+            reliable systems. Part II expands those principles through
+            operational visibility, showing how awareness, monitoring,
+            escalation, and decision-making influence system stability
+            under real-world pressure.
 
         </p>
 
-        <div class="btnrow"
-             style="margin-top:24px;">
+        <p>
+
+            Although inspired by decades of broadcast and streaming
+            operations, the concepts presented throughout this series
+            apply equally to manufacturing, healthcare, transportation,
+            utilities, logistics, finance, public safety, and every
+            organization where operational continuity matters.
+
+        </p>
+
+        <div class="btnrow">
 
             <a class="btn"
                href="/series/week-01-reliability.html">
@@ -213,64 +204,55 @@
     </div>
 
 </section>
+
 <!-- ==========================================================
      ABOUT THE SERIES
 ========================================================== -->
 
-<section class="series-overview">
+<section class="card">
 
-    <article class="card">
+    <div class="kicker">
 
-        <h2>
+        Complete Series
 
-            About the Operational Architecture Series
+    </div>
 
-        </h2>
+    <h2>
 
-        <p>
+        About the Operational Architecture Series
 
-            The Operational Architecture Series is a complete twenty-seven-part
-            study of how complex systems behave when reliability, timing,
-            visibility, and decision-making intersect. Rather than focusing on
-            specific technologies, these articles examine the operational
-            principles that determine whether systems remain stable or begin to
-            fail under pressure.
+    </h2>
 
-        </p>
+    <p>
 
-        <p>
+        The Operational Architecture Series examines how complex systems
+        behave when reliability, visibility, timing, and human
+        decision-making intersect. Rather than focusing on specific
+        technologies, these articles explore the operational principles
+        that determine whether systems remain stable—or begin to drift
+        under pressure.
 
-            <strong>Part I — Foundations</strong> establishes the core
-            disciplines of operational reliability through fourteen articles
-            covering reliability, invisible work, composure, dependencies,
-            interfaces, redundancy, automation, accountability, prevention,
-            and system architecture.
+    </p>
 
-        </p>
+    <p>
 
-        <p>
+        <strong>Part I — Foundations</strong> introduces fourteen
+        operational disciplines including reliability, invisible work,
+        dependencies, interfaces, redundancy, automation,
+        accountability, prevention, and architecture.
 
-            <strong>Part II — Operational Visibility</strong> builds upon those
-            foundations by introducing the
-            <em>Reaction Cascade Effect</em> and examining how operational
-            awareness, signal prioritization, monitoring, recovery,
-            decision-making, and visibility determine how organizations respond
-            as systems begin to drift.
+    </p>
 
-        </p>
+    <p>
 
-        <p>
+        <strong>Part II — Operational Visibility</strong> builds upon
+        those foundations through thirteen additional articles while
+        introducing the <em>Reaction Cascade Effect</em>, examining how
+        visibility shapes operational awareness, influences decisions,
+        and determines whether isolated problems remain contained or
+        expand across interconnected systems.
 
-            Although inspired by decades of experience in broadcast and
-            streaming operations, the concepts presented throughout this series
-            apply equally to manufacturing, transportation, healthcare,
-            logistics, utilities, finance, emergency management, and every
-            environment where operational continuity depends upon disciplined
-            execution and informed decisions.
-
-        </p>
-
-    </article>
+    </p>
 
 </section>
 <!-- ==========================================================
@@ -283,34 +265,40 @@
          PART I
     ======================================================= -->
 
-    <article class="card series-card">
+    <article class="card series-panel">
 
-        <img class="series-cover"
+        <img class="series-image"
              src="/series/assets/13.png"
-             alt="Operational Architecture Part I">
+             alt="Part I — Foundations">
 
-        <div class="series-content">
+        <div class="series-body">
+
+            <div class="kicker">
+
+                Part I
+
+            </div>
 
             <h2>
 
-                Part I — Foundations
+                Foundations
 
             </h2>
 
             <p>
 
-                Fourteen articles introducing the core principles that
-                support reliable operational systems. Topics include
-                reliability, invisible work, dependencies, interfaces,
-                redundancy, automation, accountability, prevention, and
-                operational architecture.
+                Fourteen articles introducing the principles that support
+                reliable operational systems. Topics include reliability,
+                invisible work, dependencies, interfaces, redundancy,
+                automation, accountability, prevention, and operational
+                architecture.
 
             </p>
 
             <p>
 
-                Part I establishes the framework that every subsequent
-                article builds upon.
+                Every concept introduced later in the series builds upon
+                these foundational operational disciplines.
 
             </p>
 
@@ -329,35 +317,40 @@
          PART II
     ======================================================= -->
 
-    <article class="card series-card">
+    <article class="card series-panel">
 
-        <img class="series-cover"
+        <img class="series-image"
              src="/assets/RCECoverWrap.png"
-             alt="Operational Architecture Part II">
+             alt="Part II — Operational Visibility">
 
-        <div class="series-content">
+        <div class="series-body">
+
+            <div class="kicker">
+
+                Part II
+
+            </div>
 
             <h2>
 
-                Part II — Operational Visibility
+                Operational Visibility
 
             </h2>
 
             <p>
 
-                Thirteen articles expanding the foundations through
-                operational visibility and introducing the
+                Thirteen articles expanding the operational foundation
+                through visibility, monitoring, decision-making,
+                escalation, recovery, and the introduction of the
                 <strong><em>Reaction Cascade Effect</em></strong>.
-                This section explores visibility, monitoring,
-                escalation, recovery, and decision-making within
-                time-critical systems.
 
             </p>
 
             <p>
 
-                Part II demonstrates how seemingly isolated events can
-                cascade across systems when visibility begins to fail.
+                Part II examines how operational awareness determines
+                whether disruption is contained—or allowed to cascade
+                throughout an organization.
 
             </p>
 
@@ -373,316 +366,255 @@
     </article>
 
 </section>
-<!-- ==========================================================
-     RELIABILITY IS NOT IMPROVISED
-========================================================== -->
+/*==========================================================
+  RELIABILITY IS NOT IMPROVISED
+==========================================================*/
 
-<section class="book-feature">
+.book-feature-card{
 
-    <article class="card feature-card">
+display:grid;
 
-        <div class="feature-image">
+grid-template-columns:220px 1fr;
 
-            <img src="/assets/RCECoverWrap.png"
-                 alt="Reliability Is Not Improvised">
+gap:34px;
 
-        </div>
-
-        <div class="feature-content">
-
-            <div class="kicker">
-
-                Continue Beyond the Series
-
-            </div>
-
-            <h2>
-
-                Reliability Is Not Improvised
-
-            </h2>
-
-            <h3>
-
-                How Systems Drift, Recover, and Behave Under Real-Time Pressure
-
-            </h3>
-
-            <p>
-
-                The Operational Architecture Series established the
-                principles. <em>Reliability Is Not Improvised</em>
-                expands those ideas into a comprehensive reference,
-                bringing together operational reliability,
-                system behavior, operational visibility,
-                and the complete
-                <strong>Reaction Cascade Effect</strong>
-                into a single volume.
-
-            </p>
-
-            <p>
-
-                Written for operational leaders, engineers,
-                managers, broadcast professionals,
-                business continuity specialists,
-                and anyone responsible for mission-critical
-                operations.
-
-            </p>
-
-            <div class="btnrow">
-
-                <a class="btn"
-                   href="/book/newbook.html">
-
-                    Learn More
-
-                </a>
-
-                <a class="btn"
-                   target="_blank"
-                   href="https://www.amazon.com/dp/B0GXLJQJZ5">
-
-                    Buy on Amazon
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </article>
-
-</section>
-<!-- ==========================================================
-     ABOUT RANDY
-========================================================== -->
-
-<section class="about-randy">
-
-    <article class="card about-card">
-
-        <div class="about-photo">
-
-            <img src="/assets/randy-anthony.jpg"
-                 alt="Randy Anthony">
-
-        </div>
-
-        <div class="about-content">
-
-            <div class="kicker">
-
-                About the Author
-
-            </div>
-
-            <h2>
-
-                Randy Anthony
-
-            </h2>
-
-            <p>
-
-                Randy Anthony is the creator of the
-                <strong>Operational Architecture Series</strong>
-                and author of
-                <strong><em>Reliability Is Not Improvised</em></strong>.
-
-            </p>
-
-            <p>
-
-                Drawing upon more than four decades of operational
-                experience in broadcast, streaming, automation,
-                workflow design, and master control, his work focuses
-                on operational reliability, system architecture,
-                resilience, visibility, and decision-making within
-                time-critical environments.
-
-            </p>
-
-            <p>
-
-                Through writing, advisory services, and original
-                research, Randy helps organizations better understand
-                how complex operational systems behave before, during,
-                and after disruption.
-
-            </p>
-
-            <div class="btnrow">
-
-                <a class="btn"
-                   href="/home.html">
-
-                    Advisory Services
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </article>
-
-</section>
-
-<!-- ==========================================================
-     SPONSORS
-========================================================== -->
-
-<section class="sponsor-grid">
-
-    <article class="card"
-             style="background:#2f3a44;color:#ffffff;">
-
-        <h3>
-
-            SPONSORED BY: LegalShield
-
-        </h3>
-
-        <p style="color:#cbd5e1;">
-
-            LegalShield &amp; IDShield<br>
-
-            Protecting Families &amp; Businesses Nationwide.
-
-        </p>
-
-        <a class="btn"
-           href="/legal/">
-
-            Explore Plans →
-
-        </a>
-
-    </article>
-
-    <article class="card"
-             style="background:#2f3a44;color:#ffffff;">
-
-        <h3>
-
-            SPONSORED BY: The Piety PayChain
-
-        </h3>
-
-        <p style="color:#cbd5e1;">
-
-            Helping to fund these pages.<br>
-
-            Learn more about the Piety PayChain.
-
-        </p>
-
-        <a class="btn"
-           href="/2026/">
-
-            Explore PayChain →
-
-        </a>
-
-    </article>
-
-</section>
-<!-- ==========================================================
-     FOOTER
-========================================================== -->
-
-</main>
-
-<footer class="site-foot">
-
-    <div style="display:flex;
-                justify-content:space-between;
-                align-items:center;
-                flex-wrap:wrap;
-                font-size:12.5px;
-                color:var(--muted);">
-
-        <div>
-
-            © <span id="year"></span>
-
-            Randy Anthony •
-
-            Advisory •
-
-            Operations •
-
-            Strategy •
-
-            All rights reserved.
-
-        </div>
-
-        <div class="smallLinks">
-
-            <a href="/">
-
-                Home Page
-
-            </a>
-
-        </div>
-
-    </div>
-
-</footer>
-
-</div>
-<!-- END .site -->
-
-<!-- ==========================================================
-     YEAR
-========================================================== -->
-
-<script>
-
-document.getElementById("year").textContent =
-new Date().getFullYear();
-
-</script>
-
-<!-- ==========================================================
-     MOBILE MENU
-========================================================== -->
-
-<script>
-
-const btn =
-document.getElementById("mobileToggle");
-
-const panel =
-document.getElementById("mobileNav");
-
-if(btn && panel){
-
-    btn.addEventListener("click",function(){
-
-        const open =
-        panel.classList.toggle("show");
-
-        panel.setAttribute(
-            "aria-hidden",
-            !open
-        );
-
-        btn.setAttribute(
-            "aria-expanded",
-            open
-        );
-
-    });
+align-items:center;
 
 }
 
-</script>
+.book-feature-cover{
 
-</body>
+display:flex;
 
-</html>
+justify-content:center;
+
+}
+
+.book-feature-cover img{
+
+width:180px;
+
+height:auto;
+
+border-radius:14px;
+
+box-shadow:0 14px 30px rgba(0,0,0,.18);
+
+}
+
+.book-feature-content h2{
+
+margin-bottom:8px;
+
+}
+
+.book-feature-content h3{
+
+margin-top:0;
+
+margin-bottom:22px;
+
+font-size:1.2rem;
+
+font-weight:600;
+
+color:var(--blue);
+
+}
+
+/*==========================================================
+  ABOUT RANDY
+==========================================================*/
+
+.about-card{
+
+display:grid;
+
+grid-template-columns:180px 1fr;
+
+gap:34px;
+
+align-items:center;
+
+}
+
+.about-photo{
+
+display:flex;
+
+justify-content:center;
+
+}
+
+.about-photo img{
+
+width:160px;
+
+height:160px;
+
+object-fit:cover;
+
+border-radius:50%;
+
+box-shadow:0 12px 28px rgba(0,0,0,.18);
+
+}
+
+.about-body .btn{
+
+margin-top:10px;
+
+}
+
+/*==========================================================
+  MOBILE
+==========================================================*/
+
+@media(max-width:900px){
+
+.book-feature-card{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.about-card{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.book-feature-cover img{
+
+width:160px;
+
+}
+
+.about-photo img{
+
+width:150px;
+
+height:150px;
+
+}
+
+.book-feature-content .btnrow,
+
+.about-body{
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+}
+/*==========================================================
+  SPONSORS
+==========================================================*/
+
+.sponsor-grid{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:32px;
+
+margin-bottom:40px;
+
+}
+
+.sponsor-card{
+
+background:#2f3a44;
+
+color:#ffffff;
+
+}
+
+.sponsor-card h3{
+
+margin-top:0;
+
+margin-bottom:18px;
+
+color:#ffffff;
+
+font-size:1.25rem;
+
+}
+
+.sponsor-card p{
+
+color:#d6dde6;
+
+margin-bottom:24px;
+
+line-height:1.7;
+
+}
+
+/*==========================================================
+  FOOTER
+==========================================================*/
+
+.site-foot{
+
+margin-top:20px;
+
+padding:32px 0;
+
+border-top:1px solid var(--border);
+
+}
+
+.site-foot .wrap{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+font-size:.92rem;
+
+}
+
+.smallLinks a{
+
+text-decoration:none;
+
+}
+
+/*==========================================================
+  MOBILE
+==========================================================*/
+
+@media(max-width:900px){
+
+.sponsor-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.site-foot .wrap{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+}
