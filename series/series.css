@@ -17,19 +17,16 @@ main{
 ============================================ */
 
 .hero-ops{
-
     display:grid;
-    grid-template-columns:360px 1fr;
-    gap:40px;
+    grid-template-columns:460px 1fr;
+    gap:32px;
 
     align-items:center;
 
     background:var(--surface);
     border:1px solid var(--border);
     border-radius:18px;
-
     padding:30px;
-
 }
 
 .hero-ops .book-cover-card{
