@@ -12,172 +12,72 @@ body{
 main{
   position:relative;
 }
-
-/* ============================================
-   HERO
-============================================ */
-
-.hero{
-  margin:22px 0 18px;
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:26px;
-  background:var(--surface);
-}
-
-.hero h1{
-  margin:0 0 10px;
-  font-size:clamp(1.9rem,2.5vw,2.6rem);
-  letter-spacing:-.02em;
-}
-
-.hero p{
-  margin:0 0 18px;
-  color:var(--muted);
-  max-width:74ch;
-  line-height:1.7;
-}
-
-.kicker{
-  display:inline-block;
-  margin-bottom:12px;
-  font-size:.78rem;
-  letter-spacing:.10em;
-  text-transform:uppercase;
-  color:var(--muted);
-}
-
 /* ============================================
    HERO OPS
 ============================================ */
 
 .hero-ops{
 
-  display:grid;
+    display:grid;
+    grid-template-columns:360px 1fr;
+    gap:40px;
 
-  grid-template-columns:360px 1fr;
+    align-items:center;
 
-  gap:36px;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:18px;
 
-  align-items:center;
-
-  position:relative;
-
-  background:var(--surface);
-
-  border:1px solid var(--border);
-
-  border-radius:18px;
-
-  padding:30px;
+    padding:30px;
 
 }
 
 .hero-ops .book-cover-card{
 
-  width:360px;
+    width:100%;
 
-  display:flex;
-
-  justify-content:center;
-
-  align-items:center;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
 
 }
 
-.hero-ops img{
+.hero-ops .book-cover-card img{
 
-  width:100%;
+    display:block;
 
-  height:auto;
+    width:100%;
 
-  border-radius:14px;
+    max-width:none;
 
-  display:block;
+    height:auto;
+
+    border-radius:14px;
 
 }
-
-/* HERO TEXT */
 
 .hero-text{
 
-  max-width:760px;
+    max-width:760px;
 
 }
-
-.hero-title{
-
-  font-size:46px;
-
-  line-height:1.1;
-
-  margin:0 0 18px;
-
-}
-
-.hero-subtitle{
-
-  font-size:1.22rem;
-
-  font-weight:500;
-
-  margin-bottom:20px;
-
-}
-
-.hero-text p{
-
-  line-height:1.75;
-
-  margin-bottom:18px;
-
-}
-
-/* BUTTONS */
-
-.btnrow{
-
-  display:flex;
-
-  flex-wrap:wrap;
-
-  gap:12px;
-
-  margin-top:24px;
-
-}
-
-/* MOBILE HERO */
 
 @media (max-width:900px){
 
 .hero-ops{
 
 grid-template-columns:1fr;
-
 text-align:center;
-
-gap:28px;
 
 }
 
 .hero-ops .book-cover-card{
 
-width:260px;
+justify-content:center;
+
+max-width:340px;
 
 margin:auto;
-
-}
-
-.hero-ops img{
-
-width:100%;
-
-}
-
-.hero-title{
-
-font-size:36px;
 
 }
 
