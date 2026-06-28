@@ -185,58 +185,35 @@ color:var(--text);
 background:#eef3fb;
 
 }
-
-/* ==========================================================
-   HEADER
-========================================================== */
-
 /* ==========================================================
    HEADER
 ========================================================== */
 
 .site-header{
 
-height:60px;
-
-display:flex;
-
-align-items:center;
-
-justify-content:space-between;
-
-gap:16px;
-
 position:sticky;
 
 top:0;
 
-z-index:40;
+z-index:1000;
 
-backdrop-filter:blur(6px);
+background:rgba(255,255,255,.94);
 
-background:linear-gradient(
+backdrop-filter:blur(10px);
 
-180deg,
+-webkit-backdrop-filter:blur(10px);
 
-rgba(255,255,255,.72),
-
-rgba(255,255,255,.64)
-
-);
-
-border-bottom:1px solid rgba(15,28,46,.06);
-
-padding:0 22px;
+border-bottom:1px solid rgba(20,32,51,.08);
 
 }
 
 .header-inner{
 
-max-width:var(--max);
+max-width:1320px;
 
 margin:auto;
 
-width:100%;
+padding:14px 28px;
 
 display:flex;
 
@@ -244,7 +221,7 @@ align-items:center;
 
 justify-content:space-between;
 
-gap:18px;
+gap:24px;
 
 }
 
@@ -252,45 +229,41 @@ gap:18px;
 
 display:flex;
 
-gap:12px;
-
 align-items:center;
+
+gap:14px;
 
 text-decoration:none;
 
-color:var(--text);
-
-}
-
-.brand img{
-
-width:44px;
-
-height:44px;
-
-border-radius:12px;
+color:inherit;
 
 flex-shrink:0;
 
 }
 
-.brand .titles{
+.brand img{
 
-line-height:1;
+width:46px;
+
+height:46px;
+
+border-radius:10px;
 
 }
 
-.brand strong{
+.titles strong{
 
 display:block;
 
-font-size:15px;
+font-size:14px;
 
 letter-spacing:.6px;
 
+font-weight:700;
+
 }
 
-.brand span{
+.titles span{
 
 display:block;
 
@@ -302,16 +275,16 @@ color:var(--muted);
 
 }
 
-/* Support BOTH class names */
+/* Support both navigation class names */
 
 .primary,
 .primary-nav{
 
 display:flex;
 
-gap:12px;
-
 align-items:center;
+
+gap:14px;
 
 margin-left:auto;
 
@@ -320,19 +293,15 @@ margin-left:auto;
 .primary a,
 .primary-nav a{
 
-display:inline-flex;
-
 padding:8px 12px;
 
-border-radius:12px;
+border-radius:10px;
 
-text-decoration:none;
+font-size:14px;
+
+font-weight:500;
 
 color:var(--muted);
-
-font-weight:600;
-
-font-size:13px;
 
 transition:.25s;
 
@@ -341,7 +310,7 @@ transition:.25s;
 .primary a:hover,
 .primary-nav a:hover{
 
-background:rgba(15,28,46,.04);
+background:#edf2f8;
 
 color:var(--text);
 
@@ -350,7 +319,7 @@ color:var(--text);
 .primary .btn,
 .primary-nav .btn{
 
-margin-left:8px;
+margin-left:10px;
 
 }
 
@@ -358,21 +327,15 @@ margin-left:8px;
 
 display:none;
 
-border:0;
+background:none;
 
-background:transparent;
+border:none;
 
-font-size:20px;
+font-size:30px;
 
 cursor:pointer;
 
-width:48px;
-
-height:48px;
-
-align-items:center;
-
-justify-content:center;
+color:var(--text);
 
 }
 
@@ -380,33 +343,25 @@ justify-content:center;
 
 display:none;
 
-position:fixed;
+position:absolute;
 
-top:60px;
+top:72px;
 
-left:12px;
+right:24px;
 
-right:12px;
+min-width:250px;
 
-z-index:1500;
+background:#fff;
 
-background:linear-gradient(
+border:1px solid var(--border);
 
-180deg,
-
-rgba(255,255,255,.98),
-
-rgba(255,255,255,.95)
-
-);
-
-border-radius:12px;
+border-radius:16px;
 
 box-shadow:var(--shadow);
 
-padding:12px;
+padding:14px;
 
-border:1px solid rgba(15,28,46,.06);
+z-index:2000;
 
 }
 
@@ -414,63 +369,59 @@ border:1px solid rgba(15,28,46,.06);
 
 display:block;
 
+animation:fadeDown .25s ease;
+
 }
 
 .mobile-nav a{
 
 display:block;
 
-padding:10px 8px;
+padding:12px 10px;
 
 border-radius:8px;
 
 color:var(--text);
 
-font-weight:700;
+}
 
-text-decoration:none;
+.mobile-nav a:hover{
+
+background:#edf2f8;
 
 }
 
-.mobile-nav a + a{
+@keyframes fadeDown{
 
-margin-top:6px;
+from{
 
-}
+opacity:0;
 
-@media(max-width:768px){
-
-.primary,
-.primary-nav{
-
-display:none;
+transform:translateY(-8px);
 
 }
 
-.mobile-toggle{
+to{
 
-display:flex;
+opacity:1;
 
-}
-
-.site-header{
-
-padding:0 14px;
+transform:none;
 
 }
 
 }
+
 /* ==========================================================
    HERO
 ========================================================== */
 
 .hero{
 
-margin:38px auto 70px;
+margin:42px auto 72px;
 
-max-width:var(--max);
+max-width:1320px;
 
-border-radius:24px;
+border-radius:28px;
 
 overflow:hidden;
 
@@ -490,7 +441,7 @@ url("/series/assets/ops-architecture-bg.jpg")
 
 center center / cover;
 
-box-shadow:var(--shadow);
+box-shadow:0 24px 60px rgba(0,0,0,.18);
 
 }
 
@@ -498,23 +449,23 @@ box-shadow:var(--shadow);
 
 display:grid;
 
-grid-template-columns:1.1fr 1fr;
+grid-template-columns:1fr 1.15fr;
 
-gap:60px;
+gap:42px;
 
 align-items:center;
 
-padding:70px;
+padding:60px;
 
 }
 
 .hero-copy h1{
 
-font-size:clamp(2.8rem,5vw,4rem);
+font-size:clamp(3rem,5vw,4.3rem);
 
 line-height:1.05;
 
-color:white;
+color:#fff;
 
 margin-bottom:24px;
 
@@ -524,13 +475,13 @@ margin-bottom:24px;
 
 font-size:21px;
 
-color:rgba(255,255,255,.88);
+line-height:1.85;
 
-line-height:1.8;
+color:rgba(255,255,255,.90);
+
+max-width:580px;
 
 margin-bottom:34px;
-
-max-width:560px;
 
 }
 
@@ -546,12 +497,122 @@ flex-wrap:wrap;
 
 .hero-image{
 
+display:block;
+
+width:100%;
+
+max-width:560px;
+
+margin-left:auto;
+
 border-radius:18px;
 
-box-shadow:0 24px 50px rgba(0,0,0,.35);
+box-shadow:0 30px 60px rgba(0,0,0,.35);
 
 }
 
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:1000px){
+
+.hero-inner{
+
+grid-template-columns:1fr;
+
+padding:44px;
+
+text-align:center;
+
+}
+
+.hero-copy p{
+
+margin-left:auto;
+
+margin-right:auto;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.hero-image{
+
+margin:auto;
+
+max-width:460px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.primary,
+.primary-nav{
+
+display:none;
+
+}
+
+.mobile-toggle{
+
+display:block;
+
+}
+
+.hero{
+
+margin-top:24px;
+
+border-radius:20px;
+
+}
+
+.hero-inner{
+
+padding:32px;
+
+gap:32px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.hero-buttons .btn{
+
+width:100%;
+
+}
+
+.hero-copy h1{
+
+font-size:2.5rem;
+
+}
+
+.hero-copy p{
+
+font-size:18px;
+
+}
+
+.hero-image{
+
+max-width:100%;
+
+}
+
+}
 /* ==========================================================
    BOOK COMPARISON
 ========================================================== */
