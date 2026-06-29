@@ -1,0 +1,911 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+=============================================================
+ The Piety PayChain
+ Ecosystem Diagram
+ Version 1.0
+ Part 1 - Foundation
+=============================================================
+-->
+
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="1400"
+    height="1400"
+    viewBox="0 0 1400 1400"
+    role="img"
+    aria-labelledby="title desc">
+
+<title id="title">
+The Piety PayChain Ecosystem
+</title>
+
+<desc id="desc">
+An engineering-style ecosystem diagram illustrating the
+Asset Fusion Payroll System.
+</desc>
+
+<defs>
+
+    <!-- Gold Gradient -->
+
+    <linearGradient
+        id="goldGradient"
+        x1="0%"
+        y1="0%"
+        x2="100%"
+        y2="100%">
+
+        <stop offset="0%" stop-color="#F8E9B0"/>
+        <stop offset="35%" stop-color="#E0C468"/>
+        <stop offset="100%" stop-color="#B88622"/>
+
+    </linearGradient>
+
+    <!-- Dark Panel -->
+
+    <linearGradient
+        id="panelGradient"
+        x1="0%"
+        y1="0%"
+        x2="0%"
+        y2="100%">
+
+        <stop offset="0%" stop-color="#162334"/>
+        <stop offset="100%" stop-color="#08111C"/>
+
+    </linearGradient>
+
+    <!-- Engine Glow -->
+
+    <filter
+        id="engineGlow"
+        x="-50%"
+        y="-50%"
+        width="200%"
+        height="200%">
+
+        <feGaussianBlur
+            stdDeviation="12"
+            result="blur"/>
+
+        <feMerge>
+
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+
+        </feMerge>
+
+    </filter>
+
+    <!-- Node Glow -->
+
+    <filter
+        id="nodeGlow"
+        x="-50%"
+        y="-50%"
+        width="200%"
+        height="200%">
+
+        <feGaussianBlur
+            stdDeviation="5"
+            result="blur"/>
+
+        <feMerge>
+
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+
+        </feMerge>
+
+    </filter>
+
+</defs>
+
+<!-- =====================================================
+     BACKGROUND
+===================================================== -->
+
+<rect
+    width="1400"
+    height="1400"
+    fill="#05080D"/>
+
+<!-- =====================================================
+     OUTER VIGNETTE
+===================================================== -->
+
+<circle
+    cx="700"
+    cy="700"
+    r="620"
+    fill="none"
+    stroke="#0D1623"
+    stroke-width="2"/>
+
+<circle
+    cx="700"
+    cy="700"
+    r="500"
+    fill="none"
+    stroke="#101C2C"
+    stroke-width="2"/>
+
+<circle
+    cx="700"
+    cy="700"
+    r="380"
+    fill="none"
+    stroke="#132031"
+    stroke-width="2"/>
+
+<!-- =====================================================
+     GRID
+===================================================== -->
+
+<g
+    stroke="#FFFFFF"
+    stroke-width="1"
+    opacity=".035">
+
+    <!-- Vertical -->
+
+    <line x1="100" y1="0" x2="100" y2="1400"/>
+    <line x1="200" y1="0" x2="200" y2="1400"/>
+    <line x1="300" y1="0" x2="300" y2="1400"/>
+    <line x1="400" y1="0" x2="400" y2="1400"/>
+    <line x1="500" y1="0" x2="500" y2="1400"/>
+    <line x1="600" y1="0" x2="600" y2="1400"/>
+    <line x1="700" y1="0" x2="700" y2="1400"/>
+    <line x1="800" y1="0" x2="800" y2="1400"/>
+    <line x1="900" y1="0" x2="900" y2="1400"/>
+    <line x1="1000" y1="0" x2="1000" y2="1400"/>
+    <line x1="1100" y1="0" x2="1100" y2="1400"/>
+    <line x1="1200" y1="0" x2="1200" y2="1400"/>
+    <line x1="1300" y1="0" x2="1300" y2="1400"/>
+
+    <!-- Horizontal -->
+
+    <line x1="0" y1="100" x2="1400" y2="100"/>
+    <line x1="0" y1="200" x2="1400" y2="200"/>
+    <line x1="0" y1="300" x2="1400" y2="300"/>
+    <line x1="0" y1="400" x2="1400" y2="400"/>
+    <line x1="0" y1="500" x2="1400" y2="500"/>
+    <line x1="0" y1="600" x2="1400" y2="600"/>
+    <line x1="0" y1="700" x2="1400" y2="700"/>
+    <line x1="0" y1="800" x2="1400" y2="800"/>
+    <line x1="0" y1="900" x2="1400" y2="900"/>
+    <line x1="0" y1="1000" x2="1400" y2="1000"/>
+    <line x1="0" y1="1100" x2="1400" y2="1100"/>
+    <line x1="0" y1="1200" x2="1400" y2="1200"/>
+    <line x1="0" y1="1300" x2="1400" y2="1300"/>
+
+</g>
+
+<!-- =====================================================
+     PART 1 COMPLETE
+     Center engine begins in Part 2.
+===================================================== -->
+<!-- =====================================================
+     CENTER VALUE ENGINE
+===================================================== -->
+
+<g id="asset-fusion-engine">
+
+    <!-- Outer Halo -->
+
+    <circle
+        cx="700"
+        cy="700"
+        r="150"
+        fill="none"
+        stroke="url(#goldGradient)"
+        stroke-width="3"
+        opacity=".30"
+        filter="url(#engineGlow)"/>
+
+    <circle
+        cx="700"
+        cy="700"
+        r="125"
+        fill="none"
+        stroke="url(#goldGradient)"
+        stroke-width="2"
+        opacity=".55"/>
+
+    <!-- Engine Ring -->
+
+    <circle
+        cx="700"
+        cy="700"
+        r="95"
+        fill="url(#panelGradient)"
+        stroke="url(#goldGradient)"
+        stroke-width="4"/>
+
+    <!-- Core -->
+
+    <circle
+        cx="700"
+        cy="700"
+        r="42"
+        fill="url(#goldGradient)"
+        opacity=".95"/>
+
+    <!-- Inner Ring -->
+
+    <circle
+        cx="700"
+        cy="700"
+        r="58"
+        fill="none"
+        stroke="#F6E7A8"
+        stroke-width="2"
+        opacity=".65"/>
+
+    <!-- Crosshair -->
+
+    <line
+        x1="700"
+        y1="575"
+        x2="700"
+        y2="825"
+        stroke="#B88622"
+        stroke-width="1"
+        opacity=".30"/>
+
+    <line
+        x1="575"
+        y1="700"
+        x2="825"
+        y2="700"
+        stroke="#B88622"
+        stroke-width="1"
+        opacity=".30"/>
+
+    <!-- Labels -->
+
+    <text
+        x="700"
+        y="688"
+        text-anchor="middle"
+        fill="#FFFFFF"
+        font-size="18"
+        font-family="Inter,Arial,sans-serif"
+        font-weight="700">
+
+        ASSET
+
+    </text>
+
+    <text
+        x="700"
+        y="716"
+        text-anchor="middle"
+        fill="#FFFFFF"
+        font-size="18"
+        font-family="Inter,Arial,sans-serif"
+        font-weight="700">
+
+        FUSION
+
+    </text>
+
+    <text
+        x="700"
+        y="848"
+        text-anchor="middle"
+        fill="#D6B86A"
+        font-size="18"
+        font-family="Inter,Arial,sans-serif"
+        letter-spacing="3">
+
+        VALUE ENGINE
+
+    </text>
+
+</g>
+<!-- =====================================================
+     PRIMARY ECOSYSTEM NODES
+===================================================== -->
+
+<g id="ecosystem-nodes">
+
+    <!-- PAYROLL -->
+
+    <g id="node-payroll">
+
+        <line
+            x1="700"
+            y1="550"
+            x2="700"
+            y2="300"
+            stroke="#C89B2F"
+            stroke-width="2"
+            opacity=".45"/>
+
+        <circle
+            cx="700"
+            cy="250"
+            r="44"
+            fill="url(#panelGradient)"
+            stroke="url(#goldGradient)"
+            stroke-width="3"
+            filter="url(#nodeGlow)"/>
+
+        <text
+            x="700"
+            y="258"
+            text-anchor="middle"
+            fill="#FFFFFF"
+            font-size="16"
+            font-family="Inter,Arial,sans-serif"
+            font-weight="600">
+
+            PAYROLL
+
+        </text>
+
+    </g>
+
+    <!-- PRIVATE LEDGER -->
+
+    <g id="node-ledger">
+
+        <line
+            x1="620"
+            y1="640"
+            x2="390"
+            y2="520"
+            stroke="#C89B2F"
+            stroke-width="2"
+            opacity=".45"/>
+
+        <circle
+            cx="330"
+            cy="490"
+            r="44"
+            fill="url(#panelGradient)"
+            stroke="url(#goldGradient)"
+            stroke-width="3"
+            filter="url(#nodeGlow)"/>
+
+        <text
+            x="330"
+            y="498"
+            text-anchor="middle"
+            fill="#FFFFFF"
+            font-size="14"
+            font-family="Inter,Arial,sans-serif"
+            font-weight="600">
+
+            LEDGER
+
+        </text>
+
+    </g>
+
+    <!-- DIGITAL ASSETS -->
+
+    <g id="node-assets">
+
+        <line
+            x1="780"
+            y1="640"
+            x2="1010"
+            y2="520"
+            stroke="#C89B2F"
+            stroke-width="2"
+            opacity=".45"/>
+
+        <circle
+            cx="1070"
+            cy="490"
+            r="44"
+            fill="url(#panelGradient)"
+            stroke="url(#goldGradient)"
+            stroke-width="3"
+            filter="url(#nodeGlow)"/>
+
+        <text
+            x="1070"
+            y="498"
+            text-anchor="middle"
+            fill="#FFFFFF"
+            font-size="13"
+            font-family="Inter,Arial,sans-serif"
+            font-weight="600">
+
+            ASSETS
+
+        </text>
+
+    </g>
+
+</g>
+<!-- =====================================================
+     LOWER ECOSYSTEM NODES
+===================================================== -->
+
+<g id="node-banking">
+
+    <line
+        x1="605"
+        y1="760"
+        x2="385"
+        y2="900"
+        stroke="#C89B2F"
+        stroke-width="2"
+        opacity=".45"/>
+
+    <circle
+        cx="330"
+        cy="940"
+        r="44"
+        fill="url(#panelGradient)"
+        stroke="url(#goldGradient)"
+        stroke-width="3"
+        filter="url(#nodeGlow)"/>
+
+    <text
+        x="330"
+        y="948"
+        text-anchor="middle"
+        fill="#FFFFFF"
+        font-size="14"
+        font-family="Inter,Arial,sans-serif"
+        font-weight="600">
+
+        BANKING
+
+    </text>
+
+</g>
+
+<g id="node-merchant">
+
+    <line
+        x1="795"
+        y1="760"
+        x2="1015"
+        y2="900"
+        stroke="#C89B2F"
+        stroke-width="2"
+        opacity=".45"/>
+
+    <circle
+        cx="1070"
+        cy="940"
+        r="44"
+        fill="url(#panelGradient)"
+        stroke="url(#goldGradient)"
+        stroke-width="3"
+        filter="url(#nodeGlow)"/>
+
+    <text
+        x="1070"
+        y="948"
+        text-anchor="middle"
+        fill="#FFFFFF"
+        font-size="14"
+        font-family="Inter,Arial,sans-serif"
+        font-weight="600">
+
+        MERCHANT
+
+    </text>
+
+</g>
+
+<g id="node-value">
+
+    <line
+        x1="700"
+        y1="850"
+        x2="700"
+        y2="1085"
+        stroke="#C89B2F"
+        stroke-width="2"
+        opacity=".45"/>
+
+    <circle
+        cx="700"
+        cy="1140"
+        r="48"
+        fill="url(#panelGradient)"
+        stroke="url(#goldGradient)"
+        stroke-width="3"
+        filter="url(#engineGlow)"/>
+
+    <text
+        x="700"
+        y="1136"
+        text-anchor="middle"
+        fill="#FFFFFF"
+        font-size="13"
+        font-family="Inter,Arial,sans-serif"
+        font-weight="700">
+
+        LONG-TERM
+
+    </text>
+
+    <text
+        x="700"
+        y="1156"
+        text-anchor="middle"
+        fill="#FFFFFF"
+        font-size="13"
+        font-family="Inter,Arial,sans-serif"
+        font-weight="700">
+
+        VALUE
+
+    </text>
+
+</g>
+<!-- =====================================================
+     PRIMARY CONNECTION RING
+===================================================== -->
+
+<g
+    id="primary-ring"
+    fill="none"
+    stroke="url(#goldGradient)"
+    stroke-width="2"
+    opacity=".22">
+
+    <path
+        d="
+        M700 250
+        C930 250 1070 390 1070 490"/>
+
+    <path
+        d="
+        M1070 490
+        C1070 700 980 850 1070 940"/>
+
+    <path
+        d="
+        M1070 940
+        C980 1095 850 1140 700 1140"/>
+
+    <path
+        d="
+        M700 1140
+        C550 1140 420 1095 330 940"/>
+
+    <path
+        d="
+        M330 940
+        C240 850 240 700 330 490"/>
+
+    <path
+        d="
+        M330 490
+        C330 390 470 250 700 250"/>
+
+</g>
+
+<!-- =====================================================
+     SECONDARY VALUE CONNECTIONS
+===================================================== -->
+
+<g
+    id="secondary-links"
+    stroke="#F6E7A8"
+    stroke-width="1.5"
+    opacity=".18">
+
+    <line
+        x1="700"
+        y1="250"
+        x2="1070"
+        y2="490"/>
+
+    <line
+        x1="1070"
+        y1="490"
+        x2="700"
+        y2="1140"/>
+
+    <line
+        x1="700"
+        y1="1140"
+        x2="330"
+        y2="490"/>
+
+    <line
+        x1="330"
+        y1="490"
+        x2="1070"
+        y2="940"/>
+
+    <line
+        x1="330"
+        y1="940"
+        x2="700"
+        y2="250"/>
+
+</g>
+
+<!-- =====================================================
+     OUTER GUIDE RING
+===================================================== -->
+
+<circle
+    cx="700"
+    cy="700"
+    r="455"
+    fill="none"
+    stroke="#C89B2F"
+    stroke-width="1"
+    opacity=".08"/>
+
+<circle
+    cx="700"
+    cy="700"
+    r="470"
+    fill="none"
+    stroke="#C89B2F"
+    stroke-width="1"
+    opacity=".05"/>
+<!-- =====================================================
+     DIRECTIONAL FLOW INDICATORS
+===================================================== -->
+
+<g
+    id="flow-markers"
+    fill="#E6C768"
+    opacity=".55">
+
+    <!-- Top Right -->
+
+    <polygon
+        points="
+        948,365
+        964,370
+        952,382"/>
+
+    <!-- Right Lower -->
+
+    <polygon
+        points="
+        1035,720
+        1048,734
+        1030,736"/>
+
+    <!-- Bottom -->
+
+    <polygon
+        points="
+        705,1038
+        716,1054
+        694,1054"/>
+
+    <!-- Bottom Left -->
+
+    <polygon
+        points="
+        365,862
+        378,850
+        382,868"/>
+
+    <!-- Upper Left -->
+
+    <polygon
+        points="
+        380,395
+        365,382
+        384,378"/>
+
+</g>
+
+<!-- =====================================================
+     ENGINEERING REFERENCE MARKS
+===================================================== -->
+
+<g
+    id="reference-marks"
+    stroke="#7F8A98"
+    stroke-width="1"
+    opacity=".12">
+
+    <!-- Top -->
+
+    <line x1="690" y1="120" x2="710" y2="120"/>
+    <line x1="700" y1="110" x2="700" y2="130"/>
+
+    <!-- Right -->
+
+    <line x1="1270" y1="690" x2="1290" y2="690"/>
+    <line x1="1280" y1="680" x2="1280" y2="700"/>
+
+    <!-- Bottom -->
+
+    <line x1="690" y1="1270" x2="710" y2="1270"/>
+    <line x1="700" y1="1260" x2="700" y2="1280"/>
+
+    <!-- Left -->
+
+    <line x1="110" y1="690" x2="130" y2="690"/>
+    <line x1="120" y1="680" x2="120" y2="700"/>
+
+</g>
+
+<!-- =====================================================
+     GOLD ACCENT POINTS
+===================================================== -->
+
+<g
+    fill="url(#goldGradient)"
+    opacity=".70">
+
+    <circle cx="700" cy="250" r="4"/>
+
+    <circle cx="1070" cy="490" r="4"/>
+
+    <circle cx="1070" cy="940" r="4"/>
+
+    <circle cx="700" cy="1140" r="4"/>
+
+    <circle cx="330" cy="940" r="4"/>
+
+    <circle cx="330" cy="490" r="4"/>
+
+</g>
+
+<!-- =====================================================
+     SUBTLE CENTER HIGHLIGHT
+===================================================== -->
+
+<circle
+    cx="700"
+    cy="700"
+    r="175"
+    fill="none"
+    stroke="#F6E7A8"
+    stroke-width="1"
+    opacity=".08"/>
+
+<circle
+    cx="700"
+    cy="700"
+    r="210"
+    fill="none"
+    stroke="#F6E7A8"
+    stroke-width="1"
+    opacity=".05"/>
+<!-- =====================================================
+     SYSTEM TITLE
+===================================================== -->
+
+<g id="system-title">
+
+    <text
+        x="700"
+        y="95"
+        text-anchor="middle"
+        fill="#F6E7A8"
+        font-family="Inter,Arial,sans-serif"
+        font-size="34"
+        font-weight="700"
+        letter-spacing="5">
+
+        THE PIETY PAYCHAIN
+
+    </text>
+
+    <text
+        x="700"
+        y="128"
+        text-anchor="middle"
+        fill="#9AA6B7"
+        font-family="Inter,Arial,sans-serif"
+        font-size="18"
+        letter-spacing="3">
+
+        ASSET FUSION PAYROLL SYSTEM
+
+    </text>
+
+</g>
+
+<!-- =====================================================
+     STATUS INDICATORS
+===================================================== -->
+
+<g id="status-indicators">
+
+    <circle cx="1185" cy="180" r="7" fill="#2ECC71"/>
+    <text
+        x="1205"
+        y="186"
+        fill="#C7D1DD"
+        font-family="Inter,Arial,sans-serif"
+        font-size="14">
+
+        ACTIVE
+
+    </text>
+
+    <circle cx="1185" cy="210" r="7" fill="#F1C40F"/>
+
+    <text
+        x="1205"
+        y="216"
+        fill="#C7D1DD"
+        font-family="Inter,Arial,sans-serif"
+        font-size="14">
+
+        SECURE
+
+    </text>
+
+    <circle cx="1185" cy="240" r="7" fill="#3498DB"/>
+
+    <text
+        x="1205"
+        y="246"
+        fill="#C7D1DD"
+        font-family="Inter,Arial,sans-serif"
+        font-size="14">
+
+        CONNECTED
+
+    </text>
+
+</g>
+
+<!-- =====================================================
+     COORDINATE LABELS
+===================================================== -->
+
+<g
+    fill="#6F7B89"
+    font-family="Inter,Arial,sans-serif"
+    font-size="11"
+    opacity=".45">
+
+    <text x="86" y="86">NW</text>
+
+    <text x="1292" y="86">NE</text>
+
+    <text x="86" y="1315">SW</text>
+
+    <text x="1292" y="1315">SE</text>
+
+</g>
+
+<!-- =====================================================
+     SYSTEM FOOTER
+===================================================== -->
+
+<g id="footer">
+
+    <line
+        x1="250"
+        y1="1335"
+        x2="1150"
+        y2="1335"
+        stroke="#2A3646"
+        stroke-width="2"/>
+
+    <text
+        x="700"
+        y="1368"
+        text-anchor="middle"
+        fill="#6F7B89"
+        font-family="Inter,Arial,sans-serif"
+        font-size="14"
+        letter-spacing="2">
+
+        ECOSYSTEM ARCHITECTURE • VERSION 1.0
+
+    </text>
+
+</g>
+
+</svg>
+
