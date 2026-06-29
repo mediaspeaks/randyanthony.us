@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+=========================================================
+ The Piety PayChain
+ Payroll Flow
+ Version 1.0
+=========================================================
+-->
+
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1400"
+    height="700"
+    viewBox="0 0 1400 700"
+    role="img">
+
+<defs>
+
+<linearGradient
+    id="gold"
+    x1="0%"
+    y1="0%"
+    x2="100%"
+    y2="100%">
+
+    <stop offset="0%" stop-color="#F7E5A7"/>
+    <stop offset="45%" stop-color="#DFC062"/>
+    <stop offset="100%" stop-color="#B88723"/>
+
+</linearGradient>
+
+<linearGradient
+    id="panel"
+    x1="0%"
+    y1="0%"
+    x2="0%"
+    y2="100%">
+
+    <stop offset="0%" stop-color="#172435"/>
+    <stop offset="100%" stop-color="#08111D"/>
+
+</linearGradient>
+
+<filter id="glow">
+
+    <feGaussianBlur
+        stdDeviation="8"
+        result="blur"/>
+
+    <feMerge>
+
+        <feMergeNode in="blur"/>
+
+        <feMergeNode in="SourceGraphic"/>
+
+    </feMerge>
+
+</filter>
+
+</defs>
+
+<rect
+
+    width="1400"
+    height="700"
+
+    fill="#05080D"/>
+
+<!-- =====================================================
+     TITLE
+===================================================== -->
+
+<text
+
+    x="700"
+    y="75"
+
+    text-anchor="middle"
+
+    fill="#F6E7A8"
+
+    font-size="34"
+
+    font-family="Inter,Arial,sans-serif"
+
+    font-weight="700"
+
+    letter-spacing="4">
+
+PAYROLL FLOW
+
+</text>
+
+<text
+
+    x="700"
+    y="110"
+
+    text-anchor="middle"
+
+    fill="#95A3B4"
+
+    font-size="18"
+
+    font-family="Inter,Arial,sans-serif">
+
+HOW PAYROLL BECOMES LONG-TERM VALUE
+
+</text>
+
+<!-- =====================================================
+     FLOW LANE
+===================================================== -->
+
+<line
+
+    x1="150"
+    y1="350"
+
+    x2="1250"
+    y2="350"
+
+    stroke="url(#gold)"
+
+    stroke-width="6"
+
+    opacity=".35"/>
+<!-- =====================================================
+     PROCESS BLOCKS
+===================================================== -->
+
+<g id="process-blocks">
+
+    <!-- PAYROLL -->
+
+    <rect
+        x="120"
+        y="285"
+        width="220"
+        height="130"
+        rx="16"
+        fill="url(#panel)"
+        stroke="url(#gold)"
+        stroke-width="3"/>
+
+    <text
+        x="230"
+        y="330"
+        text-anchor="middle"
+        fill="#FFFFFF"
+        font-family="Inter,Arial,sans-serif"
+        font-size="22"
+        font-weight="700">
+
+        PAYROLL
+
+    </text>
+
+    <text
+        x="230"
+        y="365"
+        text-anchor="middle"
+        fill="#AEB8C5"
+        font-family="Inter,Arial,sans-serif"
+        font-size="15">
+
+        Employee Earnings
+
+    </text>
+
+    <!-- ASSET FUSION -->
+
+    <rect
+        x="430"
+        y="245"
+        width="260"
+        height="210"
+        rx="20"
+        fill="url(#panel)"
+        stroke="url(#gold)"
+        stroke-width="4"
+        filter="url(#glow)"/>
+
+    <circle
+        cx="560"
+        cy="350"
+        r="48"
+        fill="none"
+        stroke="url(#gold)"
+        stroke-width="3"/>
+
+    <circle
+        cx="560"
+        cy="350"
+        r="24"
+        fill="url(#gold)"/>
+
+    <text
+        x="560"
+        y="305"
+        text-anchor="middle"
+        fill="#FFFFFF"
+        font-family="Inter,Arial,sans-serif"
+        font-size="20"
+        font-weight="700">
+
+        ASSET
+
+    </text>
+
+    <text
+        x="560"
+        y="390"
+        text-anchor="middle"
+        fill="#FFFFFF"
+        font-family="Inter,Arial,sans-serif"
+        font-size="20"
+        font-weight="700">
+
+        FUSION
+
+    </text>
+
+    <!-- DISTRIBUTION -->
+
+    <rect
+        x="790"
+        y="285"
+        width="220"
+        height="130"
+        rx="16"
+        fill="url(#panel)"
+        stroke="url(#gold)"
+        stroke-width="3"/>
+
+    <text
+        x="900"
+        y="330"
+        text-anchor="middle"
+        fill="#FFFFFF"
+        font-family="Inter,Arial,sans-serif"
+        font-size="22"
+        font-weight="700">
+
+        DISTRIBUTION
+
+    </text>
+
+    <text
+        x="900"
+        y="365"
+        text-anchor="middle"
+        fill="#AEB8C5"
+        font-family="Inter,Arial,sans-serif"
+        font-size="15">
+
+        Platform Benefits
+
+    </text>
+
+    <!-- LONG-TERM VALUE -->
+
+    <rect
+        x="1090"
+        y="285"
+        width="220"
+        height="130"
+        rx="16"
+        fill="url(#panel)"
+        stroke="url(#gold)"
+        stroke-width="3"/>
+
+    <text
+        x="1200"
+        y="322"
+        text-anchor="middle"
+        fill="#FFFFFF"
+        font-family="Inter,Arial,sans-serif"
+        font-size="20"
+        font-weight="700">
+
+        LONG-TERM
+
+    </text>
+
+    <text
+        x="1200"
+        y="352"
+        text-anchor="middle"
+        fill="#FFFFFF"
+        font-family="Inter,Arial,sans-serif"
+        font-size="20"
+        font-weight="700">
+
+        VALUE
+
+    </text>
+
+    <text
+        x="1200"
+        y="382"
+        text-anchor="middle"
+        fill="#AEB8C5"
+        font-family="Inter,Arial,sans-serif"
+        font-size="15">
+
+        Sustainable Growth
+
+    </text>
+
+</g>
+
+<!-- =====================================================
+     CONNECTORS
+===================================================== -->
+
+<g
+    stroke="url(#gold)"
+    stroke-width="4"
+    fill="url(#gold)"
+    opacity=".85">
+
+    <line x1="340" y1="350" x2="430" y2="350"/>
+
+    <polygon
+        points="
+        415,343
+        430,350
+        415,357"/>
+
+    <line x1="690" y1="350" x2="790" y2="350"/>
+
+    <polygon
+        points="
+        775,343
+        790,350
+        775,357"/>
+
+    <line x1="1010" y1="350" x2="1090" y2="350"/>
+
+    <polygon
+        points="
+        1075,343
+        1090,350
+        1075,357"/>
+
+</g></svg>
