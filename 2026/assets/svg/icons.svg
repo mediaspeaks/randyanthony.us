@@ -1,249 +1,356 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 
-<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<svg xmlns="http://www.w3.org/2000/svg">
 
 <!-- =======================================================
      THE PIETY PAYCHAIN
-     ICON LIBRARY
+     SVG ICON LIBRARY
      Version 1.0
 ======================================================= -->
 
 <!-- =======================================================
-     Payroll
+     PAYROLL
 ======================================================= -->
-
 <symbol id="icon-payroll" viewBox="0 0 64 64">
-
-    <rect x="12" y="10" width="40" height="44"
-          rx="6"
+    <rect x="14" y="10" width="36" height="44" rx="5"
           fill="none"
           stroke="currentColor"
-          stroke-width="2.5"/>
+          stroke-width="2.25"/>
 
-    <line x1="20" y1="22" x2="44" y2="22"
+    <line x1="22" y1="22" x2="42" y2="22"
           stroke="currentColor"
-          stroke-width="2.5"/>
+          stroke-width="2.25"/>
 
-    <line x1="20" y1="30" x2="44" y2="30"
+    <line x1="22" y1="31" x2="42" y2="31"
           stroke="currentColor"
-          stroke-width="2.5"/>
+          stroke-width="2.25"/>
 
-    <line x1="20" y1="38" x2="36" y2="38"
+    <line x1="22" y1="40" x2="36" y2="40"
           stroke="currentColor"
-          stroke-width="2.5"/>
-
+          stroke-width="2.25"/>
 </symbol>
 
 <!-- =======================================================
-     Private Ledger
+     LEDGER
 ======================================================= -->
-
 <symbol id="icon-ledger" viewBox="0 0 64 64">
 
-    <rect x="16" y="12"
+    <rect x="16"
+          y="10"
           width="32"
-          height="40"
+          height="44"
           rx="4"
           fill="none"
           stroke="currentColor"
-          stroke-width="2.5"/>
+          stroke-width="2.25"/>
 
-    <line x1="24" y1="22" x2="40" y2="22"
+    <line x1="24" y1="20"
+          x2="40"
+          y2="20"
           stroke="currentColor"
-          stroke-width="2.5"/>
+          stroke-width="2.25"/>
 
-    <line x1="24" y1="32" x2="40" y2="32"
+    <line x1="24" y1="30"
+          x2="40"
+          y2="30"
           stroke="currentColor"
-          stroke-width="2.5"/>
+          stroke-width="2.25"/>
 
-    <line x1="24" y1="42" x2="36" y2="42"
+    <line x1="24" y1="40"
+          x2="34"
+          y2="40"
           stroke="currentColor"
-          stroke-width="2.5"/>
+          stroke-width="2.25"/>
 
 </symbol>
 
 <!-- =======================================================
-     Banking
-======================================================= -->
-
-<symbol id="icon-bank" viewBox="0 0 64 64">
-
-    <polygon points="32,10 12,20 52,20"
-             fill="none"
-             stroke="currentColor"
-             stroke-width="2.5"/>
-
-    <line x1="18" y1="20" x2="18" y2="46"
-          stroke="currentColor"
-          stroke-width="2.5"/>
-
-    <line x1="28" y1="20" x2="28" y2="46"
-          stroke="currentColor"
-          stroke-width="2.5"/>
-
-    <line x1="36" y1="20" x2="36" y2="46"
-          stroke="currentColor"
-          stroke-width="2.5"/>
-
-    <line x1="46" y1="20" x2="46" y2="46"
-          stroke="currentColor"
-          stroke-width="2.5"/>
-
-    <line x1="12" y1="48" x2="52" y2="48"
-          stroke="currentColor"
-          stroke-width="2.5"/>
-
-</symbol>
-
-<!-- =======================================================
-     Wallet
-======================================================= -->
-
-<symbol id="icon-wallet" viewBox="0 0 64 64">
-
-    <rect x="12" y="18"
-          width="40"
-          height="28"
-          rx="6"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2.5"/>
-
-    <circle cx="42"
-            cy="32"
-            r="2.5"
-            fill="currentColor"/>
-
-</symbol>
-
-<!-- =======================================================
-     Merchant
-======================================================= -->
-
-<symbol id="icon-merchant" viewBox="0 0 64 64">
-
-    <rect x="18"
-          y="24"
-          width="28"
-          height="24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2.5"/>
-
-    <polyline points="14,24 18,14 46,14 50,24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"/>
-
-</symbol>
-
-<!-- =======================================================
-     Security
+     SECURITY
 ======================================================= -->
 
 <symbol id="icon-security" viewBox="0 0 64 64">
 
-    <path d="M32 8
-             L48 16
-             V30
-             C48 42 40 52 32 56
-             C24 52 16 42 16 30
-             V16 Z"
+<path
 
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2.5"/>
+d="M32 8
+L48 16
+V30
+C48 42
+40 52
+32 56
+C24 52
+16 42
+16 30
+V16
+Z"
+
+fill="none"
+
+stroke="currentColor"
+
+stroke-width="2.25"/>
 
 </symbol>
 
 <!-- =======================================================
-     Growth
+     BANK
 ======================================================= -->
 
-<symbol id="icon-growth" viewBox="0 0 64 64">
+<symbol id="icon-bank" viewBox="0 0 64 64">
 
-    <polyline points="14,46 24,36 34,40 50,20"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="3"/>
+<polygon
 
-    <polyline points="42,20 50,20 50,28"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="3"/>
+points="32,10
+14,20
+50,20"
+
+fill="none"
+
+stroke="currentColor"
+
+stroke-width="2.25"/>
+
+<line x1="18" y1="20" x2="18" y2="46"
+stroke="currentColor"
+stroke-width="2.25"/>
+
+<line x1="28" y1="20" x2="28" y2="46"
+stroke="currentColor"
+stroke-width="2.25"/>
+
+<line x1="36" y1="20" x2="36" y2="46"
+stroke="currentColor"
+stroke-width="2.25"/>
+
+<line x1="46" y1="20" x2="46" y2="46"
+stroke="currentColor"
+stroke-width="2.25"/>
+
+<line x1="14" y1="48"
+x2="50" y2="48"
+stroke="currentColor"
+stroke-width="2.25"/>
 
 </symbol>
 
 <!-- =======================================================
-     Network
+     WALLET
+======================================================= -->
+
+<symbol id="icon-wallet" viewBox="0 0 64 64">
+
+<rect
+x="14"
+y="18"
+width="36"
+height="28"
+rx="6"
+
+fill="none"
+
+stroke="currentColor"
+
+stroke-width="2.25"/>
+
+<circle
+cx="42"
+cy="32"
+r="2.5"
+
+fill="currentColor"/>
+
+</symbol>
+
+<!-- =======================================================
+     MERCHANT
+======================================================= -->
+
+<symbol id="icon-merchant" viewBox="0 0 64 64">
+
+<polyline
+
+points="18,22
+22,14
+42,14
+46,22"
+
+fill="none"
+
+stroke="currentColor"
+
+stroke-width="2.25"/>
+
+<rect
+x="20"
+y="22"
+width="24"
+height="24"
+
+fill="none"
+
+stroke="currentColor"
+
+stroke-width="2.25"/>
+
+</symbol>
+
+<!-- =======================================================
+     NETWORK
 ======================================================= -->
 
 <symbol id="icon-network" viewBox="0 0 64 64">
 
-    <circle cx="18" cy="18" r="4"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"/>
+<circle
+cx="18"
+cy="18"
+r="4"
 
-    <circle cx="46" cy="18" r="4"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"/>
+fill="none"
 
-    <circle cx="32" cy="46" r="4"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"/>
+stroke="currentColor"
 
-    <line x1="22" y1="20" x2="42" y2="20"
-          stroke="currentColor"
-          stroke-width="2.5"/>
+stroke-width="2.25"/>
 
-    <line x1="20" y1="22" x2="30" y2="42"
-          stroke="currentColor"
-          stroke-width="2.5"/>
+<circle
+cx="46"
+cy="18"
+r="4"
 
-    <line x1="44" y1="22" x2="34" y2="42"
-          stroke="currentColor"
-          stroke-width="2.5"/>
+fill="none"
+
+stroke="currentColor"
+
+stroke-width="2.25"/>
+
+<circle
+cx="32"
+cy="46"
+r="4"
+
+fill="none"
+
+stroke="currentColor"
+
+stroke-width="2.25"/>
+
+<line
+x1="22"
+y1="18"
+x2="42"
+y2="18"
+
+stroke="currentColor"
+
+stroke-width="2.25"/>
+
+<line
+x1="20"
+y1="22"
+x2="30"
+y2="42"
+
+stroke="currentColor"
+
+stroke-width="2.25"/>
+
+<line
+x1="44"
+y1="22"
+x2="34"
+y2="42"
+
+stroke="currentColor"
+
+stroke-width="2.25"/>
 
 </symbol>
 
 <!-- =======================================================
-     Asset Fusion
+     GROWTH
 ======================================================= -->
 
-<symbol id="icon-fusion" viewBox="0 0 64 64">
+<symbol id="icon-growth" viewBox="0 0 64 64">
 
-    <circle cx="24" cy="32" r="8"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"/>
+<polyline
 
-    <circle cx="40" cy="32" r="8"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"/>
+points="14,46
+24,36
+34,40
+50,20"
+
+fill="none"
+
+stroke="currentColor"
+
+stroke-width="2.5"/>
+
+<polyline
+
+points="42,20
+50,20
+50,28"
+
+fill="none"
+
+stroke="currentColor"
+
+stroke-width="2.5"/>
 
 </symbol>
 
 <!-- =======================================================
-     Value Engine
+     VALUE ENGINE
 ======================================================= -->
 
 <symbol id="icon-engine" viewBox="0 0 64 64">
 
-    <circle cx="32" cy="32"
-            r="18"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"/>
+<circle
+cx="32"
+cy="32"
+r="18"
 
-    <circle cx="32"
-            cy="32"
-            r="6"
-            fill="currentColor"/>
+fill="none"
+
+stroke="currentColor"
+
+stroke-width="2.25"/>
+
+<circle
+cx="32"
+cy="32"
+r="6"
+
+fill="currentColor"/>
+
+</symbol>
+
+<!-- =======================================================
+     ASSET FUSION
+======================================================= -->
+
+<symbol id="icon-fusion" viewBox="0 0 64 64">
+
+<circle
+cx="24"
+cy="32"
+r="8"
+
+fill="none"
+
+stroke="currentColor"
+
+stroke-width="2.25"/>
+
+<circle
+cx="40"
+cy="32"
+r="8"
+
+fill="none"
+
+stroke="currentColor"
+
+stroke-width="2.25"/>
 
 </symbol>
 
