@@ -1,293 +1,460 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
-<meta charset="UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0">
+<title>Randy Anthony — Operational Reliability Advisory</title>
 
-<meta
-name="theme-color"
-content="#0b1a33">
+<meta name="description"
+      content="Operational Reliability Advisory, Operational Architecture Series, publications, consulting, broadcast operations, streaming systems, and operational resilience.">
 
-<meta
-name="description"
-content="The Operational Architecture Series by Randy Anthony explores Operational Reliability, Operational Visibility, and resilient system design across twenty-seven weeks.">
+<meta name="author" content="Randy Anthony">
 
-<meta
-property="og:type"
-content="website">
+<meta name="theme-color" content="#071a33">
 
-<meta
-property="og:title"
-content="Operational Architecture Series | Randy Anthony">
+<link rel="canonical" href="https://randyanthony.us/">
 
-<meta
-property="og:description"
-content="Twenty-seven weeks exploring Operational Reliability, Operational Visibility, and resilient systems.">
+<link rel="icon" href="/favicon.png">
 
-<meta
-property="og:image"
-content="https://randyanthony.us/series/assets/27.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
 
-<meta
-property="og:url"
-content="https://randyanthony.us/series/">
-
-<title>
-
-Operational Architecture Series |
-Randy Anthony
-
-</title>
-
-<link
-rel="icon"
-href="/favicon.png">
-
-<link
-rel="stylesheet"
-href="/css/global.css">
-
-<link
-rel="stylesheet"
-href="/series/series.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
 
 <style>
 
 /* ==========================================================
-   PAGE SPECIFIC STYLES
+   RANDYANTHONY.US
+   Homepage Version 2.0
+   Author: Randy Anthony
+   ========================================================== */
+
+:root{
+
+    --bg-1:#f6f7fb;
+    --bg-2:#eef2f8;
+
+    --heroA:#071a33;
+    --heroB:#0b1a33;
+
+    --accent:#1f3e8a;
+    --accent2:#0a7a57;
+
+    --text:#0f172a;
+    --muted:#64748b;
+
+    --card:#ffffff;
+
+    --border:rgba(15,23,42,.08);
+
+    --radius:18px;
+
+    --shadow:
+        0 10px 28px rgba(15,23,42,.08);
+
+    --max-width:1120px;
+
+    --speed:.28s;
+
+}
+
+/* ==========================================================
+   RESET
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:Roboto,
+                Arial,
+                Helvetica,
+                sans-serif;
+
+    color:var(--text);
+
+    background:
+
+        radial-gradient(
+            circle at top left,
+            rgba(31,62,138,.08),
+            transparent 45%
+        ),
+
+        radial-gradient(
+            circle at top right,
+            rgba(10,122,87,.05),
+            transparent 42%
+        ),
+
+        linear-gradient(
+            var(--bg-1),
+            var(--bg-2)
+        );
+
+    line-height:1.6;
+
+}
+
+.site{
+
+    max-width:var(--max-width);
+
+    margin:auto;
+
+    padding:20px;
+
+}
+/* ==========================================================
+   HEADER
+========================================================== */
+
+.site-header{
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    height:60px;
+
+    padding:0 22px;
+
+    backdrop-filter:blur(6px);
+
+    background:rgba(255,255,255,.82);
+
+    border-bottom:1px solid var(--border);
+
+}
+
+.brand{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    text-decoration:none;
+
+    color:var(--text);
+
+}
+
+.brand img{
+
+    width:44px;
+    height:44px;
+
+    border-radius:12px;
+
+}
+
+.brand strong{
+
+    display:block;
+
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+}
+
+.brand span{
+
+    display:block;
+
+    color:var(--muted);
+
+    font-size:12px;
+
+}
+
+.primary{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+.primary a{
+
+    text-decoration:none;
+
+    color:var(--muted);
+
+    font-weight:600;
+
+    padding:8px 12px;
+
+    border-radius:10px;
+
+    transition:.25s;
+
+}
+
+.primary a:hover{
+
+    color:var(--text);
+
+    background:#f4f6f9;
+
+}
+
+/* ==========================================================
+   BUTTONS
+========================================================== */
+
+.btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    padding:10px 16px;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    color:#fff;
+
+    background:var(--accent);
+
+    transition:var(--speed);
+
+}
+
+.btn:hover{
+
+    transform:translateY(-2px);
+
+    background:#17337a;
+
+}
+
+.btn.secondary{
+
+    background:#ffffff;
+
+    color:var(--accent);
+
+    border:1px solid rgba(31,62,138,.18);
+
+}
+
+/* ==========================================================
+   HERO
 ========================================================== */
 
 .hero{
 
-display:grid;
+    margin-top:24px;
 
-grid-template-columns:360px 1fr;
+    display:grid;
 
-gap:60px;
+    grid-template-columns:1fr 400px;
 
-align-items:center;
+    gap:24px;
 
-margin:40px 0 60px;
+    padding:36px;
 
-}
+    border-radius:22px;
 
-.hero-image{
+    color:#fff;
 
-display:flex;
+    background:
 
-justify-content:center;
+    linear-gradient(
+        rgba(7,26,51,.88),
+        rgba(7,26,51,.88)
+    ),
 
-align-items:center;
+    url("/series/assets/ops-architecture-bg.jpg")
+    center/cover no-repeat;
 
-}
-
-.hero-image img{
-
-width:100%;
-
-max-width:330px;
-
-height:auto;
-
-border-radius:18px;
-
-box-shadow:var(--shadow);
+    box-shadow:
+        0 24px 60px rgba(7,26,51,.28);
 
 }
 
-.hero-copy{
+.hero-left{
 
-display:flex;
+    display:flex;
 
-flex-direction:column;
+    flex-direction:column;
 
-justify-content:center;
-
-}
-
-.hero-kicker{
-
-font-size:.92rem;
-
-font-weight:700;
-
-letter-spacing:.14em;
-
-text-transform:uppercase;
-
-color:var(--blue);
-
-margin-bottom:12px;
+    justify-content:center;
 
 }
 
-.hero-copy h1{
+.hero h1{
 
-font-size:clamp(2.4rem,4vw,3.8rem);
+    font-size:2.35rem;
 
-line-height:1.1;
-
-margin-bottom:22px;
+    margin-bottom:18px;
 
 }
 
-.hero-copy p{
+.hero p{
 
-font-size:1.08rem;
+    color:rgba(255,255,255,.88);
 
-line-height:1.9;
-
-margin-bottom:18px;
-
-color:var(--muted);
+    margin-bottom:16px;
 
 }
 
-.hero-buttons{
+.hero-right{
 
-display:flex;
+    background:rgba(255,255,255,.06);
 
-gap:18px;
+    border:1px solid rgba(255,255,255,.10);
 
-flex-wrap:wrap;
+    border-radius:16px;
 
-margin-top:18px;
+    padding:22px;
+
+}
+
+.focus-list{
+
+    padding-left:18px;
+
+}
+
+.focus-list li{
+
+    margin-bottom:12px;
 
 }
 
 /* ==========================================================
-   THREE CARD ROW
+   MAIN CONTENT
 ========================================================== */
 
-.three-grid{
+.home-section{
 
-display:grid;
-
-grid-template-columns:
-
-1.1fr
-
-1fr
-
-1fr;
-
-gap:28px;
-
-margin:20px 0 70px;
+    margin-top:42px;
 
 }
 
-.info-card{
+.section-header{
 
-background:var(--surface);
-
-border-radius:18px;
-
-padding:32px;
-
-box-shadow:var(--shadow);
-
-border:1px solid var(--border);
+    margin-bottom:24px;
 
 }
 
-.info-card h2{
+.section-header h2{
 
-margin-bottom:18px;
+    font-size:1.65rem;
 
-font-size:1.6rem;
-
-}
-
-.info-card p{
-
-margin-bottom:16px;
-
-line-height:1.85;
-
-color:var(--muted);
+    margin-bottom:6px;
 
 }
 
-.archive-divider{
+.section-header p{
 
-margin:22px 0;
-
-border-top:1px solid var(--border);
+    color:var(--muted);
 
 }
 
-.archive-buttons{
+.home-grid{
 
-display:flex;
+    display:grid;
 
-flex-direction:column;
+    grid-template-columns:
+        repeat(3,1fr);
 
-gap:16px;
-
-margin-top:18px;
+    gap:22px;
 
 }
-
 /* ==========================================================
-   CONTINUE THE JOURNEY
+   CONTENT CARDS
 ========================================================== */
 
-.books-callout{
+.card{
 
-margin:20px 0 70px;
+    background:var(--card);
 
-padding:42px;
+    border:1px solid var(--border);
 
-border-radius:20px;
+    border-radius:16px;
 
-background:#173a70;
+    padding:22px;
 
-color:#ffffff;
+    display:flex;
 
-box-shadow:var(--shadow);
+    flex-direction:column;
 
-text-align:center;
+    justify-content:space-between;
 
-}
+    min-height:250px;
 
-.books-callout h2{
+    box-shadow:var(--shadow);
 
-margin-bottom:22px;
-
-font-size:2.2rem;
-
-}
-
-.books-callout p{
-
-max-width:900px;
-
-margin:0 auto 20px;
-
-line-height:1.9;
-
-color:rgba(255,255,255,.92);
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
 
 }
 
-.book-buttons{
+.card:hover{
 
-display:flex;
+    transform:translateY(-6px);
 
-justify-content:center;
+    box-shadow:
+        0 20px 40px rgba(15,23,42,.12);
 
-gap:18px;
+}
 
-flex-wrap:wrap;
+.card h3{
 
-margin-top:28px;
+    font-size:1.15rem;
+
+    margin-bottom:14px;
+
+    color:var(--heroA);
+
+}
+
+.card p{
+
+    color:var(--muted);
+
+    margin-bottom:20px;
+
+    flex:1;
+
+}
+
+.card .btn{
+
+    align-self:flex-start;
 
 }
 
@@ -295,70 +462,220 @@ margin-top:28px;
    SPONSORS
 ========================================================== */
 
+.sponsors{
+
+    margin-top:52px;
+
+    padding-top:36px;
+
+    border-top:1px solid var(--border);
+
+}
+
+.sponsors h2{
+
+    font-size:1.55rem;
+
+    margin-bottom:8px;
+
+}
+
+.sponsors p{
+
+    color:var(--muted);
+
+    margin-bottom:24px;
+
+}
+
 .sponsor-grid{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(2,1fr);
 
-gap:28px;
+    gap:22px;
 
-margin-bottom:70px;
+}
+
+.sponsor-card{
+
+    background:#2f3a44;
+
+    color:#ffffff;
+
+    border-radius:16px;
+
+    padding:24px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.sponsor-card h3{
+
+    color:#ffffff;
+
+    margin-bottom:12px;
+
+    font-size:1.1rem;
+
+}
+
+.sponsor-card p{
+
+    color:#d7dee6;
+
+    margin-bottom:20px;
+
+}
+
+.sponsor-card .btn{
+
+    background:#ffffff;
+
+    color:#1f3e8a;
 
 }
 
 /* ==========================================================
-   MOBILE
+   FOOTER
 ========================================================== */
 
-@media(max-width:900px){
+.site-foot{
 
-.hero{
+    margin-top:60px;
 
-grid-template-columns:1fr;
+    padding:28px 0 50px;
 
-text-align:center;
+    border-top:1px solid var(--border);
 
-gap:36px;
+    color:var(--muted);
 
-}
-
-.hero-buttons{
-
-justify-content:center;
+    font-size:.9rem;
 
 }
 
-.three-grid{
+.site-foot a{
 
-grid-template-columns:1fr;
+    color:var(--muted);
 
-}
-
-.sponsor-grid{
-
-grid-template-columns:1fr;
+    text-decoration:none;
 
 }
 
-.book-buttons{
+.site-foot a:hover{
 
-flex-direction:column;
-
-}
-
-.book-buttons .btn{
-
-width:100%;
+    color:var(--accent);
 
 }
 
+/* ==========================================================
+   MOBILE NAVIGATION
+========================================================== */
+
+.mobile-toggle{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    font-size:1.5rem;
+
 }
+
+.mobile-nav{
+
+    display:none;
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (max-width:980px){
+
+    .hero{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .home-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .sponsor-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media (max-width:640px){
+
+    .primary{
+
+        display:none;
+
+    }
+
+    .mobile-toggle{
+
+        display:block;
+
+    }
+
+    .hero{
+
+        padding:24px;
+
+    }
+
+    .hero h1{
+
+        font-size:2rem;
+
+    }
+
+    .home-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .sponsor-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .card{
+
+        min-height:auto;
+
+    }
+
+}
+
+/* ==========================================================
+   END OF STYLES
+========================================================== */
 
 </style>
 
 </head>
 <body>
+
+<div class="site" role="document">
 
 <!-- ==========================================================
      HEADER
@@ -366,732 +683,615 @@ width:100%;
 
 <header class="site-header">
 
-<div class="header-inner">
+    <a class="brand" href="/">
 
-<a
-class="brand"
-href="/">
+        <img
+            src="/favicon.png"
+            alt="Randy Anthony">
 
-<img
+        <div>
 
-src="/assets/logo.png"
+            <strong>RANDY ANTHONY</strong>
 
-alt="Randy Anthony">
+            <span>
+                Operational Reliability Advisory
+            </span>
 
-<div class="titles">
+        </div>
 
-<strong>
+    </a>
 
-Randy Anthony
+    <!-- ==========================
+         Desktop Navigation
+    =========================== -->
 
-</strong>
+    <nav class="primary"
+         role="navigation"
+         aria-label="Primary Navigation">
 
-<span>
+        <a href="/">Home</a>
 
-Operational Reliability Advisory
+        <a href="/series/">
+            Operational Series
+        </a>
 
-</span>
+        <a href="/home.html">
+            Offerings
+        </a>
 
-</div>
+        <a href="/book/">
+            Books
+        </a>
 
-</a>
+        <a href="/radio/">
+            Radio
+        </a>
 
-<nav class="primary-nav">
+        <a class="btn"
+           href="mailto:inbox@randyanthony.us?subject=Operational%20Review">
 
-<a href="/">Home</a>
+            Request Review
 
-<a href="/series/">Operational Series</a>
+        </a>
 
-<a href="/home.html">Offerings</a>
+    </nav>
 
-<a href="/book/">Book</a>
+    <!-- ==========================
+         Mobile Button
+    =========================== -->
 
-<a href="/radio/">Radio</a>
+    <button
+        id="mobileToggle"
+        class="mobile-toggle"
+        aria-expanded="false"
+        aria-controls="mobileNav">
 
-<a
-class="btn"
-href="/contact.html">
+        ☰
 
-Contact
-
-</a>
-
-</nav>
-
-<button
-
-class="mobile-toggle"
-
-id="mobileToggle"
-
-aria-label="Menu">
-
-☰
-
-</button>
-
-</div>
+    </button>
 
 </header>
 
 <!-- ==========================================================
-     MOBILE NAV
+     MOBILE NAVIGATION
 ========================================================== -->
 
-<nav
+<nav id="mobileNav"
+     class="mobile-nav"
+     aria-hidden="true">
 
-class="mobile-nav"
+    <a href="/">Home</a>
 
-id="mobileNav">
+    <a href="/series/">
+        Operational Series
+    </a>
 
-<a href="/">Home</a>
+    <a href="/home.html">
+        Offerings
+    </a>
 
-<a href="/series/">Operational Series</a>
+    <a href="/book/">
+        Books
+    </a>
 
-<a href="/home.html">Offerings</a>
+    <a href="/radio/">
+        Radio
+    </a>
 
-<a href="/book/">Book</a>
-
-<a href="/radio/">Radio</a>
-
-<a
-class="btn"
-href="/contact.html">
-
-Contact
-
-</a>
+    <a href="mailto:inbox@randyanthony.us?subject=Operational%20Review">
+        Request Review
+    </a>
 
 </nav>
-
-<!-- ==========================================================
-     PAGE WRAPPER
-========================================================== -->
-
-<div class="wrap">
-
 <!-- ==========================================================
      HERO
 ========================================================== -->
 
-<section class="hero">
+<section class="hero" aria-label="Operational Reliability Advisory">
 
-<div class="hero-image">
+    <div class="hero-left">
 
-<img
+        <h1>
+            Operational Reliability Advisory
+        </h1>
 
-src="/series/assets/27.png"
+        <p>
+            Creator of the
+            <strong>Operational Architecture Series</strong>
+            and author of
+            <strong><em>Reliability Is Not Improvised</em></strong>
+            and
+            <strong><em>FM: The Fading Modulation of Terrestrial Radio</em></strong>.
+        </p>
 
-alt="Operational Architecture Series">
+        <p>
+            Exploring operational resilience,
+            systems thinking,
+            technological change,
+            and industry transformation across
+            complex, high-consequence operational environments.
+        </p>
 
-</div>
+        <p>
+            Advisory services,
+            original publications,
+            operational reviews,
+            and practical guidance for organizations that depend upon
+            reliability under pressure.
+        </p>
 
-<div class="hero-copy">
+        <div style="display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;">
 
-<div class="hero-kicker">
+            <a class="btn"
+               href="/series/">
 
-Operational Architecture Series
+                Read the Series
 
-</div>
+            </a>
 
-<h1>
+            <a class="btn secondary"
+               href="/home.html">
 
-Twenty-Seven Weeks.<br>
+                Advisory Services
 
-One Operational Philosophy.
+            </a>
 
-</h1>
+        </div>
 
-<p>
+    </div>
 
-The Operational Architecture Series explores
-how reliable systems are designed,
-how operational visibility influences
-decision-making,
-and why resilient organizations succeed
-through disciplined execution rather than
-improvisation.
+    <aside class="hero-right">
 
-</p>
+        <h3 style="margin-top:0;margin-bottom:18px;color:#ffffff;">
 
-<p>
+            Focus Areas
 
-Built as a complete twenty-seven-week body
-of work,
-the series progresses from foundational
-operational principles into Operational
-Visibility,
-creating a practical framework for leaders
-responsible for complex,
-time-critical environments.
+        </h3>
 
-</p>
+        <ul class="focus-list">
 
-<p>
+            <li>
+                Broadcast Operations
+            </li>
 
-Each quarterly rotation examines the same
-core principles through a different
-operational lens,
-demonstrating that reliability is never
-finished—
-it evolves through continuous observation,
-learning,
-and refinement.
+            <li>
+                Streaming Reliability
+            </li>
 
-</p>
+            <li>
+                Master Control Systems
+            </li>
 
-<div class="hero-buttons">
+            <li>
+                Operational Visibility
+            </li>
 
-<a
+            <li>
+                Escalation Strategy
+            </li>
 
-class="btn"
+            <li>
+                Automation Integrity
+            </li>
 
-href="/series/week-01-reliability.html">
+            <li>
+                Failure Detection
+            </li>
 
-Start Part I
+            <li>
+                Operational Architecture
+            </li>
 
-</a>
+        </ul>
 
-<a
-
-class="btn secondary"
-
-href="/series/part2.html">
-
-Explore Part II
-
-</a>
-
-</div>
-
-</div>
+    </aside>
 
 </section>
 
 <!-- ==========================================================
-     THREE CARD ROW
+     EXPLORE
 ========================================================== -->
 
-<section class="three-grid">
-<!-- ==========================================================
-     CARD 1
-========================================================== -->
+<section class="home-section">
 
-<article class="info-card">
+    <div class="section-header">
 
-<h2>
+        <h2>
+            Explore RandyAnthony.us
+        </h2>
 
-Operational Architecture Series Archive
+        <p>
 
-</h2>
+            Publications, operational research,
+            advisory services and original content.
 
-<p>
+        </p>
 
-The complete Operational Architecture Series
-is organized into two distinct parts,
-progressing from foundational principles
-to Operational Visibility.
+    </div>
 
-</p>
+    <div class="home-grid">
+        <!-- ======================================================
+             CARD 1
+        ======================================================= -->
 
-<div class="archive-buttons">
+        <article class="card">
 
-<a
+            <h3>Operational Architecture</h3>
 
-class="btn"
+            <p>
 
-href="/series/">
+                Explore the Operational Architecture Series,
+                including the Reaction Cascade Effect and
+                practical frameworks for understanding how
+                complex operational systems drift, recover,
+                and fail under real-time pressure.
 
-Start Part I
+            </p>
 
-</a>
+            <a class="btn"
+               href="/series/">
 
-</div>
+                Read the Series →
 
-<div class="archive-divider"></div>
+            </a>
 
-<p>
+        </article>
 
-Continue into the second half of the series,
-where Operational Visibility expands the
-foundational concepts into information,
-awareness,
-timing,
-and decision-making.
+        <!-- ======================================================
+             CARD 2
+        ======================================================= -->
 
-</p>
+        <article class="card">
 
-<div class="archive-buttons">
+            <h3>Bio &amp; Consulting</h3>
 
-<a
+            <p>
 
-class="btn secondary"
+                Learn more about Randy Anthony,
+                his operational background,
+                advisory capabilities,
+                and consulting services focused on
+                broadcast, streaming,
+                operational resilience,
+                and organizational reliability.
 
-href="/series/part2.html">
+            </p>
 
-Explore Part II
+            <a class="btn"
+               href="/home.html">
 
-</a>
+                Learn More →
 
-</div>
+            </a>
 
-</article>
+        </article>
 
-<!-- ==========================================================
-     CARD 2
-========================================================== -->
+        <!-- ======================================================
+             CARD 3
+        ======================================================= -->
 
-<article class="info-card">
+        <article class="card">
 
-<h2>
+            <h3>Radio &amp; Audio</h3>
 
-About the Series
+            <p>
 
-</h2>
+                Home of
+                <strong><em>The Sound Of The Strand</em></strong>,
+                an internet radio station celebrating
+                Carolina Beach Music along with articles
+                and projects preserving the heritage
+                of terrestrial radio.
 
-<p>
+            </p>
 
-The Operational Architecture Series began as
-a structured exploration of the principles
-that govern reliable operations across
-broadcast,
-streaming,
-and other mission-critical environments.
+            <a class="btn"
+               href="/radio/">
 
-</p>
+                Listen Live →
 
-<p>
+            </a>
 
-Part I established thirteen foundational
-principles that influence operational
-performance,
-while Part II expanded those concepts
-through Operational Visibility,
-examining how information,
-timing,
-and human awareness shape resilient systems.
+        </article>
 
-</p>
+        <!-- ======================================================
+             CARD 4
+        ======================================================= -->
 
-<p>
+        <article class="card">
 
-Together,
-these twenty-seven weekly essays form a
-comprehensive body of work that complements
-the ideas presented throughout
-<strong>Reliability Is Not Improvised</strong>
-while standing on their own as a practical
-resource for operational leaders.
+            <h3>Operational Reviews</h3>
 
-</p>
+            <p>
 
-</article>
+                Independent operational assessments
+                designed to identify hidden risk,
+                improve visibility,
+                strengthen operational resilience,
+                and provide practical recommendations
+                for time-critical organizations.
 
-<!-- ==========================================================
-     CARD 3
-========================================================== -->
+            </p>
 
-<article class="info-card">
+            <a class="btn"
+               href="mailto:inbox@randyanthony.us?subject=Operational%20Review">
 
-<h2>
+                Request a Review →
 
-Beyond the Series
+            </a>
 
-</h2>
+        </article>
+        <!-- ======================================================
+             CARD 5
+        ======================================================= -->
 
-<p>
+        <article class="card">
 
-Although the weekly Operational Architecture
-Series concludes with Part II,
-the work itself continues.
+            <h3>Publications</h3>
 
-</p>
+            <p>
 
-<p>
+                Read
+                <strong><em>FM: The Fading Modulation of
+                Terrestrial Radio</em></strong>,
+                an examination of how the
+                Telecommunications Act of 1996
+                fundamentally reshaped American radio,
+                ownership, local programming,
+                and the listener experience.
 
-The principles introduced throughout the
-series continue through published books,
-operational advisory services,
-future articles,
-and speaking engagements focused on
-operational reliability,
-leadership,
-and resilient system design.
+            </p>
 
-</p>
+            <a class="btn"
+               href="/book/fm.html">
 
-<p>
+                Read More →
 
-Reliable organizations are never finished.
-They continually improve their visibility,
-their decision-making,
-and their ability to perform under pressure.
+            </a>
 
-</p>
+        </article>
 
-</article>
+        <!-- ======================================================
+             CARD 6
+        ======================================================= -->
+
+        <article class="card">
+
+            <h3>Reliability Is Not Improvised</h3>
+
+            <p>
+
+                Discover the newest book exploring
+                operational reliability,
+                visibility,
+                escalation,
+                human decision making,
+                automation,
+                and why resilient systems are
+                intentionally designed rather than
+                accidentally achieved.
+
+            </p>
+
+            <a class="btn"
+               href="/book/newbook.html">
+
+                Explore the Book →
+
+            </a>
+
+        </article>
+
+    </div>
 
 </section>
 
 <!-- ==========================================================
-     CONTINUE THE JOURNEY
+     SITE SPONSORS
 ========================================================== -->
 
-<section class="books-callout">
+<section class="sponsors">
 
-<h2>
+    <h2>Site Sponsors</h2>
 
-Continue the Journey
+    <p>
 
-</h2>
-<p>
+        These organizations help support
+        RandyAnthony.us and its ongoing
+        operational research and publications.
 
-The Operational Architecture Series concludes
-its twenty-seven-week exploration of
-Operational Reliability and Operational
-Visibility, but the principles continue
-well beyond these pages.
+    </p>
 
-</p>
+    <div class="sponsor-grid">
 
-<p>
+        <!-- Sponsor 1 -->
 
-<strong>Reliability Is Not Improvised</strong>
-expands upon the concepts introduced
-throughout the series, including the
-Reaction Cascade Effect and the practical
-discipline required to build resilient,
-mission-critical operations.
+        <article class="sponsor-card">
 
-</p>
+            <h3>LegalShield</h3>
 
-<p>
+            <p>
 
-<strong>FM: The Fading Modulation of
-Terrestrial Radio</strong>
-examines how leadership, technology,
-regulation, and operational decisions
-reshaped an entire industry while offering
-lessons applicable to organizations far
-beyond broadcasting.
+                Affordable legal services and
+                identity protection for individuals,
+                families and businesses nationwide.
 
-</p>
+            </p>
 
-<p>
+            <a class="btn"
+               href="/legal/">
 
-Whether you are responsible for critical
-operations, leading organizational change,
-or simply interested in how reliable
-systems succeed under pressure, these
-books provide a deeper exploration of the
-ideas introduced throughout the
-Operational Architecture Series.
+                Explore Plans →
 
-</p>
+            </a>
 
-<div class="book-buttons">
+        </article>
 
-<a
+        <!-- Sponsor 2 -->
 
-class="btn"
+        <article class="sponsor-card">
 
-href="/book/newbook.html">
+            <h3>The Piety PayChain</h3>
 
-Reliability Is Not Improvised
+            <p>
 
-</a>
+                Supporting independent publishing,
+                operational research,
+                and the continued development of
+                RandyAnthony.us.
 
-<a
+            </p>
 
-class="btn"
+            <a class="btn"
+               href="/2026/">
 
-href="/book/fm.html">
+                Learn More →
 
-FM: The Fading Modulation
+            </a>
 
-</a>
+        </article>
 
-<a
-
-class="btn secondary"
-
-href="/book/">
-
-Explore All Books
-
-</a>
-
-</div>
-
-</section>
-
-<!-- ==========================================================
-     SPONSORS
-========================================================== -->
-
-<section class="sponsor-grid">
-
-<article class="info-card">
-
-<h2>
-
-Sponsored by LegalShield
-
-</h2>
-
-<p>
-
-Affordable legal protection for individuals,
-families, small businesses, and entrepreneurs.
-
-Gain access to experienced attorneys,
-document review,
-identity protection,
-and legal services without unpredictable
-hourly fees.
-
-</p>
-
-<p>
-
-<a
-
-class="btn"
-
-href="/legal/">
-
-Learn More
-
-</a>
-
-</p>
-
-</article>
-
-<article class="info-card">
-
-<h2>
-
-Sponsored by
-The Piety PayChain
-
-</h2>
-
-<p>
-
-An Asset Fusion Payroll System that
-reimagines payroll,
-banking,
-digital assets,
-and business growth as a unified ecosystem
-designed to create long-term value.
-
-</p>
-
-<p>
-
-<a
-
-class="btn"
-
-href="/2026/">
-
-Explore Piety PayChain
-
-</a>
-
-</p>
-
-</article>
+    </div>
 
 </section>
 <!-- ==========================================================
      FOOTER
 ========================================================== -->
 
-<footer class="site-footer">
+<footer class="site-foot">
 
-<div class="wrap">
+    <div style="
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        flex-wrap:wrap;
+        gap:18px;
+    ">
 
-<div class="footer-grid">
+        <div>
 
-<div>
+            © <span id="year"></span>
+            Randy Anthony
 
-<h3>
+            &nbsp;•&nbsp;
 
-Randy Anthony
+            Operational Reliability Advisory
 
-</h3>
+            &nbsp;•&nbsp;
 
-<p>
+            Charlotte, North Carolina
 
-Operational Reliability Advisory
+        </div>
 
-</p>
+        <div>
 
-<p>
+            <a href="/">Home</a>
 
-Building resilient systems through
-operational reliability,
-operational visibility,
-and disciplined execution.
+            &nbsp;|&nbsp;
 
-</p>
+            <a href="/series/">
+                Operational Series
+            </a>
 
-</div>
+            &nbsp;|&nbsp;
 
-<div>
+            <a href="/book/">
+                Books
+            </a>
 
-<h3>
+            &nbsp;|&nbsp;
 
-Quick Links
+            <a href="/radio/">
+                Radio
+            </a>
 
-</h3>
+        </div>
 
-<ul class="footer-links">
-
-<li>
-
-<a href="/">
-
-Home
-
-</a>
-
-</li>
-
-<li>
-
-<a href="/series/">
-
-Operational Series
-
-</a>
-
-</li>
-
-<li>
-
-<a href="/home.html">
-
-Offerings
-
-</a>
-
-</li>
-
-<li>
-
-<a href="/book/">
-
-Books
-
-</a>
-
-</li>
-
-<li>
-
-<a href="/radio/">
-
-Radio
-
-</a>
-
-</li>
-
-</ul>
-
-</div>
-
-<div>
-
-<h3>
-
-Connect
-
-</h3>
-
-<p>
-
-<a href="mailto:inbox@randyanthony.us">
-
-inbox@randyanthony.us
-
-</a>
-
-</p>
-
-<p>
-
-Charlotte, North Carolina
-
-</p>
-
-</div>
-
-</div>
-
-<hr>
-
-<p class="copyright">
-
-&copy;
-
-<span id="year"></span>
-
-Randy Anthony.
-
-All Rights Reserved.
-
-</p>
-
-</div>
+    </div>
 
 </footer>
 
 </div>
-<!-- END .wrap -->
+<!-- End .site -->
 
 <!-- ==========================================================
-     MOBILE NAVIGATION
+     CURRENT YEAR
+========================================================== -->
+
+<script>
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+</script>
+
+<!-- ==========================================================
+     MOBILE MENU
 ========================================================== -->
 
 <script>
 
 const mobileToggle =
-
-document.getElementById("mobileToggle");
+    document.getElementById("mobileToggle");
 
 const mobileNav =
-
-document.getElementById("mobileNav");
+    document.getElementById("mobileNav");
 
 if(mobileToggle){
 
-mobileToggle.addEventListener(
+    mobileToggle.addEventListener("click",function(){
 
-"click",
+        mobileNav.classList.toggle("show");
 
-function(){
+        const open =
+            mobileNav.classList.contains("show");
 
-mobileNav.classList.toggle("show");
+        mobileToggle.setAttribute(
+            "aria-expanded",
+            open
+        );
 
-});
+        mobileNav.setAttribute(
+            "aria-hidden",
+            !open
+        );
+
+    });
 
 }
 
 </script>
 
 <!-- ==========================================================
-     COPYRIGHT YEAR
+     CARD ANIMATION
 ========================================================== -->
 
 <script>
 
-document.getElementById("year").textContent=
+window.addEventListener("DOMContentLoaded",()=>{
 
-new Date().getFullYear();
+    document
+        .querySelectorAll(
+            ".card,.sponsor-card,.hero"
+        )
+        .forEach((item,index)=>{
+
+            item.style.opacity="0";
+            item.style.transform="translateY(18px)";
+
+            setTimeout(()=>{
+
+                item.style.transition=
+                    "opacity .45s ease, transform .45s ease";
+
+                item.style.opacity="1";
+                item.style.transform="translateY(0)";
+
+            },index*90);
+
+        });
+
+});
 
 </script>
 
