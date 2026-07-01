@@ -1,4 +1,3 @@
-```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,7 +10,8 @@
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/series/series.css">
 
-  <meta name="description" content="What Time-Critical Operations Teach You About False Recovery" />
+  <meta name="description"
+        content="What Time-Critical Operations Teach You About False Recovery" />
 </head>
 
 <body>
@@ -19,14 +19,20 @@
 <header class="site-header">
 
   <a class="brand" href="/">
-    <img src="/favicon.png" alt="" style="width:44px;height:44px;border-radius:12px;">
+    <img src="/favicon.png"
+         alt=""
+         style="width:44px;height:44px;border-radius:12px;">
+
     <div class="titles">
       <strong>RANDY ANTHONY</strong>
       <span>Operational Reliability Advisory</span>
     </div>
   </a>
 
-  <nav class="primary" role="navigation" aria-label="Main navigation">
+  <nav class="primary"
+       role="navigation"
+       aria-label="Main navigation">
+
     <a href="/">Home</a>
     <a href="/series/">Operational Series</a>
     <a href="/home.html">Offerings</a>
@@ -35,30 +41,37 @@
     <a href="/radio/">Radio</a>
 
     <div class="cta">
-      <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">
+      <a class="btn"
+         href="mailto:inbox@randyanthony.us?subject=Consultation%20request">
         Request a consultation
       </a>
     </div>
+
   </nav>
 
-  <button class="mobile-toggle" aria-expanded="false" aria-controls="mobileNav">
+  <button class="mobile-toggle"
+          aria-expanded="false"
+          aria-controls="mobileNav">
     ☰
   </button>
 
 </header>
 
-<nav id="mobileNav" class="mobile-nav" aria-hidden="true">
+<nav id="mobileNav"
+     class="mobile-nav"
+     aria-hidden="true">
+
   <a href="/">Home</a>
   <a href="/series/">Operational Series</a>
   <a href="/home.html">Offerings</a>
   <a href="/bio/">Bio</a>
   <a href="/book/">Book</a>
   <a href="/radio/">Radio</a>
+
 </nav>
 
 <main class="wrap">
 
-  <!-- HERO -->
   <section class="hero">
 
     <h1 class="hero-title">
@@ -67,12 +80,13 @@
 
     <p class="meta">
       Week 21 (Part II, Week 7) ·
-      <a href="https://www.linkedin.com/posts/randy-anthony-07547410b_what-time-critical-operations-teach-you-about-activity-7475545268990558209-XJvZ?utm_source=share&utm_medium=member_desktop&rcm=ACoAABunslkBFatGOuGkV8R5dPmSEp8H4KCG7pQ">View on LinkedIn</a>
+      <a href="https://www.linkedin.com/posts/randy-anthony-07547410b_what-time-critical-operations-teach-you-about-activity-7475545268990558209-XJvZ">
+        View on LinkedIn
+      </a>
     </p>
 
   </section>
 
-  <!-- CONTENT -->
   <section class="card body split-post">
 
     <img
@@ -82,7 +96,6 @@
     />
 
     <div class="post-text">
-
       <p>Most people recognize failure when it occurs.</p>
 
       <p>Systems stop functioning.</p>
@@ -185,7 +198,6 @@
 
   </section>
 
-  <!-- NAVIGATION -->
   <section class="split">
 
     <div>
@@ -202,37 +214,53 @@
 
   </section>
 
-  <!-- SPONSORS -->
   <div class="sponsor-grid">
 
-    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+    <article class="card"
+             role="listitem"
+             style="background-color:#2f3a44;color:#ffffff;">
+
       <h3>SPONSORED BY: Legal Shield</h3>
+
       <p style="color:#cbd5e1;">
-        Legal Shield & ID Shield<br>
-        Protecting Families & Businesses Nationwide.
+        Legal Shield &amp; ID Shield<br>
+        Protecting Families &amp; Businesses Nationwide.
       </p>
+
       <p style="margin-top:12px">
-        <a class="btn" href="/legal/">Explore Plans →</a>
+        <a class="btn" href="/legal/">
+          Explore Plans →
+        </a>
       </p>
+
     </article>
 
-    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+    <article class="card"
+             role="listitem"
+             style="background-color:#2f3a44;color:#ffffff;">
+
       <h3>SPONSORED BY: The Piety Paychain</h3>
+
       <p style="color:#cbd5e1;">
         Helping to fund these pages.<br>
         Learn more about the Piety Paychain
       </p>
+
       <p style="margin-top:12px">
-        <a class="btn" href="/2026/">Explore Paychain →</a>
+        <a class="btn" href="/2026/">
+          Explore Paychain →
+        </a>
       </p>
+
     </article>
 
   </div>
 
 </main>
-
 <footer class="site-foot">
+
   <div class="wrap">
+
     <div>
       © <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.
     </div>
@@ -240,24 +268,34 @@
     <div class="smallLinks">
       <a href="/">Home Page</a>
     </div>
+
   </div>
+
 </footer>
 
 <script>
-  const btn = document.querySelector('.mobile-toggle');
-  const panel = document.getElementById('mobileNav');
 
-  if (btn && panel) {
-    btn.addEventListener('click', () => {
-      const isOpen = panel.classList.toggle('show');
-      panel.setAttribute('aria-hidden', !isOpen);
-      btn.setAttribute('aria-expanded', isOpen);
-    });
-  }
+const btn = document.querySelector(".mobile-toggle");
+const panel = document.getElementById("mobileNav");
 
-  document.getElementById('year').textContent = new Date().getFullYear();
+if (btn && panel) {
+
+  btn.addEventListener("click", () => {
+
+    const isOpen = panel.classList.toggle("show");
+
+    panel.setAttribute("aria-hidden", !isOpen);
+
+    btn.setAttribute("aria-expanded", isOpen);
+
+  });
+
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
 </script>
 
 </body>
 </html>
-```
