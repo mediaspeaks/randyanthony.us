@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta property="og:type" content="website">
+
+<meta property="og:title"
+      content="FM: The Fading Modulation of Terrestrial Radio">
+
+<meta property="og:description"
+      content="How the Telecommunications Act of 1996 changed radio, consolidated stations, and transformed the listening experience.">
+
+<meta property="og:url"
+      content="https://randyanthony.us/book/">
+
+<meta property="og:image"
+      content="https://randyanthony.us/assets/fm1.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+   <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FM — The Fading Modulation of Terrestrial Radio</title>
+
+<link rel="icon" type="image/png" href="/favicon.png">
+
+<style>
+/* --------------------------------------------------
+   BRAND VARIABLES
+-------------------------------------------------- */
+:root{
+  --bg: #f6f7fb;
+  --bg2:#eef2f8;
+  --surface: rgba(15,28,46,0.035);
+  --surface2: rgba(15,28,46,0.06);
+  --text: rgba(10,15,25,0.92);
+  --muted: rgba(10,15,25,0.72);
+  --faint: rgba(10,15,25,0.60);
+  --border: rgba(15,28,46,0.12);
+  --accent:#1f3e8a;
+  --accent2:#0a7a57;
+  --shadow: 0 14px 36px rgba(0,0,0,0.12);
+  --radius: 18px;
+  --max: 1040px;
+
+  --heroBgA: #071a33;
+  --heroBgB: #0b1a33;
+  --heroText: rgba(255,255,255,0.94);
+  --heroMuted: rgba(255,255,255,0.74);
+  --heroFaint: rgba(255,255,255,0.60);
+  --heroBorder: rgba(255,255,255,0.14);
+  --heroSurface: rgba(255,255,255,0.06);
+  --heroSurface2: rgba(255,255,255,0.10);
+  --heroShadow: 0 18px 42px rgba(0,0,0,0.30);
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg: #0f1c2e;
+    --bg2:#0b1525;
+    --surface: rgba(255,255,255,0.06);
+    --surface2: rgba(255,255,255,0.10);
+    --text: rgba(255,255,255,0.92);
+    --muted: rgba(255,255,255,0.74);
+    --faint: rgba(255,255,255,0.60);
+    --border: rgba(255,255,255,0.13);
+    --accent:#9bb9ff;
+    --accent2:#b8ffde;
+    --shadow: 0 14px 36px rgba(0,0,0,0.38);
+  }
+}
+
+/* --------------------------------------------------
+   GLOBAL HEADER (EXACTLY AS PROVIDED)
+-------------------------------------------------- */
+header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:14px 18px;
+  max-width:var(--max);
+  margin:0 auto;
+}
+
+.brand {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:inherit;
+}
+
+.titles strong {
+  font-weight:720;
+  font-size:14px;
+  letter-spacing:0.6px;
+}
+
+.titles span {
+  display:block;
+  font-size:12px;
+  color:var(--muted);
+  margin-top:2px;
+}
+
+nav.primary {
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+
+nav.primary a {
+  text-decoration:none;
+  font-size:13px;
+  color:var(--muted);
+  padding:8px 10px;
+  border-radius:12px;
+}
+
+nav.primary a:hover {
+  background:var(--surface);
+  color:var(--text);
+}
+
+.cta {
+  display:flex;
+  gap:10px;
+  margin-left:12px;
+}
+
+.btn {
+  padding:8px 14px;
+  border-radius:12px;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+  background:var(--surface2);
+  border:1px solid var(--border);
+}
+
+.btn.secondary {
+  background:transparent;
+}
+
+/* =========================
+   MOBILE SYSTEM (STANDARDIZED)
+========================= */
+
+.mobile-toggle{
+  display:none;
+  border:0;
+  background:transparent;
+  font-size:18px;
+}
+
+/* Mobile breakpoint */
+@media (max-width: 640px){
+
+  header.site-header{
+    height:60px;
+    padding:0 14px;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+  }
+
+  nav.primary{
+    display:none;
+  }
+
+  .mobile-toggle{
+    display:flex;
+    width:48px;
+    height:48px;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+  }
+}
+
+/* Mobile nav panel (overlay style) */
+.mobile-nav{
+  display:none;
+  position:fixed;
+  top:60px;
+  left:12px;
+  right:12px;
+  z-index:1500;
+
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95));
+  border-radius:12px;
+  box-shadow: var(--shadow);
+  padding:12px;
+  border:1px solid var(--border);
+}
+
+.mobile-nav a{
+  display:block;
+  padding:10px 8px;
+  border-radius:8px;
+  color:var(--text);
+  font-weight:700;
+  text-decoration:none;
+}
+
+.mobile-nav a + a{
+  margin-top:6px;
+}
+
+.mobile-nav.show{
+  display:block;
+}
+
+/* Layer control */
+header.site-header{
+  z-index:2000;
+}
+
+
+
+/* --------------------------------------------------
+   BOOK HERO
+-------------------------------------------------- */
+.book-hero{
+  margin:22px auto 0;
+  max-width:var(--max);
+  border-radius: calc(var(--radius) + 2px);
+  background:
+    linear-gradient(180deg, rgba(7,26,51,0.92), rgba(7,26,51,0.88)),
+    url("/series/assets/ops-architecture-bg.jpg") center/cover no-repeat;
+  box-shadow: var(--heroShadow);
+  border: 1px solid rgba(255,255,255,0.10);
+  padding: 32px 26px;
+}
+
+.book-hero-inner{
+  display:grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap:28px;
+  align-items:center;
+}
+
+@media (max-width: 860px){
+  .book-hero-inner{grid-template-columns:1fr}
+}
+
+.book-cover-card{
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--heroBorder);
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.32);
+  max-width: 340px;
+}
+
+.book-cover-card img{
+  width:100%;
+  border-radius:12px;
+  display:block;
+}
+
+.book-hero-content h1{
+  margin:0 0 12px;
+  font-size:34px;
+  color:var(--heroText);
+}
+
+.book-subtitle{
+  margin:0 0 18px;
+  font-size:17px;
+  color:var(--heroMuted);
+  max-width:60ch;
+}
+
+.book-cta-row{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin:18px 0 10px;
+}
+
+.btnPrimary{
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(155,185,255,0.40);
+  color: var(--heroText);
+}
+
+.btnPrimary:hover{
+  background: rgba(255,255,255,0.14);
+}
+
+.secondary{
+  background:rgba(255,255,255,0.06);
+  border-color:var(--heroBorder);
+  color:var(--heroText);
+}
+
+.book-meta{
+  margin-top:12px;
+  font-size:13px;
+  color:var(--heroFaint);
+}
+
+/* --------------------------------------------------
+   GRID FIX (YOUR REQUEST #1)
+-------------------------------------------------- */
+.book-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  margin-top: 34px;
+}
+
+@media (max-width: 860px) {
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------
+   NEW 3‑COLUMN SPONSOR ROW
+-------------------------------------------------- */
+.book-sponsor-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  margin-top: 48px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .book-sponsor-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------
+   CONTENT + FOOTER
+-------------------------------------------------- */
+.wrap{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:28px 18px 54px;
+}
+
+section{
+  margin-top:34px;
+}
+
+h2{
+  margin:0 0 12px;
+  font-size:24px;
+  color:var(--text);
+}
+
+p{
+  margin:0 0 14px;
+  color:var(--muted);
+}
+
+ul{
+  margin:0;
+  padding-left:20px;
+  color:var(--muted);
+}
+
+li{margin:8px 0}
+
+/* --------------------------------------------------
+   DARKER BOTTOM CTA (YOUR REQUEST #2)
+-------------------------------------------------- */
+.wrap .btnPrimary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white;
+}
+
+.wrap .btnPrimary:hover {
+  background: #162f6b;
+  border-color: #162f6b;
+}
+
+footer{
+  margin-top:34px;
+  padding-top:18px;
+  border-top:1px solid var(--border);
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  color:var(--faint);
+  font-size:12.5px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- --------------------------------------------------
+     GLOBAL HEADER
+-------------------------------------------------- -->
+<header class="site-header">
+
+  <a class="brand" href="/">
+    <img src="/favicon.png" alt="" style="width:44px;height:44px;border-radius:12px;">
+    <div class="titles">
+      <strong>RANDY ANTHONY</strong>
+      <span>Operational Reliability Advisory</span>
+    </div>
+  </a>
+
+  <nav class="primary" role="navigation" aria-label="Main navigation">
+    <a href="/">Home</a>
+    <a href="/series/">Operational Series</a>
+  
+    <a href="/home.html">Offerings</a>
+
+     <a href="/book/">Book</a>
+    <a href="/radio/">Radio</a>
+
+    <div class="cta">
+      <a class="btn" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a consultation</a>
+    
+    </div>
+  </nav>
+
+  <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileNav">
+    ☰
+  </button>
+
+</header>
+
+<nav id="mobileNav" class="mobile-nav" aria-hidden="true">
+  <a href="/">Home</a>
+  <a href="/series/">Operational Series</a>
+  <a href="/home.html">Offerings</a> 
+
+  <a href="/book/">Book</a>
+  <a href="/radio/">Radio</a>
+
+</nav>
+
+<!-- --------------------------------------------------
+     HERO
+-------------------------------------------------- -->
+<section class="book-hero">
+  <div class="book-hero-inner">
+
+    <div class="book-cover-card">
+      <img src="/assets/cover2.jpg" alt="FM — The Fading Modulation of Terrestrial Radio book cover">
+    </div>
+
+    <div class="book-hero-content">
+      <h1>FM — The Fading Modulation of Terrestrial Radio</h1>
+      <p class="book-subtitle">
+        How the Telecommunications Act of 1996 Changed Radio, Consolidated Stations, and Transformed the Listening Experience 2nd Edition<br><br>
+        Starting after the landmark 1996 ruling, consolidation, deregulation, and operational decay changed a medium that once shaped culture. The book explores the history, challenges, and future of terrestrial radio, highlighting its cultural significance and adaptability amidst technological changes.
+      </p>
+
+      <div class="book-cta-row">
+        <a 
+          href="https://www.amazon.com/Modulation-Terrestrial-Telecommunications-Consolidated-Transformed-ebook/dp/B0GZJ1NJLV/ref=sr_1_1?dib=eyJ2IjoiMSJ9.NcFh0YJtudOEmKj6Kmq-a6TkpMCzQM6D-yHLekmqXLKNs-YyvIs_35lvZO9vlwor3oMTtrFXlwQxk3HiWhrI2BNSk_Zgcg0fPwvRwAk10onF6gqtn-Ac-tOkJK05MrkN89NTB3QIwk_xMirI0-kzDZ-xM3QrMHlja5BSTK5v0VJLFkQFFo_6S5boeGwJH8gG._rpESPeR_L8W_powA5D3XdfA_VXjpwGI1uXgZLVXX1k&dib_tag=se&keywords=fm+the+fading&qid=1777999305&sr=8-1" 
+          class="btn btnPrimary"
+          target="_blank"
+          rel="noopener">
+          Buy on Amazon
+        </a>
+
+        <a href="#about-book" class="btn secondary">
+          What’s Inside
+        </a>
+      </div>
+
+      <p class="book-meta">
+        Available in Kindle and paperback • Published 2025
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- --------------------------------------------------
+     CONTENT
+-------------------------------------------------- -->
+<div class="wrap">
+
+<section id="about-book">
+  <h2>About the Book</h2>
+  <p>
+    <b>FM — The Fading Modulation of Terrestrial Radio</b> examines the slow, preventable collapse of a medium that once defined American culture. Through the lens of operational systems, regulatory shifts, and the 1996 Telecommunications Act, the book traces how consolidation and cost‑cutting hollowed out an industry built on localism, creativity, and community.
+  </p>
+  <p>
+    This is not nostalgia. It’s a forensic analysis of what happens when a time‑critical, community‑anchored system is stripped of its operational backbone. The book explores the decisions, incentives, and structural failures that led to the silencing of thousands of stations — and the lessons modern operators can learn from radio’s decline.
+  </p>
+  Radio's journey starts with pioneers like Marconi, Hertz and Armstrong and their inventions evolving into a dominant entertainment and information medium in the early 20th century. It adapted to television's rise by focusing on music and local connections. Can it adapt in a Digital, On-Demand age?
+</section>
+
+<!-- --------------------------------------------------
+     2‑COLUMN GRID
+-------------------------------------------------- -->
+<div class="book-grid">
+
+  <section>
+    <h2>Who This Book Is For</h2>
+    <ul>
+      <li>Radio Listeners</li>
+      <li>Media executives and strategists</li>
+      <li>Students of communications, media, and broadcast history</li>
+      <li>Anyone curious about how industries evolve — and how they can be rebuilt</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Key Insights</h2>
+    <ul>
+      <li>How deregulation reshaped incentives and accelerated consolidation</li>
+      <li>Why localism was radio’s greatest strength — and its first casualty</li>
+      <li>The hidden cost of replacing operators with automation</li>
+      <li>What modern industries can learn from radio’s evolution</li>
+    </ul>
+  </section>
+
+</div>
+
+<section>
+  <h2>About the Author</h2>
+  <p>
+    Randy Anthony is an advisor, expert‑level operator, strategist for time‑critical systems, and a veteran of radio, television, and digital media. With decades of experience across AM/FM and TV broadcasts and on‑demand platforms, he brings a unique operational — from behind the microphone — lens to the story of terrestrial radio’s decline — and the lessons it offers to modern operators.
+  </p>
+  The book celebrates radio's legacy and calls on readers to recognize its enduring value and shape its future with creativity and determination.
+</section>
+
+<!-- --------------------------------------------------
+     NEW 3‑COLUMN SPONSOR ROW (Get Book | Legal | Paychain)
+-------------------------------------------------- -->
+<div class="book-sponsor-row">
+
+  <!-- Column 1 — Get the Book -->
+  <section>
+    <h2>Get the Book</h2>
+    <p>Available now on Amazon in Kindle and paperback formats.</p>
+
+    <a 
+      href="https://www.amazon.com/Modulation-Terrestrial-Telecommunications-Consolidated-Transformed-ebook/dp/B0GZJ1NJLV/ref=sr_1_1?dib=eyJ2IjoiMSJ9.NcFh0YJtudOEmKj6Kmq-a6TkpMCzQM6D-yHLekmqXLKNs-YyvIs_35lvZO9vlwor3oMTtrFXlwQxk3HiWhrI2BNSk_Zgcg0fPwvRwAk10onF6gqtn-Ac-tOkJK05MrkN89NTB3QIwk_xMirI0-kzDZ-xM3QrMHlja5BSTK5v0VJLFkQFFo_6S5boeGwJH8gG._rpESPeR_L8W_powA5D3XdfA_VXjpwGI1uXgZLVXX1k&dib_tag=se&keywords=fm+the+fading&qid=1777999305&sr=8-1" 
+      class="btn btnPrimary"
+      target="_blank"
+      rel="noopener">
+      Buy on Amazon
+    </a>
+  </section>
+
+  <!-- Column 2 — LegalShield -->
+  <article class="card" role="listitem" aria-labelledby="g1" style="background-color:#2f3a44; color:#ffffff;">
+    <h3 id="g1">SPONSORED BY: Legal Shield</h3>
+    <p style="color:#cbd5e1;">
+      Legal Shield & ID Shield<br>
+      Protecting Families & Businesses Nationwide.
+    </p>
+    <p style="margin-top:12px">
+      <a class="btn" href="/legal/">Explore Plans→</a>
+    </p>
+  </article>
+
+  <!-- Column 3 — Piety Paychain -->
+  <article class="card" role="listitem" aria-labelledby="g4" style="background-color:#2f3a44; color:#ffffff;">
+    <h3 id="g4">SPONSORED BY: The Piety Paychain</h3>
+    <p style="color:#cbd5e1;">
+      Helping to fund these pages.<br>
+      Learn more about the Piety Paychain
+    </p>
+    <p style="margin-top:12px">
+      <a class="btn" href="/2026/">Explore Paychain→</a>
+    </p>
+  </article>
+
+</div>
+
+  <footer class="site-foot">
+      <div>© <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.</div>
+      <div class="smallLinks">
+        <a href="/">Home Page</a>
+      </div>
+    </footer>
+
+</div>
+
+<script>
+const btn = document.getElementById('mobileToggle');
+const panel = document.getElementById('mobileNav');
+
+if (btn && panel) {
+  btn.addEventListener('click', () => {
+    const isOpen = panel.classList.toggle('show');
+    panel.setAttribute('aria-hidden', !isOpen);
+    btn.setAttribute('aria-expanded', isOpen);
+  });
+}
+</script>
+
+</body>
+</html>
