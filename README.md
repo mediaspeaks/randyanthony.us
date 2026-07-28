@@ -1,2 +1,2 @@
 # randyanthony.us
-Randy Anthony's Business And Personal Websites
+RANDI | Randy Anthony Network And Digital Interface |
