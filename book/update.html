@@ -8,7 +8,8 @@
 <meta name="viewport"
       content="width=device-width, initial-scale=1.0">
 
-<meta property="og:type" content="website">
+<meta property="og:type"
+      content="website">
 
 <meta property="og:title"
       content="Books | Randy Anthony">
@@ -37,7 +38,7 @@
 <style>
 
 /* ==========================================================
-ROOT
+   ROOT
 ========================================================== */
 
 :root{
@@ -67,7 +68,7 @@ ROOT
 }
 
 /* ==========================================================
-RESET
+   RESET
 ========================================================== */
 
 *{
@@ -89,13 +90,9 @@ scroll-behavior:smooth;
 body{
 
 font-family:
-
 "Segoe UI",
-
 Helvetica,
-
 Arial,
-
 sans-serif;
 
 background:var(--bg);
@@ -137,7 +134,7 @@ padding:0 24px;
 }
 
 /* ==========================================================
-BUTTONS
+   BUTTONS
 ========================================================== */
 
 .btn{
@@ -160,6 +157,8 @@ color:#fff;
 
 transition:.25s;
 
+cursor:pointer;
+
 }
 
 .btn:hover{
@@ -172,7 +171,7 @@ transform:translateY(-2px);
 
 .btn.secondary{
 
-background:white;
+background:#fff;
 
 border:1px solid var(--border);
 
@@ -187,7 +186,7 @@ background:#eef3fb;
 }
 
 /* ==========================================================
-HEADER
+   HEADER
 ========================================================== */
 
 .site-header{
@@ -201,6 +200,8 @@ z-index:1000;
 background:rgba(255,255,255,.94);
 
 backdrop-filter:blur(10px);
+
+-webkit-backdrop-filter:blur(10px);
 
 border-bottom:1px solid rgba(20,32,51,.08);
 
@@ -232,10 +233,13 @@ align-items:center;
 
 gap:14px;
 
+text-decoration:none;
+
+color:inherit;
+
 flex-shrink:0;
 
 }
-
 .brand img{
 
 width:46px;
@@ -326,6 +330,8 @@ font-size:30px;
 
 cursor:pointer;
 
+color:var(--text);
+
 }
 
 .mobile-nav{
@@ -358,15 +364,19 @@ z-index:2000;
 
 display:block;
 
+animation:fadeDown .25s ease;
+
 }
 
 .mobile-nav a{
 
 display:block;
 
-padding:12px;
+padding:12px 10px;
 
 border-radius:8px;
+
+color:var(--text);
 
 }
 
@@ -376,8 +386,28 @@ background:#edf2f8;
 
 }
 
+@keyframes fadeDown{
+
+from{
+
+opacity:0;
+
+transform:translateY(-8px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+}
+
 /* ==========================================================
-HERO
+   HERO
 ========================================================== */
 
 .hero{
@@ -405,7 +435,6 @@ center center / cover;
 box-shadow:0 24px 60px rgba(0,0,0,.18);
 
 }
-
 .hero-inner{
 
 display:grid;
@@ -428,6 +457,8 @@ color:#fff;
 
 margin-bottom:24px;
 
+line-height:1.08;
+
 }
 
 .hero-copy p{
@@ -438,9 +469,9 @@ line-height:1.85;
 
 color:rgba(255,255,255,.90);
 
-margin-bottom:36px;
-
 max-width:580px;
+
+margin-bottom:36px;
 
 }
 
@@ -456,6 +487,8 @@ flex-wrap:wrap;
 
 .hero-image{
 
+display:block;
+
 width:100%;
 
 max-width:560px;
@@ -467,8 +500,9 @@ border-radius:18px;
 box-shadow:0 30px 60px rgba(0,0,0,.35);
 
 }
+
 /* ==========================================================
-PUBLISHED WORKS GRID
+   BOOK LIBRARY
 ========================================================== */
 
 .books-grid{
@@ -481,23 +515,23 @@ padding:0 24px;
 
 display:grid;
 
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(3,minmax(320px,1fr));
 
 gap:32px;
+
+align-items:stretch;
 
 }
 
 .book-card{
 
-background:#fff;
-
-border-radius:20px;
-
-padding:28px;
+background:var(--surface);
 
 border:1px solid var(--border);
 
-box-shadow:var(--shadow);
+border-radius:20px;
+
+padding:30px;
 
 display:flex;
 
@@ -505,13 +539,25 @@ flex-direction:column;
 
 height:100%;
 
+box-shadow:var(--shadow);
+
+transition:.25s ease;
+
+}
+
+.book-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 26px 56px rgba(0,0,0,.16);
+
 }
 
 .book-card img{
 
 width:220px;
 
-margin:0 auto 22px;
+margin:0 auto 24px;
 
 border-radius:14px;
 
@@ -521,17 +567,24 @@ box-shadow:var(--shadow);
 
 .book-card h2{
 
-font-size:24px;
+font-size:28px;
+
+line-height:1.2;
 
 text-align:center;
 
-margin-bottom:12px;
+margin-bottom:14px;
 
 }
-
-.book-card h4{
+.book-card .subtitle{
 
 font-size:15px;
+
+font-weight:700;
+
+letter-spacing:.08em;
+
+text-transform:uppercase;
 
 text-align:center;
 
@@ -539,23 +592,51 @@ color:var(--green);
 
 margin-bottom:20px;
 
-text-transform:uppercase;
-
-letter-spacing:.08em;
-
 }
 
 .book-card p{
 
-color:var(--muted);
-
 font-size:16px;
 
-margin-bottom:20px;
+line-height:1.8;
+
+color:var(--muted);
+
+margin-bottom:18px;
 
 flex:1;
 
-line-height:1.8;
+}
+
+.book-card .status{
+
+display:inline-block;
+
+margin:0 auto 24px;
+
+padding:8px 16px;
+
+border-radius:999px;
+
+font-size:13px;
+
+font-weight:700;
+
+letter-spacing:.08em;
+
+text-transform:uppercase;
+
+background:#edf6f2;
+
+color:var(--green);
+
+}
+
+.book-card .status.coming{
+
+background:#fff5e6;
+
+color:#b66a00;
 
 }
 
@@ -570,43 +651,312 @@ gap:12px;
 margin-top:auto;
 
 }
-      
+
+.book-buttons .btn{
+
+width:100%;
+
+justify-content:center;
+
+}
+
+/* ==========================================================
+   INFORMATION ROW
+========================================================== */
+
+.info-row{
+
+max-width:1400px;
+
+margin:0 auto 80px;
+
+padding:0 24px;
+
+display:grid;
+
+grid-template-columns:repeat(3,minmax(300px,1fr));
+
+gap:32px;
+
+}
+
+.info-card{
+
+background:#fff;
+
+border-radius:20px;
+
+padding:30px;
+
+border:1px solid var(--border);
+
+box-shadow:var(--shadow);
+
+display:flex;
+
+flex-direction:column;
+
+height:100%;
+
+}
+
+.info-card img{
+
+width:180px;
+
+margin:0 auto 24px;
+
+border-radius:18px;
+
+box-shadow:var(--shadow);
+
+}
+
+.info-card h3{
+
+font-size:24px;
+
+color:var(--blue);
+
+margin-bottom:18px;
+
+}
+
+.info-card p{
+
+font-size:17px;
+
+line-height:1.8;
+
+color:var(--muted);
+
+margin-bottom:22px;
+
+flex:1;
+
+}
+
+.info-card .btn{
+
+margin-top:auto;
+
+align-self:flex-start;
+
+}
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+.site-footer{
+
+background:#fff;
+
+border-top:1px solid var(--border);
+
+padding:38px 24px;
+
+margin-top:40px;
+
+}
+
+.footer-inner{
+
+max-width:var(--max);
+
+margin:auto;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+font-size:14px;
+
+color:var(--muted);
+
+}
+
+.footer-inner a{
+
+color:var(--muted);
+
+transition:.25s;
+
+}
+
+.footer-inner a:hover{
+
+color:var(--blue);
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:1100px){
+
+.books-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.info-row{
+
+grid-template-columns:1fr;
+
+}
+
+.hero-inner{
+
+grid-template-columns:1fr;
+
+padding:44px;
+
+text-align:center;
+
+}
+
+.hero-copy p{
+
+margin-left:auto;
+
+margin-right:auto;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.hero-image{
+
+margin:auto;
+
+max-width:460px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.primary-nav{
+
+display:none;
+
+}
+
+.mobile-toggle{
+
+display:block;
+
+}
+
+.hero{
+
+margin-top:24px;
+
+border-radius:20px;
+
+}
+
+.hero-inner{
+
+padding:32px;
+
+gap:32px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.hero-buttons .btn{
+
+width:100%;
+
+}
+
+.books-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.book-card{
+
+padding:24px;
+
+}
+
+.book-card h2{
+
+font-size:24px;
+
+}
+
+.book-card img{
+
+width:190px;
+
+}
+
+.info-card{
+
+padding:24px;
+
+}
+
+.footer-inner{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+}
+
 </style>
 
 </head>
 
 <body>
 
+<!-- ==========================================================
+     HEADER
+========================================================== -->
+
 <header class="site-header">
 
 <div class="header-inner">
 
-<a
-class="brand"
-href="/">
+<a class="brand" href="/">
 
-<img
-src="/favicon.png"
-alt="Randy Anthony">
+<img src="/favicon.png"
+     alt="Randy Anthony">
 
 <div class="titles">
 
-<strong>
+<strong>RANDY ANTHONY</strong>
 
-RANDY ANTHONY
-
-</strong>
-
-<span>
-
-Operational Reliability Advisory
-
-</span>
+<span>Operational Reliability Advisory</span>
 
 </div>
 
 </a>
-
 <nav class="primary-nav">
 
 <a href="/">Home</a>
@@ -615,13 +965,12 @@ Operational Reliability Advisory
 
 <a href="/home.html">Offerings</a>
 
-<a href="/book/">Book</a>
+<a href="/book/">Books</a>
 
 <a href="/radio/">Radio</a>
 
-<a
-class="btn"
-href="mailto:inbox@randyanthony.us">
+<a class="btn"
+   href="mailto:inbox@randyanthony.us">
 
 Request a Consultation
 
@@ -641,6 +990,10 @@ id="mobileToggle">
 
 </header>
 
+<!-- ==========================================================
+     MOBILE NAVIGATION
+========================================================== -->
+
 <nav
 class="mobile-nav"
 id="mobileNav">
@@ -651,11 +1004,15 @@ id="mobileNav">
 
 <a href="/home.html">Offerings</a>
 
-<a href="/book/">Book</a>
+<a href="/book/">Books</a>
 
 <a href="/radio/">Radio</a>
 
 </nav>
+
+<!-- ==========================================================
+     HERO
+========================================================== -->
 
 <section class="hero">
 
@@ -671,7 +1028,9 @@ Published Works
 
 <p>
 
-From operational reliability and industry evolution to travel, fiction, and personal transformation, these books represent a lifetime of observation, analysis, and storytelling.
+From operational reliability and industry evolution to travel,
+fiction, and personal transformation, these books represent a
+lifetime of observation, analysis, and storytelling.
 
 </p>
 
@@ -702,7 +1061,7 @@ Return Home
 <img
 class="hero-image"
 src="/series/assets/27.png"
-alt="Published Works">
+alt="Published Works by Randy Anthony">
 
 </div>
 
@@ -710,44 +1069,64 @@ alt="Published Works">
 
 </section>
 
+<!-- ==========================================================
+     BOOK LIBRARY
+========================================================== -->
+
 <section
 class="books-grid"
 id="books">
 
 <!-- ==========================================================
-FM
+     FM
 ========================================================== -->
 
 <article class="book-card">
 
 <img
 src="/assets/cover2.jpg"
-alt="FM: The Fading Modulation of Terrestrial Radio">
+alt="FM The Fading Modulation of Terrestrial Radio">
 
 <h2>
 
-FM:
-The Fading Modulation
+FM: The Fading Modulation
 of Terrestrial Radio
 
 </h2>
 
-<h4>
+<div class="subtitle">
+
+Industry Evolution
+
+</div>
+<div class="status">
 
 Available Now
 
-</h4>
+</div>
 
 <p>
 
-A comprehensive examination of how the Telecommunications Act of 1996 transformed American radio through consolidation, automation, changing business models, and technological disruption. More than a history of broadcasting, it is a study of how industries evolve, adapt, and sometimes lose the very characteristics that made them successful.
+An examination of how the Telecommunications Act of 1996
+transformed American radio through consolidation,
+automation, changing business models, and technological
+disruption. More than a history of broadcasting, it is a
+study of how industries evolve, adapt, and sometimes lose
+the very characteristics that made them successful.
+
+</p>
+
+<p>
+
+FM explores the operational, financial, and cultural forces
+that reshaped one of America's most influential media
+platforms, offering lessons that extend far beyond radio.
 
 </p>
 
 <div class="book-buttons">
 
-<a
-class="btn"
+<a class="btn"
 target="_blank"
 href="https://www.amazon.com/Modulation-Terrestrial-Telecommunications-Consolidated-Transformed-ebook/dp/B0GZJ1NJLV">
 
@@ -755,8 +1134,7 @@ Buy on Amazon
 
 </a>
 
-<a
-class="btn secondary"
+<a class="btn secondary"
 href="/book/fm.html">
 
 Learn More
@@ -768,7 +1146,7 @@ Learn More
 </article>
 
 <!-- ==========================================================
-RELIABILITY
+     RELIABILITY IS NOT IMPROVISED
 ========================================================== -->
 
 <article class="book-card">
@@ -785,22 +1163,40 @@ Improvised
 
 </h2>
 
-<h4>
+<div class="subtitle">
+
+Operational Reliability
+
+</div>
+
+<div class="status">
 
 Available Now
 
-</h4>
+</div>
 
 <p>
 
-An operational framework for understanding how systems drift, recover, and behave under pressure. Introducing the Reaction Cascade Effect, this book explores operational visibility, decision-making, resilience, and why dependable organizations are intentionally designed rather than accidentally achieved.
+An operational framework for understanding how complex
+systems drift, recover, and behave under real-time pressure.
+Introducing the Reaction Cascade Effect, the book explains
+why dependable organizations are intentionally designed
+rather than accidentally achieved.
+
+</p>
+
+<p>
+
+Drawing upon more than four decades inside mission-critical
+broadcast and streaming environments, it provides practical
+principles for leaders responsible for keeping important
+systems operating when failure is not an option.
 
 </p>
 
 <div class="book-buttons">
 
-<a
-class="btn"
+<a class="btn"
 target="_blank"
 href="https://www.amazon.com/dp/B0GXLJQJZ5">
 
@@ -808,8 +1204,7 @@ Buy on Amazon
 
 </a>
 
-<a
-class="btn secondary"
+<a class="btn secondary"
 href="/book/newbook.html">
 
 Learn More
@@ -821,7 +1216,7 @@ Learn More
 </article>
 
 <!-- ==========================================================
-ELLA UMBER
+     ELLA UMBER
 ========================================================== -->
 
 <article class="book-card">
@@ -836,15 +1231,33 @@ Ella Umber
 
 </h2>
 
-<h4>
+<div class="subtitle">
+
+Contemporary Fiction
+
+</div>
+
+<div class="status">
 
 Available Now
 
-</h4>
+</div>
+<p>
+
+A character-driven novel exploring relationships,
+identity, resilience, and the quiet decisions that shape
+an entire lifetime. Ella Umber represents another side of
+Randy Anthony's writing while maintaining his fascination
+with observation, personal growth, and human behavior.
+
+</p>
 
 <p>
 
-A character-driven novel exploring relationships, resilience, identity, and the choices that quietly shape a lifetime. Ella Umber represents another dimension of Randy Anthony's writing, demonstrating a passion for storytelling alongside analytical observation.
+Where the author's operational books examine systems,
+Ella Umber examines people. The result is an engaging story
+that reminds readers every life contains turning points
+that often go unnoticed until years later.
 
 </p>
 
@@ -852,6 +1265,7 @@ A character-driven novel exploring relationships, resilience, identity, and the 
 
 <a
 class="btn"
+target="_blank"
 href="https://ellaumber.com">
 
 Visit EllaUmber.com
@@ -863,7 +1277,7 @@ Visit EllaUmber.com
 </article>
 
 <!-- ==========================================================
-POINTS SOUTH
+     POINTS SOUTH
 ========================================================== -->
 
 <article class="book-card">
@@ -878,15 +1292,34 @@ Points South
 
 </h2>
 
-<h4>
+<div class="subtitle">
+
+Travel & Observation
+
+</div>
+
+<div class="status">
 
 Available Now
 
-</h4>
+</div>
 
 <p>
 
-A collection of observations, travel experiences, and reflections inspired by the American South. Blending storytelling with thoughtful perspective, Points South captures memorable places, people, and moments encountered along the journey.
+A collection of observations, travel experiences,
+photography, and reflections inspired by the American
+South. Every destination tells a story, and every journey
+offers an opportunity to better understand the places and
+people encountered along the way.
+
+</p>
+
+<p>
+
+Points South captures memorable moments with thoughtful
+perspective, blending storytelling with appreciation for
+history, geography, architecture, and the experiences that
+make travel far more than simply arriving somewhere new.
 
 </p>
 
@@ -904,16 +1337,15 @@ Buy on Amazon
 </div>
 
 </article>
-
 <!-- ==========================================================
-NOTHING HIDDEN
+     NOTHING HIDDEN, NOTHING FORBIDDEN
 ========================================================== -->
 
 <article class="book-card">
 
 <img
 src="/assets/hiddencvr.png"
-alt="Nothing Hidden Nothing Forbidden">
+alt="Nothing Hidden, Nothing Forbidden">
 
 <h2>
 
@@ -922,15 +1354,35 @@ Nothing Forbidden
 
 </h2>
 
-<h4>
+<div class="subtitle">
+
+Personal Transformation
+
+</div>
+
+<div class="status coming">
 
 Coming Soon
 
-</h4>
+</div>
 
 <p>
 
-An exploration of personal transformation through observation, disciplined thinking, and intentional living. Building upon the principles of operational awareness, this forthcoming work applies systems thinking to everyday life and long-term personal change.
+An exploration of personal transformation through
+observation, disciplined thinking, and intentional living.
+Drawing from the same systems-thinking principles found in
+operational reliability, this book demonstrates how lasting
+change begins by seeing ourselves honestly.
+
+</p>
+
+<p>
+
+Rather than offering quick fixes or motivational slogans,
+Nothing Hidden, Nothing Forbidden encourages readers to
+understand the patterns, assumptions, and decisions that
+shape everyday life, revealing that meaningful change
+comes from awareness before action.
 
 </p>
 
@@ -949,7 +1401,7 @@ Coming Soon
 </article>
 
 <!-- ==========================================================
-THE SUITE BETWEEN US
+     THE SUITE BETWEEN US
 ========================================================== -->
 
 <article class="book-card">
@@ -965,15 +1417,34 @@ Between Us
 
 </h2>
 
-<h4>
+<div class="subtitle">
+
+Contemporary Romance
+
+</div>
+
+<div class="status coming">
 
 Coming Soon
 
-</h4>
+</div>
 
 <p>
 
-A contemporary novel exploring attraction, timing, vulnerability, and the unexpected relationships that develop when two lives intersect. A departure into fiction while continuing the author's fascination with human behavior and personal transformation.
+A contemporary novel exploring attraction, vulnerability,
+timing, and the unexpected relationships that develop when
+two lives intersect. Rich characters and emotional depth
+combine to tell a story about the moments that quietly
+change everything.
+
+</p>
+
+<p>
+
+While very different from the author's operational writing,
+The Suite Between Us continues the same fascination with
+how people grow, adapt, and discover themselves through
+their relationships with others.
 
 </p>
 
@@ -992,14 +1463,14 @@ Coming Soon
 </article>
 
 </section>
+
 <!-- ==========================================================
-SPONSORS + AUTHOR
+     INFORMATION ROW
 ========================================================== -->
 
 <section class="info-row">
-
 <!-- ==========================================================
-LEGALSHIELD
+     LEGALSHIELD
 ========================================================== -->
 
 <article class="info-card">
@@ -1012,13 +1483,12 @@ Sponsored by LegalShield
 
 <p>
 
-Affordable legal protection for individuals,
-families, entrepreneurs, and small businesses.
+Affordable legal protection for individuals, families,
+entrepreneurs, and small businesses.
 
-Gain access to experienced attorneys,
-document review,
-identity protection,
-and legal services without unpredictable hourly fees.
+Gain access to experienced attorneys, document review,
+identity protection, and legal services without the
+unpredictable cost of hourly legal fees.
 
 </p>
 
@@ -1033,7 +1503,7 @@ Explore LegalShield
 </article>
 
 <!-- ==========================================================
-PIETY PAYCHAIN
+     PIETY PAYCHAIN
 ========================================================== -->
 
 <article class="info-card">
@@ -1047,14 +1517,11 @@ The Piety PayChain
 
 <p>
 
-An Asset Fusion Payroll System designed to rethink
-payroll,
-banking,
-digital assets,
-and business growth as one connected financial ecosystem.
+An Asset Fusion Payroll System designed to rethink payroll,
+banking, digital assets, and business growth as one connected
+financial ecosystem.
 
-Supporting independent publishing,
-operational research,
+Supporting independent publishing, operational research,
 and the continued growth of RandyAnthony.us.
 
 </p>
@@ -1070,15 +1537,13 @@ Learn More
 </article>
 
 <!-- ==========================================================
-ABOUT RANDY
+     ABOUT RANDY
 ========================================================== -->
 
 <article class="info-card">
 
 <img
-
 src="/assets/randy-anthony.jpg"
-
 alt="Randy Anthony">
 
 <h3>
@@ -1089,31 +1554,22 @@ About Randy Anthony
 
 <p>
 
-Author, operational reliability advisor,
-and creator of the
-<strong>Operational Architecture Series</strong>.
+Author, operational reliability advisor, and creator of the
+<strong>Operational Visibility Series</strong>.
 
 For more than four decades Randy has worked inside
 mission-critical broadcast and streaming environments,
-studying how complex systems succeed,
-drift,
-recover,
+studying how complex systems succeed, drift, recover,
 and evolve.
 
 His books reflect a lifetime of observation across
-operations,
-technology,
-industry,
-travel,
-fiction,
+operations, technology, industry, travel, fiction,
 and human behavior.
 
 </p>
 
 <a
-
 class="btn"
-
 href="/home.html">
 
 Explore Advisory Services
@@ -1125,7 +1581,7 @@ Explore Advisory Services
 </section>
 
 <!-- ==========================================================
-FOOTER
+     FOOTER
 ========================================================== -->
 
 <footer class="site-footer">
