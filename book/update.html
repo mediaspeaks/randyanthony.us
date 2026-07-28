@@ -467,6 +467,110 @@ border-radius:18px;
 box-shadow:0 30px 60px rgba(0,0,0,.35);
 
 }
+/* ==========================================================
+PUBLISHED WORKS GRID
+========================================================== */
+
+.books-grid{
+
+max-width:1400px;
+
+margin:0 auto 80px;
+
+padding:0 24px;
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:32px;
+
+}
+
+.book-card{
+
+background:#fff;
+
+border-radius:20px;
+
+padding:28px;
+
+border:1px solid var(--border);
+
+box-shadow:var(--shadow);
+
+display:flex;
+
+flex-direction:column;
+
+height:100%;
+
+}
+
+.book-card img{
+
+width:220px;
+
+margin:0 auto 22px;
+
+border-radius:14px;
+
+box-shadow:var(--shadow);
+
+}
+
+.book-card h2{
+
+font-size:24px;
+
+text-align:center;
+
+margin-bottom:12px;
+
+}
+
+.book-card h4{
+
+font-size:15px;
+
+text-align:center;
+
+color:var(--green);
+
+margin-bottom:20px;
+
+text-transform:uppercase;
+
+letter-spacing:.08em;
+
+}
+
+.book-card p{
+
+color:var(--muted);
+
+font-size:16px;
+
+margin-bottom:20px;
+
+flex:1;
+
+line-height:1.8;
+
+}
+
+.book-buttons{
+
+display:flex;
+
+flex-direction:column;
+
+gap:12px;
+
+margin-top:auto;
+
+}
+      
 </style>
 
 </head>
@@ -605,109 +709,7 @@ alt="Published Works">
 </div>
 
 </section>
-/* ==========================================================
-PUBLISHED WORKS GRID
-========================================================== */
 
-.books-grid{
-
-max-width:1400px;
-
-margin:0 auto 80px;
-
-padding:0 24px;
-
-display:grid;
-
-grid-template-columns:repeat(3,1fr);
-
-gap:32px;
-
-}
-
-.book-card{
-
-background:#fff;
-
-border-radius:20px;
-
-padding:28px;
-
-border:1px solid var(--border);
-
-box-shadow:var(--shadow);
-
-display:flex;
-
-flex-direction:column;
-
-height:100%;
-
-}
-
-.book-card img{
-
-width:220px;
-
-margin:0 auto 22px;
-
-border-radius:14px;
-
-box-shadow:var(--shadow);
-
-}
-
-.book-card h2{
-
-font-size:24px;
-
-text-align:center;
-
-margin-bottom:12px;
-
-}
-
-.book-card h4{
-
-font-size:15px;
-
-text-align:center;
-
-color:var(--green);
-
-margin-bottom:20px;
-
-text-transform:uppercase;
-
-letter-spacing:.08em;
-
-}
-
-.book-card p{
-
-color:var(--muted);
-
-font-size:16px;
-
-margin-bottom:20px;
-
-flex:1;
-
-line-height:1.8;
-
-}
-
-.book-buttons{
-
-display:flex;
-
-flex-direction:column;
-
-gap:12px;
-
-margin-top:auto;
-
-}
 <section
 class="books-grid"
 id="books">
