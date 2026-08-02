@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,19 +34,16 @@
 <meta property="og:url"
       content="https://randyanthony.us/stream/">
 
-<meta property="og:image"
-      content="https://randyanthony.us/favicon.png">
-
+<meta property="og:image" content="https://randyanthony.us/og.png">
 <!-- TWITTER / SOCIAL CARD -->
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title"
       content="RANDI Live | Randy Anthony Network And Digital Interface">
 
 <meta name="twitter:description"
       content="Listen live to RANDI, featuring selections from Randy Anthony's personal music collection.">
 
-<meta name="twitter:image"
-      content="https://randyanthony.us/favicon.png">
+<meta name="twitter:image" content="https://randyanthony.us/og.png">
 
 <!-- FONT -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -233,6 +232,17 @@ body {
 
     background:#eef2ff;
 
+}
+
+
+.header-btn {
+    color:#ffffff !important;
+    background:var(--accent);
+}
+
+.header-btn:hover {
+    color:#ffffff !important;
+    background:#17337a !important;
 }
 
 
@@ -483,32 +493,36 @@ body {
 
 
 /* ==========================================================
-   CLOUDRADIO PLAYER
+   RANDI DIRECT STREAM PLAYER
    ========================================================== */
 
 .player {
-
     width:100%;
-
-    overflow:hidden;
-
-    border-radius:16px;
-
     margin-bottom:24px;
-
+    padding:18px;
+    border:1px solid var(--border);
+    border-radius:16px;
+    background:var(--panel);
 }
 
+.player-title {
+    margin-bottom:12px;
+    color:#8ea7e8;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1.5px;
+}
 
-.player iframe {
-
+.player audio {
     display:block;
-
     width:100%;
+}
 
-    height:80px;
-
-    border:0;
-
+.player-note {
+    margin-top:10px;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.5;
 }
 
 
@@ -679,6 +693,11 @@ body {
             RANDI
         </a>
 
+        <a class="header-btn"
+           href="mailto:inbox@randyanthony.us?subject=Operational%20Review">
+            Request Consultation
+        </a>
+
     </nav>
 
 
@@ -732,6 +751,10 @@ body {
         class="active"
         aria-current="page">
         RANDI Live
+    </a>
+
+    <a href="mailto:inbox@randyanthony.us?subject=Operational%20Review">
+        Request Review
     </a>
 
 </nav>
@@ -793,21 +816,23 @@ body {
 
 
     <!-- ======================================================
-         CLOUDRADIO PLAYER
+         RANDI DIRECT LIVE STREAM
          ====================================================== -->
 
-    <section
-        class="player"
-        aria-label="RANDI Live Player">
+    <section class="player" aria-label="RANDI Live Player">
 
-        <iframe
-            src="https://embed.clrd.net/player/019fbfc4-bfc8-7d40-8f89-fbccd77eefdf"
-            width="100%"
-            height="80"
-            frameborder="0"
-            allow="autoplay; encrypted-media"
-            title="RANDI Radio Player">
-        </iframe>
+        <div class="player-title">LISTEN LIVE</div>
+
+        <audio id="randiAudio" controls preload="none" playsinline>
+            <source
+                src="https://audio.cloudrad.io/4c1f6017/live"
+                type="audio/mpeg">
+            Your browser does not support HTML5 audio.
+        </audio>
+
+        <div class="player-note">
+            Direct RANDI live stream. Playback begins when you press Play.
+        </div>
 
     </section>
 
