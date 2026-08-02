@@ -4,7 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>RANDI | Randy Anthony Network And Digital Interface</title>
+<title>RANDI | Live Stream</title>
+
+<meta name="description"
+      content="Listen live to RANDI — Randy Anthony Network And Digital Interface. Selections from Randy Anthony's personal music collection.">
 
 <style>
     * {
@@ -14,96 +17,91 @@
     html, body {
         margin: 0;
         padding: 0;
-        min-height: 100%;
+        background: #0b1020;
+        color: #ffffff;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     body {
-        background: #080b12;
-        color: #ffffff;
-        font-family: Arial, Helvetica, sans-serif;
+        min-height: 100vh;
         display: flex;
         justify-content: center;
-        align-items: center;
-        padding: 24px;
     }
 
-    .randi {
+    .page {
         width: 100%;
         max-width: 760px;
+        padding: 28px 18px 50px;
     }
 
-    .header {
+    .brand {
         text-align: center;
-        margin-bottom: 34px;
+        margin-bottom: 26px;
     }
 
-    .logo {
-        font-size: clamp(48px, 10vw, 82px);
-        font-weight: 800;
-        letter-spacing: 8px;
+    .brand h1 {
         margin: 0;
+        font-size: clamp(30px, 8vw, 48px);
+        letter-spacing: 3px;
     }
 
-    .full-name {
+    .brand-name {
         margin-top: 8px;
-        color: #aeb5c2;
+        color: #b8c0d8;
         font-size: 14px;
-        letter-spacing: 1.2px;
+        line-height: 1.5;
     }
 
     .live {
         display: inline-block;
-        margin-top: 18px;
+        margin-top: 14px;
         padding: 6px 12px;
-        border: 1px solid #ff4050;
+        border: 1px solid #53df8c;
         border-radius: 20px;
-        color: #ff6471;
+        color: #53df8c;
         font-size: 12px;
         font-weight: bold;
-        letter-spacing: 2px;
+        letter-spacing: 1px;
     }
 
-    .now-playing {
-        background: #111722;
-        border: 1px solid #222b3a;
-        border-radius: 14px;
-        padding: 28px;
-        margin-bottom: 20px;
-        text-align: center;
+    .card {
+        background: #151c32;
+        border: 1px solid #28324e;
+        border-radius: 18px;
+        padding: 22px;
+        margin-bottom: 18px;
     }
 
-    .label {
-        color: #808b9c;
+    .section-label {
+        color: #8994b2;
         font-size: 11px;
         font-weight: bold;
-        letter-spacing: 3px;
-        margin-bottom: 20px;
+        letter-spacing: 1.5px;
+        margin-bottom: 9px;
     }
 
     #title {
-        font-size: clamp(25px, 6vw, 38px);
+        font-size: clamp(24px, 6vw, 34px);
         font-weight: 700;
         line-height: 1.15;
-        margin-bottom: 9px;
+        margin-bottom: 8px;
     }
 
     #artist {
         font-size: 20px;
-        color: #c8ced8;
-        margin-bottom: 9px;
+        color: #cdd5ea;
+        margin-bottom: 12px;
     }
 
-    #album {
+    .details {
+        color: #8994b2;
         font-size: 14px;
-        color: #778395;
+        min-height: 18px;
     }
 
     .player {
-        background: #111722;
-        border: 1px solid #222b3a;
-        border-radius: 14px;
-        padding: 16px;
         overflow: hidden;
+        padding: 0;
     }
 
     .player iframe {
@@ -113,43 +111,28 @@
         border: 0;
     }
 
-    .footer {
+    .collection {
         text-align: center;
-        margin-top: 25px;
-        color: #626d7d;
+        color: #8994b2;
+        font-size: 13px;
+        line-height: 1.6;
+        margin-top: 24px;
+    }
+
+    .status {
+        margin-top: 14px;
         font-size: 11px;
-        letter-spacing: 1px;
+        color: #66708d;
     }
 
-    .status-dot {
-        display: inline-block;
-        width: 7px;
-        height: 7px;
-        background: #ff4050;
-        border-radius: 50%;
-        margin-right: 7px;
-    }
-
-    @media (max-width: 600px) {
-        body {
-            padding: 15px;
-            align-items: flex-start;
+    @media (max-width: 500px) {
+        .page {
+            padding: 22px 12px 40px;
         }
 
-        .randi {
-            margin-top: 25px;
-        }
-
-        .header {
-            margin-bottom: 24px;
-        }
-
-        .now-playing {
-            padding: 24px 16px;
-        }
-
-        .player {
-            padding: 10px;
+        .card {
+            padding: 18px;
+            border-radius: 14px;
         }
     }
 </style>
@@ -157,84 +140,80 @@
 
 <body>
 
-<main class="randi">
+<main class="page">
 
-    <header class="header">
-        <h1 class="logo">RANDI</h1>
+    <header class="brand">
+        <h1>RANDI</h1>
 
-        <div class="full-name">
+        <div class="brand-name">
             Randy Anthony Network And Digital Interface
         </div>
 
-        <div class="live">
-            <span class="status-dot"></span>LIVE
-        </div>
+        <div class="live">● LIVE</div>
     </header>
 
 
-    <section class="now-playing">
+    <section class="card">
 
-        <div class="label">NOW PLAYING</div>
+        <div class="section-label">
+            NOW PLAYING
+        </div>
 
         <div id="title">
-            Another Personal Collection Selection
+            Loading current selection…
         </div>
 
-        <div id="artist">
-            RANDI
-        </div>
+        <div id="artist"></div>
 
-        <div id="album">
-            Live from the Personal Collection
-        </div>
+        <div class="details" id="details"></div>
+
+        <div class="status" id="metadata-status"></div>
 
     </section>
 
 
-    <section class="player">
+    <section class="card player">
+
+        <!-- CLOUDRADIO PLAYER -->
 
         <iframe
             src="https://embed.clrd.net/player/019fbfc4-bfc8-7d40-8f89-fbccd77eedfd"
             allow="autoplay; encrypted-media"
-            title="RANDI Live Player">
+            title="RANDI Live Audio Player">
         </iframe>
 
     </section>
 
 
-    <footer class="footer">
-        RANDI &nbsp;|&nbsp; Randy Anthony Network And Digital Interface
-    </footer>
+    <div class="collection">
+        Broadcasting selections from Randy Anthony's personal music collection.
+        <br>
+        RANDI | Randy Anthony Network And Digital Interface
+    </div>
 
 </main>
 
 
 <script>
 
-/*
-========================================================
-RANDI NOW PLAYING
-========================================================
-
-RANDI Helper will eventually publish:
-
-{
-    "artist": "Steely Dan",
-    "title": "Deacon Blues",
-    "album": "Aja",
-    "year": "1977"
-}
-
-Change METADATA_URL below to the final RANDI Helper
-metadata endpoint when we build it.
-
-========================================================
-*/
-
-const METADATA_URL = "/randi/nowplaying.json";
+const METADATA_URL =
+    "https://randi-metadata.mediaspeaks.workers.dev/nowplaying";
 
 
 async function updateNowPlaying() {
+
+    const titleElement =
+        document.getElementById("title");
+
+    const artistElement =
+        document.getElementById("artist");
+
+    const detailsElement =
+        document.getElementById("details");
+
+    const statusElement =
+        document.getElementById("metadata-status");
+
 
     try {
 
@@ -245,64 +224,101 @@ async function updateNowPlaying() {
             }
         );
 
+
         if (!response.ok) {
-            return;
+            throw new Error(
+                "Metadata service returned " +
+                response.status
+            );
         }
+
 
         const track = await response.json();
 
-        if (track.title) {
-            document.getElementById("title").textContent =
-                track.title;
-        }
 
-        if (track.artist) {
-            document.getElementById("artist").textContent =
-                track.artist;
-        }
+        titleElement.textContent =
+            track.title ||
+            "Another Personal Collection Selection";
 
-        let albumLine = "";
+
+        artistElement.textContent =
+            track.artist || "RANDI";
+
+
+        let details = [];
+
 
         if (track.album) {
-            albumLine = track.album;
+            details.push(track.album);
         }
+
 
         if (track.year) {
-
-            if (albumLine) {
-                albumLine += " • ";
-            }
-
-            albumLine += track.year;
+            details.push(track.year);
         }
 
-        if (albumLine) {
-            document.getElementById("album").textContent =
-                albumLine;
+
+        detailsElement.textContent =
+            details.join(" • ");
+
+
+        if (track.updated) {
+
+            const updated =
+                new Date(track.updated);
+
+            statusElement.textContent =
+                "Metadata updated " +
+                updated.toLocaleTimeString();
+
+        } else {
+
+            statusElement.textContent =
+                "";
+
         }
 
-    }
 
-    catch (error) {
+    } catch (error) {
 
-        /*
-        RANDI keeps the existing display if metadata
-        temporarily cannot be reached.
-        */
+        titleElement.textContent =
+            "Another Personal Collection Selection";
+
+        artistElement.textContent =
+            "RANDI";
+
+        detailsElement.textContent =
+            "";
+
+        statusElement.textContent =
+            "Live metadata temporarily unavailable";
+
+        console.error(
+            "RANDI metadata error:",
+            error
+        );
 
     }
 
 }
 
 
-/* Get metadata immediately */
+/* Initial metadata load */
 
 updateNowPlaying();
 
 
-/* Check iTunes metadata every five seconds */
+/*
+    Poll every 5 seconds.
 
-setInterval(updateNowPlaying, 5000);
+    This DOES NOT reload the page
+    and DOES NOT interrupt the audio player.
+*/
+
+setInterval(
+    updateNowPlaying,
+    5000
+);
 
 </script>
 
