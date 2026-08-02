@@ -1029,7 +1029,21 @@ if(mobileToggle) {
 </script>
 <script src="https://public.cloudrad.io/4c1f6017/live/streaminfo.js"></script>
 
+<script src="https://public.cloudrad.io/4c1f6017/live/streaminfo.js"></script>
 
+<script>
+setInterval(() => {
+    const bitrate = document.getElementById("stream_info_bitrate");
+    const display = document.getElementById("bitrateDisplay");
+    if (bitrate && display) {
+        display.textContent = bitrate.textContent.trim()
+            ? ` · ${bitrate.textContent.trim()} kbps`
+            : "";
+    }
+}, 1000);
+</script>
+
+</body>
 
 </body>
 </html>
