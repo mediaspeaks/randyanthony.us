@@ -823,12 +823,1054 @@ body {
 
         <div class="player-title">LISTEN LIVE</div>
 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>RANDI Live | Randy Anthony Network And Digital Interface</title>
+
+<meta name="description"
+      content="Listen live to RANDI, the Randy Anthony Network And Digital Interface, featuring selections from Randy Anthony's personal music collection.">
+
+<meta name="author" content="Randy Anthony">
+<meta name="theme-color" content="#071a33">
+
+<link rel="canonical" href="https://randyanthony.us/stream/">
+
+<!-- FAVICON -->
+<link rel="icon" href="/favicon.png">
+<meta property="og:image" content="https://randyanthony.us/og.png">
+      
+<!-- OPEN GRAPH -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RandyAnthony.us">
+<meta property="og:title"
+      content="RANDI Live | Randy Anthony Network And Digital Interface">
+
+<meta property="og:description"
+      content="Listen live to RANDI, featuring selections from Randy Anthony's private music collection.">
+
+<meta property="og:url"
+      content="https://randyanthony.us/stream/">
+
+<meta property="og:image" content="https://randyanthony.us/og.png">
+<!-- TWITTER / SOCIAL CARD -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title"
+      content="RANDI Live | Randy Anthony Network And Digital Interface">
+
+<meta name="twitter:description"
+      content="Listen live to RANDI, featuring selections from Randy Anthony's personal music collection.">
+
+<meta name="twitter:image" content="https://randyanthony.us/og.png">
+
+<!-- FONT -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
+
+
+<style>
+
+/* ==========================================================
+   RANDI STREAM
+   RandyAnthony.us
+   ========================================================== */
+
+:root {
+
+    --page:#080e1e;
+    --panel:#151d34;
+
+    --heroA:#071a33;
+
+    --accent:#1f3e8a;
+    --green:#53df8c;
+
+    --text:#ffffff;
+    --muted:#9ba7c5;
+
+    --header-text:#0f172a;
+    --header-muted:#64748b;
+
+    --border:rgba(255,255,255,.10);
+
+    --max-width:1120px;
+
+}
+
+
+/* ==========================================================
+   RESET
+   ========================================================== */
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+body {
+
+    font-family:
+        Roboto,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:var(--page);
+    color:var(--text);
+
+    min-height:100vh;
+
+}
+
+
+/* ==========================================================
+   SITE HEADER
+   Matches RandyAnthony.us
+   ========================================================== */
+
+.site-header {
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    height:60px;
+
+    padding:0 22px;
+
+    backdrop-filter:blur(6px);
+
+    background:rgba(255,255,255,.94);
+
+    border-bottom:
+        1px solid rgba(15,23,42,.08);
+
+}
+
+
+.brand {
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    text-decoration:none;
+
+    color:var(--header-text);
+
+}
+
+
+.brand img {
+
+    width:44px;
+    height:44px;
+
+    border-radius:12px;
+
+}
+
+
+.brand strong {
+
+    display:block;
+
+    font-size:15px;
+
+    letter-spacing:.4px;
+
+}
+
+
+.brand span {
+
+    display:block;
+
+    color:var(--header-muted);
+
+    font-size:12px;
+
+}
+
+
+.primary {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+.primary a {
+
+    text-decoration:none;
+
+    color:var(--header-muted);
+
+    font-weight:600;
+
+    padding:8px 12px;
+
+    border-radius:10px;
+
+    transition:.25s;
+
+}
+
+
+.primary a:hover {
+
+    color:var(--header-text);
+
+    background:#f4f6f9;
+
+}
+
+
+.primary a.active {
+
+    color:var(--accent);
+
+    background:#eef2ff;
+
+}
+
+
+.header-btn {
+    color:#ffffff !important;
+    background:var(--accent);
+}
+
+.header-btn:hover {
+    color:#ffffff !important;
+    background:#17337a !important;
+}
+
+
+/* ==========================================================
+   MOBILE NAVIGATION
+   ========================================================== */
+
+.mobile-toggle {
+
+    display:none;
+
+    background:none;
+    border:none;
+
+    cursor:pointer;
+
+    font-size:1.5rem;
+
+    color:var(--header-text);
+
+}
+
+
+.mobile-nav {
+
+    display:none;
+
+    position:fixed;
+
+    top:60px;
+    left:12px;
+    right:12px;
+
+    z-index:5000;
+
+    background:#ffffff;
+
+    border-radius:12px;
+
+    padding:12px;
+
+    border:
+        1px solid rgba(15,23,42,.08);
+
+    box-shadow:
+        0 18px 40px rgba(0,0,0,.18);
+
+}
+
+
+.mobile-nav.show {
+    display:block;
+}
+
+
+.mobile-nav a {
+
+    display:block;
+
+    padding:12px 10px;
+
+    color:var(--header-text);
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    border-radius:8px;
+
+}
+
+
+.mobile-nav a:hover {
+    background:#f4f6f9;
+}
+
+
+.mobile-nav a.active {
+
+    color:var(--accent);
+
+    background:#eef2ff;
+
+}
+
+
+/* ==========================================================
+   STREAM PAGE
+   ========================================================== */
+
+.stream-page {
+
+    width:100%;
+
+    max-width:760px;
+
+    margin:auto;
+
+    padding:34px 18px 50px;
+
+}
+
+
+/* ==========================================================
+   RANDI BRAND
+   ========================================================== */
+
+.randi-brand {
+
+    text-align:center;
+
+    margin-bottom:26px;
+
+}
+
+
+.randi-brand h1 {
+
+    margin:0;
+
+    font-size:
+        clamp(32px,8vw,48px);
+
+    letter-spacing:4px;
+
+}
+
+
+.randi-name {
+
+    margin-top:7px;
+
+    color:#c7d0e6;
+
+    font-size:14px;
+
+    line-height:1.5;
+
+}
+
+
+.live {
+
+    display:inline-block;
+
+    margin-top:14px;
+
+    padding:5px 12px;
+
+    border:
+        1px solid var(--green);
+
+    border-radius:20px;
+
+    color:var(--green);
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+}
+
+
+/* ==========================================================
+   NOW PLAYING
+   ========================================================== */
+
+.now-playing {
+
+    background:var(--panel);
+
+    border:
+        1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:22px;
+
+    margin-bottom:18px;
+
+    min-height:180px;
+
+}
+
+
+.section-label {
+
+    color:#8ea7e8;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    letter-spacing:1.5px;
+
+    margin-bottom:9px;
+
+}
+
+
+#title {
+
+    font-size:
+        clamp(24px,6vw,34px);
+
+    font-weight:700;
+
+    line-height:1.15;
+
+    margin-bottom:8px;
+
+}
+
+
+#artist {
+
+    font-size:20px;
+
+    color:#d4dcf0;
+
+    margin-bottom:12px;
+
+}
+
+
+#details {
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    min-height:18px;
+
+}
+
+
+#metadata-status {
+
+    margin-top:14px;
+
+    font-size:11px;
+
+    color:#697695;
+
+}
+
+
+/* ==========================================================
+   RANDI DIRECT STREAM PLAYER
+   ========================================================== */
+
+.player {
+    width:100%;
+    margin-bottom:24px;
+    padding:18px;
+    border:1px solid var(--border);
+    border-radius:16px;
+    background:var(--panel);
+}
+
+.player-title {
+    margin-bottom:12px;
+    color:#8ea7e8;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1.5px;
+}
+
+.player audio {
+    display:block;
+    width:100%;
+}
+
+.player-note {
+    margin-top:10px;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.5;
+}
+
+
+/* ==========================================================
+   STREAM DESCRIPTION
+   ========================================================== */
+
+.collection {
+
+    text-align:center;
+
+    color:#8ea1d2;
+
+    font-size:13px;
+
+    line-height:1.7;
+
+    margin-top:22px;
+
+}
+
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+
+.site-foot {
+
+    max-width:760px;
+
+    margin:42px auto 0;
+
+    padding:
+
+        24px 18px
+        38px;
+
+    border-top:
+        1px solid rgba(255,255,255,.10);
+
+    color:#7784a4;
+
+    font-size:12px;
+
+    text-align:center;
+
+}
+
+
+.site-foot a {
+
+    color:#9aa8ca;
+
+    text-decoration:none;
+
+}
+
+
+.site-foot a:hover {
+    color:#ffffff;
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width:640px) {
+
+    .primary {
+        display:none;
+    }
+
+    .mobile-toggle {
+        display:block;
+    }
+
+    .site-header {
+        padding:0 14px;
+    }
+
+    .brand span {
+        display:none;
+    }
+
+    .stream-page {
+
+        padding:
+            26px 12px
+            40px;
+
+    }
+
+    .now-playing {
+
+        padding:18px;
+
+        border-radius:14px;
+
+        min-height:160px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================================
+     SITE HEADER
+     ========================================================== -->
+
+<header class="site-header">
+
+    <a class="brand" href="/">
+
+        <img
+            src="/favicon.png"
+            alt="Randy Anthony">
+
+        <div>
+
+            <strong>RANDY ANTHONY</strong>
+
+            <span>
+                Operational Reliability Advisory
+            </span>
+
+        </div>
+
+    </a>
+
+
+    <!-- DESKTOP NAV -->
+
+    <nav
+        class="primary"
+        role="navigation"
+        aria-label="Primary Navigation">
+
+        <a href="/">Home</a>
+
+        <a href="/series/">
+            Operational Series
+        </a>
+
+        <a href="/home.html">
+            Offerings
+        </a>
+
+        <a href="/book/">
+            Books
+        </a>
+
+        <a href="/radio/">
+            Radio
+        </a>
+
+        <a
+            href="/stream/"
+            class="active"
+            aria-current="page">
+            RANDI
+        </a>
+
+        <a class="header-btn"
+           href="mailto:inbox@randyanthony.us?subject=Operational%20Review">
+            Request Consultation
+        </a>
+
+    </nav>
+
+
+    <!-- MOBILE BUTTON -->
+
+    <button
+        id="mobileToggle"
+        class="mobile-toggle"
+        aria-expanded="false"
+        aria-controls="mobileNav"
+        aria-label="Open navigation menu">
+
+        ☰
+
+    </button>
+
+</header>
+
+
+<!-- ==========================================================
+     MOBILE NAV
+     ========================================================== -->
+
+<nav
+    id="mobileNav"
+    class="mobile-nav"
+    aria-hidden="true">
+
+    <a href="/">
+        Home
+    </a>
+
+    <a href="/series/">
+        Operational Series
+    </a>
+
+    <a href="/home.html">
+        Offerings
+    </a>
+
+    <a href="/book/">
+        Books
+    </a>
+
+    <a href="/radio/">
+        Radio
+    </a>
+
+    <a
+        href="/stream/"
+        class="active"
+        aria-current="page">
+        RANDI Live
+    </a>
+
+    <a href="mailto:inbox@randyanthony.us?subject=Operational%20Review">
+        Request Review
+    </a>
+
+</nav>
+
+
+<!-- ==========================================================
+     RANDI
+     ========================================================== -->
+
+<main class="stream-page">
+
+
+    <header class="randi-brand">
+
+        <h1>RANDI</h1>
+
+        <div class="randi-name">
+            Randy Anthony Network And Digital Interface
+        </div>
+
+        <div class="live">
+            ● LIVE
+        </div>
+
+    </header>
+
+
+    <!-- ======================================================
+         NOW PLAYING
+         ====================================================== -->
+
+    <section
+        class="now-playing"
+        aria-labelledby="nowPlayingLabel">
+
+        <div
+            class="section-label"
+            id="nowPlayingLabel">
+
+            NOW PLAYING
+
+        </div>
+
+
+        <div id="title">
+            Loading current selection…
+        </div>
+
+
+        <div id="artist"></div>
+
+
+        <div id="details"></div>
+
+
+        <div id="metadata-status"></div>
+
+    </section>
+
+
+    <!-- ======================================================
+         RANDI DIRECT LIVE STREAM
+         ====================================================== -->
+
+    <section class="player" aria-label="RANDI Live Player">
+
+        <div class="player-title">LISTEN LIVE</div>
+
         <audio id="randiAudio" controls preload="none" playsinline>
             <source
                 src="src="https://randi-audio.mediaspeaks.workers.dev/""
                 type="audio/mpeg">
             Your browser does not support HTML5 audio.
         </audio>
+
+        <div class="player-note">
+            Direct RANDI live stream. Playback begins when you press Play.
+        </div>
+<div class="stream-stats">
+<span id="stream_info_status"></span><span id="bitrateDisplay"></span>
+</div>
+    </section>
+
+
+    <div class="collection">
+
+   Decades of music, personally curated from Randy Anthony’s private collection.
+
+        <br>
+</div>
+
+</main>
+
+<!-- ==========================================================
+     METADATA
+     ========================================================== -->
+
+<script>
+
+const METADATA_URL =
+    "https://randi-metadata.mediaspeaks.workers.dev/nowplaying";
+
+
+async function updateNowPlaying() {
+
+    const titleElement =
+        document.getElementById("title");
+
+    const artistElement =
+        document.getElementById("artist");
+
+    const detailsElement =
+        document.getElementById("details");
+
+    const statusElement =
+        document.getElementById("metadata-status");
+
+
+    try {
+
+        const response =
+            await fetch(
+
+                METADATA_URL +
+                "?t=" +
+                Date.now(),
+
+                {
+                    cache:"no-store"
+                }
+
+            );
+
+
+        if(!response.ok) {
+
+            throw new Error(
+                "Metadata service returned " +
+                response.status
+            );
+
+        }
+
+
+        const track =
+            await response.json();
+
+
+        titleElement.textContent =
+            track.title ||
+            "Another Personal Collection Selection";
+
+
+        artistElement.textContent =
+            track.artist ||
+            "RANDI";
+
+
+        const details = [];
+
+
+        if(track.album) {
+            details.push(track.album);
+        }
+
+
+        if(track.year) {
+            details.push(track.year);
+        }
+
+
+        detailsElement.textContent =
+            details.join(" • ");
+
+
+        if(track.updated) {
+
+            const updated =
+                new Date(track.updated);
+
+            statusElement.textContent =
+                "Metadata updated " +
+                updated.toLocaleTimeString();
+
+        }
+        else {
+
+            statusElement.textContent = "";
+
+        }
+
+    }
+    catch(error) {
+
+        titleElement.textContent =
+            "Another Personal Collection Selection";
+
+        artistElement.textContent =
+            "RANDI";
+
+        detailsElement.textContent = "";
+
+        statusElement.textContent =
+            "Live metadata temporarily unavailable";
+
+        console.error(
+            "RANDI metadata error:",
+            error
+        );
+
+    }
+
+}
+
+
+updateNowPlaying();
+
+
+setInterval(
+    updateNowPlaying,
+    5000
+);
+
+</script>
+
+
+<!-- ==========================================================
+     MOBILE MENU
+     ========================================================== -->
+
+<script>
+
+const mobileToggle =
+    document.getElementById("mobileToggle");
+
+const mobileNav =
+    document.getElementById("mobileNav");
+
+
+if(mobileToggle) {
+
+    mobileToggle.addEventListener(
+        "click",
+        function() {
+
+            mobileNav.classList.toggle("show");
+
+            const open =
+                mobileNav.classList.contains("show");
+
+
+            mobileToggle.setAttribute(
+                "aria-expanded",
+                open
+            );
+
+
+            mobileNav.setAttribute(
+                "aria-hidden",
+                !open
+            );
+
+
+            mobileToggle.textContent =
+                open ? "✕" : "☰";
+
+        }
+    );
+
+}
+
+</script>
+<script src="https://public.cloudrad.io/4c1f6017/live/streaminfo.js"></script>
+
+<script src="https://public.cloudrad.io/4c1f6017/live/streaminfo.js"></script>
+
+<script>
+setInterval(() => {
+    const bitrate = document.getElementById("stream_info_bitrate");
+    const display = document.getElementById("bitrateDisplay");
+    if (bitrate && display) {
+        display.textContent = bitrate.textContent.trim()
+            ? ` · ${bitrate.textContent.trim()} kbps`
+            : "";
+    }
+}, 1000);
+</script>
+<script src="https://public.cloudrad.io/embed/status/019fbf52-d3c6-7bb0-8721-b6df8b4bc1e1/widget.js"></script>
+</body>
+
+</body>
+</html>
 
         <div class="player-note">
             Direct RANDI live stream. Playback begins when you press Play.
