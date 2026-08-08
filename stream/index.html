@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -858,6 +857,9 @@ const METADATA_URL =
     "https://randi-metadata.mediaspeaks.workers.dev/nowplaying";
 
 
+let latestTrack = null;
+
+
 async function updateNowPlaying() {
 
     const titleElement =
@@ -901,6 +903,21 @@ async function updateNowPlaying() {
 
         const track =
             await response.json();
+
+
+        latestTrack = track;
+
+
+        if ("mediaSession" in navigator && "MediaMetadata" in window) {
+
+            navigator.mediaSession.metadata =
+                new MediaMetadata({
+                    title: track.title || "RANDI",
+                    artist: track.artist || "RANDI",
+                    album: track.album || "RANDI"
+                });
+
+        }
 
 
         titleElement.textContent =
@@ -966,6 +983,47 @@ async function updateNowPlaying() {
         );
 
     }
+
+}
+
+
+const randiAudio =
+    document.getElementById("randiAudio");
+
+
+if (randiAudio && "mediaSession" in navigator) {
+
+    randiAudio.addEventListener(
+        "play",
+        function() {
+
+            navigator.mediaSession.playbackState =
+                "playing";
+
+            if (latestTrack && "MediaMetadata" in window) {
+
+                navigator.mediaSession.metadata =
+                    new MediaMetadata({
+                        title: latestTrack.title || "RANDI",
+                        artist: latestTrack.artist || "RANDI",
+                        album: latestTrack.album || "RANDI"
+                    });
+
+            }
+
+        }
+    );
+
+
+    randiAudio.addEventListener(
+        "pause",
+        function() {
+
+            navigator.mediaSession.playbackState =
+                "paused";
+
+        }
+    );
 
 }
 
@@ -1041,6 +1099,7 @@ setInterval(() => {
     }
 }, 1000);
 </script>
+<script src="https://public.cloudrad.io/embed/status/019fbf52-d3c6-7bb0-8721-b6df8b4bc1e1/widget.js"></script>
 
 </body>
 </html>
