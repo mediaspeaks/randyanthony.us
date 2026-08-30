@@ -1,0 +1,74 @@
+name: Apply Public Footer
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  apply-footer:
+    if: github.event.head_commit.message != 'Apply approved public footer'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update active public pages
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          excluded_dirs = {"2026", "framework", "stream"}
+          excluded_files = {"work.html", "ops.html", "index0.html", "index2.html", "part1.html", "part2.html", "soon.html", "templatemain.html", "test.html", "new.html"}
+
+          roots = {"index.html", "home.html"}
+          prefixes = ("book/", "radio/", "legal/", "series/week-")
+
+          copyright_html = '© <span id="footer-year"></span> | RANDI | Randy Anthony Network &amp; Digital Interface |'
+          year_script = '''<script>document.getElementById('footer-year')?.append(document.createTextNode(new Date().getFullYear()));</script>'''
+
+          changed = []
+          for path in Path('.').rglob('*.html'):
+              rel = path.as_posix()
+              if any(part in excluded_dirs for part in path.parts):
+                  continue
+              if path.name in excluded_files:
+                  continue
+              if rel not in roots and not rel.startswith(prefixes):
+                  continue
+
+              text = path.read_text(encoding='utf-8')
+              original = text
+
+              # Replace common legacy copyright lines.
+              patterns = [
+                  r'©\s*(?:<span[^>]*id=["\']year["\'][^>]*>.*?</span>|\d{4})\s+Randy Anthony\s+•\s+Advisory\s+•\s+Operations\s+•\s+Strategy\s+•\s+All rights reserved\.',
+                  r'©\s*(?:<span[^>]*id=["\']footer-year["\'][^>]*>.*?</span>|\d{4})\s*\|\s*RANDI\s*\|\s*Randy Anthony Network &amp; Digital Interface\s*\|?'
+              ]
+              for pat in patterns:
+                  text = re.sub(pat, copyright_html, text, flags=re.I | re.S)
+
+              # Normalize legacy footer Home Page wording.
+              text = re.sub(r'(<a[^>]*>)Home Page(</a>)', r'\1Home\2', text, flags=re.I)
+
+              # Ensure the dynamic year script is present if the approved footer was inserted.
+              if copyright_html in text and "new Date().getFullYear()" not in text:
+                  text = text.replace('</body>', year_script + '\n</body>', 1)
+
+              if text != original:
+                  path.write_text(text, encoding='utf-8')
+                  changed.append(rel)
+
+          print(f'Updated {len(changed)} active public pages')
+          for item in changed:
+              print(item)
+          PY
+      - name: Commit approved footer
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Apply approved public footer"
+          git push
