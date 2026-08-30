@@ -1,0 +1,68 @@
+name: Repair Three Public Headers
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    if: github.actor != 'github-actions[bot]' && !contains(github.event.head_commit.message, 'Repair public headers')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Repair headers
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          HEADER = '''<header class="site-header">
+            <a href="/" class="brand">
+              <img src="/favicon.png" alt="Randy Anthony">
+              <div class="titles">
+                <strong>RANDY ANTHONY</strong>
+                <span>Operational Reliability Advisory</span>
+              </div>
+            </a>
+            <nav class="primary" aria-label="Primary Navigation">
+              <a href="/">Home</a>
+              <a href="/series/">Operational Visibility Series</a>
+              <a href="/home.html">Services</a>
+              <a href="/book/">Books</a>
+              <a href="/radio/">Radio</a>
+              <a class="header-cta" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a Consultation</a>
+            </nav>
+            <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">☰</button>
+          </header>
+          <nav id="mobileNav" class="mobile-nav" aria-hidden="true">
+            <a href="/">Home</a>
+            <a href="/series/">Operational Visibility Series</a>
+            <a href="/home.html">Services</a>
+            <a href="/book/">Books</a>
+            <a href="/radio/">Radio</a>
+            <a class="header-cta" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a Consultation</a>
+          </nav>'''
+
+          paths = [Path('home.html'), Path('book/index.html'), Path('series/index.html')]
+          header_re = re.compile(r'<header\b[^>]*class=["\'][^"\']*\bsite-header\b[^"\']*["\'][^>]*>.*?</header>', re.I | re.S)
+          mobile_re = re.compile(r'\s*(?:<nav\b[^>]*id=["\']mobileNav["\'][^>]*>.*?</nav>|<nav\b[^>]*class=["\'][^"\']*\bmobile-nav\b[^"\']*["\'][^>]*>.*?</nav>|<div\b[^>]*class=["\'][^"\']*\bmobile-nav\b[^"\']*["\'][^>]*>.*?</div>)', re.I | re.S)
+          css_tag = '<link rel="stylesheet" href="/css/public-nav.css">'
+
+          for path in paths:
+            text = path.read_text(encoding='utf-8')
+            new = mobile_re.sub('', text)
+            new = header_re.sub(HEADER, new, count=1)
+            if css_tag not in new:
+              new = re.sub(r'</head>', '  ' + css_tag + '\n</head>', new, count=1, flags=re.I)
+            path.write_text(new, encoding='utf-8')
+
+      - name: Commit repair
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add home.html book/index.html series/index.html
+          git commit -m "Repair public headers"
+          git push
