@@ -1,5 +1,7 @@
 name: One-Time Public Navigation Cleanup
 
+# Final normalization pass for active public pages only.
+
 on:
   push:
     branches: [main]
@@ -69,7 +71,6 @@ jobs:
             if not header_re.search(text):
               continue
 
-            # Remove all pre-existing mobile menus before inserting the canonical header.
             new = mobile_re.sub('', text)
             new = header_re.sub(HEADER, new, count=1)
 
