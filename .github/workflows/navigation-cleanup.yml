@@ -1,4 +1,5 @@
 name: One-Time Public Navigation Cleanup
+run-name: Standardize active public navigation
 
 on:
   push:
