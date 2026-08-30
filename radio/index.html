@@ -471,7 +471,7 @@ footer{
     <footer class="site-foot">
       <div>© <span id="year"></span>RANDI | The Randy Anthony Network & Digital Interface • The Sound of the Strand • Carolina Beach Music • All rights reserved.</div>
       <div class="smallLinks">
-        <a href="/">Home Page</a>
+        <a href="/">Home</a>
       </div>
     </footer>
 </div>
@@ -489,5 +489,6 @@ if (btn && panel) {
 }
 </script>
 
+<script>document.querySelectorAll('#year').forEach(el => el.textContent = new Date().getFullYear());</script>
 </body>
 </html>
