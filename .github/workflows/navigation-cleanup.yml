@@ -1,0 +1,95 @@
+name: One-Time Public Navigation Cleanup
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    if: github.actor != 'github-actions[bot]' && !contains(github.event.head_commit.message, 'Standardize public navigation')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Remove stale public mobile navigation and normalize active headers
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          ROOT = Path('.')
+          EXCLUDED_DIRS = {'2026', 'framework', 'stream'}
+          EXCLUDED_FILES = {'work.html', 'ops.html'}
+
+          HEADER = '''<header class="site-header">
+            <a href="/" class="brand">
+              <img src="/favicon.png" alt="Randy Anthony">
+              <div class="titles">
+                <strong>RANDY ANTHONY</strong>
+                <span>Operational Reliability Advisory</span>
+              </div>
+            </a>
+            <nav class="primary" aria-label="Primary Navigation">
+              <a href="/">Home</a>
+              <a href="/series/">Operational Visibility Series</a>
+              <a href="/home.html">Services</a>
+              <a href="/book/">Books</a>
+              <a href="/radio/">Radio</a>
+              <a class="header-cta" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a Consultation</a>
+            </nav>
+            <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">☰</button>
+          </header>
+          <nav id="mobileNav" class="mobile-nav" aria-hidden="true">
+            <a href="/">Home</a>
+            <a href="/series/">Operational Visibility Series</a>
+            <a href="/home.html">Services</a>
+            <a href="/book/">Books</a>
+            <a href="/radio/">Radio</a>
+            <a class="header-cta" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a Consultation</a>
+          </nav>'''
+
+          header_re = re.compile(r'<header\b[^>]*class=["\'][^"\']*\bsite-header\b[^"\']*["\'][^>]*>.*?</header>', re.I | re.S)
+          stale_mobile_re = re.compile(r'(?:\s*<!--.*?-->\s*)*(?:<nav\b[^>]*id=["\']mobileNav["\'][^>]*>.*?</nav>|<div\b[^>]*class=["\'][^"\']*\bmobile-nav\b[^"\']*["\'][^>]*>.*?</div>)', re.I | re.S)
+          css_tag = '<link rel="stylesheet" href="/css/public-nav.css">'
+
+          changed = []
+          for path in ROOT.rglob('*'):
+            if not path.is_file() or path.suffix.lower() not in {'.html', '.htm'}:
+              continue
+            rel = path.relative_to(ROOT)
+            if any(part in EXCLUDED_DIRS for part in rel.parts) or rel.name in EXCLUDED_FILES:
+              continue
+
+            text = path.read_text(encoding='utf-8')
+            if 'id="site-header"' in text and 'assets/js/header' in text:
+              continue
+            if not header_re.search(text):
+              continue
+
+            new = header_re.sub(HEADER, text, count=1)
+            new = stale_mobile_re.sub('', new, count=1)
+            if css_tag not in new and re.search(r'</head>', new, re.I):
+              new = re.sub(r'</head>', '  ' + css_tag + '\n</head>', new, count=1, flags=re.I)
+
+            if new != text:
+              path.write_text(new, encoding='utf-8')
+              changed.append(str(rel))
+
+          print('Changed:', len(changed))
+          for item in changed:
+            print(item)
+
+      - name: Commit navigation cleanup
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes detected."
+            exit 0
+          fi
+          git commit -m "Standardize public navigation"
+          git push
