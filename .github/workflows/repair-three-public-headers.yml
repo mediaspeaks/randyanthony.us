@@ -1,5 +1,7 @@
 name: Repair Three Public Headers
 
+# Targeted repair only.
+
 on:
   push:
     branches: [main]
