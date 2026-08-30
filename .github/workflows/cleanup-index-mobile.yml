@@ -1,0 +1,27 @@
+name: Cleanup Index Mobile
+on: [push]
+permissions:
+  contents: write
+jobs:
+  cleanup:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Clean duplicate script
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text()
+          block='''<script>\nconst mobileToggle = document.getElementById("mobileToggle");\nconst mobileNav = document.getElementById("mobileNav");\nif (mobileToggle && mobileNav) {\n    mobileToggle.addEventListener("click", function () {\n        const open = mobileNav.classList.toggle("show");\n        mobileToggle.setAttribute("aria-expanded", open);\n        mobileNav.setAttribute("aria-hidden", !open);\n    });\n}\n</script>'''
+          p.write_text(s.replace('\n'+block+'\n','\n',1))
+          Path('.github/workflows/cleanup-index-mobile.yml').unlink()
+          PY
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Remove duplicate index mobile script"
+          git push
