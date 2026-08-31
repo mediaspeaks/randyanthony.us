@@ -4,3 +4,6 @@
 .site-footer{padding:38px 24px!important;margin-top:40px!important}
 .site-footer .footer-inner{max-width:1040px!important;margin:0 auto!important}
 .site-foot>.wrap{max-width:1040px!important}
+
+/* Radio page compatibility override: its local header CSS uses a more specific selector. Keep the radio header identical to the approved shared header. */
+header.site-header{min-height:60px!important;max-width:1040px!important;margin:10px auto 8px!important;padding:8px 22px!important;gap:16px!important}
