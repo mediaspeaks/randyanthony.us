@@ -66,9 +66,10 @@ header.site-header{
   align-items:center;
   justify-content:space-between;
   gap:16px;
-  padding:14px 18px;
+  padding:8px 22px;
+  min-height:60px;
   max-width:var(--max);
-  margin:0 auto;
+  margin:10px auto 8px;
   position:sticky;
   top:0;
   z-index:2000;
@@ -86,21 +87,22 @@ header.site-header{
 }
 
 .titles strong{
-  font-weight:720;
-  font-size:14px;
-  letter-spacing:0.6px;
+  font-weight:700;
+  font-size:15px;
+  letter-spacing:0.4px;
+  line-height:1.2;
 }
 
 .titles span{
   display:block;
   font-size:12px;
   color:var(--muted);
-  margin-top:2px;
+  line-height:1.2;
 }
 
 nav.primary{
   display:flex;
-  gap:14px;
+  gap:8px;
   align-items:center;
 }
 
@@ -109,7 +111,8 @@ nav.primary a{
   font-size:13px;
   color:var(--muted);
   padding:8px 10px;
-  border-radius:12px;
+  border-radius:10px;
+  white-space:nowrap;
 }
 
 nav.primary a:hover{
@@ -353,7 +356,7 @@ footer{
   <nav class="primary" aria-label="Primary Navigation">
     <a href="/">Home</a>
     <a href="/series/">Operational Visibility Series</a>
-    <a href="/home.html">Services</a>
+    <a href="/services.html">Services</a>
     <a href="/book/">Books</a>
     <a href="/radio/">Radio</a>
     <a class="header-cta" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a Consultation</a>
@@ -363,7 +366,7 @@ footer{
 <nav id="mobileNav" class="mobile-nav" aria-hidden="true">
   <a href="/">Home</a>
   <a href="/series/">Operational Visibility Series</a>
-  <a href="/home.html">Services</a>
+  <a href="/services.html">Services</a>
   <a href="/book/">Books</a>
   <a href="/radio/">Radio</a>
   <a class="header-cta" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a Consultation</a>
