@@ -18,48 +18,48 @@ header.site-header{min-height:60px!important;max-width:1040px!important;margin:1
    Link treatment: Series page
    Existing page containers remain unchanged.
 ========================================================== */
-:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]),
-:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]){position:relative}
+:is(.card,.info-card,.sponsor-card):has(a[href="/legal/"]),
+:is(.card,.info-card,.sponsor-card):has(a[href="/2026/"]){position:relative}
 
-:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > img,
-:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > img{display:none!important}
+:is(.card,.info-card,.sponsor-card):has(a[href="/legal/"]) > img,
+:is(.card,.info-card,.sponsor-card):has(a[href="/2026/"]) > img{display:none!important}
 
-:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ])::before,
-:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ])::before{content:"";display:block;width:max-content;max-width:150px;height:54px;margin:0 auto 14px;padding:7px 10px;background-color:#fff;background-repeat:no-repeat;background-position:center;background-size:contain;border-radius:8px;box-sizing:border-box}
+:is(.card,.info-card,.sponsor-card):has(a[href="/legal/"])::before,
+:is(.card,.info-card,.sponsor-card):has(a[href="/2026/"])::before{content:"";display:block;width:max-content;max-width:150px;height:54px;margin:0 auto 14px;padding:7px 10px;background-color:#fff;background-repeat:no-repeat;background-position:center;background-size:contain;border-radius:8px;box-sizing:border-box}
 
-:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ])::before{background-image:url("/assets/LegalShield_logo.png")}
-:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ])::before{background-image:url("/assets/urme.png")}
+:is(.card,.info-card,.sponsor-card):has(a[href="/legal/"])::before{background-image:url("/assets/LegalShield_logo.png")}
+:is(.card,.info-card,.sponsor-card):has(a[href="/2026/"])::before{background-image:url("/assets/urme.png")}
 
-:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > h3,
-:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > h3{font-size:0!important;line-height:1.25}
+:is(.card,.info-card,.sponsor-card):has(a[href="/legal/"]) > h3,
+:is(.card,.info-card,.sponsor-card):has(a[href="/2026/"]) > h3{font-size:0!important;line-height:1.25}
 
-:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > h3::before,
-:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > h3::before{display:block;font-size:1.1rem;font-weight:700;margin-bottom:12px;color:inherit}
-:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > h3::before{content:"Sponsored by LegalShield"}
-:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > h3::before{content:"Sponsored by The Piety PayChain"}
+:is(.card,.info-card,.sponsor-card):has(a[href="/legal/"]) > h3::before,
+:is(.card,.info-card,.sponsor-card):has(a[href="/2026/"]) > h3::before{display:block;font-size:1.1rem;font-weight:700;margin-bottom:12px;color:inherit}
+:is(.card,.info-card,.sponsor-card):has(a[href="/legal/"]) > h3::before{content:"Sponsored by LegalShield"}
+:is(.card,.info-card,.sponsor-card):has(a[href="/2026/"]) > h3::before{content:"Sponsored by The Piety PayChain"}
 
-:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > h3::after,
-:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > h3::after{display:block;white-space:pre-line;font-size:.95rem;font-weight:400;line-height:1.55;margin-top:10px;color:inherit}
-:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > h3::after{content:"Life is unpredictable. Legal questions aren't.\A\AWhether you're protecting your family, growing a business, buying a home, reviewing a contract, or planning for the future, LegalShield provides affordable access to experienced attorneys without the uncertainty of expensive hourly legal fees.\A\AMembers receive legal consultation, document review, identity theft protection, and ongoing legal support designed to help individuals, families, entrepreneurs, and small businesses make confident decisions before problems become costly."}
-:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > h3::after{content:"Piety Token & PayChain is a digital currency built for real-world use — including payroll, debit card purchases, bill pay, and vendor payments.\A\ARather than focusing on speculation, it’s designed to support everyday financial activity inside a working payment system. With a fixed supply and a utility-driven ecosystem, the goal is to connect value to actual usage and participation — not market hype."}
+:is(.card,.info-card,.sponsor-card):has(a[href="/legal/"]) > h3::after,
+:is(.card,.info-card,.sponsor-card):has(a[href="/2026/"]) > h3::after{display:block;white-space:pre-line;font-size:.95rem;font-weight:400;line-height:1.55;margin-top:10px;color:inherit}
+:is(.card,.info-card,.sponsor-card):has(a[href="/legal/"]) > h3::after{content:"Life is unpredictable. Legal questions aren't.\A\AWhether you're protecting your family, growing a business, buying a home, reviewing a contract, or planning for the future, LegalShield provides affordable access to experienced attorneys without the uncertainty of expensive hourly legal fees.\A\AMembers receive legal consultation, document review, identity theft protection, and ongoing legal support designed to help individuals, families, entrepreneurs, and small businesses make confident decisions before problems become costly."}
+:is(.card,.info-card,.sponsor-card):has(a[href="/2026/"]) > h3::after{content:"Piety Token & PayChain is a digital currency built for real-world use — including payroll, debit card purchases, bill pay, and vendor payments.\A\ARather than focusing on speculation, it’s designed to support everyday financial activity inside a working payment system. With a fixed supply and a utility-driven ecosystem, the goal is to connect value to actual usage and participation — not market hype."}
 
-:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > p,
-:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > p{display:none!important}
+:is(.card,.info-card,.sponsor-card):has(a[href="/legal/"]) > p,
+:is(.card,.info-card,.sponsor-card):has(a[href="/2026/"]) > p{display:none!important}
 
 /* Match the Series page's global .btn treatment exactly: surface-style button, accent2 link color. */
-:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > a.btn,
-:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > a.btn{background:rgba(15,28,46,.06)!important;color:#0a7a57!important;border:1px solid rgba(15,28,46,.12)!important;text-decoration:none!important}
-:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > a.btn:hover,
-:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > a.btn:hover{background:rgba(15,28,46,.035)!important;color:#1f3e8a!important}
+:is(.card,.info-card,.sponsor-card):has(a[href="/legal/"]) a.btn,
+:is(.card,.info-card,.sponsor-card):has(a[href="/2026/"]) a.btn{background:rgba(15,28,46,.06)!important;color:#0a7a57!important;border:1px solid rgba(15,28,46,.12)!important;text-decoration:none!important}
+:is(.card,.info-card,.sponsor-card):has(a[href="/legal/"]) a.btn:hover,
+:is(.card,.info-card,.sponsor-card):has(a[href="/2026/"]) a.btn:hover{background:rgba(15,28,46,.035)!important;color:#1f3e8a!important}
 
-:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > a.btn{font-size:0}
-:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > a.btn::after{content:"Explore LegalShield";font-size:14px}
-:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > a.btn{font-size:0}
-:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > a.btn::after{content:"Learn More";font-size:14px}
+:is(.card,.info-card,.sponsor-card):has(a[href="/legal/"]) a.btn{font-size:0}
+:is(.card,.info-card,.sponsor-card):has(a[href="/legal/"]) a.btn::after{content:"Explore LegalShield";font-size:14px}
+:is(.card,.info-card,.sponsor-card):has(a[href="/2026/"]) a.btn{font-size:0}
+:is(.card,.info-card,.sponsor-card):has(a[href="/2026/"]) a.btn::after{content:"Learn More";font-size:14px}
 
 @media (max-width:700px){
-  :is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ])::before,
-  :is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ])::before{max-width:130px;height:48px}
-  :is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > h3::after,
-  :is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > h3::after{font-size:.9rem;line-height:1.5}
+  :is(.card,.info-card,.sponsor-card):has(a[href="/legal/"])::before,
+  :is(.card,.info-card,.sponsor-card):has(a[href="/2026/"])::before{max-width:130px;height:48px}
+  :is(.card,.info-card,.sponsor-card):has(a[href="/legal/"]) > h3::after,
+  :is(.card,.info-card,.sponsor-card):has(a[href="/2026/"]) > h3::after{font-size:.9rem;line-height:1.5}
 }
