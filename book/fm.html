@@ -70,61 +70,8 @@
 }
 
 /* --------------------------------------------------
-   GLOBAL HEADER (EXACTLY AS PROVIDED)
+   BUTTONS
 -------------------------------------------------- */
-header {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:16px;
-  padding:14px 18px;
-}
-
-.brand {
-  display:flex;
-  align-items:center;
-  gap:12px;
-  text-decoration:none;
-  color:inherit;
-}
-
-.titles strong {
-  font-weight:720;
-  font-size:14px;
-  letter-spacing:0.6px;
-}
-
-.titles span {
-  display:block;
-  font-size:12px;
-  color:var(--muted);
-  margin-top:2px;
-}
-
-nav.primary {
-  display:flex;
-  gap:14px;
-  align-items:center;
-}
-
-nav.primary a {
-  text-decoration:none;
-  font-size:13px;
-  color:var(--muted);
-  padding:8px 10px;
-  border-radius:12px;
-}
-
-nav.primary a:hover {
-  background:var(--surface);
-  color:var(--text);
-}
-
-.cta {
-  display:flex;
-  gap:10px;
-  margin-left:12px;
-}
 
 .btn {
   padding:8px 14px;
@@ -139,82 +86,6 @@ nav.primary a:hover {
 .btn.secondary {
   background:transparent;
 }
-
-/* =========================
-   MOBILE SYSTEM (STANDARDIZED)
-========================= */
-
-.mobile-toggle{
-  display:none;
-  border:0;
-  background:transparent;
-  font-size:18px;
-}
-
-/* Mobile breakpoint */
-@media (max-width: 640px){
-
-  header.site-header{
-    height:60px;
-    padding:0 14px;
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    justify-content:space-between;
-  }
-
-  nav.primary{
-    display:none;
-  }
-
-  .mobile-toggle{
-    display:flex;
-    width:48px;
-    height:48px;
-    align-items:center;
-    justify-content:center;
-    font-size:22px;
-  }
-}
-
-/* Mobile nav panel (overlay style) */
-.mobile-nav{
-  display:none;
-  position:fixed;
-  top:60px;
-  left:12px;
-  right:12px;
-  z-index:1500;
-
-  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.95));
-  border-radius:12px;
-  box-shadow: var(--shadow);
-  padding:12px;
-  border:1px solid var(--border);
-}
-
-.mobile-nav a{
-  display:block;
-  padding:10px 8px;
-  border-radius:8px;
-  color:var(--text);
-  font-weight:700;
-  text-decoration:none;
-}
-
-.mobile-nav a + a{
-  margin-top:6px;
-}
-
-.mobile-nav.show{
-  display:block;
-}
-
-/* Layer control */
-header.site-header{
-  z-index:2000;
-}
-
 
 
 /* --------------------------------------------------
@@ -410,7 +281,7 @@ footer{
   <nav class="primary" aria-label="Primary Navigation">
     <a href="/">Home</a>
     <a href="/series/">Operational Visibility Series</a>
-    <a href="/home.html">Services</a>
+    <a href="/services.html">Services</a>
     <a href="/book/">Books</a>
     <a href="/radio/">Radio</a>
     <a class="header-cta" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a Consultation</a>
@@ -420,7 +291,7 @@ footer{
 <nav id="mobileNav" class="mobile-nav" aria-hidden="true">
   <a href="/">Home</a>
   <a href="/series/">Operational Visibility Series</a>
-  <a href="/home.html">Services</a>
+  <a href="/services.html">Services</a>
   <a href="/book/">Books</a>
   <a href="/radio/">Radio</a>
   <a class="header-cta" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a Consultation</a>
@@ -445,7 +316,7 @@ footer{
 
       <div class="book-cta-row">
         <a 
-          href="https://www.amazon.com/Modulation-Terrestrial-Telecommunications-Consolidated-Transformed-ebook/dp/B0GZJ1NJLV/ref=sr_1_1?dib=eyJ2IjoiMSJ9.NcFh0YJtudOEmKj6Kmq-a6TkpMCzQM6D-yHLekmqXLKNs-YyvIs_35lvZO9vlwor3oMTtrFXlwQxk3HiWhrI2BNSk_Zgcg0fPwvRwAk10onF6gqtn-Ac-tOkJK05MrkN89NTB3QIwk_xMirI0-kzDZ-xM3QrMHlja5BSTK5v0VJLFkQFFo_6S5boeGwJH8gG._rpESPeR_L8W_powA5D3XdfA_VXjpwGI1uXgZLVXX1k&dib_tag=se&keywords=fm+the+fading&qid=1777999305&sr=8-1" 
+          href="https://www.amazon.com/Modulation-Terrestrial-Telecommunications-Consolidated-Transformed-ebook/dp/B0GZJ1NJLV/ref=sr_1_1?dib=eyJ2IjoiMSJ9.NcFh0YJtudOEmKj6D-yHLekmqXLKNs-YyvIs_35lvZO9vlwor3oMTtrFXlwQxk3HiWhrI2BNSk_Zgcg0fPwvRwAk10onF6gqtn-Ac-tOkJK05MrkN89NTB3QIwk_xMirI0-kzDZ-xM3QrMHlja5BSTK5v0VJLFkQFFo_6S5boeGwJH8gG._rpESPeR_L8W_powA5D3XdfA_VXjpwGI1uXgZLVXX1k&dib_tag=se&keywords=fm+the+fading&qid=1777999305&sr=8-1" 
           class="btn btnPrimary"
           target="_blank"
           rel="noopener">
@@ -527,7 +398,7 @@ footer{
     <p>Available now on Amazon in Kindle and paperback formats.</p>
 
     <a 
-      href="https://www.amazon.com/Modulation-Terrestrial-Telecommunications-Consolidated-Transformed-ebook/dp/B0GZJ1NJLV/ref=sr_1_1?dib=eyJ2IjoiMSJ9.NcFh0YJtudOEmKj6Kmq-a6TkpMCzQM6D-yHLekmqXLKNs-YyvIs_35lvZO9vlwor3oMTtrFXlwQxk3HiWhrI2BNSk_Zgcg0fPwvRwAk10onF6gqtn-Ac-tOkJK05MrkN89NTB3QIwk_xMirI0-kzDZ-xM3QrMHlja5BSTK5v0VJLFkQFFo_6S5boeGwJH8gG._rpESPeR_L8W_powA5D3XdfA_VXjpwGI1uXgZLVXX1k&dib_tag=se&keywords=fm+the+fading&qid=1777999305&sr=8-1" 
+      href="https://www.amazon.com/Modulation-Terrestrial-Telecommunications-Consolidated-Transformed-ebook/dp/B0GZJ1NJLV/ref=sr_1_1?dib=eyJ2IjoiMSJ9.NcFh0YJtudOEmKj6D-yHLekmqXLKNs-YyvIs_35lvZO9vlwor3oMTtrFXlwQxk3HiWhrI2BNSk_Zgcg0fPwvRwAk10onF6gqtn-Ac-tOkJK05MrkN89NTB3QIwk_xMirI0-kzDZ-xM3QrMHlja5BSTK5v0VJLFkQFFo_6S5boeGwJH8gG._rpESPeR_L8W_powA5D3XdfA_VXjpwGI1uXgZLVXX1k&dib_tag=se&keywords=fm+the+fading&qid=1777999305&sr=8-1" 
       class="btn btnPrimary"
       target="_blank"
       rel="noopener">
