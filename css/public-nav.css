@@ -13,20 +13,52 @@ html,body{margin:0}
 header.site-header{min-height:60px!important;max-width:1040px!important;margin:10px auto 8px!important;padding:8px 22px!important;gap:16px!important}
 
 /* ==========================================================
-   NORMALIZED SPONSOR CARDS
-   Canonical copy/assets: Books page
+   NORMALIZED SPONSOR PRESENTATION
+   Canonical visible copy/assets: Books page
    Link treatment: Series page
-   Container geometry remains page-specific.
+   Existing page containers remain unchanged.
 ========================================================== */
-.sponsor-card.sponsor-normalized{position:relative}
-.sponsor-card.sponsor-normalized .sponsor-logo{display:block;width:auto;max-width:150px;max-height:54px;height:auto;object-fit:contain;margin:0 auto 14px;padding:7px 10px;background:#fff;border-radius:8px}
-.sponsor-card.sponsor-normalized h3{margin-bottom:12px}
-.sponsor-card.sponsor-normalized p{line-height:1.6;margin-bottom:14px}
-.sponsor-card.sponsor-normalized .sponsor-copy-secondary{margin-top:0}
-.sponsor-card.sponsor-normalized .btn{background:#1f3e8a!important;color:#fff!important;border-color:#1f3e8a!important}
-.sponsor-card.sponsor-normalized .btn:hover{background:#17337a!important;color:#fff!important}
+:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]),
+:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]){position:relative}
+
+:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > img,
+:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > img{display:none!important}
+
+:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ])::before,
+:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ])::before{content:"";display:block;width:max-content;max-width:150px;height:54px;margin:0 auto 14px;padding:7px 10px;background-color:#fff;background-repeat:no-repeat;background-position:center;background-size:contain;border-radius:8px;box-sizing:border-box}
+
+:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ])::before{background-image:url("/assets/LegalShield_logo.png")}
+:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ])::before{background-image:url("/assets/urme.png")}
+
+:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > h3,
+:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > h3{font-size:0!important;line-height:1.25}
+
+:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > h3::before,
+:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > h3::before{display:block;font-size:1.1rem;font-weight:700;margin-bottom:12px;color:inherit}
+:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > h3::before{content:"Sponsored by LegalShield"}
+:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > h3::before{content:"Sponsored by The Piety PayChain"}
+
+:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > h3::after,
+:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > h3::after{display:block;white-space:pre-line;font-size:.95rem;font-weight:400;line-height:1.55;margin-top:10px;color:inherit}
+:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > h3::after{content:"Life is unpredictable. Legal questions aren't.\A\AWhether you're protecting your family, growing a business, buying a home, reviewing a contract, or planning for the future, LegalShield provides affordable access to experienced attorneys without the uncertainty of expensive hourly legal fees.\A\AMembers receive legal consultation, document review, identity theft protection, and ongoing legal support designed to help individuals, families, entrepreneurs, and small businesses make confident decisions before problems become costly."}
+:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > h3::after{content:"Piety Token & PayChain is a digital currency built for real-world use — including payroll, debit card purchases, bill pay, and vendor payments.\A\ARather than focusing on speculation, it’s designed to support everyday financial activity inside a working payment system. With a fixed supply and a utility-driven ecosystem, the goal is to connect value to actual usage and participation — not market hype."}
+
+:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > p,
+:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > p{display:none!important}
+
+:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > a.btn,
+:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > a.btn{background:#1f3e8a!important;color:#fff!important;border-color:#1f3e8a!important;text-decoration:none!important}
+:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > a.btn:hover,
+:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > a.btn:hover{background:#17337a!important;color:#fff!important}
+
+:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > a.btn{font-size:0}
+:is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > a.btn::after{content:"Explore LegalShield";font-size:inherit}
+:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > a.btn{font-size:0}
+:is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > a.btn::after{content:"Learn More";font-size:inherit}
 
 @media (max-width:700px){
-  .sponsor-card.sponsor-normalized .sponsor-logo{max-width:130px;max-height:48px}
-  .sponsor-card.sponsor-normalized p{font-size:.95rem;line-height:1.55}
+  :is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ])::before,
+  :is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ])::before{max-width:130px;height:48px}
+  :is(.card,.info-card,.sponsor-card):has(> a[href="/legal/" ]) > h3::after,
+  :is(.card,.info-card,.sponsor-card):has(> a[href="/2026/" ]) > h3::after{font-size:.9rem;line-height:1.5}
 }
