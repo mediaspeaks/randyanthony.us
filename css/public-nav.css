@@ -9,5 +9,27 @@ html,body{margin:0}
 .site-footer .footer-inner{max-width:1040px!important;margin:0 auto!important}
 .site-foot>.wrap{max-width:1040px!important}
 
+/* Book and Radio public headers use the approved serif presentation. */
+body:has(.book-hero) .site-header,
+body:has(.book-hero) .site-header .brand,
+body:has(.book-hero) .site-header .titles,
+body:has(.book-hero) .site-header .titles strong,
+body:has(.book-hero) .site-header .titles span,
+body:has(.book-hero) .site-header .primary,
+body:has(.book-hero) .site-header .primary a,
+body:has(.book-hero) .mobile-nav,
+body:has(.book-hero) .mobile-nav a,
+body:has(.radio-hero) .site-header,
+body:has(.radio-hero) .site-header .brand,
+body:has(.radio-hero) .site-header .titles,
+body:has(.radio-hero) .site-header .titles strong,
+body:has(.radio-hero) .site-header .titles span,
+body:has(.radio-hero) .site-header .primary,
+body:has(.radio-hero) .site-header .primary a,
+body:has(.radio-hero) .mobile-nav,
+body:has(.radio-hero) .mobile-nav a{
+  font-family:"Times New Roman", Times, serif;
+}
+
 /* Radio page compatibility override: its local header CSS uses a more specific selector. Keep the radio header identical to the approved shared header. */
 header.site-header{min-height:60px!important;max-width:1040px!important;margin:10px auto 8px!important;padding:8px 22px!important;gap:16px!important}
