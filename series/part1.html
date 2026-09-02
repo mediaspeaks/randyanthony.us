@@ -44,42 +44,21 @@
 
 <main class="wrap">
 
-<!-- HERO -->
 <section class="hero hero-ops">
-
-  <!-- IMAGE -->
   <div class="book-cover-card">
-    <img src="/assets/part1-hero.png"
-         alt="Part I — Operational Foundations">
+    <img src="/assets/part1-hero.png" alt="Part I — Operational Foundations">
   </div>
-
-  <!-- TEXT -->
   <div class="hero-text">
     <div class="kicker">Operational Architecture Series</div>
-
-    <h1 class="hero-title">
-      Part I — Operational Foundations
-    </h1>
-
-    <p class="hero-subtitle">
-      Foundational principles of reliability in time-critical broadcast and streaming systems.
-    </p>
-
-    <p style="margin-top:14px;">
-      <a class="btn" href="/series/part2.html">Part II →</a>
-    </p>
+    <h1 class="hero-title">Part I — Operational Foundations</h1>
+    <p class="hero-subtitle">Foundational principles of reliability in time-critical broadcast and streaming systems.</p>
+    <p style="margin-top:14px;"><a class="btn" href="/series/part2.html">Part II →</a></p>
   </div>
-
 </section>
 
-<!-- GRID -->
 <div class="grid">
-
-  <!-- LEFT: WEEKS -->
   <aside class="card">
-
     <h2>Part I — Weekly Series</h2>
-
     <ol class="list">
       <li><a href="/series/week-01-reliability.html">Week 1 — Reliability</a></li>
       <li><a href="/series/week-02-invisible-work.html">Week 2 — Invisible Work</a></li>
@@ -95,85 +74,50 @@
       <li><a href="/series/week-12-prevention.html">Week 12 — Prevention</a></li>
       <li><a href="/series/week-13-architecture.html">Week 13 — Architecture</a></li>
     </ol>
-
     <div class="pills">
-      <span class="pill">broadcast operations</span>
-      <span class="pill">streaming operations</span>
-      <span class="pill">master control</span>
-      <span class="pill">24/7 operations</span>
-      <span class="pill">reliability engineering</span>
-      <span class="pill">process improvement</span>
-      <span class="pill">risk management</span>
-      <span class="pill">systems thinking</span>
+      <span class="pill">broadcast operations</span><span class="pill">streaming operations</span><span class="pill">master control</span><span class="pill">24/7 operations</span><span class="pill">reliability engineering</span><span class="pill">process improvement</span><span class="pill">risk management</span><span class="pill">systems thinking</span>
     </div>
-
   </aside>
 
-  <!-- RIGHT: CONTEXT -->
   <section class="card">
-
     <h2>Topic Rotation — Part I</h2>
-
-    <p>
-      This Operational Architecture Series is built around a 13-week cycle focused on foundational system behavior in time-critical environments.
-    </p>
-
-    <p>
-      Reliability is not a single capability. It emerges from disciplined execution, clear ownership, structured handoffs, and reducing hidden failure points across transitions.
-    </p>
-
-    <p>
-      These principles are explored through real-world operational patterns in broadcast and streaming systems.
-    </p>
-
-    <p>
-      Part I establishes the foundation. Part II expands into visibility, perception, and real-time decision-making under pressure.
-    </p>
-
+    <p>This Operational Architecture Series is built around a 13-week cycle focused on foundational system behavior in time-critical environments.</p>
+    <p>Reliability is not a single capability. It emerges from disciplined execution, clear ownership, structured handoffs, and reducing hidden failure points across transitions.</p>
+    <p>These principles are explored through real-world operational patterns in broadcast and streaming systems.</p>
+    <p>Part I establishes the foundation. Part II expands into visibility, perception, and real-time decision-making under pressure.</p>
   </section>
-
 </div>
 
-<!-- SPONSORS -->
 <div class="sponsor-grid">
-
   <article class="card" style="background-color:#2f3a44; color:#ffffff;">
-    <h3>SPONSORED BY: Legal Shield</h3>
-    <p style="color:#cbd5e1;">
-      Legal Shield & ID Shield<br>
-      Protecting Families & Businesses Nationwide.
-    </p>
-    <a class="btn" href="/legal/">Explore Plans →</a>
+    <img src="/assets/LegalShield_logo.png" alt="LegalShield">
+    <h3>Sponsored by LegalShield</h3>
+    <p style="color:#cbd5e1;">Life is unpredictable. Legal questions aren't.</p>
+    <p style="color:#cbd5e1;">Whether you're protecting your family, growing a business, buying a home, reviewing a contract, or planning for the future, LegalShield provides affordable access to experienced attorneys without the uncertainty of expensive hourly legal fees.</p>
+    <p style="color:#cbd5e1;">Members receive legal consultation, document review, identity theft protection, and ongoing legal support designed to help individuals, families, entrepreneurs, and small businesses make confident decisions before problems become costly.</p>
+    <p style="margin-top:14px;"><a class="btn" href="/legal/">Explore LegalShield</a></p>
   </article>
-
   <article class="card" style="background-color:#2f3a44; color:#ffffff;">
-    <h3>SPONSORED BY: The Piety Paychain</h3>
-    <p style="color:#cbd5e1;">
-      Helping to fund these pages.<br>
-      Learn more about the Piety Paychain
-    </p>
-    <a class="btn" href="/2026/">Explore Paychain →</a>
+    <img src="/assets/urme.png" alt="The Piety PayChain">
+    <h3>Sponsored by The Piety PayChain</h3>
+    <p style="color:#cbd5e1;">Piety Token &amp; PayChain is a digital currency built for real-world use — including payroll, debit card purchases, bill pay, and vendor payments.</p>
+    <p style="color:#cbd5e1;">Rather than focusing on speculation, it’s designed to support everyday financial activity inside a working payment system. With a fixed supply and a utility-driven ecosystem, the goal is to connect value to actual usage and participation — not market hype.</p>
+    <p style="margin-top:14px;"><a class="btn" href="/2026/">Learn More</a></p>
   </article>
-
 </div>
 
 </main>
 
 <footer class="site-foot">
   <div class="wrap">
-    <div>
-      © <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.
-    </div>
-    <div class="smallLinks">
-      <a href="/">Home Page</a>
-    </div>
+    <div>© <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.</div>
+    <div class="smallLinks"><a href="/">Home Page</a></div>
   </div>
 </footer>
 
 <script>
   const btn = document.querySelector('.mobile-toggle');
   const panel = document.querySelector('.mobile-nav');
-
   if (btn && panel) {
     btn.addEventListener('click', () => {
       const isOpen = panel.classList.toggle('show');
@@ -182,6 +126,5 @@
     });
   }
 </script>
-
 </body>
 </html>
