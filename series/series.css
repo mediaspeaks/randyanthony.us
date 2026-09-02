@@ -125,6 +125,17 @@ main{position:relative;}
   .sponsor-grid article.card:has(a[href="/2026/"])::before{width:220px;height:105px;}
 }
 
+/* Pages with real sponsor images/copy use the document content directly. */
+.sponsor-grid article.card:has(img)::before{content:none;display:none;}
+.sponsor-grid article.card:has(img) h3{font-size:1.1rem;}
+.sponsor-grid article.card:has(img) h3::after{content:none;}
+.sponsor-grid article.card:has(img) > p:not(:has(a)){font-size:1rem;line-height:1.75;color:#cbd5e1 !important;margin:0 0 16px;}
+.sponsor-grid article.card:has(img) > p:not(:has(a))::after{content:none;}
+.sponsor-grid article.card:has(img) a.btn{font-size:.95rem;}
+.sponsor-grid article.card:has(img) a.btn::after{content:none;}
+.sponsor-grid article.card:has(img) img{display:block;width:260px;max-width:100%;height:auto;margin:0 auto 24px;border-radius:12px;}
+@media (max-width:640px){.sponsor-grid article.card:has(img) img{width:220px;}}
+
 /* ============================================
    POST LAYOUT
 ============================================ */
