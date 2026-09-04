@@ -185,3 +185,62 @@
     </div>
 
   </section>
+
+  <!-- SPONSORS -->
+  <div class="sponsor-grid">
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: Legal Shield</h3>
+      <p style="color:#cbd5e1;">
+        Legal Shield & ID Shield<br>
+        Protecting Families & Businesses Nationwide.
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/legal/">Explore Plans →</a>
+      </p>
+    </article>
+
+    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
+      <h3>SPONSORED BY: The Piety Paychain</h3>
+      <p style="color:#cbd5e1;">
+        Helping to fund these pages.<br>
+        Learn more about the Piety Paychain
+      </p>
+      <p style="margin-top:12px">
+        <a class="btn" href="/2026/">Explore Paychain →</a>
+      </p>
+    </article>
+
+  </div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      © <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.
+    </div>
+
+    <div class="smallLinks">
+      <a href="/">Home Page</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const btn = document.querySelector('.mobile-toggle');
+  const panel = document.getElementById('mobileNav');
+
+  if (btn && panel) {
+    btn.addEventListener('click', () => {
+      const isOpen = panel.classList.toggle('show');
+      panel.setAttribute('aria-hidden', !isOpen);
+      btn.setAttribute('aria-expanded', isOpen);
+    });
+  }
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
