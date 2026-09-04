@@ -17,3 +17,10 @@ html,body{margin:0}*,*:before,*:after{box-sizing:border-box}.site-footer{padding
 @media (max-width:640px){.sponsor-card img,.sponsor-grid article.card:has(img) img,.grid3 article.card.service:has(img[src="/assets/LegalShield_logo.png"]) img,.grid3 article.card.service:has(img[src="/assets/urme.png"]) img{width:220px!important}}
 /* Weekly sponsor pseudo-content receives the same typography as the real sponsor copy. */
 .sponsor-grid article.card:has(a[href="/legal/"]) > p:not(:has(a))::after,.sponsor-grid article.card:has(a[href="/2026/"]) > p:not(:has(a))::after{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif!important;font-size:16px!important;line-height:1.75!important;font-weight:400!important;color:#cbd5e1!important}
+/* Keep the weekly pages' source text hidden while their canonical sponsor copy is rendered through the shared presentation layer. */
+.sponsor-grid article.card:not(:has(img)) > h3{font-size:0!important}
+.sponsor-grid article.card:not(:has(img)) > h3::after{font-size:17.6px!important;line-height:1.35!important;font-weight:700!important;color:#ffffff!important}
+.sponsor-grid article.card:not(:has(img)) > p:not(:has(a)){font-size:0!important;line-height:1.75!important;color:#cbd5e1!important}
+.sponsor-grid article.card:not(:has(img)) > p:not(:has(a))::after{font-size:16px!important;line-height:1.75!important;color:#cbd5e1!important}
+.sponsor-grid article.card:not(:has(img)) a.btn{font-size:0!important;color:#ffffff!important;background:#0a7a57!important}
+.sponsor-grid article.card:not(:has(img)) a.btn::after{font-size:14px!important;line-height:1.2!important;font-weight:700!important;color:#ffffff!important}
