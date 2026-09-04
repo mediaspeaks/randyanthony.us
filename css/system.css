@@ -1,0 +1,42 @@
+/* ===== MOBILE NAV FIX (OVERRIDE) ===== */
+
+@media (max-width: 640px){
+
+  /* Force header to stay horizontal */
+  header.site-header{
+    height:60px !important;
+    flex-direction:row !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    padding:0 14px !important;
+  }
+
+  /* Hide desktop nav */
+  nav.primary{
+    display:none !important;
+  }
+
+  /* Proper hamburger sizing + placement */
+  .mobile-toggle{
+    display:flex !important;
+    width:48px;
+    height:48px;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+  }
+}
+
+/* Fix mobile dropdown positioning */
+.mobile-nav{
+  position:fixed !important;
+  top:60px !important;
+  left:12px !important;
+  right:12px !important;
+  z-index:1500 !important;
+}
+
+/* Ensure header is always on top */
+header.site-header{
+  z-index:2000 !important;
+}

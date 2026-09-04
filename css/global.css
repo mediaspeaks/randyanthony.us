@@ -1,0 +1,139 @@
+/* ============================================
+   GLOBAL VARIABLES
+============================================ */
+:root{
+  --bg: #f6f7fb;
+  --bg2:#eef2f8;
+
+  --surface: rgba(15,28,46,0.035);
+  --surface2: rgba(15,28,46,0.06);
+
+  --text: rgba(10,15,25,0.92);
+  --muted: rgba(10,15,25,0.72);
+  --faint: rgba(10,15,25,0.60);
+
+  --border: rgba(15,28,46,0.12);
+
+  --accent:#1f3e8a;
+  --accent2:#0a7a57;
+
+  --shadow: 0 14px 36px rgba(0,0,0,0.12);
+  --radius: 18px;
+  --max: 1040px;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg: #0f1c2e;
+    --bg2:#0b1525;
+
+    --surface: rgba(255,255,255,0.06);
+    --surface2: rgba(255,255,255,0.10);
+
+    --text: rgba(255,255,255,0.92);
+    --muted: rgba(255,255,255,0.74);
+    --faint: rgba(255,255,255,0.60);
+
+    --border: rgba(255,255,255,0.13);
+
+    --accent:#9bb9ff;
+    --accent2:#b8ffde;
+
+    --shadow: 0 14px 36px rgba(0,0,0,0.38);
+  }
+}
+
+/* ============================================
+   RESET + BODY
+============================================ */
+*{box-sizing:border-box}
+html,body{height:100%}
+
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  background:
+    radial-gradient(1200px 800px at 18% -12%, rgba(31,62,138,0.12), transparent 62%),
+    radial-gradient(1000px 700px at 92% 8%, rgba(10,122,87,0.07), transparent 58%),
+    linear-gradient(180deg, var(--bg), var(--bg2));
+  color:var(--text);
+  line-height:1.55;
+  letter-spacing:0.1px;
+}
+
+a{color:inherit}
+
+/* ============================================
+   LAYOUT
+============================================ */
+.wrap{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:22px 18px 40px;
+}
+
+/* ============================================
+   BUTTONS
+============================================ */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:11px 14px;
+  border-radius:14px;
+  text-decoration:none;
+  font-weight:680;
+  font-size:14px;
+  border:1px solid var(--border);
+  background: var(--surface2);
+  color:var(--accent2);
+}
+
+.btn:hover{
+  background: var(--surface);
+  color:var(--accent);
+}
+
+/* ============================================
+   FOOTER
+============================================ */
+footer{
+  margin-top:34px;
+  padding-top:18px;
+  border-top:1px solid var(--border);
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  color:var(--faint);
+  font-size:12.5px;
+}
+footer .wrap{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  width:100%;
+}
+.smallLinks{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.smallLinks a{
+  color:var(--faint);
+  text-decoration:none;
+  padding:6px 8px;
+  border-radius:10px;
+}
+.site-foot .smallLinks a{
+  color:var(--muted);
+  text-decoration:underline;
+}
+.smallLinks a:hover{
+  background:var(--surface);
+  color:var(--muted);
+}
