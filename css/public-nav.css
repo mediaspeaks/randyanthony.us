@@ -2,3 +2,8 @@
 html,body{margin:0}*,*:before,*:after{box-sizing:border-box}.site-footer{padding:38px 24px!important;margin-top:40px!important}.site-footer .footer-inner{max-width:1040px!important;margin:0 auto!important}.site-foot>.wrap{max-width:1040px!important}header.site-header{min-height:60px!important;max-width:1040px!important;margin:10px auto 8px!important;padding:8px 22px!important;gap:16px!important}
 /* Books sponsor logos: restore the larger presentation without changing other info-card images. */
 .info-card img[src="/assets/LegalShield_logo.png"],.info-card img[src="/assets/urme.png"]{width:260px!important;max-width:100%;height:auto!important;margin:0 auto 24px!important}
+/* Sponsor cards use real HTML images. Never generate a second logo with pseudo-elements. */
+.grid .card[aria-labelledby="g1"] h3::before,.grid .card[aria-labelledby="g4"] h3::before,.grid3 article.card.service h3::before{content:none!important;display:none!important;background:none!important;background-image:none!important}
+/* Standard sponsor link treatment. */
+.grid .card[aria-labelledby="g1"] .btn,.grid .card[aria-labelledby="g4"] .btn,.grid3 article.card.service a.btn{color:#0a7a57!important;text-decoration:none!important;background:rgba(255,255,255,.06)!important;border:1px solid rgba(10,122,87,.28)!important}
+.grid .card[aria-labelledby="g1"] .btn:hover,.grid .card[aria-labelledby="g4"] .btn:hover,.grid3 article.card.service a.btn:hover{color:#1f3e8a!important;background:rgba(255,255,255,.10)!important}
