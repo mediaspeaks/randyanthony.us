@@ -107,12 +107,12 @@ main{position:relative;}
   margin:0 0 16px;
 }
 .sponsor-grid article.card:has(a[href="/legal/"]) > p:not(:has(a))::after{
-  content:"Life is unpredictable. Legal questions aren't.\\A\\AWhether you're protecting your family, growing a business, buying a home, reviewing a contract, or planning for the future, LegalShield provides affordable access to experienced attorneys without the uncertainty of expensive hourly legal fees.\\A\\AMembers receive legal consultation, document review, identity theft protection, and ongoing legal support designed to help individuals, families, entrepreneurs, and small businesses make confident decisions before problems become costly.";
+  content:"Life is unpredictable. Legal questions aren't.\A\AWhether you're protecting your family, growing a business, buying a home, reviewing a contract, or planning for the future, LegalShield provides affordable access to experienced attorneys without the uncertainty of expensive hourly legal fees.\A\AMembers receive legal consultation, document review, identity theft protection, and ongoing legal support designed to help individuals, families, entrepreneurs, and small businesses make confident decisions before problems become costly.";
   white-space:pre-line;
   font-size:1rem;
 }
 .sponsor-grid article.card:has(a[href="/2026/"]) > p:not(:has(a))::after{
-  content:"Piety Token & PayChain is a digital currency built for real-world use — including payroll, debit card purchases, bill pay, and vendor payments.\\A\\ARather than focusing on speculation, it’s designed to support everyday financial activity inside a working payment system. With a fixed supply and a utility-driven ecosystem, the goal is to connect value to actual usage and participation — not market hype.";
+  content:"Piety Token & PayChain is a digital currency built for real-world use — including payroll, debit card purchases, bill pay, and vendor payments.\A\ARather than focusing on speculation, it’s designed to support everyday financial activity inside a working payment system. With a fixed supply and a utility-driven ecosystem, the goal is to connect value to actual usage and participation — not market hype.";
   white-space:pre-line;
   font-size:1rem;
 }
