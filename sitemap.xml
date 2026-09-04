@@ -3,11 +3,10 @@
 
   <!-- CORE PAGES -->
   <url><loc>https://randyanthony.us/</loc></url>
+  <url><loc>https://randyanthony.us/book/</loc></url>
   <url><loc>https://randyanthony.us/book/fm.html</loc></url>
-  <url><loc>https://randyanthony.us/book</loc></url>
-  <url><loc>https://randyanthony.us/radio</loc></url>
-  <url><loc>https://randyanthony.us/rce</loc></url>
-    <url><loc>https://randyanthony.us/south</loc></url>
+  <url><loc>https://randyanthony.us/radio/</loc></url>
+
   <!-- SERIES -->
   <url><loc>https://randyanthony.us/series/</loc></url>
   <url><loc>https://randyanthony.us/series/part2.html</loc></url>
@@ -27,18 +26,20 @@
   <url><loc>https://randyanthony.us/series/week-12-prevention.html</loc></url>
   <url><loc>https://randyanthony.us/series/week-13-architecture.html</loc></url>
   <url><loc>https://randyanthony.us/series/week-14-part-1-wrap-up.html</loc></url>
+
+  <!-- PART II -->
   <url><loc>https://randyanthony.us/series/week-15-visibility.html</loc></url>
-<url><loc>https://randyanthony.us/series/week-16-illusion-of-visibility.html</loc></url>
-<url><loc>https://randyanthony.us/series/week17-hidden-dependencies.html</loc></url>
-<url><loc>https://randyanthony.us/series/week18-escalation-paths.html</loc></url>
-<url><loc>https://randyanthony.us/series/week19-compressed-decision-windows.html</loc></url>
-<url><loc>https://randyanthony.us/series/week20-operational-drift.html</loc></url>
-<url><loc>https://randyanthony.us/series/week21-false-recovery.html</loc></url>
-<url><loc>https://randyanthony.us/series/week22-control-surface-vs-system-state.html</loc></url>
-<url><loc>https://randyanthony.us/series/week23-signal-prioritization.html</loc></url>
-<url><loc>https://randyanthony.us/series/week24-interface-fragility.html</loc></url>
-<url><loc>https://randyanthony.us/series/week25-recovery-architecture.html</loc></url>
-<url><loc>https://randyanthony.us/series/week26-decision-load-under-pressure.html</loc></url>
-<url><loc>https://randyanthony.us/series/week27-operational-visibility-synthesis.html</loc></url>
-  
+  <url><loc>https://randyanthony.us/series/week-16-illusion-of-visibility.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week17-hidden-dependencies.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week18-escalation-paths.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week19-compressed-decision-windows.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week20-operational-drift.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week21-false-recovery.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week22-control-surface-vs-system-state.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week23-signal-prioritization.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week24-interface-fragility.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week25-recovery-architecture.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week26-decision-load-under-pressure.html</loc></url>
+  <url><loc>https://randyanthony.us/series/week27-operational-visibility-synthesis.html</loc></url>
+
 </urlset>
