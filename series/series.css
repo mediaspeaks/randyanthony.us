@@ -246,5 +246,18 @@ a{transition:all .2s ease;}
 .hero-ops img:hover{transform:scale(1.02);}
 
 /* ============================================
-   END OF FILE
+   FINAL WEEKLY SPONSOR COPY OVERRIDE
+   Uses structural selectors instead of :has() for the
+   legacy weekly sponsor markup, so the old source copy
+   cannot remain visible beside the canonical copy.
 ============================================ */
+.sponsor-grid>article.card:nth-child(1),.sponsor-grid>article.card:nth-child(2){background:#2f3a44!important;color:#ffffff!important;padding:24px!important}
+.sponsor-grid>article.card:nth-child(1)>h3,.sponsor-grid>article.card:nth-child(2)>h3{font-size:0!important;line-height:1.35!important;color:#ffffff!important;margin-bottom:14px!important}
+.sponsor-grid>article.card:nth-child(1)>h3::after{content:"Sponsored by LegalShield";font-size:17.6px!important;line-height:1.35!important;font-weight:700!important;color:#ffffff!important}
+.sponsor-grid>article.card:nth-child(2)>h3::after{content:"Sponsored by The Piety PayChain";font-size:17.6px!important;line-height:1.35!important;font-weight:700!important;color:#ffffff!important}
+.sponsor-grid>article.card:nth-child(1)>p:nth-of-type(1),.sponsor-grid>article.card:nth-child(2)>p:nth-of-type(1){font-size:0!important;line-height:1.75!important;color:#cbd5e1!important;margin:0 0 14px!important}
+.sponsor-grid>article.card:nth-child(1)>p:nth-of-type(1)::after{content:"Life is unpredictable. Legal questions aren't.\A\AWhether you're protecting your family, growing a business, buying a home, reviewing a contract, or planning for the future, LegalShield provides affordable access to experienced attorneys without the uncertainty of expensive hourly legal fees.\A\AMembers receive legal consultation, document review, identity theft protection, and ongoing legal support designed to help individuals, families, entrepreneurs, and small businesses make confident decisions before problems become costly.";white-space:pre-line;font-size:16px!important;line-height:1.75!important;font-weight:400!important;color:#cbd5e1!important}
+.sponsor-grid>article.card:nth-child(2)>p:nth-of-type(1)::after{content:"Piety Token & PayChain is a digital currency built for real-world use — including payroll, debit card purchases, bill pay, and vendor payments.\A\ARather than focusing on speculation, it’s designed to support everyday financial activity inside a working payment system. With a fixed supply and utility-driven ecosystem, the goal is to connect value to actual usage and participation — not market hype.";white-space:pre-line;font-size:16px!important;line-height:1.75!important;font-weight:400!important;color:#cbd5e1!important}
+.sponsor-grid>article.card:nth-child(1)>p:nth-of-type(2)>a.btn,.sponsor-grid>article.card:nth-child(2)>p:nth-of-type(2)>a.btn{font-size:0!important;display:inline-flex!important;align-items:center!important;justify-content:center!important;padding:10px 16px!important;border-radius:12px!important;font-weight:700!important;line-height:1.2!important;color:#ffffff!important;background:#0a7a57!important;border:1px solid #0a7a57!important}
+.sponsor-grid>article.card:nth-child(1)>p:nth-of-type(2)>a.btn::after{content:"Explore LegalShield";font-size:14px!important}
+.sponsor-grid>article.card:nth-child(2)>p:nth-of-type(2)>a.btn::after{content:"Learn More";font-size:14px!important}
