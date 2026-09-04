@@ -10,65 +10,9 @@
 
    <link rel="canonical" href="https://randyanthony.us/radio/">
 <style>
-:root{
-  --bg: #f6f7fb;
-  --bg2:#eef2f8;
-  --surface: rgba(15,28,46,0.035);
-  --surface2: rgba(15,28,46,0.06);
-  --text: rgba(10,15,25,0.92);
-  --muted: rgba(10,15,25,0.72);
-  --faint: rgba(10,15,25,0.60);
-  --border: rgba(15,28,46,0.12);
-  --accent:#1f3e8a;
-  --accent2:#0a7a57;
-  --shadow: 0 14px 36px rgba(0,0,0,0.12);
-  --radius: 18px;
-  --max: 1040px;
-  --heroBgA: #071a33;
-  --heroBgB: #071a33;
-  --heroText: rgba(255,255,255,0.94);
-  --heroMuted: rgba(255,255,255,0.74);
-  --heroFaint: rgba(255,255,255,0.60);
-  --heroBorder: rgba(255,255,255,0.14);
-  --heroSurface: rgba(255,255,255,0.06);
-  --heroSurface2: rgba(255,255,255,0.10);
-  --heroShadow: 0 18px 42px rgba(0,0,0,0.30);
-}
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg: #0f1c2e;
-    --bg2:#0b1525;
-    --surface: rgba(255,255,255,0.06);
-    --surface2: rgba(255,255,255,0.10);
-    --text: rgba(255,255,255,0.92);
-    --muted: rgba(255,255,255,0.74);
-    --faint: rgba(255,255,255,0.60);
-    --border: rgba(255,255,255,0.13);
-    --accent:#9bb9ff;
-    --accent2:#b8ffde;
-    --shadow: 0 14px 36px rgba(0,0,0,0.38);
-  }
-}
-.radio-hero{margin:22px auto 0;max-width:var(--max);border-radius:calc(var(--radius) + 2px);background:linear-gradient(180deg,rgba(7,26,51,0.92),rgba(7,26,51,0.88)),url("/series/assets/ops-architecture-bg.jpg") center/cover no-repeat;box-shadow:var(--heroShadow);border:1px solid rgba(255,255,255,0.10);padding:32px 26px}
-.radio-hero-inner{display:grid;grid-template-columns:0.6fr 1.4fr;gap:28px;align-items:center}
-@media (max-width:860px){.radio-hero-inner{grid-template-columns:1fr;text-align:center}}
-.radio-avatar img{width:100%;max-width:220px;border-radius:50%;border:3px solid rgba(255,255,255,0.25);box-shadow:0 12px 28px rgba(0,0,0,0.35)}
-.radio-hero-kicker{font-size:12px;letter-spacing:0.8px;text-transform:uppercase;color:var(--heroFaint);margin:0 0 6px}
-.radio-hero-title{font-size:30px;margin:0 0 8px;color:var(--heroText)}
-.radio-hero-subtitle{margin:0 0 16px;font-size:16px;color:var(--heroMuted)}
-.radio-cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}
-.btnPrimary{background:rgba(255,255,255,0.10);border-color:rgba(155,185,255,0.40);color:var(--heroText)}
-.btnPrimary:hover{background:rgba(255,255,255,0.14)}
-.radio-meta{margin-top:10px;font-size:13px;color:var(--heroFaint)}
-.wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 54px}
-section{margin-top:34px}
-h2{margin:0 0 12px;font-size:24px;color:var(--text)}
-p{margin:0 0 14px;color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:48px}
-@media (max-width:700px){.grid{grid-template-columns:1fr}}
-.card{padding:20px;border-radius:16px}
-.card .btn{background:#ffffff22;border:1px solid #ffffff33;color:#ffffff}
-footer{margin-top:34px;padding-top:18px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;justify-content:space-between;color:var(--faint);font-size:12.5px}
+:root{--bg:#f6f7fb;--bg2:#eef2f8;--surface:rgba(15,28,46,0.035);--surface2:rgba(15,28,46,0.06);--text:rgba(10,15,25,0.92);--muted:rgba(10,15,25,0.72);--faint:rgba(10,15,25,0.60);--border:rgba(15,28,46,0.12);--accent:#1f3e8a;--accent2:#0a7a57;--shadow:0 14px 36px rgba(0,0,0,0.12);--radius:18px;--max:1040px;--heroBgA:#071a33;--heroBgB:#071a33;--heroText:rgba(255,255,255,0.94);--heroMuted:rgba(255,255,255,0.74);--heroFaint:rgba(255,255,255,0.60);--heroBorder:rgba(255,255,255,0.14);--heroSurface:rgba(255,255,255,0.06);--heroSurface2:rgba(255,255,255,0.10);--heroShadow:0 18px 42px rgba(0,0,0,0.30)}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1c2e;--bg2:#0b1525;--surface:rgba(255,255,255,0.06);--surface2:rgba(255,255,255,0.10);--text:rgba(255,255,255,0.92);--muted:rgba(255,255,255,0.74);--faint:rgba(255,255,255,0.60);--border:rgba(255,255,255,0.13);--accent:#9bb9ff;--accent2:#b8ffde;--shadow:0 14px 36px rgba(0,0,0,0.38)}}
+.radio-hero{margin:22px auto 0;max-width:var(--max);border-radius:calc(var(--radius) + 2px);background:linear-gradient(180deg,rgba(7,26,51,0.92),rgba(7,26,51,0.88)),url("/series/assets/ops-architecture-bg.jpg") center/cover no-repeat;box-shadow:var(--heroShadow);border:1px solid rgba(255,255,255,0.10);padding:32px 26px}.radio-hero-inner{display:grid;grid-template-columns:0.6fr 1.4fr;gap:28px;align-items:center}@media (max-width:860px){.radio-hero-inner{grid-template-columns:1fr;text-align:center}}.radio-avatar img{width:100%;max-width:220px;border-radius:50%;border:3px solid rgba(255,255,255,0.25);box-shadow:0 12px 28px rgba(0,0,0,0.35)}.radio-hero-kicker{font-size:12px;letter-spacing:0.8px;text-transform:uppercase;color:var(--heroFaint);margin:0 0 6px}.radio-hero-title{font-size:30px;margin:0 0 8px;color:var(--heroText)}.radio-hero-subtitle{margin:0 0 16px;font-size:16px;color:var(--heroMuted)}.radio-cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}.btnPrimary{background:rgba(255,255,255,0.10);border-color:rgba(155,185,255,0.40);color:var(--heroText)}.btnPrimary:hover{background:rgba(255,255,255,0.14)}.radio-meta{margin-top:10px;font-size:13px;color:var(--heroFaint)}.wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 54px}section{margin-top:34px}h2{margin:0 0 12px;font-size:24px;color:var(--text)}p{margin:0 0 14px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:48px}@media (max-width:700px){.grid{grid-template-columns:1fr}}.card{padding:20px;border-radius:16px}.card .btn{background:#ffffff22;border:1px solid #ffffff33;color:var(--accent2)}.card .btn:hover{background:#ffffff22;color:var(--accent)}footer{margin-top:34px;padding-top:18px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;justify-content:space-between;color:var(--faint);font-size:12.5px}
 </style>
   <link rel="stylesheet" href="/css/public-nav.css">
 </head>
@@ -86,56 +30,18 @@ footer{margin-top:34px;padding-top:18px;border-top:1px solid var(--border);displ
 <section class="radio-hero">
   <div class="radio-hero-inner">
     <div class="radio-avatar"><img src="/assets/avatar.jpg" alt="Randy Anthony radio host avatar portrait"></div>
-    <div>
-      <p class="radio-hero-kicker">The Sound of the Strand • Since 2016</p>
-      <h1 class="radio-hero-title">Racin’ Randy on The Sound of the Strand</h1>
-      <p class="radio-hero-subtitle">Carolina Beach Music, the songs, the artists and their stories from the road, and a lifetime on the radio — streaming wherever you are.</p>
-      <div class="radio-cta-row"><a href="https://player.live365.com/a20149?l" class="btn btnPrimary" target="_blank" rel="noopener">Listen Live on Live365</a></div>
-      <p class="radio-meta">Internet radio station • Carolina Beach Music • Streaming worldwide</p>
-    </div>
+    <div><p class="radio-hero-kicker">The Sound of the Strand • Since 2016</p><h1 class="radio-hero-title">Racin’ Randy on The Sound of the Strand</h1><p class="radio-hero-subtitle">Carolina Beach Music, the songs, the artists and their stories from the road, and a lifetime on the radio — streaming wherever you are.</p><div class="radio-cta-row"><a href="https://player.live365.com/a20149?l" class="btn btnPrimary" target="_blank" rel="noopener">Listen Live on Live365</a></div><p class="radio-meta">Internet radio station • Carolina Beach Music • Streaming worldwide</p></div>
   </div>
 </section>
 <div class="wrap">
-<section>
-  <h2>Racin’ Randy — On Air</h2>
-  <p>“Racin’ Randy” is from Charlotte, North Carolina, and grew up surrounded by music. His father loved country, gospel, and Elvis, while his older sibling and cousins were spinning The Beatles, Stones, Motown, and the electric sounds of the late 1960s. Beach music was in the air all over the Carolinas, and he heard it early and often.</p>
-  <p>As a North Carolina native, Randy also gravitated to NASCAR from an early age — and like a lot of teenagers, he spent time under the hood of his own cars. After high school, he headed to Western Carolina University to earn a degree in Radio and Television, then went to work at stations across North Carolina, Georgia, and South Carolina.</p>
-  <p>While in Myrtle Beach at WMYB and WAZX, Randy was hired as a DJ at the renowned Studebakers nightclub, where his deep knowledge of beach music quickly became obvious. What were now called “oldies” were the songs he grew up with — and that made him invaluable.</p>
-  <p>In the 1990s, he returned to Charlotte to work at the legendary Magic 96 oldies station and served as Senior Producer for <i>NASCAR Country</i>, a weekly two‑hour internationally syndicated program. It was a country music artist who first called "Racin' Randy" and the name quickly stuck. His long‑term knowledge of the sport helped him write and produce a show that earned two Billboard Magazine nominations for Best Syndicated Program.</p>
-  <p>Today, Randy works at the TEGNA Broadcast and Streaming Center handling automation and system reliability for numerous television and streaming platforms. He continues to do voice work for stations nationwide and serves as a NASCAR correspondent for the nationally syndicated <i>Sports Circus</i> program. His favorite beach music song: “If I Didn’t Have A Dime” by Bob Collins and The Fabulous Five.</p>
-</section>
-<section>
-  <h2>The Sound of the Strand</h2>
-  <p>The Sound of the Strand is a Carolina Beach Music internet radio station that’s been streaming since 2016 — built for people who know the difference between background noise and a real soundtrack. It’s the sound of the coast, the clubs, the cars, and the nights that ran later than they should have.</p>
-  <p>From deep‑cut beach tracks to familiar favorites, the station keeps the tradition alive while embracing the reality that the audience is now everywhere — not just within reach of a tower. Visit us at <a href="https://www.soundofthestrand.com">www.soundofthestrand.com</a></p>
-</section>
+<section><h2>Racin’ Randy — On Air</h2><p>“Racin’ Randy” is from Charlotte, North Carolina, and grew up surrounded by music. His father loved country, gospel, and Elvis, while his older sibling and cousins were spinning The Beatles, Stones, Motown, and the electric sounds of the late 1960s. Beach music was in the air all over the Carolinas, and he heard it early and often.</p><p>As a North Carolina native, Randy also gravitated to NASCAR from an early age — and like a lot of teenagers, he spent time under the hood of his own cars. After high school, he headed to Western Carolina University to earn a degree in Radio and Television, then went to work at stations across North Carolina, Georgia, and South Carolina.</p><p>While in Myrtle Beach at WMYB and WAZX, Randy was hired as a DJ at the renowned Studebakers nightclub, where his deep knowledge of beach music quickly became obvious. What were now called “oldies” were the songs he grew up with — and that made him invaluable.</p><p>In the 1990s, he returned to Charlotte to work at the legendary Magic 96 oldies station and served as Senior Producer for <i>NASCAR Country</i>, a weekly two‑hour internationally syndicated program. It was a country music artist who first called "Racin' Randy" and the name quickly stuck. His long‑term knowledge of the sport helped him write and produce a show that earned two Billboard Magazine nominations for Best Syndicated Program.</p><p>Today, Randy works at the TEGNA Broadcast and Streaming Center handling automation and system reliability for numerous television and streaming platforms. He continues to do voice work for stations nationwide and serves as a NASCAR correspondent for the nationally syndicated <i>Sports Circus</i> program. His favorite beach music song: “If I Didn’t Have A Dime” by Bob Collins and The Fabulous Five.</p></section>
+<section><h2>The Sound of the Strand</h2><p>The Sound of the Strand is a Carolina Beach Music internet radio station that’s been streaming since 2016 — built for people who know the difference between background noise and a real soundtrack. It’s the sound of the coast, the clubs, the cars, and the nights that ran later than they should have.</p><p>From deep‑cut beach tracks to familiar favorites, the station keeps the tradition alive while embracing the reality that the audience is now everywhere — not just within reach of a tower. Visit us at <a href="https://www.soundofthestrand.com">www.soundofthestrand.com</a></p></section>
 <div class="grid" role="list">
-  <article class="card" role="listitem" aria-labelledby="g1" style="background-color:#2f3a44; color:#ffffff;">
-    <img src="/assets/LegalShield_logo.png" alt="LegalShield" style="display:block;width:260px;max-width:100%;height:auto;margin:0 auto 24px;">
-    <h3 id="g1">Sponsored by LegalShield</h3>
-    <p style="color:#cbd5e1;">Life is unpredictable. Legal questions aren't.</p>
-    <p style="color:#cbd5e1;">Whether you're protecting your family, growing a business, buying a home, reviewing a contract, or planning for the future, LegalShield provides affordable access to experienced attorneys without the uncertainty of expensive hourly legal fees.</p>
-    <p style="color:#cbd5e1;">Members receive legal consultation, document review, identity theft protection, and ongoing legal support designed to help individuals, families, entrepreneurs, and small businesses make confident decisions before problems become costly.</p>
-    <p style="margin-top:12px"><a class="btn" href="/legal/">Explore LegalShield</a></p>
-  </article>
-  <article class="card" role="listitem" aria-labelledby="g4" style="background-color:#2f3a44; color:#ffffff;">
-    <img src="/assets/urme.png" alt="The Piety PayChain" style="display:block;width:260px;max-width:100%;height:auto;margin:0 auto 24px;">
-    <h3 id="g4">Sponsored by The Piety PayChain</h3>
-    <p style="color:#cbd5e1;">Piety Token &amp; PayChain is a digital currency built for real-world use — including payroll, debit card purchases, bill pay, and vendor payments.</p>
-    <p style="color:#cbd5e1;">Rather than focusing on speculation, it’s designed to support everyday financial activity inside a working payment system. With a fixed supply and a utility-driven ecosystem, the goal is to connect value to actual usage and participation — not market hype.</p>
-    <p style="margin-top:12px"><a class="btn" href="/2026/">Learn More</a></p>
-  </article>
+  <article class="card" role="listitem" aria-labelledby="g1" style="background-color:#2f3a44; color:#ffffff;"><img src="/assets/LegalShield_logo.png" alt="LegalShield" style="display:block;width:260px;max-width:100%;height:auto;margin:0 auto 24px;"><h3 id="g1">Sponsored by LegalShield</h3><p style="color:#cbd5e1;">Life is unpredictable. Legal questions aren't.</p><p style="color:#cbd5e1;">Whether you're protecting your family, growing a business, buying a home, reviewing a contract, or planning for the future, LegalShield provides affordable access to experienced attorneys without the uncertainty of expensive hourly legal fees.</p><p style="color:#cbd5e1;">Members receive legal consultation, document review, identity theft protection, and ongoing legal support designed to help individuals, families, entrepreneurs, and small businesses make confident decisions before problems become costly.</p><p style="margin-top:12px"><a class="btn" href="/legal/">Explore LegalShield</a></p></article>
+  <article class="card" role="listitem" aria-labelledby="g4" style="background-color:#2f3a44; color:#ffffff;"><img src="/assets/urme.png" alt="The Piety PayChain" style="display:block;width:260px;max-width:100%;height:auto;margin:0 auto 24px;"><h3 id="g4">Sponsored by The Piety PayChain</h3><p style="color:#cbd5e1;">Piety Token &amp; PayChain is a digital currency built for real-world use — including payroll, debit card purchases, bill pay, and vendor payments.</p><p style="color:#cbd5e1;">Rather than focusing on speculation, it’s designed to support everyday financial activity inside a working payment system. With a fixed supply and a utility-driven ecosystem, the goal is to connect value to actual usage and participation — not market hype.</p><p style="margin-top:12px"><a class="btn" href="/2026/">Learn More</a></p></article>
 </div>
-<footer class="site-foot">
-  <div>© <span id="year"></span>RANDI | The Randy Anthony Network &amp; Digital Interface • The Sound of the Strand • Carolina Beach Music • All rights reserved.</div>
-  <div class="smallLinks"><a href="/">Home</a></div>
-</footer>
+<footer class="site-foot"><div>© <span id="year"></span>RANDI | The Randy Anthony Network &amp; Digital Interface • The Sound of the Strand • Carolina Beach Music • All rights reserved.</div><div class="smallLinks"><a href="/">Home</a></div></footer>
 </div>
-<script>
-const btn = document.getElementById('mobileToggle');
-const panel = document.getElementById('mobileNav');
-if (btn && panel) { btn.addEventListener('click', () => { const isOpen = panel.classList.toggle('show'); panel.setAttribute('aria-hidden', !isOpen); btn.setAttribute('aria-expanded', isOpen); }); }
-</script>
-<script>document.querySelectorAll('#year').forEach(el => el.textContent = new Date().getFullYear());</script>
+<script>const btn=document.getElementById('mobileToggle');const panel=document.getElementById('mobileNav');if(btn&&panel){btn.addEventListener('click',()=>{const isOpen=panel.classList.toggle('show');panel.setAttribute('aria-hidden',!isOpen);btn.setAttribute('aria-expanded',isOpen);});}</script><script>document.querySelectorAll('#year').forEach(el=>el.textContent=new Date().getFullYear());</script>
 </body>
 </html>
