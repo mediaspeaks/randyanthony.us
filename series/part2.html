@@ -21,8 +21,20 @@
     .sponsor-card .btn:hover{background:#f2f8f5;color:#0a7a57;}
     @media(max-width:900px){.sponsor-grid{grid-template-columns:1fr;}}
     @media(max-width:640px){.sponsor-card img{width:200px;}}
-    .sponsor-card.mint img{width:110px;}
-    @media(max-width:640px){.sponsor-card.mint img{width:100px;}}
+
+    /* Mint Mobile card: compact treatment matching the approved mockup. */
+    .sponsor-card.mint{padding:16px 14px 14px;}
+    .sponsor-card.mint img{width:110px;height:auto;margin:0 auto 14px;border-radius:0;}
+    .sponsor-card.mint h3{text-align:center;margin-bottom:10px;font-size:.9rem;}
+    .sponsor-card.mint p{font-size:.72rem;line-height:1.45;margin-bottom:12px;}
+    .sponsor-card.mint .btn{font-size:.72rem;padding:8px 12px;border-radius:7px;align-self:stretch;text-align:center;}
+    @media(max-width:640px){
+      .sponsor-card.mint{padding:14px 10px 10px;}
+      .sponsor-card.mint img{width:100px;margin-bottom:12px;}
+      .sponsor-card.mint h3{font-size:.85rem;}
+      .sponsor-card.mint p{font-size:.7rem;}
+      .sponsor-card.mint .btn{font-size:.7rem;padding:7px 10px;}
+    }
   </style>
 </head>
 
