@@ -1,131 +1,112 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#0b1a33">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b1a33">
+<title>Operational Architecture Series | Randy Anthony</title>
+<meta name="description" content="The complete Operational Architecture Series by Randy Anthony. Twenty-seven articles exploring operational reliability, operational visibility, and the Reaction Cascade Effect.">
+<link rel="icon" href="/favicon.png">
+<link rel="stylesheet" href="/css/global.css">
+<link rel="stylesheet" href="/series/series.css">
+<link rel="stylesheet" href="/css/public-nav.css">
+<style>
+.hero-ops ~ .grid > .card > p:last-child{margin-top:auto!important;margin-bottom:0!important;}
+.hero-ops ~ .grid > .card > div:has(.btn){display:flex;flex-direction:column;flex:1;}
+.hero-ops ~ .grid > .card > div:has(.btn) > div:has(.btn){display:flex;flex-direction:column;flex:1;}
+.hero-ops ~ .grid > .card > div:has(.btn) > div:has(.btn) > p:last-child{margin-top:auto!important;margin-bottom:0!important;}
 
-  <title>Operational Architecture Series | Randy Anthony</title>
-  <meta name="description" content="The complete Operational Architecture Series by Randy Anthony. Twenty-seven articles exploring operational reliability, operational visibility, and the Reaction Cascade Effect.">
-  <link rel="icon" href="/favicon.png">
-  <link rel="stylesheet" href="/css/global.css">
-  <link rel="stylesheet" href="/series/series.css">
-  <link rel="stylesheet" href="/css/public-nav.css">
-  <style>
-    /* Series landing page: keep each card's CTA anchored to the bottom. */
-    .hero-ops ~ .grid > .card > p:last-child{margin-top:auto!important;margin-bottom:0!important;}
-    .hero-ops ~ .grid > .card > div:has(.btn){display:flex;flex-direction:column;flex:1;}
-    .hero-ops ~ .grid > .card > div:has(.btn) > div:has(.btn){display:flex;flex-direction:column;flex:1;}
-    .hero-ops ~ .grid > .card > div:has(.btn) > div:has(.btn) > p:last-child{margin-top:auto!important;margin-bottom:0!important;}
+/* Live Series visual system matched to the main home page. */
+body{
+  background:radial-gradient(circle at top left,rgba(31,62,138,.08),transparent 45%),radial-gradient(circle at top right,rgba(10,122,87,.05),transparent 42%),linear-gradient(#f6f7fb,#eef2f8)!important;
+}
+.hero-ops{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  color:#fff!important;
+  background:linear-gradient(rgba(7,26,51,.88),rgba(7,26,51,.88)),url("/series/assets/ops-architecture-bg.jpg") center/cover no-repeat!important;
+  box-shadow:0 24px 60px rgba(7,26,51,.28)!important;
+  border-radius:22px!important;
+}
+.hero-ops::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:radial-gradient(circle at 12% 15%,rgba(31,62,138,.24),transparent 42%),radial-gradient(circle at 92% 85%,rgba(10,122,87,.16),transparent 44%);
+}
+.hero-ops::after{
+  content:"";
+  position:absolute;
+  z-index:0;
+  width:420px;height:420px;
+  right:-220px;bottom:-250px;
+  border-radius:50%;
+  border:48px solid rgba(10,122,87,.10);
+  box-shadow:0 0 0 38px rgba(10,122,87,.045),0 0 0 84px rgba(10,122,87,.02);
+  pointer-events:none;
+}
+.hero-ops .book-cover-card,.hero-ops .hero-text{position:relative;z-index:2;}
+.hero-ops .hero-text{color:#fff;}
+.hero-ops .kicker{display:inline-block;margin-bottom:10px;color:#8dc8ff;font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;}
+.hero-ops .hero-title{margin:0 0 18px;color:#fff;font-size:clamp(2.3rem,4vw,3.3rem);line-height:1.08;letter-spacing:-1px;}
+.hero-ops .hero-subtitle{font-size:1.15rem;line-height:1.8;color:rgba(255,255,255,.88)!important;margin-bottom:24px;}
+.hero-ops .hero-text > p:not(.hero-subtitle){color:rgba(255,255,255,.82)!important;}
+.hero-ops .btnrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+.hero-ops .btn{background:#1f3e8a!important;color:#fff!important;border:0!important;}
+.hero-ops .btn:hover{background:#17337a!important;}
 
-    /* Live Series hero visual layer. Kept here so it loads after series.css. */
-    .hero-ops{
-      position:relative;
-      overflow:hidden;
-      isolation:isolate;
-      background:
-        radial-gradient(circle at 8% 12%,rgba(45,94,190,.34) 0,rgba(45,94,190,.16) 23%,transparent 48%),
-        radial-gradient(circle at 94% 88%,rgba(10,150,104,.28) 0,rgba(10,150,104,.12) 25%,transparent 50%),
-        linear-gradient(135deg,rgba(31,62,138,.18) 0%,rgba(18,53,103,.08) 46%,rgba(10,122,87,.16) 100%),
-        var(--surface2) !important;
-      box-shadow:0 18px 44px rgba(0,0,0,.16);
-    }
-    .hero-ops::before{
-      content:"";
-      position:absolute;
-      z-index:0;
-      width:430px;
-      height:430px;
-      left:-185px;
-      top:-205px;
-      border-radius:50%;
-      border:54px solid rgba(72,116,210,.13);
-      box-shadow:0 0 0 42px rgba(72,116,210,.055),0 0 0 92px rgba(72,116,210,.025);
-      pointer-events:none;
-    }
-    .hero-ops::after{
-      content:"";
-      position:absolute;
-      z-index:0;
-      width:390px;
-      height:390px;
-      right:-180px;
-      bottom:-215px;
-      border-radius:50%;
-      border:48px solid rgba(22,166,118,.12);
-      box-shadow:0 0 0 40px rgba(22,166,118,.05),0 0 0 88px rgba(22,166,118,.022);
-      pointer-events:none;
-    }
-    .hero-ops .book-cover-card,.hero-ops .hero-text{position:relative;z-index:2;}
-    .hero-ops .book-cover-card::after{
-      content:"";
-      position:absolute;
-      z-index:-1;
-      inset:12% -4% -7% 8%;
-      border-radius:22px;
-      background:linear-gradient(145deg,rgba(31,62,138,.20),rgba(10,122,87,.15));
-      filter:blur(18px);
-    }
-    .hero-ops .kicker{display:inline-block;margin-bottom:10px;color:var(--accent2);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;}
-    .hero-ops .hero-title{margin:0 0 18px;font-size:clamp(2.3rem,4vw,3.3rem);line-height:1.08;letter-spacing:-1px;}
-    .hero-ops .hero-subtitle{font-size:1.15rem;line-height:1.8;color:var(--muted);margin-bottom:24px;}
-    .hero-ops .btnrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
-    @media (prefers-color-scheme:dark){
-      .hero-ops{background:radial-gradient(circle at 8% 12%,rgba(83,128,224,.32),transparent 48%),radial-gradient(circle at 94% 88%,rgba(30,181,132,.24),transparent 50%),linear-gradient(135deg,rgba(52,84,151,.24),rgba(13,43,77,.15) 48%,rgba(15,111,82,.20)),var(--surface2)!important;}
-    }
-    @media (max-width:700px){.hero-ops .hero-title{font-size:2rem;}.hero-ops .hero-subtitle{font-size:1.05rem;}.hero-ops .btnrow{justify-content:center;}}
-  </style>
+.grid > .card{
+  background:#fff!important;
+  border:1px solid rgba(15,23,42,.08)!important;
+  color:#0f172a!important;
+  box-shadow:0 10px 28px rgba(15,23,42,.08)!important;
+  transition:transform .25s ease,box-shadow .25s ease!important;
+}
+.grid > .card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(15,23,42,.12)!important;}
+.grid > .card h2,.grid > .card h3{color:#071a33!important;}
+.grid > .card p{color:#64748b;}
+.grid > .card .btn{background:#1f3e8a!important;color:#fff!important;border:0!important;}
+.grid > .card .btn:hover{background:#17337a!important;}
+.grid[role="list"] > .card[style*="background-color"]{background:#2f3a44!important;color:#fff!important;}
+.grid[role="list"] > .card[style*="background-color"] h3{color:#fff!important;}
+.grid[role="list"] > .card[style*="background-color"] .btn{background:#fff!important;color:#0a7a57!important;border:1px solid rgba(10,122,87,.28)!important;}
+.grid[role="list"] > .card[style*="background-color"] .btn:hover{background:#f2f8f5!important;color:#0a7a57!important;}
+
+@media (prefers-color-scheme:dark){
+  body{background:radial-gradient(circle at top left,rgba(31,62,138,.18),transparent 45%),radial-gradient(circle at top right,rgba(10,122,87,.10),transparent 42%),linear-gradient(#101827,#0b1220)!important;}
+}
+@media(max-width:700px){
+  .hero-ops .hero-title{font-size:2rem;}
+  .hero-ops .hero-subtitle{font-size:1.05rem;}
+  .hero-ops .btnrow{justify-content:center;}
+}
+</style>
 </head>
-
 <body>
 <header class="site-header">
-  <a href="/" class="brand"><img src="/favicon.png" alt="Randy Anthony"><div class="titles"><strong>RANDY ANTHONY</strong><span>Operational Reliability Advisory</span></div></a>
-  <nav class="primary" aria-label="Primary Navigation">
-    <a href="/">Home</a><a href="/series/">Operational Visibility Series</a><a href="/services.html">Services</a><a href="/book/">Books</a><a href="/radio/">Radio</a><a class="header-cta" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a Consultation</a>
-  </nav>
-  <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">☰</button>
+<a href="/" class="brand"><img src="/favicon.png" alt="Randy Anthony"><div class="titles"><strong>RANDY ANTHONY</strong><span>Operational Reliability Advisory</span></div></a>
+<nav class="primary" aria-label="Primary Navigation"><a href="/">Home</a><a href="/series/">Operational Visibility Series</a><a href="/services.html">Services</a><a href="/book/">Books</a><a href="/radio/">Radio</a><a class="header-cta" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a Consultation</a></nav>
+<button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">☰</button>
 </header>
 <nav id="mobileNav" class="mobile-nav" aria-hidden="true"><a href="/">Home</a><a href="/series/">Operational Visibility Series</a><a href="/services.html">Services</a><a href="/book/">Books</a><a href="/radio/">Radio</a><a class="header-cta" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a Consultation</a></nav>
-
-<div class="wrap">
-<main>
-
+<div class="wrap"><main>
 <section class="hero hero-ops"><div class="book-cover-card"><img src="assets/26.png" alt="Operational Visibility Series"></div><div class="hero-text"><div class="kicker">Operational Visibility Series</div><h1 class="hero-title">Operational Visibility</h1><p class="hero-subtitle">A complete twenty-seven-part exploration of operational reliability, operational visibility, and the <i>Reaction Cascade Effect</i>.</p><p>Beginning with the foundational principles of reliable systems and culminating in Operational Visibility, this series examines how complex systems behave, adapt, recover, and support real-time decision-making under pressure.</p><p>Although inspired by decades of broadcast and streaming operations, the principles throughout this series apply equally to manufacturing, healthcare, transportation, utilities, logistics, finance, public safety, and every organization where operational continuity matters.</p><div class="btnrow" style="margin-top:18px;"><a class="btn" href="/series/week-01-reliability.html">Begin Part I</a><a class="btn" href="/series/week-15-visibility.html">Begin Part II</a></div></div></section>
-
 <section class="grid">
 <section class="card"><h2>Part I — Foundations</h2><p>The first fourteen articles establish the operational principles that support dependable systems. Topics include reliability, invisible work, dependencies, interfaces, redundancy, automation, accountability, prevention, and operational architecture.</p><p>Rather than focusing on specific technologies, Part I examines the disciplines that enable complex operational environments to remain stable, resilient, and predictable when systems are placed under real-world pressure.</p><p>Together these articles create the operational framework that every concept explored in Part II builds upon, providing the foundation for understanding visibility, system behavior, and the Reaction Cascade Effect.</p><p style="margin-top:16px;"><a class="btn" href="/series/week-01-reliability.html">Begin Part I →</a></p></section>
 <section class="card"><h2>Part II — Operational Architecture</h2><p>Part II expands those operational foundations through visibility, monitoring, decision-making, escalation, recovery, and the introduction of the <i>Reaction Cascade Effect</i>.</p><p>Building upon the principles established in Part I, this section explores how operators interpret information, recognize developing conditions, prioritize competing signals, and respond effectively as complex systems evolve under pressure.</p><p>The emphasis shifts from how reliable systems are built to how they are observed, understood, and managed in real time, where operational visibility becomes the foundation for confident decision-making and resilient performance.</p><p style="margin-top:16px;"><a class="btn" href="/series/week-15-visibility.html">Begin Part II →</a></p></section>
-
 <section class="card"><div style="display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;"><div style="flex:0 0 170px;text-align:center;"><img src="/assets/RCECoverWrap.png" alt="Reliability Is Not Improvised" style="width:170px;border-radius:12px;"></div><div style="flex:1;min-width:280px;"><h2>Reliability Is Not Improvised</h2><p>The Operational Architecture Series introduced the principles. <i>Reliability Is Not Improvised</i> brings those principles together into a single volume, expanding the discussion of operational reliability, operational visibility, resilience, and the complete Reaction Cascade Effect into one comprehensive reference.</p><p>Written for operational leaders, engineers, broadcast professionals, managers, and anyone responsible for mission-critical systems, the book extends the series with additional real-world examples, operational models, and practical applications.</p><p style="margin-top:20px;"><a class="btn" href="/book/newbook.html">Learn More →</a> <a class="btn" target="_blank" href="https://www.amazon.com/dp/B0GXLJQJZ5">Buy On Amazon →</a></p></div></div></section>
-
 <section class="card"><div style="display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;"><div style="flex:0 0 170px;text-align:center;"><img src="/assets/randy-anthony.jpg" alt="Randy Anthony" style="width:170px;height:255px;object-fit:cover;object-position:center top;border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.15);"></div><div style="flex:1;min-width:280px;"><h2>About Randy Anthony</h2><p>Randy Anthony is the creator of the Operational Architecture Series and author of <i>Reliability Is Not Improvised.</i> Drawing upon more than four decades of operational experience in broadcast, streaming, automation, workflow design, and master control, his work focuses on operational reliability, systems thinking, operational visibility, and decision-making within time-critical environments.</p><p>His writing, research, and advisory work are dedicated to helping organizations better understand how complex operational systems behave before, during, and after disruption.</p><p style="margin-top:20px;"><a class="btn" href="/book">Explore Other Publications →</a> <a class="btn" href="/services.html">Explore Services →</a></p></div></div></section>
 </section>
-
 <div class="grid" role="list">
-  <article class="card" role="listitem" aria-labelledby="g1" style="background-color:#2f3a44;color:#ffffff;">
-    <img src="/assets/LegalShield_logo.png" alt="LegalShield" style="display:block;width:220px;max-width:100%;height:auto;margin:0 auto 24px;">
-    <h3 id="g1">Sponsored by LegalShield</h3>
-    <p style="color:#cbd5e1;">Life is unpredictable. Legal questions aren't.</p>
-    <p style="color:#cbd5e1;">Whether you're protecting your family, growing a business, buying a home, reviewing a contract, or planning for the future, LegalShield provides affordable access to experienced attorneys without the uncertainty of expensive hourly legal fees.</p>
-    <p style="color:#cbd5e1;">Members receive legal consultation, document review, identity theft protection, and ongoing legal support designed to help individuals, families, entrepreneurs, and small businesses make confident decisions before problems become costly.</p>
-    <p style="margin-top:14px;"><a class="btn" href="/legal/">Explore LegalShield</a></p>
-  </article>
-  <article class="card" role="listitem" aria-labelledby="g2" style="background-color:#2f3a44;color:#ffffff;">
-    <img src="/assets/urme.png" alt="The Piety PayChain" style="display:block;width:220px;max-width:100%;height:auto;margin:0 auto 24px;">
-    <h3 id="g2">Sponsored by The Piety PayChain</h3>
-    <p style="color:#cbd5e1;">Piety Token &amp; PayChain is a digital currency built for real-world use — including payroll, debit card purchases, bill pay, and vendor payments.</p>
-    <p style="color:#cbd5e1;">Rather than focusing on speculation, it’s designed to support everyday financial activity inside a working payment system. With a fixed supply and a utility-driven ecosystem, the goal is to connect value to actual usage and participation — not market hype.</p>
-    <p style="margin-top:14px;"><a class="btn" href="/2026/">Learn More</a></p>
-  </article>
+<article class="card" role="listitem" aria-labelledby="g1" style="background-color:#2f3a44;color:#ffffff;"><img src="/assets/LegalShield_logo.png" alt="LegalShield" style="display:block;width:220px;max-width:100%;height:auto;margin:0 auto 24px;"><h3 id="g1">Sponsored by LegalShield</h3><p style="color:#cbd5e1;">Life is unpredictable. Legal questions aren't.</p><p style="color:#cbd5e1;">Whether you're protecting your family, growing a business, buying a home, reviewing a contract, or planning for the future, LegalShield provides affordable access to experienced attorneys without the uncertainty of expensive hourly legal fees.</p><p style="color:#cbd5e1;">Members receive legal consultation, document review, identity theft protection, and ongoing legal support designed to help individuals, families, entrepreneurs, and small businesses make confident decisions before problems become costly.</p><p style="margin-top:14px;"><a class="btn" href="/legal/">Explore LegalShield</a></p></article>
+<article class="card" role="listitem" aria-labelledby="g2" style="background-color:#2f3a44;color:#ffffff;"><img src="/assets/urme.png" alt="The Piety PayChain" style="display:block;width:220px;max-width:100%;height:auto;margin:0 auto 24px;"><h3 id="g2">Sponsored by The Piety PayChain</h3><p style="color:#cbd5e1;">Piety Token &amp; PayChain is a digital currency built for real-world use — including payroll, debit card purchases, bill pay, and vendor payments.</p><p style="color:#cbd5e1;">Rather than focusing on speculation, it’s designed to support everyday financial activity inside a working payment system. With a fixed supply and a utility-driven ecosystem, the goal is to connect value to actual usage and participation — not market hype.</p><p style="margin-top:14px;"><a class="btn" href="/2026/">Learn More</a></p></article>
 </div>
 </main>
-
-<footer>
-  <div>© <span id="year"></span> RANDI | The Randy Anthony Network &amp; Digital Interface •</div>
-  <div class="smallLinks"><a href="/">Home</a></div>
-</footer>
+<footer><div>© <span id="year"></span> RANDI | The Randy Anthony Network &amp; Digital Interface •</div><div class="smallLinks"><a href="/">Home</a></div></footer>
 </div>
 <script>document.getElementById("year").textContent=new Date().getFullYear();</script>
 <script>const btn=document.getElementById("mobileToggle"),panel=document.getElementById("mobileNav");if(btn&&panel){btn.addEventListener("click",()=>{const open=panel.classList.toggle("show");panel.setAttribute("aria-hidden",!open);btn.setAttribute("aria-expanded",open);});}</script>
