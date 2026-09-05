@@ -19,6 +19,63 @@
     .hero-ops ~ .grid > .card > div:has(.btn){display:flex;flex-direction:column;flex:1;}
     .hero-ops ~ .grid > .card > div:has(.btn) > div:has(.btn){display:flex;flex-direction:column;flex:1;}
     .hero-ops ~ .grid > .card > div:has(.btn) > div:has(.btn) > p:last-child{margin-top:auto!important;margin-bottom:0!important;}
+
+    /* Live Series hero visual layer. Kept here so it loads after series.css. */
+    .hero-ops{
+      position:relative;
+      overflow:hidden;
+      isolation:isolate;
+      background:
+        radial-gradient(circle at 8% 12%,rgba(45,94,190,.34) 0,rgba(45,94,190,.16) 23%,transparent 48%),
+        radial-gradient(circle at 94% 88%,rgba(10,150,104,.28) 0,rgba(10,150,104,.12) 25%,transparent 50%),
+        linear-gradient(135deg,rgba(31,62,138,.18) 0%,rgba(18,53,103,.08) 46%,rgba(10,122,87,.16) 100%),
+        var(--surface2) !important;
+      box-shadow:0 18px 44px rgba(0,0,0,.16);
+    }
+    .hero-ops::before{
+      content:"";
+      position:absolute;
+      z-index:0;
+      width:430px;
+      height:430px;
+      left:-185px;
+      top:-205px;
+      border-radius:50%;
+      border:54px solid rgba(72,116,210,.13);
+      box-shadow:0 0 0 42px rgba(72,116,210,.055),0 0 0 92px rgba(72,116,210,.025);
+      pointer-events:none;
+    }
+    .hero-ops::after{
+      content:"";
+      position:absolute;
+      z-index:0;
+      width:390px;
+      height:390px;
+      right:-180px;
+      bottom:-215px;
+      border-radius:50%;
+      border:48px solid rgba(22,166,118,.12);
+      box-shadow:0 0 0 40px rgba(22,166,118,.05),0 0 0 88px rgba(22,166,118,.022);
+      pointer-events:none;
+    }
+    .hero-ops .book-cover-card,.hero-ops .hero-text{position:relative;z-index:2;}
+    .hero-ops .book-cover-card::after{
+      content:"";
+      position:absolute;
+      z-index:-1;
+      inset:12% -4% -7% 8%;
+      border-radius:22px;
+      background:linear-gradient(145deg,rgba(31,62,138,.20),rgba(10,122,87,.15));
+      filter:blur(18px);
+    }
+    .hero-ops .kicker{display:inline-block;margin-bottom:10px;color:var(--accent2);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;}
+    .hero-ops .hero-title{margin:0 0 18px;font-size:clamp(2.3rem,4vw,3.3rem);line-height:1.08;letter-spacing:-1px;}
+    .hero-ops .hero-subtitle{font-size:1.15rem;line-height:1.8;color:var(--muted);margin-bottom:24px;}
+    .hero-ops .btnrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+    @media (prefers-color-scheme:dark){
+      .hero-ops{background:radial-gradient(circle at 8% 12%,rgba(83,128,224,.32),transparent 48%),radial-gradient(circle at 94% 88%,rgba(30,181,132,.24),transparent 50%),linear-gradient(135deg,rgba(52,84,151,.24),rgba(13,43,77,.15) 48%,rgba(15,111,82,.20)),var(--surface2)!important;}
+    }
+    @media (max-width:700px){.hero-ops .hero-title{font-size:2rem;}.hero-ops .hero-subtitle{font-size:1.05rem;}.hero-ops .btnrow{justify-content:center;}}
   </style>
 </head>
 
