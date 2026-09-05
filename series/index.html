@@ -13,17 +13,24 @@
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/series/series.css">
   <link rel="stylesheet" href="/css/public-nav.css">
+  <style>
+    /* Series landing page: keep each card's CTA anchored to the bottom. */
+    .hero-ops ~ .grid > .card > p:last-child{margin-top:auto!important;margin-bottom:0!important;}
+    .hero-ops ~ .grid > .card > div:has(.btn){display:flex;flex-direction:column;flex:1;}
+    .hero-ops ~ .grid > .card > div:has(.btn) > div:has(.btn){display:flex;flex-direction:column;flex:1;}
+    .hero-ops ~ .grid > .card > div:has(.btn) > div:has(.btn) > p:last-child{margin-top:auto!important;margin-bottom:0!important;}
+  </style>
 </head>
 
 <body>
 <header class="site-header">
   <a href="/" class="brand"><img src="/favicon.png" alt="Randy Anthony"><div class="titles"><strong>RANDY ANTHONY</strong><span>Operational Reliability Advisory</span></div></a>
   <nav class="primary" aria-label="Primary Navigation">
-    <a href="/">Home</a><a href="/series/">Operational Visibility Series</a><a href="/home.html">Services</a><a href="/book/">Books</a><a href="/radio/">Radio</a><a class="header-cta" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a Consultation</a>
+    <a href="/">Home</a><a href="/series/">Operational Visibility Series</a><a href="/services.html">Services</a><a href="/book/">Books</a><a href="/radio/">Radio</a><a class="header-cta" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a Consultation</a>
   </nav>
   <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">☰</button>
 </header>
-<nav id="mobileNav" class="mobile-nav" aria-hidden="true"><a href="/">Home</a><a href="/series/">Operational Visibility Series</a><a href="/home.html">Services</a><a href="/book/">Books</a><a href="/radio/">Radio</a><a class="header-cta" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a Consultation</a></nav>
+<nav id="mobileNav" class="mobile-nav" aria-hidden="true"><a href="/">Home</a><a href="/series/">Operational Visibility Series</a><a href="/services.html">Services</a><a href="/book/">Books</a><a href="/radio/">Radio</a><a class="header-cta" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a Consultation</a></nav>
 
 <div class="wrap">
 <main>
@@ -36,10 +43,26 @@
 
 <section class="card"><div style="display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;"><div style="flex:0 0 170px;text-align:center;"><img src="/assets/RCECoverWrap.png" alt="Reliability Is Not Improvised" style="width:170px;border-radius:12px;"></div><div style="flex:1;min-width:280px;"><h2>Reliability Is Not Improvised</h2><p>The Operational Architecture Series introduced the principles. <i>Reliability Is Not Improvised</i> brings those principles together into a single volume, expanding the discussion of operational reliability, operational visibility, resilience, and the complete Reaction Cascade Effect into one comprehensive reference.</p><p>Written for operational leaders, engineers, broadcast professionals, managers, and anyone responsible for mission-critical systems, the book extends the series with additional real-world examples, operational models, and practical applications.</p><p style="margin-top:20px;"><a class="btn" href="/book/newbook.html">Learn More →</a> <a class="btn" target="_blank" href="https://www.amazon.com/dp/B0GXLJQJZ5">Buy On Amazon →</a></p></div></div></section>
 
-<section class="card"><div style="display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;"><div style="flex:0 0 170px;text-align:center;"><img src="/assets/randy-anthony.jpg" alt="Randy Anthony" style="width:170px;height:255px;object-fit:cover;object-position:center top;border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.15);"></div><div style="flex:1;min-width:280px;"><h2>About Randy Anthony</h2><p>Randy Anthony is the creator of the Operational Architecture Series and author of <i>Reliability Is Not Improvised.</i> Drawing upon more than four decades of operational experience in broadcast, streaming, automation, workflow design, and master control, his work focuses on operational reliability, systems thinking, operational visibility, and decision-making within time-critical environments.</p><p>His writing, research, and advisory work are dedicated to helping organizations better understand how complex operational systems behave before, during, and after disruption.</p><p style="margin-top:20px;"><a class="btn" href="/book">Explore Other Publications →</a> <a class="btn" href="/home.html">Explore Services →</a></p></div></div></section>
+<section class="card"><div style="display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;"><div style="flex:0 0 170px;text-align:center;"><img src="/assets/randy-anthony.jpg" alt="Randy Anthony" style="width:170px;height:255px;object-fit:cover;object-position:center top;border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.15);"></div><div style="flex:1;min-width:280px;"><h2>About Randy Anthony</h2><p>Randy Anthony is the creator of the Operational Architecture Series and author of <i>Reliability Is Not Improvised.</i> Drawing upon more than four decades of operational experience in broadcast, streaming, automation, workflow design, and master control, his work focuses on operational reliability, systems thinking, operational visibility, and decision-making within time-critical environments.</p><p>His writing, research, and advisory work are dedicated to helping organizations better understand how complex operational systems behave before, during, and after disruption.</p><p style="margin-top:20px;"><a class="btn" href="/book">Explore Other Publications →</a> <a class="btn" href="/services.html">Explore Services →</a></p></div></div></section>
 </section>
 
-<div class="grid" role="list"><article class="card" role="listitem" aria-labelledby="g1" style="background-color:#2f3a44;color:#ffffff;"><h3 id="g1">SPONSORED BY: Legal Shield</h3><p style="color:#cbd5e1;">Legal Shield &amp; ID Shield<br>Protecting Families &amp; Businesses Nationwide.</p><p style="margin-top:14px;"><a class="btn" href="/legal/">Explore Plans →</a></p></article><article class="card" role="listitem" aria-labelledby="g2" style="background-color:#2f3a44;color:#ffffff;"><h3 id="g2">SPONSORED BY: The Piety PayChain</h3><p style="color:#cbd5e1;">Helping fund the Operational Architecture Series, future publications, and continuing research into operational reliability.</p><p style="margin-top:14px;"><a class="btn" href="/2026/">Explore PayChain →</a></p></article></div>
+<div class="grid" role="list">
+  <article class="card" role="listitem" aria-labelledby="g1" style="background-color:#2f3a44;color:#ffffff;">
+    <img src="/assets/LegalShield_logo.png" alt="LegalShield" style="display:block;width:220px;max-width:100%;height:auto;margin:0 auto 24px;">
+    <h3 id="g1">Sponsored by LegalShield</h3>
+    <p style="color:#cbd5e1;">Life is unpredictable. Legal questions aren't.</p>
+    <p style="color:#cbd5e1;">Whether you're protecting your family, growing a business, buying a home, reviewing a contract, or planning for the future, LegalShield provides affordable access to experienced attorneys without the uncertainty of expensive hourly legal fees.</p>
+    <p style="color:#cbd5e1;">Members receive legal consultation, document review, identity theft protection, and ongoing legal support designed to help individuals, families, entrepreneurs, and small businesses make confident decisions before problems become costly.</p>
+    <p style="margin-top:14px;"><a class="btn" href="/legal/">Explore LegalShield</a></p>
+  </article>
+  <article class="card" role="listitem" aria-labelledby="g2" style="background-color:#2f3a44;color:#ffffff;">
+    <img src="/assets/urme.png" alt="The Piety PayChain" style="display:block;width:220px;max-width:100%;height:auto;margin:0 auto 24px;">
+    <h3 id="g2">Sponsored by The Piety PayChain</h3>
+    <p style="color:#cbd5e1;">Piety Token &amp; PayChain is a digital currency built for real-world use — including payroll, debit card purchases, bill pay, and vendor payments.</p>
+    <p style="color:#cbd5e1;">Rather than focusing on speculation, it’s designed to support everyday financial activity inside a working payment system. With a fixed supply and a utility-driven ecosystem, the goal is to connect value to actual usage and participation — not market hype.</p>
+    <p style="margin-top:14px;"><a class="btn" href="/2026/">Learn More</a></p>
+  </article>
+</div>
 </main>
 
 <footer>
