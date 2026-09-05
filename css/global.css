@@ -4,51 +4,38 @@
 :root{
   --bg: #f6f7fb;
   --bg2:#eef2f8;
-
   --surface: rgba(15,28,46,0.035);
   --surface2: rgba(15,28,46,0.06);
-
   --text: rgba(10,15,25,0.92);
   --muted: rgba(10,15,25,0.72);
   --faint: rgba(10,15,25,0.60);
-
   --border: rgba(15,28,46,0.12);
-
   --accent:#1f3e8a;
   --accent2:#0a7a57;
-
   --shadow: 0 14px 36px rgba(0,0,0,0.12);
   --radius: 18px;
   --max: 1040px;
 }
-
 @media (prefers-color-scheme: dark){
   :root{
     --bg: #0f1c2e;
     --bg2:#0b1525;
-
     --surface: rgba(255,255,255,0.06);
     --surface2: rgba(255,255,255,0.10);
-
     --text: rgba(255,255,255,0.92);
     --muted: rgba(255,255,255,0.74);
     --faint: rgba(255,255,255,0.60);
-
     --border: rgba(255,255,255,0.13);
-
     --accent:#9bb9ff;
     --accent2:#b8ffde;
-
     --shadow: 0 14px 36px rgba(0,0,0,0.38);
   }
 }
-
 /* ============================================
    RESET + BODY
 ============================================ */
 *{box-sizing:border-box}
 html,body{height:100%}
-
 body{
   margin:0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
@@ -60,80 +47,46 @@ body{
   line-height:1.55;
   letter-spacing:0.1px;
 }
-
 a{color:inherit}
-
 /* ============================================
    LAYOUT
 ============================================ */
-.wrap{
-  max-width:var(--max);
-  margin:0 auto;
-  padding:22px 18px 40px;
-}
-
+.wrap{max-width:var(--max);margin:0 auto;padding:22px 18px 40px;}
 /* ============================================
    BUTTONS
 ============================================ */
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:11px 14px;
-  border-radius:14px;
-  text-decoration:none;
-  font-weight:680;
-  font-size:14px;
-  border:1px solid var(--border);
-  background: var(--surface2);
-  color:var(--accent2);
-}
-
-.btn:hover{
-  background: var(--surface);
-  color:var(--accent);
-}
-
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:14px;text-decoration:none;font-weight:680;font-size:14px;border:1px solid var(--border);background:var(--surface2);color:var(--accent2);}
+.btn:hover{background:var(--surface);color:var(--accent);}
 /* ============================================
    FOOTER
 ============================================ */
-footer{
-  margin-top:34px;
-  padding-top:18px;
-  border-top:1px solid var(--border);
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:space-between;
-  color:var(--faint);
-  font-size:12.5px;
-}
-footer .wrap{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  flex-wrap:wrap;
-  width:100%;
-}
-.smallLinks{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
+footer{margin-top:34px;padding-top:18px;border-top:1px solid var(--border);display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;color:var(--faint);font-size:12.5px;}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;width:100%;}
+.smallLinks{display:flex;gap:10px;flex-wrap:wrap;}
+.smallLinks a{color:var(--faint);text-decoration:none;padding:6px 8px;border-radius:10px;}
+.site-foot .smallLinks a{color:var(--muted);text-decoration:underline;}
+.smallLinks a:hover{background:var(--surface);color:var(--muted);}
 
-.smallLinks a{
-  color:var(--faint);
-  text-decoration:none;
-  padding:6px 8px;
-  border-radius:10px;
+/* ============================================
+   SERIES LANDING VISUAL FOUNDATION
+   Scoped to the live Series hero/components.
+============================================ */
+.hero-ops{position:relative;overflow:hidden;box-shadow:var(--shadow);background:linear-gradient(135deg,rgba(31,62,138,.08),rgba(10,122,87,.06)),var(--surface2);}
+.hero-ops::before{content:"";position:absolute;inset:-25% auto auto -10%;width:52%;height:90%;border-radius:50%;background:radial-gradient(circle,rgba(31,62,138,.16),transparent 68%);pointer-events:none;}
+.hero-ops::after{content:"";position:absolute;right:-8%;bottom:-35%;width:45%;height:90%;border-radius:50%;background:radial-gradient(circle,rgba(10,122,87,.12),transparent 70%);pointer-events:none;}
+.hero-ops .hero-text,.hero-ops .book-cover-card{position:relative;z-index:1;}
+.hero-ops .hero-title{margin:0 0 18px;font-size:clamp(2.3rem,4vw,3.3rem);line-height:1.08;letter-spacing:-1px;}
+.hero-ops .hero-subtitle{font-size:1.15rem;line-height:1.8;color:var(--muted);margin-bottom:24px;}
+.hero-ops .kicker{display:inline-block;margin-bottom:10px;color:var(--accent2);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;}
+.hero-ops .btnrow{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+.hero-ops .btn{box-shadow:0 6px 16px rgba(0,0,0,.08);}
+.hero-ops + .grid > .card{background:rgba(255,255,255,.72);box-shadow:0 8px 24px rgba(0,0,0,.07);}
+@media (prefers-color-scheme:dark){
+  .hero-ops{background:linear-gradient(135deg,rgba(155,185,255,.10),rgba(184,255,222,.07)),var(--surface2);}
+  .hero-ops + .grid > .card{background:rgba(255,255,255,.055);}
 }
-.site-foot .smallLinks a{
-  color:var(--muted);
-  text-decoration:underline;
-}
-.smallLinks a:hover{
-  background:var(--surface);
-  color:var(--muted);
+@media (max-width:700px){
+  .hero-ops .hero-title{font-size:2rem;}
+  .hero-ops .hero-subtitle{font-size:1.05rem;}
+  .hero-ops .btnrow{justify-content:center;}
 }
