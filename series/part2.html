@@ -8,20 +8,27 @@
   <link rel="icon" href="/favicon.png">
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/series/series.css">
-
   <meta name="description" content="Part II of the Operational Architecture Series — focusing on operational visibility and real-time system awareness." />
   <link rel="stylesheet" href="/css/public-nav.css">
+
+  <style>
+    .sponsor-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin:30px 0;}
+    .sponsor-card{background:#2f3a44;color:#fff;border-radius:16px;padding:24px;box-shadow:0 10px 28px rgba(15,23,42,.08);display:flex;flex-direction:column;}
+    .sponsor-card img{display:block;width:220px;max-width:100%;height:auto;margin:0 auto 24px;border-radius:12px;}
+    .sponsor-card h3{color:#fff;margin-bottom:12px;font-size:1.1rem;}
+    .sponsor-card p{color:#d7dee6;margin-bottom:20px;flex:1;}
+    .sponsor-card .btn{background:#fff;color:#0a7a57;border:1px solid rgba(10,122,87,.28);align-self:flex-start;}
+    .sponsor-card .btn:hover{background:#f2f8f5;color:#0a7a57;}
+    @media(max-width:900px){.sponsor-grid{grid-template-columns:1fr;}}
+    @media(max-width:640px){.sponsor-card img{width:200px;}}
+  </style>
 </head>
 
 <body>
-
 <header class="site-header">
   <a href="/" class="brand">
     <img src="/favicon.png" alt="Randy Anthony">
-    <div class="titles">
-      <strong>RANDY ANTHONY</strong>
-      <span>Operational Reliability Advisory</span>
-    </div>
+    <div class="titles"><strong>RANDY ANTHONY</strong><span>Operational Reliability Advisory</span></div>
   </a>
   <nav class="primary" aria-label="Primary Navigation">
     <a href="/">Home</a>
@@ -34,20 +41,13 @@
   <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">☰</button>
 </header>
 <nav id="mobileNav" class="mobile-nav" aria-hidden="true">
-  <a href="/">Home</a>
-  <a href="/series/">Operational Visibility Series</a>
-  <a href="/home.html">Services</a>
-  <a href="/book/">Books</a>
-  <a href="/radio/">Radio</a>
+  <a href="/">Home</a><a href="/series/">Operational Visibility Series</a><a href="/home.html">Services</a><a href="/book/">Books</a><a href="/radio/">Radio</a>
   <a class="header-cta" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a Consultation</a>
 </nav>
 
 <main class="wrap">
-
 <section class="hero hero-ops">
-  <div class="book-cover-card">
-    <img src="/assets/RCECoverWrap.png" alt="Part II — Operational Visibility">
-  </div>
+  <div class="book-cover-card"><img src="/assets/RCECoverWrap.png" alt="Part II — Operational Visibility"></div>
   <div class="hero-text">
     <div class="kicker">Operational Architecture Series</div>
     <h1 class="hero-title">Part II — Operational Visibility</h1>
@@ -78,61 +78,46 @@
       <li><a href="/series/week27-operational-visibility-synthesis.html">Week 27 — Operational Visibility as System Architecture</a></li>
     </ul>
   </aside>
-
   <section class="card">
     <h2>Topic Rotation — Part II</h2>
     <p>Part II builds on Part I by focusing on visibility in time-critical systems.</p>
     <p>Reliability depends not only on design and process, but on the ability to observe system behavior in real time.</p>
     <p>This phase examines how information moves through operational systems:</p>
-    <ul class="list">
-      <li>What signals are visible to operators</li>
-      <li>What information is delayed or obscured</li>
-      <li>How monitoring systems interpret events</li>
-      <li>Where alerting creates clarity or confusion</li>
-      <li>How decision-making is shaped by available data</li>
-    </ul>
+    <ul class="list"><li>What signals are visible to operators</li><li>What information is delayed or obscured</li><li>How monitoring systems interpret events</li><li>Where alerting creates clarity or confusion</li><li>How decision-making is shaped by available data</li></ul>
     <p>The focus shifts from structure to perception — from how systems are built to how they are understood under pressure.</p>
     <p>In time-critical environments, what is not visible often becomes the source of disruption.</p>
   </section>
 </div>
 
 <div class="sponsor-grid">
-  <article class="card" style="background-color:#2f3a44; color:#ffffff;">
+  <article class="sponsor-card">
     <img src="/assets/LegalShield_logo.png" alt="LegalShield">
     <h3>Sponsored by LegalShield</h3>
-    <p style="color:#cbd5e1;">Life is unpredictable. Legal questions aren't.</p>
-    <p style="color:#cbd5e1;">Whether you're protecting your family, growing a business, buying a home, reviewing a contract, or planning for the future, LegalShield provides affordable access to experienced attorneys without the uncertainty of expensive hourly legal fees.</p>
-    <p style="color:#cbd5e1;">Members receive legal consultation, document review, identity theft protection, and ongoing legal support designed to help individuals, families, entrepreneurs, and small businesses make confident decisions before problems become costly.</p>
-    <p style="margin-top:14px;"><a class="btn" href="/legal/">Explore LegalShield</a></p>
+    <p>Life is unpredictable. Legal questions aren't.</p>
+    <p>Whether you're protecting your family, growing a business, buying a home, reviewing a contract, or planning for the future, LegalShield provides affordable access to experienced attorneys without the uncertainty of expensive hourly legal fees.</p>
+    <p>Members receive legal consultation, document review, identity theft protection, and ongoing legal support designed to help individuals, families, entrepreneurs, and small businesses make confident decisions before problems become costly.</p>
+    <a class="btn" href="/legal/">Explore LegalShield</a>
   </article>
-  <article class="card" style="background-color:#2f3a44; color:#ffffff;">
-    <img src="/assets/urme.png" alt="The Piety PayChain">
-    <h3>Sponsored by The Piety PayChain</h3>
-    <p style="color:#cbd5e1;">Piety Token &amp; PayChain is a digital currency built for real-world use — including payroll, debit card purchases, bill pay, and vendor payments.</p>
-    <p style="color:#cbd5e1;">Rather than focusing on speculation, it’s designed to support everyday financial activity inside a working payment system. With a fixed supply and a utility-driven ecosystem, the goal is to connect value to actual usage and participation — not market hype.</p>
-    <p style="margin-top:14px;"><a class="btn" href="/2026/">Learn More</a></p>
+
+  <article class="sponsor-card">
+    <img src="/assets/mint-mobile-referral.webp" alt="Mint Mobile">
+    <h3>Sponsored by Mint Mobile</h3>
+    <p>Wireless savings are better when you can share them.</p>
+    <p>Mint Mobile offers affordable wireless service with flexible plans and premium coverage on the T-Mobile network. And if you refer a friend, there can be something in it for both of you.</p>
+    <p>With Mint's referral program, an eligible referral can earn your friend a $15 renewal credit while you receive a $45 renewal credit. Referrals are currently limited to four per calendar year.</p>
+    <a class="btn" href="https://www.mintmobile.com/">Refer a Friend</a>
   </article>
 </div>
 
 </main>
-
 <footer class="site-foot">
-  <div class="wrap">
-    <div>© <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.</div>
-    <div class="smallLinks"><a href="/">Home Page</a></div>
-  </div>
+  <div class="wrap"><div>© <span id="year"></span> Randy Anthony • Advisory • Operations • Strategy • All rights reserved.</div><div class="smallLinks"><a href="/">Home Page</a></div></div>
 </footer>
 
 <script>
   const btn = document.querySelector('.mobile-toggle');
   const panel = document.querySelector('.mobile-nav');
-  if (btn && panel) {
-    btn.addEventListener('click', () => {
-      const isOpen = panel.classList.toggle('show');
-      panel.setAttribute('aria-hidden', !isOpen);
-      btn.setAttribute('aria-expanded', isOpen);
-    });
-  }
+  if (btn && panel) { btn.addEventListener('click', () => { const isOpen = panel.classList.toggle('show'); panel.setAttribute('aria-hidden', !isOpen); btn.setAttribute('aria-expanded', isOpen); }); }
 </script>
 </body>
 </html>
