@@ -1,36 +1,172 @@
-.site-header{position:sticky!important;top:0;z-index:1000;display:flex;justify-content:space-between;align-items:center;min-height:60px;max-width:1040px;margin:10px auto 8px;padding:8px 22px;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);border-bottom:1px solid rgba(15,23,42,.08);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}.site-header .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#0f172a}.site-header .brand img{width:44px;height:44px;border-radius:12px}.site-header .titles strong{display:block!important;font-size:15px!important;font-weight:700!important;letter-spacing:.4px!important;line-height:1.2!important}.site-header .titles span{display:block!important;font-size:12px!important;color:#64748b!important;line-height:1.2!important}.site-header .primary{display:flex;align-items:center;gap:8px}.site-header .primary a{padding:8px 10px;border-radius:10px;text-decoration:none;color:#475569;font-weight:600;white-space:nowrap}.site-header .primary a:hover{background:#f4f6f9;color:#0f172a}.site-header .primary .header-cta{background:#1f3e8a;color:#fff;padding:10px 14px}.site-header .primary .header-cta:hover{background:#17337a;color:#fff}.site-header .mobile-toggle{display:none;background:none;border:0;cursor:pointer;font-size:1.5rem}.mobile-nav{display:none;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}.mobile-nav.show{display:block;position:fixed;top:68px;left:12px;right:12px;z-index:5000;background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:12px;padding:12px;box-shadow:0 18px 40px rgba(0,0,0,.18)}.mobile-nav a{display:block;padding:12px 10px;color:#0f172a;text-decoration:none;font-weight:600;border-radius:8px}.mobile-nav a:hover{background:#f4f6f9}.mobile-nav .header-cta{margin-top:6px;background:#1f3e8a;color:#fff}.mobile-nav .header-cta:hover{background:#17337a;color:#fff}@media (max-width:640px){.site-header .primary{display:none}.site-header .mobile-toggle{display:block}}
-html,body{margin:0}*,*:before,*:after{box-sizing:border-box}.site-footer{padding:38px 24px!important;margin-top:40px!important}.site-footer .footer-inner{max-width:1040px!important;margin:0 auto!important}.site-foot>.wrap{max-width:1040px!important}header.site-header{min-height:60px!important;max-width:1040px!important;margin:10px auto 8px!important;padding:8px 22px!important;gap:16px!important}
-/* Books sponsor logos: restore the larger presentation without changing other info-card images. */
-.info-card img[src="/assets/LegalShield_logo.png"],.info-card img[src="/assets/urme.png"]{width:260px!important;max-width:100%;height:auto!important;margin:0 auto 24px!important}
-/* Sponsor cards use real HTML images. Never generate a second logo with pseudo-elements. */
-.grid .card[aria-labelledby="g1"] h3::before,.grid .card[aria-labelledby="g4"] h3::before,.grid3 article.card.service h3::before{content:none!important;display:none!important;background:none!important;background-image:none!important}
-/* Standard sponsor link treatment. */
-.grid .card[aria-labelledby="g1"] .btn,.grid .card[aria-labelledby="g4"] .btn,.grid3 article.card.service a.btn{color:#0a7a57!important;text-decoration:none!important;background:rgba(255,255,255,.06)!important;border:1px solid rgba(10,122,87,.28)!important}
-.grid .card[aria-labelledby="g1"] .btn:hover,.grid .card[aria-labelledby="g4"] .btn:hover,.grid3 article.card.service a.btn:hover{color:#1f3e8a!important;background:rgba(255,255,255,.10)!important}
-/* Universal sponsor-card presentation. Sponsor body text, headings and CTA geometry are identical across Main, Series, Services, Radio and weekly Series pages. */
-.sponsor-card,.sponsor-grid article.card,.grid[role="list"] article.card:has(a[href="/legal/"]),.grid[role="list"] article.card:has(a[href="/2026/"]),.grid3 article.card.service:has(a[href="/legal/"]),.grid3 article.card.service:has(a[href="/2026/"]){font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif!important}
-.sponsor-card h3,.sponsor-grid article.card h3,.grid[role="list"] article.card:has(a[href="/legal/"]) h3,.grid[role="list"] article.card:has(a[href="/2026/"]) h3,.grid3 article.card.service:has(a[href="/legal/"]) h3,.grid3 article.card.service:has(a[href="/2026/"]) h3{font-size:17.6px!important;line-height:1.35!important;font-weight:700!important;color:#ffffff!important;margin-bottom:14px!important}
-.sponsor-card p,.sponsor-grid article.card p:not(:has(a)),.grid[role="list"] article.card:has(a[href="/legal/"]) p:not(:has(a)),.grid[role="list"] article.card:has(a[href="/2026/"]) p:not(:has(a)),.grid3 article.card.service:has(a[href="/legal/"]) p:not(:has(a)),.grid3 article.card.service:has(a[href="/2026/"]) p:not(:has(a)){font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif!important;font-size:16px!important;line-height:1.75!important;font-weight:400!important;color:#cbd5e1!important;margin-bottom:14px!important}
-.sponsor-card .btn,.sponsor-grid article.card a.btn,.grid[role="list"] article.card:has(a[href="/legal/"]) a.btn,.grid[role="list"] article.card:has(a[href="/2026/"]) a.btn,.grid3 article.card.service:has(a[href="/legal/"]) a.btn,.grid3 article.card.service:has(a[href="/2026/"]) a.btn{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:8px!important;padding:10px 16px!important;border-radius:12px!important;text-decoration:none!important;font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif!important;font-size:14px!important;line-height:1.2!important;font-weight:700!important;color:#ffffff!important;background:#0a7a57!important;border:1px solid #0a7a57!important;align-self:flex-start!important}
-.sponsor-card .btn:hover,.sponsor-grid article.card a.btn:hover,.grid[role="list"] article.card:has(a[href="/legal/"]) a.btn:hover,.grid[role="list"] article.card:has(a[href="/2026/"]) a.btn:hover,.grid3 article.card.service:has(a[href="/legal/"]) a.btn:hover,.grid3 article.card.service:has(a[href="/2026/"]) a.btn:hover{color:#ffffff!important;background:#086447!important;border-color:#086447!important;transform:translateY(-2px)!important}
-.sponsor-card img,.sponsor-grid article.card:has(img) img,.grid3 article.card.service:has(img[src="/assets/LegalShield_logo.png"]) img,.grid3 article.card.service:has(img[src="/assets/urme.png"]) img{width:260px!important;max-width:100%!important;height:auto!important;margin:0 auto 24px!important}
-@media (max-width:640px){.sponsor-card img,.sponsor-grid article.card:has(img) img,.grid3 article.card.service:has(img[src="/assets/LegalShield_logo.png"]) img,.grid3 article.card.service:has(img[src="/assets/urme.png"]) img{width:220px!important}}
-/* Weekly sponsor pseudo-content receives the same typography as the real sponsor copy. */
-.sponsor-grid article.card:has(a[href="/legal/"]) > p:not(:has(a))::after,.sponsor-grid article.card:has(a[href="/2026/"]) > p:not(:has(a))::after{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif!important;font-size:16px!important;line-height:1.75!important;font-weight:400!important;color:#cbd5e1!important}
-/* Keep the weekly pages' source text hidden while their canonical sponsor copy is rendered through the shared presentation layer. */
-.sponsor-grid article.card:not(:has(img)) > h3{font-size:0!important}
-.sponsor-grid article.card:not(:has(img)) > h3::after{font-size:17.6px!important;line-height:1.35!important;font-weight:700!important;color:#ffffff!important}
-.sponsor-grid article.card:not(:has(img)) > p:not(:has(a)){font-size:0!important;line-height:1.75!important;color:#cbd5e1!important}
-.sponsor-grid article.card:not(:has(img)) > p:not(:has(a))::after{font-size:16px!important;line-height:1.75!important;color:#cbd5e1!important}
-.sponsor-grid article.card:not(:has(img)) a.btn{font-size:0!important;color:#ffffff!important;background:#0a7a57!important}
-.sponsor-grid article.card:not(:has(img)) a.btn::after{font-size:14px!important;line-height:1.2!important;font-weight:700!important;color:#ffffff!important}
-/* Final sponsor standard: same dark card, white type, green CTA everywhere. */
-.sponsor-card,.sponsor-grid article.card,.grid[role="list"] article.card:has(a[href="/legal/"]),.grid[role="list"] article.card:has(a[href="/2026/"]),.grid3 article.card.service:has(a[href="/legal/"]),.grid3 article.card.service:has(a[href="/2026/"]),.info-card:has(a[href="/legal/"]),.info-card:has(a[href="/2026/"]){background:#2f3a44!important;color:#ffffff!important;border-color:rgba(255,255,255,.14)!important}
-.info-card:has(a[href="/legal/"]) h3,.info-card:has(a[href="/2026/"]) h3{color:#ffffff!important;font-size:17.6px!important;line-height:1.35!important;font-weight:700!important;margin-bottom:14px!important}
-.info-card:has(a[href="/legal/"]) p,.info-card:has(a[href="/2026/"]) p{color:#cbd5e1!important;font-size:16px!important;line-height:1.75!important}
-.info-card:has(a[href="/legal/"]) a.btn,.info-card:has(a[href="/2026/"]) a.btn{display:inline-flex!important;align-items:center!important;justify-content:center!important;padding:10px 16px!important;border-radius:12px!important;font-size:14px!important;line-height:1.2!important;font-weight:700!important;color:#ffffff!important;background:#0a7a57!important;border:1px solid #0a7a57!important}
-.info-card:has(a[href="/legal/"]) a.btn:hover,.info-card:has(a[href="/2026/"]) a.btn:hover{color:#ffffff!important;background:#086447!important;border-color:#086447!important}
-.sponsor-card .btn,.sponsor-grid article.card a.btn,.grid[role="list"] article.card:has(a[href="/legal/"]) a.btn,.grid[role="list"] article.card:has(a[href="/2026/"]) a.btn,.grid3 article.card.service:has(a[href="/legal/"]) a.btn,.grid3 article.card.service:has(a[href="/2026/"]) a.btn{background:#0a7a57!important;color:#ffffff!important;border:1px solid #0a7a57!important}
-/* Sponsor card vertical alignment: Series landing, Services and Radio only. Weekly Series pages use .sponsor-grid and are intentionally excluded. */
-.grid[role="list"] article.card:has(a[href="/legal/"]),.grid[role="list"] article.card:has(a[href="/2026/"]),.grid3 article.card.service:has(a[href="/legal/"]),.grid3 article.card.service:has(a[href="/2026/"]){display:flex!important;flex-direction:column!important;height:100%!important}
-.grid[role="list"] article.card:has(a[href="/legal/"]) > p:last-child,.grid[role="list"] article.card:has(a[href="/2026/"]) > p:last-child,.grid3 article.card.service:has(a[href="/legal/"]) > p:last-child,.grid3 article.card.service:has(a[href="/2026/"]) > p:last-child{margin-top:auto!important;margin-bottom:0!important}
+@import url("/css/sponsors.css");
+
+.site-header {
+  position: sticky !important;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 60px;
+  max-width: 1040px;
+  margin: 10px auto 8px;
+  padding: 8px 22px;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(15,23,42,.08);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.site-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #0f172a;
+}
+
+.site-header .brand img {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+}
+
+.site-header .titles strong {
+  display: block !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  letter-spacing: .4px !important;
+  line-height: 1.2 !important;
+}
+
+.site-header .titles span {
+  display: block !important;
+  font-size: 12px !important;
+  color: #64748b !important;
+  line-height: 1.2 !important;
+}
+
+.site-header .primary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.site-header .primary a {
+  padding: 8px 10px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #475569;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.site-header .primary a:hover {
+  background: #f4f6f9;
+  color: #0f172a;
+}
+
+.site-header .primary .header-cta {
+  background: #1f3e8a;
+  color: #fff;
+  padding: 10px 14px;
+}
+
+.site-header .primary .header-cta:hover {
+  background: #17337a;
+  color: #fff;
+}
+
+.site-header .mobile-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.mobile-nav {
+  display: none;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.mobile-nav.show {
+  display: block;
+  position: fixed;
+  top: 68px;
+  left: 12px;
+  right: 12px;
+  z-index: 5000;
+  background: #fff;
+  border: 1px solid rgba(15,23,42,.08);
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 18px 40px rgba(0,0,0,.18);
+}
+
+.mobile-nav a {
+  display: block;
+  padding: 12px 10px;
+  color: #0f172a;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+}
+
+.mobile-nav a:hover {
+  background: #f4f6f9;
+}
+
+.mobile-nav .header-cta {
+  margin-top: 6px;
+  background: #1f3e8a;
+  color: #fff;
+}
+
+.mobile-nav .header-cta:hover {
+  background: #17337a;
+  color: #fff;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+.site-footer {
+  padding: 38px 24px !important;
+  margin-top: 40px !important;
+}
+
+.site-footer .footer-inner {
+  max-width: 1040px !important;
+  margin: 0 auto !important;
+}
+
+.site-foot > .wrap {
+  max-width: 1040px !important;
+}
+
+header.site-header {
+  min-height: 60px !important;
+  max-width: 1040px !important;
+  margin: 10px auto 8px !important;
+  padding: 8px 22px !important;
+  gap: 16px !important;
+}
+
+@media (max-width: 640px) {
+  .site-header .primary {
+    display: none;
+  }
+
+  .site-header .mobile-toggle {
+    display: block;
+  }
+}
