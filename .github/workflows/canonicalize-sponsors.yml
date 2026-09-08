@@ -13,15 +13,74 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Canonicalize remaining sponsor cards
+      - name: Canonicalize sponsor cards
         shell: bash
         run: |
-          echo 'ZnJvbSBwYXRobGliIGltcG9ydCBQYXRoCmltcG9ydCByZQptaW50ID0gIiIiPGFydGljbGUgY2xhc3M9InNwb25zb3ItY2FyZCI+CiAgICAgIDxpbWcgY2xhc3M9InNwb25zb3ItbG9nbyIgc3JjPSIvYXNzZXRzL21pbnQtbW9iaWxlLXJlZmVycmFsLndlYnAiIGFsdD0iTWludCBNb2JpbGUiPgogICAgICA8aDM+U1BPTlNPUkVEIEJZOiBNaW50IE1vYmlsZTwvaDM+CiAgICAgIDxwPgogICAgICAgIFN3aXRjaCB0byBNaW50IE1vYmlsZSBhbmQgc3RvcCBvdmVycGF5aW5nIGZvciB3aXJlbGVzcyBzZXJ2aWNlLiA8YnI+IDxicj5JZiB5b3UncmUgdGlyZWQgb2Ygd2F0Y2hpbmcgeW91ciBwaG9uZSBiaWxsIHF1aWV0bHkgZWF0IGF3YXkgYXQgeW91ciBoYXJkLWVhcm5lZCBtb25leSwgTWludCBNb2JpbGUgb2ZmZXJzIGEgc2ltcGxlIHdheSB0byBjdXQgdGhhdCBleHBlbnNlIHdpdGhvdXQgZ2l2aW5nIHVwIHRoZSB3aXJlbGVzcyBzZXJ2aWNlIHlvdSBhY3R1YWxseSBuZWVkLjxicj4gPGJyPlVzZSBteSByZWZlcnJhbCBsaW5rIHdoZW4geW91IG1ha2UgdGhlIHN3aXRjaCwgYW5kIHlvdVx1MjAxOWxsIHJlY2VpdmUgPHN0cm9uZz4kMTUgaW4gcmVuZXdhbCBjcmVkaXQ8L3N0cm9uZz4gYXMgYSBsaXR0bGUgYm9udXMgZm9yIGdpdmluZyBNaW50IGEgdHJ5LgogICAgICA8L3A+CiAgICAgIDxhIGNsYXNzPSJzcG9uc29yLWN0YSIgaHJlZj0iaHR0cHM6Ly9teS5taW50bW9iaWxlLmNvbS9yZWZlci9YbWc0V2FLIj5HZXQgJDE1IFJlbmV3YWwgQ3JlZGl0IOKWiDwvYT4KICAgIDwvYXJ0aWNsZT4iIiIKbGVnYWwgPSAiIiI8YXJ0aWNsZSBjbGFzcz0ic3BvbnNvci1jYXJkIj4KICAgICAgPGltZyBjbGFzcz0ic3BvbnNvci1sb2dvIiBzcmM9Ii9hc3NldHMvTGVnYWxTaGllbGRfbG9nby5wbmciIGFsdD0iTGVnYWxTaGllbGQiPgogICAgICA8aDM+U1BPTlNPUkVEIEJZOiBMZWdhbCBTaGllbGQ8L2gzPgogICAgICA8cD4KICAgICAgICBMZWdhbCBTaGllbGQgJmFtcDsgSUQgU2hpZWxkPGJyPgogICAgICAgIFByb3RlY3RpbmcgRmFtaWxpZXMgJmFtcDsgQnVzaW5lc3NlcyBOYXRpb253aWRlLgogICAgICA8L3A+CiAgICAgIDxhIGNsYXNzPSJzcG9uc29yLWN0YSIgaHJlZj0iL2xlZ2FsLyI+RXhwbG9yZSBQbGFucyDigJQ8L2E+CiAgICA8L2FydGljbGU+IiIiCmdyaWQgPSAiXG4gIDxkaXYgY2xhc3M9XCJzcG9uc29yLWdyaWRcIj5cblxuIiArIGxlZ2FsICsgIlxuXG4iICsgbWludCArICJcblxuICA8L2Rpdj5cbiIKY2hhbmdlZD1bXQoKZm9yIHAgaW4gc29ydGVkKFBhdGgoInNlcmllcyIpLmdsb2IoIndlZWsqLmh0bWwiKSk6CiAgdD1wLnJlYWRfdGV4dChlbmNvZGluZz0idXRmLTgiKQogIGlmICJzcG9uc29yLWdyaWQiIG5vdCBpbiB0IG9yICgic3BvbnNvci1jYXJkIiBpbiB0IGFuZCAiU1BPTlNPUkVEIEJZOiBNaW50IE1vYmlsZSIgaW4gdCBhbmQgIlBpZXR5IFBheWNoYWluIiBub3QgaW4gdCk6IGNvbnRpbnVlCiAgbixtP3JlLnN1Ym4ocidcbiAgPGRpdiBjbGFzcz0ic3BvbnNvci1ncmlkIltePl0qPz5cbiAgPC9kaXY+XG5cbiA8L21haW4+JyxncmlkKyJcbiAgPC9tYWluPiIsdCxjb3VudD0xLGZsYWdzPXJlLlMpCiAgIyBmYWxsYmFjayBub3cgaGFzIGFuIGV4dHJhIHByb2JsZW0gaWYgdGhlIGFubm90YXRpb24gYmVsb3cgaXMgZXhhY3QsIHNvIHVzZSB0aGUgdmVyc2lvbiB3aXRob3V0IGFubm90YXRpb24KICBuLGM9cmUuc3VibihyJ1xuICA8ZGl2IGNsYXNzPSJzcG9uc29yLWdyaWQiW14+XSo+Lio/XG4gIDwvZGl2PlxuXG48L21haW4+JyxncmlkKyJcbiAgPC9tYWluPiIsdCxjb3VudD0xLGZsYWdzPXJlLlMpCiAgaWYgYzoKICAgIGlmICIvc3BvbnNvcnMvY3NzIiBub3QgaW4gbiA6IG5vbmUKICAgIGlmICIvc3BvbnNvcnMvY3NzIiBub3QgaW4gbiA6IG4gPSBuLnJlcGxhY2UoJzxsaW5rIHJlbD0ic3R5bGVzaGVldCIgaHJlZj0iL2Nzcy9wdWJsaWMtbmF2LmNzcyI+JyxJg0KICAgIHAud3JpdGVfdGV4dChuLGVuY29kaW5nPSJ1dGYtOCI7IGNoYW5nZWQuYXBwZW5kKHN0cihwKQ==' | base64 -d > /tmp/migrate.py
-          python3 -m py_compile /tmp/migrate.py
-          python3 /tmp/migrate.py
+          python3 <<'PY'
+          from pathlib import Path
+          import re
+
+          mint = '''<article class="sponsor-card">
+              <img class="sponsor-logo" src="/assets/mint-mobile-referral.webp" alt="Mint Mobile">
+              <h3>Sponsored by Mint Mobile</h3>
+              <p>Switch to Mint Mobile and stop overpaying for wireless service. <br> <br>If you're tired of watching your phone bill quietly eat away at your hard-earned money, Mint Mobile offers a simple way to cut that expense without giving up the wireless service you actually need.<br> <br>Use my referral link when you make the switch, and you’ll receive <strong>$15 in renewal credit</strong> as a little bonus for giving Mint a try.</p>
+              <a class="sponsor-cta" href="https://my.mintmobile.com/refer/Xmg4WaK">Get $15 Renewal Credit →</a>
+            </article>'''
+
+          legal = '''<article class="sponsor-card">
+              <img class="sponsor-logo" src="/assets/LegalShield_logo.png" alt="LegalShield">
+              <h3>SPONSORED BY: Legal Shield</h3>
+              <p>Legal Shield &amp; ID Shield<br>
+              Protecting Families &amp; Businesses Nationwide.</p>
+              <a class="sponsor-cta" href="/legal/">Explore Plans →</a>
+            </article>'''
+
+          grid = '<div class="sponsor-grid">\n\n            ' + legal + '\n\n            ' + mint + '\n\n          </div>'
+          changed = []
+
+          for path in sorted(Path('series').glob('week*.html')):
+              text = path.read_text(encoding='utf-8')
+              match = re.search(r'<div class="sponsor-grid"[\s\S]*?</div>', text)
+              if not match:
+                  continue
+              old = match.group(0)
+              if 'Piety Paychain' not in old and 'sponsor-card' in old and 'Mint Mobile' in old:
+                  continue
+              new = text[:match.start()] + grid + text[match.end():]
+              path.write_text(new, encoding='utf-8')
+              changed.append(str(path))
+
+          book = Path('book/index.html')
+          text = book.read_text(encoding='utf-8')
+          def book_card(m):
+              b = m.group(0)
+              if 'Mint Mobile' in b:
+                  return '<article class="info-card sponsor-card">\n              <img class="sponsor-logo" src="/assets/mint-mobile-referral.webp" alt="Mint Mobile">\n              <h3>Sponsored by Mint Mobile</h3>\n              <p>Switch to Mint Mobile and stop overpaying for wireless service. <br> <br>If you\'re tired of watching your phone bill quietly eat away at your hard-earned money, Mint Mobile offers a simple way to cut that expense without giving up the wireless service you actually need.<br> <br>Use my referral link when you make the switch, and you’ll receive <strong>$15 in renewal credit</strong> as a little bonus for giving Mint a try.</p>\n              <a class="sponsor-cta" href="https://my.mintmobile.com/refer/Xmg4WaK">Get $15 Renewal Credit →</a>\n            </article>'
+              if 'Sponsored by LegalShield' in b:
+                  return '<article class="info-card sponsor-card">\n              <img class="sponsor-logo" src="/assets/LegalShield_logo.png" alt="LegalShield">\n              <h3>Sponsored by LegalShield</h3>\n              <p>Life is unpredictable. Legal questions aren\'t.</p>\n              <p>Whether you\'re protecting your family, growing a business, buying a home, reviewing a contract, or planning for the future, LegalShield provides affordable access to experienced attorneys without the uncertainty of expensive hourly legal fees.</p>\n              <p>Members receive legal consultation, document review, identity theft protection, and ongoing legal support designed to help individuals, families, entrepreneurs, and small businesses make confident decisions before problems become costly.</p>\n              <a class="sponsor-cta" href="/legal/">Explore LegalShield</a>\n            </article>'
+              return b
+          new, count = re.subn(r'<article class="info-card">[\s\S]*?</article>', book_card, text)
+          if count and new != text:
+              book.write_text(new, encoding='utf-8')
+              changed.append('book/index.html')
+
+          services = Path('services.html')
+          text = services.read_text(encoding='utf-8')
+          def service_card(m):
+              b = m.group(0)
+              if 'Mint Mobile' in b:
+                  return '<article class="sponsor-card">\n              <img class="sponsor-logo" src="/assets/mint-mobile-referral.webp" alt="Mint Mobile">\n              <h3>Sponsored by Mint Mobile</h3>\n              <p>Switch to Mint Mobile and stop overpaying for wireless service. <br> <br>If you\'re tired of watching your phone bill quietly eat away at your hard-earned money, Mint Mobile offers a simple way to cut that expense without giving up the wireless service you actually need.<br> <br>Use my referral link when you make the switch, and you’ll receive <strong>$15 in renewal credit</strong> as a little bonus for giving Mint a try.</p>\n              <a class="sponsor-cta" href="https://my.mintmobile.com/refer/Xmg4WaK">Get $15 Renewal Credit →</a>\n            </article>'
+              return '<article class="sponsor-card">\n              <img class="sponsor-logo" src="/assets/LegalShield_logo.png" alt="LegalShield">\n              <h3>Sponsored by LegalShield</h3>\n              <p>Life is unpredictable. Legal questions aren\'t.</p>\n              <p>Whether you\'re protecting your family, growing a business, buying a home, reviewing a contract, or planning for the future, LegalShield provides affordable access to experienced attorneys without the uncertainty of expensive hourly legal fees.</p>\n              <p>Members receive legal consultation, document review, identity theft protection, and ongoing legal support designed to help individuals, families, entrepreneurs, and small businesses make confident decisions before problems become costly.</p>\n              <a class="sponsor-cta" href="/legal/">Explore LegalShield</a>\n            </article>'
+          new, count = re.subn(r'<article class="card service sponsor-copy"[^>]*>[\s\S]*?</article>', service_card, text)
+          if count and new != text:
+              services.write_text(new, encoding='utf-8')
+              changed.append('services.html')
+
+          print('\n'.join(changed))
+          PY
           if git diff --quiet; then exit 0; fi
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add series/*.html book/index.html services.html
-          git commit -m "Canonicalize remaining sponsor cards"
+          git commit -m "Canonicalize sponsor cards"
           git push
