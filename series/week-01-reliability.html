@@ -4,171 +4,27 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Week 1 — Reliability | Randy Anthony</title>
-
   <link rel="icon" href="/favicon.png">
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/series/series.css">
-
   <meta name="description" content="Week 1 — Reliability: What time-critical operations teach about preventing failure through structure, clarity, and disciplined execution." />
   <link rel="stylesheet" href="/css/public-nav.css">
 </head>
-
 <body>
-
 <header class="site-header">
-  <a href="/" class="brand">
-    <img src="/favicon.png" alt="Randy Anthony">
-    <div class="titles">
-      <strong>RANDY ANTHONY</strong>
-      <span>Operational Reliability Advisory</span>
-    </div>
-  </a>
-  <nav class="primary" aria-label="Primary Navigation">
-    <a href="/">Home</a>
-    <a href="/series/">Operational Visibility Series</a>
-    <a href="/services.html">Services</a>
-    <a href="/book/">Books</a>
-    <a href="/radio/">Radio</a>
-    <a class="header-cta" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a Consultation</a>
-  </nav>
+  <a href="/" class="brand"><img src="/favicon.png" alt="Randy Anthony"><div class="titles"><strong>RANDY ANTHONY</strong><span>Operational Reliability Advisory</span></div></a>
+  <nav class="primary" aria-label="Primary Navigation"><a href="/">Home</a><a href="/series/">Operational Visibility Series</a><a href="/services.html">Services</a><a href="/book/">Books</a><a href="/radio/">Radio</a><a class="header-cta" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a Consultation</a></nav>
   <button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">☰</button>
 </header>
-<nav id="mobileNav" class="mobile-nav" aria-hidden="true">
-  <a href="/">Home</a>
-  <a href="/series/">Operational Visibility Series</a>
-  <a href="/services.html">Services</a>
-  <a href="/book/">Books</a>
-  <a href="/radio/">Radio</a>
-  <a class="header-cta" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a Consultation</a>
-</nav>
-
-<!-- ================= MAIN ================= -->
+<nav id="mobileNav" class="mobile-nav" aria-hidden="true"><a href="/">Home</a><a href="/series/">Operational Visibility Series</a><a href="/services.html">Services</a><a href="/book/">Books</a><a href="/radio/">Radio</a><a class="header-cta" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a Consultation</a></nav>
 <main class="wrap">
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="kicker">Quarter 1 · Week 1</div>
-
-    <h1 class="hero-title">
-      What Time-Critical Operations Teach You About Reliability
-    </h1>
-
-    <p class="meta">
-      Topic word: Reliability ·
-      <a href="https://www.linkedin.com/posts/randy-anthony-07547410b_what-time-critical-operations-teach-you-about-activity-7423019117747765248-XNzH?utm_source=share&utm_medium=member_desktop&rcm=ACoAABunslkBFatGOuGkV8R5dPmSEp8H4KCG7pQ" target="_blank" rel="noopener">
-        View on LinkedIn
-      </a>
-    </p>
-  </section>
-
-  <!-- CONTENT -->
-  <section class="card body split-post">
-
-    <img src="/series/assets/week-01-reliability-is-intentional.png"
-         alt="Week 1 — Reliability is intentional"
-         class="post-image">
-
-    <div class="post-text">
-
-      <p>
-        In time-critical environments, reliability isn’t about reacting quickly — it’s about preventing visible failure in the first place.
-      </p>
-
-      <p>
-        Most disruptions can be traced to small, preventable breakdowns in workflow clarity, documentation, or communication.
-      </p>
-
-      <p>
-        The real work happens before anything goes wrong: anticipating constraints, understanding system dependencies, and maintaining disciplined execution under pressure.
-      </p>
-
-      <p>
-        Over time, you learn that calm decision-making is more valuable than speed, and consistency matters more than intensity.
-      </p>
-
-      <p>
-        Whether in live broadcast, streaming operations, or any complex system, the principles are the same: precision, preparation, and accountability.
-      </p>
-
-      <p>
-        Reliability is rarely dramatic — but it’s always intentional.
-      </p>
-
-    </div>
-
-  </section>
-
-  <!-- NAVIGATION -->
-  <section class="split">
-
-    <div>
-      <!-- No previous page -->
-    </div>
-
-    <div>
-      <a class="btn" href="/series/week-02-invisible-work.html">
-        Next → Week 2 — Invisible Work
-      </a>
-    </div>
-
-  </section>
-
-  <!-- SPONSORS -->
-  <div class="sponsor-grid" role="list">
-
-    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
-      <h3>SPONSORED BY: Legal Shield</h3>
-      <p style="color:#cbd5e1;">
-        Legal Shield & ID Shield<br>
-        Protecting Families & Businesses Nationwide.
-      </p>
-      <p style="margin-top:12px">
-        <a class="btn" href="/legal/">Explore Plans →</a>
-      </p>
-    </article>
-
-    <article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;">
-      <h3>SPONSORED BY: The Piety Paychain</h3>
-      <p style="color:#cbd5e1;">
-        Helping to fund these pages.<br>
-        Learn more about the Piety Paychain
-      </p>
-      <p style="margin-top:12px">
-        <a class="btn" href="/2026/">Explore Paychain →</a>
-      </p>
-    </article>
-
-  </div>
-
-</main>
-
-<!-- FOOTER -->
-<footer class="site-foot">
-  <div class="wrap">
-    <div>
-      © <span id="year"></span> | RANDI | Randy Anthony Network &amp; Digital Interface |
-    </div>
-
-    <div class="smallLinks">
-      <a href="/">Home</a>
-    </div>
-  </div>
-</footer>
-
-<!-- MOBILE NAV SCRIPT -->
-<script>
-  const btn = document.querySelector('.mobile-toggle');
-  const panel = document.querySelector('.mobile-nav');
-
-  if (btn && panel) {
-    btn.addEventListener('click', () => {
-      const isOpen = panel.classList.toggle('show');
-      panel.setAttribute('aria-hidden', !isOpen);
-      btn.setAttribute('aria-expanded', isOpen);
-    });
-  }
-</script>
-
-<script>document.querySelectorAll('#year').forEach(el => el.textContent = new Date().getFullYear());</script>
-</body>
-</html>
+<section class="hero"><div class="kicker">Quarter 1 · Week 1</div><h1 class="hero-title">What Time-Critical Operations Teach You About Reliability</h1><p class="meta">Topic word: Reliability · <a href="https://www.linkedin.com/posts/randy-anthony-07547410b_what-time-critical-operations-teach-you-about-activity-7423019117747765248-XNzH?utm_source=share&utm_medium=member_desktop&rcm=ACoAABunslkBFatGOuGkV8R5dPmSEp8H4KCG7pQ" target="_blank" rel="noopener">View on LinkedIn</a></p></section>
+<section class="card body split-post"><img src="/series/assets/week-01-reliability-is-intentional.png" alt="Week 1 — Reliability is intentional" class="post-image"><div class="post-text"><p>In time-critical environments, reliability isn’t about reacting quickly — it’s about preventing visible failure in the first place.</p><p>Most disruptions can be traced to small, preventable breakdowns in workflow clarity, documentation, or communication.</p><p>The real work happens before anything goes wrong: anticipating constraints, understanding system dependencies, and maintaining disciplined execution under pressure.</p><p>Over time, you learn that calm decision-making is more valuable than speed, and consistency matters more than intensity.</p><p>Whether in live broadcast, streaming operations, or any complex system, the principles are the same: precision, preparation, and accountability.</p><p>Reliability is rarely dramatic — but it’s always intentional.</p></div></section>
+<section class="split"><div></div><div><a class="btn" href="/series/week-02-invisible-work.html">Next → Week 2 — Invisible Work</a></div></section>
+<div class="sponsor-grid" role="list">
+<article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;"><h3>SPONSORED BY: Legal Shield</h3><p style="color:#cbd5e1;">Legal Shield & ID Shield<br>Protecting Families & Businesses Nationwide.</p><p style="margin-top:12px"><a class="btn" href="/legal/">Explore Plans →</a></p></article>
+<article class="card" role="listitem" style="background-color:#2f3a44; color:#ffffff;"><img src="/assets/mint-mobile-referral.webp" alt="Mint Mobile" style="display:block;width:220px;height:140px;object-fit:contain;margin:0 auto 24px;"><h3>SPONSORED BY: Mint Mobile</h3><p style="color:#cbd5e1;">Switch to Mint Mobile and stop overpaying for wireless service. <br> <br>If you're tired of watching your phone bill quietly eat away at your hard-earned money, Mint Mobile offers a simple way to cut that expense without giving up the wireless service you actually need.<br> <br>Use my referral link when you make the switch, and you’ll receive <strong>$15 in renewal credit</strong> as a little bonus for giving Mint a try.</p><p style="margin-top:12px"><a class="btn" href="https://my.mintmobile.com/refer/Xmg4WaK">Get $15 Renewal Credit →</a></p></article>
+</div></main>
+<footer class="site-foot"><div class="wrap"><div>© <span id="year"></span> | RANDI | Randy Anthony Network &amp; Digital Interface |</div><div class="smallLinks"><a href="/">Home</a></div></div></footer>
+<script>const btn=document.querySelector('.mobile-toggle');const panel=document.querySelector('.mobile-nav');if(btn&&panel){btn.addEventListener('click',()=>{const isOpen=panel.classList.toggle('show');panel.setAttribute('aria-hidden',!isOpen);btn.setAttribute('aria-expanded',isOpen);});}</script><script>document.querySelectorAll('#year').forEach(el => el.textContent = new Date().getFullYear());</script>
+</body></html>
