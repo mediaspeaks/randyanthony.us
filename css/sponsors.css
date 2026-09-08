@@ -14,11 +14,10 @@
    </div>
 
    Sponsor identity and copy remain in page HTML.
-   This file controls presentation only.
 
-   The compatibility selectors at the bottom are temporary migration support.
-   They allow existing sponsor markup to use the same visual system while pages
-   are converted to the canonical structure. They can be removed after migration.
+   This file controls the shared sponsor presentation layer.
+   Compatibility selectors remain temporarily so legacy sponsor markup
+   stays visually consistent during migration.
 */
 
 .sponsor-grid {
@@ -31,7 +30,7 @@
 .sponsor-card {
   background: #2f3a44;
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: none;
   border-radius: 16px;
   padding: 24px;
   box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
@@ -42,28 +41,29 @@
 
 .sponsor-card .sponsor-logo {
   display: block;
-  width: 260px;
+  width: 220px;
   max-width: 100%;
   height: 140px;
   object-fit: contain;
   margin: 0 auto 24px;
+  border-radius: 12px;
 }
 
 .sponsor-card h3 {
-  margin: 0 0 14px;
+  margin: 0 0 12px;
   color: #ffffff;
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 17.6px;
+  font-size: 1.1rem;
   line-height: 1.35;
   font-weight: 700;
 }
 
 .sponsor-card p {
-  margin: 0 0 14px;
-  color: #cbd5e1;
+  margin: 0 0 20px;
+  color: #d7dee6;
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.75;
+  line-height: 1.6;
   font-weight: 400;
 }
 
@@ -75,10 +75,10 @@
   align-self: flex-start;
   margin-top: auto;
   padding: 10px 16px;
-  border: 1px solid #0a7a57;
+  border: 1px solid rgba(10, 122, 87, 0.28);
   border-radius: 12px;
-  background: #0a7a57;
-  color: #ffffff;
+  background: #ffffff;
+  color: #0a7a57;
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.2;
@@ -88,9 +88,9 @@
 }
 
 .sponsor-card .sponsor-cta:hover {
-  background: #086447;
-  border-color: #086447;
-  color: #ffffff;
+  background: #f2f8f5;
+  border-color: rgba(10, 122, 87, 0.28);
+  color: #0a7a57;
   transform: translateY(-2px);
 }
 
@@ -109,7 +109,7 @@
 .info-card:has(a[href="/2026/"]) {
   background: #2f3a44 !important;
   color: #ffffff !important;
-  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border: none !important;
   border-radius: 16px !important;
   padding: 24px !important;
   box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08) !important;
@@ -126,10 +126,10 @@
 .grid3 > article.card.service:has(a[href="/2026/"]) h3,
 .info-card:has(a[href="/legal/"]) h3,
 .info-card:has(a[href="/2026/"]) h3 {
-  margin: 0 0 14px !important;
+  margin: 0 0 12px !important;
   color: #ffffff !important;
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
-  font-size: 17.6px !important;
+  font-size: 1.1rem !important;
   line-height: 1.35 !important;
   font-weight: 700 !important;
 }
@@ -141,10 +141,10 @@
 .grid3 > article.card.service:has(a[href="/2026/"]) p,
 .info-card:has(a[href="/legal/"]) p,
 .info-card:has(a[href="/2026/"]) p {
-  color: #cbd5e1 !important;
+  color: #d7dee6 !important;
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
   font-size: 16px !important;
-  line-height: 1.75 !important;
+  line-height: 1.6 !important;
 }
 
 .sponsor-grid > article.card img,
@@ -155,11 +155,12 @@
 .info-card:has(a[href="/legal/"]) img,
 .info-card:has(a[href="/2026/"]) img {
   display: block !important;
-  width: 260px !important;
+  width: 220px !important;
   max-width: 100% !important;
   height: 140px !important;
   object-fit: contain !important;
   margin: 0 auto 24px !important;
+  border-radius: 12px !important;
 }
 
 .sponsor-grid > article.card > p:last-child,
@@ -185,10 +186,10 @@
   justify-content: center !important;
   gap: 8px !important;
   padding: 10px 16px !important;
-  border: 1px solid #0a7a57 !important;
+  border: 1px solid rgba(10, 122, 87, 0.28) !important;
   border-radius: 12px !important;
-  background: #0a7a57 !important;
-  color: #ffffff !important;
+  background: #ffffff !important;
+  color: #0a7a57 !important;
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
   font-size: 14px !important;
   line-height: 1.2 !important;
@@ -203,9 +204,9 @@
 .grid3 > article.card.service:has(a[href="/2026/"]) a.btn:hover,
 .info-card:has(a[href="/legal/"]) a.btn:hover,
 .info-card:has(a[href="/2026/"]) a.btn:hover {
-  background: #086447 !important;
-  border-color: #086447 !important;
-  color: #ffffff !important;
+  background: #f2f8f5 !important;
+  border-color: rgba(10, 122, 87, 0.28) !important;
+  color: #0a7a57 !important;
   transform: translateY(-2px) !important;
 }
 
