@@ -13,13 +13,8 @@ jobs:
         run: |
           python - <<'PY'
           from pathlib import Path
-
-          sponsor = '''<div class="book-sponsor-row">
-            <section>
-              <h2>Get the Book</h2>
-              <p>Available now on Amazon in Kindle and paperback formats.</p>
-              <a href="https://www.amazon.com/dp/B0GXLJQJZ5" class="btn btnPrimary" target="_blank" rel="noopener">Buy on Amazon</a>
-            </section>
+          import re
+          sponsor='''<div class="sponsor-grid" style="margin-top:48px;">
             <article class="sponsor-card" role="listitem">
               <img class="sponsor-logo" src="/assets/LegalShield_logo.png" alt="LegalShield">
               <h3>Sponsored by LegalShield</h3>
@@ -35,27 +30,30 @@ jobs:
               <a class="sponsor-cta" href="https://my.mintmobile.com/refer/Xmg4WaK">Get $15 Renewal Credit →</a>
             </article>
           </div>'''
-
-          for name in ('book/fm.html', 'book/newbook.html'):
-              p = Path(name)
-              t = p.read_text()
+          body_css='''body{
+            margin:0;
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            color:var(--text);
+            line-height:1.55;
+            letter-spacing:0.1px;
+          }
+          '''
+          for name in ('book/fm.html','book/newbook.html'):
+              p=Path(name); t=p.read_text()
               if '/css/sponsors.css' not in t:
-                  marker = '<link rel="stylesheet" href="/css/public-nav.css">'
-                  t = t.replace(marker, marker + '\n<link rel="stylesheet" href="/css/sponsors.css">', 1)
-              if 'font-family: ui-sans-serif, system-ui' not in t[t.find('<style>'):t.find('</style>')]:
-                  marker = '/* --------------------------------------------------\n   BUTTONS\n-------------------------------------------------- */'
-                  if marker in t:
-                      css = '''body{\n  margin:0;\n  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;\n  color:var(--text);\n  line-height:1.55;\n  letter-spacing:0.1px;\n}\n\n'''
-                      t = t.replace(marker, css + marker, 1)
-                  else:
-                      t = t.replace('<style>', '<style>\nbody{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.55;letter-spacing:0.1px;}\n', 1)
-              a = t.index('<div class="book-sponsor-row">')
-              b = t.index('</div>\n<footer', a) if '</div>\n<footer' in t[a:] else t.index('</div>\n\n<footer', a) + 6
-              if b < a:
-                  raise RuntimeError(f'Could not locate sponsor row end in {name}')
-              if t[b:b+6] == '</div>':
-                  b += 6
-              t = t[:a] + sponsor + t[b:]
+                  marker='<link rel="stylesheet" href="/css/public-nav.css">'
+                  t=t.replace(marker,marker+'\n<link rel="stylesheet" href="/css/sponsors.css">',1)
+              start=t.find('<style>'); end=t.find('</style>',start)
+              css=t[start:end]
+              if 'font-family: ui-sans-serif, system-ui' not in css:
+                  t=t[:start]+css.replace('<style>','<style>\n'+body_css,1)+t[end:]
+              a=t.index('<div class="book-sponsor-row">')
+              b=t.index('</div>\n<footer',a) if '</div>\n<footer' in t[a:] else t.index('</div>\n\n<footer',a)
+              t=t[:a]+sponsor+t[b:]
+              t=re.sub(r'\.book-sponsor-row\{[^}]*\}\s*','',t,count=1)
+              t=re.sub(r'@media\(max-width:860px\)\{\.book-hero-inner,\.book-grid,\.book-sponsor-row\{grid-template-columns:1fr\}\}\s*','',t,count=1)
+              t=re.sub(r'\.book-sponsor-row>section\{[^}]*\}\s*','',t,count=1)
+              t=re.sub(r'\.book-sponsor-row>\.sponsor-card\{[^}]*\}\s*','',t,count=1)
               p.write_text(t)
           PY
           git config user.name github-actions[bot]
