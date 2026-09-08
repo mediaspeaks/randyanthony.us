@@ -1,0 +1,84 @@
+name: Fix LegalShield sponsor copy
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Repair affected sponsor cards
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          files = [
+              'series/week-01-reliability.html',
+              'series/week-02-invisible-work.html',
+              'series/week-03-composure.html',
+              'series/week-04-dependencies.html',
+              'series/week-05-interfaces.html',
+              'series/week-06-missing-content.html',
+              'series/week19-compressed-decision-windows.html',
+              'series/week20-operational-drift.html',
+              'series/week21-false-recovery.html',
+              'series/week22-control-surface-vs-system-state.html',
+              'series/week23-signal-prioritization.html',
+              'series/week24-interface-fragility.html',
+              'series/week25-recovery-architecture.html',
+              'series/week26-decision-load-under-pressure.html',
+              'series/week27-operational-visibility-synthesis.html',
+          ]
+
+          inner = '''<img class="sponsor-logo" src="/assets/LegalShield_logo.png" alt="LegalShield">
+          <h3>Sponsored by LegalShield</h3>
+          <p>Life is unpredictable. Legal questions aren't.</p>
+          <p>Whether you're protecting your family, growing a business, buying a home, reviewing a contract, or planning for the future, LegalShield provides affordable access to experienced attorneys without the uncertainty of expensive hourly legal fees.</p>
+          <p>Members receive legal consultation, document review, identity theft protection, and ongoing legal support designed to help individuals, families, entrepreneurs, and small businesses make confident decisions before problems become costly.</p>
+          <a class="sponsor-cta" href="/legal/">Explore Plans →</a>'''
+
+          changed = []
+          pattern = re.compile(r'(<article[^>]*>).*?(?=</article>)', re.I | re.S)
+          for name in files:
+              path = Path(name)
+              text = path.read_text(encoding='utf-8')
+              matches = list(pattern.finditer(text))
+              target = None
+              for m in matches:
+                  if 'LegalShield_logo.png' in m.group(0):
+                      target = m
+                      break
+              if target is None:
+                  raise SystemExit(f'LegalShield sponsor article not found: {name}')
+              replacement = target.group(1) + '\n' + inner + '\n  '
+              new_text = text[:target.start()] + replacement + text[target.end():]
+              if new_text != text:
+                  path.write_text(new_text, encoding='utf-8')
+                  changed.append(name)
+
+          print('Changed files:')
+          for name in changed:
+              print(name)
+          if len(changed) != len(files):
+              raise SystemExit('Not all targeted files changed.')
+          PY
+
+      - name: Commit repair
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add series/week-*.html
+          git commit -m "Restore full LegalShield sponsor copy"
+          git push origin HEAD:${{ github.head_ref }}
