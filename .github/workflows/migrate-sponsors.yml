@@ -1,0 +1,69 @@
+name: Migrate sponsor cards
+
+on:
+  push:
+    branches:
+      - sponsor-canonical-migration
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Canonicalize remaining sponsor cards
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          mint = '''    <article class="sponsor-card">
+          <img class="sponsor-logo" src="/assets/mint-mobile-referral.webp" alt="Mint Mobile">
+          <h3>SPONSORED BY: Mint Mobile</h3>
+          <p>
+            Switch to Mint Mobile and stop overpaying for wireless service. <br> <br>If you're tired of watching your phone bill quietly eat away at your hard-earned money, Mint Mobile offers a simple way to cut that expense without giving up the wireless service you actually need.<br> <br>Use my referral link when you make the switch, and you’ll receive <strong>$15 in renewal credit</strong> as a little bonus for giving Mint a try.
+          </p>
+          <a class="sponsor-cta" href="https://my.mintmobile.com/refer/Xmg4WaK">Get $15 Renewal Credit →</a>
+        </article>'''
+
+          legal = '''    <article class="sponsor-card">
+          <img class="sponsor-logo" src="/assets/LegalShield_logo.png" alt="LegalShield">
+          <h3>SPONSORED BY: Legal Shield</h3>
+          <p>
+            Legal Shield &amp; ID Shield<br>
+            Protecting Families &amp; Businesses Nationwide.
+          </p>
+          <a class="sponsor-cta" href="/legal/">Explore Plans →</a>
+        </article>'''
+
+          grid = '\n  <div class="sponsor-grid">\n\n' + legal + '\n\n' + mint + '\n\n  </div>\n'
+
+          changed = []
+          for path in sorted(Path('series').glob('week*.html')):
+              text = path.read_text(encoding='utf-8')
+              if 'sponsor-card' in text and 'mint-mobile-referral.webp' in text and 'SPONSORED BY: Mint Mobile' in text and 'Piety Paychain' not in text:
+                  continue
+              if 'sponsor-grid' not in text:
+                  continue
+              new_text, count = re.subn(r'\n  <div class="sponsor-grid"[^>]*>.*?\n  </div>\n\n</main>', grid + '\n</main>', text, count=1, flags=re.S)
+              if count:
+                  if 'href="/css/sponsors.css"' not in new_text:
+                      new_text = new_text.replace('  <link rel="stylesheet" href="/css/public-nav.css">', '  <link rel="stylesheet" href="/css/public-nav.css">\n  <link rel="stylesheet" href="/css/sponsors.css">', 1)
+                  path.write_text(new_text, encoding='utf-8')
+                  changed.append(str(path))
+
+          print('Changed:')
+          for item in changed:
+              print(item)
+
+          if changed:
+              import subprocess
+              subprocess.run(['git', 'config', 'user.name', 'github-actions[bot]'], check=True)
+              subprocess.run(['git', 'config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com'], check=True)
+              subprocess.run(['git', 'add', 'series/*.html'], check=True)
+              subprocess.run(['git', 'commit', '-m', 'Canonicalize remaining Series sponsor cards'], check=True)
+              subprocess.run(['git', 'push'], check=True)
