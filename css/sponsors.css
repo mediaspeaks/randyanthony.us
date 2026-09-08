@@ -2,7 +2,7 @@
    RANDI Sponsor Card System
    Canonical presentation layer for all site sponsor cards.
 
-   HTML structure:
+   Canonical HTML:
 
    <div class="sponsor-grid">
      <article class="sponsor-card">
@@ -13,8 +13,12 @@
      </article>
    </div>
 
-   Sponsor identity and copy remain in the page HTML.
+   Sponsor identity and copy remain in page HTML.
    This file controls presentation only.
+
+   The compatibility selectors at the bottom are temporary migration support.
+   They allow existing sponsor markup to use the same visual system while pages
+   are converted to the canonical structure. They can be removed after migration.
 */
 
 .sponsor-grid {
@@ -95,12 +99,129 @@
   outline-offset: 3px;
 }
 
+/* Temporary compatibility layer for sponsor markup not yet converted. */
+.sponsor-grid > article.card,
+.grid[role="list"] > article.card:has(a[href="/legal/"]),
+.grid[role="list"] > article.card:has(a[href="/2026/"]),
+.grid3 > article.card.service:has(a[href="/legal/"]),
+.grid3 > article.card.service:has(a[href="/2026/"]),
+.info-card:has(a[href="/legal/"]),
+.info-card:has(a[href="/2026/"]) {
+  background: #2f3a44 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 16px !important;
+  padding: 24px !important;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-width: 0 !important;
+  height: 100% !important;
+}
+
+.sponsor-grid > article.card h3,
+.grid[role="list"] > article.card:has(a[href="/legal/"]) h3,
+.grid[role="list"] > article.card:has(a[href="/2026/"]) h3,
+.grid3 > article.card.service:has(a[href="/legal/"]) h3,
+.grid3 > article.card.service:has(a[href="/2026/"]) h3,
+.info-card:has(a[href="/legal/"]) h3,
+.info-card:has(a[href="/2026/"]) h3 {
+  margin: 0 0 14px !important;
+  color: #ffffff !important;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  font-size: 17.6px !important;
+  line-height: 1.35 !important;
+  font-weight: 700 !important;
+}
+
+.sponsor-grid > article.card p,
+.grid[role="list"] > article.card:has(a[href="/legal/"]) p,
+.grid[role="list"] > article.card:has(a[href="/2026/"]) p,
+.grid3 > article.card.service:has(a[href="/legal/"]) p,
+.grid3 > article.card.service:has(a[href="/2026/"]) p,
+.info-card:has(a[href="/legal/"]) p,
+.info-card:has(a[href="/2026/"]) p {
+  color: #cbd5e1 !important;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.75 !important;
+}
+
+.sponsor-grid > article.card img,
+.grid[role="list"] > article.card:has(a[href="/legal/"]) img,
+.grid[role="list"] > article.card:has(a[href="/2026/"]) img,
+.grid3 > article.card.service:has(a[href="/legal/"]) img,
+.grid3 > article.card.service:has(a[href="/2026/"]) img,
+.info-card:has(a[href="/legal/"]) img,
+.info-card:has(a[href="/2026/"]) img {
+  display: block !important;
+  width: 260px !important;
+  max-width: 100% !important;
+  height: 140px !important;
+  object-fit: contain !important;
+  margin: 0 auto 24px !important;
+}
+
+.sponsor-grid > article.card > p:last-child,
+.grid[role="list"] > article.card:has(a[href="/legal/"]) > p:last-child,
+.grid[role="list"] > article.card:has(a[href="/2026/"]) > p:last-child,
+.grid3 > article.card.service:has(a[href="/legal/"]) > p:last-child,
+.grid3 > article.card.service:has(a[href="/2026/"]) > p:last-child,
+.info-card:has(a[href="/legal/"]) > p:last-child,
+.info-card:has(a[href="/2026/"]) > p:last-child {
+  margin-top: auto !important;
+  margin-bottom: 0 !important;
+}
+
+.sponsor-grid > article.card a.btn,
+.grid[role="list"] > article.card:has(a[href="/legal/"]) a.btn,
+.grid[role="list"] > article.card:has(a[href="/2026/"]) a.btn,
+.grid3 > article.card.service:has(a[href="/legal/"]) a.btn,
+.grid3 > article.card.service:has(a[href="/2026/"]) a.btn,
+.info-card:has(a[href="/legal/"]) a.btn,
+.info-card:has(a[href="/2026/"]) a.btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 10px 16px !important;
+  border: 1px solid #0a7a57 !important;
+  border-radius: 12px !important;
+  background: #0a7a57 !important;
+  color: #ffffff !important;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+.sponsor-grid > article.card a.btn:hover,
+.grid[role="list"] > article.card:has(a[href="/legal/"]) a.btn:hover,
+.grid[role="list"] > article.card:has(a[href="/2026/"]) a.btn:hover,
+.grid3 > article.card.service:has(a[href="/legal/"]) a.btn:hover,
+.grid3 > article.card.service:has(a[href="/2026/"]) a.btn:hover,
+.info-card:has(a[href="/legal/"]) a.btn:hover,
+.info-card:has(a[href="/2026/"]) a.btn:hover {
+  background: #086447 !important;
+  border-color: #086447 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px) !important;
+}
+
 @media (max-width: 700px) {
   .sponsor-grid {
     grid-template-columns: 1fr;
   }
 
-  .sponsor-card .sponsor-logo {
-    width: 220px;
+  .sponsor-card .sponsor-logo,
+  .sponsor-grid > article.card img,
+  .grid[role="list"] > article.card:has(a[href="/legal/"]) img,
+  .grid[role="list"] > article.card:has(a[href="/2026/"]) img,
+  .grid3 > article.card.service:has(a[href="/legal/"]) img,
+  .grid3 > article.card.service:has(a[href="/2026/"]) img,
+  .info-card:has(a[href="/legal/"]) img,
+  .info-card:has(a[href="/2026/"]) img {
+    width: 220px !important;
   }
 }
