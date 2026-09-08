@@ -21,15 +21,20 @@ jobs:
           from pathlib import Path
           import re
 
-          full = '''<p>
-            Life is unpredictable. Legal questions aren't.
-          </p>
-          <p>
-            Whether you're protecting your family, growing a business, buying a home, reviewing a contract, or planning for the future, LegalShield provides affordable access to experienced attorneys without the uncertainty of expensive hourly legal fees.
-          </p>
-          <p>
-            Members receive legal consultation, document review, identity theft protection, and ongoing legal support designed to help individuals, families, entrepreneurs, and small businesses make confident decisions before problems become costly.
-          </p>'''
+          old = '''<p>
+        Legal Shield &amp; ID Shield<br>
+        Protecting Families &amp; Businesses Nationwide.
+      </p>'''
+
+          new = '''<p>
+        Life is unpredictable. Legal questions aren't.
+      </p>
+      <p>
+        Whether you're protecting your family, growing a business, buying a home, reviewing a contract, or planning for the future, LegalShield provides affordable access to experienced attorneys without the uncertainty of expensive hourly legal fees.
+      </p>
+      <p>
+        Members receive legal consultation, document review, identity theft protection, and ongoing legal support designed to help individuals, families, entrepreneurs, and small businesses make confident decisions before problems become costly.
+      </p>'''
 
           files = []
           for path in Path('series').glob('week*.html'):
@@ -38,16 +43,19 @@ jobs:
                   files.append(path)
 
           if len(files) != 12:
-              raise SystemExit(f'Expected 12 weekly files for Weeks 7-18, found {len(files)}: {files}')
+              raise SystemExit(f'Expected 12 weekly files for Weeks 7-18, found {len(files)}')
 
+          total = 0
           for path in sorted(files):
               text = path.read_text()
-              pattern = r'(<article class="sponsor-card"[^>]*>\s*<img class="sponsor-logo" src="/assets/LegalShield_logo\.png" alt="LegalShield">\s*<h3>.*?</h3>\s*)(.*?)(\s*<a class="sponsor-cta")'
-              replacement = r'\1' + full + r'\3'
-              new, count = re.subn(pattern, replacement, text, count=1, flags=re.S)
+              count = text.count(old)
               if count != 1:
-                  raise SystemExit(f'Expected exactly one LegalShield sponsor block in {path}, found {count}')
-              path.write_text(new)
+                  raise SystemExit(f'Expected exactly one truncated LegalShield copy block in {path}, found {count}')
+              path.write_text(text.replace(old, new, 1))
+              total += count
+
+          if total != 12:
+              raise SystemExit(f'Expected 12 repairs, made {total}')
           PY
 
       - name: Commit repaired pages
