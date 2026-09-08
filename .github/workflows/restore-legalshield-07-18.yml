@@ -1,0 +1,57 @@
+name: Restore LegalShield copy on Weeks 7-18
+
+on:
+  push:
+    branches:
+      - legalshield-weeks-07-18
+
+permissions:
+  contents: write
+
+jobs:
+  restore-copy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Restore full LegalShield sponsor copy
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          full = '''<p>
+            Life is unpredictable. Legal questions aren't.
+          </p>
+          <p>
+            Whether you're protecting your family, growing a business, buying a home, reviewing a contract, or planning for the future, LegalShield provides affordable access to experienced attorneys without the uncertainty of expensive hourly legal fees.
+          </p>
+          <p>
+            Members receive legal consultation, document review, identity theft protection, and ongoing legal support designed to help individuals, families, entrepreneurs, and small businesses make confident decisions before problems become costly.
+          </p>'''
+
+          files = [Path(f'series/week-{n:02d}-' + suffix) for n, suffix in {
+            7:'redundancy.html', 8:'small-errors.html', 9:'fatigue.html', 10:'automation.html',
+            11:'complexity.html', 12:'communication.html', 13:'recovery.html', 14:'handoffs.html',
+            15:'reaction-cascade-effect.html', 16:'hidden-dependencies.html', 17:'operational-drift.html',
+            18:'decision-load.html'
+          }.items()]
+
+          for path in files:
+              text = path.read_text()
+              pattern = r'(<article class="sponsor-card"[^>]*>\s*<img class="sponsor-logo" src="/assets/LegalShield_logo\.png" alt="LegalShield">\s*<h3>.*?</h3>\s*)(<p>.*?</p>)(\s*<a class="sponsor-cta")'
+              replacement = r'\1' + full + r'\3'
+              new, count = re.subn(pattern, replacement, text, count=1, flags=re.S)
+              if count != 1:
+                  raise SystemExit(f'Expected exactly one LegalShield sponsor block in {path}, found {count}')
+              path.write_text(new)
+          PY
+
+      - name: Commit repaired pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add series/week-07-*.html series/week-08-*.html series/week-09-*.html series/week-10-*.html series/week-11-*.html series/week-12-*.html series/week-13-*.html series/week-14-*.html series/week-15-*.html series/week-16-*.html series/week-17-*.html series/week-18-*.html
+          git commit -m "Restore full LegalShield copy on Weeks 7-18"
+          git push
