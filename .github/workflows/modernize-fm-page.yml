@@ -1,0 +1,27 @@
+name: Modernize FM book page
+on:
+  push:
+    branches: [modernize-fm-page]
+permissions:
+  contents: write
+jobs:
+  modernize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update sponsor area
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('book/fm.html'); t=p.read_text()
+          if '/css/sponsors.css' not in t: t=t.replace('  <link rel="stylesheet" href="/css/public-nav.css">','  <link rel="stylesheet" href="/css/public-nav.css">\n  <link rel="stylesheet" href="/css/sponsors.css">')
+          a=t.index('<div class="book-sponsor-row">'); b=t.index('</div>\n\n  <footer class="site-foot">',a)+6
+          r='''<div class="book-sponsor-row">\n  <section>\n    <h2>Get the Book</h2>\n    <p>Available now on Amazon in Kindle and paperback formats.</p>\n    <a href="https://www.amazon.com/Modulation-Terrestrial-Telecommunications-Consolidated-Transformed-ebook/dp/B0GZJ1NJLV/ref=sr_1_1?dib=eyJ2IjoiMSJ9.NcFh0YJtudOEmKj6D-yHLekmqXLKNs-YyvIs_35lvZO9vlwor3oMTtrFXlwQxk3HiWhrI2BNSk_Zgcg0fPwvRwAk10onF6gqtn-Ac-tOkJK05MrkN89NTB3QIwk_xMirI0-kzDZ-xM3QrMHlja5BSTK5v0VJLFkQFFo_6S5boeGwJH8gG._rpESPeR_L8W_powA5D3XdfA_VXjpwGI1uXgZLVXX1k&dib_tag=se&keywords=fm+the+fading&qid=1777999305&sr=8-1" class="btn btnPrimary" target="_blank" rel="noopener">Buy on Amazon</a>\n  </section>\n  <article class="sponsor-card" role="listitem">\n    <img class="sponsor-logo" src="/assets/LegalShield_logo.png" alt="LegalShield">\n    <h3>Sponsored by LegalShield</h3>\n    <p>Life is unpredictable. Legal questions aren't.</p>\n    <p>Whether you're protecting your family, growing a business, buying a home, reviewing a contract, or planning for the future, LegalShield provides affordable access to experienced attorneys without the uncertainty of expensive hourly legal fees.</p>\n    <p>Members receive legal consultation, document review, identity theft protection, and ongoing legal support designed to help individuals, families, entrepreneurs, and small businesses make confident decisions before problems become costly.</p>\n    <a class="sponsor-cta" href="/legal/">Explore Plans →</a>\n  </article>\n  <article class="sponsor-card" role="listitem">\n    <img class="sponsor-logo" src="/assets/mint-mobile-referral.webp" alt="Mint Mobile">\n    <h3>Sponsored by Mint Mobile</h3>\n    <p>Switch to Mint Mobile and stop overpaying for wireless service. <br> <br>If you're tired of watching your phone bill quietly eat away at your hard-earned money, Mint Mobile offers a simple way to cut that expense without giving up the wireless service you actually need.<br> <br>Use my referral link when you make the switch, and you’ll receive <strong>$15 in renewal credit</strong> as a little bonus for giving Mint a try.</p>\n    <a class="sponsor-cta" href="https://my.mintmobile.com/refer/Xmg4WaK">Get $15 Renewal Credit →</a>\n  </article>\n</div>'''
+          p.write_text(t[:a]+r+t[b:])
+          PY
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add book/fm.html
+          git diff --cached --check
+          git commit -m "Modernize FM book page sponsors"
+          git push
