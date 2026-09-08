@@ -1,0 +1,62 @@
+name: Finalize sponsor cards
+
+on:
+  push:
+    branches:
+      - sponsor-canonical-final
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Canonicalize sponsor cards
+        shell: bash
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+          import re
+
+          mint = '''<article class="sponsor-card">
+              <img class="sponsor-logo" src="/assets/mint-mobile-referral.webp" alt="Mint Mobile">
+              <h3>Sponsored by Mint Mobile</h3>
+              <p>Switch to Mint Mobile and stop overpaying for wireless service. <br> <br>If you're tired of watching your phone bill quietly eat away at your hard-earned money, Mint Mobile offers a simple way to cut that expense without giving up the wireless service you actually need.<br> <br>Use my referral link when you make the switch, and you’ll receive <strong>$15 in renewal credit</strong> as a little bonus for giving Mint a try.</p>
+              <a class="sponsor-cta" href="https://my.mintmobile.com/refer/Xmg4WaK">Get $15 Renewal Credit →</a>
+            </article>'''
+
+          legal = '''<article class="sponsor-card">
+              <img class="sponsor-logo" src="/assets/LegalShield_logo.png" alt="LegalShield">
+              <h3>SPONSORED BY: Legal Shield</h3>
+              <p>Legal Shield &amp; ID Shield<br>
+              Protecting Families &amp; Businesses Nationwide.</p>
+              <a class="sponsor-cta" href="/legal/">Explore Plans →</a>
+            </article>'''
+
+          grid = '<div class="sponsor-grid">\n\n            ' + legal + '\n\n            ' + mint + '\n\n          </div>'
+          changed = []
+
+          for path in sorted(Path('series').glob('week*.html')):
+              text = path.read_text(encoding='utf-8')
+              match = re.search(r'<div class="sponsor-grid"[\s\S]*?</div>', text)
+              if not match:
+                  continue
+              old = match.group(0)
+              if 'Piety Paychain' not in old and 'sponsor-card' in old and 'Mint Mobile' in old:
+                  continue
+              new = text[:match.start()] + grid + text[match.end():]
+              path.write_text(new, encoding='utf-8')
+              changed.append(str(path))
+
+          print('Changed weekly pages:')
+          for item in changed:
+              print('  ' + item)
+          PY
+          if git diff --quiet; then exit 0; fi
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add series/*.html
+          git commit -m "Canonicalize weekly sponsor cards"
+          git push
