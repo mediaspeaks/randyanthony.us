@@ -1,0 +1,66 @@
+name: Modernize book pages
+on:
+  push:
+    branches: [modernize-book-pages]
+permissions:
+  contents: write
+jobs:
+  modernize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Standardize FM and Reliability book pages
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          sponsor = '''<div class="book-sponsor-row">
+            <section>
+              <h2>Get the Book</h2>
+              <p>Available now on Amazon in Kindle and paperback formats.</p>
+              <a href="https://www.amazon.com/dp/B0GXLJQJZ5" class="btn btnPrimary" target="_blank" rel="noopener">Buy on Amazon</a>
+            </section>
+            <article class="sponsor-card" role="listitem">
+              <img class="sponsor-logo" src="/assets/LegalShield_logo.png" alt="LegalShield">
+              <h3>Sponsored by LegalShield</h3>
+              <p>Life is unpredictable. Legal questions aren't.</p>
+              <p>Whether you're protecting your family, growing a business, buying a home, reviewing a contract, or planning for the future, LegalShield provides affordable access to experienced attorneys without the uncertainty of expensive hourly legal fees.</p>
+              <p>Members receive legal consultation, document review, identity theft protection, and ongoing legal support designed to help individuals, families, entrepreneurs, and small businesses make confident decisions before problems become costly.</p>
+              <a class="sponsor-cta" href="/legal/">Explore LegalShield</a>
+            </article>
+            <article class="sponsor-card" role="listitem">
+              <img class="sponsor-logo" src="/assets/mint-mobile-referral.webp" alt="Mint Mobile">
+              <h3>Sponsored by Mint Mobile</h3>
+              <p>Switch to Mint Mobile and stop overpaying for wireless service. <br> <br>If you're tired of watching your phone bill quietly eat away at your hard-earned money, Mint Mobile offers a simple way to cut that expense without giving up the wireless service you actually need.<br> <br>Use my referral link when you make the switch, and you’ll receive <strong>$15 in renewal credit</strong> as a little bonus for giving Mint a try.</p>
+              <a class="sponsor-cta" href="https://my.mintmobile.com/refer/Xmg4WaK">Get $15 Renewal Credit →</a>
+            </article>
+          </div>'''
+
+          for name in ('book/fm.html', 'book/newbook.html'):
+              p = Path(name)
+              t = p.read_text()
+              if '/css/sponsors.css' not in t:
+                  marker = '<link rel="stylesheet" href="/css/public-nav.css">'
+                  t = t.replace(marker, marker + '\n<link rel="stylesheet" href="/css/sponsors.css">', 1)
+              if 'font-family: ui-sans-serif, system-ui' not in t[t.find('<style>'):t.find('</style>')]:
+                  marker = '/* --------------------------------------------------\n   BUTTONS\n-------------------------------------------------- */'
+                  if marker in t:
+                      css = '''body{\n  margin:0;\n  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;\n  color:var(--text);\n  line-height:1.55;\n  letter-spacing:0.1px;\n}\n\n'''
+                      t = t.replace(marker, css + marker, 1)
+                  else:
+                      t = t.replace('<style>', '<style>\nbody{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;line-height:1.55;letter-spacing:0.1px;}\n', 1)
+              a = t.index('<div class="book-sponsor-row">')
+              b = t.index('</div>\n<footer', a) if '</div>\n<footer' in t[a:] else t.index('</div>\n\n<footer', a) + 6
+              if b < a:
+                  raise RuntimeError(f'Could not locate sponsor row end in {name}')
+              if t[b:b+6] == '</div>':
+                  b += 6
+              t = t[:a] + sponsor + t[b:]
+              p.write_text(t)
+          PY
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add book/fm.html book/newbook.html
+          git diff --cached --check
+          git commit -m "Standardize FM and Reliability book pages"
+          git push
