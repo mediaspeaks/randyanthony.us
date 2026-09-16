@@ -1,0 +1,67 @@
+name: Standardize page canonicals
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  canonicalize:
+    if: github.event.head_commit.message != 'Standardize page-specific canonicals [canonical-standardized]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set page-specific canonicals
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          root = Path('.')
+          excluded = {'2026', 'bio', 'ogframework'}
+          changed = []
+
+          for p in root.rglob('*'):
+              if not p.is_file() or p.suffix.lower() not in {'.html', '.htm'}:
+                  continue
+              if any(part in excluded for part in p.relative_to(root).parts):
+                  continue
+
+              text = p.read_text(encoding='utf-8')
+              if '<head' not in text.lower() or 'canonical' not in text.lower():
+                  continue
+
+              rel = p.relative_to(root).as_posix()
+              if rel == 'index.html':
+                  canonical = 'https://randyanthony.us/'
+              elif rel == 'home.html':
+                  canonical = 'https://randyanthony.us/home.html'
+              elif rel.endswith('/index.html') or rel.endswith('/index.htm'):
+                  canonical = 'https://randyanthony.us/' + rel.rsplit('/', 1)[0] + '/'
+              else:
+                  canonical = 'https://randyanthony.us/' + rel
+
+              new_text, n = re.subn(
+                  r'<link\s+rel=["\']canonical["\']\s+href=["\'][^"\']+["\']\s*/?>',
+                  f'<link rel="canonical" href="{canonical}">',
+                  text,
+                  count=1,
+                  flags=re.I,
+              )
+              if n and new_text != text:
+                  p.write_text(new_text, encoding='utf-8')
+                  changed.append(rel)
+
+          print(f'Updated {len(changed)} HTML files')
+          for item in changed:
+              print(item)
+
+          if changed:
+              import subprocess
+              subprocess.run(['git','config','user.name','github-actions[bot]'], check=True)
+              subprocess.run(['git','config','user.email','41898282+github-actions[bot]@users.noreply.github.com'], check=True)
+              subprocess.run(['git','add','.'], check=True)
+              subprocess.run(['git','commit','-m','Standardize page-specific canonicals [canonical-standardized]'], check=True)
+              subprocess.run(['git','push'], check=True)
