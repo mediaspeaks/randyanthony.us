@@ -1,0 +1,125 @@
+name: Standardize Site Metadata
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/standardize-site-metadata.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  standardize:
+    if: "!contains(github.event.head_commit.message, '[metadata-standardized]')"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Standardize maintained public HTML metadata
+        shell: python
+        run: |
+          from pathlib import Path
+          import re
+
+          TITLE = 'Randy Anthony | Operational Reliability, Author &amp; Time-Critical Media Operations'
+          DESCRIPTION = 'Randy Anthony is an author and operational reliability expert with more than four decades of experience in time-critical media operations. Creator of the Operational Visibility Series and author of FM: The Fading Modulation of Terrestrial Radio and Reliability Is Not Improvised.'
+          OG_DESCRIPTION = 'Author, operational reliability expert, and creator of the Operational Visibility Series. Exploring systems thinking, operational reliability, and time-critical media operations.'
+
+          JSONLD = '''<script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Person",
+                "@id": "https://randyanthony.us/#person",
+                "name": "Randy Anthony",
+                "url": "https://randyanthony.us/",
+                "jobTitle": "Operational Reliability Expert",
+                "description": "Randy Anthony is an author and operational reliability expert with more than four decades of experience in time-critical media operations.",
+                "knowsAbout": [
+                  "Operational Reliability",
+                  "Operational Visibility",
+                  "Time-Critical Media Operations",
+                  "Broadcast Operations",
+                  "Streaming Operations",
+                  "Systems Thinking"
+                ],
+                "authorOf": [
+                  {"@type": "Book", "name": "FM: The Fading Modulation of Terrestrial Radio"},
+                  {"@type": "Book", "name": "Reliability Is Not Improvised"}
+                ]
+              },
+              {
+                "@type": "WebSite",
+                "@id": "https://randyanthony.us/#website",
+                "url": "https://randyanthony.us/",
+                "name": "Randy Anthony",
+                "description": "Author, operational reliability expert, and creator of the Operational Visibility Series.",
+                "publisher": {"@id": "https://randyanthony.us/#person"}
+              }
+            ]
+          }
+          </script>'''
+
+          exclude_prefixes = ('2026/', 'bio/', 'ogframework/')
+          changed = []
+
+          def strip_tag(text, pattern):
+              return re.sub(pattern, '', text, flags=re.I)
+
+          for path in Path('.').rglob('*'):
+              if not path.is_file() or path.suffix.lower() not in {'.html', '.htm'}:
+                  continue
+              rel = path.as_posix()
+              if rel.startswith(exclude_prefixes):
+                  continue
+              text = path.read_text(encoding='utf-8')
+              if '</head>' not in text.lower():
+                  continue
+
+              head_end = re.search(r'</head>', text, flags=re.I)
+              head = text[:head_end.start()]
+              tail = text[head_end.start():]
+
+              head = strip_tag(head, r'<title\b[^>]*>.*?</title\s*>')
+              head = strip_tag(head, r'<meta\s+name=["\']description["\'][^>]*>')
+              head = strip_tag(head, r'<meta\s+name=["\']author["\'][^>]*>')
+              head = strip_tag(head, r'<meta\s+name=["\']theme-color["\'][^>]*>')
+              head = strip_tag(head, r'<link\s+rel=["\']canonical["\'][^>]*>')
+              head = strip_tag(head, r'<link\s+rel=["\']icon["\'][^>]*>')
+              head = strip_tag(head, r'<meta\s+property=["\']og:type["\'][^>]*>')
+              head = strip_tag(head, r'<meta\s+property=["\']og:title["\'][^>]*>')
+              head = strip_tag(head, r'<meta\s+property=["\']og:description["\'][^>]*>')
+              head = strip_tag(head, r'<meta\s+property=["\']og:url["\'][^>]*>')
+              head = strip_tag(head, r'<meta\s+property=["\']og:image["\'][^>]*>')
+              head = strip_tag(head, r'<meta\s+property=["\']og:image:width["\'][^>]*>')
+              head = strip_tag(head, r'<meta\s+property=["\']og:image:height["\'][^>]*>')
+              head = strip_tag(head, r'<meta\s+property=["\']og:image:type["\'][^>]*>')
+              head = strip_tag(head, r'<script\s+type=["\']application/ld\+json["\'][^>]*>.*?</script\s*>')
+
+              block = f'''\n<title>{TITLE}</title>\n\n<meta name="description" content="{DESCRIPTION}">\n\n<meta name="author" content="Randy Anthony">\n\n<meta name="theme-color" content="#071a33">\n\n<link rel="canonical" href="https://randyanthony.us/">\n\n<link rel="icon" href="/favicon.png">\n\n<meta property="og:type" content="website">\n\n<meta property="og:title" content="{TITLE}">\n\n<meta property="og:description" content="{OG_DESCRIPTION}">\n\n<meta property="og:url" content="https://randyanthony.us/">\n\n<meta property="og:image" content="https://randyanthony.us/og.png">\n\n<meta property="og:image:width" content="1200">\n\n<meta property="og:image:height" content="630">\n\n<meta property="og:image:type" content="image/png">\n\n{JSONLD}\n'''
+              head = head.rstrip() + block
+              new_text = head + tail
+              if new_text != text:
+                  path.write_text(new_text, encoding='utf-8')
+                  changed.append(rel)
+
+          print(f'Updated {len(changed)} HTML files')
+          for item in changed:
+              print(item)
+
+      - name: Commit standardized metadata
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '*.html' '*.htm'
+          if git diff --cached --quiet; then
+            echo 'No metadata changes required.'
+            exit 0
+          fi
+          git commit -m "Standardize site-wide metadata [metadata-standardized]"
+          git push
