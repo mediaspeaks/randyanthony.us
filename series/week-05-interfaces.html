@@ -1,5 +1,69 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><title>Week 5 — Interfaces | Randy Anthony</title><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/css/global.css"><link rel="stylesheet" href="/series/series.css"><meta name="description" content="Week 5 — Interfaces: Reliability in time-critical systems depends on clear, structured handoffs and defined contracts between teams, tools, and processes." /><link rel="stylesheet" href="/css/public-nav.css"></head>
+<html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link rel="stylesheet" href="/css/global.css"><link rel="stylesheet" href="/series/series.css"><link rel="stylesheet" href="/css/public-nav.css">
+<title>Randy Anthony | Operational Reliability, Author &amp; Time-Critical Media Operations</title>
+
+<meta name="description" content="Randy Anthony is an author and operational reliability expert with more than four decades of experience in time-critical media operations. Creator of the Operational Visibility Series and author of FM: The Fading Modulation of Terrestrial Radio and Reliability Is Not Improvised.">
+
+<meta name="author" content="Randy Anthony">
+
+<meta name="theme-color" content="#071a33">
+
+<link rel="canonical" href="https://randyanthony.us/">
+
+<link rel="icon" href="/favicon.png">
+
+<meta property="og:type" content="website">
+
+<meta property="og:title" content="Randy Anthony | Operational Reliability, Author &amp; Time-Critical Media Operations">
+
+<meta property="og:description" content="Author, operational reliability expert, and creator of the Operational Visibility Series. Exploring systems thinking, operational reliability, and time-critical media operations.">
+
+<meta property="og:url" content="https://randyanthony.us/">
+
+<meta property="og:image" content="https://randyanthony.us/og.png">
+
+<meta property="og:image:width" content="1200">
+
+<meta property="og:image:height" content="630">
+
+<meta property="og:image:type" content="image/png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://randyanthony.us/#person",
+      "name": "Randy Anthony",
+      "url": "https://randyanthony.us/",
+      "jobTitle": "Operational Reliability Expert",
+      "description": "Randy Anthony is an author and operational reliability expert with more than four decades of experience in time-critical media operations.",
+      "knowsAbout": [
+        "Operational Reliability",
+        "Operational Visibility",
+        "Time-Critical Media Operations",
+        "Broadcast Operations",
+        "Streaming Operations",
+        "Systems Thinking"
+      ],
+      "authorOf": [
+        {"@type": "Book", "name": "FM: The Fading Modulation of Terrestrial Radio"},
+        {"@type": "Book", "name": "Reliability Is Not Improvised"}
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://randyanthony.us/#website",
+      "url": "https://randyanthony.us/",
+      "name": "Randy Anthony",
+      "description": "Author, operational reliability expert, and creator of the Operational Visibility Series.",
+      "publisher": {"@id": "https://randyanthony.us/#person"}
+    }
+  ]
+}
+</script>
+</head>
 <body><header class="site-header"><a href="/" class="brand"><img src="/favicon.png" alt="Randy Anthony"><div class="titles"><strong>RANDY ANTHONY</strong><span>Operational Reliability Advisory</span></div></a><nav class="primary" aria-label="Primary Navigation"><a href="/">Home</a><a href="/series/">Operational Visibility Series</a><a href="/services.html">Services</a><a href="/book/">Books</a><a href="/radio/">Radio</a><a class="header-cta" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a Consultation</a></nav><button class="mobile-toggle" id="mobileToggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">☰</button></header><nav id="mobileNav" class="mobile-nav" aria-hidden="true"><a href="/">Home</a><a href="/series/">Operational Visibility Series</a><a href="/services.html">Services</a><a href="/book/">Books</a><a href="/radio/">Radio</a><a class="header-cta" href="mailto:inbox@randyanthony.us?subject=Consultation%20request">Request a Consultation</a></nav>
 <main class="wrap"><section class="hero"><div class="kicker">Quarter 1 · Week 5</div><h1 class="hero-title">What Time-Critical Operations Teach You About Interfaces</h1><p class="meta">Topic word: Interfaces · <a href="https://www.linkedin.com/posts/randy-anthony-07547410b_operations-reliability-systemsthinking-activity-7432441654013485057-CzQE?utm_source=share&utm_medium=member_desktop&rcm=ACoAABunslkBFatGOuGkV8R5dPmSEp8H4KCG7pQ" target="_blank" rel="noopener">View on LinkedIn</a></p></section>
 <section class="card body split-post"><img src="/series/assets/week-05-interfaces.png" alt="Week 5 — Interfaces" class="post-image"><div class="post-text"><p>In 24/7 systems, the most fragile moment is not the incident itself; it’s the transition.</p><p>This includes:</p><ul class="lines"><li>Shift changes</li><li>Team boundaries</li><li>Tool boundaries</li><li>Vendor boundaries</li><li>Automation boundaries</li></ul><p>These transitions are where reliability is either preserved or quietly lost. Most breakdowns occur not because people don’t care, but because interfaces are informal.</p><p>An informal interface may seem harmless with phrases like:</p><ul class="lines"><li>“Just let them know.”</li><li>“They’ll figure it out.”</li><li>“It’s basically the same as yesterday.”</li><li>“Nothing major changed.”</li></ul><p>However, informal means:</p><ul class="lines"><li>No defined ownership</li><li>No explicit expectations</li><li>No shared definition of “complete”</li><li>No record of what actually changed</li><li>No confirmation that the next team interpreted it correctly</li></ul><p>When interfaces are informal, the system relies on memory, which degrades under pressure. Context remains informal, and informal knowledge doesn’t scale. Small misunderstandings can compound, leading to operational risk.</p><p>An interface is a contract between two parts of a system that defines:</p><ul class="lines"><li>What must be true before work is handed off</li><li>What is known versus assumed</li><li>What changed, and why</li><li>What is verified, and what is pending</li><li>Who owns the next decision, and by when</li></ul><p>In live operations, a failure may appear as “the system glitched,” but the origin often lies at an interface that lacked a contract—such as a note that didn’t state impact, a handoff that didn’t specify ownership, a change that wasn’t recorded, or a dependency that was “probably fine.”</p><p>Strong systems treat interfaces like engineering—not long messages or excessive documentation, but clear contracts. Reliability does not stem from heroics; it comes from interfaces that hold under pressure.</p></div></section>
