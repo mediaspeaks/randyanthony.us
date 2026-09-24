@@ -1,0 +1,69 @@
+name: Add AdSense code to maintained HTML pages
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  update-adsense:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Add AdSense code
+        env:
+          ADSENSE_CODE: |
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5094538407667336"
+                 crossorigin="anonymous"></script>
+        run: |
+          python3 - <<'PY'
+          import os
+          from pathlib import Path
+
+          code = os.environ["ADSENSE_CODE"].strip()
+
+          excluded = ("2026", "bio", "ogframework")
+          changed = []
+
+          for path in Path(".").rglob("*"):
+              if not path.is_file() or path.suffix.lower() not in {".html", ".htm"}:
+                  continue
+              rel = path.as_posix()
+              if rel == "includes/header.html" or rel.startswith(tuple(d + "/" for d in excluded)):
+                  continue
+
+              text = path.read_text(encoding="utf-8")
+              if "ca-pub-5094538407667336" in text:
+                  continue
+
+              head = text.lower().find("<head")
+              if head < 0:
+                  continue
+              close = text.find(">", head)
+              if close < 0:
+                  continue
+
+              new_text = text[:close + 1] + "\n" + code + "\n" + text[close + 1:]
+              path.write_text(new_text, encoding="utf-8")
+              changed.append(rel)
+
+          print(f"Updated {len(changed)} HTML pages")
+          for item in changed:
+              print(item)
+          PY
+
+      - name: Commit changes
+        run: |
+          if git diff --quiet; then
+            echo "No changes needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- '*.html' '*.htm'
+          git commit -m "Add AdSense code to maintained pages"
+          git push
