@@ -35,9 +35,27 @@
       border-radius: 22px;
       color: #fff;
       background:
-        linear-gradient(rgba(7,26,51,.90), rgba(7,26,51,.90)),
+        linear-gradient(rgba(7,26,51,.88), rgba(7,26,51,.88)),
         url("/series/assets/ops-architecture-bg.jpg") center/cover no-repeat;
       box-shadow: 0 24px 60px rgba(7,26,51,.24);
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .bio-hero-copy {
+      min-width: 0;
+    }
+
+    .bio-hero-image {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 16px 36px rgba(0,0,0,.24);
     }
 
     .bio-hero h1 {
@@ -147,7 +165,12 @@
       }
 
       .bio-hero {
+        grid-template-columns: 1fr;
         padding: 28px 24px;
+      }
+
+      .bio-hero-image {
+        height: 280px;
       }
 
       .bio-hero h1 {
@@ -192,13 +215,16 @@
 
     <main>
       <section class="bio-hero" aria-labelledby="bio-title">
-        <p class="eyebrow">ABOUT RANDY ANTHONY</p>
-        <h1 id="bio-title">Operational Reliability Professional, Author &amp; Time-Critical Media Operations Specialist</h1>
-        <p class="lead">
-          Randy Anthony is an author and operational reliability professional whose career spans radio, television,
-          broadcast operations, digital media, and time-critical workflows. His work focuses on how people, technology,
-          procedures, and decisions interact when an operation has to keep working under pressure.
-        </p>
+        <div class="bio-hero-copy">
+          <p class="eyebrow">ABOUT RANDY ANTHONY</p>
+          <h1 id="bio-title">Operational Reliability Professional, Author &amp; Time-Critical Media Operations Specialist</h1>
+          <p class="lead">
+            Randy Anthony is an author and operational reliability professional whose career spans radio, television,
+            broadcast operations, digital media, and time-critical workflows. His work focuses on how people, technology,
+            procedures, and decisions interact when an operation has to keep working under pressure.
+          </p>
+        </div>
+        <img class="bio-hero-image" src="/assets/randy-anthony.jpg" alt="Randy Anthony"> 
       </section>
 
       <div class="identity-strip" aria-label="Professional identity">
