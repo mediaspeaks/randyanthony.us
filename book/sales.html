@@ -192,7 +192,7 @@
 
     .collection-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
 
@@ -202,22 +202,31 @@
       border-radius: 16px;
       padding: 24px;
       box-shadow: var(--shadow);
-      display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 22px;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
 
     .collection-card img {
-      width: 150px;
-      margin: 0 auto;
+      width: 190px;
+      max-width: 100%;
+      margin: 0 auto 22px;
       border-radius: 12px;
       box-shadow: var(--shadow);
     }
 
     .collection-card h3 {
-      margin: 0 0 6px;
+      margin: 0 0 4px;
       color: var(--heroA);
       font-size: 1.25rem;
+    }
+
+    .collection-card .subtitle {
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: .98rem;
+      font-weight: 700;
+      font-style: italic;
     }
 
     .collection-card .category {
@@ -243,6 +252,8 @@
     }
 
     .collection-card .book-buttons {
+      margin-top: auto;
+      padding-top: 6px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
@@ -250,48 +261,7 @@
     }
 
     .collection-card .book-buttons .btn {
-      width: auto;
-    }
-
-    .coming-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
-    }
-
-    .coming-card {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-      box-shadow: var(--shadow);
-    }
-
-    .coming-card img {
-      width: 170px;
-      margin: 0 auto 18px;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-    }
-
-    .coming-card h3 {
-      margin: 0 0 6px;
-      color: var(--heroA);
-      font-size: 1.3rem;
-    }
-
-    .coming-card .category {
-      margin-bottom: 12px;
-      color: #b66a00;
-      font-size: .78rem;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .coming-card p {
-      color: var(--muted);
-      margin-bottom: 16px;
+      width: 100%;
     }
 
     .author-card {
@@ -362,8 +332,7 @@
         max-width: 280px;
       }
 
-      .collection-grid,
-      .coming-grid {
+      .collection-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -383,10 +352,6 @@
 
       .subject-router,
       .ecosystem {
-        grid-template-columns: 1fr;
-      }
-
-      .collection-card {
         grid-template-columns: 1fr;
       }
 
@@ -543,6 +508,7 @@
           <img src="/assets/points-southcvr.jpg" alt="Points South: Where the Tide Remembers">
           <div>
             <h3>Points South</h3>
+            <p class="subtitle">Where The Tide Remembers</p>
             <p class="category">Contemporary Romance | Available Now</p>
             <p>
               Victoria King returns to the waterfront restaurant that shaped her childhood and finds a place, a town,
@@ -571,35 +537,6 @@
               <a class="btn secondary" href="https://www.ellaumber.com/" target="_blank" rel="noopener">Visit EllaUmber.com</a>
             </div>
           </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="sales-section" aria-labelledby="coming-title">
-      <h2 id="coming-title">Coming Soon</h2>
-      <p class="section-intro">Two forthcoming books. Instead of ending the journey at “Coming Soon,” these pages point readers toward the work and give them a way to stay connected.</p>
-
-      <div class="coming-grid">
-        <article class="coming-card">
-          <img src="/assets/hiddencvr.png" alt="Nothing Hidden, Nothing Forbidden">
-          <h3>Nothing Hidden, Nothing Forbidden</h3>
-          <p class="category">Personal Transformation</p>
-          <p>
-            An exploration of personal transformation through observation, disciplined thinking, and intentional living.
-            The book applies systems-thinking principles to the patterns, assumptions, habits, and decisions that shape everyday life.
-          </p>
-          <a class="btn secondary" href="/series/soon.html">Explore the Work →</a>
-        </article>
-
-        <article class="coming-card">
-          <img src="/assets/suitecvr.jpg" alt="The Suite Between Us">
-          <h3>The Suite Between Us</h3>
-          <p class="category">Contemporary Romance</p>
-          <p>
-            A contemporary romance about ambition, timing, second chances, and a relationship that never really disappeared.
-            Set against luxury hospitality, executive ambition, and the return of a woman who was never truly forgotten.
-          </p>
-          <a class="btn secondary" href="/series/soon.html">Explore the Work →</a>
         </article>
       </div>
     </section>
