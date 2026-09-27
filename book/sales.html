@@ -105,8 +105,26 @@
     }
 
     .subject-link span {
+      display: block;
       color: var(--muted);
       font-size: .94rem;
+    }
+
+    .subject-link em {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: .88rem;
+      font-style: italic;
+    }
+
+    .ecosystem-card,
+    .ecosystem-card:hover {
+      text-decoration: none;
+    }
+
+    .ecosystem-card span {
+      text-decoration: none;
     }
 
     .sales-section {
@@ -213,6 +231,12 @@
       margin: 0 auto 22px;
       border-radius: 12px;
       box-shadow: var(--shadow);
+    }
+
+    .collection-card > div {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
 
     .collection-card h3 {
@@ -431,6 +455,7 @@
         <a class="subject-link" href="#points">
           <strong>Fiction</strong>
           <span>Points South</span>
+          <em>Where The Tide Remembers</em>
         </a>
         <a class="subject-link" href="#ella">
           <strong>Children &amp; Family</strong>
