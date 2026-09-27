@@ -50,7 +50,7 @@ jobs:
           ]
 
           pattern = re.compile(
-              r'\n?\s*<div class="sponsor-grid">.*?</div>\s*(?=</main>)',
+              r'\n?\s*<div class="sponsor-grid"[^>]*>.*?</div>',
               re.DOTALL
           )
 
