@@ -44,6 +44,7 @@
   font-size: 12px !important;
   color: #64748b !important;
   line-height: 1.2 !important;
+  white-space: nowrap !important;
 }
 
 .site-header .primary {
