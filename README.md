@@ -30,3 +30,7 @@ Live site: https://randyanthony.us/
 This repository contains both active website files and selected historical or archival versions retained for reference. Older, non-live, test, and superseded files are intentionally preserved when they have archival value.
 
 Not every file in the repository is intended to be indexed or linked from the live site. The sitemap is deliberately selective and represents the site’s intended public indexing surface.
+
+## AdSense readiness
+
+The public site includes the required AdSense connection code and ads.txt authorization, with the public sitemap maintained as the intended indexing surface. Content improvements are maintained as part of the site's normal publishing process.
