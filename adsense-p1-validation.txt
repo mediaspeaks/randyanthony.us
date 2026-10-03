@@ -1,0 +1,1 @@
+AdSense P1 remediation validation trigger. This file records the completion pass and may be removed after verification.
