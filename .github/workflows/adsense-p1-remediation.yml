@@ -19,11 +19,11 @@ jobs:
         shell: python
         run: |
           import html
+          import json
           import pathlib
           import re
 
           root = pathlib.Path('series')
-          skip = {'week-01-reliability.html', 'week-02-invisible-work.html', 'week14-part1-wrap.html'}
           pages = sorted(root.glob('week*.html'))
           existing = {p.name for p in pages}
 
@@ -35,7 +35,7 @@ jobs:
           changed = []
           broken = []
           for path in pages:
-              if path.name in skip:
+              if path.name in {'week-01-reliability.html', 'week-02-invisible-work.html'} or path.name.lower().startswith('week14'):
                   continue
               s = path.read_text(encoding='utf-8')
               m = re.search(r'<h1[^>]*class=["\']hero-title["\'][^>]*>(.*?)</h1>', s, re.S | re.I)
@@ -51,7 +51,7 @@ jobs:
                       first = clean(ps[0])
               if not first:
                   first = headline
-              desc = (first + ' Explore Randy Anthony\'s Operational Visibility Series and its practical lessons for reliable, time-critical operations.')
+              desc = (first + " Explore Randy Anthony's Operational Visibility Series and its practical lessons for reliable, time-critical operations.")
               desc = desc[:158].rstrip(' ,.;:') + '.'
               canonical = f'https://randyanthony.us/series/{path.name}'
 
@@ -62,12 +62,21 @@ jobs:
               s = re.sub(r'<meta property=["\']og:description["\'] content=["\'][^"\']*["\']\s*/?>', f'<meta property="og:description" content="{html.escape(desc, quote=True)}">', s, count=1, flags=re.I)
               s = re.sub(r'<meta property=["\']og:url["\'] content=["\'][^"\']*["\']\s*/?>', f'<meta property="og:url" content="{canonical}">', s, count=1, flags=re.I)
 
-              # Add a page-specific BlogPosting node while retaining the existing Person/WebSite graph.
               if '"@type": "BlogPosting"' not in s:
-                  schema = f'''<script type="application/ld+json">\n{{\n  "@context": "https://schema.org",\n  "@type": "BlogPosting",\n  "headline": {headline!r},\n  "description": {desc!r},\n  "author": {{"@type": "Person", "name": "Randy Anthony", "url": "https://randyanthony.us/bio/"}},\n  "publisher": {{"@type": "Person", "name": "Randy Anthony", "url": "https://randyanthony.us/"}},\n  "mainEntityOfPage": {{"@type": "WebPage", "@id": {canonical!r}}},\n  "image": "https://randyanthony.us/og.png",\n  "isPartOf": {{"@type": "CreativeWorkSeries", "name": "Operational Visibility Series", "url": "https://randyanthony.us/series/"}}\n}}\n</script>\n'''
+                  obj = {
+                      '@context': 'https://schema.org',
+                      '@type': 'BlogPosting',
+                      'headline': headline,
+                      'description': desc,
+                      'author': {'@type': 'Person', 'name': 'Randy Anthony', 'url': 'https://randyanthony.us/bio/'},
+                      'publisher': {'@type': 'Person', 'name': 'Randy Anthony', 'url': 'https://randyanthony.us/'},
+                      'mainEntityOfPage': {'@type': 'WebPage', '@id': canonical},
+                      'image': 'https://randyanthony.us/og.png',
+                      'isPartOf': {'@type': 'CreativeWorkSeries', 'name': 'Operational Visibility Series', 'url': 'https://randyanthony.us/series/'}
+                  }
+                  schema = '<script type="application/ld+json">\n' + json.dumps(obj, indent=2, ensure_ascii=False) + '\n</script>\n'
                   s = s.replace('</head>', schema + '</head>', 1)
 
-              # Repair stale local series links when a legacy filename points at a nonexistent file.
               def link_fix(match):
                   href = match.group(1)
                   if not href.startswith('/series/') or not href.endswith('.html'):
