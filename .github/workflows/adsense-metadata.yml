@@ -1,0 +1,67 @@
+name: Normalize series metadata
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update Operational Visibility article metadata
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import html, re
+
+          for path in sorted(Path('series').glob('week*.html')):
+              text = path.read_text(encoding='utf-8')
+              if '<h1 class="hero-title">' not in text:
+                  continue
+              m = re.search(r'<h1 class="hero-title">(.*?)</h1>', text, re.S)
+              if not m:
+                  continue
+              headline = html.unescape(re.sub(r'<[^>]+>', '', m.group(1))).strip()
+              p = re.search(r'<div class="post-text">\s*<p>(.*?)</p>', text, re.S)
+              if p:
+                  desc = html.unescape(re.sub(r'<[^>]+>', '', p.group(1))).strip()
+              else:
+                  desc = headline
+              desc = re.sub(r'\s+', ' ', desc)
+              if len(desc) > 155:
+                  desc = desc[:152].rsplit(' ', 1)[0] + '...'
+              url = 'https://randyanthony.us/' + str(path).replace('\\', '/')
+              title = f'{headline} | Randy Anthony'
+              text = re.sub(r'<title>.*?</title>', f'<title>{html.escape(title)}</title>', text, count=1, flags=re.S)
+              text = re.sub(r'<meta name="description" content=".*?">', f'<meta name="description" content="{html.escape(desc, quote=True)}">', text, count=1, flags=re.S)
+              text = re.sub(r'<meta property="og:type" content=".*?">', '<meta property="og:type" content="article">', text, count=1, flags=re.S)
+              text = re.sub(r'<meta property="og:title" content=".*?">', f'<meta property="og:title" content="{html.escape(title, quote=True)}">', text, count=1, flags=re.S)
+              text = re.sub(r'<meta property="og:description" content=".*?">', f'<meta property="og:description" content="{html.escape(desc, quote=True)}">', text, count=1, flags=re.S)
+              text = re.sub(r'<meta property="og:url" content=".*?">', f'<meta property="og:url" content="{url}">', text, count=1, flags=re.S)
+              path.write_text(text, encoding='utf-8')
+          PY
+      - name: Commit normalized metadata
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add series/week*.html
+          if git diff --cached --quiet; then
+            echo "No metadata changes needed"
+          else
+            git commit -m "Normalize Operational Visibility article metadata"
+            git push
+          fi
+      - name: Remove temporary workflow
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -f .github/workflows/adsense-metadata.yml ]; then
+            git rm .github/workflows/adsense-metadata.yml
+            git commit -m "Remove temporary metadata workflow"
+            git push
+          fi
