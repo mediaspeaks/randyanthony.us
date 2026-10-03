@@ -62,19 +62,20 @@ jobs:
               s = re.sub(r'<meta property=["\']og:description["\'] content=["\'][^"\']*["\']\s*/?>', f'<meta property="og:description" content="{html.escape(desc, quote=True)}">', s, count=1, flags=re.I)
               s = re.sub(r'<meta property=["\']og:url["\'] content=["\'][^"\']*["\']\s*/?>', f'<meta property="og:url" content="{canonical}">', s, count=1, flags=re.I)
 
-              if '"@type": "BlogPosting"' not in s:
-                  obj = {
-                      '@context': 'https://schema.org',
-                      '@type': 'BlogPosting',
-                      'headline': headline,
-                      'description': desc,
-                      'author': {'@type': 'Person', 'name': 'Randy Anthony', 'url': 'https://randyanthony.us/bio/'},
-                      'publisher': {'@type': 'Person', 'name': 'Randy Anthony', 'url': 'https://randyanthony.us/'},
-                      'mainEntityOfPage': {'@type': 'WebPage', '@id': canonical},
-                      'image': 'https://randyanthony.us/og.png',
-                      'isPartOf': {'@type': 'CreativeWorkSeries', 'name': 'Operational Visibility Series', 'url': 'https://randyanthony.us/series/'}
-                  }
-                  schema = '<script type="application/ld+json">\n' + json.dumps(obj, indent=2, ensure_ascii=False) + '\n</script>\n'
+              obj = {
+                  '@context': 'https://schema.org',
+                  '@type': 'BlogPosting',
+                  'headline': headline,
+                  'description': desc,
+                  'author': {'@type': 'Person', 'name': 'Randy Anthony', 'url': 'https://randyanthony.us/bio/'},
+                  'publisher': {'@type': 'Person', 'name': 'Randy Anthony', 'url': 'https://randyanthony.us/'},
+                  'mainEntityOfPage': {'@type': 'WebPage', '@id': canonical},
+                  'image': 'https://randyanthony.us/og.png',
+                  'isPartOf': {'@type': 'CreativeWorkSeries', 'name': 'Operational Visibility Series', 'url': 'https://randyanthony.us/series/'}
+              }
+              schema = '<script type="application/ld+json">\n' + json.dumps(obj, indent=2, ensure_ascii=False) + '\n</script>\n'
+              s, count = re.subn(r'<script type=["\']application/ld\+json["\']>\s*\{\s*["\']?@context["\']?\s*:\s*["\']https://schema\.org["\'][\s\S]*?["\']@type["\']\s*:\s*["\']BlogPosting["\'][\s\S]*?</script>\s*', schema, s, count=1, flags=re.I)
+              if count == 0:
                   s = s.replace('</head>', schema + '</head>', 1)
 
               def link_fix(match):
