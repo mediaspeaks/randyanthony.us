@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- CORE PAGES -->
   <url><loc>https://randyanthony.us/</loc></url>
   <url><loc>https://randyanthony.us/services.html</loc></url>
+  <url><loc>https://randyanthony.us/bio/</loc></url>
   <url><loc>https://randyanthony.us/book/</loc></url>
   <url><loc>https://randyanthony.us/book/fm.html</loc></url>
+  <url><loc>https://randyanthony.us/book/newbook.html</loc></url>
   <url><loc>https://randyanthony.us/radio/</loc></url>
-
-  <!-- SERIES -->
   <url><loc>https://randyanthony.us/series/</loc></url>
-  <url><loc>https://randyanthony.us/series/part2.html</loc></url>
 
-  <!-- PART I -->
   <url><loc>https://randyanthony.us/series/week-01-reliability.html</loc></url>
   <url><loc>https://randyanthony.us/series/week-02-invisible-work.html</loc></url>
   <url><loc>https://randyanthony.us/series/week-03-composure.html</loc></url>
@@ -27,8 +23,6 @@
   <url><loc>https://randyanthony.us/series/week-12-prevention.html</loc></url>
   <url><loc>https://randyanthony.us/series/week-13-architecture.html</loc></url>
   <url><loc>https://randyanthony.us/series/week-14-part-1-wrap-up.html</loc></url>
-
-  <!-- PART II -->
   <url><loc>https://randyanthony.us/series/week-15-visibility.html</loc></url>
   <url><loc>https://randyanthony.us/series/week-16-illusion-of-visibility.html</loc></url>
   <url><loc>https://randyanthony.us/series/week17-hidden-dependencies.html</loc></url>
@@ -42,5 +36,4 @@
   <url><loc>https://randyanthony.us/series/week25-recovery-architecture.html</loc></url>
   <url><loc>https://randyanthony.us/series/week26-decision-load-under-pressure.html</loc></url>
   <url><loc>https://randyanthony.us/series/week27-operational-visibility-synthesis.html</loc></url>
-
 </urlset>
